@@ -1,0 +1,30 @@
+@import "foundation/foundation";
+
+@include foundation-grid;
+@include foundation-global-styles;
+@include foundation-typography;
+
+//GENERAL
+@import "_vars",
+        "_helpers",
+        "_mixins",
+        "_main";
+		
+
+//COMPONENTS
+@import "components/_animations",
+        "components/_buttons",
+        "components/_forms",
+        "components/_modals",
+        "components/_wp-classes",
+        "components/_slick",
+        "components/_reveal-word-by-word",
+        "components/_weird-on-hover",
+        "components/_scrollbars";
+
+
+//PARTS 
+@import 
+        "parts/_header",
+        "parts/_footer";
+ 

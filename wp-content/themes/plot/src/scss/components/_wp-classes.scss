@@ -1,0 +1,57 @@
+// IMAGES
+.alignnone{
+    max-width: 100%;
+    width: 100%;
+    margin: 1.5rem 0;
+
+    @media #{$medium-up}{
+        margin: 2rem 0;
+    }
+}
+
+.aligncenter{
+    max-width: 100%;
+    width: 100%;
+    margin: 1.5rem 0;
+
+    @media #{$medium-up}{
+        max-width: calc(100% + 4rem);
+        width: calc(100% + 4rem);
+        margin: 2rem 0 2rem -2rem;
+    }
+
+    @media #{$large-up}{
+        max-width: calc(100% + 8rem);
+        width: calc(100% + 8rem);
+        margin: 2rem 0 2rem -4rem;
+    }
+}
+
+.alignright, .alignleft{
+
+    @media screen and (min-width: 450px){
+        max-width: 60%;
+    }
+
+    @media #{$medium-up}{
+        max-width: 50%;
+    }
+}
+
+.alignright{
+    float: right;
+    margin: 1rem -0.9375rem 1rem 1.5rem;
+
+    @media #{$medium-up}{
+        margin: 0 -1.5rem 1.5rem 1.5rem;
+    }
+}
+
+.alignleft{
+    float: left;
+    margin: 1rem 1.5rem 1rem -0.9375rem;
+
+    @media #{$medium-up}{
+        margin: 0 1.5rem 1.5rem -1.5rem;
+    }
+}

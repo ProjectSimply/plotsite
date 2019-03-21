@@ -1,0 +1,7 @@
+.sass-cache
+.DS_Store
+*.log
+/wp-content/uploads/
+
+node_modules
+

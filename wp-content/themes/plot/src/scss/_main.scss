@@ -1,0 +1,430 @@
+body, html{
+	overflow-x: hidden;
+}
+
+body {
+    color: $bodyFontColor;	
+    font-family: $bodyFontFamily;  
+	font-size: 1rem; 	
+	min-height: 100vh;
+	background: $plotBlue;
+	line-height: 1.1;
+	
+	@media #{$medium-up}{
+		font-size: 1.125rem;
+	}
+
+	@media #{$large-up}{
+		font-size: 1.375rem;
+	}
+
+    h1, h2, h3, h4, h5, h6 {
+    	font-family: $headerFontFamily;
+    	font-weight: bold;
+    	line-height: 1.1;
+	} 
+
+} 
+
+p {
+	line-height: 1.2;
+}
+
+
+h1 {
+	font-size: 2rem;
+	@media #{$medium-up} {
+		font-size: 3rem;
+	}
+}
+
+h2 {
+	font-size: 1.8rem;
+	@media #{$medium-up} {
+		font-size: 2.8rem;
+	}
+}
+
+h3 {
+	font-size: 1.1rem;
+	@media #{$medium-up} {
+		font-size: 1.2rem;
+	}
+	@media #{$xlarge-up} {
+		font-size: 1.8rem;
+	}
+}
+
+.inner {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 1rem;
+}
+
+.siteWrap {
+
+	width: 100vw;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.perspectiveWrap {
+	perspective: 600px;
+}
+
+.backgroundWrap {
+	background: black;
+	height: 140vh; 
+	width: 140vw;
+	position: fixed;
+	left:-20vw;
+	top:-20vh;
+	overflow: hidden;
+	transform: rotate3d(0.4,0.4,0,9deg);
+}
+	.backgroundWrap--inner {
+		width: 100%;
+		height: 100%;
+		height: 140vh; 
+		width: 140vw;
+	}
+	 .backgroundWrap--video{
+	    position: absolute;
+	    top: 50%;
+	    left: 50%;
+	    transform: translate3d(-50%, -50%, 0);
+	    min-width: 100%;
+	    min-height: 100%;
+	}
+
+	.backgroundWrap--xMask {
+		position:absolute;
+		top:0;
+		left:0;
+		height: 100%;
+		width: 100%;
+
+		#dotsPattern {
+			fill: rgba(255,255,255,0.1);
+		}
+	    
+	    rect.clipped {
+	      	-webkit-mask: url(#mask);
+	      	mask: url(#mask);
+	      	fill: $plotBlue;
+	    }
+	    rect.clipped.pink {
+	      	-webkit-mask: url(#mask);
+	      	mask: url(#mask);
+	      	fill: $plotPink;
+	      	opacity: 0;
+	      	transition: opacity 1.8s ease-out;
+	    }
+	    rect.clippedDots {
+
+	    	fill: url(#dotsPattern);
+	    }
+	    rect.overlayColour {
+	    	opacity:0.8;
+	    	fill: $plotBlue;
+	    	-webkit-mask: url(#invertedMask);
+	      	mask: url(#invertedMask);
+	      	transition: opacity 1.8s ease-out;
+	      	&.pink {
+	      		fill: $plotPink;
+	      		opacity: 0;
+	      	}
+	    }
+
+	    .crossBit {
+	    	transition: transform 1.9s ease-out;
+	    }
+	    
+	}
+
+.mouseFollow {
+	backface-visibility: hidden;
+}
+
+.introSection {
+	width:100%;
+	margin: 0 auto;
+	line-height: 1;
+    position: absolute;
+    left:0;
+    top:0;  
+    padding-left:140px;
+
+    @media #{$large-up} {
+    	padding-left: 0;
+    }
+}
+
+	.introSection--logo {
+    	margin-top:4rem;
+    	max-width: 140px;
+    	transition: opacity 0.9s ease-out;
+    }
+
+	.introSection--linkWrap {
+		font-family: $headerFontFamily;
+		display: inline-block;
+		width: 20%;
+		margin-right: 5%;
+		transition: opacity 0.9s ease-out 0.4s;
+
+	}
+
+		.introSection--linkWrap__design {
+			top: 50%;
+			left: 30%;
+			transition: opacity 0.9s ease-out 0.8s;
+		}
+
+
+	.introSection--openingStatement {
+		font-weight: bold;
+		font-size: 5rem;
+		color:white;
+		font-family: $headerFontFamily;
+		margin: 6rem 0;
+		transition: opacity 0.9s ease-out;
+	}
+
+	.introSection--link {
+		color: white;
+
+		&:focus {
+			color: white;
+		}
+		
+		&:hover {
+			color: white;
+			
+			.introSection--linkSubHeading {
+				letter-spacing: 2px;
+
+			}
+			.introSection--linkHeading {
+				letter-spacing: 2px;
+				svg {
+					transform: translateX(20px);
+				}
+			}
+		}
+	}
+
+		.introSection--linkSubHeading {
+			text-transform: uppercase;
+			display: block;
+			font-size: 0.9rem;
+			transition: letter-spacing 1s ease-out;
+			
+
+		}
+
+		.introSection--linkHeading {
+			margin:0.8rem 0 1rem;
+			text-decoration: underline;
+			font-size: 2rem;
+			transform: rotate3d(0,0,0,360deg);
+			transition: letter-spacing 1s ease-out;
+			display: block;
+			svg {
+				margin-left: 1rem;
+				transform: translate3d(0,0,0);
+				transition: transform 0.3s ease-out;
+			}
+			path {
+				stroke: white;
+			}
+		}
+
+		.introSection--linkExplainers {
+			font-family: $bodyFontFamily;
+			font-size: 1rem;
+		}
+
+.grainWrap--grain {
+	background:url('../img/texture.png');
+	animation: grainyBoi 0.2s infinite steps(3);
+	height: 100vw;
+	width: 100vw;
+	position: fixed;
+	opacity: 0.3;
+	top:calc((100vh - 100vw) / 2);
+	left:0;
+	pointer-events: none;
+}
+
+.outline {
+	color: transparent;
+	-webkit-text-stroke:2px white;
+}
+
+.sideNavigation {
+	width: 90px;
+	position: fixed;
+	left:0;
+	top: 0;
+	background: $plotGrey;
+	height: 100vh;
+	transform: translate3d(-100%,0,0);
+	transition: transform 0.4s ease-out 0.4s;
+}
+
+	.sideNavigation--backToPS {
+		fill: white;
+		width: 100%;
+		position: absolute;
+		bottom:0;
+		text-align: center;
+		transform: translate3d(100%,0,0);
+		transition: transform 0.4s ease-out;
+		background: $plotGrey;
+		height: 90px;
+		line-height: 90px;
+		a:hover {
+			.sideNavigation--backArrow {
+
+				transform: translateX(-3px);
+			}
+
+			.sideNavigation--PSIcon {
+				transform: translateX(3px);
+
+			}
+		}
+		
+	}
+
+	.sideNavigation--backArrow {
+		display: inline-block;
+		width: 10px;
+		vertical-align: middle;
+		transform: translate3d(0,0,0);
+		transition: transform 0.3s ease-out;
+	}
+
+	.sideNavigation--PSIcon {
+		display: inline-block;;
+		width: 22px;
+		vertical-align: middle;
+		transform: translate3d(0,0,0);
+		transition: transform 0.3s ease-out;
+	}
+
+.getInTouch {
+	position: fixed;
+	bottom: 1rem;
+	right: 1rem;
+	z-index: 3000;
+	fill: white;
+	width: 100px;
+	.text {
+		transform-origin: 50%;
+		animation: spin 10s infinite linear;
+	}
+	&:hover {
+		.text {
+			animation-duration: 1s;
+		}
+		.hand {
+			animation: slurpAround 4s infinite;
+		}
+	}
+}
+
+.featuresContent {
+	max-width: 1400px;
+	margin:0 auto;
+	position: relative;
+	display: none;
+	animation: riseUp 2s ease-out;
+
+	h2 {
+		font-weight: bold;
+		font-size: 5rem;
+		color:white;
+		font-family: $headerFontFamily;
+		margin: 6rem 0;
+		transition: transform 0.9s ease-out;
+		
+	}
+	color: $plotDarkBlue;
+	blockquote {
+		color: $plotDarkBlue;
+	}
+	cite {
+		color: $plotBlue;
+	}
+	.inner {
+		max-width: 1200px;
+	}
+	.segment {
+		animation: riseUp 1.5s ease-out forwards;
+		opacity: 0;
+	}
+}
+
+
+
+/// FEATURE ZONE
+html.featureZone {
+	body {
+		background: $plotPink;
+	}
+	.crossBit {
+		// transform: translateX(-200%);
+	}
+
+
+	.sideNavigation {
+		transform: translate3d(0,0,0);
+	}
+	.sideNavigation--backToPS {
+		transform: translate3d(0,0,0);
+	}
+
+	.introSection--openingStatement,.introSection--linkWrap,.introSection--logo {
+		opacity: 0;
+	}
+
+	.backgroundWrap--xMask {
+
+		.clipped.pink {
+			opacity: 1;
+		}
+		#dotsPattern {
+			fill: rgba(255,255,255,0.3);
+		}
+
+		rect.overlayColour {
+			opacity: 0;
+			&.pink {
+				opacity: 0.6;
+			}
+		}
+	}
+
+
+	.siteWrap { 
+		height: auto;
+	}
+
+	// &.fullyLoaded {
+
+	.featuresContent {
+		display: block;
+			$b:1;
+			@while $b < 50 {
+				.segment:nth-child(#{$b}) {
+					animation-delay: #{2+$b*0.3}s; 
+					
+				}
+				$b : $b+1;
+			}
+
+	}
+	
+}

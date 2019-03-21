@@ -1,0 +1,52 @@
+{
+  "name": "Bella",
+  "version": "0.0.1",
+  "description": "A super simple browserify-based starter template for wordpress projects.",
+  "main": "main.js",
+  "scripts": {
+    "lint": "jshint assets/js/**.js",
+    "sass": "node-sass src/scss/style.scss assets/assets/css/style.css",
+    "cssobs": "node-sass --watch src/scss/style.scss assets/css/style.css",
+    "cssmake": "postcss --use autoprefixer -c postcss.json < assets/css/style.css | postcss --use cssnano > assets/css/style.min.css",
+    "jsobs": "watchify src/js/main.js -v -o assets/js/main.js -d",
+    "jsmake": "browserify src/js/main.js --debug > assets/js/main.js && uglifyjs -c -m -- assets/js/main.js > assets/js/main.min.js",
+    "reload": "livereload ./assets",
+    "observe": "concurrently 'npm run cssobs' 'npm run jsobs' 'npm run reload'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectsimply/bella.git"
+  },
+  "author": "Michael Watson",
+  "bugs": {
+    "url": ""
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browserify": "^16.2.3",
+    "concurrently": "^4.0.1",
+    "cssnano": "^4.1.7",
+    "foundation-sites": "^6.2.0",
+    "jquery": "^2.2.0",
+    "jshint": "^2.9.6",
+    "livereload": "^0.7.0",
+    "node-sass": "^4.10.0",
+    "postcss": "^7.0.5",
+    "postcss-cli": "^6.0.1",
+    "uglify-js": "^3.4.9",
+    "uglifyjs": "^2.4.11",
+    "watchify": "^3.11.1"
+  },
+  "jshintConfig": {
+    "node": true,
+    "browser": true,
+    "laxbreak": true
+  },
+  "dependencies": {
+    "google-maps": "^3.3.0",
+    "imagesloaded": "^4.1.4",
+    "perfect-scrollbar": "^0.7.1",
+    "slick-carousel": "^1.8.1",
+    "three": "^0.102.1"
+  }
+}

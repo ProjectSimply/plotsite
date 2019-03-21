@@ -1,0 +1,42 @@
+.exampleOpenModalButton{
+	background-color: rgba(0,0,0,0.5);
+	display: block;
+	color: #fff;
+	padding: 0.5rem 3rem;
+	margin: 0 0 3rem;
+}
+
+
+.magicModal {
+    pointer-events: none;
+    position: fixed;
+    z-index: 1040;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transform: translate3d(0,0,0);
+    animation: growIn 0.4s ease-out 0.5s;
+    animation-fill-mode:forwards;
+}
+
+	.magicModalInner {
+    	padding: 2rem;
+    	background-color: #fff;
+        pointer-events: auto;
+        max-width: 24rem;
+        width: calc(100% - 2rem);
+        position: relative;
+        top: 50%;
+        margin: 0 auto;
+        transform: translateY(-50%);
+        max-height: calc(100% - 2rem);
+        text-align: center;
+
+        &.withScrollbar{
+        	overflow: hidden;	
+        }
+    }
