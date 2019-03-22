@@ -60,12 +60,6 @@
 
                     $('html').toggleClass(link);
 
-                    setTimeout(function(){
-
-                        $('html').addClass('fullyLoaded');
-
-                    },2000);
-
                 });
 
 

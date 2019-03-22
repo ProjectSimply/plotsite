@@ -6,29 +6,11 @@
 
         <div class="mouseFollow backgroundWrap--inner" data-twist-factor="6">
 
-            <video id="backgroundVideo" class="backgroundWrap--video" src="/wp-content/uploads/2019/03/Plot_home_v2_1.mp4" paused loop muted playsinline></video>
+            <video id="backgroundVideo" class="backgroundWrap--video" src="/wp-content/uploads/2019/03/Plot_home_v2_1.mp4" autoplay loop muted playsinline></video>
 
             <svg class="backgroundWrap--xMask" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 1227.2" preserveAspectRatio="xMidYMid slice">
 
                 <defs>
-                  <mask id="mask" x="0" y="0" width="100%" height="100%" >
-
-                    <rect x="0" y="0" width="100%" height="100%" fill="white" />
-
-                    <path class="crossBit" d="M1428.5,410.2l-169.1-169.4L1064.3,436L869.1,240.8L700,410.2l195.1,195.1L700,800.5l169.1,169.1l195.1-195.1
-        l195.1,195.1l169.1-169.1l-195.1-195.1L1428.5,410.2z" fill="black" />
-
-
-                  </mask>
-
-                  <mask id="invertedMask" x="0" y="0" width="100%" height="100%" >
-
-                    <rect x="0" y="0" width="100%" height="100%" fill="black" />
-
-                    <path class="crossBit" d="M1428.5,410.2l-169.1-169.4L1064.3,436L869.1,240.8L700,410.2l195.1,195.1L700,800.5l169.1,169.1l195.1-195.1
-        l195.1,195.1l169.1-169.1l-195.1-195.1L1428.5,410.2z" fill="white" />
-
-                  </mask>
 
                   <pattern id="dotsPattern" viewBox="0,0,10,10" width="1.4%" height="1.4%">
                       <circle cx="1" cy="1" r="1"/>
@@ -37,12 +19,18 @@
 
                 </defs>
 
-                <g class="cross">
-                    <rect class="clipped" x="0" y="0" width="100%" height="100%" />
-                    <rect class="clipped pink" x="0" y="0" width="100%" height="100%" />
-                    <rect class="clipped clippedDots" x="0" y="0" width="100%" height="100%" />
-                    <rect class="overlayColour" x="0" y="0" width="100%" height="100%" />
-                    <rect class="overlayColour pink" x="0" y="0" width="100%" height="100%" />
+                <path class="cross" d="M1428.5,410.2l-169.1-169.4L1064.3,436L869.1,240.8L700,410.2l195.1,195.1L700,800.5l169.1,169.1l195.1-195.1
+    l195.1,195.1l169.1-169.1l-195.1-195.1L1428.5,410.2z"/>
+
+                <g class="crossCutOut">
+                    <polygon points="1400,772 1400,438.7 1233.4,605.4"/>
+                    <polygon points="1259.4,969.6 1064.3,774.5 869.1,969.6 700,800.5 895.1,605.4 700,410.2 869.1,240.8 1064.3,436 
+                        1259.4,240.8 1400,381.7 1400,0 0,0 0,1227.2 1400,1227.2 1400,829"/>
+                </g>
+                <g class="crossCutOut dotsPattern">
+                    <polygon points="1400,772 1400,438.7 1233.4,605.4"/>
+                    <polygon points="1259.4,969.6 1064.3,774.5 869.1,969.6 700,800.5 895.1,605.4 700,410.2 869.1,240.8 1064.3,436 
+                        1259.4,240.8 1400,381.7 1400,0 0,0 0,1227.2 1400,1227.2 1400,829"/>
                 </g>
 
             </svg>
@@ -119,46 +107,286 @@
         <div class="inner">
 
             <div class="mouseFollow" data-twist-factor="3">
-                <h2 class="revealWordByWord always"><div class="revealWordByWordParts">Powering event websites with  Plot saves our clients time, stress and money.</div></h2>
+                <h2 class="revealWordByWord always"><div class="revealWordByWordParts"><span class="outline">Powering</span> event websites with <span class="outline">Plot</span> saves our clients time, stress and money.</div></h2>
             </div>
         
 
             <div class='segment'>
-                <blockquote class="mouseFollow" data-twist-factor="4.3">SBeing able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
+                <blockquote class="mouseFollow" data-twist-factor="2.3">Being able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
 
                 <cite class="mouseFollow" data-twist-factor="2.2">Scott Osburn - Lights All Night, Dallas</cite>
             </div>
 
-            <div class='segment'>
-                <blockquote class="mouseFollow" data-twist-factor="3">SBeing able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
+            <div class="segment">
 
-                <cite class="mouseFollow" data-twist-factor="2.2">Scott Osburn - Lights All Night, Dallas</cite>
+                <h3 class="segmentHeading mouseFollow" data-twist-factor="2.4">Main Features</h3>
+
+                <div class="feature">
+ 
+                    <h4 class="mouseFollow" data-twist-factor="2">Big Feature Here</h4>
+
+                    <img src="<?= IMAGES ?>/placeholder.jpg" class="featureImage mouseFollow" data-twist-factor="1.4">
+
+                    <div class="feature--explanation">
+
+                        <svg class="artyVibes mouseFollow"  data-twist-factor="3" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="11.9258" y="0.5" width="8" height="89" stroke="#2E24E8"/>
+                            <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
+                        </svg>
+
+
+                        <h5 class="mouseFollow" data-twist-factor="1.4">How we helped</h5>
+
+                        <p class="mouseFollow" data-twist-factor="1.2">We provide our clients the ability and flexibility to launch every aspect of their website, when they want. This control saves valuable admin time, up to 50% with some clients.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+ 
+                    <h4 class="mouseFollow" data-twist-factor="2">Something Feature Here</h4>
+
+                    <img src="<?= IMAGES ?>/placeholder.jpg" class="featureImage mouseFollow" data-twist-factor="1.4">
+
+                    <div class="feature--explanation">
+
+                        <svg class="artyVibes mouseFollow"  data-twist-factor="3" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="11.9258" y="0.5" width="8" height="89" stroke="#2E24E8"/>
+                            <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
+                        </svg>
+
+
+                        <h5 class="mouseFollow" data-twist-factor="1.4">How we helped</h5>
+
+                        <p class="mouseFollow" data-twist-factor="1.2">We provide our clients the ability and flexibility to launch every aspect of their website, when they want. This control saves valuable admin time, up to 50% with some clients.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="feature">
+ 
+                    <h4 class="mouseFollow" data-twist-factor="2">Third Feature Here</h4>
+
+                    <img src="<?= IMAGES ?>/placeholder.jpg" class="featureImage mouseFollow" data-twist-factor="1.4">
+
+                    <div class="feature--explanation">
+
+                        <svg class="artyVibes mouseFollow"  data-twist-factor="3" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <rect x="11.9258" y="0.5" width="8" height="89" stroke="#2E24E8"/>
+                            <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
+                        </svg>
+
+
+                        <h5 class="mouseFollow" data-twist-factor="1.4">How we helped</h5>
+
+                        <p class="mouseFollow" data-twist-factor="1.2">We provide our clients the ability and flexibility to launch every aspect of their website, when they want. This control saves valuable admin time, up to 50% with some clients.</p>
+
+                    </div>
+
+                </div>
+
+                <div class="bigButtonWrap">
+
+                    <a class="bigButton" href="https://plot.pleasecheck.me" target="_blank">
+                        <div class=" mouseFollow" data-twist-factor="1.8">See Plot festival in Action</div></a>
+                    <a class="bigButton bigButtonGhost" href="https://plot.pleasecheck.me" target="_blank">
+                        <div class=" mouseFollow" data-twist-factor="2.4">See Plot festival in Action</div></a>
+
+                </div>
+                
+
             </div>
 
-            <div class='segment'>  
-                <blockquote class="mouseFollow" data-twist-factor="1.3">SBeing able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
+            <div class="segment squashed">
 
-                <cite class="mouseFollow" data-twist-factor="1.2">Scott Osburn - Lights All Night, Dallas</cite>
+                <h3 class="segmentHeading mouseFollow" data-twist-factor="2.4">Admin Benefits</h3>
+                <h4 class="mouseFollow" data-twist-factor="1.6">
+                    <svg class="headingCross" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            
+                            <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
+                        </svg>50% FASTER</h4>
+
+                <blockquote class="mouseFollow" data-twist-factor="1"> "Plot has saved up to 50% of my time, allows me to switch up, edit and customise my own pages and I require much less development assistance."</blockquote>
+                <cite class="mouseFollow" data-twist-factor="1.4">EMMALINE - Y NOT FESTIVAL</cite>
+
             </div>
 
-            <div class='segment'>
-                <blockquote class="mouseFollow" data-twist-factor="3">SBeing able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
+            <div class="segment squashed">
 
-                <cite class="mouseFollow" data-twist-factor="2.2">Scott Osburn - Lights All Night, Dallas</cite>
+                <h4 class="mouseFollow" data-twist-factor="1.6">
+                    <svg class="headingCross" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            
+                            <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
+                        </svg>Eliminate Errors</h4>
+
+                <blockquote class="mouseFollow" data-twist-factor="1"> "Plot has saved up to 50% of my time, allows me to switch up, edit and customise my own pages and I require much less development assistance."</blockquote>
+                <cite class="mouseFollow" data-twist-factor="1.4">EMMALINE - Y NOT FESTIVAL</cite>
+
             </div>
 
-            <div class='segment'>
-                <blockquote class="mouseFollow" data-twist-factor="1.3">SBeing able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
+            <div class="segment squashed">
 
-                <cite class="mouseFollow" data-twist-factor="1.2">Scott Osburn - Lights All Night, Dallas</cite>
+                <h4 class="mouseFollow" data-twist-factor="1.6">
+                    <svg class="headingCross" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            
+                            <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
+                        </svg>Get Organised</h4>
+
+                <blockquote class="mouseFollow" data-twist-factor="1"> "Plot has saved up to 50% of my time, allows me to switch up, edit and customise my own pages and I require much less development assistance."</blockquote>
+                <cite class="mouseFollow" data-twist-factor="1.4">EMMALINE - Y NOT FESTIVAL</cite>
+
             </div>
 
-            <div class='segment'>
-                <blockquote class="mouseFollow" data-twist-factor="3">SBeing able to have confidence in your web team is a major win for us. We've worked with several companies over the years. A lot of times our vision just hasn't been translated the way we wanted. And that is simply due to the fact that the other teams just didn't have the expertise or creative ability that PS does."</blockquote>
+        </div> 
 
-                <cite class="mouseFollow" data-twist-factor="2.2">Scott Osburn - Lights All Night, Dallas</cite>
+        <div class="bigWhiteSegment">
+
+            <div class="inner">
+
+                <h5 class="segmentHeading">OTHER FEATURES</h5>
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.3">
+
+                        <img src="<?= IMAGES ?>/holding/tickets.png"> 
+                        <h5>Ticketing</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.8">
+
+                        <img src="<?= IMAGES ?>/holding/stage-timetables.png"> 
+                        <h5>Stage Timetables</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.2">
+
+                        <img src="<?= IMAGES ?>/holding/info.png"> 
+                        <h5>Information Pages</h5>
+
+                    </div>
+
+                </div>
+
+                 <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.1">
+
+                        <img src="<?= IMAGES ?>/holding/image-galleries.png"> 
+                        <h5>Media Galleries</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.9">
+
+                        <img src="<?= IMAGES ?>/holding/social-media.png"> 
+                        <h5>Social Media Integration</h5>
+
+                    </div>
+
+                </div>
+
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.8">
+
+                        <img src="<?= IMAGES ?>/holding/stats.png"> 
+                        <h5>Goal Focused Analytics</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.2">
+
+                        <img src="<?= IMAGES ?>/holding/faqs.png"> 
+                        <h5>FAQs</h5>
+
+                    </div>
+
+                </div>
+
+                 <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.3">
+
+                        <img src="<?= IMAGES ?>/holding/volunteer-forms.png"> 
+                        <h5>Volunteer Forms</h5>
+
+                    </div>
+
+                </div>
+
+                <div class="bigWhiteSegment--feature">
+
+                    <div class="mouseFollow" data-twist-factor="1.9">
+
+                        <img src="<?= IMAGES ?>/holding/flexible-content.png"> 
+                        <h5>Flexible Content Pages</h5>
+
+                    </div>
+
+                </div>
+
+
             </div>
-           
+
+            <div class="bigWhiteSegment--examples">
+
+                <div class="inner">
+
+                    <h5 class="segmentHeading">POWERED BY PLOT</h5>
+
+                    <div class="bigWhiteSegment--exampleColumn">
+
+                        <div class="mouseFollow" data-twist-factor="1.8">
+                            <img src="<?= IMAGES ?>/holding/fd.jpg">
+                        </div>
+                        <div class="mouseFollow" data-twist-factor="1.3">
+                            <img src="<?= IMAGES ?>/holding/parklife.jpg">
+                        </div>
+
+                    </div>
+
+                    <div class="bigWhiteSegment--exampleColumn">
+
+                        <div class="mouseFollow" data-twist-factor="1.8">
+                            <img src="<?= IMAGES ?>/holding/lan.jpg">
+                        </div>
+
+                        <div class="mouseFollow" data-twist-factor="2.1">
+                            <img src="<?= IMAGES ?>/holding/truck.jpg">
+                        </div>
+                        <div class="mouseFollow" data-twist-factor="1.2">
+                            <img src="<?= IMAGES ?>/holding/winterville.jpg">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a href="#" class="massiveTalkToUs"><div class="mouseFollow" data-twist-factor="9.8">TALK TO US</div></a>
 
         </div>
 

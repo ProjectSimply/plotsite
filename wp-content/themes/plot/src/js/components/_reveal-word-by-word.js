@@ -11,14 +11,9 @@
 
             $('.revealWordByWord').each(function(){
 
-                var elem = $('.revealWordByWordParts',this);
+                var elem = $('.revealWordByWordParts',this)[0];
 
-                var words = elem.text().split(" ");
-                elem.empty();
-                $.each(words, function(i, v) {
-                    elem.append("<span><span>" + v + " </span></span>");
-                });
-
+                elem.innerHTML = elem.innerHTML.replace(/(^|<\/?[^>]+>|\s+)([^\s<]+)/g, '$1<span class="word"><span>$2</span></span>');
             });         
             
         }

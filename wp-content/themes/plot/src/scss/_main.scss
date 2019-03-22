@@ -70,6 +70,7 @@ h3 {
 
 .perspectiveWrap {
 	perspective: 600px;
+	backface-visibility: hidden;
 }
 
 .backgroundWrap {
@@ -80,7 +81,8 @@ h3 {
 	left:-20vw;
 	top:-20vh;
 	overflow: hidden;
-	transform: rotate3d(0.4,0.4,0,9deg);
+	backface-visibility: hidden;
+	transform: rotate3d(0,0,0,9deg);
 }
 	.backgroundWrap--inner {
 		width: 100%;
@@ -106,38 +108,21 @@ h3 {
 
 		#dotsPattern {
 			fill: rgba(255,255,255,0.1);
+			transition: all 2s ease-out;
 		}
 	    
-	    rect.clipped {
-	      	-webkit-mask: url(#mask);
-	      	mask: url(#mask);
-	      	fill: $plotBlue;
-	    }
-	    rect.clipped.pink {
-	      	-webkit-mask: url(#mask);
-	      	mask: url(#mask);
-	      	fill: $plotPink;
-	      	opacity: 0;
-	      	transition: opacity 1.8s ease-out;
-	    }
-	    rect.clippedDots {
-
-	    	fill: url(#dotsPattern);
-	    }
-	    rect.overlayColour {
+	    .cross {
 	    	opacity:0.8;
 	    	fill: $plotBlue;
-	    	-webkit-mask: url(#invertedMask);
-	      	mask: url(#invertedMask);
-	      	transition: opacity 1.8s ease-out;
-	      	&.pink {
-	      		fill: $plotPink;
-	      		opacity: 0;
-	      	}
+	      	transition: all 1.8s ease-out;
 	    }
 
-	    .crossBit {
-	    	transition: transform 1.9s ease-out;
+	    .crossCutOut {
+	    	fill: $plotBlue;
+	    	transition: all 1.9s ease-out;
+	    	&.dotsPattern {
+	    		fill: url(#dotsPattern); 
+	    	}
 	    }
 	    
 	}
@@ -245,16 +230,18 @@ h3 {
 			font-size: 1rem;
 		}
 
-.grainWrap--grain {
-	background:url('../img/texture.png');
-	animation: grainyBoi 0.2s infinite steps(3);
-	height: 100vw;
-	width: 100vw;
+.grainWrap {
 	position: fixed;
 	opacity: 0.3;
 	top:calc((100vh - 100vw) / 2);
 	left:0;
 	pointer-events: none;
+}
+.grainWrap--grain {
+	background:url('../img/texture.png');
+	animation: grainyBoi 0.2s infinite steps(3);
+	height: 100vw;
+	width: 100vw;
 }
 
 .outline {
@@ -335,28 +322,121 @@ h3 {
 	}
 }
 
+.bigWhiteSegment {
+	background: white;
+	text-align: center;
+	padding: 8rem 0;
+
+	h5 {
+		color: $plotBlue;
+		text-align: left;
+	}
+
+	img {
+		margin-bottom: 1rem;
+	}
+	
+}
+
+	.bigWhiteSegment--feature {
+		display: inline-block;
+		max-width: 300px;
+		margin: 0 2rem 8rem;
+	}
+
+
+	.bigWhiteSegment--exampleColumn {
+		width: calc(48% - 3rem);
+		margin-right: 3rem;
+		display: inline-block;
+		img {
+			margin-bottom: 3rem;
+		}
+	}
+
+	.massiveTalkToUs {
+		-webkit-text-stroke:2px $plotBlue;
+		font-size: 8rem;
+		text-decoration: underline;
+		font-family: $headerFontFamily;
+		font-weight: bold;
+		color: transparent;
+		display: block;
+		margin: 8rem 0;
+	}
+
+blockquote {
+	font-size: 1.8rem;
+	margin-bottom: 3rem;
+	font-weight: 300;
+
+}
+cite {
+	font-family: $headerFontFamily;
+	font-weight: normal;
+	text-transform: uppercase;
+	font-style: normal;
+}
 .featuresContent {
-	max-width: 1400px;
-	margin:0 auto;
 	position: relative;
 	display: none;
 	animation: riseUp 2s ease-out;
+	padding-left: 90px;
 
 	h2 {
 		font-weight: bold;
-		font-size: 5rem;
-		color:white;
+		font-size: 4rem;
+		color: $plotBlue; 
+		text-align: center; 
 		font-family: $headerFontFamily;
 		margin: 6rem 0;
-		transition: transform 0.9s ease-out;
+		transition: transform 1.6s ease-out;
+		line-height: 1.2;
+		.revealWordByWordParts>span {
+			margin-top:-20px;
+		}
+		.outline {
+			-webkit-text-stroke:2px $plotBlue;
+		}
 		
 	}
+
+	h3 {
+		font-family: $headerFontFamily;
+		font-weight: normal;
+		text-transform: uppercase;
+		font-style: normal;
+		font-size: 1rem;
+		color: $plotBlue;
+		text-decoration: underline;
+		margin-bottom: 2rem;
+	}
+
+	h4 {
+		color: $plotBlue;
+		margin-bottom: 1rem;
+		font-size: 2.8rem;
+		position: relative;
+		.headingCross {
+			max-width: 30px;
+			position: absolute;
+			left: -50px;
+			top:-100px;
+		}
+	}
+
 	color: $plotDarkBlue;
 	blockquote {
+		margin-left: 0;
+		padding:0;
 		color: $plotDarkBlue;
 	}
 	cite {
 		color: $plotBlue;
+		margin-left: 0;
+		&:before {
+			display: none;
+		}
 	}
 	.inner {
 		max-width: 1200px;
@@ -364,7 +444,91 @@ h3 {
 	.segment {
 		animation: riseUp 1.5s ease-out forwards;
 		opacity: 0;
+		margin-bottom: 6rem;
+		padding: 0 6rem;
+		&.squashed {
+			padding: 0 13rem;
+
+			blockquote {
+				font-size: 1.4rem;
+			}
+		}
 	}
+
+	.feature--explanation {
+		position: relative;
+		margin: 1rem 4rem;
+		h5,p {
+			padding: 0 50px;
+		}
+		h5 {
+			margin-top: 4rem;
+			margin-bottom: 2rem;
+			color: $plotBlue;
+		}
+		p {
+			line-height: 1.7;
+		}
+	}
+
+	.artyVibes {
+		position: absolute;
+		left:0;
+		top:-114px;
+		max-width: 30px;
+	}
+
+	.feature {
+		margin-bottom: 6rem;
+	}
+
+	.bigButtonWrap {
+		position: relative;
+		perspective: 600px;
+		&:hover {
+			.bigButtonGhost,.bigButton,.bigButton>div {
+				transform: rotate3d(1,0,0,180deg);
+			}
+		}
+	}
+
+	.bigButton {
+		
+		.mouseFollow {
+			background: white;
+			padding: 2rem 0 1.8rem;
+		}
+		display: block;
+		width: 100%;
+		text-align: center;
+		
+		text-transform: uppercase;
+		font-family: $headerFontFamily;
+		color: $plotBlue;
+		position: relative;
+		margin:0;
+		font-weight: bold;
+		transition: transform 0.7s ease-out;
+		>div {
+			transition: transform 0.7s ease-out;
+		}
+	}
+	.bigButtonGhost {
+		pointer-events: none;
+		.mouseFollow {
+			background: transparent;
+			border: 4px solid $plotBlue;
+		}
+		
+		position: absolute;
+		width: 100%;
+		top:-7px;
+		left:-10px;
+		text-indent: -99999px;
+		
+
+	}
+	
 }
 
 
@@ -392,19 +556,21 @@ html.featureZone {
 
 	.backgroundWrap--xMask {
 
-		.clipped.pink {
-			opacity: 1;
-		}
-		#dotsPattern {
+		.cross {
+	    	opacity:0.8;
+	    	fill: $plotPink;
+	    }
+
+	    #dotsPattern {
 			fill: rgba(255,255,255,0.3);
 		}
 
-		rect.overlayColour {
-			opacity: 0;
-			&.pink {
-				opacity: 0.6;
-			}
-		}
+	    .crossCutOut {
+	    	fill: $plotPink;
+	    	&.dotsPattern {
+	    		fill: url(#dotsPattern); 
+	    	}
+	    }
 	}
 
 
@@ -425,6 +591,10 @@ html.featureZone {
 				$b : $b+1;
 			}
 
+	}
+
+	.grainWrap--grain {
+		opacity: 0.5;
 	}
 	
 }
