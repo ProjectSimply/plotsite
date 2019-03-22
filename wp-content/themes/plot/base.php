@@ -35,7 +35,7 @@
 	<?php if(strpos($_SERVER[HTTP_HOST],'test') !== false)  : ?>
         <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?v=1"></script>
     <?php else : ?>
-        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.min.js?v=1"></script>
+        <script src="<?php echo get_template_directory_uri(); ?>/assets/js/main.js?v=1"></script>
     <?php endif; ?>
  
 

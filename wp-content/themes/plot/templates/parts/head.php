@@ -13,7 +13,7 @@
     <?php if(strpos($_SERVER[HTTP_HOST],'test') !== false) : ?>
         <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css?v=1" rel="stylesheet" media="all">
     <?php else : ?>
-        <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.min.css?v=1" rel="stylesheet" media="all">
+        <link href="<?php echo get_template_directory_uri(); ?>/assets/css/style.css?v=1" rel="stylesheet" media="all">
     <?php endif; ?>
 
     <link rel="stylesheet" href="https://use.typekit.net/pnd5bdl.css">
