@@ -7,7 +7,7 @@ body {
     font-family: $bodyFontFamily;  
 	font-size: 1rem; 	
 	min-height: 100vh;
-	background: $plotBlue;
+	background: $plotDarkBlue;
 	line-height: 1.1;
 	
 	@media #{$medium-up}{
@@ -114,12 +114,12 @@ h3 {
 	    .cross {
 	    	opacity:0.8;
 	    	fill: $plotBlue;
-	      	transition: all 1.8s ease-out;
+	      	transition: all .8s ease-out;
 	    }
 
 	    .crossCutOut {
-	    	fill: $plotBlue;
-	    	transition: all 1.9s ease-out;
+	    	fill: $plotDarkBlue;
+	    	transition: all .9s ease-out;
 	    	&.dotsPattern {
 	    		fill: url(#dotsPattern); 
 	    	}
@@ -156,14 +156,14 @@ h3 {
 		display: inline-block;
 		width: 20%;
 		margin-right: 5%;
-		transition: opacity 0.9s ease-out 0.4s;
+		transition: all 1.5s ease-out 0.4s;
 
 	}
 
 		.introSection--linkWrap__design {
 			top: 50%;
 			left: 30%;
-			transition: opacity 0.9s ease-out 0.8s;
+			transition: all 1.5s ease-out 0.8s;
 		}
 
 
@@ -236,6 +236,7 @@ h3 {
 	top:calc((100vh - 100vw) / 2);
 	left:0;
 	pointer-events: none;
+	display: none;
 }
 .grainWrap--grain {
 	background:url('../img/texture.png');
@@ -252,6 +253,7 @@ h3 {
 .sideNavigation {
 	width: 90px;
 	position: fixed;
+	z-index: 3;
 	left:0;
 	top: 0;
 	background: $plotGrey;
@@ -284,6 +286,28 @@ h3 {
 		}
 		
 	}
+
+	.sideNavigation--link {
+		display: block;
+		position:absolute;
+		bottom: 0;
+		transform: rotate3d(0,0,1,-90deg);
+		font-family: $headerFontFamily;
+		font-weight: bold;
+		width: 230px;
+		
+		height: 90px;
+		transform-origin:0 0;
+		line-height: 90px;
+		font-size: 0.9rem;
+		text-align: center;
+		color: white;
+	}
+
+		.sideNavigation--link__design {
+			bottom: 230px;
+			
+		}
 
 	.sideNavigation--backArrow {
 		display: inline-block;
@@ -538,9 +562,6 @@ html.featureZone {
 	body {
 		background: $plotPink;
 	}
-	.crossBit {
-		// transform: translateX(-200%);
-	}
 
 
 	.sideNavigation {
@@ -550,7 +571,16 @@ html.featureZone {
 		transform: translate3d(0,0,0);
 	}
 
-	.introSection--openingStatement,.introSection--linkWrap,.introSection--logo {
+	.sideNavigation--link__features {
+		background: $plotPink;
+		color: $plotBlue;
+	}
+
+	.introSection--openingStatement,.introSection--logo {
+		opacity: 0;
+	}
+
+	.introSection--linkWrap {
 		opacity: 0;
 	}
 
@@ -578,7 +608,6 @@ html.featureZone {
 		height: auto;
 	}
 
-	// &.fullyLoaded {
 
 	.featuresContent {
 		display: block;
@@ -597,4 +626,65 @@ html.featureZone {
 		opacity: 0.5;
 	}
 	
+}
+
+
+html.designZone {
+	body {
+		background: $plotBlue;
+	}
+
+	.sideNavigation {
+		transform: translate3d(0,0,0);
+	}
+	.sideNavigation--backToPS {
+		transform: translate3d(0,0,0);
+	}
+
+	.sideNavigation--link__design {
+		background: $plotBlue;
+		color: $plotPink;
+	}
+
+	.introSection--openingStatement,.introSection--linkWrap,.introSection--logo {
+		opacity: 0;
+	}
+
+	.backgroundWrap--xMask {
+
+		.cross {
+	    	opacity:0.8;
+	    	fill: $plotBlue;
+	    }
+
+	    .crossCutOut {
+	    	fill: $plotBlue;
+	    	&.dotsPattern {
+	    		fill: url(#dotsPattern); 
+	    	}
+	    }
+	}
+
+
+	.siteWrap { 
+		height: auto;
+	}
+
+
+	.designContent {
+		display: block;
+			$b:1;
+			@while $b < 50 {
+				.segment:nth-child(#{$b}) {
+					animation-delay: #{2+$b*0.3}s; 
+					
+				}
+				$b : $b+1;
+			}
+
+	}
+
+	.grainWrap--grain {
+		opacity: 0.5;
+	}
 }

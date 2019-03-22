@@ -1502,7 +1502,7 @@ body {
   font-family: freight-text-pro, serif;
   font-size: 1rem;
   min-height: 100vh;
-  background: #2E24E8;
+  background: #262A5D;
   line-height: 1.1; }
   @media screen and (min-width: 40em) {
     body {
@@ -1590,10 +1590,10 @@ h3 {
   .backgroundWrap--xMask .cross {
     opacity: 0.8;
     fill: #2E24E8;
-    transition: all 1.8s ease-out; }
+    transition: all .8s ease-out; }
   .backgroundWrap--xMask .crossCutOut {
-    fill: #2E24E8;
-    transition: all 1.9s ease-out; }
+    fill: #262A5D;
+    transition: all .9s ease-out; }
     .backgroundWrap--xMask .crossCutOut.dotsPattern {
       fill: url(#dotsPattern); }
 
@@ -1622,12 +1622,12 @@ h3 {
   display: inline-block;
   width: 20%;
   margin-right: 5%;
-  transition: opacity 0.9s ease-out 0.4s; }
+  transition: all 1.5s ease-out 0.4s; }
 
 .introSection--linkWrap__design {
   top: 50%;
   left: 30%;
-  transition: opacity 0.9s ease-out 0.8s; }
+  transition: all 1.5s ease-out 0.8s; }
 
 .introSection--openingStatement {
   font-weight: bold;
@@ -1679,7 +1679,8 @@ h3 {
   opacity: 0.3;
   top: calc((100vh - 100vw) / 2);
   left: 0;
-  pointer-events: none; }
+  pointer-events: none;
+  display: none; }
 
 .grainWrap--grain {
   background: url("../img/texture.png");
@@ -1694,6 +1695,7 @@ h3 {
 .sideNavigation {
   width: 90px;
   position: fixed;
+  z-index: 3;
   left: 0;
   top: 0;
   background: #2E2D2C;
@@ -1716,6 +1718,24 @@ h3 {
     transform: translateX(-3px); }
   .sideNavigation--backToPS a:hover .sideNavigation--PSIcon {
     transform: translateX(3px); }
+
+.sideNavigation--link {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  transform: rotate3d(0, 0, 1, -90deg);
+  font-family: aktiv-grotesk-extended, sans-serif;
+  font-weight: bold;
+  width: 230px;
+  height: 90px;
+  transform-origin: 0 0;
+  line-height: 90px;
+  font-size: 0.9rem;
+  text-align: center;
+  color: white; }
+
+.sideNavigation--link__design {
+  bottom: 230px; }
 
 .sideNavigation--backArrow {
   display: inline-block;
@@ -1906,7 +1926,14 @@ html.featureZone .sideNavigation {
 html.featureZone .sideNavigation--backToPS {
   transform: translate3d(0, 0, 0); }
 
-html.featureZone .introSection--openingStatement, html.featureZone .introSection--linkWrap, html.featureZone .introSection--logo {
+html.featureZone .sideNavigation--link__features {
+  background: #F2C4CF;
+  color: #2E24E8; }
+
+html.featureZone .introSection--openingStatement, html.featureZone .introSection--logo {
+  opacity: 0; }
+
+html.featureZone .introSection--linkWrap {
   opacity: 0; }
 
 html.featureZone .backgroundWrap--xMask .cross {
@@ -2026,6 +2053,138 @@ html.featureZone .featuresContent {
     animation-delay: 16.7s; }
 
 html.featureZone .grainWrap--grain {
+  opacity: 0.5; }
+
+html.designZone body {
+  background: #2E24E8; }
+
+html.designZone .sideNavigation {
+  transform: translate3d(0, 0, 0); }
+
+html.designZone .sideNavigation--backToPS {
+  transform: translate3d(0, 0, 0); }
+
+html.designZone .sideNavigation--link__design {
+  background: #2E24E8;
+  color: #F2C4CF; }
+
+html.designZone .introSection--openingStatement, html.designZone .introSection--linkWrap, html.designZone .introSection--logo {
+  opacity: 0; }
+
+html.designZone .backgroundWrap--xMask .cross {
+  opacity: 0.8;
+  fill: #2E24E8; }
+
+html.designZone .backgroundWrap--xMask .crossCutOut {
+  fill: #2E24E8; }
+  html.designZone .backgroundWrap--xMask .crossCutOut.dotsPattern {
+    fill: url(#dotsPattern); }
+
+html.designZone .siteWrap {
+  height: auto; }
+
+html.designZone .designContent {
+  display: block; }
+  html.designZone .designContent .segment:nth-child(1) {
+    animation-delay: 2.3s; }
+  html.designZone .designContent .segment:nth-child(2) {
+    animation-delay: 2.6s; }
+  html.designZone .designContent .segment:nth-child(3) {
+    animation-delay: 2.9s; }
+  html.designZone .designContent .segment:nth-child(4) {
+    animation-delay: 3.2s; }
+  html.designZone .designContent .segment:nth-child(5) {
+    animation-delay: 3.5s; }
+  html.designZone .designContent .segment:nth-child(6) {
+    animation-delay: 3.8s; }
+  html.designZone .designContent .segment:nth-child(7) {
+    animation-delay: 4.1s; }
+  html.designZone .designContent .segment:nth-child(8) {
+    animation-delay: 4.4s; }
+  html.designZone .designContent .segment:nth-child(9) {
+    animation-delay: 4.7s; }
+  html.designZone .designContent .segment:nth-child(10) {
+    animation-delay: 5s; }
+  html.designZone .designContent .segment:nth-child(11) {
+    animation-delay: 5.3s; }
+  html.designZone .designContent .segment:nth-child(12) {
+    animation-delay: 5.6s; }
+  html.designZone .designContent .segment:nth-child(13) {
+    animation-delay: 5.9s; }
+  html.designZone .designContent .segment:nth-child(14) {
+    animation-delay: 6.2s; }
+  html.designZone .designContent .segment:nth-child(15) {
+    animation-delay: 6.5s; }
+  html.designZone .designContent .segment:nth-child(16) {
+    animation-delay: 6.8s; }
+  html.designZone .designContent .segment:nth-child(17) {
+    animation-delay: 7.1s; }
+  html.designZone .designContent .segment:nth-child(18) {
+    animation-delay: 7.4s; }
+  html.designZone .designContent .segment:nth-child(19) {
+    animation-delay: 7.7s; }
+  html.designZone .designContent .segment:nth-child(20) {
+    animation-delay: 8s; }
+  html.designZone .designContent .segment:nth-child(21) {
+    animation-delay: 8.3s; }
+  html.designZone .designContent .segment:nth-child(22) {
+    animation-delay: 8.6s; }
+  html.designZone .designContent .segment:nth-child(23) {
+    animation-delay: 8.9s; }
+  html.designZone .designContent .segment:nth-child(24) {
+    animation-delay: 9.2s; }
+  html.designZone .designContent .segment:nth-child(25) {
+    animation-delay: 9.5s; }
+  html.designZone .designContent .segment:nth-child(26) {
+    animation-delay: 9.8s; }
+  html.designZone .designContent .segment:nth-child(27) {
+    animation-delay: 10.1s; }
+  html.designZone .designContent .segment:nth-child(28) {
+    animation-delay: 10.4s; }
+  html.designZone .designContent .segment:nth-child(29) {
+    animation-delay: 10.7s; }
+  html.designZone .designContent .segment:nth-child(30) {
+    animation-delay: 11s; }
+  html.designZone .designContent .segment:nth-child(31) {
+    animation-delay: 11.3s; }
+  html.designZone .designContent .segment:nth-child(32) {
+    animation-delay: 11.6s; }
+  html.designZone .designContent .segment:nth-child(33) {
+    animation-delay: 11.9s; }
+  html.designZone .designContent .segment:nth-child(34) {
+    animation-delay: 12.2s; }
+  html.designZone .designContent .segment:nth-child(35) {
+    animation-delay: 12.5s; }
+  html.designZone .designContent .segment:nth-child(36) {
+    animation-delay: 12.8s; }
+  html.designZone .designContent .segment:nth-child(37) {
+    animation-delay: 13.1s; }
+  html.designZone .designContent .segment:nth-child(38) {
+    animation-delay: 13.4s; }
+  html.designZone .designContent .segment:nth-child(39) {
+    animation-delay: 13.7s; }
+  html.designZone .designContent .segment:nth-child(40) {
+    animation-delay: 14s; }
+  html.designZone .designContent .segment:nth-child(41) {
+    animation-delay: 14.3s; }
+  html.designZone .designContent .segment:nth-child(42) {
+    animation-delay: 14.6s; }
+  html.designZone .designContent .segment:nth-child(43) {
+    animation-delay: 14.9s; }
+  html.designZone .designContent .segment:nth-child(44) {
+    animation-delay: 15.2s; }
+  html.designZone .designContent .segment:nth-child(45) {
+    animation-delay: 15.5s; }
+  html.designZone .designContent .segment:nth-child(46) {
+    animation-delay: 15.8s; }
+  html.designZone .designContent .segment:nth-child(47) {
+    animation-delay: 16.1s; }
+  html.designZone .designContent .segment:nth-child(48) {
+    animation-delay: 16.4s; }
+  html.designZone .designContent .segment:nth-child(49) {
+    animation-delay: 16.7s; }
+
+html.designZone .grainWrap--grain {
   opacity: 0.5; }
 
 @keyframes fadeIn {
@@ -2694,103 +2853,103 @@ input {
   .weirdOnHover .word span {
     display: block; }
   .weirdOnHover .word:nth-child(1) span {
-    animation-duration: 0.48s; }
+    animation-duration: 0.72s; }
   .weirdOnHover .word:nth-child(2) span {
-    animation-duration: 0.3s; }
+    animation-duration: 0.57s; }
   .weirdOnHover .word:nth-child(3) span {
-    animation-duration: 0.87s; }
+    animation-duration: 0.72s; }
   .weirdOnHover .word:nth-child(4) span {
-    animation-duration: 0.03s; }
-  .weirdOnHover .word:nth-child(5) span {
-    animation-duration: 0.39s; }
-  .weirdOnHover .word:nth-child(6) span {
-    animation-duration: 0.75s; }
-  .weirdOnHover .word:nth-child(7) span {
-    animation-duration: 0.21s; }
-  .weirdOnHover .word:nth-child(8) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(9) span {
-    animation-duration: 0.48s; }
-  .weirdOnHover .word:nth-child(10) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(11) span {
-    animation-duration: 0.15s; }
-  .weirdOnHover .word:nth-child(12) span {
-    animation-duration: 0.06s; }
-  .weirdOnHover .word:nth-child(13) span {
-    animation-duration: 0.36s; }
-  .weirdOnHover .word:nth-child(14) span {
-    animation-duration: 0.84s; }
-  .weirdOnHover .word:nth-child(15) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(16) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(17) span {
-    animation-duration: 0.18s; }
-  .weirdOnHover .word:nth-child(18) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(19) span {
-    animation-duration: 0.51s; }
-  .weirdOnHover .word:nth-child(20) span {
-    animation-duration: 0.06s; }
-  .weirdOnHover .word:nth-child(21) span {
-    animation-duration: 0.66s; }
-  .weirdOnHover .word:nth-child(22) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(23) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(24) span {
-    animation-duration: 0.36s; }
-  .weirdOnHover .word:nth-child(25) span {
-    animation-duration: 0.51s; }
-  .weirdOnHover .word:nth-child(26) span {
     animation-duration: 0.6s; }
-  .weirdOnHover .word:nth-child(27) span {
-    animation-duration: 0.3s; }
-  .weirdOnHover .word:nth-child(28) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(29) span {
-    animation-duration: 0.51s; }
-  .weirdOnHover .word:nth-child(30) span {
-    animation-duration: 0.39s; }
-  .weirdOnHover .word:nth-child(31) span {
-    animation-duration: 0.3s; }
-  .weirdOnHover .word:nth-child(32) span {
-    animation-duration: 0.21s; }
-  .weirdOnHover .word:nth-child(33) span {
-    animation-duration: 0.75s; }
-  .weirdOnHover .word:nth-child(34) span {
-    animation-duration: 0.78s; }
-  .weirdOnHover .word:nth-child(35) span {
+  .weirdOnHover .word:nth-child(5) span {
     animation-duration: 0.06s; }
-  .weirdOnHover .word:nth-child(36) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(37) span {
-    animation-duration: 0.69s; }
-  .weirdOnHover .word:nth-child(38) span {
+  .weirdOnHover .word:nth-child(6) span {
+    animation-duration: 0.63s; }
+  .weirdOnHover .word:nth-child(7) span {
+    animation-duration: 0.48s; }
+  .weirdOnHover .word:nth-child(8) span {
     animation-duration: 0.15s; }
+  .weirdOnHover .word:nth-child(9) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(10) span {
+    animation-duration: 0.75s; }
+  .weirdOnHover .word:nth-child(11) span {
+    animation-duration: 0.69s; }
+  .weirdOnHover .word:nth-child(12) span {
+    animation-duration: 0.21s; }
+  .weirdOnHover .word:nth-child(13) span {
+    animation-duration: 0.57s; }
+  .weirdOnHover .word:nth-child(14) span {
+    animation-duration: 0.39s; }
+  .weirdOnHover .word:nth-child(15) span {
+    animation-duration: 0.72s; }
+  .weirdOnHover .word:nth-child(16) span {
+    animation-duration: 0.3s; }
+  .weirdOnHover .word:nth-child(17) span {
+    animation-duration: 0.33s; }
+  .weirdOnHover .word:nth-child(18) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(19) span {
+    animation-duration: 0.9s; }
+  .weirdOnHover .word:nth-child(20) span {
+    animation-duration: 0.24s; }
+  .weirdOnHover .word:nth-child(21) span {
+    animation-duration: 0.24s; }
+  .weirdOnHover .word:nth-child(22) span {
+    animation-duration: 0.63s; }
+  .weirdOnHover .word:nth-child(23) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(24) span {
+    animation-duration: 0.72s; }
+  .weirdOnHover .word:nth-child(25) span {
+    animation-duration: 0.69s; }
+  .weirdOnHover .word:nth-child(26) span {
+    animation-duration: 0.39s; }
+  .weirdOnHover .word:nth-child(27) span {
+    animation-duration: 0.48s; }
+  .weirdOnHover .word:nth-child(28) span {
+    animation-duration: 0.48s; }
+  .weirdOnHover .word:nth-child(29) span {
+    animation-duration: 0.3s; }
+  .weirdOnHover .word:nth-child(30) span {
+    animation-duration: 0.45s; }
+  .weirdOnHover .word:nth-child(31) span {
+    animation-duration: 0.54s; }
+  .weirdOnHover .word:nth-child(32) span {
+    animation-duration: 0.36s; }
+  .weirdOnHover .word:nth-child(33) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(34) span {
+    animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(35) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(36) span {
+    animation-duration: 0.81s; }
+  .weirdOnHover .word:nth-child(37) span {
+    animation-duration: 0.75s; }
+  .weirdOnHover .word:nth-child(38) span {
+    animation-duration: 0.72s; }
   .weirdOnHover .word:nth-child(39) span {
-    animation-duration: 0.66s; }
+    animation-duration: 0.12s; }
   .weirdOnHover .word:nth-child(40) span {
     animation-duration: 0.21s; }
   .weirdOnHover .word:nth-child(41) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(42) span {
-    animation-duration: 0.12s; }
-  .weirdOnHover .word:nth-child(43) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(44) span {
-    animation-duration: 0.66s; }
-  .weirdOnHover .word:nth-child(45) span {
-    animation-duration: 0.24s; }
-  .weirdOnHover .word:nth-child(46) span {
-    animation-duration: 0.21s; }
-  .weirdOnHover .word:nth-child(47) span {
-    animation-duration: 0.51s; }
-  .weirdOnHover .word:nth-child(48) span {
-    animation-duration: 0.21s; }
-  .weirdOnHover .word:nth-child(49) span {
     animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(42) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(43) span {
+    animation-duration: 0.51s; }
+  .weirdOnHover .word:nth-child(44) span {
+    animation-duration: 0.75s; }
+  .weirdOnHover .word:nth-child(45) span {
+    animation-duration: 0.36s; }
+  .weirdOnHover .word:nth-child(46) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(47) span {
+    animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(48) span {
+    animation-duration: 0.27s; }
+  .weirdOnHover .word:nth-child(49) span {
+    animation-duration: 0.24s; }
 
 @keyframes slurpAround {
   from {

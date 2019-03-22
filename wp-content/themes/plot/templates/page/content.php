@@ -83,9 +83,19 @@
 
     <div class="sideNavigation">
 
+        <a href="#" class="sideNavigation--link sideNavigation--link__features" data-link="featureZone">
+            PLOT FEATURES
+
+        </a>
+
+         <a href="#" class="sideNavigation--link sideNavigation--link__design" data-link="designZone">
+            PLOT DESIGN
+
+        </a>
+
         <div class="sideNavigation--backToPS">
 
-            <a href="https://projectsimply.com" target="_blank">
+            <a href="https://projectsimply.com" data-link="">
                 <svg class="sideNavigation--backArrow" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M6.49231 1.28882L1.49231 6.28882L6.49231 11.2888" stroke="white"/>
                 </svg>

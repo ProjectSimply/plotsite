@@ -50,15 +50,17 @@
                 }
 
 
-                $('.introSection--link').click(function(e){
+                $('.introSection--link,.sideNavigation--link, .sideNavigation--backToPS a').click(function(e){
 
                     e.preventDefault();
+
+                    $('html').removeClass('designZone featureZone contactZone');
 
                     var link = $(this).attr('data-link');
                     var video = document.getElementById("backgroundVideo"); 
 
 
-                    $('html').toggleClass(link);
+                    $('html').addClass(link);
 
                 });
 
