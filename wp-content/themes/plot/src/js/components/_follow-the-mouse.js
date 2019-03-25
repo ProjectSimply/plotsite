@@ -79,8 +79,8 @@
 
           }
 
-          FollowTheMouse.myX = Number.toFixed(FollowTheMouse.startingX - event.beta/1.8,3);
-          FollowTheMouse.myY = Number.toFixed(FollowTheMouse.startingX - event.gamma/0.9,3);
+          FollowTheMouse.myX = FollowTheMouse.startingX - event.beta/1.8;
+          FollowTheMouse.myY = FollowTheMouse.startingX - event.gamma/0.9;
 
           requestAnimationFrame(FollowTheMouse.update);
 
@@ -110,8 +110,9 @@
                 var twistFactor = $(this).attr('data-twist-factor');
                 $(this).css('transform','rotate3d(' + FollowTheMouse.myY + ', ' + FollowTheMouse.myX + ',0,'+twistFactor+'deg) translate3d(' + FollowTheMouse.myY*10*twistFactor + 'px, ' + FollowTheMouse.myX*10*twistFactor + 'px,' + twistFactor +'px)');
 
-                $('.debug').html('x: '+FollowTheMouse.myX+', y:'+FollowTheMouse.myY+'</div>');
+               
             });
+             $('.debug').html('x: '+FollowTheMouse.myX+', y:'+FollowTheMouse.myY+'</div>');
         },
 
         mouseMoving : function(e) {
