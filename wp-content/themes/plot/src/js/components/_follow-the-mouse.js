@@ -105,7 +105,7 @@
 
         update : function() {
 
-            $('.mouseFollow.inView').each(function(){
+            $('.mouseFollow').each(function(){
                 
                 var twistFactor = $(this).attr('data-twist-factor');
                 $(this).css('transform','rotate3d(' + FollowTheMouse.myY + ', ' + FollowTheMouse.myX + ',0,'+twistFactor+'deg) translate3d(' + FollowTheMouse.myY*10*twistFactor + 'px, ' + FollowTheMouse.myX*10*twistFactor + 'px,' + twistFactor +'px)');
