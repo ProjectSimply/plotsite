@@ -50,17 +50,24 @@
                 }
 
 
-                $('.introSection--link,.sideNavigation--link, .sideNavigation--backToPS a').click(function(e){
+                $('.introSection--link,.sideNavigation--link, .sideNavigation--mainLogo a, .sideNavigation--home').click(function(e){
 
                     e.preventDefault();
 
-                    $('html').removeClass('designZone featureZone contactZone');
+                    $('html').removeClass('designZone featureZone contactZone mobileMenuInView');
 
                     var link = $(this).attr('data-link');
                     var video = document.getElementById("backgroundVideo"); 
 
 
                     $('html').addClass(link);
+
+                });
+
+                $('.sideNavigation--mobileSwitcher').click(function(e){
+
+                    e.preventDefault();
+                    $('html').toggleClass('mobileMenuInView');
 
                 });
 

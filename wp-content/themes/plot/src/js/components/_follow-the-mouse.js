@@ -13,7 +13,11 @@
         oldDiffY : 0,
         centreOfWindowX : $(window).width()/2,
         centreOfWindowY : $(window).height()/2,
+        startingX : false,
+        startingY : false,
+        startingZ : false,
         init: function() {  
+
 
             
             $('.mouseFollow').each(function(){
@@ -38,6 +42,12 @@
             });
 
 
+            if (window.DeviceOrientationEvent) {
+                console.log('dfg');
+            }
+            window.addEventListener('deviceorientation', FollowTheMouse.handleOrientation);
+
+
             $(window).resize(function () {
 
                 FollowTheMouse.centreOfWindowX = $(window).width()/2;
@@ -52,6 +62,25 @@
             }); 
 
             FollowTheMouse.flagUpInViewElements($(window).scrollTop());            
+
+        },
+
+
+
+        handleOrientation : function(event) {
+          var x = event.beta;  // In degree in the range [-180,180], x, 'front to back'
+          var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
+          
+          if(FollowTheMouse.startingX === false) {
+            FollowTheMouse.startingX = event.beta/180;
+            FollowTheMouse.startingY = event.gamma/90;
+
+          }
+
+          FollowTheMouse.diffX = event.beta/180;
+          FollowTheMouse.diffY = event.gamma/90;
+
+          requestAnimationFrame(FollowTheMouse.update);
 
         },
 

@@ -83,6 +83,16 @@
 
     <div class="sideNavigation">
 
+        <a href="#" class="sideNavigation--home">
+
+            <svg viewBox="0 0 14 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M3.55029 5.97466H6.3938L6.63739 6.90874H6.71892C7.47081 6.21825 8.46528 5.73108 9.4809 5.73108C11.8775 5.73108 13.4215 7.7623 13.4215 10.8907C13.4215 14.3844 11.3501 16.3744 9.19705 16.3744C8.34349 16.3744 7.57247 16.009 6.92224 15.3587L7.04403 16.9028V19.706H3.55029V5.97466ZM9.84728 10.9299C9.84728 9.26408 9.36011 8.57358 8.42502 8.57358C7.89658 8.57358 7.49094 8.7769 7.04403 9.30434V13.0417C7.45068 13.407 7.89759 13.5288 8.34349 13.5288C9.15679 13.5298 9.84728 12.8806 9.84728 10.9299Z" fill="white"/>
+                <path d="M2.96254 1.45321L2.36163 0.852295L1.66811 1.54581L0.973592 0.852295L0.372681 1.45321L1.06619 2.14773L0.372681 2.84124L0.973592 3.44215L1.66811 2.74864L2.36163 3.44215L2.96254 2.84124L2.26902 2.14773L2.96254 1.45321Z" fill="white"/>
+            </svg>
+
+
+        </a>
+
         <a href="#" class="sideNavigation--link sideNavigation--link__features" data-link="featureZone">
             PLOT FEATURES
 
@@ -107,7 +117,16 @@
 
             </a>
 
+        </div>
 
+        <div class="sideNavigation--openMobile">
+            <a href="#" class="sideNavigation--mobileSwitcher">
+                <svg viewBox="0 0 22 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <line x1="0.624756" y1="1" x2="21.148" y2="1" stroke="white"/>
+                    <line x1="0.624756" y1="7.57153" x2="21.148" y2="7.57153" stroke="white"/>
+                    <line x1="0.624756" y1="14.1431" x2="21.148" y2="14.1431" stroke="white"/>
+                </svg>
+            </a>
         </div>
 
     </div>
@@ -139,13 +158,13 @@
 
                     <div class="feature--explanation">
 
-                        <svg class="artyVibes mouseFollow"  data-twist-factor="3" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <svg class="artyVibes mouseFollow"  data-twist-factor="1.2" viewBox="0 0 31 144" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <rect x="11.9258" y="0.5" width="8" height="89" stroke="#2E24E8"/>
                             <path d="M22.0361 129.36L29.7185 137.039L23.4619 143.293L15.7793 135.614L15.4258 135.26L15.0723 135.614L7.38962 143.293L1.13303 137.039L8.81542 129.36L9.16919 129.006L8.81542 128.653L1.13272 120.973L7.38993 114.707L15.0723 122.386L15.4258 122.74L15.7793 122.386L23.4616 114.707L29.7188 120.973L22.0361 128.653L21.6824 129.006L22.0361 129.36Z" stroke="#2E24E8"/>
                         </svg>
 
 
-                        <h5 class="mouseFollow" data-twist-factor="1.4">How we helped</h5>
+                        <h5 class="mouseFollow" data-twist-factor="1.2">How we helped</h5>
 
                         <p class="mouseFollow" data-twist-factor="1.2">We provide our clients the ability and flexibility to launch every aspect of their website, when they want. This control saves valuable admin time, up to 50% with some clients.</p>
 

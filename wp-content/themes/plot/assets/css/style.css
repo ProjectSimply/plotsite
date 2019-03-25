@@ -1502,7 +1502,7 @@ body {
   font-family: freight-text-pro, serif;
   font-size: 1rem;
   min-height: 100vh;
-  background: #262A5D;
+  background: #2E24E8;
   line-height: 1.1; }
   @media screen and (min-width: 40em) {
     body {
@@ -1592,7 +1592,7 @@ h3 {
     fill: #2E24E8;
     transition: all .8s ease-out; }
   .backgroundWrap--xMask .crossCutOut {
-    fill: #262A5D;
+    fill: #2E24E8;
     transition: all .9s ease-out; }
     .backgroundWrap--xMask .crossCutOut.dotsPattern {
       fill: url(#dotsPattern); }
@@ -1606,23 +1606,34 @@ h3 {
   line-height: 1;
   position: absolute;
   left: 0;
-  top: 0;
-  padding-left: 140px; }
+  top: 0; }
+  @media screen and (min-width: 64em) {
+    .introSection {
+      padding-left: 140px; } }
   @media screen and (min-width: 64em) {
     .introSection {
       padding-left: 0; } }
 
 .introSection--logo {
-  margin-top: 4rem;
-  max-width: 140px;
+  margin: 1rem auto 0;
+  display: block;
+  max-width: 110px;
   transition: opacity 0.9s ease-out; }
+  @media screen and (min-width: 40em) {
+    .introSection--logo {
+      margin: 4rem 0 0 0;
+      max-width: 140px; } }
 
 .introSection--linkWrap {
   font-family: aktiv-grotesk-extended, sans-serif;
-  display: inline-block;
-  width: 20%;
-  margin-right: 5%;
+  max-width: 300px;
+  margin-bottom: 3rem;
   transition: all 1.5s ease-out 0.4s; }
+  @media screen and (min-width: 64em) {
+    .introSection--linkWrap {
+      width: 20%;
+      display: inline-block;
+      margin-right: 5%; } }
 
 .introSection--linkWrap__design {
   top: 50%;
@@ -1631,11 +1642,18 @@ h3 {
 
 .introSection--openingStatement {
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 2rem;
+  margin: 3rem 0;
   color: white;
   font-family: aktiv-grotesk-extended, sans-serif;
-  margin: 6rem 0;
   transition: opacity 0.9s ease-out; }
+  @media screen and (min-width: 40em) {
+    .introSection--openingStatement {
+      font-size: 3rem; } }
+  @media screen and (min-width: 64em) {
+    .introSection--openingStatement {
+      font-size: 5rem;
+      margin: 6rem 0; } }
 
 .introSection--link {
   color: white; }
@@ -1659,10 +1677,13 @@ h3 {
 .introSection--linkHeading {
   margin: 0.8rem 0 1rem;
   text-decoration: underline;
-  font-size: 2rem;
+  font-size: 1.4rem;
   transform: rotate3d(0, 0, 0, 360deg);
   transition: letter-spacing 1s ease-out;
   display: block; }
+  @media screen and (min-width: 40em) {
+    .introSection--linkHeading {
+      font-size: 2rem; } }
   .introSection--linkHeading svg {
     margin-left: 1rem;
     transform: translate3d(0, 0, 0);
@@ -1672,7 +1693,11 @@ h3 {
 
 .introSection--linkExplainers {
   font-family: freight-text-pro, serif;
-  font-size: 1rem; }
+  font-size: 1rem;
+  display: none; }
+  @media screen and (min-width: 40em) {
+    .introSection--linkExplainers {
+      display: block; } }
 
 .grainWrap {
   position: fixed;
@@ -1680,7 +1705,7 @@ h3 {
   top: calc((100vh - 100vw) / 2);
   left: 0;
   pointer-events: none;
-  display: none; }
+  z-index: 5; }
 
 .grainWrap--grain {
   background: url("../img/texture.png");
@@ -1693,7 +1718,7 @@ h3 {
   -webkit-text-stroke: 2px white; }
 
 .sideNavigation {
-  width: 90px;
+  width: 50px;
   position: fixed;
   z-index: 3;
   left: 0;
@@ -1701,19 +1726,64 @@ h3 {
   background: #2E2D2C;
   height: 100vh;
   transform: translate3d(-100%, 0, 0);
-  transition: transform 0.4s ease-out 0.4s; }
+  transition: transform 0.4s ease-out 0.4s;
+  border-right: 1px solid #666; }
+  @media screen and (min-width: 64em) {
+    .sideNavigation {
+      width: 90px; } }
+  .mobileMenuInView .sideNavigation {
+    transform: translate3d(0, 0, 0); }
+
+.sideNavigation--home {
+  width: 50px;
+  position: absolute;
+  top: 0;
+  left: 0; }
+  @media screen and (min-width: 64em) {
+    .sideNavigation--home {
+      width: 90px; } }
+  .sideNavigation--home svg {
+    max-width: 26px;
+    display: block;
+    margin: 1rem auto; }
+
+.sideNavigation--openMobile {
+  height: 50px;
+  line-height: 50px;
+  fill: white;
+  width: 100%;
+  position: absolute;
+  bottom: 0;
+  transform: translate3d(100%, 0, 0);
+  transition: transform 0.4s ease-out;
+  background: #2E2D2C; }
+  .mobileMenuInView .sideNavigation--openMobile {
+    transform: translate3d(0, 0, 0); }
+  @media screen and (min-width: 64em) {
+    .sideNavigation--openMobile {
+      display: none; } }
+  .sideNavigation--openMobile svg {
+    width: 24px;
+    display: block;
+    margin: 16px auto; }
 
 .sideNavigation--backToPS {
   fill: white;
   width: 100%;
   position: absolute;
-  bottom: 0;
+  bottom: 51px;
+  border-bottom: 1px solid #666;
   text-align: center;
-  transform: translate3d(100%, 0, 0);
-  transition: transform 0.4s ease-out;
-  background: #2E2D2C;
-  height: 90px;
-  line-height: 90px; }
+  height: 50px;
+  line-height: 50px;
+  background: #2E2D2C; }
+  @media screen and (min-width: 64em) {
+    .sideNavigation--backToPS {
+      bottom: 0;
+      transform: translate3d(100%, 0, 0);
+      transition: transform 0.4s ease-out;
+      height: 90px;
+      line-height: 90px; } }
   .sideNavigation--backToPS a:hover .sideNavigation--backArrow {
     transform: translateX(-3px); }
   .sideNavigation--backToPS a:hover .sideNavigation--PSIcon {
@@ -1722,20 +1792,31 @@ h3 {
 .sideNavigation--link {
   display: block;
   position: absolute;
-  bottom: 0;
+  bottom: 50px;
   transform: rotate3d(0, 0, 1, -90deg);
   font-family: aktiv-grotesk-extended, sans-serif;
   font-weight: bold;
-  width: 230px;
-  height: 90px;
+  width: 200px;
+  font-size: 0.9rem;
+  height: 50px;
   transform-origin: 0 0;
-  line-height: 90px;
+  line-height: 50px;
   font-size: 0.9rem;
   text-align: center;
   color: white; }
+  @media screen and (min-width: 64em) {
+    .sideNavigation--link {
+      height: 90px;
+      line-height: 90px;
+      width: 230px;
+      bottom: 0;
+      font-size: 1rem; } }
 
 .sideNavigation--link__design {
   bottom: 230px; }
+  @media screen and (min-width: 64em) {
+    .sideNavigation--link__design {
+      bottom: 280px; } }
 
 .sideNavigation--backArrow {
   display: inline-block;
@@ -1757,7 +1838,10 @@ h3 {
   right: 1rem;
   z-index: 3000;
   fill: white;
-  width: 100px; }
+  width: 90px; }
+  @media screen and (min-width: 40em) {
+    .getInTouch {
+      width: 100px; } }
   .getInTouch .text {
     transform-origin: 50%;
     animation: spin 10s infinite linear; }
@@ -1799,9 +1883,11 @@ h3 {
   margin: 8rem 0; }
 
 blockquote {
-  font-size: 1.8rem;
-  margin-bottom: 3rem;
   font-weight: 300; }
+  @media screen and (min-width: 40em) {
+    blockquote {
+      font-size: 1.8rem;
+      margin-bottom: 3rem; } }
 
 cite {
   font-family: aktiv-grotesk-extended, sans-serif;
@@ -1813,17 +1899,22 @@ cite {
   position: relative;
   display: none;
   animation: riseUp 2s ease-out;
-  padding-left: 90px;
   color: #262A5D; }
+  @media screen and (min-width: 40em) {
+    .featuresContent {
+      padding-left: 90px; } }
   .featuresContent h2 {
     font-weight: bold;
-    font-size: 4rem;
+    font-size: 2rem;
     color: #2E24E8;
     text-align: center;
     font-family: aktiv-grotesk-extended, sans-serif;
     margin: 6rem 0;
     transition: transform 1.6s ease-out;
     line-height: 1.2; }
+    @media screen and (min-width: 40em) {
+      .featuresContent h2 {
+        font-size: 4rem; } }
     .featuresContent h2 .revealWordByWordParts > span {
       margin-top: -20px; }
     .featuresContent h2 .outline {
@@ -1860,9 +1951,11 @@ cite {
     max-width: 1200px; }
   .featuresContent .segment {
     animation: riseUp 1.5s ease-out forwards;
-    opacity: 0;
-    margin-bottom: 6rem;
-    padding: 0 6rem; }
+    opacity: 0; }
+    @media screen and (min-width: 40em) {
+      .featuresContent .segment {
+        margin-bottom: 6rem;
+        padding: 0 6rem; } }
     .featuresContent .segment.squashed {
       padding: 0 13rem; }
       .featuresContent .segment.squashed blockquote {
@@ -2853,103 +2946,103 @@ input {
   .weirdOnHover .word span {
     display: block; }
   .weirdOnHover .word:nth-child(1) span {
-    animation-duration: 0.72s; }
-  .weirdOnHover .word:nth-child(2) span {
-    animation-duration: 0.57s; }
-  .weirdOnHover .word:nth-child(3) span {
-    animation-duration: 0.72s; }
-  .weirdOnHover .word:nth-child(4) span {
-    animation-duration: 0.6s; }
-  .weirdOnHover .word:nth-child(5) span {
     animation-duration: 0.06s; }
-  .weirdOnHover .word:nth-child(6) span {
-    animation-duration: 0.63s; }
-  .weirdOnHover .word:nth-child(7) span {
-    animation-duration: 0.48s; }
-  .weirdOnHover .word:nth-child(8) span {
-    animation-duration: 0.15s; }
-  .weirdOnHover .word:nth-child(9) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(10) span {
-    animation-duration: 0.75s; }
-  .weirdOnHover .word:nth-child(11) span {
-    animation-duration: 0.69s; }
-  .weirdOnHover .word:nth-child(12) span {
-    animation-duration: 0.21s; }
-  .weirdOnHover .word:nth-child(13) span {
-    animation-duration: 0.57s; }
-  .weirdOnHover .word:nth-child(14) span {
-    animation-duration: 0.39s; }
-  .weirdOnHover .word:nth-child(15) span {
-    animation-duration: 0.72s; }
-  .weirdOnHover .word:nth-child(16) span {
-    animation-duration: 0.3s; }
-  .weirdOnHover .word:nth-child(17) span {
-    animation-duration: 0.33s; }
-  .weirdOnHover .word:nth-child(18) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(19) span {
-    animation-duration: 0.9s; }
-  .weirdOnHover .word:nth-child(20) span {
-    animation-duration: 0.24s; }
-  .weirdOnHover .word:nth-child(21) span {
-    animation-duration: 0.24s; }
-  .weirdOnHover .word:nth-child(22) span {
-    animation-duration: 0.63s; }
-  .weirdOnHover .word:nth-child(23) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(24) span {
-    animation-duration: 0.72s; }
-  .weirdOnHover .word:nth-child(25) span {
-    animation-duration: 0.69s; }
-  .weirdOnHover .word:nth-child(26) span {
-    animation-duration: 0.39s; }
-  .weirdOnHover .word:nth-child(27) span {
-    animation-duration: 0.48s; }
-  .weirdOnHover .word:nth-child(28) span {
-    animation-duration: 0.48s; }
-  .weirdOnHover .word:nth-child(29) span {
-    animation-duration: 0.3s; }
-  .weirdOnHover .word:nth-child(30) span {
-    animation-duration: 0.45s; }
-  .weirdOnHover .word:nth-child(31) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(32) span {
+  .weirdOnHover .word:nth-child(2) span {
+    animation-duration: 0.81s; }
+  .weirdOnHover .word:nth-child(3) span {
+    animation-duration: 0.12s; }
+  .weirdOnHover .word:nth-child(4) span {
     animation-duration: 0.36s; }
-  .weirdOnHover .word:nth-child(33) span {
+  .weirdOnHover .word:nth-child(5) span {
+    animation-duration: 0.27s; }
+  .weirdOnHover .word:nth-child(6) span {
     animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(34) span {
+  .weirdOnHover .word:nth-child(7) span {
+    animation-duration: 0.78s; }
+  .weirdOnHover .word:nth-child(8) span {
+    animation-duration: 0.33s; }
+  .weirdOnHover .word:nth-child(9) span {
+    animation-duration: 0.42s; }
+  .weirdOnHover .word:nth-child(10) span {
+    animation-duration: 0.33s; }
+  .weirdOnHover .word:nth-child(11) span {
+    animation-duration: 0.6s; }
+  .weirdOnHover .word:nth-child(12) span {
+    animation-duration: 0.9s; }
+  .weirdOnHover .word:nth-child(13) span {
+    animation-duration: 0.87s; }
+  .weirdOnHover .word:nth-child(14) span {
+    animation-duration: 0.27s; }
+  .weirdOnHover .word:nth-child(15) span {
+    animation-duration: 0.78s; }
+  .weirdOnHover .word:nth-child(16) span {
+    animation-duration: 0.33s; }
+  .weirdOnHover .word:nth-child(17) span {
+    animation-duration: 0.42s; }
+  .weirdOnHover .word:nth-child(18) span {
+    animation-duration: 0.24s; }
+  .weirdOnHover .word:nth-child(19) span {
+    animation-duration: 0.42s; }
+  .weirdOnHover .word:nth-child(20) span {
     animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(21) span {
+    animation-duration: 0.54s; }
+  .weirdOnHover .word:nth-child(22) span {
+    animation-duration: 0.48s; }
+  .weirdOnHover .word:nth-child(23) span {
+    animation-duration: 0.27s; }
+  .weirdOnHover .word:nth-child(24) span {
+    animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(25) span {
+    animation-duration: 0.06s; }
+  .weirdOnHover .word:nth-child(26) span {
+    animation-duration: 0.33s; }
+  .weirdOnHover .word:nth-child(27) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(28) span {
+    animation-duration: 0.12s; }
+  .weirdOnHover .word:nth-child(29) span {
+    animation-duration: 0.15s; }
+  .weirdOnHover .word:nth-child(30) span {
+    animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(31) span {
+    animation-duration: 0.72s; }
+  .weirdOnHover .word:nth-child(32) span {
+    animation-duration: 0.39s; }
+  .weirdOnHover .word:nth-child(33) span {
+    animation-duration: 0.33s; }
+  .weirdOnHover .word:nth-child(34) span {
+    animation-duration: 0.39s; }
   .weirdOnHover .word:nth-child(35) span {
     animation-duration: 0.18s; }
   .weirdOnHover .word:nth-child(36) span {
-    animation-duration: 0.81s; }
+    animation-duration: 0.57s; }
   .weirdOnHover .word:nth-child(37) span {
-    animation-duration: 0.75s; }
+    animation-duration: 0.69s; }
   .weirdOnHover .word:nth-child(38) span {
-    animation-duration: 0.72s; }
+    animation-duration: 0.48s; }
   .weirdOnHover .word:nth-child(39) span {
-    animation-duration: 0.12s; }
+    animation-duration: 0.45s; }
   .weirdOnHover .word:nth-child(40) span {
-    animation-duration: 0.21s; }
+    animation-duration: 0.87s; }
   .weirdOnHover .word:nth-child(41) span {
-    animation-duration: 0.03s; }
+    animation-duration: 0.27s; }
   .weirdOnHover .word:nth-child(42) span {
     animation-duration: 0.09s; }
   .weirdOnHover .word:nth-child(43) span {
-    animation-duration: 0.51s; }
+    animation-duration: 0.15s; }
   .weirdOnHover .word:nth-child(44) span {
-    animation-duration: 0.75s; }
-  .weirdOnHover .word:nth-child(45) span {
-    animation-duration: 0.36s; }
-  .weirdOnHover .word:nth-child(46) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(47) span {
     animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(45) span {
+    animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(46) span {
+    animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(47) span {
+    animation-duration: 0.12s; }
   .weirdOnHover .word:nth-child(48) span {
     animation-duration: 0.27s; }
   .weirdOnHover .word:nth-child(49) span {
-    animation-duration: 0.24s; }
+    animation-duration: 0.06s; }
 
 @keyframes slurpAround {
   from {
