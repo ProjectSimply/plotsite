@@ -9,6 +9,8 @@
 
         diffX : 0,
         diffY : 0,
+        myX : 0,
+        myY : 0,
         oldDiffX : 0,
         oldDiffY : 0,
         centreOfWindowX : $(window).width()/2,
@@ -77,8 +79,8 @@
 
           }
 
-          FollowTheMouse.diffX = FollowTheMouse.startingX - event.beta/180;
-          FollowTheMouse.diffY = FollowTheMouse.startingX - event.gamma/90;
+          FollowTheMouse.myX = Number.toFixed(FollowTheMouse.startingX - event.beta/1.8,3);
+          FollowTheMouse.myY = Number.toFixed(FollowTheMouse.startingX - event.gamma/0.9,3);
 
           requestAnimationFrame(FollowTheMouse.update);
 
@@ -106,9 +108,9 @@
             $('.mouseFollow.inView').each(function(){
                 
                 var twistFactor = $(this).attr('data-twist-factor');
-                $(this).css('transform','rotate3d(' + FollowTheMouse.diffY/FollowTheMouse.centreOfWindowY + ', ' + FollowTheMouse.diffX/FollowTheMouse.centreOfWindowX + ',0,'+twistFactor+'deg) translate3d(' + FollowTheMouse.diffY/FollowTheMouse.centreOfWindowY*10*twistFactor + 'px, ' + FollowTheMouse.diffX/FollowTheMouse.centreOfWindowX*10*twistFactor + 'px,' + twistFactor +'px)');
+                $(this).css('transform','rotate3d(' + FollowTheMouse.myY + ', ' + FollowTheMouse.myX + ',0,'+twistFactor+'deg) translate3d(' + FollowTheMouse.myY*10*twistFactor + 'px, ' + FollowTheMouse.myX*10*twistFactor + 'px,' + twistFactor +'px)');
 
-
+                $('.debug').html('x: '+FollowTheMouse.myX+', y:'+FollowTheMouse.myY+'</div>');
             });
         },
 
@@ -122,6 +124,9 @@
 
                 FollowTheMouse.oldDiffX = FollowTheMouse.diffX;
                 FollowTheMouse.oldDiffY = FollowTheMouse.diffY;
+
+                FollowTheMouse.myY = FollowTheMouse.diffY/FollowTheMouse.centreOfWindowY;
+                FollowTheMouse.myX = FollowTheMouse.diffX/FollowTheMouse.centreOfWindowX;
 
                 requestAnimationFrame(FollowTheMouse.update);
 

@@ -425,6 +425,8 @@
 
 </div>
 
+<div class="debug" style=" font-family: mono; color: white; padding: 5px ;position:fixed; z-index:99;bottom:0;right:0; background: black; font-size:10px;"></div>
+
 <div class="grainWrap">
 
     <div class="grainWrap--grain">
