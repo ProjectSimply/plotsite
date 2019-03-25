@@ -1705,6 +1705,7 @@ h3 {
   top: calc((100vh - 100vw) / 2);
   left: 0;
   pointer-events: none;
+  display: none;
   z-index: 5; }
 
 .grainWrap--grain {
@@ -2946,103 +2947,103 @@ input {
   .weirdOnHover .word span {
     display: block; }
   .weirdOnHover .word:nth-child(1) span {
-    animation-duration: 0.06s; }
+    animation-duration: 0.21s; }
   .weirdOnHover .word:nth-child(2) span {
-    animation-duration: 0.81s; }
-  .weirdOnHover .word:nth-child(3) span {
-    animation-duration: 0.12s; }
-  .weirdOnHover .word:nth-child(4) span {
-    animation-duration: 0.36s; }
-  .weirdOnHover .word:nth-child(5) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(6) span {
-    animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(7) span {
-    animation-duration: 0.78s; }
-  .weirdOnHover .word:nth-child(8) span {
-    animation-duration: 0.33s; }
-  .weirdOnHover .word:nth-child(9) span {
-    animation-duration: 0.42s; }
-  .weirdOnHover .word:nth-child(10) span {
-    animation-duration: 0.33s; }
-  .weirdOnHover .word:nth-child(11) span {
-    animation-duration: 0.6s; }
-  .weirdOnHover .word:nth-child(12) span {
     animation-duration: 0.9s; }
-  .weirdOnHover .word:nth-child(13) span {
-    animation-duration: 0.87s; }
-  .weirdOnHover .word:nth-child(14) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(15) span {
-    animation-duration: 0.78s; }
-  .weirdOnHover .word:nth-child(16) span {
-    animation-duration: 0.33s; }
-  .weirdOnHover .word:nth-child(17) span {
-    animation-duration: 0.42s; }
-  .weirdOnHover .word:nth-child(18) span {
-    animation-duration: 0.24s; }
-  .weirdOnHover .word:nth-child(19) span {
-    animation-duration: 0.42s; }
-  .weirdOnHover .word:nth-child(20) span {
-    animation-duration: 0.03s; }
-  .weirdOnHover .word:nth-child(21) span {
-    animation-duration: 0.54s; }
-  .weirdOnHover .word:nth-child(22) span {
-    animation-duration: 0.48s; }
-  .weirdOnHover .word:nth-child(23) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(24) span {
-    animation-duration: 0.03s; }
-  .weirdOnHover .word:nth-child(25) span {
-    animation-duration: 0.06s; }
-  .weirdOnHover .word:nth-child(26) span {
-    animation-duration: 0.33s; }
-  .weirdOnHover .word:nth-child(27) span {
-    animation-duration: 0.18s; }
-  .weirdOnHover .word:nth-child(28) span {
-    animation-duration: 0.12s; }
-  .weirdOnHover .word:nth-child(29) span {
-    animation-duration: 0.15s; }
-  .weirdOnHover .word:nth-child(30) span {
-    animation-duration: 0.03s; }
-  .weirdOnHover .word:nth-child(31) span {
-    animation-duration: 0.72s; }
-  .weirdOnHover .word:nth-child(32) span {
+  .weirdOnHover .word:nth-child(3) span {
     animation-duration: 0.39s; }
-  .weirdOnHover .word:nth-child(33) span {
-    animation-duration: 0.33s; }
-  .weirdOnHover .word:nth-child(34) span {
-    animation-duration: 0.39s; }
-  .weirdOnHover .word:nth-child(35) span {
+  .weirdOnHover .word:nth-child(4) span {
     animation-duration: 0.18s; }
-  .weirdOnHover .word:nth-child(36) span {
-    animation-duration: 0.57s; }
-  .weirdOnHover .word:nth-child(37) span {
-    animation-duration: 0.69s; }
-  .weirdOnHover .word:nth-child(38) span {
-    animation-duration: 0.48s; }
-  .weirdOnHover .word:nth-child(39) span {
-    animation-duration: 0.45s; }
-  .weirdOnHover .word:nth-child(40) span {
-    animation-duration: 0.87s; }
-  .weirdOnHover .word:nth-child(41) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(42) span {
+  .weirdOnHover .word:nth-child(5) span {
     animation-duration: 0.09s; }
-  .weirdOnHover .word:nth-child(43) span {
-    animation-duration: 0.15s; }
-  .weirdOnHover .word:nth-child(44) span {
+  .weirdOnHover .word:nth-child(6) span {
+    animation-duration: 0.48s; }
+  .weirdOnHover .word:nth-child(7) span {
+    animation-duration: 0.06s; }
+  .weirdOnHover .word:nth-child(8) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(9) span {
+    animation-duration: 0.27s; }
+  .weirdOnHover .word:nth-child(10) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(11) span {
     animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(12) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(13) span {
+    animation-duration: 0.54s; }
+  .weirdOnHover .word:nth-child(14) span {
+    animation-duration: 0.3s; }
+  .weirdOnHover .word:nth-child(15) span {
+    animation-duration: 0.72s; }
+  .weirdOnHover .word:nth-child(16) span {
+    animation-duration: 0.75s; }
+  .weirdOnHover .word:nth-child(17) span {
+    animation-duration: 0.69s; }
+  .weirdOnHover .word:nth-child(18) span {
+    animation-duration: 0.6s; }
+  .weirdOnHover .word:nth-child(19) span {
+    animation-duration: 0.45s; }
+  .weirdOnHover .word:nth-child(20) span {
+    animation-duration: 0.63s; }
+  .weirdOnHover .word:nth-child(21) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(22) span {
+    animation-duration: 0.84s; }
+  .weirdOnHover .word:nth-child(23) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(24) span {
+    animation-duration: 0.3s; }
+  .weirdOnHover .word:nth-child(25) span {
+    animation-duration: 0.6s; }
+  .weirdOnHover .word:nth-child(26) span {
+    animation-duration: 0.57s; }
+  .weirdOnHover .word:nth-child(27) span {
+    animation-duration: 0.42s; }
+  .weirdOnHover .word:nth-child(28) span {
+    animation-duration: 0.24s; }
+  .weirdOnHover .word:nth-child(29) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(30) span {
+    animation-duration: 0.27s; }
+  .weirdOnHover .word:nth-child(31) span {
+    animation-duration: 0.78s; }
+  .weirdOnHover .word:nth-child(32) span {
+    animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(33) span {
+    animation-duration: 0.9s; }
+  .weirdOnHover .word:nth-child(34) span {
+    animation-duration: 0.09s; }
+  .weirdOnHover .word:nth-child(35) span {
+    animation-duration: 0.3s; }
+  .weirdOnHover .word:nth-child(36) span {
+    animation-duration: 0.69s; }
+  .weirdOnHover .word:nth-child(37) span {
+    animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(38) span {
+    animation-duration: 0.57s; }
+  .weirdOnHover .word:nth-child(39) span {
+    animation-duration: 0.66s; }
+  .weirdOnHover .word:nth-child(40) span {
+    animation-duration: 0.81s; }
+  .weirdOnHover .word:nth-child(41) span {
+    animation-duration: 0.42s; }
+  .weirdOnHover .word:nth-child(42) span {
+    animation-duration: 0.87s; }
+  .weirdOnHover .word:nth-child(43) span {
+    animation-duration: 0.03s; }
+  .weirdOnHover .word:nth-child(44) span {
+    animation-duration: 0.78s; }
   .weirdOnHover .word:nth-child(45) span {
     animation-duration: 0.66s; }
   .weirdOnHover .word:nth-child(46) span {
-    animation-duration: 0.66s; }
-  .weirdOnHover .word:nth-child(47) span {
-    animation-duration: 0.12s; }
-  .weirdOnHover .word:nth-child(48) span {
-    animation-duration: 0.27s; }
-  .weirdOnHover .word:nth-child(49) span {
     animation-duration: 0.06s; }
+  .weirdOnHover .word:nth-child(47) span {
+    animation-duration: 0.18s; }
+  .weirdOnHover .word:nth-child(48) span {
+    animation-duration: 0.06s; }
+  .weirdOnHover .word:nth-child(49) span {
+    animation-duration: 0.12s; }
 
 @keyframes slurpAround {
   from {
