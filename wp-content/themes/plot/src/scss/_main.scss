@@ -75,11 +75,17 @@ h3 {
 
 .backgroundWrap {
 	background: black;
-	height: 140vh; 
-	width: 140vw;
+	height: 200vh; 
+	width: 200vw;
 	position: fixed;
-	left:-20vw;
-	top:-20vh;
+	left:-50vw;
+	top:-50vh;
+	@media #{$medium-up} {
+		height: 140vh; 
+		width: 140vw;
+		left:-20vw;
+		top:-20vh;
+	}
 	overflow: hidden;
 	backface-visibility: hidden;
 	transform: rotate3d(0,0,0,9deg);
