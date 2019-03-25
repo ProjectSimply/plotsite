@@ -74,8 +74,8 @@
           var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
           
           if(FollowTheMouse.startingX === false) {
-            FollowTheMouse.startingX = event.beta/1.8;
-            FollowTheMouse.startingY = event.gamma/.9; 
+            FollowTheMouse.startingX = event.beta/180;
+            FollowTheMouse.startingY = event.gamma/90; 
 
           }
 
