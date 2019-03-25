@@ -77,8 +77,8 @@
 
           }
 
-          FollowTheMouse.diffX = event.beta/180;
-          FollowTheMouse.diffY = event.gamma/90;
+          FollowTheMouse.diffX = FollowTheMouse.startingX - event.beta/180;
+          FollowTheMouse.diffY = FollowTheMouse.startingX - event.gamma/90;
 
           requestAnimationFrame(FollowTheMouse.update);
 
