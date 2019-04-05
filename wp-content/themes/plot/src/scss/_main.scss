@@ -75,11 +75,11 @@ h3 {
 
 .backgroundWrap {
 	background: black;
-	height: 200vh; 
-	width: 200vw;
+	height: 140vh; 
+	width: 140vw;
 	position: fixed;
-	left:-50vw;
-	top:-50vh;
+	left:-20vw;
+	top:-20vh;
 	@media #{$medium-up} {
 		height: 140vh; 
 		width: 140vw;

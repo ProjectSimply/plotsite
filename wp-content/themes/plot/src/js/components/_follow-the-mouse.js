@@ -44,11 +44,6 @@
             });
 
 
-            if (window.DeviceOrientationEvent) {
-                console.log('dfg');
-            }
-            window.addEventListener('deviceorientation', FollowTheMouse.handleOrientation);
-
 
             $(window).resize(function () {
 
@@ -64,25 +59,6 @@
             }); 
 
             FollowTheMouse.flagUpInViewElements($(window).scrollTop());            
-
-        },
-
-
-
-        handleOrientation : function(event) {
-          var x = event.beta;  // In degree in the range [-180,180], x, 'front to back'
-          var y = event.gamma; // In degree in the range [-90,90], y, 'left to right'
-          
-          if(FollowTheMouse.startingX === false) {
-            FollowTheMouse.startingX = event.beta/180;
-            FollowTheMouse.startingY = event.gamma/90; 
-
-          }
-
-          FollowTheMouse.myX = (FollowTheMouse.startingX - event.beta/180)*8;
-          FollowTheMouse.myY = (FollowTheMouse.startingX - event.gamma/90)*8;
-
-          requestAnimationFrame(FollowTheMouse.update);
 
         },
 
@@ -112,7 +88,6 @@
 
                
             });
-             $('.debug').html('x: '+FollowTheMouse.myX+', y:'+FollowTheMouse.myY+'</div>');
         },
 
         mouseMoving : function(e) {
