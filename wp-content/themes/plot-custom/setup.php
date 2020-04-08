@@ -30,7 +30,6 @@ function plotInit() {
 										'cropToSize'	=> true
 									]
 							],
-
 						'fiftyFifty' => [
 								'desktop' => [
 										'width' 		=> 1200,
@@ -38,28 +37,32 @@ function plotInit() {
 										'cropToSize'	=> false
 										]
 							],
-
-						'blockLink'	=> [
+						'carouselImage'	=> [
 								'desktop' => [
-										'width' 		=> 1200,
-										'height'		=> 1000,
-										'cropToSize'	=> true
-										]
+										'width' 		=> 1700,
+										'height'		=> 1200,
+										'cropToSize'	=> false
+								],
+								'smallScreen' => [ //Will make an image size called imageGrid--small-screen.
+									'width'			=> 500,
+									'height'		=> 350,
+									'cropToSize'	=> false
+								]
 							],
-						'imageGrid'	=> [
+						'galleryLandscape'	=> [
 								'desktop' => [
-										'width' 		=> 1300,
-										'height'		=> 1300,
-										'cropToSize'	=> true
-										]
-							],
-						'small'	=> [
-								'desktop' => [
-										'width' 		=> 300,
-										'height'		=> 300,
+										'width' 		=> 800,
+										'height'		=> 550,
 										'cropToSize'	=> false
 										]
 							],
+						'galleryPortrait'	=> [
+							'desktop' => [
+									'width' 		=> 400,
+									'height'		=> 700,
+									'cropToSize'	=> false
+									]
+						],
 			],
 
 		'postTypes'		=> [

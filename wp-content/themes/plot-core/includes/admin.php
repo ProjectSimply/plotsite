@@ -349,7 +349,7 @@
 
         function hide_sitebuilder_fields( $field ) {
                 
-            if( strpos($field['_name'], 'plotcms') === false && SITEBUILDER == false) {
+            if( strpos($field['_name'], 'plotcms') !== false && SITEBUILDER == false) {
                
                 return false;
                 
