@@ -1,0 +1,23 @@
+.blockSection {
+    background-color: var(--purple);
+    text-align: center;
+    
+}
+
+    .blockSection__title {
+        color: var(--white);
+        margin-bottom: 4rem;
+    } 
+
+    .blockSection__grid {
+        
+        @include plotFlex(1);
+
+        @include medium {
+            @include plotFlex(2);
+        }
+
+        @include large {
+            @include plotFlex(3);
+        }
+    }

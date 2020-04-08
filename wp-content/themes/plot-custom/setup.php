@@ -63,6 +63,27 @@ function plotInit() {
 									'cropToSize'	=> false
 									]
 						],
+						'blockLink'	=> [
+							'desktop' => [
+									'width' 		=> 1200,
+									'height'		=> 1000,
+									'cropToSize'	=> true
+									]
+						],
+					'imageGrid'	=> [
+							'desktop' => [
+									'width' 		=> 1300,
+									'height'		=> 1300,
+									'cropToSize'	=> true
+									]
+						],
+					'small'	=> [
+							'desktop' => [
+									'width' 		=> 300,
+									'height'		=> 300,
+									'cropToSize'	=> false
+									]
+						],
 			],
 
 		'postTypes'		=> [

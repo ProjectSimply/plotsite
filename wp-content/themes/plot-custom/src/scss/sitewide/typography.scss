@@ -6,22 +6,17 @@
 html {
 	font-family: var(--bodyFont);
 	font-family: var(--headingFont);
-	font-weight: 700;
 	font-style: normal;
+	font-weight: 400;
+	font-size: 13px;
+	text-align: center;
 
-	font-family: 'Helvetica';
-	font-size: 16px;
 	@include medium {
-		font-size: 17px;
+		font-size: 15px;
+		text-align: left;
 	}
 	@include large {
 		font-size: 18px;
-	}
-	@include xlarge {
-		font-size: 19px;
-	}
-	@include xxlarge {
-		font-size: 20px;
 	}
 }
 
@@ -29,12 +24,21 @@ h1, h2, h3, h4, h5, h6 {
 	margin: 0 0 1.3rem;
 	font-family: var(--headingFont);
 	font-weight: bold;
+	color: var(--black);
 }
+
+h1 { font-size: 4.5rem }
+h2 { font-size: 4.1rem }
+h3 { font-size: 2.6rem }
+h4 { font-size: 2.4rem }
+h5 { font-size: 1.7rem }
 
 p {
 	line-height: 1.4;
+	margin-top: 0;
 	margin-bottom: 1.3rem;
 	font-family: var(--bodyFont);
+	color: var(--black);
 }
 
 a {

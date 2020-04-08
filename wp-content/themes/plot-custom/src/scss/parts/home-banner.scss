@@ -1,0 +1,89 @@
+.homeBanner {
+    position: relative;
+    @include vh(100, 'min-height');
+}
+
+    .homeBanner__grid {
+        @include medium {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "titleWrap image"
+            "button    image";
+        }
+    }
+
+        .homeBanner__item {
+
+
+            &.homeBanner__item--titleWrap {
+                grid-area: titleWrap;
+
+                @include medium {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-end;
+                }
+            }
+
+            &.homeBanner__item--image {
+                grid-area: image;
+            }
+
+            &.homeBanner__item--button {
+                grid-area: button;
+            }
+        }
+
+            .homeBanner__title {
+                text-transform: uppercase; 
+            }
+        
+    .homeBanner__asset {
+        position: absolute;
+        display: block;
+        z-index: -1;
+
+        &.homeBanner__asset--1 {
+            height: 100%;
+            width: 100%;
+            right: 24%;
+            top: -12rem;
+            
+
+            @include medium {
+                left: 5%;
+                right: initial;
+                top: -15%;
+                width: 75%;
+                max-width: 600px;
+                max-height: 800px;
+            }
+            
+            & path {
+                fill: var(--yellow);
+            }
+        }
+
+        &.homeBanner__asset--2 {
+            right: -200px;
+            top: 25%;
+
+            @include medium {
+                right: 0;
+                top: 25%;
+            }
+
+            & path {
+                fill: var(--mint);
+            }
+        }
+
+        & svg {
+            display: block;
+            height: 100%;
+            width: 100%;
+            object-fit: contain;
+        }
+
+    }

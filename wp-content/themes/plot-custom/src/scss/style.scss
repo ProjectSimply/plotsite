@@ -35,7 +35,6 @@
 		"plot-layouts/fluid-content",
 		"plot-layouts/fifty-fifty",
 		"plot-layouts/full-image-or-video",
-		"plot-layouts/general",
 		"plot-layouts/latest-articles",
 		"plot-layouts/image-grid",
 		"plot-layouts/image-tiles",
@@ -52,3 +51,8 @@
 		"pages/schedule",
 		"pages/stages",
 		"pages/tickets";
+
+// Parts
+@import 
+		"parts/block-section.scss",
+		"parts/home-banner.scss";
