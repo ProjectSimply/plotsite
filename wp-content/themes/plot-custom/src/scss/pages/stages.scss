@@ -1,0 +1,19 @@
+.stages {
+
+}
+
+	.stages__grid {	
+		text-align: center;
+		@include medium {
+			@include plotFlex(2);
+		}
+	}
+
+	.stages__artistList {
+		padding:0;	
+	}
+
+	.stages__panel {
+		padding: 1rem;
+		background: #ddd;
+	}

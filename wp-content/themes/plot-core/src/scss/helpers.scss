@@ -1,0 +1,46 @@
+// PLACEHOLDERS
+@mixin placeholder {
+    ::-webkit-input-placeholder {@content}
+    ::-moz-placeholder           {@content}
+    ::-moz-placeholder          {@content}
+    ::-ms-input-placeholder      {@content}  
+}
+
+//Align orphans can be center|right|left
+@mixin plotFlex($columns : 3, $horizontalSpacing : var(--hs), $verticalSpacing : var(--vs), $alignOrphans : 'center') {
+
+	display: flex;
+	flex-wrap: wrap;
+	margin-left: calc(#{$horizontalSpacing} / -2);
+	margin-right: calc(#{$horizontalSpacing} / -2);
+ 
+	@if $alignOrphans == 'left' {
+		justify-content: flex-start; 	
+	}
+
+	@if $alignOrphans == 'center' {
+		justify-content: center;
+	}
+
+	@if $alignOrphans == 'right' {
+		justify-content: flex-end;
+	}
+
+	>* { 
+		width: calc(100% / #{$columns} - #{$horizontalSpacing});
+		margin-left: calc(#{$horizontalSpacing} / 2);
+		margin-right: calc(#{$horizontalSpacing} / 2); 
+		margin-bottom: #{$verticalSpacing};
+	}
+
+}
+
+.hidden {
+	display: none !important; 
+}
+
+
+@mixin vh($height : 100, $property : 'height'){
+    #{$property} : #{$height}vh;
+    #{$property} : calc(var(--vh) * #{$height}); 
+}

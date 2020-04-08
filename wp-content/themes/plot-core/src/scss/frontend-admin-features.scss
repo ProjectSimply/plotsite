@@ -1,0 +1,35 @@
+.plotSiteHiddenNote {
+	position: fixed;
+	font-size: 0.8rem;
+	color: white;
+	bottom: 0.4rem;
+	left: 0.4rem;
+	padding: 0.4rem;
+	background: #e46363;
+	display: none;
+	z-index: 3000;
+	@media (min-width: 640px) {
+		display: block;
+	} 
+
+	p {
+		margin:0;  
+		a {
+			color: white;
+			text-decoration: underline; 
+		} 
+	}
+}
+
+.editMeButton {
+	bottom: 1rem;
+	right: 1rem; 
+	padding: 0.4rem;
+	position: fixed;
+	font-size: 0.6rem;
+	z-index: 3000;
+	display: none;
+	@media (min-width: 640px) {
+		display: block;
+	} 
+}

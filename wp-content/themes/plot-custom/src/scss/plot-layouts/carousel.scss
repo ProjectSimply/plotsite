@@ -1,0 +1,70 @@
+.carousel {
+	max-width: 100%;  
+	overflow: hidden;
+	position: relative;
+	height: 60vw;
+}
+	.carousel__slide {
+		width: 100%;
+		background: black;
+	}
+
+	.carousel__backgroundWrap {
+		height: 60vw;	
+		position: absolute;
+		z-index: 1;
+		width: 100%;
+
+	}
+
+	.carousel__video, .carousel__image {
+		object-fit: cover;
+		width: 100%;
+		height: 100%;
+
+
+	}
+
+	.carousel__contentWrap {
+		z-index: 2;
+		position: relative;
+		text-align: center;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		height: 60vw;
+		color: white;
+	}
+
+	.carousel__title {
+		color: white;
+	}
+
+	.flickity-viewport:focus, .flickity-enabled:focus {
+		outline: 0;
+	}
+
+	.flickity-button {
+		background: none;
+		border: none;
+		width: 2.2rem;
+		height: 2.2rem;
+		position: absolute;
+		left:1rem;
+		background: var(--primaryColor);
+		border-radius: 50%;
+
+		top: calc(50% - 1.1rem);
+		svg {
+			width: 100%;
+			height: 100%;
+			padding: 10%;
+			fill: white;
+		}
+
+		&.next {
+			right: 1rem;
+			left: auto;
+		}
+	}

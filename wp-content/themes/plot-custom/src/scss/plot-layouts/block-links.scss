@@ -1,0 +1,21 @@
+.blockLinks {
+
+}
+
+	.blockLinks__grid {
+		@include medium {
+
+			@include plotFlex(3);
+
+		}
+	} 
+
+	.blockLink__backgroundWrap {
+		height: 14rem;
+	}
+
+		.blockLink__image, {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}

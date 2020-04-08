@@ -1,0 +1,22 @@
+
+	.alignleft {
+		display: block;
+		@media (min-width: 1024px) {
+			max-width: 50%;
+			display: inline-block;
+			float:left;
+			padding-right: 1rem;
+			padding-bottom: 1rem;
+		}
+	}
+
+	.alignright {
+		display: block;
+		@media (min-width: 1024px) {
+			max-width: 50%;
+			display: inline-block;
+			float:right;
+			padding-left: 1rem;
+			padding-bottom: 1rem;
+		}
+	}   

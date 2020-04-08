@@ -1,0 +1,35 @@
+.fiftyFifty {
+
+}
+
+	
+	.fiftyFifty--right {
+		@include medium {
+			flex-direction: row-reverse;
+		}
+	}
+
+	.fiftyFifty__row {
+		@include medium {
+			display: flex;
+		}
+		width: 100%;
+		
+	}
+
+	.fiftyFifty__imageWrap {
+		
+		@include medium {
+			width: 50%;
+			padding: 0 var(--horizontalSpacing) 0 0;
+			.fiftyFifty__right & {
+				padding: 0 0 0 var(--horizontalSpacing);
+			}
+		}
+		
+	}
+	.fiftyFifty__textWrap {
+		@include medium {
+			width: 50%;
+		}
+	}

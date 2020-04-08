@@ -1,0 +1,21 @@
+body {
+	background: var(--backgroundColor);
+	color: var(--bodyColor);
+}
+
+a {
+	color: var(--highlightColor);
+}
+
+h1, h2, h3, h4, h5, h6 {
+	color: var(--headingsColor);
+}
+
+.altColourScheme {
+	padding: var(--vs) 0;
+	background: var(--altBackgroundColor);
+	color: var(--altBodyColor);
+	h1, h2, h3, h4, h5, h6 {
+		color: var(--altHeadingsColor);
+	}
+} 

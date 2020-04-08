@@ -2,11 +2,7 @@
 /**
  * Payment related functions.
  *
- * @package    WPForms
- * @author     WPForms
- * @since      1.0.0
- * @license    GPL-2.0+
- * @copyright  Copyright (c) 2016, WPForms LLC
+ * @since 1.0.0
  */
 
 /**
@@ -86,7 +82,7 @@ function wpforms_get_currencies() {
 		'HKD' => array(
 			'name'                => esc_html__( 'Hong Kong Dollar', 'wpforms' ),
 			'symbol'              => '&#36;',
-			'symbol_pos'          => 'right',
+			'symbol_pos'          => 'left',
 			'thousands_separator' => ',',
 			'decimal_separator'   => '.',
 			'decimals'            => 2,
@@ -219,7 +215,7 @@ function wpforms_get_currencies() {
 /**
  * Sanitize Amount.
  *
- * Returns a sanitized amount by stripping out thousands separators.
+ * Return a sanitized amount by stripping out thousands separators.
  *
  * @since 1.2.6
  * @link https://github.com/easydigitaldownloads/easy-digital-downloads/blob/master/includes/formatting.php#L24
@@ -268,7 +264,7 @@ function wpforms_sanitize_amount( $amount, $currency = '' ) {
 }
 
 /**
- * Returns a nicely formatted amount.
+ * Return a nicely formatted amount.
  *
  * @since 1.2.6
  * @link https://github.com/easydigitaldownloads/easy-digital-downloads/blob/master/includes/formatting.php#L83
@@ -306,7 +302,7 @@ function wpforms_format_amount( $amount, $symbol = false, $currency = '' ) {
 	}
 
 	$decimals = apply_filters( 'wpforms_sanitize_amount_decimals', 2, $amount );
-	$number   = number_format( $amount, $decimals, $decimal_sep, $thousands_sep );
+	$number   = number_format( (float) $amount, $decimals, $decimal_sep, $thousands_sep );
 
 	if ( $symbol ) {
 		$symbol_padding = apply_filters( 'wpforms_currency_symbol_padding', ' ' );
@@ -379,7 +375,7 @@ function wpforms_has_payment( $type = 'entry', $data = array() ) {
 }
 
 /**
- * Checks to see if a form has an active payment gateway configured.
+ * Check to see if a form has an active payment gateway configured.
  *
  * @since 1.4.5
  *

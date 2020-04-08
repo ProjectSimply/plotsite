@@ -1,0 +1,10 @@
+.plotButton {
+	background: var(--primaryColor);
+	color: white;
+	padding: 0.6rem 1rem;
+	display: inline-block;
+	text-align: center;
+	&.selected {
+		background: grey;
+	}
+}

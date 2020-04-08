@@ -1,0 +1,29 @@
+html {
+	font-family: 'Helvetica';
+	font-size: 16px;
+	@include medium {
+		font-size: 17px;
+	}
+	@include large {
+		font-size: 18px;
+	}
+	@include xlarge {
+		font-size: 19px;
+	}
+	@include xxlarge {
+		font-size: 20px;
+	}
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0 0 1.3rem;
+}
+
+p {
+	line-height: 1.4;
+	margin-bottom: 1.3rem;
+}
+
+a {
+	text-decoration: none;
+}

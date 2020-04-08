@@ -65,7 +65,8 @@
 }
 
 /* Field description */
-.wpforms-container .wpforms-field-description {
+.wpforms-container .wpforms-field-description,
+.wpforms-container .wpforms-field-limit-text {
 	font-size: 0.85em;
 	margin: 5px 0 0 0;
 }
@@ -364,11 +365,15 @@
 	vertical-align: baseline;
 }
 
+.wpforms-container amp-img > img {
+	position: absolute; /* Override position:static from previous rule, to prevent breaking AMP layout. */
+}
+
 
 /* Errors, Warnings, etc
 ----------------------------------------------------------------------------- */
-
-.wpforms-container .wpforms-error-container {
+.wpforms-container .wpforms-error-container,
+.wpforms-container noscript.wpforms-error-noscript {
 	color: #990000;
 }
 
@@ -380,8 +385,11 @@
 }
 
 .wpforms-container .wpforms-field input.wpforms-error,
+.wpforms-container .wpforms-field input.user-invalid,
 .wpforms-container .wpforms-field textarea.wpforms-error,
-.wpforms-container .wpforms-field select.wpforms-error   {
+.wpforms-container .wpforms-field textarea.user-invalid,
+.wpforms-container .wpforms-field select.wpforms-error,
+.wpforms-container .wpforms-field select.user-invalid {
 	border: 1px solid #cc0000;
 }
 
@@ -432,6 +440,10 @@
 }
 
 .wpforms-container button[type=submit] {
+}
+
+.wpforms-container .wpforms-submit-spinner {
+	margin-left: 0.5em;
 }
 
 
@@ -486,12 +498,12 @@
 }
 
 .wpforms-container .wpforms-image-choices-modern img {
-	display: inline;
+	display: inline-block;
 	margin: 0 auto;
 	max-width: 100%;
 }
 
-.wpforms-container .wpforms-image-choices-modern label {
+.wpforms-container .wpforms-image-choices-modern label:not(.wpforms-error) {
 	background-color: #fff;
 	display: inline-block;
 	margin: 0 auto;
@@ -504,7 +516,7 @@
 	text-align: center;
 }
 
-.wpforms-container .wpforms-image-choices-modern label:hover {
+.wpforms-container .wpforms-image-choices-modern label:not(.wpforms-error):hover {
 	border:1px solid #ddd;
 }
 
@@ -553,12 +565,12 @@
 }
 
 .wpforms-container .wpforms-image-choices-classic img {
-	display: inline;
+	display: inline-block;
 	margin: 0 auto;
 	max-width: 100%;
 }
 
-.wpforms-container .wpforms-image-choices-classic label {
+.wpforms-container .wpforms-image-choices-classic label:not(.wpforms-error) {
 	background-color: #fff;
 	display: inline-block;
 	margin: 0 auto;
@@ -569,7 +581,7 @@
 	text-align: center;
 }
 
-.wpforms-container .wpforms-image-choices-classic label:hover {
+.wpforms-container .wpforms-image-choices-classic label:not(.wpforms-error):hover {
 	border-color: #ddd;
 }
 
@@ -578,7 +590,7 @@
 }
 
 .wpforms-container .wpforms-image-choices-classic .wpforms-selected label {
-	border-color: #666;
+	border-color: #666 !important;
 }
 
 .wpforms-container .wpforms-image-choices-classic .wpforms-image-choices-label {
@@ -853,12 +865,31 @@ div.wpforms-container-full .wpforms-notice.wpforms-error .wpforms-notice-action:
 	word-wrap: normal !important;
 }
 
+/*
+ * Hide the form fields upon successful submission. This may not be the best approach.
+ * Perhaps more robust: .wpforms-form.amp-form-submit-success > *:not([submit-success]) { display:none }
+ */
+.amp-form-submit-success .wpforms-field-container,
+.amp-form-submit-success .wpforms-submit-container {
+	display: none;
+}
+
 
 /* Media Queries
 ----------------------------------------------------------------------------- */
 
 /* Small devices */
 @media only screen and (max-width: 600px) {
+
+	/* Avoid horizontal scroll on mobiles.
+	   Skip for phone field, otherwise country dropdown (Smart format) would be cropped.
+	*/
+	.wpforms-container .wpforms-field:not(.wpforms-field-phone) {
+		overflow-x: hidden;
+	}
+	.wpforms-container .wpforms-field > * {
+		max-width: 100%;
+	}
 
 	/* Mobile width override */
 	.wpforms-container .wpforms-mobile-full {
@@ -958,4 +989,14 @@ div.wpforms-gutenberg-form-selector .wpforms-form textarea:disabled,
 div.wpforms-gutenberg-form-selector .wpforms-form select:disabled,
 div.wpforms-gutenberg-form-selector .wpforms-form button[type=submit]:disabled {
 	cursor: not-allowed;
+}
+
+/* RTL support
+----------------------------------------------------------------------------- */
+
+/* Phone US format */
+body.rtl .wpforms-field-phone input[type=tel] {
+	direction: ltr;
+	unicode-bidi: embed;
+	text-align: right;
 }

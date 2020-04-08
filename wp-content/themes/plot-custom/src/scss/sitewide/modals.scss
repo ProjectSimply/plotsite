@@ -1,0 +1,16 @@
+.plotModalScrollViewport {
+    background: white;
+    padding: 1rem;
+    max-width: 30rem; 
+    width: calc(100% - 2rem);
+    max-height: calc(100% - 2rem);
+}
+
+.siteOverlay {
+    background: rgba(0,0,0,0.3);
+}
+
+.plotModalLoadingAjax {
+	opacity: 0.2;
+	pointer-events: none;
+}

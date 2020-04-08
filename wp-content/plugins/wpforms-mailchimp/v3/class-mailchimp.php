@@ -1,13 +1,11 @@
 <?php
 
 /**
- * MailChimp integration.
+ * Mailchimp integration.
  *
  * @since 1.1.0
- *
- * @package WPFormsMailChimp
  */
-class WPForms_MailChimpv3 extends WPForms_Provider {
+class WPForms_Mailchimpv3 extends WPForms_Provider {
 
 	/**
 	 * Account ID for current account.
@@ -26,7 +24,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 	public function init() {
 
 		$this->version  = WPFORMS_MAILCHIMP_VERSION;
-		$this->name     = 'MailChimp';
+		$this->name     = 'Mailchimp';
 		$this->slug     = 'mailchimpv3';
 		$this->priority = 34;
 		$this->icon     = WPFORMS_MAILCHIMP_URL . 'assets/images/addon-icon-mailchimp.png';
@@ -56,7 +54,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 		?>
 		<div class="notice notice-warning wpforms-mailchimp-update-notice">
 			<p>
-				<?php esc_html_e( 'Your forms are currently using an outdated MailChimp integration that is no longer supported. Please update your forms to use the new integration to avoid losing subscribers.', 'wpforms-mailchimp' ); ?>
+				<?php esc_html_e( 'Your forms are currently using an outdated Mailchimp integration that is no longer supported. Please update your forms to use the new integration to avoid losing subscribers.', 'wpforms-mailchimp' ); ?>
 				<strong>
 					<a href="https://wpforms.com/new-announcing-an-important-mailchimp-addon-update/#update" target="_blank" rel="noopener noreferrer">
 						<?php esc_html_e( 'Click here for more details.', 'wpforms-mailchimp' ); ?>
@@ -129,7 +127,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			$pass = $this->process_conditionals( $fields, $entry, $form_data, $connection );
 			if ( ! $pass ) {
 				wpforms_log(
-					esc_html__( 'MailChimp Subscription stopped by conditional logic', 'wpforms-mailchimp' ),
+					esc_html__( 'Mailchimp Subscription stopped by conditional logic', 'wpforms-mailchimp' ),
 					$fields,
 					array(
 						'type'    => array( 'provider', 'conditional_logic' ),
@@ -179,18 +177,11 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 						break;
 
 					case 'birthday':
-						if (
-							! empty( $form_data['fields'][ $id ]['format'] ) &&
-							'date' === $form_data['fields'][ $id ]['format']
-						) {
-							// To make use of all possible formats.
-							$date  = DateTime::createFromFormat( $form_data['fields'][ $id ]['date_format'], $value );
-							$value = $date->format( 'm/d' );
+						$value = $this->format_date( $form_data['fields'][ $id ], $fields[ $id ], 'm/d' );
+						break;
 
-							if ( 'd/m/Y' === $form_data['fields'][ $id ]['date_format'] ) {
-								$value = $date->format( 'd/m' );
-							}
-						}
+					case 'date':
+						$value = $this->format_date( $form_data['fields'][ $id ], $fields[ $id ], 'm/d/Y' );
 						break;
 				}
 
@@ -226,7 +217,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			if ( false === $res || isset( $res['status'] ) && $res['status'] >= 300 ) {
 				$error_msg = ! empty( $res['detail'] ) ? $res['detail'] : esc_html__( 'Error creating subscription.', 'wpforms-mailchimp' );
 				wpforms_log(
-					esc_html__( 'MailChimp Subscription error', 'wpforms-mailchimp' ),
+					esc_html__( 'Mailchimp Subscription error', 'wpforms-mailchimp' ),
 					$error_msg,
 					array(
 						'type'    => array( 'provider', 'error' ),
@@ -237,6 +228,46 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			}
 
 		endforeach; // End foreach( $form_data['providers'][ $this->slug ] ).
+	}
+
+	/**
+	 * Convert a date value in expected format.
+	 *
+	 * @since 1.4.2
+	 *
+	 * @param array  $field_data      Field data.
+	 * @param array  $field           Field attributes.
+	 * @param string $expected_format Date format.
+	 *
+	 * @return string
+	 */
+	private function format_date( $field_data, $field, $expected_format ) {
+
+		$result = '';
+
+		if (
+			empty( $field_data['format'] ) ||
+			! in_array( $field_data['format'], array( 'date', 'date-time' ), true )
+		) {
+			return $result;
+		}
+
+		// Parse a value with date string according to a specified format.
+		$date_time = false;
+		if ( ! empty( $field_data['date_format'] ) ) {
+			$date_time = date_create_from_format( $field_data['date_format'], $field['value'] );
+		}
+
+		// Fallback with using timestamp value.
+		if ( ! $date_time && ! empty( $field['unix'] ) ) {
+			$date_time = date_create( '@' . $field['unix'] );
+		}
+
+		if ( $date_time ) {
+			$result = $date_time->format( $expected_format );
+		}
+
+		return $result;
 	}
 
 	/************************************************************************
@@ -253,12 +284,12 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 	 */
 	public function api_auth( $data = array(), $form_id = '' ) {
 
-		if ( ! class_exists( 'MailChimp_WPForms' ) ) {
+		if ( ! class_exists( 'Mailchimp_WPForms' ) ) {
 			require_once WPFORMS_MAILCHIMP_DIR . 'v3/vendor/MailChimp.php';
 		}
 
 		try {
-			$api = new MailChimp_WPForms( trim( $data['apikey'] ) );
+			$api = new Mailchimp_WPForms( trim( $data['apikey'] ) );
 		} catch ( Exception $e ) {
 			return $this->error( $e->getMessage() );
 		}
@@ -270,7 +301,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			$details = ! empty( $res['detail'] ) ? $res['detail'] : esc_html__( 'Could not verify API key', 'wpforms-mailchimp' );
 
 			wpforms_log(
-				esc_html__( 'MailChimp API error', 'wpforms-mailchimp' ),
+				esc_html__( 'Mailchimp API error', 'wpforms-mailchimp' ),
 				$res,
 				array(
 					'type' => array( 'provider', 'error' ),
@@ -305,7 +336,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 	 */
 	public function api_connect( $account_id ) {
 
-		if ( ! class_exists( 'MailChimp_WPForms' ) ) {
+		if ( ! class_exists( 'Mailchimp_WPForms' ) ) {
 			require_once WPFORMS_MAILCHIMP_DIR . 'v3/vendor/MailChimp.php';
 		}
 
@@ -315,7 +346,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			$providers = get_option( 'wpforms_providers' );
 			if ( ! empty( $providers[ $this->slug ][ $account_id ]['api'] ) ) {
 				$this->account = $account_id;
-				$this->api     = new MailChimp_WPForms( $providers[ $this->slug ][ $account_id ]['api'] );
+				$this->api     = new Mailchimp_WPForms( $providers[ $this->slug ][ $account_id ]['api'] );
 
 				return $this->api;
 			} else {
@@ -366,7 +397,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			}
 		} catch ( Exception $e ) {
 			wpforms_log(
-				esc_html__( 'MailChimp API error', 'wpforms-mailchimp' ),
+				esc_html__( 'Mailchimp API error', 'wpforms-mailchimp' ),
 				$e->getMessage(),
 				array(
 					'type' => array( 'provider', 'error' ),
@@ -437,7 +468,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 			}
 		} catch ( Exception $e ) {
 			wpforms_log(
-				esc_html__( 'MailChimp API error', 'wpforms-mailchimp' ),
+				esc_html__( 'Mailchimp API error', 'wpforms-mailchimp' ),
 				$e->getMessage(),
 				array(
 					'type' => array( 'provider', 'error' ),
@@ -494,7 +525,7 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 		} catch ( Exception $e ) {
 
 			wpforms_log(
-				esc_html__( 'MailChimp API error', 'wpforms' ),
+				esc_html__( 'Mailchimp API error', 'wpforms' ),
 				$e->getMessage(),
 				array(
 					'type' => array( 'provider', 'error' ),
@@ -590,4 +621,4 @@ class WPForms_MailChimpv3 extends WPForms_Provider {
 	}
 }
 
-new WPForms_MailChimpv3;
+new WPForms_Mailchimpv3();

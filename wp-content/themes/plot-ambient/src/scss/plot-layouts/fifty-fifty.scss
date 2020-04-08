@@ -1,0 +1,53 @@
+.fiftyFifty {
+
+}	
+
+
+	.fiftyFifty__row {
+		@include large {
+			@include plotFlex(2, var(--hs),0);
+		
+			h2 {
+				font-size: calc(1.4rem * var(--headingsScale));
+			}
+		}
+		
+	}
+
+
+	.fiftyFifty--right .fiftyFifty__row {
+		@include large {
+			flex-direction: row-reverse;
+		}
+	}
+
+	.fiftyFifty__imageWrap {
+		
+		
+
+		img {
+
+ 			display: block; 
+		}
+		
+	}
+
+	.fiftyFifty__textWrap {
+		@include large {
+			display: flex;
+		}
+	}
+	.fiftyFifty__textWrapInner {
+
+		padding-top: calc(var(--vs) / 2);
+		
+		@include large {
+			padding: 0 var(--hs);
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			flex-grow: 1;
+			align-items: flex-start;
+		}
+	}
+

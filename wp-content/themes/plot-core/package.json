@@ -1,0 +1,45 @@
+{
+  "name": "Plot",
+  "version": "0.2.1",
+  "description": "A super simple browserify-based starter template for wordpress projects.",
+  "main": "main.js",
+  "scripts": {
+    "cssobs": "dart-sass --watch src/scss/style.scss assets/css/style.css",
+    "jsobs": "watchify src/js/main.js -v -o assets/js/main.js -d",
+    "reload": "livereload ./assets",
+    "observe": "concurrently 'npm run cssobs' 'npm run jsobs' 'npm run reload'",
+    "admincssobs": "dart-sass --watch src/admin/scss/style.scss assets/css/admin.css",
+    "adminjsobs": "watchify src/admin/js/main.js -v -o assets/js/admin.js -d",
+    "adminobserve": "concurrently 'npm run admincssobs' 'npm run adminjsobs' 'npm run reload'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/projectsimply/bella.git"
+  },
+  "author": "Michael Watson",
+  "bugs": {
+    "url": ""
+  },
+  "devDependencies": {
+    "autoprefixer": "^9.3.1",
+    "browserify": "^16.2.3",
+    "concurrently": "^4.0.1",
+    "dart-sass": "^1.19.0",
+    "fsevents": "^2.1.2",
+    "livereload": "^0.8.2",
+    "postcss": "^7.0.6",
+    "postcss-cli": "^6.1.2",
+    "watchify": "^3.11.1"
+  },
+  "jshintConfig": {
+    "node": true,
+    "browser": true,
+    "laxbreak": true
+  },
+  "dependencies": {
+    "body-scroll-lock": "^2.6.4",
+    "flickity": "^2.2.1",
+    "normalize-wheel": "^1.0.1",
+    "video.js": "^7.6.6"
+  }
+}

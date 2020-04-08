@@ -1,0 +1,308 @@
+#siteMainHeader {
+	position: var(--headerPosition);
+	width: 100%;
+	z-index: 20;
+	white-space: nowrap;
+	background: none;
+	&:before {
+		content: "";
+		position: absolute;
+		top:0;
+		left:0;
+		right:0;
+		bottom: 0;
+		opacity: calc(var(--headerBackgroundOpacity) / 100);
+		background: var(--elementBackgroundColor);
+	}
+
+}
+
+	.siteMainHeader__wrap {
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		position: relative;
+		margin: calc(var(--headerHeight) * 1rem / 100) 0;
+	}
+
+	.siteMainHeader__desktop-menu {
+		
+		ul {
+			list-style: none;
+			margin:0;
+			padding:0;
+			display: flex;
+			height: 100%;
+		
+
+			>li {
+				display: flex;
+				align-items: center;
+				margin-right: var(--hs);
+				line-height: 2;
+				a {
+					color: var(--elementTextColor);
+					&:hover {
+						color: var(--elementTextHoverColor);
+					}
+				}
+
+				&:last-of-type {
+					margin-right: 0;
+				}
+			}
+
+		}
+
+
+		.sub-menu {
+			visibility: hidden;
+			pointer-events: none;
+			position: absolute;
+			top:100%;
+			left: calc(var(--hs)/-2);
+			opacity: 0;
+			transition: opacity 0.2s ease-out;
+			padding: calc(var(--vs)/4) calc(var(--hs)/2);	
+			min-width: 10rem;
+			flex-direction: column;
+			height: auto;
+			li {
+				display: block;
+				line-height: 2;
+			}
+		}
+		ul li.subnavigationOpen {
+			.sub-menu {
+				pointer-events: all;
+				background: var(--altBackgroundColor);
+				visibility: visible;
+				opacity: 1;
+				list-style: none;
+			}
+		}
+
+		.menu-item-has-children {
+			padding-right: calc(var(--hs) * 0.5);
+			position: relative;
+			&:after {
+				padding-left: calc(var(--hs) * 0.1);	
+			    content: "▼";
+			    transform: scale3d(0.5, 0.3, 1);
+		    	transform-origin: 50% 55%;
+
+			}
+		}
+
+		display: none;
+
+		@include medium {
+			display: flex;
+		}
+
+
+		.menu-item-has-children {
+			margin-right: calc(var(--hs) * .5);
+			&:after {
+				border-color: var(--elementTextColor);
+			}
+		}
+	}
+
+	.menuToggle__containerWrap {
+		width: 30px;
+		margin-left: var(--hs);
+		justify-self: flex-end;
+
+		@include medium {
+			position:absolute;
+			left:0;
+			opacity: 0;
+			pointer-events: none;
+		}
+	
+	}
+
+	.menuToggle__container {
+		display: flex;
+		flex-direction: column;
+		position: relative;
+		cursor: pointer;
+		justify-content: space-between;
+		height: 23px;
+
+
+		span
+		{
+
+			background: var(--elementTextColor);
+			width: 100%;
+			height:3px;
+			display: block;
+
+		}
+
+	
+	}
+ 	
+ 	.mainBuyTickets--desktop {
+ 		background: var(--desktopTicketButtonBackgroundColor);
+ 		color: var(--desktopTicketButtonTextColor);
+    	box-shadow: 0 0 30px rgba(0, 0, 0, calc(var(--desktopTicketButtonBoxShadow) / 400));
+    	border-radius: calc(0.015em * (var(--desktopTicketButtonSpacing) / 100) * var(--desktopTicketButtonRoundedEdges));
+ 		border: calc(1px * var(--desktopTicketButtonBorderThickness)) solid var(--desktopTicketButtonBorderColor);
+ 		padding:calc(.6rem * var(--desktopTicketButtonSpacing) / 100) calc(1.6rem * var(--desktopTicketButtonSpacing) / 100);
+    	font-size: calc(1rem * var(--desktopTicketButtonTextScale) / 100);
+ 		[data-plot-customizer-desktop-ticket-button-type="bordered"] & {
+ 			background: none;
+ 		}
+ 	}
+
+ 	.mainBuyTicketsWrap {
+ 		margin-left: var(--hs);
+ 	}
+
+ 		.mainBuyTickets--desktop {
+ 			flex-shrink: 0;
+ 			display: none;
+ 			@include medium {
+				display: block;
+			}
+ 		}
+
+ 	.siteMainHeader__logo {	 
+	    @include medium {
+		    flex-shrink:0;
+		}
+	    display: flex;
+	    position: relative;
+	    img {
+	    	max-width: 100%;
+    		width: calc(8rem * var(--logoSize) / 100);
+	    	align-self: center;
+	    }
+ 	}
+
+ 	.siteMainHeader__description {
+ 		width: 8rem;
+ 		flex-shrink: 0;
+ 		@include medium {
+		    flex-shrink:0;
+		}
+ 		margin-left: var(--hs);
+    	margin-right: auto;
+    	white-space: normal;
+    	color: var(--elementTextColor);
+ 	}
+
+
+
+[data-plot-customizer-navigation-alignment="center"] {
+	.siteMainHeader__wrap {
+		display: grid;
+		grid-template-columns: 1fr 2fr 1fr;
+		grid-template-areas: 
+           	 	". logo burger"
+            	"description description description";
+            
+
+		@include medium {
+
+			grid-template-areas: 
+           	 	"description logo tickets"
+            	"menu menu menu";
+        }
+        
+	}
+
+	.siteMainHeader__description {
+		grid-area: description;
+		margin:calc(var(--vs) / 3) auto 0 0;
+		width: 100%;
+		text-align: center;
+		@include medium {
+			text-align: left;
+	 		margin:0 calc(2 * var(--hs)) 0 0;
+	 		width: 8rem;
+	    	white-space: normal;
+		}
+	}
+
+	.siteMainHeader__logo {
+		grid-area: logo;
+    	margin: 0 auto;
+    	img {
+    		margin: auto;
+    	}
+	}
+
+	.menuToggle__containerWrap {
+		grid-area: burger; 
+	}
+
+		.menuToggle__container {
+			display: flex;
+
+		}
+
+	.siteMainHeader__desktop-menu {
+		grid-area: menu;
+		text-align: center;
+
+		.menu-main-menu-container {
+			
+			margin:calc(var(--vs) / 4) auto 0;
+			>ul {
+				margin: 0 auto;
+			}
+		}
+
+	}
+
+}
+
+[data-plot-customizer-navigation-alignment="center"][data-plot-customizer-navigation-force-burger="true"] {
+	.siteMainHeader__wrap {
+		@include medium {
+
+			grid-template-columns: calc(30px + var(--hs)) 1fr 3fr 1fr calc(30px + var(--hs));
+
+			grid-template-areas: 
+	       	 	"description description logo tickets burger";
+	    }
+	}
+}
+
+[data-plot-customizer-navigation-type="everythingInBurger"], [data-plot-customizer-navigation-force-burger="true"] {
+
+	.siteMainHeader__desktop-menu {
+		
+		opacity: 0;
+		position: absolute;
+		pointer-events: none;
+		left: 0;
+	
+	}
+
+	.menuToggle__containerWrap {
+		@include medium {
+			opacity: 1;
+			position: relative;
+			pointer-events: all;
+		}
+	}
+
+}
+
+
+[data-plot-customizer-navigation-type="everythingInBurger"][data-plot-customizer-navigation-alignment="center"] {
+	@include medium {
+		.siteMainHeader__wrap {
+		display: grid;
+		grid-template-columns: 3rem 1fr 4fr 1fr calc(30px + var(--hs));
+		grid-template-areas: 
+           	 	"description description logo tickets burger";
+
+        }
+	}
+}

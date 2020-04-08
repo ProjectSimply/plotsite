@@ -1,0 +1,7 @@
+.imageTiles {
+	
+}
+		
+	.imageTiles__layout {
+	    @include plotFlex(2,var(--hs),var(--hs));
+	}

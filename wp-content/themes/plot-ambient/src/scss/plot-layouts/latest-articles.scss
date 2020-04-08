@@ -1,0 +1,88 @@
+.latestArticles {
+	
+}
+
+	a.article {
+		display: block;
+		color: var(--bodyText); 
+	}
+
+		.article__imageWrap {
+		    margin-bottom: calc(0.5 * var(--vs));
+		}
+
+	.latestArticles__grid {
+
+		@include plotFlex(1);
+
+		@include medium {
+
+			@include plotFlex(2);
+
+			>*:nth-last-of-type(-n+2) {
+				margin-bottom: 0;
+			}
+
+			>*:nth-of-type(2n) {
+				margin-top: calc(var(--vs) / 100 * var(--wonk));
+			}
+
+		}
+
+		@include large {
+
+			@include plotFlex(4);
+
+			>*:nth-last-of-type(-n+4) {
+				margin-bottom: 0;
+			}
+
+		}
+
+
+	} 
+
+		.latestArticles__grid.col-3 {
+			@include medium {
+
+				@include plotFlex(3);
+
+				>*:nth-last-of-type(-n+3) {
+					margin-bottom: 0;
+				}
+
+				>*:nth-of-type(3n-1) {
+					margin-top: calc(var(--vs) / 100 * var(--wonk));
+				}
+
+			}
+		}
+
+		.latestArticles__grid.col-2,.latestArticles__grid.col-4 {
+			@include medium {
+
+				@include plotFlex(2);
+				>*:nth-last-of-type(-n+2) {
+					margin-bottom: 0;
+				}
+
+				>*:nth-of-type(2n) {
+					margin-top: calc(var(--vs) / 100 * var(--wonk));
+				}
+
+			}
+		}
+
+		.latestArticles__grid.col-4 {
+			@include large {
+
+				@include plotFlex(4);
+
+				a:nth-last-child(-n+4) {
+
+					margin-bottom: 0;
+
+				}	
+
+			}
+		}

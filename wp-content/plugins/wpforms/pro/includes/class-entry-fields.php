@@ -3,11 +3,7 @@
 /**
  * Entry fields DB class.
  *
- * @package    WPForms
- * @author     WPForms
- * @since      1.4.3
- * @license    GPL-2.0+
- * @copyright  Copyright (c) 2017, WPForms LLC
+ * @since 1.4.3
  */
 class WPForms_Entry_Fields_Handler extends WPForms_DB {
 
@@ -63,8 +59,8 @@ class WPForms_Entry_Fields_Handler extends WPForms_DB {
 	 *
 	 * @since 1.4.3
 	 *
-	 * @param array $args
-	 * @param bool $count
+	 * @param array $args  Modify the query with these params.
+	 * @param bool  $count Whether to return only the number of rows, or rows themselves.
 	 *
 	 * @return array|int
 	 */
@@ -124,15 +120,14 @@ class WPForms_Entry_Fields_Handler extends WPForms_DB {
 		foreach ( $keys as $key ) {
 			// Value `$args[ $key ]` can be a natural number and a numeric string.
 			// We should skip empty string values, but continue working with '0'.
-			// For some reason using `==` makes various parts of the code work.
-			if ( '' == $args[ $key ] ) {
+			if ( ! is_array( $args[ $key ] ) && ( ! is_numeric( $args[ $key ] ) || 0 === $args[ $key ] ) ) {
 				continue;
 			}
 
 			if ( is_array( $args[ $key ] ) && ! empty( $args[ $key ] ) ) {
 				$ids = implode( ',', array_map( 'intval', $args[ $key ] ) );
 			} else {
-				$ids = intval( $args[ $key ] );
+				$ids = (int) $args[ $key ];
 			}
 
 			$where[ 'arg_' . $key ] = "`{$key}` IN ( {$ids} )";

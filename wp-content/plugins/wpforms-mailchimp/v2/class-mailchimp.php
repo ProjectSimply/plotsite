@@ -1,11 +1,9 @@
 <?php
 
 /**
- * MailChimp integration (Legacy v2 API).
+ * Mailchimp integration (Legacy v2 API).
  *
  * @since 1.0.0
- *
- * @package WPFormsMailChimp
  */
 class WPForms_Mailchimp extends WPForms_Provider {
 
@@ -17,7 +15,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 	public function init() {
 
 		$this->version  = WPFORMS_MAILCHIMP_VERSION;
-		$this->name     = 'MailChimp (Legacy)';
+		$this->name     = 'Mailchimp (Legacy)';
 		$this->slug     = 'mailchimp';
 		$this->priority = 34;
 		$this->icon     = WPFORMS_MAILCHIMP_URL . 'assets/images/addon-icon-mailchimp.png';
@@ -78,7 +76,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 			$pass = $this->process_conditionals( $fields, $entry, $form_data, $connection );
 			if ( ! $pass ) {
 				wpforms_log(
-					esc_html__( 'MailChimp Subscription stopped by conditional logic', 'wpforms-mailchimp' ),
+					esc_html__( 'Mailchimp Subscription stopped by conditional logic', 'wpforms-mailchimp' ),
 					$fields,
 					array(
 						'type'    => array( 'provider', 'conditional_logic' ),
@@ -166,7 +164,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 				// Good!
 			} catch ( Mailchimp_Error_WPF $e ) {
 				wpforms_log(
-					esc_html__( 'MailChimp Subscription error', 'wpforms-mailchimp' ),
+					esc_html__( 'Mailchimp Subscription error', 'wpforms-mailchimp' ),
 					$e->getMessage(),
 					array(
 						'type'    => array( 'provider', 'error' ),
@@ -204,7 +202,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 			$api->helper->ping();
 		} catch ( Mailchimp_Invalid_ApiKey_WPF $e ) {
 			wpforms_log(
-				'MailChimp API error',
+				'Mailchimp API error',
 				$e->getMessage(),
 				array(
 					'type'    => array( 'provider', 'error' ),
@@ -278,7 +276,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 			return $lists['data'];
 		} catch ( Exception $e ) {
 			wpforms_log(
-				esc_html__( 'MailChimp API error', 'wpforms-mailchimp' ),
+				esc_html__( 'Mailchimp API error', 'wpforms-mailchimp' ),
 				$e->getMessage(),
 				array(
 					'type' => array( 'provider', 'error' ),
@@ -310,7 +308,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 			return $this->api[ $account_id ]->lists->interestGroupings( $list_id );
 		} catch ( Exception $e ) {
 			wpforms_log(
-				'MailChimp API error',
+				'Mailchimp API error',
 				$e->getMessage(),
 				array(
 					'type' => array( 'provider', 'error' ),
@@ -347,7 +345,7 @@ class WPForms_Mailchimp extends WPForms_Provider {
 			}
 		} catch ( Exception $e ) {
 			wpforms_log(
-				esc_html__( 'MailChimp API error', 'wpforms-mailchimp' ),
+				esc_html__( 'Mailchimp API error', 'wpforms-mailchimp' ),
 				$e->getMessage(),
 				array(
 					'type' => array( 'provider', 'error' ),

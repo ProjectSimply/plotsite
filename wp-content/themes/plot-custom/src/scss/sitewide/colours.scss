@@ -1,0 +1,10 @@
+body {
+	background: white;
+	--primaryColor: #5050cc; 
+	--secondaryColor: green;
+
+}
+
+a {
+	color: var(--primaryColor);
+}

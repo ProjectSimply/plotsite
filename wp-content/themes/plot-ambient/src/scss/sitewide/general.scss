@@ -1,0 +1,251 @@
+@mixin blockLinkHeight($perRow) {
+	height: calc(((100vw - (var(--hs) * #{$perRow})) / #{$perRow})  * (var(--blockLinkHeight) / 150) - (var(--boxBorders) / 100 * 1rem));  
+	max-height: calc((( (1px * var(--siteMaxWidth)) - (var(--hs) * #{$perRow})) / #{$perRow}) * (var(--blockLinkHeight) / 150) - (var(--boxBorders) / 100 * 1rem));  
+}
+
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+	}
+
+	100% {
+		opacity: 1;
+	}
+}
+
+body:not(#tinymce):not(#wpview-iframe-sandbox) {
+	border: calc(0.01rem * var(--siteBorder)) solid var(--siteBorderColor);
+	opacity: 0;
+	transition: opacity 0.3s ease-out;
+	&.revealed {
+		opacity: 1;
+	}
+}
+
+.content {
+	iframe {
+	    width: 100%;
+	}
+}
+
+.siteWrap {
+    position: relative;
+    overflow: hidden;
+}
+.align-center {
+	text-align: center; 
+}
+
+.align-right {
+	text-align: right;
+}
+
+.sitewideSocialLinks {
+	font-size: 2rem;
+	a {
+		color: var(--bodyColor);
+		&:hover {
+			color: var(--highlightColor);
+		}
+	}
+	svg {
+		display: block;
+		max-height: 1rem;
+		max-width: 1rem;
+		height:100%;
+		width: 100%;
+	}
+	&.sitewideSocialLinks--outline a{
+		border-radius: calc(0.015rem * var(--buttonRoundedEdges));
+		margin-right: calc(var(--hs) * 0.2);
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.8rem;
+		height: 1.8rem;
+		border: 2px solid var(--bodyColor);
+		path {
+			fill : var(--bodyColor);
+		}
+	}
+	&.sitewideSocialLinks--solid a{
+		border-radius: calc(0.015rem * var(--buttonRoundedEdges));
+		margin-right: calc(var(--hs) * 0.2);
+		display: inline-flex;
+		justify-content: center;
+		align-items: center;
+		width: 1.6rem;
+		height: 1.6rem;
+		background: var(--bodyColor);
+		path {
+			fill : var(--backgroundColor);
+		}
+	}
+} 
+
+
+img.loaded {
+	animation: fadeIn 0.9s ease-out;
+}
+
+.blockLink {
+	position: relative;
+
+	.blockLinkImageFrame {
+		display: block;
+		overflow: hidden;
+	    box-shadow: 0 0 15px rgba(0,0,0,calc(var(--boxShadow) / 200));
+	    border: calc(var(--boxBorders) / 100 * 1rem) solid var(--boxBorderColor);
+	    border-radius: calc(var(--roundedEdges) / 100 * 50%);
+	    position: relative;
+	    
+	    @include blockLinkHeight(1);
+
+	    @include medium {
+			@include blockLinkHeight(2);
+			
+			@include blockLinkHeight(2);
+			
+		}
+		@include large {
+			@include blockLinkHeight(4);
+			
+		}
+
+		.col-2 & {
+			@include large {
+				@include blockLinkHeight(2); 
+			}
+		}
+		
+		.col-3 & {
+			@include medium {
+				@include blockLinkHeight(3); 
+			}
+		}
+			
+	}
+	img {
+		object-fit: cover;
+		display: block;
+	    width: 100%;
+	    height: 100%;
+	}
+}
+
+.plotHasHoverEffect {
+	@include medium {
+	    overflow: hidden;
+	    img {
+	        display: block;
+	        transition: transform 0.3s ease-out;
+	        transform: scale3d(1, 1, 1);
+	    }
+	    &:hover {
+	        img {
+	            transform: scale3d(1.06, 1.06, 1);
+	        }
+	    }
+	}
+}
+
+.plotPossibleDropdown {
+	position: relative;
+	.plotPossibleDropdown__dropdown {
+		display: none;
+		max-height: 300px;
+		overflow: auto;
+		background: var(--buttonBackgroundColor);
+		[data-plot-customizer-button-type=bordered] & {
+			background: var(--backgroundColor);
+		}
+		color: var(--buttonTextColor);
+	}
+}
+
+	.plotPossibleDropdown__item {
+		padding: calc(.6rem * var(--buttonVerticalSpacing) / 100) 1rem;
+		cursor: pointer;
+		display: block;
+		color: var(--buttonTextColor); 
+		a {
+			color: var(--buttonTextColor); 
+		}
+		&:hover {
+			background: var(--altBackgroundColor);
+			color: var(--altTextColor);
+		}
+	}
+
+
+	.plotPossibleDropdown__selector {
+		display: none;
+		background: var(--buttonBackgroundColor);
+		border-radius: calc(0.005rem * var(--buttonRoundedEdges));
+
+	    box-shadow: 0 0 30px rgba(0, 0, 0, calc(var(--buttonBoxShadow) / 400));
+	    font-size: calc(1rem * var(--buttonTextScale) / 100);
+		[data-plot-customizer-button-type=bordered] & {
+			background: none;
+		}
+		padding: calc(.6rem * var(--buttonVerticalSpacing) / 100) 1rem;
+		border: calc(var(--buttonBorderThickness) * 1px) solid var(--buttonBorderColor);
+		position: relative;
+		cursor: pointer;
+		color: var(--buttonTextColor);
+		&:after {
+		    transition: transform 0.3s ease-out;
+		    content: "";
+		    height: 0.5rem;
+		    width: 0.5rem;
+		    border-bottom: 2px solid var(--buttonTextColor);
+		    border-left: 2px solid var(--buttonTextColor);
+		    transform: rotateZ(-45deg);
+		    position: absolute;
+		    top: calc(50% - 0.4rem);
+		    right: 0.8rem;
+		    transform-origin: 50% 50%;
+		}
+		@include medium {
+			max-width: 360px;
+		}
+		.plotDropdownActive & {
+			display: block;
+		}
+	}
+
+	.plotDropdownActive {
+
+		.plotPossibleDropdown--buttons {
+			opacity: 0;
+			position: absolute;
+			pointer-events: none;
+		}
+
+		.plotPossibleDropdown__dropdown {
+			position: absolute;
+			top: calc(100% - (var(--buttonBorderThickness) * 1px ));
+			padding-top: calc(var(--buttonBorderThickness) * 1px );
+			left:0;
+			width: 100%;
+			display: none;
+			max-width: 360px;
+		}
+
+		&.plotPossibleDropdown--open {
+
+			.plotPossibleDropdown__dropdown {
+				display: block;
+				border: calc(var(--buttonBorderThickness) * 1px) solid var(--buttonBorderColor);
+				border-top: 0;
+				border-radius:  0 0 calc(0.005rem * var(--buttonRoundedEdges)) calc(0.005rem * var(--buttonRoundedEdges));
+			}
+
+			.plotPossibleDropdown__selector {
+				margin-bottom: calc(var(--buttonBorderThickness) * 1px) solid var(--buttonBorderColor);
+				border-radius: calc(0.005rem * var(--buttonRoundedEdges)) calc(0.005rem * var(--buttonRoundedEdges)) 0 0;
+			}
+		}
+
+	}
+

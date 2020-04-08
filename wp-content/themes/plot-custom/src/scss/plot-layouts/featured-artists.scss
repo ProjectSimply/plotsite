@@ -1,0 +1,26 @@
+.featuredArtists {
+	
+}
+
+	.featuredArtists__grid {
+
+		@include medium {
+
+			@include plotFlex(3);
+
+		}
+	} 
+
+		.featuredArtists__grid--with2 {
+
+			@include medium {
+
+				@include plotFlex(2);
+
+			}
+		}
+
+
+		.artistBlock__image {
+			width: 100%;
+		}

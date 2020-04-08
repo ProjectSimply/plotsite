@@ -1,0 +1,189 @@
+.plotModal {
+	background: var(--backgroundColor);
+    max-width: 30rem; 
+    width: calc(100% - 2rem); 
+    box-shadow: 0 0 2rem rgba(0,0,0,0.3);
+    animation: modalEntry 0.5s ease-out; 
+    .mejs-overlay {
+    	width: 100% !important;
+ 	   	height: 100% !important;
+	
+    }
+    .modalVideo {
+    	display: block;
+    	object-fit: contain;
+    	height: 100% !important;
+    	width: 100% !important;
+    	video {
+    		background: none;
+    		padding: 2rem 0;
+    	}
+    }
+	.closePlotModal {
+		text-align: right;
+		position: absolute;
+		cursor: pointer;
+		top:0;
+		right:0;
+		z-index: 2;
+		padding: 0.5rem;
+		font-size: 0.7rem;
+		border-radius: 0;
+		border: 0;
+		color: white;
+		transition: opacity 0.3s ease-out;
+		&:focus {
+			outline: none;
+		}
+	}
+
+
+	&.hideControls .closePlotModal {
+		opacity: 0; 
+	}
+
+}
+
+	.plotModal--artist--side {
+		max-width: 50rem;
+		margin-left: auto;
+		margin-bottom: auto;
+		min-height: calc(var(--vh) * 100);
+		animation: artistModalEntry 0.5s ease-out; 
+	}
+
+	.plotModal--artist--central {
+		max-width: 40rem;
+		.plotModalScrollViewport {
+			padding: 2rem 1rem 1rem;
+		}
+		.closePlotModal {
+			background: var(--altBackgroundColor);
+			width: 100%;
+			text-align: right;
+		}
+		.plotModalControls .plotModalControls__back {
+			left: -2rem;
+		}
+		.plotModalControls .plotModalControls__next {
+			right: -2rem;
+			left: auto;
+		}
+	}
+
+	.plotModal .vjs-tech {
+		max-height: calc(var(--vh) * 100 - 2rem);
+	}
+
+	.plotModal--gallery {
+		max-width: none;
+		width: 100%;
+		background: black;
+		animation: none;
+		@include vh(100);
+
+		.closePlotModal {
+			width: 100%;
+			background: rgba(0,0,0,0.3);
+		}
+		.plotModalScrollViewport {
+			
+			max-height: none;
+			background: none;
+			padding: 0;
+		}
+
+		.plotModalReplaceContents {
+			justify-content: center;
+			align-items: center;
+			display: flex;
+			position: relative;
+			@include vh(100);
+			img {
+				
+				max-height: calc(100 * var(--vh) - 4rem);
+			}
+		}
+	}
+
+@keyframes modalEntry {
+	0% {
+		transform: translateY(100px);
+	}
+
+	100% {
+		transform: translate3d(0,0,0);
+	}
+}
+
+@keyframes artistModalEntry {
+	0% {
+		transform: translateX(100px);
+	}
+
+	100% {
+		transform: translate3d(0,0,0);
+	}
+}
+
+	.plotModalScrollViewport {
+	    background: var(--altBackgroundColor);
+	    color: var(--altBodyColor);
+	    position: relative;
+	    padding-bottom: 3rem;
+
+	    h1, h2, h3, h4, h5, h6 {
+	    	color: var(--altBodyColor);
+	    }
+
+	    .banner {
+	    	height: 50vw;
+	    	min-height: 0;
+	    	@include medium {
+		    	height: 18rem;
+		    }
+	    }
+
+	    
+	}
+
+	.plotModalControls {
+		pointer-events: none;
+		display: block;
+		top:0;
+		transition: opacity .3s ease-out;
+		.hideControls & {
+			opacity: 0;
+		}
+		button {
+			display: flex;
+			justify-content: center;
+			pointer-events: all;
+			position:absolute;
+			height: 2rem;
+			width: 2rem;
+			padding: 0;
+			line-height: 2rem;
+			top:calc(50% - 1rem);
+			background: rgba(0,0,0,0.4);
+			svg {
+				height: 60%;
+			}
+		}
+
+		.plotModalControls__next {
+			left: auto;
+			right: 0;
+		}
+	}
+
+
+.siteOverlay {
+    background: rgba(0,0,0,0.7);
+}
+.plotModalLoadingAjax {
+	pointer-events: none;
+	.siteOverlay {
+		display: block;
+	}
+}

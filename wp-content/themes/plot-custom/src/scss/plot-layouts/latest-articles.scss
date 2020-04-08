@@ -1,0 +1,16 @@
+.latestArticles {
+	
+}
+
+	.article {
+		display: block;
+	}
+
+	.latestArticles__grid {
+
+		@include medium {
+
+			@include plotFlex(3);
+
+		}
+	} 

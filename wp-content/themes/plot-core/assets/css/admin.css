@@ -1,0 +1,400 @@
+.plotPeach {
+  background: #ebc2a6;
+}
+
+.plotOrange {
+  background: #f28254;
+}
+
+.plotGreen {
+  background: #21b573;
+}
+
+.plotRed {
+  background: #f55252;
+}
+
+.plotYellow {
+  background: #f5d93d;
+}
+
+.plotLilac {
+  background: #a88fd9;
+}
+
+.plotBlue {
+  background: #3aa8e4;
+}
+
+.plotPink {
+  background: #eab8d1;
+}
+
+.plotPurple {
+  background: #b569b8;
+}
+
+.plotMint {
+  background: #7dedbb;
+}
+
+.plotSky {
+  background: #7ae5e5;
+}
+
+.plotFuchsia {
+  background: #d95496;
+}
+
+body.login {
+  background: #eab8d1;
+}
+
+#login {
+  width: auto;
+  max-width: 450px;
+}
+
+.login h1 a {
+  background: url("../img/plot-for-wordpress.svg") no-repeat center;
+  height: 100px;
+  width: 100%;
+}
+
+.login form {
+  background: #eab8d1;
+  border: 3px solid #2e2e2b;
+}
+
+.login label {
+  text-transform: uppercase;
+  color: #2e2e2b;
+}
+
+.login p {
+  margin-top: 1rem;
+}
+
+.login #login_error, .login .message {
+  background: #f55252;
+  border: 4px solid #2e2e2b;
+  color: #2e2e2b;
+  font-size: 1rem;
+}
+.login #login_error br, .login .message br {
+  height: 10px;
+  display: block;
+}
+
+.login .message {
+  background: #f28254;
+}
+
+.login form .input, .login input[type=text] {
+  background: transparent;
+  box-shadow: none;
+  font-size: 1.2rem;
+  line-height: 1.8;
+  border: 3px solid #2e2e2b;
+}
+
+#login .button.button-large {
+  background: #2e2e2b;
+  border: none;
+  font-size: 1.1rem;
+  padding: 5px 15px;
+  border-radius: 0;
+  height: auto;
+  text-shadow: none;
+}
+
+.login form input[type=checkbox] {
+  background: transparent;
+  height: 20px;
+  width: 20px;
+  box-shadow: none;
+  border: 3px solid #2e2e2b;
+  margin: 0;
+  margin-right: 0.2rem;
+}
+
+.login input[type=checkbox]:checked:before {
+  color: #2e2e2b;
+}
+
+.login form .forgetmenot label {
+  line-height: 20px;
+}
+
+.login #nav {
+  text-align: center;
+}
+.login #nav a {
+  color: #2e2e2b;
+}
+.login #nav a:hover {
+  color: #f55252;
+}
+
+.login #backtoblog {
+  display: none;
+}
+
+#login_error a {
+  color: #2e2e2b;
+}
+
+.plotSegmentsWrap > .acf-label label {
+  height: 4rem;
+  text-indent: -9999px;
+  background: url("../img/plot-for-wordpress.svg") no-repeat;
+  background-size: cover;
+  max-width: 5.2rem;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+  background-image: url("../img/custom-logo.png") !important;
+  background-position: 0 0;
+  color: rgba(0, 0, 0, 0);
+}
+
+#wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
+  background-position: 0 0;
+}
+
+#tinypng_dashboard_widget {
+  display: none;
+}
+
+.alignleft {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .alignleft {
+    max-width: 50%;
+    display: inline-block;
+    float: left;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+.alignright {
+  display: block;
+}
+@media (min-width: 1024px) {
+  .alignright {
+    max-width: 50%;
+    display: inline-block;
+    float: right;
+    padding-left: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+div#wpforms-builder-mobile-notice {
+  background-color: black;
+}
+
+.wpforms-header {
+  display: none;
+}
+
+#wpforms-flyout .wpforms-flyout-head {
+  display: none;
+}
+
+.wpforms-left img {
+  opacity: 0;
+}
+
+#wpforms-builder-mobile-notice img {
+  display: none;
+}
+
+#wpforms-builder .wpforms-panel-sidebar-section.upgrade-modal, #wpforms-builder .wpforms-panel-sidebar-section.education-modal {
+  display: none;
+}
+
+#wpforms-builder .wpforms-panels-toggle button.wpforms-panel-payments-button {
+  display: none;
+}
+
+.wpforms-setup-title.additional, .wpforms-setup-desc.additional {
+  display: none;
+}
+
+#wpforms-template-request-quote, #wpforms-template-donation, #wpforms-template-order {
+  display: none;
+}
+
+#wpforms-panel-fields .wpforms-add-fields-button.upgrade-modal, #wpforms-panel-fields .wpforms-add-fields-button.education-modal, #wpforms-panel-fields .wpforms-add-fields-button:disabled {
+  display: none;
+}
+
+.wpforms-add-fields-group:nth-of-type(3), .wpforms-add-fields-group:nth-of-type(2) {
+  display: none;
+}
+
+.wpforms-field-option-row.wpforms-field-option-row-css {
+  display: none;
+}
+
+#wpforms-builder .wpforms-toolbar a#wpforms-embed {
+  display: none;
+}
+
+#wpforms-panel-field-settings-form_class-wrap, #wpforms-panel-field-settings-submit_class-wrap {
+  display: none;
+}
+
+#wpforms-panel-fields .wpforms-add-fields-button#wpforms-add-fields-recaptcha {
+  display: none;
+}
+
+.button.wpforms-insert-form-button {
+  display: none;
+}
+
+#wpbody-content #dashboard-widgets #postbox-container-1 {
+  width: 100%;
+}
+
+#wpbody-content #dashboard-widgets.columns-1 #postbox-container-2, #wpbody-content #dashboard-widgets.columns-1 #postbox-container-3, #wpbody-content #dashboard-widgets.columns-1 #postbox-container-4 {
+  display: none;
+}
+
+#wpforms_reports_widget_pro,
+#wpseo-dashboard-overview {
+  display: none;
+}
+
+#ps_dashboard {
+  border: none;
+  padding: none;
+  background: none;
+}
+#ps_dashboard .inside {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+#ps_dashboard .handlediv, #ps_dashboard .hndle {
+  display: none;
+}
+
+h1.plotWelcome {
+  font-size: 1.8rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+@media screen and (min-width: 640px) {
+  h1.plotWelcome {
+    font-size: 2rem;
+  }
+}
+@media screen and (min-width: 1200px) {
+  h1.plotWelcome {
+    font-size: 3rem;
+  }
+}
+
+.dashboardLink {
+  text-align: center;
+  vertical-align: middle;
+  color: #2e2e2b;
+  transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+  transform: scale3d(1, 1, 1);
+}
+.dashboardLink:hover {
+  color: #2e2e2b;
+  transform: scale3d(1.01, 1.01, 1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.dashboardLink--home {
+  width: 50%;
+  display: block;
+}
+@media screen and (min-width: 640px) {
+  .dashboardLink--home {
+    width: calc(100%/ 3);
+  }
+}
+@media screen and (min-width: 1200px) {
+  .dashboardLink--home {
+    width: 25%;
+  }
+}
+
+.dashboardLink__contentWrap {
+  display: inline-block;
+  width: 100%;
+  padding: 2.4rem 0;
+}
+
+.dashboardLink__icon {
+  max-width: 30%;
+}
+
+.dashboardLink__title {
+  font-size: 1.8rem;
+  margin-bottom: 0;
+  margin-top: 1rem;
+}
+
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl {
+  display: grid;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 1fr 1fr;
+  max-width: 70rem;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl::before {
+  display: none;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label {
+  text-align: center;
+  width: 100%;
+  padding-bottom: 10px;
+  border: 3px solid #BFBFBF;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label.selected {
+  border: 4px solid #4EB4BB;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label::before {
+  content: "";
+  display: block;
+  height: 15vw;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 10px auto;
+}
+@media screen and (min-width: 1024px) {
+  div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label::before {
+    height: 14rem;
+  }
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li:first-child label::before {
+  background-image: url("../img/layout-1.svg");
+  background-size: 60%;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li:nth-child(2) label::before {
+  background-image: url("../img/layout-2.svg");
+  background-size: 60%;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li:last-child label::before {
+  background-image: url("../img/layout-3.svg");
+  background-size: 60%;
+}
+
+/*# sourceMappingURL=admin.css.map */

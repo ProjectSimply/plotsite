@@ -1,0 +1,34 @@
+.maxWidth {
+	max-width: calc(1px * var(--siteMaxWidth)); 
+	margin: 0 auto;
+	padding: 0 calc(var(--hs) / 2);
+    width: 100%;
+}
+
+.sectionWithVerticalSpacing {
+	margin-bottom: var(--vs);
+}
+
+.plotLayout {
+	margin-bottom: var(--vs);
+}
+
+.plotLayout.altColourScheme.firstLayout {
+	margin-top:calc(var(--vs) * -1);
+}
+
+.plotLayout.altColourScheme.lastLayout {
+	margin-bottom:0;
+}
+.plotLayout.fullImageOrVideo.lastLayout, .plotLayout.carousel.lastLayout {
+	margin-bottom:0;
+}
+
+.plotLayout.altColourScheme.lastLayoutWasFullWidth {
+	margin-top:calc(var(--vs) * -1);
+}
+
+.plotLayout.altColourScheme.lastLayoutWasAlternativeColor {
+	margin-top:calc(var(--vs) * -1);
+	padding-top: 0;
+}

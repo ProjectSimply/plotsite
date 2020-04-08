@@ -1,0 +1,83 @@
+#wpbody-content #dashboard-widgets #postbox-container-1 {
+	width: 100%;
+}
+
+#wpbody-content #dashboard-widgets.columns-1 {
+	#postbox-container-2, #postbox-container-3, #postbox-container-4 {
+		display: none;
+	}
+}
+
+#wpforms_reports_widget_pro,
+#wpseo-dashboard-overview{
+    display: none;
+}
+
+#ps_dashboard {
+	
+	border: none;
+	padding: none;
+	background: none;
+
+ 	.inside {
+ 		display: flex;
+ 		flex-wrap: wrap;
+ 		margin:0;
+ 		padding:0;
+ 	}
+	.handlediv, .hndle {
+ 		display: none;
+ 	}
+}
+
+h1.plotWelcome {
+	font-size: 1.8rem;
+	@media #{$mediumup} {
+		font-size: 2rem;
+	}
+	@media screen and (min-width: 1200px) {
+		font-size: 3rem;
+	}
+	width: 100%;
+	margin-bottom: 1rem;
+}
+.dashboardLink {
+	text-align: center;
+	vertical-align: middle;	
+	color: $plotBlack;
+	transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+	transform: scale3d(1,1,1);
+	&:hover {
+		color: $plotBlack;
+		transform: scale3d(1.01,1.01,1);
+		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	}
+	
+}
+
+	.dashboardLink--home {
+		width: 50%;
+		@media #{$mediumup} {
+	 		width: calc(100%/ 3);
+	 	}
+	 	@media screen and (min-width: 1200px) {
+	 		width: 25%;
+	 	}
+	 	display: block;
+	}
+
+	.dashboardLink__contentWrap {
+		display: inline-block;
+		width: 100%; 
+		padding: 2.4rem 0;
+	}
+
+	.dashboardLink__icon {
+		max-width: 30%;
+	}
+
+	.dashboardLink__title {
+		font-size: 1.8rem;
+		margin-bottom: 0;
+		margin-top: 1rem;
+	}

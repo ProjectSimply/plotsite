@@ -1,0 +1,39 @@
+.page-news {
+
+}
+	.news__featuredArticles {
+		@include medium {
+
+			@include plotFlex(2);
+
+		}
+
+	}
+
+		.news__featuredArticles--1items {
+			@include medium {
+				@include plotFlex(1);
+			}
+		}
+
+		.news__featuredArticles--3items {
+			@include medium {
+				@include plotFlex(3);
+			}
+		}
+
+	.news__grid {
+		@include medium {
+
+			@include plotFlex(2);
+
+		}
+
+		&.news__grid--3perRow {
+			@include plotFlex(3);
+		}
+
+		&.news__grid--4perRow {
+			@include plotFlex(4);
+		}
+	} 

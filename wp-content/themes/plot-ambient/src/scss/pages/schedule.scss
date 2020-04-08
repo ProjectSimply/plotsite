@@ -1,0 +1,255 @@
+.schedule {
+	--scheduleTopPosition: 0;
+	--scheduleHeight: 20rem;
+	--scheduleHeaderHeight : 3rem;
+	--scheduleHeadingBg: var(--altBackgroundColor);
+	--scheduleHeadingColor: var(--altBodyColor);
+	--scheduleBorderColor: var(--bodyColor);
+	--scheduleTimeWidth: 3.4rem;
+	
+	z-index: 2;
+	opacity: 0;
+	transition: opacity 0.6s ease-out;
+	position: relative;
+	padding: 0 calc(var(--hs) / 2);
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+
+
+#icon-arrow {
+	fill: #888;
+}
+
+.scheduleCalendarWrap {
+	max-width: 100%;
+	margin: 1rem 0 3rem;
+}
+
+.scheduleCalendar {
+	position: relative;
+	border: solid var(--scheduleBorderColor);
+	border-width: 0 1px 0 0;
+	overscroll-behavior: contain;
+}
+
+	.scheduleCalendar__headers {
+	  top: var(--scheduleTopPosition);
+	  position: -webkit-sticky;
+	  position: sticky;
+	  display: flex;
+	  justify-content: flex-end;
+	  z-index: 20;
+	  box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.04);
+	}
+
+
+		.scheduleCalendar__heading {
+		  height: var(--scheduleHeaderHeight);
+		  color: var(--scheduleHeadingColor);
+		  display: flex;
+		  justify-content: center;
+		  align-items: center;
+		  position: -webkit-sticky;
+		  position: sticky;
+		  top: 0;
+		  border: solid var(--scheduleBorderColor);
+		  border-width: 1px;
+		  z-index: 1;
+		  background: var(--scheduleHeadingBg);
+		}
+
+		.scheduleCalendar__headerButtons {
+		  display: flex;
+		  justify-content: space-between;
+		  position: absolute;
+		  z-index: 6;
+		  height: 100%;
+		  padding: 1px 0;
+		  width: calc(100% - var(--scheduleTimeWidth));
+		}
+
+
+
+		.scheduleCalendar__headerButton {
+		  border-radius: 0;
+		  border: 0;
+		  font: inherit;
+		  display: inline-flex;
+		  justify-content: center;
+		  align-items: center;
+		  outline: none !important;
+		  cursor: pointer;
+		  background: var(--scheduleHeadingBg);
+		}
+
+		.scheduleCalendar__headerButton > svg {
+		  line-height: 0;
+		  width: 1rem;
+		  height: 1rem;
+		  fill: var(--scheduleHeadingColor);
+		  pointer-events: none;
+		}
+
+		.scheduleCalendar__headerButton--left {
+		  transform: scaleX(-1);
+		}
+
+	.scheduleCalendar__gridLines {
+		position: absolute;
+		width: 100%;
+		top:0;
+		height: var(--scheduleHeight);
+		display: flex;
+		margin-top: var(--scheduleHeaderHeight);
+		flex-direction: column;
+		hr {
+			flex-grow: 1; 
+			margin: 0;
+			width: 100%;
+			border: 0;
+			border-bottom: 1px dashed #eee;
+		}
+	}
+
+	.scheduleCalendarTracks,
+	.scheduleCalendarScroller {
+		display: flex;
+		overflow-y: hidden;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	.scheduleCalendarScroller {
+		overflow-x: hidden;
+		flex: 1;
+	}
+
+	.scheduleCalendarTracks {
+		overflow: auto;
+		height: var(--scheduleHeight);
+	}
+
+	.scheduleCalendarTracks::-webkit-scrollbar,
+	.scheduleCalendarScroller::-webkit-scrollbar {
+		display: none;
+	}
+
+	.scheduleCalendar__gridMarker {
+		border: 1px solid #ebebeb;
+		border-top: 0;
+		background: var(--scheduleBg);
+		padding: 0.2rem 1em 1rem;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		flex: 1;
+		font-size: 0.6rem;
+		background: var(--backgroundColor);
+	}
+
+		.scheduleCalendar__column:last-of-type {
+			border-right: 0;
+		}
+
+		.scheduleCalendar__column {
+			flex: 1 0 66%;
+			border-right: 1px solid #eee;
+			position: relative;
+		}
+
+
+
+		@include medium {
+		  .scheduleCalendar__column:not(.scheduleCalendar__column--time) {
+		    flex: 1 0 33%;
+		  }
+		}
+		@include large {
+		  .scheduleCalendar__column:not(.scheduleCalendar__column--time) {
+		    flex: 1 0 22%;
+		  }
+		}
+
+		.scheduleCalendar__column + .scheduleCalendar__column {
+		 	margin-left: -1px;
+		}
+
+		.scheduleCalendar__column--time {
+			flex: 0 0 var(--scheduleTimeWidth);
+			width: var(--scheduleTimeWidth);
+			position: -webkit-sticky;
+			position: sticky;
+			left: 0;
+			z-index: 10;
+			font-size: 0.8rem;
+			text-align: right;
+			display: flex;
+			flex-direction: column;
+		}
+
+		.headers .scheduleCalendar__column--time {
+		  z-index: 5;
+		}
+
+		.scheduleCalendar__performance {
+			padding: 0.5rem;
+		  	position: absolute;
+		  	width: 100%;
+		}
+			.performance__titleWrap {
+				display: flex;
+				span {
+					cursor: pointer;
+				}
+			}
+
+			.performanceContent__imageWrap {
+				width: 3rem;
+				@include large {
+					width: 4rem;
+				}
+				margin-right: calc(var(--hs) / 2);
+				margin-bottom: calc(var(--vs) / 4);
+    			flex-shrink: 0;
+			}
+
+			.scheduleCalendar__performanceTime {
+				margin-bottom: 0.7rem;
+			}
+
+		.scheduleCalendar__performanceInner {
+			background: var(--altBackgroundColor);
+			color: var(--altBodyColor);
+			padding: 1rem;
+			height: 100%;
+			overflow: hidden;
+		  	box-shadow: 0 0 20px rgba(0,0,0,0.25);
+		  	border-radius: 5px;
+		  	margin: 0.2rem;
+		  	border-left: 0.5rem solid var(--secondaryColor);
+			h4 {
+				font-size: 1.4rem;
+				color: var(--altHeadingsColor);
+			}
+
+			.artistTypes button {
+				margin-bottom: 0;
+			}
+		}
+
+		.artistBlock__type {
+			padding: 0.5rem 0.7rem;
+			font-size: 0.8rem;
+			margin-right: calc(var(--hs) / 3);
+		}
+
+
+.scheduleFileButton {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    max-width: 10rem;
+    z-index: 4000;
+}

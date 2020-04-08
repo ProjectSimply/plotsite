@@ -1,0 +1,61 @@
+div#wpforms-builder-mobile-notice {
+	background-color: black;
+}
+.wpforms-header {
+	display: none; 
+}
+
+#wpforms-flyout .wpforms-flyout-head {
+	display: none;
+}
+
+.wpforms-left img {
+	opacity: 0;
+}
+
+#wpforms-builder-mobile-notice img {
+	display: none;
+}
+
+#wpforms-builder .wpforms-panel-sidebar-section.upgrade-modal, #wpforms-builder .wpforms-panel-sidebar-section.education-modal {
+	display: none;
+}
+
+#wpforms-builder .wpforms-panels-toggle button.wpforms-panel-payments-button {
+	display: none;
+}
+
+.wpforms-setup-title.additional, .wpforms-setup-desc.additional {
+	display: none;
+}
+
+#wpforms-template-request-quote, #wpforms-template-donation,#wpforms-template-order {
+	display: none;
+}
+
+#wpforms-panel-fields .wpforms-add-fields-button.upgrade-modal, #wpforms-panel-fields .wpforms-add-fields-button.education-modal, #wpforms-panel-fields .wpforms-add-fields-button:disabled {
+	display: none;
+}
+
+.wpforms-add-fields-group:nth-of-type(3),.wpforms-add-fields-group:nth-of-type(2) {
+	display: none;
+}
+.wpforms-field-option-row.wpforms-field-option-row-css {
+	display: none;
+}
+
+#wpforms-builder .wpforms-toolbar a#wpforms-embed {
+	display: none; 
+}
+
+#wpforms-panel-field-settings-form_class-wrap, #wpforms-panel-field-settings-submit_class-wrap {
+	display: none;
+}
+
+#wpforms-panel-fields .wpforms-add-fields-button#wpforms-add-fields-recaptcha {
+	display: none;
+}
+
+.button.wpforms-insert-form-button {
+	display: none;
+}

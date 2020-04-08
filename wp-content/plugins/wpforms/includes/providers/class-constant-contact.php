@@ -3,11 +3,7 @@
 /**
  * Constant Contact integration.
  *
- * @package    WPForms
- * @author     WPForms
- * @since      1.3.6
- * @license    GPL-2.0+
- * @copyright  Copyright (c) 2017, WPForms LLC
+ * @since 1.3.6
  */
 class WPForms_Constant_Contact extends WPForms_Provider {
 
@@ -649,7 +645,7 @@ class WPForms_Constant_Contact extends WPForms_Provider {
 
 		// Output the notice message.
 		$connect    = admin_url( 'admin.php?page=wpforms-settings&wpforms-integration=constant-contact#!wpforms-tab-providers' );
-		$learn_more = admin_url( 'admin.php?page=wpforms-page&wpforms-page=constant-contact ' );
+		$learn_more = admin_url( 'admin.php?page=wpforms-page&wpforms-page=constant-contact' );
 		?>
 		<div class="notice notice-info is-dismissible wpforms-constant-contact-notice">
 			<p>
@@ -881,6 +877,7 @@ class WPForms_Constant_Contact extends WPForms_Provider {
 			.about-wrap .logo {
 				float: right;
 				margin-top: 0.8em;
+				width: auto;
 			}
 
 			.about-wrap .reasons {

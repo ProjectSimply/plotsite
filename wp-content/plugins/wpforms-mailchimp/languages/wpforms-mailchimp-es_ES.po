@@ -3,11 +3,12 @@
 # Translators:
 # FX Bénard <fxb@wp-translations.org>, 2018
 # Luis Rull <luisrull@gmail.com>, 2019
+# Nilo Velez <nilovelez@gmail.com>, 2019
 # 
 msgid ""
 msgstr ""
 "Project-Id-Version: WPForms MailChimp\n"
-"Last-Translator: Luis Rull <luisrull@gmail.com>, 2019\n"
+"Last-Translator: Nilo Velez <nilovelez@gmail.com>, 2019\n"
 "Language-Team: Spanish (Spain) (https://www.transifex.com/wp-translations/teams/64435/es_ES/)\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -22,8 +23,7 @@ msgstr ""
 
 #: v2/class-mailchimp.php81, v3/class-mailchimp.php:132
 msgid "MailChimp Subscription stopped by conditional logic"
-msgstr ""
-"Las suscripciones de MailChimp se interrumpieron por la lógica condicional"
+msgstr "Suscripciones de MailChimp detenidas por la lógica condicional"
 
 #: v2/class-mailchimp.php169, v3/class-mailchimp.php:229
 msgid "MailChimp Subscription error"
@@ -49,23 +49,23 @@ msgstr "Error de la API de MailChimp"
 #. translators: %s - error message.
 #: v2/class-mailchimp.php289, v3/class-mailchimp.php:376
 msgid "API list error: %s"
-msgstr "Error de API list: %s"
+msgstr "Error de API de listas: %s"
 
 #. translators: %s - error message.
 #. translators: %s - error message.
 #: v2/class-mailchimp.php321, v3/class-mailchimp.php:447
 msgid "API groups error: %s"
-msgstr "Error de API groups: %s"
+msgstr "Error de API de grupos: %s"
 
 #: v2/class-mailchimp.php:346
 msgid "API fields error: No fields"
-msgstr "Error de API fields: Sin campos"
+msgstr "Error de campos de API: No hay campos"
 
 #. translators: %s - error message.
 #. translators: %s - error message.
 #: v2/class-mailchimp.php358, v3/class-mailchimp.php:504
 msgid "API fields error: %s"
-msgstr "Error de los campos de la API: %s"
+msgstr "Error de campos de API: %s"
 
 #: v2/class-mailchimp.php380, v3/class-mailchimp.php:525
 msgid "Add New Account"
@@ -111,10 +111,9 @@ msgid ""
 "longer supported. Please update your forms to use the new integration to "
 "avoid losing subscribers."
 msgstr ""
-"Tus formularios están actualmente utilizando una integración de MailChimp "
-"desactualizada a la que no se le da soporte. Por favor, actualiza tus "
-"formularios para utilizar la nueva integración para evitar que pierdas "
-"suscriptores."
+"Tus formularios están utilizando actualmente una integración de MailChimp "
+"obsoleta  que ya no recibe soporte. Por favor, actualiza tus formularios "
+"para utilizar la nueva integración para evitar perder suscriptores."
 
 #: v3/class-mailchimp.php:62
 msgid "Click here for more details."
@@ -126,7 +125,7 @@ msgstr "Error al crear la suscripción."
 
 #: v3/class-mailchimp.php:270
 msgid "Could not verify API key"
-msgstr "No se pudo verificar la clave de API"
+msgstr "No se ha podido verificar la clave del API"
 
 #: v3/class-mailchimp.php:357
 msgid "Unknown List"
@@ -134,7 +133,7 @@ msgstr "Lista desconocida"
 
 #: v3/class-mailchimp.php:363
 msgid "API list error: No lists"
-msgstr "Error de API list: Sin listas"
+msgstr "Error de API de listas: No hay listas"
 
 #: v3/class-mailchimp.php:411
 msgid "Unknown Segment"
@@ -146,7 +145,7 @@ msgstr "Grupo desconocido"
 
 #: v3/class-mailchimp.php:434
 msgid "API groups error: No groups"
-msgstr "Error de API groups: Sin grupos"
+msgstr "Error de API de grupos: No hay grupos"
 
 #: v3/class-mailchimp.php:475
 msgid "Email Address"

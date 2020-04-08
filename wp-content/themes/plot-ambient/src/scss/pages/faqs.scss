@@ -1,0 +1,36 @@
+.faqsMain {
+	@include medium {
+		@include plotFlex(2);
+	}
+}
+	.faqTypes {
+
+		@include medium {
+			width: 14rem;
+		}
+	}
+
+	.faqsContent {
+		@include medium {
+			width: calc(100% - 14rem - 2 * var(--hs));
+		}
+	}
+
+	.faqTypes__type {
+		display: block;
+		padding: 1rem;
+		margin-bottom: 1rem;
+	}
+
+	.faq__question {
+		border-top: 2px solid var(--primaryColor);
+		padding-top: calc(0.5 * var(--vs));
+
+	}
+
+	.faq {
+		margin-bottom: var(--vs);
+		h3 {
+			color: var(--highlightColor);
+		}
+	}

@@ -21,9 +21,8 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 		$widget              : $( '#wpforms_reports_widget_pro' ),
 		$chartTitle          : $( '#wpforms-dash-widget-chart-title' ),
 		$chartResetBtn       : $( '#wpforms-dash-widget-reset-chart' ),
-		$chartDaysSelect     : $( '#wpforms-dash-widget-chart-timespan' ),
+		$DaysSelect          : $( '#wpforms-dash-widget-timespan' ),
 		$canvas              : $( '#wpforms-dash-widget-chart' ),
-		$formsListDaysSelect : $( '#wpforms-dash-widget-form-entries-timespan' ),
 		$formsListBlock      : $( '#wpforms-dash-widget-forms-list-block' ),
 		$recomBlockDismissBtn: $( '#wpforms-dash-widget-dismiss-recommended-plugin-block' ),
 	};
@@ -65,6 +64,7 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 				} ],
 			},
 			options: {
+				maintainAspectRatio        : false,
 				scales                     : {
 					xAxes: [ {
 						type        : 'time',
@@ -160,7 +160,7 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 
 			var data = {
 				_wpnonce: wpforms_dashboard_widget.nonce,
-				action  : 'wpforms_dash_widget_get_chart_data',
+				action  : 'wpforms_' + wpforms_dashboard_widget.slug + '_get_chart_data',
 				days    : days,
 				form_id : formId,
 			};
@@ -232,7 +232,7 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 			chart.settings.data.datasets[ 0 ].data = [];
 
 			var end = moment().startOf( 'day' );
-			var days = el.$chartDaysSelect.val() || 7;
+			var days = el.$DaysSelect.val() || 7;
 			var date;
 
 			var minY = 5;
@@ -286,11 +286,11 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 			 */
 			daysChanged: function() {
 
-				var days = el.$chartDaysSelect.val();
-				var formId = el.$chartDaysSelect.attr( 'data-active-form-id' ) || 0;
+				var days = el.$DaysSelect.val();
+				var formId = el.$DaysSelect.attr( 'data-active-form-id' ) || 0;
 
 				chart.ajaxUpdate( days, formId );
-				app.saveWidgetMeta( 'chart_timespan', days );
+				app.saveWidgetMeta( 'timespan', days );
 			},
 
 			/**
@@ -302,11 +302,11 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 			 */
 			singleFormView: function( $el ) {
 
-				var days = el.$chartDaysSelect.val();
+				var days = el.$DaysSelect.val();
 				var formId = $el.closest( 'tr' ).attr( 'data-form-id' );
 				var formTitle = $el.closest( 'tr' ).find( '.wpforms-dash-widget-form-title' ).text();
 
-				el.$chartDaysSelect.attr( 'data-active-form-id', formId );
+				el.$DaysSelect.attr( 'data-active-form-id', formId );
 				el.$chartTitle.text( formTitle );
 				el.$chartResetBtn.show();
 
@@ -321,9 +321,9 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 			 */
 			resetToGeneralView: function() {
 
-				var days = el.$chartDaysSelect.val();
+				var days = el.$DaysSelect.val();
 
-				el.$chartDaysSelect.removeAttr( 'data-active-form-id' );
+				el.$DaysSelect.removeAttr( 'data-active-form-id' );
 				el.$chartTitle.text( wpforms_dashboard_widget.i18n.total_entries );
 				el.$chartResetBtn.hide();
 
@@ -388,12 +388,13 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 		 */
 		chartEvents: function() {
 
-			el.$chartDaysSelect.change( function() {
+			el.$DaysSelect.change( function() {
 				chart.events.daysChanged();
 			} );
 
 			el.$chartResetBtn.click( function() {
 				chart.events.resetToGeneralView();
+				el.$formsListBlock.find( 'tr.wpforms-dash-widget-form-active' ).removeClass( 'wpforms-dash-widget-form-active' );
 			} );
 		},
 
@@ -404,13 +405,20 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 		 */
 		formsListEvents: function() {
 
-			el.$formsListDaysSelect.change( function() {
-				el.$chartDaysSelect.val( el.$formsListDaysSelect.val() ).change();
+			el.$DaysSelect.change( function() {
 				app.updateFormsList( $( this ).val() );
 			} );
 
 			el.$widget.on( 'click', '.wpforms-dash-widget-single-chart-btn', function() {
-				chart.events.singleFormView( $( this ) );
+				var $t = $( this ),
+					$tr = $t.closest( 'tr' );
+				chart.events.singleFormView( $t );
+				$tr.closest( 'table' ).find( 'tr.wpforms-dash-widget-form-active' ).removeClass( 'wpforms-dash-widget-form-active' );
+				$tr.addClass( 'wpforms-dash-widget-form-active' );
+			} );
+
+			el.$formsListBlock.on( 'click', '.wpforms-dash-widget-reset-chart', function() {
+				el.$chartResetBtn.click();
 			} );
 
 			el.$widget.on( 'click', '#wpforms-dash-widget-forms-more', function() {
@@ -441,7 +449,7 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 
 			var data = {
 				_wpnonce: wpforms_dashboard_widget.nonce,
-				action  : 'wpforms_dash_widget_get_forms_list',
+				action  : 'wpforms_' + wpforms_dashboard_widget.slug + '_get_forms_list',
 				days    : days,
 			};
 
@@ -450,7 +458,7 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 			$.post( ajaxurl, data, function( response ) {
 
 				el.$formsListBlock.html( response );
-				app.saveWidgetMeta( 'forms_list_timespan', days );
+				app.saveWidgetMeta( 'timespan', days );
 			} );
 		},
 
@@ -472,14 +480,14 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 		 *
 		 * @since 1.5.0
 		 *
-		 * @param {String} meta Meta name to save.
-		 * @param {Number} value Value to save.
+		 * @param {string} meta Meta name to save.
+		 * @param {number} value Value to save.
 		 */
 		saveWidgetMeta: function( meta, value ) {
 
 			var data = {
 				_wpnonce: wpforms_dashboard_widget.nonce,
-				action  : 'wpforms_dash_widget_save_widget_meta',
+				action  : 'wpforms_' + wpforms_dashboard_widget.slug + '_save_widget_meta',
 				meta    : meta,
 				value   : value,
 			};
@@ -492,7 +500,7 @@ var WPFormsDashboardWidget = window.WPFormsDashboardWidget || ( function( docume
 		 *
 		 * @since 1.5.0
 		 *
-		 * @param {Object} $el jQuery element inside a widget block.
+		 * @param {object} $el jQuery element inside a widget block.
 		 */
 		addOverlay: function( $el ) {
 

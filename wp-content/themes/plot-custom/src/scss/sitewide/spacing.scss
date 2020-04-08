@@ -1,0 +1,19 @@
+.maxWidth {
+	max-width: 1300px;
+	margin: 0 auto;
+	padding: 0 1rem;
+    width: 100%;
+}
+
+html {
+	--vs : 2rem;
+	--hs : 1rem;
+}
+
+.sectionWithVerticalSpacing {
+	margin-bottom: var(--vs);
+}
+
+.plotLayout {
+	margin-bottom: var(--vs);
+}

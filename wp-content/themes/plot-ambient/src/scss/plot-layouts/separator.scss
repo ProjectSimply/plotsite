@@ -1,0 +1,41 @@
+.plotSeparator {
+	background-repeat: no-repeat;
+	background-size: auto 100%;
+	background-position: center;
+}
+
+	.plotSeparator--repeated {
+		background-repeat: space;
+	}
+
+	.plotSeparator--moveLeft,.plotSeparator--moveRight {
+		animation: moveLeft 30s linear infinite;
+		position: relative;
+		&:before {
+			content: "";
+			width: 100%;
+			left: -100%;
+			top: 0;
+			height: 100%;
+			position: absolute;
+			background-repeat: inherit;
+			background-size: inherit;
+			background-position: inherit;
+			background-image:inherit;
+		}
+	}
+
+	.plotSeparator--moveRight {
+		animation-direction: reverse;
+	}
+
+
+@keyframes moveLeft {
+	from {
+		transform: translate3d(0,0,0);
+	}
+
+	to {
+		transform: translate3d(100%,0,0);
+	}
+}

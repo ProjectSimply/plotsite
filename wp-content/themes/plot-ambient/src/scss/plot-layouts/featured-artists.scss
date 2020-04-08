@@ -1,0 +1,62 @@
+.featuredArtists {
+	
+}
+
+	.featuredArtists__grid {
+
+		@include medium {
+
+			@include plotFlex(3, var(--hs), var(--vs), 'left');
+
+
+
+		}
+	} 
+
+		.featuredArtists__grid.col-3 {
+			@include medium {
+				>*:nth-of-type(3n-1) {
+					margin-top: calc(var(--vs) / 100 * var(--wonk));
+				}
+			}
+		}
+
+		.featuredArtists__grid.col-2 {
+
+			@include medium {
+
+				@include plotFlex(2);
+				>*:nth-of-type(2n-1) {
+					margin-top: calc(var(--vs) / 100 * var(--wonk));
+				}
+
+			}
+		} 
+
+		.featuredArtists__grid.col-4 {
+
+			@include medium {
+
+				@include plotFlex(2);
+				>*:nth-of-type(2n-1) {
+					margin-top: calc(var(--vs) / 100 * var(--wonk));
+				}
+
+			}
+
+			@include large {
+
+				@include plotFlex(4);
+
+			}
+		} 
+
+		.artistBlock__imageWrap {
+			
+			margin-bottom: calc(0.3 * var(--vs));
+		}
+
+
+		.artistBlock__image {
+			width: 100%;
+		}

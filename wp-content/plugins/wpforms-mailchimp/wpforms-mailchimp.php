@@ -1,11 +1,11 @@
 <?php
 /**
- * Plugin Name: WPForms MailChimp
+ * Plugin Name: WPForms Mailchimp
  * Plugin URI:  https://wpforms.com
- * Description: MailChimp integration with WPForms.
+ * Description: Mailchimp integration with WPForms.
  * Author:      WPForms
  * Author URI:  https://wpforms.com
- * Version:     1.3.0
+ * Version:     1.4.2
  * Text Domain: wpforms-mailchimp
  * Domain Path: languages
  *
@@ -21,11 +21,6 @@
  *
  * You should have received a copy of the GNU General Public License
  * along with WPForms. If not, see <http://www.gnu.org/licenses/>.
- *
- * @package    WPFormsMailChimp
- * @since      1.0.0
- * @license    GPL-2.0+
- * @copyright  Copyright (c) 2017, WP Forms LLC
  */
 
 // Exit if accessed directly.
@@ -34,7 +29,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 };
 
 // Plugin version.
-define( 'WPFORMS_MAILCHIMP_VERSION', '1.3.0' );
+define( 'WPFORMS_MAILCHIMP_VERSION', '1.4.2' );
 
 // Plugin URL.
 define( 'WPFORMS_MAILCHIMP_URL', plugin_dir_url( __FILE__ ) );
@@ -50,7 +45,7 @@ define( 'WPFORMS_MAILCHIMP_DIR', plugin_dir_path( __FILE__ ) );
 function wpforms_mailchimp() {
 
 	// WPForms Pro is required.
-	if ( ! class_exists( 'WPForms_Pro' ) ) {
+	if ( ! wpforms()->pro ) {
 		return;
 	}
 
@@ -82,7 +77,7 @@ function wpforms_mailchimp_updater( $key ) {
 
 	new WPForms_Updater(
 		array(
-			'plugin_name' => 'WPForms MailChimp',
+			'plugin_name' => 'WPForms Mailchimp',
 			'plugin_slug' => 'wpforms-mailchimp',
 			'plugin_path' => plugin_basename( __FILE__ ),
 			'plugin_url'  => trailingslashit( WPFORMS_MAILCHIMP_URL ),

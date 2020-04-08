@@ -1,0 +1,50 @@
+.plotModalWrap {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    z-index: 5000;
+    .plotModalInView & {
+        display: flex;
+    }
+}
+
+    .plotModal {
+        position: relative;
+        pointer-events: all;
+    }
+
+        .plotModalScrollViewport {
+            
+            max-height: calc(var(--vh) * 100 - 2rem);
+            overflow: auto;
+        }
+
+        .plotModalControls {
+            position: absolute;
+            bottom: 0;
+            width: 100%;  
+        }
+
+.siteOverlay {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    z-index: 4999;
+    .plotModalInView & {
+        display: block;
+    }
+}
+
+.plotModalContents {
+    display: none;
+}  
+

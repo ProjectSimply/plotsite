@@ -82,7 +82,7 @@
 			$rows = $rows || $( '.wpforms-conditional-row' ); // jshint ignore:line
 
 			var fields     = $.extend({}, allFields),
-				allowed    = [ 'text', 'textarea', 'select', 'radio', 'email', 'url', 'checkbox', 'number', 'payment-multiple', 'payment-checkbox', 'payment-select', 'hidden', 'rating', 'net_promoter_score' ],
+				allowed    = wpforms_builder.cl_fields_supported,
 				changed    = [],
 				key        = '',
 				label      = '';
@@ -347,7 +347,7 @@
 
 				// Determine input type.
 				var inputType = 'text';
-				if ( 'rating' === data.field.type || 'net_promoter_score' === data.field.type ) {
+				if ( 'rating' === data.field.type || 'net_promoter_score' === data.field.type || 'number-slider' === data.field.type ) {
 					inputType = 'number';
 				}
 				$element = $( '<input>' ).attr( { type: inputType, name: name, class: 'wpforms-conditional-value' } ); // jshint ignore:line

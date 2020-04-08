@@ -1,0 +1,33 @@
+.holdingPage {
+	@include vh(100); 
+}
+
+	.holdingPage__backgroundWrap {
+		position:absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+		.holdingPage__backgroundImage, .banner__backgroundVideo {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+			position: absolute;
+			z-index: 1;
+		}
+
+	.holdingPage__contentWrap {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		position: relative;
+		z-index: 2;
+	}
+
+		.holdingPage__title {
+			color: white;
+			margin: 0;
+		}

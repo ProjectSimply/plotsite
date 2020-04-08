@@ -1,0 +1,153 @@
+.page-artists {
+
+}
+	.artistsMain {
+		margin-bottom: var(--vs);
+	}
+
+	.artistFiltersButton {
+		margin-bottom: calc(var(--vs) / 2);
+		width: 100%;
+		@media screen and (min-width: 37rem) {
+			display: none;
+		}
+	}
+
+	.artistFilters {
+
+		opacity: 0;
+		position: absolute;
+		pointer-events: none;
+
+		
+		margin-bottom: var(--vs);
+		z-index: 2;
+		@media screen and (min-width: 37rem) {
+			min-width: 12rem;
+			display: flex;
+			position: relative;
+			pointer-events: all;
+			opacity: 1;
+			flex: 1;
+		}
+		.plotButton {
+			margin-right: calc(var(--hs) / 2);
+		}
+		p {
+			font-family: var(--headingsFontFamily);
+			font-size: 0.9rem;
+			margin-bottom: calc(var(--vs) / 6); 
+		} 
+	}
+		.artistFilters--open {
+			opacity: 1;
+			position: static;
+			pointer-events: all;
+		}
+
+		.artistDays {
+			flex: 0 0 280px;
+			margin-left: auto;
+			z-index: 2;
+		}
+
+		.artistTypes {
+			flex: 0 0 calc(50% - var(--hs) / 3);
+			position: relative;
+	    	z-index: 1;
+	    	margin-bottom: 1rem;
+	    	@media screen and (min-width: 37rem) {
+	    		margin-bottom: 0;
+	    	}
+
+	    	@include medium {
+	    		flex:1;
+	    	}
+			
+		}
+
+
+
+	.artists__grid {
+
+		@include plotFlex(1);
+
+		@include medium {
+
+			@include plotFlex(3, var(--hs), var(--vs), 'left');
+			>*:nth-of-type(2n-1) {
+				margin-top: calc(var(--vs) / 100 * var(--wonk));
+			}
+
+		}
+
+		&.col-4 {
+
+			@include medium {
+
+				@include plotFlex(2, var(--hs), var(--vs), 'left');
+				>*:nth-of-type(2n-1) {
+					margin-top: calc(var(--vs) / 100 * var(--wonk));
+				}
+
+			}
+
+			@include large {
+
+				@include plotFlex(4, var(--hs), var(--vs), 'left');
+
+			}
+
+		}
+
+		.noResults {
+			width: 100%;
+			background: var(--altBackgroundColor);
+			padding: 4rem;
+			text-align: center;
+			p {
+				margin:0;
+			}
+		}
+
+
+	} 
+
+
+	.artists__backgroundWrap {
+		height: 14rem;
+	}
+
+		.artistTypesForArtist {
+			button {
+				padding: 0.3rem 0.6rem;
+				font-size: 0.9rem;
+				line-height: 1;
+			}
+		}
+
+		.artists__image {
+			object-fit: cover;
+			width: 100%;
+			height: 100%;
+		}
+
+		.artist__performances {
+			margin-bottom: calc(0.5 * var(--vs));
+		}
+
+		.artist__performance {
+			margin-bottom: calc(0.3 * var(--vs));
+			font-size: 0.8rem;
+			text-transform: uppercase;
+			color: var(--highlightColor);
+		}
+
+		.artistBlock {
+			cursor: pointer;
+		}
+
+.lineupPoster {
+	max-width: 50rem;
+	margin: 0 auto var(--vs);
+}

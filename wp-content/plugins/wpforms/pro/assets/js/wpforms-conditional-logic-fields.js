@@ -1,5 +1,5 @@
 /* globals wpforms_conditional_logic */
-;(function($) {
+( function( $ ) {
 
 	'use strict';
 
@@ -26,8 +26,49 @@
 		ready: function() {
 
 			$( '.wpforms-form' ).each( function() {
-				WPFormsConditionals.processConditionals( $( this ), false );
-			});
+				var $form = $( this );
+
+				WPFormsConditionals.initDefaultValues( $form );
+				WPFormsConditionals.processConditionals( $form, false );
+			} );
+		},
+
+		/**
+		 * Initialization of data-default-value attribute for each field.
+		 *
+		 * @since 1.5.5.1
+		 *
+		 * @param {object} $form The form DOM element.
+		 */
+		initDefaultValues: function( $form ) {
+			$form.find( '.wpforms-conditional-field input, .wpforms-conditional-field select, .wpforms-conditional-field textarea' ).each( function() {
+
+				var $field = $( this ),
+					defval = $field.val(),
+					type = $field.attr( 'type' ),
+					tagName = $field.prop( 'tagName' );
+
+				type = [ 'SELECT', 'BUTTON' ].indexOf( tagName ) > -1 ? tagName.toLowerCase() : type;
+
+				switch ( type ) {
+					case 'button':
+					case 'submit':
+					case 'reset':
+					case 'hidden':
+						break;
+					case 'checkbox':
+					case 'radio':
+						if ( $field.is( ':checked' ) ) {
+							$field.attr( 'data-default-value', 'checked' );
+						}
+						break;
+					default:
+						if ( defval !== '' ) {
+							$field.attr( 'data-default-value', defval );
+						}
+						break;
+				}
+			} );
 		},
 
 		/**
@@ -39,15 +80,15 @@
 
 			$( document ).on( 'change', '.wpforms-conditional-trigger input, .wpforms-conditional-trigger select', function() {
 				WPFormsConditionals.processConditionals( $( this ), true );
-			});
+			} );
 
 			$( document ).on( 'input', '.wpforms-conditional-trigger input[type=text], .wpforms-conditional-trigger input[type=email], .wpforms-conditional-trigger input[type=url], .wpforms-conditional-trigger input[type=number], .wpforms-conditional-trigger textarea', function() {
 				WPFormsConditionals.processConditionals( $( this ), true );
-			});
+			} );
 
 			$( '.wpforms-form' ).submit( function() {
 				WPFormsConditionals.resetHiddenFields( $( this ) );
-			});
+			} );
 		},
 
 		/**
@@ -75,20 +116,72 @@
 					case 'checkbox':
 					case 'radio':
 						$( this ).closest( 'ul' ).find( 'li' ).removeClass( 'wpforms-selected' );
-						if ( $( this ).is( ':checked' ) ){
+						if ( $( this ).is( ':checked' ) ) {
 							$( this ).prop( 'checked', false ).trigger( 'change' );
 						}
 						break;
 					case 'select':
-							$( this ).find( 'option:selected' ).prop( 'selected', 'false' ).trigger( 'change' );
+						$( this ).find( 'option:selected' ).prop( 'selected', 'false' ).trigger( 'change' );
 						break;
 					default:
-						if ( $( this ).val() !== '') {
+						if ( $( this ).val() !== '' ) {
+							if ( $( this ).hasClass( 'dropzone-input' ) && $( '[data-name="' + $( this )[0].name + '"]', $form )[0] ) {
+								$( '[data-name="' + $( this )[0].name + '"]', $form )[0].dropzone.removeAllFiles( true );
+							}
+
 							$( this ).val( '' ).trigger( 'input' );
 						}
 						break;
 				}
-			});
+			} );
+		},
+
+		/**
+		 * Reset form elements to default values.
+		 *
+		 * @since 1.5.5.1
+		 *
+		 * @param {object} $fieldContainer The field container.
+		 */
+		resetToDefaults: function( $fieldContainer ) {
+			$fieldContainer.find( ':input' ).each( function() {
+
+				var $field = $( this ),
+					defval = $field.attr( 'data-default-value' ),
+					type = $field.attr( 'type' ),
+					tagName = $field.prop( 'tagName' );
+
+				if ( defval === undefined ) {
+					return;
+				}
+
+				type = [ 'SELECT', 'BUTTON' ].indexOf( tagName ) > -1 ? tagName.toLowerCase() : type;
+
+				switch ( type ) {
+					case 'button':
+					case 'submit':
+					case 'reset':
+					case 'hidden':
+						break;
+					case 'checkbox':
+					case 'radio':
+						if ( defval === 'checked' ) {
+							$field.prop( 'checked', true ).closest( 'li' ).addClass( 'wpforms-selected' );
+							$field.trigger( 'change' );
+						}
+						break;
+					case 'select':
+						if ( $field.val() !== defval ) {
+							$field.val( defval ).trigger( 'change' );
+						}
+						break;
+					default:
+						if ( $field.val() !== defval ) {
+							$field.val( defval ).trigger( 'input' );
+						}
+						break;
+				}
+			} );
 		},
 
 		/**
@@ -98,6 +191,8 @@
 		 *
 		 * @param {element} el Any element inside the targeted form.
 		 * @param {boolean} initial Initial run of processing.
+		 *
+		 * @returns {boolean} Returns false if something wrong.
 		 */
 		processConditionals: function( el, initial ) {
 
@@ -113,10 +208,13 @@
 			var fields = wpforms_conditional_logic[formID];
 
 			// Fields.
-			for( var fieldID in fields ) {
+			for ( var fieldID in fields ) {
+				if ( ! fields.hasOwnProperty( fieldID ) ) {
+					continue;
+				}
 
 				if ( window.location.hash && '#wpformsdebug' === window.location.hash ) {
-					console.log( 'Processing conditionals for Field #'+fieldID+'...' );
+					console.log( 'Processing conditionals for Field #' + fieldID + '...' );
 				}
 
 				var field  = fields[fieldID].logic,
@@ -124,13 +222,19 @@
 					pass   = false;
 
 				// Groups.
-				for( var groupID in field ) {
+				for ( var groupID in field ) {
+					if ( ! field.hasOwnProperty( groupID ) ) {
+						continue;
+					}
 
 					var group      = field[groupID],
 						pass_group = true;
 
 					// Rules.
-					for( var ruleID in group ) {
+					for ( var ruleID in group ) {
+						if ( ! group.hasOwnProperty( ruleID ) ) {
+							continue;
+						}
 
 						var rule      = group[ruleID],
 							val       = '',
@@ -151,20 +255,19 @@
 
 							rule.value = '';
 
-							if (
-								rule.type === 'radio' ||
-								rule.type === 'checkbox' ||
-								rule.type === 'payment-multiple' ||
-								rule.type === 'payment-checkbox' ||
-								rule.type === 'rating' ||
-								rule.type === 'net_promoter_score'
+							if ( [  'radio',
+									'checkbox',
+									'payment-multiple',
+									'payment-checkbox',
+									'rating',
+									'net_promoter_score' ].indexOf( rule.type ) > -1
 							) {
-								$check = $form.find( '#wpforms-'+formID+'-field_'+rule.field+'-container input:checked' );
+								$check = $form.find( '#wpforms-' + formID + '-field_' + rule.field + '-container input:checked' );
 								if ( $check.length ) {
 									val = true;
 								}
 							} else {
-								val = $form.find( '#wpforms-'+formID+'-field_'+rule.field ).val();
+								val = $form.find( '#wpforms-' + formID + '-field_' + rule.field ).val();
 								if ( ! val  ) {
 									val = '';
 								}
@@ -172,31 +275,31 @@
 
 						} else {
 
-							if (
-								rule.type === 'radio' ||
-								rule.type === 'checkbox' ||
-								rule.type === 'payment-multiple' ||
-								rule.type === 'payment-checkbox' ||
-								rule.type === 'rating' ||
-								rule.type === 'net_promoter_score'
+							if ( [  'radio',
+									'checkbox',
+									'payment-multiple',
+									'payment-checkbox',
+									'rating',
+									'net_promoter_score' ].indexOf( rule.type ) > -1
 							) {
-								$check = $form.find( '#wpforms-'+formID+'-field_'+rule.field+'-container input:checked' );
+								$check = $form.find( '#wpforms-' + formID + '-field_' + rule.field + '-container input:checked' );
 								if ( $check.length ) {
 									$.each( $check, function() {
 										var escapeVal = WPFormsConditionals.escapeText( $( this ).val() );
-										if ( rule.type === 'checkbox' ) {
+										if ( [ 'checkbox', 'payment-checkbox' ].indexOf( rule.type ) > -1 ) {
 											if ( rule.value === escapeVal ) {
 												val = escapeVal;
 											}
 										} else {
 											val = escapeVal;
 										}
-									});
+									} );
 								}
 							} else {
-								// text, textarea, number, select
-								val = $form.find( '#wpforms-'+formID+'-field_'+rule.field ).val();
-								if ( rule.type === 'select' || rule.type === 'payment-select' ) {
+
+								// text, textarea, number, select.
+								val = $form.find( '#wpforms-' + formID + '-field_' + rule.field ).val();
+								if ( [ 'select', 'payment-select' ].indexOf( rule.type ) > -1 ) {
 									val = WPFormsConditionals.escapeText( val );
 								}
 							}
@@ -234,11 +337,11 @@
 								pass_rule = ( left.length > 0 );
 								break;
 							case '>' :
-								left      = left.replace( /[^0-9.]/g, '' );
+								left      = left.replace( /[^-0-9.]/g, '' );
 								pass_rule = ( '' !== left ) && ( WPFormsConditionals.floatval( left ) > WPFormsConditionals.floatval( right ) );
 								break;
 							case '<' :
-								left      = left.replace( /[^0-9.]/g, '' );
+								left      = left.replace( /[^-0-9.]/g, '' );
 								pass_rule = ( '' !== left ) && ( WPFormsConditionals.floatval( left ) < WPFormsConditionals.floatval( right ) );
 								break;
 						}
@@ -260,20 +363,26 @@
 
 				if ( ( pass && action === 'hide' ) || ( ! pass && action !== 'hide' ) ) {
 					$form
-						.find( '#wpforms-'+formID+'-field_'+fieldID+'-container' )
+						.find( '#wpforms-' + formID + '-field_' + fieldID + '-container' )
 						.hide()
 						.addClass( 'wpforms-conditional-hide' )
 						.removeClass( 'wpforms-conditional-show' );
 					hidden = true;
 				} else {
-					$form
-						.find( '#wpforms-'+formID+'-field_'+fieldID+'-container' )
+					var $fieldContainer = $form.find( '#wpforms-' + formID + '-field_' + fieldID + '-container' );
+					if (
+						$this.closest( '.wpforms-field' ).attr( 'id' ) !== $fieldContainer.attr( 'id' ) &&
+						$fieldContainer.hasClass( 'wpforms-conditional-hide' )
+					) {
+						WPFormsConditionals.resetToDefaults( $fieldContainer );
+					}
+					$fieldContainer
 						.show()
 						.removeClass( 'wpforms-conditional-hide' )
 						.addClass( 'wpforms-conditional-show' );
 				}
 
-				$( document ).trigger( 'wpformsProcessConditionalsField', [formID, fieldID, pass, action] );
+				$( document ).trigger( 'wpformsProcessConditionalsField', [ formID, fieldID, pass, action ] );
 			}
 
 			if ( hidden ) {
@@ -286,7 +395,7 @@
 				}
 			}
 
-			$( document ).trigger( 'wpformsProcessConditionals', [$this, $form, formID] );
+			$( document ).trigger( 'wpformsProcessConditionals', [ $this, $form, formID ] );
 		},
 
 		/**
@@ -294,14 +403,14 @@
 		 *
 		 * @since 1.0.5
 		 *
-		 * @param {string} text
+		 * @param {string} text Text to escape.
 		 *
-		 * @return string|boolean
+		 * @returns {string|null} Escaped text.
 		 */
 		escapeText: function( text ) {
 
-			if ( ! text ){
-				return false;
+			if ( null == text || ! text.length ) {
+				return null;
 			}
 
 			var map = {
@@ -309,25 +418,31 @@
 				'<': '&lt;',
 				'>': '&gt;',
 				'"': '&quot;',
-				"'": '&#039;'
+				'\'': '&#039;',
 			};
 
-			return text.replace(/[&<>"']/g, function(m) { return map[m]; });
+			return text.replace( /[&<>"']/g, function( m ) {
+				return map[ m ];
+			} );
 		},
 
 		/**
 		 * Parse float. Returns 0 instead of NaN. Similar to PHP floatval().
 		 *
 		 * @since 1.4.7.1
+		 *
+		 * @param {mixed} mixedVar Probably string.
+		 *
+		 * @returns {float} parseFloat
 		 */
-		floatval: function ( mixedVar ) {
+		floatval: function( mixedVar ) {
 
 			return ( parseFloat( mixedVar ) || 0 );
-		}
+		},
 	};
 
 	WPFormsConditionals.init();
 
 	window.wpformsconditionals = WPFormsConditionals;
 
-})(jQuery);
+}( jQuery ) );

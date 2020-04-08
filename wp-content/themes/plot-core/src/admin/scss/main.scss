@@ -1,0 +1,25 @@
+ .plotSegmentsWrap {
+ 	>.acf-label label {
+ 		height: 4rem;
+ 		text-indent: -9999px;
+ 		background: url("../img/plot-for-wordpress.svg") no-repeat;
+ 		background-size: cover;
+ 		max-width: 5.2rem;
+ 		margin-bottom: 1rem;
+ 		display: block;
+ 	
+ 	}
+ }
+
+ #wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
+	background-image: url('../img/custom-logo.png') !important; 
+	background-position: 0 0; 
+	color:rgba(0, 0, 0, 0);
+}
+#wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
+	background-position: 0 0;
+}
+
+#tinypng_dashboard_widget {
+    display: none;
+}
