@@ -2,7 +2,7 @@
 
     <div class="maxWidth">    
 
-        <h2 class="blockSection__title"><?= get_field('block_section_title') ?></h2>
+        <div class="blockSection__titleWrap"><?= get_field('block_section_title') ?></div>
 
         <div class="blockSection__grid">
 

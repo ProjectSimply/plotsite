@@ -519,6 +519,7 @@ img {
   border-radius: 8px;
   padding: 1rem 1.5rem;
   display: inline-block;
+  text-transform: uppercase;
 }
 @media screen and (max-width: 639px) {
   .button {
@@ -1664,9 +1665,14 @@ a {
   text-align: center;
 }
 
-.blockSection__title {
-  color: var(--white);
+.blockSection__titleWrap {
   margin-bottom: 4rem;
+}
+.blockSection__titleWrap h2 {
+  color: var(--white);
+}
+.blockSection__titleWrap span {
+  color: var(--yellow);
 }
 
 .blockSection__grid {
@@ -1711,6 +1717,15 @@ a {
     margin-right: calc(var(--hs) / 2);
     margin-bottom: var(--vs);
   }
+}
+
+.blockSection__svgWrap {
+  margin-bottom: 1rem;
+}
+
+.blockSection__blockTitle,
+.blockSection__blockText {
+  color: var(--white);
 }
 
 .homeBanner {
