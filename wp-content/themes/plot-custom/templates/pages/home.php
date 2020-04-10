@@ -4,4 +4,6 @@
 
 <?php plotGetTemplatePart('parts/home-block-section') ?>
 
+<?php plotGetTemplatePart('parts/testimonial') ?>
+
 <?php plotGetTemplatePart('parts/footer') ?>

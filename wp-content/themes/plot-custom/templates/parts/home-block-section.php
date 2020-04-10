@@ -1,4 +1,4 @@
-<section class="blockSection sectionPadding">
+<section class="blockSection">
 
     <div class="maxWidth">    
 

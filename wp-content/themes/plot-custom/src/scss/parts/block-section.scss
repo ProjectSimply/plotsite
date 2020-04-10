@@ -1,7 +1,11 @@
 .blockSection {
     background-color: var(--purple);
     text-align: center;
-    
+    padding: 4rem 0;
+
+    @include large {
+        padding: 6rem 0;    
+    }
 }
 
     .blockSection__titleWrap {
