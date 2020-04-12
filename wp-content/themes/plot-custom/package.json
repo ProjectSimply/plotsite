@@ -47,6 +47,7 @@
   "dependencies": {
     "body-scroll-lock": "^2.6.4",
     "flickity": "^2.2.1",
+    "flickity-imagesloaded": "^2.0.0",
     "normalize-wheel": "^1.0.1"
   }
 }

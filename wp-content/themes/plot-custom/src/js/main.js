@@ -5,7 +5,7 @@
 	var Plot    		= require('../../../plot-core/src/js/plot'),  
 		LazyLoad   	 	= require('../../../plot-core/src/js/lazyload'),
 		Modals			= require('../../../plot-core/src/js/modals'),
-		Carousels		= require('../../../plot-core/src/js/carousels'),
+		Carousels		= require('./components/carousel'),
 		// CustomMouse 	= require('../../../plot-core/src/js/custom-mouse'),
 		Home			= require('./pages/home'),
 		Artists			= require('./pages/artists'),

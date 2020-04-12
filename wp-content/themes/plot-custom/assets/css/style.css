@@ -1792,6 +1792,56 @@ a {
   fill: var(--green);
 }
 
+.carouselSection {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .carouselSection {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.carouselSection__title {
+  color: var(--black);
+  max-width: 650px;
+  margin: 0 auto 1rem;
+}
+
+.carouselSection__text {
+  max-width: 650px;
+  margin: 0 auto 3rem;
+}
+
+.carouselSection__slider {
+  height: 60vw;
+  max-height: 700px;
+}
+
+.carousel__slide {
+  width: 80%;
+  max-width: 900px;
+  background-color: transparent;
+}
+
+.carousel__imageWrap {
+  display: block;
+  height: 100%;
+  z-index: 1;
+  width: 100%;
+}
+
+.carousel__image {
+  object-fit: contain;
+}
+
+.carouselSection__buttonWrap {
+  display: block;
+  margin: 0 1rem;
+}
+
 .homeBanner {
   position: relative;
   min-height: 100vh;

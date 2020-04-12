@@ -6,4 +6,6 @@
 
 <?php plotGetTemplatePart('parts/testimonial') ?>
 
+<?php plotGetTemplatePart('parts/carosuel') ?>
+
 <?php plotGetTemplatePart('parts/footer') ?>
