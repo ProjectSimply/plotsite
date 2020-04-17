@@ -32,3 +32,54 @@
 			color: white;
 			margin: 0;
 		}
+
+.textOnlyBanner {
+	padding: 3rem 0;
+	position: relative;
+}
+
+	.textOnlyBanner__title {
+		max-width: 1100px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.textOnlyBanner__asset {
+		position: absolute;
+		z-index: -1;
+
+		svg {
+			object-fit: contain;
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		&.textOnlyBanner__asset--1 {
+			right: -15%;
+			top: -50%;
+			width: 50vw;
+			height: 50vw;
+			max-width: 670px;
+			max-height: 670px;
+
+			path {
+				fill: var(--mint);
+				opacity: 1;
+			}
+		}
+
+		&.textOnlyBanner__asset--2 {
+			left: -20%;
+			top: 0%;
+			width: 50vw;
+			height: 50vw;
+			max-width: 530px;
+			max-height: 530px;
+
+			path {
+				fill: var(--yellow);
+				opacity: 1;
+			}
+		}
+	}
