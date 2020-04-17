@@ -1,0 +1,38 @@
+.menuToggle__container {
+    margin-left: 0;
+    display: block;
+    height: 2rem;
+    width: 2rem;
+    padding: 0;
+    background-color: transparent;
+    border: 0;
+    outline: none;
+
+    @include medium {
+        display: none;
+    }
+}
+
+    .menuToggle--burger,
+    .menuToggle--cross {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+
+    .menuToggle--burger {
+        display: block;
+    
+        html.burgerOpen & {
+            display: none;
+        }
+
+    }
+
+    .menuToggle--cross {
+        display: none;
+
+        html.burgerOpen & {
+            display: block;
+        }
+    }

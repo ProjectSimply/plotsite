@@ -5,7 +5,7 @@
 		<div class="siteMainHeader__wrap">
 		
 			<a class="siteMainHeader__logo" href="/">
-				LOGO
+				<img src="<?= IMAGES ?>/plot-for-wordpress.svg" alt="">
 			</a>
 
 			<div class="siteMainHeader__desktop-menu">
@@ -20,9 +20,15 @@
 
 			</div>
 
+			<div class="siteMainHeader__cta">
+				<a class="button siteMainHeader__ctaLink" href="<?= get_field('call_to_action_link', 'options') ?>">
+					<?= get_field('call_to_action_text', 'options') ?>
+				</a>
+			</div>
+
 			<button class="JS--menuTrigger menuToggle__container">
 
-				MENU
+				<?php plotGetTemplatePart('parts/menu-toggle') ?>
 
 			</button>
 

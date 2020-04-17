@@ -1,4 +1,4 @@
-
+<?php plotGetTemplatePart('parts/header') ?>
 
 <?php plotGetTemplatePart('parts/home-banner') ?>
 
