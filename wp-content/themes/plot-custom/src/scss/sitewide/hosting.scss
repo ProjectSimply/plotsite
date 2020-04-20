@@ -1,0 +1,43 @@
+.hosting {
+    background-color: var(--orange);
+    padding: 6rem 0;
+    text-align: center;
+}
+
+    .hosting__subText {
+        max-width: 650px;
+        margin: 0 auto 3rem;
+    }
+
+    .hosting__textWrap {
+        margin: .5rem 0 1.5rem;
+        
+        @include medium {
+            display: flex;
+            justify-content: center;
+        }
+
+        span {
+            font-size: 2rem;
+            color: var(--black);
+            font-weight: 300;
+            font-family: var(--bodyFont);
+
+            @include medium {
+                padding-right: .5rem;
+            }
+        }
+
+        h2 {
+            font-size: 2rem;
+            font-family: var(--headingFont);
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+
+    .hosting__description {
+        max-width: 650px;
+        margin: 1rem auto;
+        
+    }

@@ -2,6 +2,10 @@
 
 <?php plotGetTemplatePart('parts/banner') ?>
 
-<?php plotGetTemplatePart('plot-layouts/main-loop'); ?> 
+<?php plotGetTemplatePart('parts/fifty-fifty-section'); ?> 
+
+<?php plotGetTemplatePart('parts/cards'); ?> 
+
+<?php plotGetTemplatePart('parts/hosting-list'); ?> 
 
 <?php plotGetTemplatePart('parts/footer') ?>

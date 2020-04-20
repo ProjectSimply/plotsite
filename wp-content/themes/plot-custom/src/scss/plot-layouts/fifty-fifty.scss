@@ -1,35 +1,73 @@
 .fiftyFifty {
 
+
 }
 
-	
-	.fiftyFifty--right {
-		@include medium {
-			flex-direction: row-reverse;
-		}
-	}
-
 	.fiftyFifty__row {
+		width: 100%;
+		margin-bottom: 4rem;
+
 		@include medium {
 			display: flex;
 		}
-		width: 100%;
 		
+		&:nth-child(odd) {
+			@include medium {
+				flex-direction: row-reverse;
+
+				.fiftyFifty__textWrap {
+					padding-right: 1rem;
+				}
+			}
+		}
+
+		&:nth-child(even) {
+			@include medium {
+				.fiftyFifty__textWrap {
+					padding-left: 3rem;
+				}
+			}
+		}
 	}
 
-	.fiftyFifty__imageWrap {
+	.fiftyFifty__svgWrap {
+		
 		
 		@include medium {
-			width: 50%;
+			width: calc(50% + 1rem);
 			padding: 0 var(--horizontalSpacing) 0 0;
 			.fiftyFifty__right & {
 				padding: 0 0 0 var(--horizontalSpacing);
 			}
 		}
+
+		p {
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		svg {
+			display: block;
+			object-fit: contain;
+			width: 100%;
+			height: 100%;
+		}
 		
 	}
 	.fiftyFifty__textWrap {
+		& * {
+			text-align: center !important;
+		}
+
 		@include medium {
-			width: 50%;
+			width: calc(50% - 1rem);
+			display: flex;
+			justify-content: center;
+			flex-direction: column;
+			
+			& * {
+				text-align: left !important;
+			}
 		}
 	}
