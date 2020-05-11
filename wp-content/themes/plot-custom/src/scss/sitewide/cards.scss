@@ -1,0 +1,41 @@
+.cards {
+    background-color: var(--purple);
+    text-align: center;
+    color: var(--white);
+}
+    .cards__sectionHeading {
+        color: var(--white);
+    }
+
+    .cards__sectionIntro {
+        color: var(--white);
+        font-size: .8rem;
+        max-width: 750px;
+        margin: 0 auto 4rem;
+    }
+
+    .cards__grid {
+        @include plotFlex(2, 0, 4rem);
+
+        @include medium { @include plotFlex(2) }
+
+        @include large { @include plotFlex(3) }
+    }
+
+        .cards__item {
+            max-width: 400px;
+        }
+
+            .cards__svgWrap {
+                margin-bottom: .5rem; 
+            }
+
+            .cards__textWrap {
+                
+                p { color: var(--white) }
+            }
+
+                .cards__title {
+                    color: var(--white);
+                    margin-bottom: .5rem;
+                }

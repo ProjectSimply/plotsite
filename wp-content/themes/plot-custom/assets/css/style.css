@@ -619,6 +619,84 @@ a {
   color: var(--primaryColor);
 }
 
+.cards {
+  background-color: var(--purple);
+  text-align: center;
+  color: var(--white);
+}
+
+.cards__sectionHeading {
+  color: var(--white);
+}
+
+.cards__sectionIntro {
+  color: var(--white);
+  font-size: 0.8rem;
+  max-width: 750px;
+  margin: 0 auto 4rem;
+}
+
+.cards__grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: calc(0 / -2);
+  margin-right: calc(0 / -2);
+  justify-content: center;
+}
+.cards__grid > * {
+  width: calc(100% / 2 - 0);
+  margin-left: calc(0 / 2);
+  margin-right: calc(0 / 2);
+  margin-bottom: 4rem;
+}
+@media screen and (min-width: 640px) {
+  .cards__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--hs) / -2);
+    margin-right: calc(var(--hs) / -2);
+    justify-content: center;
+  }
+  .cards__grid > * {
+    width: calc(100% / 2 - var(--hs));
+    margin-left: calc(var(--hs) / 2);
+    margin-right: calc(var(--hs) / 2);
+    margin-bottom: var(--vs);
+  }
+}
+@media screen and (min-width: 1024px) {
+  .cards__grid {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: calc(var(--hs) / -2);
+    margin-right: calc(var(--hs) / -2);
+    justify-content: center;
+  }
+  .cards__grid > * {
+    width: calc(100% / 3 - var(--hs));
+    margin-left: calc(var(--hs) / 2);
+    margin-right: calc(var(--hs) / 2);
+    margin-bottom: var(--vs);
+  }
+}
+
+.cards__item {
+  max-width: 400px;
+}
+
+.cards__svgWrap {
+  margin-bottom: 0.5rem;
+}
+
+.cards__textWrap p {
+  color: var(--white);
+}
+
+.cards__title {
+  color: var(--white);
+  margin-bottom: 0.5rem;
+}
+
 .footer {
   padding: 3rem 0;
   background-color: var(--black);
