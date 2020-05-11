@@ -2165,11 +2165,16 @@ html.burgerOpen .menuToggle--cross {
   display: block;
 }
 
+.mainMenu li.current_page_item a {
+  border-bottom: 1px solid;
+}
 .mainMenu a {
+  display: inline-block;
   text-transform: uppercase;
   font-family: var(--bodyFont);
   color: var(--black);
-  padding: 0 1rem 0 0;
+  margin: 0 1rem 0 0;
+  padding: 0.25rem 0;
 }
 
 .carouselSection {
