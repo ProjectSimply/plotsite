@@ -1,0 +1,29 @@
+.pricing {
+
+    
+    
+    
+}
+
+.page-pricing {
+    .textOnlyBanner__asset {
+        display: none; 
+    }
+}
+
+.pricingSection__mainFeatures {
+    position: relative;
+
+    .textOnlyBanner__asset {
+        display: block;
+        max-width: 430px;
+        
+        &.textOnlyBanner__asset--1 {
+            top: 10%;
+        }
+
+        &.textOnlyBanner__asset--2 {
+            top: -70%;
+        }
+    }
+}

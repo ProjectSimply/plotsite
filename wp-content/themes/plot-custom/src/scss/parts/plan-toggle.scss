@@ -1,0 +1,121 @@
+.planToggle {
+    margin-bottom: 3rem;
+    text-align: center;
+    // max-width: 800px;
+    // margin: 0 auto;
+
+    &.planToggle--showMonthlyPrice {
+
+        .planToggle__option--monthly {
+            border-color: var(--strong-pink);
+
+            h3,
+            span {
+                color: var(--strong-pink);
+            }
+        }
+
+        .planToggle__option--annual {
+            border-color: var(--black);
+
+            h3,
+            span {
+                color: var(--black);
+            }
+        }
+
+        .planToggle__price--monthly {
+            display: block;
+        }
+
+        .planToggle__price--annual {
+            display: none;
+        }
+
+    }
+}
+
+    .planToggle__innerWrap {
+        display: flex;
+        width: 100%;
+        align-items: flex-end;
+        justify-content: center;
+        margin-bottom: 2rem;
+    }
+
+        .planToggle__option {
+            flex: 0 0 50%;
+            text-align: center;
+            border-bottom: 3px solid black;
+            cursor: pointer;
+
+            &.planToggle__option--annual {
+                border-color: var(--strong-pink);
+
+                h3,
+                span {
+                    color: var(--strong-pink);
+                }
+            }
+        }
+
+        .planToggle__price {
+            font-family: var(--headingFont);
+            font-weight: 300;
+            font-size: 1.8rem;
+            color: var(--strong-pink);
+            margin-bottom: 1rem;
+
+            p {
+                color: var(--strong-pink);
+                margin-bottom: 0;
+            }
+
+            @include medium {
+                font-size: 2.4rem;
+            }
+
+            &.planToggle__price--monthly {
+                display: none;
+            }
+    
+            &.planToggle__price--annual {
+                display: block;
+            }
+
+            .planToggle__num {
+                font-size: 5rem;
+                font-weight: bold;
+            }
+
+            .planToggle__noWrap {
+                white-space: nowrap;
+            }
+        }
+
+    .planToggle__cross--pink {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 14px;
+
+        svg {
+            display: block;
+            height: 100%;
+            object-fit: contain;
+            margin: 0 1rem;
+
+            path {
+                fill: var(--strong-pink);
+                opacity: 1;
+            }
+        }
+    }
+
+    .small {
+        font-family: var(--bodyFont); 
+        font-weight: 300;
+        text-decoration: underline;
+        font-size: 1rem;
+    }
+    

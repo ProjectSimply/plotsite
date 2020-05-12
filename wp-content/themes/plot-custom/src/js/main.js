@@ -8,6 +8,7 @@
 		Carousels		= require('./components/carousel'),
 		// CustomMouse 	= require('../../../plot-core/src/js/custom-mouse'),
 		Home			= require('./pages/home'),
+		TogglePrice     = require('./components/toggle-price'),
 		Artists			= require('./pages/artists'),
 		Schedule		= require('./pages/schedule'),
 		News 			= require('./pages/news'),
@@ -35,6 +36,9 @@
 
         	if(Plot.isPage('artists'))
 				Artists.init()
+
+			if(Plot.isPage('pricing'))
+				TogglePrice.init()
 
 			News.init()
 			
