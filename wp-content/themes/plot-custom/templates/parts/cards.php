@@ -36,6 +36,16 @@
 
         </div>
 
+        <?php if(get_field('add_link')) : ?>
+
+            <div class="button__wrap">
+                <a href="<?= get_field('block_section_link') ?>" class="button">
+                    <?= get_field('block_section_button_text') ?>
+                </a>
+            </div>
+
+        <?php endif; ?>
+
     </div>
 
 </section>

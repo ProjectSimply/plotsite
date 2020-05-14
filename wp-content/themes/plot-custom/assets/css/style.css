@@ -629,6 +629,9 @@ a {
 .cards__sectionHeading {
   color: var(--white);
 }
+.cards__sectionHeading span {
+  color: var(--yellow);
+}
 
 .cards__sectionIntro {
   color: var(--white);

@@ -5,6 +5,10 @@
 }
     .cards__sectionHeading {
         color: var(--white);
+
+        span {
+            color: var(--yellow); 
+        }
     }
 
     .cards__sectionIntro {
