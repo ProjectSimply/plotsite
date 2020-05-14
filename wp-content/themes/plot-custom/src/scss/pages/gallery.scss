@@ -1,0 +1,19 @@
+.page-gallery {
+    background-color: var(--purple);
+
+    .textOnlyBanner__asset.textOnlyBanner__asset--1 path {
+        fill: var(--peach);
+    }
+
+    .textOnlyBanner__asset.textOnlyBanner__asset--2 path {
+        fill: var(--pink);
+    }
+
+    .textOnlyBanner__title {
+        color: var(--white);
+    }
+
+    .carouselSection {
+        padding-top: 0;
+    }
+}
