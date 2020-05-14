@@ -1151,6 +1151,7 @@ a {
   line-height: 1.3;
   margin-bottom: 0;
   color: var(--strong-pink);
+  cursor: pointer;
 }
 .faq__question::after, .faq__question::before {
   content: "";
@@ -2439,20 +2440,23 @@ ul.pricingSection__fullList {
 .carouselSection__slider {
   height: 60vw;
   max-height: 700px;
+  cursor: pointer;
 }
 
 .carousel__slide {
   width: 80%;
   max-width: 900px;
   background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .carousel__imageWrap {
   display: block;
   height: 100%;
   z-index: 1;
-  width: 98%;
-  box-shadow: 18px 18px 23px -15px rgba(0, 0, 0, 0.75);
+  width: 94%;
 }
 
 .carousel__image {
