@@ -7,7 +7,7 @@ use AC\Asset\Enqueueable;
 use AC\Registrable;
 use AC\Request;
 use ACP;
-use ACP\Settings\ListScreen\HideOnScreen;
+use ACP\Search\Settings\HideOnScreen;
 
 abstract class TableScreen
 	implements Registrable {

@@ -43,7 +43,7 @@ use AC\Form\Element\Select; ?>
 			</div>
 		</div>
 
-		<div class="ac-setbox__row">
+		<div class="ac-setbox__row" id="hide-on-screen">
 			<div class="ac-setbox__row__th">
 				<label><?= __( 'Hide on screen', 'codepress-admin-columns' ); ?></label>
 				<small><?= __( 'Select items to hide from the list table screen.', 'codepress-admin-columns' ); ?></small>

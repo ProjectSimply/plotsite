@@ -8,37 +8,44 @@ use AC\ListScreenRepository\Storage;
 use ACP;
 use ACP\Search\Controller\Comparison;
 use ACP\Search\Controller\Segment;
+use ACP\Settings\ListScreen\HideOnScreenCollection;
 
 final class Addon implements AC\Registrable {
-
-	/**
-	 * @var AC\Request
-	 */
-	private $request;
-
-	/**
-	 * @var Location
-	 */
-	private $location;
-
-	/** @var ACP\Search\Preferences\SmartFiltering */
-	private $table_preference;
-
-	/** @var ACP\Settings\ListScreen\HideOnScreen\Filters */
-	private $hide_filters;
 
 	/**
 	 * @var Storage
 	 */
 	private $storage;
 
+	/**
+	 * @var Location
+	 */
+	private $location;
+
+	/**
+	 * @var AC\Request
+	 */
+	private $request;
+
+	/** @var Preferences\SmartFiltering */
+	private $table_preference;
+
+	/** @var ACP\Settings\ListScreen\HideOnScreen\Filters */
+	private $hide_filters;
+
+	/**
+	 * @var Settings\HideOnScreen\SmartFilters
+	 */
+	private $hide_smart_filters;
+
 	public function __construct( Storage $storage, Location $location ) {
 		$this->storage = $storage;
 		$this->location = $location;
 		$this->request = new AC\Request();
 		$this->request->add_middleware( new Middleware\Request() );
-		$this->table_preference = new ACP\Search\Preferences\SmartFiltering();
+		$this->table_preference = new Preferences\SmartFiltering();
 		$this->hide_filters = new ACP\Settings\ListScreen\HideOnScreen\Filters();
+		$this->hide_smart_filters = new Settings\HideOnScreen\SmartFilters();
 	}
 
 	/**
@@ -61,13 +68,20 @@ final class Addon implements AC\Registrable {
 				new AC\Asset\Script( 'acp-search-table-screen-options', $this->location->with_suffix( 'assets/search/js/screen-options.bundle.js' ) ),
 			],
 			$this->table_preference,
-			$this->hide_filters
+			$this->hide_filters,
+			$this->hide_smart_filters
 		);
 		$table_screen_options->register();
 
 		add_action( 'ac/table/list_screen', [ $this, 'table_screen_request' ] );
 		add_action( 'wp_ajax_acp_search_segment_request', [ $this, 'segment_request' ] );
 		add_action( 'wp_ajax_acp_search_comparison_request', [ $this, 'comparison_request' ] );
+		add_action( 'acp/admin/settings/hide_on_screen', [ $this, 'add_hide_on_screen' ] );
+	}
+
+	public function add_hide_on_screen( HideOnScreenCollection $collection ) {
+		$collection->add( $this->hide_smart_filters, 30 )
+		           ->add( new Settings\HideOnScreen\SavedFilters(), 31 );
 	}
 
 	public function segment_request() {
@@ -90,19 +104,28 @@ final class Addon implements AC\Registrable {
 	}
 
 	/**
+	 * @return bool
+	 */
+	private function is_smart_filters_hidden( AC\ListScreen $list_screen ) {
+		return ( new Settings\HideOnScreen\SmartFilters() )->is_hidden( $list_screen );
+	}
+
+	/**
 	 * @param AC\ListScreen $list_screen
 	 *
 	 * @return bool
 	 */
 	private function is_filters_hidden( AC\ListScreen $list_screen ) {
-		return ( new ACP\Settings\ListScreen\HideOnScreen\Filters() )->is_hidden( $list_screen );
+		return $this->hide_filters->is_hidden( $list_screen );
 	}
 
 	/**
 	 * @param AC\ListScreen $list_screen
 	 */
 	public function table_screen_request( AC\ListScreen $list_screen ) {
-		if ( $this->is_filters_hidden( $list_screen ) || ! $this->is_active( $list_screen ) ) {
+		if ( $this->is_filters_hidden( $list_screen )
+		     || $this->is_smart_filters_hidden( $list_screen )
+		     || ! $this->is_active( $list_screen ) ) {
 			return;
 		}
 

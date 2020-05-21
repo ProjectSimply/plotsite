@@ -23,63 +23,67 @@ msgstr ""
 msgid "Settings"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:57
+#: admin-columns-pro/classes/Admin/Settings.php:55
 msgid "(no name)"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:134
+#: admin-columns-pro/classes/Admin/Settings.php:132
 msgid "Select roles"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:135
+#: admin-columns-pro/classes/Admin/Settings.php:133
 msgid "Select users"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:144
+#: admin-columns-pro/classes/Admin/Settings.php:142
 msgid "Make horizontal scrolling the default when users visit the table."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:145
+#: admin-columns-pro/classes/Admin/Settings.php:143
 msgid "Users can change this preference by opening “screen options” on the table screen."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:148
+#: admin-columns-pro/classes/Admin/Settings.php:146
 msgid "This feature will automatically adjust the width of the columns based on the screen size."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:149
+#: admin-columns-pro/classes/Admin/Settings.php:147
 msgid "When the columns do not fit on the screen you can horizontally scroll your columns by dragging the horizontal scrollbar or by swiping left or right with the mouse."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:175, admin-columns-pro/classes/Table/HorizontalScrolling.php:87, admin-columns-pro/templates/admin/list-screen-settings.php:73
+#: admin-columns-pro/classes/Admin/Settings.php:173, admin-columns-pro/classes/Table/HorizontalScrolling.php:87, admin-columns-pro/templates/admin/list-screen-settings.php:73
 msgid "Horizontal Scrolling"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:249
+#: admin-columns-pro/classes/Admin/Settings.php:238
 msgid "Sets"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:252
+#: admin-columns-pro/classes/Admin/Settings.php:241
 msgid "Sets allow users to switch between different column views."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:255
+#: admin-columns-pro/classes/Admin/Settings.php:244
 msgid "Available sets are selectable from the overview screen. Users can have their own column view preference."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:261
+#: admin-columns-pro/classes/Admin/Settings.php:250
 msgid "Online documentation"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:305
+#: admin-columns-pro/classes/Admin/Settings.php:290
+msgid "Other"
+msgstr ""
+
+#: admin-columns-pro/classes/Admin/Settings.php:294
 msgid "Default"
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:370
+#: admin-columns-pro/classes/Admin/Settings.php:359
 msgid "You can make an editable copy of this set by clicking %s on the right."
 msgstr ""
 
-#: admin-columns-pro/classes/Admin/Settings.php:370, admin-columns-pro/templates/admin/list-screens-sidebar.php:18
+#: admin-columns-pro/classes/Admin/Settings.php:359, admin-columns-pro/templates/admin/list-screens-sidebar.php:18
 msgid "+ Add set"
 msgstr ""
 
@@ -147,15 +151,15 @@ msgstr ""
 msgid "Inline Editing"
 msgstr ""
 
-#: admin-columns-pro/classes/Editing/TableScreen.php:78, admin-columns-pro/classes/Editing/Asset/Script/Table.php:82, admin-columns-pro/classes/Settings/ListScreen/HideOnScreen/InlineEdit.php:10
+#: admin-columns-pro/classes/Editing/TableScreen.php:78, admin-columns-pro/classes/Editing/HideOnScreen/InlineEdit.php:10, admin-columns-pro/classes/Editing/Admin/HideOnScreen/InlineEdit.php:10, admin-columns-pro/classes/Editing/Asset/Script/Table.php:82
 msgid "Inline Edit"
 msgstr ""
 
-#: admin-columns-pro/classes/Export/Admin.php:53
+#: admin-columns-pro/classes/Export/Admin.php:66
 msgid "The requested file does not exist."
 msgstr ""
 
-#: admin-columns-pro/classes/Export/Admin.php:69
+#: admin-columns-pro/classes/Export/Admin.php:82
 msgid "The requested file could not be processed."
 msgstr ""
 
@@ -163,23 +167,23 @@ msgstr ""
 msgid "Creation of Admin Columns export directory failed. Please make sure that your uploads folder is writable."
 msgstr ""
 
-#: admin-columns-pro/classes/Export/Strategy.php:74
+#: admin-columns-pro/classes/Export/Strategy.php:93
 msgid "Invalid value supplied for export counter."
 msgstr ""
 
-#: admin-columns-pro/classes/Export/Strategy.php:78
+#: admin-columns-pro/classes/Export/Strategy.php:97
 msgid "Invalid value supplied for export hash."
 msgstr ""
 
-#: admin-columns-pro/classes/Export/TableScreenOptions.php:53
+#: admin-columns-pro/classes/Export/TableScreenOptions.php:61
 msgid "Show Export Button"
 msgstr ""
 
-#: admin-columns-pro/classes/Export/TableScreenOptions.php:60, admin-columns-pro/templates/admin/section-export.php:9, admin-columns-pro/classes/Export/Settings/Column.php:52, admin-columns-pro/classes/Export/Asset/Script/Table.php:30, admin-columns-pro/classes/Settings/ListScreen/HideOnScreen/Export.php:10
+#: admin-columns-pro/classes/Export/TableScreenOptions.php:68, admin-columns-pro/templates/admin/section-export.php:9, admin-columns-pro/classes/Export/HideOnScreen/Export.php:10, admin-columns-pro/classes/Export/Settings/Column.php:55, admin-columns-pro/classes/Export/Asset/Script/Table.php:30
 msgid "Export"
 msgstr ""
 
-#: admin-columns-pro/classes/Export/TableScreenOptions.php:59, admin-columns-pro/classes/Export/Asset/Script/Table.php:31
+#: admin-columns-pro/classes/Export/TableScreenOptions.php:67, admin-columns-pro/classes/Export/Asset/Script/Table.php:31
 msgid "Export to CSV"
 msgstr ""
 
@@ -799,6 +803,10 @@ msgstr ""
 msgid "off"
 msgstr ""
 
+#: admin-columns-pro/classes/Editing/HideOnScreen/BulkEdit.php:10, admin-columns-pro/classes/Editing/Admin/HideOnScreen/BulkEdit.php:10
+msgid "Bulk Edit"
+msgstr ""
+
 #: admin-columns-pro/classes/Editing/Model/CustomField.php:44
 msgid "Inline Editing for Custom Fields is not enabled. Enable inline editing for Custom Fields on the %s."
 msgstr ""
@@ -811,11 +819,11 @@ msgstr ""
 msgid "Bulk Editing"
 msgstr ""
 
-#: admin-columns-pro/classes/Editing/Settings/BulkEditing.php:46, admin-columns-pro/classes/Export/Settings/Column.php:63, admin-columns-pro/classes/Search/Settings/Column.php:35
+#: admin-columns-pro/classes/Editing/Settings/BulkEditing.php:46, admin-columns-pro/classes/Search/Settings/Column.php:35
 msgid "Enabled"
 msgstr ""
 
-#: admin-columns-pro/classes/Editing/Settings/BulkEditing.php:47, admin-columns-pro/classes/Export/Settings/Column.php:64
+#: admin-columns-pro/classes/Editing/Settings/BulkEditing.php:47
 msgid "Disabled"
 msgstr ""
 
@@ -841,6 +849,10 @@ msgstr ""
 
 #: admin-columns-pro/classes/Export/Exporter/CSV.php:48
 msgid "The requested file could not be downloaded."
+msgstr ""
+
+#: admin-columns-pro/classes/Export/Settings/Column.php:27
+msgid "Enable Export"
 msgstr ""
 
 #: admin-columns-pro/classes/Filtering/Markup/Dropdown.php:46, ac-addon-woocommerce/classes/Filtering/ShopOrder/CustomerMessage.php:30
@@ -1567,6 +1579,10 @@ msgstr ""
 msgid "Not used"
 msgstr ""
 
+#: admin-columns-pro/classes/Search/Settings/HideOnScreen/SavedFilters.php:10
+msgid "Saved Filters"
+msgstr ""
+
 #: admin-columns-pro/classes/Settings/Column/NetworkSite/Options.php:17
 msgid "Option"
 msgstr ""
@@ -1631,16 +1647,8 @@ msgstr ""
 msgid "Bulk Actions"
 msgstr ""
 
-#: admin-columns-pro/classes/Settings/ListScreen/HideOnScreen/BulkEdit.php:10
-msgid "Bulk Edit"
-msgstr ""
-
 #: admin-columns-pro/classes/Settings/ListScreen/HideOnScreen/Filters.php:10
 msgid "Filters"
-msgstr ""
-
-#: admin-columns-pro/classes/Settings/ListScreen/HideOnScreen/SavedFilters.php:10
-msgid "Saved Filters"
 msgstr ""
 
 #: admin-columns-pro/classes/Settings/ListScreen/HideOnScreen/Search.php:10

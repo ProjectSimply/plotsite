@@ -2,11 +2,24 @@
 
 namespace ACP\Editing\Controller;
 
-use AC\Preferences\Site;
+use AC;
+use AC\Request;
 use AC\Response;
 use ACP\Editing\Editable;
+use ACP\Editing\Preference;
 
 class Single extends Column {
+
+	/**
+	 * @var Preference\EditState
+	 */
+	private $edit_state;
+
+	public function __construct( AC\ListScreenRepository\Storage $storage, Request $request, Preference\EditState $edit_state ) {
+		parent::__construct( $storage, $request );
+
+		$this->edit_state = $edit_state;
+	}
 
 	public function save_action() {
 		$id = $this->request->filter( 'id', null, FILTER_SANITIZE_NUMBER_INT );
@@ -46,16 +59,15 @@ class Single extends Column {
 
 	public function editability_state_action() {
 		$value = $this->request->get( 'value' ) ? 1 : 0;
-		$list_screen = $this->request->filter( 'list_screen', '', FILTER_SANITIZE_STRING );
+		$list_screen_key = $this->request->filter( 'list_screen', '', FILTER_SANITIZE_STRING );
 
 		$response = new Response\Json();
 
-		if ( ! $list_screen ) {
+		if ( ! $list_screen_key ) {
 			$response->error();
 		}
 
-		$preference = new Site( 'editability_state' );
-		$result = $preference->set( $list_screen, $value );
+		$result = $this->edit_state->set( $list_screen_key, $value );
 
 		if ( ! $result ) {
 			$response->error();

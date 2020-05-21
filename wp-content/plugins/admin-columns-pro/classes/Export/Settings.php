@@ -3,19 +3,18 @@
 namespace ACP\Export;
 
 use AC;
-use AC\Asset\Enqueueable;
+use AC\Asset\Style;
 use AC\Registrable;
 
-class Settings
-	implements Registrable {
+class Settings implements Registrable {
 
 	/**
-	 * @var Enqueueable
+	 * @var AC\Asset\Location
 	 */
-	protected $assets;
+	protected $location;
 
-	public function __construct( array $assets ) {
-		$this->assets = $assets;
+	public function __construct( AC\Asset\Location $location ) {
+		$this->location = $location;
 	}
 
 	public function register() {
@@ -23,17 +22,28 @@ class Settings
 		add_action( 'ac/admin_scripts/columns', [ $this, 'admin_scripts' ] );
 	}
 
-	public function column_settings( AC\Column $column ) {
-		$setting = new Settings\Column( $column );
-		$setting->set_default( 'on' );
+	/**
+	 * @param AC\Column $column
+	 *
+	 * @return bool
+	 */
+	private function is_exportable( AC\Column $column ) {
+		if ( $column instanceof Exportable && ! $column->export()->is_active() ) {
+			return false;
+		}
 
-		$column->add_setting( $setting );
+		return true;
+	}
+
+	public function column_settings( AC\Column $column ) {
+		if ( $this->is_exportable( $column ) ) {
+			$column->add_setting( new Settings\Column( $column ) );
+		}
 	}
 
 	public function admin_scripts() {
-		foreach ( $this->assets as $asset ) {
-			$asset->enqueue();
-		}
+		$style = new Style( 'acp-search-admin', $this->location->with_suffix( 'assets/search/css/admin.css' ) );
+		$style->enqueue();
 	}
 
 }

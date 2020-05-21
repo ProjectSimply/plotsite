@@ -6,12 +6,12 @@ use AC;
 use AC\Asset\Location;
 use AC\Asset\Style;
 use AC\ListScreenRepository\Storage;
-use AC\Preferences\Site;
 use ACP;
 use ACP\Editing\Ajax\EditableRowsFactory;
 use ACP\Editing\Ajax\TableRowsFactory;
 use ACP\Editing\Asset\Script;
 use ACP\Editing\Controller;
+use ACP\Editing\Preference\EditState;
 
 class Addon implements AC\Registrable {
 
@@ -39,12 +39,20 @@ class Addon implements AC\Registrable {
 		add_action( 'ac/table/list_screen', [ $this, 'register_table_screen' ] );
 		add_action( 'wp_ajax_acp_editing_single_request', [ $this, 'ajax_single_request' ] );
 		add_action( 'wp_ajax_acp_editing_bulk_request', [ $this, 'ajax_bulk_request' ] );
+		add_action( 'acp/admin/settings/hide_on_screen', [ $this, 'add_hide_on_screen' ], 10, 2 );
+	}
+
+	public function add_hide_on_screen( ACP\Settings\ListScreen\HideOnScreenCollection $collection, AC\ListScreen $list_screen ) {
+		if ( $list_screen instanceof ListScreen ) {
+			$collection->add( new Admin\HideOnScreen\InlineEdit(), 5 )
+			           ->add( new Admin\HideOnScreen\BulkEdit(), 6 );
+		}
 	}
 
 	public function ajax_single_request() {
 		check_ajax_referer( 'ac-ajax' );
 
-		$controller = new Controller\Single( $this->storage, $this->request );
+		$controller = new Controller\Single( $this->storage, $this->request, new EditState() );
 		$controller->dispatch( $this->request->get( 'method' ) );
 	}
 
@@ -66,7 +74,7 @@ class Addon implements AC\Registrable {
 			return;
 		}
 
-		$editability_state = new Site( 'editability_state' );
+		$edit_state = new EditState();
 
 		$assets = [
 			new Style( 'acp-editing-table', $this->location->with_suffix( 'assets/editing/css/table.css' ) ),
@@ -75,11 +83,11 @@ class Addon implements AC\Registrable {
 				$this->location->with_suffix( 'assets/editing/js/table.js' ),
 				$list_screen,
 				$editable_columns,
-				$editability_state
+				$edit_state
 			),
 		];
 
-		$table_screen = new TableScreen( $list_screen, $assets, $editability_state );
+		$table_screen = new TableScreen( $list_screen, $assets, $edit_state );
 		$table_screen->register();
 
 		$table_rows = TableRowsFactory::create( $this->request, $list_screen );

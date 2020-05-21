@@ -26,13 +26,15 @@ final class Table extends Script {
 
 		wp_localize_script( $this->get_handle(), 'ACP_Export', [
 			'total_num_items' => $wp_list_table->get_pagination_arg( 'total_items' ),
+			'nonce'           => wp_create_nonce( 'acp_export_listscreen_export' ),
 			'i18n'            => [
-				'Export'                                                                                                                           => __( 'Export', 'codepress-admin-columns' ),
-				'Export to CSV'                                                                                                                    => __( 'Export to CSV', 'codepress-admin-columns' ),
-				'Exporting current list of items.'                                                                                                 => __( 'Exporting current list of items.', 'codepress-admin-columns' ),
-				'Processed {0} of {1} items ({2}%).'                                                                                               => __( 'Processed {0} of {1} items ({2}%).', 'codepress-admin-columns' ),
-				'Export completed ({0} items). Your download will start automatically. If this does not happen, you can download the file again: ' => __( 'Export completed ({0} items). Your download will start automatically. If this does not happen, you can download the file again: ', 'codepress-admin-columns' ),
-				'Download File'                                                                                                                    => __( 'Download File', 'codepress-admin-columns' ),
+				'export'           => __( 'Export', 'codepress-admin-columns' ),
+				'export_error'     => __( 'Something went wrong during exporting. Please try again.', 'codepress-admin-columns' ),
+				'processed'        => __( 'Processed {0} of {1} items ({2}%).', 'codepress-admin-columns' ),
+				'exporting'        => __( 'Exporting current list of items.', 'codepress-admin-columns' ),
+				'export_completed' => __( 'Export completed ({0} items). Your download will start automatically. If this does not happen, you can download the file again: ', 'codepress-admin-columns' ),
+				'download_file'    => __( 'Download File', 'codepress-admin-columns' ),
+				'leaving'          => __( 'You are currently generating an export file. Leaving the page will cancel this process. Are you sure you want to leave the page?', 'codepress-admin-columns' ),
 			],
 		] );
 	}

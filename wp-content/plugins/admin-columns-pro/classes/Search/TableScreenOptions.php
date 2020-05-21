@@ -4,8 +4,8 @@ namespace ACP\Search;
 
 use AC;
 use AC\Asset\Enqueueable;
+use ACP;
 use ACP\Search\Preferences;
-use ACP\Settings\ListScreen\HideOnScreen;
 
 class TableScreenOptions {
 
@@ -17,13 +17,24 @@ class TableScreenOptions {
 	/** @var Preferences\SmartFiltering */
 	private $preferences;
 
-	/** @var HideOnScreen\Filters */
+	/** @var ACP\Settings\ListScreen\HideOnScreen\Filters */
 	private $hide_filters;
 
-	public function __construct( array $assets, Preferences\SmartFiltering $preferences, HideOnScreen\Filters $hide_filters ) {
+	/**
+	 * @var Settings\HideOnScreen\SmartFilters
+	 */
+	private $hide_smart_filters;
+
+	public function __construct(
+		array $assets,
+		Preferences\SmartFiltering $preferences,
+		ACP\Settings\ListScreen\HideOnScreen\Filters $hide_filters,
+		Settings\HideOnScreen\SmartFilters $hide_smart_filters
+	) {
 		$this->assets = $assets;
 		$this->preferences = $preferences;
 		$this->hide_filters = $hide_filters;
+		$this->hide_smart_filters = $hide_smart_filters;
 	}
 
 	public function register() {
@@ -55,7 +66,7 @@ class TableScreenOptions {
 	public function register_screen_option( $table ) {
 		$list_screen = $table->get_list_screen();
 
-		if ( $this->hide_filters->is_hidden( $list_screen ) ) {
+		if ( $this->hide_filters->is_hidden( $list_screen ) || $this->hide_smart_filters->is_hidden( $list_screen ) ) {
 			return;
 		}
 

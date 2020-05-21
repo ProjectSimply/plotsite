@@ -62,8 +62,6 @@ final class AdminColumnsPro extends AC\Plugin {
 				'acp_version' => $this->get_version(),
 			] );
 
-		$this->localize();
-
 		$storage = AC()->get_storage();
 		$list_screen_types = ListScreenTypes::instance();
 		$list_screen_encoder = new Encoder( $this->get_version() );
@@ -105,6 +103,7 @@ final class AdminColumnsPro extends AC\Plugin {
 			new Table\HideBulkActions(),
 			new Table\HideFilters(),
 			new ListScreens(),
+			new Localize( $this->get_dir() ),
 			new NativeTaxonomies(),
 			new IconPicker(),
 			new TermQueryInformation(),
@@ -180,10 +179,6 @@ final class AdminColumnsPro extends AC\Plugin {
 			$this->get_url(),
 			$this->get_dir()
 		);
-	}
-
-	public function localize() {
-		load_plugin_textdomain( 'codepress-admin-columns', false, dirname( $this->get_basename() ) . '/languages/' );
 	}
 
 	public function install_network() {

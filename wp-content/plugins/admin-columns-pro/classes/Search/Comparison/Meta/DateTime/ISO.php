@@ -18,6 +18,9 @@ class ISO extends Meta {
 			Operators::TODAY,
 			Operators::PAST,
 			Operators::FUTURE,
+			Operators::WITHIN_DAYS,
+			Operators::GT_DAYS_AGO,
+			Operators::LT_DAYS_AGO,
 			Operators::IS_EMPTY,
 			Operators::NOT_IS_EMPTY,
 		] );

@@ -37,4 +37,11 @@ class HideOnScreen {
 		return 'on' === $list_screen->get_preference( $this->name );
 	}
 
+	/**
+	 * @return array
+	 */
+	public function get_dependent_on() {
+		return [];
+	}
+
 }

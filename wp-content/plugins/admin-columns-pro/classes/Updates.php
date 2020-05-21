@@ -41,20 +41,7 @@ class Updates implements Registrable {
 		add_action( 'init', [ $this, 'force_plugin_update_check_on_request' ] );
 	}
 
-	/**
-	 * @return bool
-	 */
-	private function is_doing_ajax_update_process() {
-		return wp_doing_ajax() && 'update-plugin' === filter_input( INPUT_POST, 'action' );
-	}
-
 	public function register_updater() {
-
-		// Skip updater during the ajax update process
-		if ( $this->is_doing_ajax_update_process() ) {
-			return;
-		}
-
 		foreach ( $this->plugins->all() as $plugin ) {
 			// Add plugins to update process
 			$updater = new Updates\Updater( $plugin, new API\Cached( $this->api ), $this->site_url, $this->plugins, $this->license_key_repository->find() );

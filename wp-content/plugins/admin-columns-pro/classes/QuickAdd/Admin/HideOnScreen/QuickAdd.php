@@ -11,11 +11,6 @@ class QuickAdd extends ACP\Settings\ListScreen\HideOnScreen {
 		parent::__construct( 'hide_new_inline', __( 'Quick Add', 'codepress-admin-columns' ) );
 	}
 
-	/**
-	 * @param ListScreen $list_screen
-	 *
-	 * @return bool
-	 */
 	public function is_hidden( ListScreen $list_screen ) {
 		return null === $list_screen->get_preference( $this->name ) || parent::is_hidden( $list_screen );
 	}

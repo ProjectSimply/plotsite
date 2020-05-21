@@ -3,12 +3,13 @@
 namespace ACP\Export\Strategy;
 
 use AC;
+use AC\ListTable;
 use ACP\Export\Strategy;
 use WP_Query;
 
 /**
  * Exportability class for posts list screen
- * @since 1.0
+ * @property AC\ListScreenPost $list_screen
  */
 class Post extends Strategy {
 
@@ -17,6 +18,10 @@ class Post extends Strategy {
 	 */
 	public function __construct( AC\ListScreenPost $list_screen ) {
 		parent::__construct( $list_screen );
+	}
+
+	protected function get_list_table() {
+		return new ListTable\Post( $this->list_table_factory->create_post_table( $this->list_screen->get_screen_id() ) );
 	}
 
 	/**

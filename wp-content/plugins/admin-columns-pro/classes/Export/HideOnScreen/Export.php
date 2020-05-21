@@ -1,10 +1,10 @@
 <?php
 
-namespace ACP\Settings\ListScreen\HideOnScreen;
+namespace ACP\Export\HideOnScreen;
 
-use ACP\Settings\ListScreen\HideOnScreen;
+use ACP;
 
-class Export extends HideOnScreen {
+class Export extends ACP\Settings\ListScreen\HideOnScreen {
 
 	public function __construct() {
 		parent::__construct( 'hide_export', __( 'Export', 'codepress-admin-columns' ) );

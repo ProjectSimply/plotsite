@@ -2,13 +2,14 @@
 
 namespace ACP\Export\Strategy;
 
+use AC\ListTable;
 use ACP;
 use ACP\Export\Strategy;
 use WP_Term_Query;
 
 /**
  * Exportability class for terms list screen
- * @since 1.0
+ * @property ACP\ListScreen\Taxonomy $list_screen
  */
 class Taxonomy extends Strategy {
 
@@ -19,12 +20,14 @@ class Taxonomy extends Strategy {
 		parent::__construct( $list_screen );
 	}
 
+	protected function get_list_table() {
+		return new ListTable\Taxonomy( $this->list_screen->get_taxonomy() );
+	}
+
 	/**
-	 * @since 1.0
-	 * @see   ACP_Export_ExportableListScreen::ajax_export()
+	 * @see ACP_Export_ExportableListScreen::ajax_export()
 	 */
 	protected function ajax_export() {
-		// Hooks
 		add_action( 'parse_term_query', [ $this, 'terms_query' ], PHP_INT_MAX - 100 );
 	}
 

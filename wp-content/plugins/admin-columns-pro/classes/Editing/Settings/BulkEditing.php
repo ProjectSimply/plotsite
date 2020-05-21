@@ -20,7 +20,7 @@ class BulkEditing extends AC\Settings\Column {
 	/**
 	 * @return string
 	 */
-	private function get_instruction() {
+	private function get_instructions() {
 		$view = new View();
 		$view->set_template( 'tooltip/bulk-editing' );
 
@@ -33,7 +33,7 @@ class BulkEditing extends AC\Settings\Column {
 	public function create_view() {
 		$view = new View();
 		$view->set( 'label', __( 'Bulk Editing', 'codepress-admin-columns' ) )
-		     ->set( 'instructions', $this->get_instruction() )
+		     ->set( 'instructions', $this->get_instructions() )
 		     ->set( 'setting',
 			     sprintf( '<em>%s</em>', $this->get_status_label() )
 		     );

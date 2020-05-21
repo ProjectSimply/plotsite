@@ -2,12 +2,14 @@
 
 namespace ACP\Settings\ListScreen\HideOnScreen;
 
-use ACP\Settings\ListScreen\HideOnScreen;
+use ACP;
 
-class Filters extends HideOnScreen {
+class Filters extends ACP\Settings\ListScreen\HideOnScreen {
+
+	const NAME = 'hide_filters';
 
 	public function __construct() {
-		parent::__construct( 'hide_filters', __( 'Filters', 'codepress-admin-columns' ) );
+		parent::__construct( self::NAME, __( 'Filters', 'codepress-admin-columns' ) );
 	}
 
 }

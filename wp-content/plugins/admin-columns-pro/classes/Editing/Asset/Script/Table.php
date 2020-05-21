@@ -6,17 +6,12 @@ use AC\Asset\Location;
 use AC\Asset\Script;
 use AC\Column;
 use AC\ListScreen;
-use AC\Preferences;
 use ACP\Editing\Editable;
-use ACP\Settings\ListScreen\HideOnScreen;
+use ACP\Editing\HideOnScreen;
+use ACP\Editing\Preference;
 use WP_List_Table;
 
 final class Table extends Script {
-
-	/**
-	 * @var bool
-	 */
-	private $editing_active;
 
 	/**
 	 * @var ListScreen
@@ -29,18 +24,22 @@ final class Table extends Script {
 	private $editable_columns;
 
 	/**
-	 * @param string           $handle
-	 * @param Location         $location
-	 * @param ListScreen       $list_screen
-	 * @param array            $editable_columns
-	 * @param Preferences\Site $editing_state
+	 * @var Preference\EditState
 	 */
-	public function __construct( $handle, Location $location, ListScreen $list_screen, array $editable_columns, Preferences\Site $editing_state ) {
+	private $edit_state;
+
+	public function __construct(
+		$handle,
+		Location $location,
+		ListScreen $list_screen,
+		array $editable_columns,
+		Preference\EditState $edit_state
+	) {
 		parent::__construct( $handle, $location, [ 'jquery' ] );
 
 		$this->list_screen = $list_screen;
-		$this->editing_active = $editing_state->get( $list_screen->get_key() );
 		$this->editable_columns = $editable_columns;
+		$this->edit_state = $edit_state;
 	}
 
 	public function register() {
@@ -58,7 +57,7 @@ final class Table extends Script {
 		wp_localize_script( $this->get_handle(), 'ACP_Editing', [
 			'inline_edit' => [
 				'persistent' => $this->is_persistent_editing(),
-				'active'     => $this->editing_active,
+				'active'     => $this->edit_state->is_active( $this->list_screen->get_key() ),
 			],
 			'bulk_edit'   => [
 				'updated_rows_per_iteration' => $this->get_updated_rows_per_iteration(),

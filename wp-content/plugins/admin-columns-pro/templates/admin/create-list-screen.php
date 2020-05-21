@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 <div class="item new">
 	<form method="post">
 
-		<?= $this->nonce_field; ?>
+		<input type="hidden" name="_ac_nonce" value="<?= esc_attr( $this->nonce ); ?>"/>
 		<input type="hidden" name="acp_action" value="create_layout">
 		<input type="hidden" name="list_key" value="<?= esc_attr( $this->list_screen->get_key() ); ?>">
 		<input type="hidden" name="list_id" value="<?= esc_attr( $this->list_screen->get_layout_id() ); ?>">

@@ -1,6 +1,6 @@
 <?php
 
-namespace ACP\Settings\ListScreen\HideOnScreen;
+namespace ACP\Editing\Admin\HideOnScreen;
 
 use ACP\Settings\ListScreen\HideOnScreen;
 

@@ -59,7 +59,13 @@ class License implements Registrable {
 	 */
 	private $plugins;
 
-	public function __construct( RequestDispatcher $api, LicenseRepository $license_repository, LicenseKeyRepository $license_key_repository, Type\SiteUrl $site_url, Plugins $plugins ) {
+	public function __construct(
+		RequestDispatcher $api,
+		LicenseRepository $license_repository,
+		LicenseKeyRepository $license_key_repository,
+		Type\SiteUrl $site_url,
+		Plugins $plugins
+	) {
 		$this->api = $api;
 		$this->license_repository = $license_repository;
 		$this->license_key_repository = $license_key_repository;
@@ -96,6 +102,8 @@ class License implements Registrable {
 
 	public function handle_daily_update_subscription_details() {
 		$cache = new Storage\Timestamp(
+
+			// todo: use network transient when plugin is network activated
 			new Storage\Option( self::PERIODIC_CHECK_TRANSIENT_KEY )
 		);
 

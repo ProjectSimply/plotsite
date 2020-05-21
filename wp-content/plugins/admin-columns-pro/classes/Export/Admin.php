@@ -2,13 +2,17 @@
 
 namespace ACP\Export;
 
+use AC;
+use AC\Registrable;
+use ACP\Export\HideOnScreen;
+use ACP\Settings\ListScreen\HideOnScreenCollection;
 use Exception;
 
 /**
  * Handles general functionality for admin screens
  * @since 1.0
  */
-class Admin {
+class Admin implements Registrable {
 
 	/**
 	 * @var ExportDirectory
@@ -17,8 +21,17 @@ class Admin {
 
 	public function __construct( ExportDirectory $export_dir ) {
 		$this->export_dir = $export_dir;
+	}
 
+	public function register() {
 		add_action( 'admin_init', [ $this, 'maybe_download_export' ] );
+		add_action( 'acp/admin/settings/hide_on_screen', [ $this, 'add_hide_on_screen' ], 10, 2 );
+	}
+
+	public function add_hide_on_screen( HideOnScreenCollection $collection, AC\ListScreen $list_screen ) {
+		if ( $list_screen instanceof ListScreen ) {
+			$collection->add( new HideOnScreen\Export(), 60 );
+		}
 	}
 
 	/**

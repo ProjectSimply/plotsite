@@ -121,6 +121,8 @@ class Taxonomy extends Model implements PaginatedOptions {
 	 * Register editing settings
 	 */
 	public function register_settings() {
+		parent::register_settings();
+
 		$this->column->add_setting( new Settings\Taxonomy( $this->column ) );
 	}
 

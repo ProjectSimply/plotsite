@@ -8,6 +8,9 @@ use AC\View;
 class Settings extends AC\Settings\Column
 	implements AC\Settings\Header {
 
+	/**
+	 * @var string
+	 */
 	private $sort;
 
 	protected function define_options() {
@@ -22,12 +25,10 @@ class Settings extends AC\Settings\Column
 	}
 
 	public function create_header_view() {
-		$sort = $this->get_sort();
-
 		$view = new View( [
 			'title'    => __( 'Enable Sorting', 'codepress-admin-columns' ),
 			'dashicon' => 'dashicons-sort',
-			'state'    => $sort,
+			'state'    => $this->get_sort(),
 		] );
 
 		$view->set_template( 'settings/header-icon' );

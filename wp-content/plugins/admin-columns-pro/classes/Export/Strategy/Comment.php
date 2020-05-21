@@ -3,12 +3,13 @@
 namespace ACP\Export\Strategy;
 
 use AC\ListScreen;
+use AC\ListTable;
 use ACP\Export\Strategy;
 use WP_Comment_Query;
 
 /**
  * Exportability class for comments list screen
- * @since 1.0
+ * @property ListScreen\Comment $list_screen
  */
 class Comment extends Strategy {
 
@@ -24,8 +25,11 @@ class Comment extends Strategy {
 	 * @see   ACP_Export_ExportableListScreen::ajax_export()
 	 */
 	protected function ajax_export() {
-		// Hooks
 		add_action( 'parse_comment_query', [ $this, 'comments_query' ], PHP_INT_MAX - 100 );
+	}
+
+	protected function get_list_table() {
+		return new ListTable\Comment( $this->list_table_factory->create_comment_table( $this->list_screen->get_screen_id() ) );
 	}
 
 	/**

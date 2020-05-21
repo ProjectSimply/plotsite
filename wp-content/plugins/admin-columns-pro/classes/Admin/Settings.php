@@ -11,8 +11,6 @@ use AC\ListScreenRepository\Sort;
 use AC\ListScreenRepository\Storage;
 use AC\Registrable;
 use AC\View;
-use ACP\Editing;
-use ACP\Export;
 use ACP\Settings\ListScreen\HideOnScreen;
 use ACP\Settings\ListScreen\HideOnScreenCollection;
 use WP_User;
@@ -199,43 +197,35 @@ class Settings implements Registrable {
 
 		$collection = new HideOnScreenCollection();
 
-		if ( $list_screen instanceof Export\ListScreen ) {
-			$collection->add( new HideOnScreen\Export() );
-		}
-		if ( $list_screen instanceof Editing\ListScreen ) {
-			$collection->add( new HideOnScreen\BulkEdit() )
-			           ->add( new HideOnScreen\InlineEdit() );
-		}
-
-		$collection->add( new HideOnScreen\Filters() )
-		           ->add( new HideOnScreen\SavedFilters() )
-		           ->add( new HideOnScreen\Search() )
-		           ->add( new HideOnScreen\BulkActions() );
+		$collection->add( new HideOnScreen\Filters(), 30 )
+		           ->add( new HideOnScreen\Search(), 40 )
+		           ->add( new HideOnScreen\BulkActions(), 100 );
 
 		do_action( 'acp/admin/settings/hide_on_screen', $collection, $list_screen );
 
 		$checkboxes = [];
 
 		/** @var HideOnScreen $hide_on_screen */
-		foreach ( $collection as $hide_on_screen ) {
+		foreach ( $collection->all() as $hide_on_screen ) {
 
 			$checkboxes[] = $this->render_checkbox(
 				$hide_on_screen->get_name(),
 				$hide_on_screen->get_label(),
-				$hide_on_screen->is_hidden( $list_screen )
+				$hide_on_screen->is_hidden( $list_screen ),
+				$hide_on_screen->get_dependent_on()
 			);
 		}
 
 		return implode( $checkboxes );
 	}
 
-	private function render_checkbox( $name, $label, $is_checked ) {
+	private function render_checkbox( $name, $label, $is_checked, $dependent_on = [] ) {
 		ob_start();
 		// the hidden field makes sure we also save the 'off' state. This allows us to set a 'default' value.
-
 		$attr_name = sprintf( 'settings[%s]', $name );
+
 		?>
-		<label>
+		<label data-setting="<?= $name; ?>" data-dependent="<?= implode( ',', $dependent_on ); ?>">
 			<input name="<?= $attr_name; ?>" type="hidden" value="off">
 			<input name="<?= $attr_name; ?>" type="checkbox" <?php checked( $is_checked ); ?>> <?= esc_html( $label ); ?>
 		</label>
