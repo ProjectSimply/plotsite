@@ -615,6 +615,7 @@ body {
   --strong-pink: #D95496;
   --orange: #F28254;
   --peach: #EBC2A6;
+  --red: #F55252;
 }
 
 a {
@@ -705,6 +706,10 @@ a {
 .footer {
   padding: 3rem 0;
   background-color: var(--black);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
 }
 @media screen and (min-width: 640px) {
   .footer {
@@ -898,6 +903,16 @@ ul.footer__menu a {
 
 .content iframe {
   width: 100%;
+}
+
+.siteWrap {
+  min-height: 100vh;
+  min-height: calc(var(--vh) * 100);
+  position: relative;
+}
+
+.wpforms-field-hp {
+  display: none !important;
 }
 
 .plotModalScrollViewport {
@@ -1374,6 +1389,87 @@ a {
 .fullImageOrVideo__title {
   color: white;
   margin: 0;
+}
+
+.plotLayoutForm .plotLayoutForm__textWrap {
+  background-color: var(--purple);
+  border-radius: 0.5rem 0.5rem 0 0;
+  padding: 3rem 1rem 3rem;
+  color: var(--white);
+}
+.plotLayoutForm .plotLayoutForm__heading {
+  font-size: 2rem;
+  color: var(--white);
+}
+.plotLayoutForm .wpforms-field-container {
+  display: grid;
+}
+@media screen and (min-width: 640px) {
+  .plotLayoutForm .wpforms-field-container {
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+}
+.plotLayoutForm .wpforms-field {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.plotLayoutForm .wpforms-field-label {
+  margin-bottom: 0.5rem;
+  text-align: left;
+  font-family: var(--bodyFont);
+}
+.plotLayoutForm label.wpforms-error {
+  color: var(--red);
+  margin-top: 0.2rem;
+}
+.plotLayoutForm input {
+  padding: 1rem;
+  border: none;
+}
+.plotLayoutForm .wpforms-submit-container {
+  text-align: center;
+  position: relative;
+}
+.plotLayoutForm .wpforms-submit-container img {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+.plotLayoutForm button {
+  background-color: var(--black);
+  color: var(--white);
+  border-radius: 8px;
+  padding: 1rem 2.5rem;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: var(--bodyFont);
+  border: none;
+  text-align: center;
+  cursor: pointer;
+}
+.plotLayoutForm .wpforms-confirmation-container p {
+  color: var(--white);
+  text-align: center;
+}
+.plotLayoutForm .plotLayoutForm__callUs {
+  padding: 3rem 1rem;
+  background-color: var(--mint);
+  border-radius: 0 0 0.5rem 0.5rem;
+  margin-bottom: 6rem;
+}
+.plotLayoutForm .plotLayoutForm__callUs p {
+  margin-bottom: 0;
+  text-align: center;
+  font-family: var(--headingFont);
+  font-size: 2rem;
+}
+.plotLayoutForm .plotLayoutForm__callUs a {
+  text-decoration: underline;
+  color: var(--black);
+  font-family: var(--headingFont);
 }
 
 .article {

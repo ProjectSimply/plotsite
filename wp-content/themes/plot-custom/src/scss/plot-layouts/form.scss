@@ -1,0 +1,101 @@
+.plotLayoutForm {
+
+
+
+    .plotLayoutForm__textWrap {
+        background-color: var(--purple);
+        border-radius: .5rem .5rem 0 0;
+        padding: 3rem 1rem 3rem;
+        color: var(--white);
+    }
+    
+    .plotLayoutForm__heading {
+        font-size: 2rem;
+        color: var(--white);
+    }
+
+    .wpforms-field-container {
+        display: grid;
+
+        @include medium {
+            grid-template-columns: 1fr 1fr;
+            grid-column-gap: 1rem;
+        }
+    }
+
+    .wpforms-field {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 2rem;
+
+    }
+
+    .wpforms-field-label {
+        margin-bottom: .5rem;
+        text-align: left;
+        font-family: var(--bodyFont);
+    }
+
+    label.wpforms-error {
+        color: var(--red);
+        margin-top: .2rem;
+    }
+
+    input {
+        padding: 1rem;
+        border: none;
+    }
+
+    .wpforms-submit-container {
+        text-align: center;
+        position: relative;
+
+        img {
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate3d(-50%, -50%, 0);
+        }
+    }
+
+    button {
+        background-color: var(--black);
+        color: var(--white);
+        border-radius: 8px;
+        padding: 1rem 2.5rem;
+        display: inline-block;
+        text-transform: uppercase;
+        font-family: var(--bodyFont);
+        border: none;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .wpforms-confirmation-container {
+        p {
+            color: var(--white);
+            text-align: center;
+        }
+    }
+
+    .plotLayoutForm__callUs {
+        padding: 3rem 1rem;
+        background-color: var(--mint);
+        border-radius: 0 0 .5rem .5rem;
+        margin-bottom: 6rem;
+
+        p {
+            margin-bottom: 0;
+            text-align: center;
+            font-family: var(--headingFont);
+            font-size: 2rem;
+        }
+
+        a {
+            text-decoration: underline;
+            color: var(--black);
+            font-family: var(--headingFont);
+        }
+    }
+}
+
