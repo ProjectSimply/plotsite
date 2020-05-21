@@ -1,3 +1,18 @@
+@mixin revealAnimation($speed: .2s, $delay : 1s) {
+    animation: reveal .3s ease-in-out forwards;
+
+	$i: 1;
+	@while $i <= 12 {
+	
+		&:nth-child(#{$i}) {
+			animation-delay: #{$i * $speed + $delay}; 
+		}
+
+		$i: $i + 1;
+		
+	}
+}
+
 #burgerMenu {
     position: fixed;
     top: 0;
@@ -17,6 +32,10 @@
         display: inline-block;
         padding-left: 3rem;
         padding-right: 3rem;
+        opacity: 0;
+        transform: translate3d(0,-100px,0);
+
+        @include revealAnimation(.2s, 1.5s); 
     }
 }
 
@@ -29,16 +48,20 @@
         align-items: center;
         justify-content: center;
         flex-direction: column;
-        opacity: 0;
-        
-        .burgerOpen & {
-            animation: reveal .2s ease-in-out 1s forwards;
-        }
     }
 
         .burgerMenu__list {
             list-style: none;
             padding-left: 0;
+
+            li {
+                opacity: 0;  
+                transform: translate3d(0,-100px,0);
+
+                .burgerOpen & {
+                    @include revealAnimation(); 
+                }
+            }
 
             a {
                 color: var(--black);
@@ -96,10 +119,11 @@
             position: absolute;
             bottom: 0%;
             right: -60px;
-            
+            transform: translate3d(-100%,-100%,0);
+            animation: topLeft 1.5s cubic-bezier(0.190, 1.000, 0.220, 1.000) .2s forwards;
         }
 
-        &.burgerMenu__asset--j svg {
+        &.burgerMenu__asset--l svg {
             display: block;
             width: 170%;
             height: 420px;
@@ -107,17 +131,20 @@
             position: absolute;
             bottom: 0%;
             left: -12px;
+            transform: translate3d(100%,-100%,0);
+            animation: topRight 1.5s cubic-bezier(0.190, 1.000, 0.220, 1.000) .2s forwards;
         }
 
         &.burgerMenu__asset--o svg {
             display: block;
-            width: 100%;
+            width: 150%;  
             height: 390px;
             fill: var(--dark-purple);
             position: absolute;
-            top: 0%;
+            top: 0%; 
             right: 0px;
-            transform: rotate(180deg);
+            transform: translate3d(-100%,100%,0);
+            animation: bottomLeft 1.5s cubic-bezier(0.190, 1.000, 0.220, 1.000) .2s forwards;
         }
 
 
@@ -129,6 +156,8 @@
             position: absolute;
             top: 0;
             left: 0;
+            transform: translate3d(100%,100%,0);
+            animation: bottomRight 1.5s cubic-bezier(0.190, 1.000, 0.220, 1.000) .2s forwards;
         }
     }
     
@@ -172,10 +201,14 @@
 }
 
 @keyframes reveal {
-    0% { opacity: 0 }
+    0% { 
+        opacity: 0;
+        transform: translate3d(0,20px,0);
+    }
 
-    100% { opacity: 1 }
+    100% { 
+        opacity: 1; 
+        transform: translate3d(0,0,0);
+    }
 }
-// On click
-// 4 shapes transition into position
-// then inner textWrap apears + logo and close button
+

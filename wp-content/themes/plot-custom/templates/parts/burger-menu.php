@@ -18,8 +18,8 @@
 		</span>
 	</div>
 	<div class="burgerMenu__part burgerMenu__part--2">
-		<span class="burgerMenu__asset burgerMenu__asset--j">
-			<?php plotGetTemplatePart('parts/svg-asset--j') ?>
+		<span class="burgerMenu__asset burgerMenu__asset--l">
+			<?php plotGetTemplatePart('parts/svg-asset--l') ?>
 		</span>
 	</div>
 	<div class="burgerMenu__part burgerMenu__part--3">

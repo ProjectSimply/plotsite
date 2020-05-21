@@ -1,7 +1,7 @@
 <section class="homeBanner sectionPadding">
 
     <div class="homeBanner__asset homeBanner__asset--1">
-        <?php plotGetTemplatePart('parts/svg-asset--j') ?>
+        <?php plotGetTemplatePart('parts/svg-asset--l') ?>
     </div>
 
     <div class="homeBanner__asset homeBanner__asset--2">

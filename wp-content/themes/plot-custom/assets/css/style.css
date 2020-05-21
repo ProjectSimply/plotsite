@@ -549,6 +549,45 @@ img {
   display: inline-block;
   padding-left: 3rem;
   padding-right: 3rem;
+  opacity: 0;
+  transform: translate3d(0, -100px, 0);
+  animation: reveal 0.3s ease-in-out forwards;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(1) {
+  animation-delay: 1.7s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(2) {
+  animation-delay: 1.9s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(3) {
+  animation-delay: 2.1s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(4) {
+  animation-delay: 2.3s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(5) {
+  animation-delay: 2.5s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(6) {
+  animation-delay: 2.7s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(7) {
+  animation-delay: 2.9s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(8) {
+  animation-delay: 3.1s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(9) {
+  animation-delay: 3.3s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(10) {
+  animation-delay: 3.5s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(11) {
+  animation-delay: 3.7s;
+}
+#burgerMenu .burgerMenu__ctaLink:nth-child(12) {
+  animation-delay: 3.9s;
 }
 
 .burgerMenu__innerWrap {
@@ -560,15 +599,54 @@ img {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  opacity: 0;
-}
-.burgerOpen .burgerMenu__innerWrap {
-  animation: reveal 0.2s ease-in-out 1s forwards;
 }
 
 .burgerMenu__list {
   list-style: none;
   padding-left: 0;
+}
+.burgerMenu__list li {
+  opacity: 0;
+  transform: translate3d(0, -100px, 0);
+}
+.burgerOpen .burgerMenu__list li {
+  animation: reveal 0.3s ease-in-out forwards;
+}
+.burgerOpen .burgerMenu__list li:nth-child(1) {
+  animation-delay: 1.2s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(2) {
+  animation-delay: 1.4s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(3) {
+  animation-delay: 1.6s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(4) {
+  animation-delay: 1.8s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(5) {
+  animation-delay: 2s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(6) {
+  animation-delay: 2.2s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(7) {
+  animation-delay: 2.4s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(8) {
+  animation-delay: 2.6s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(9) {
+  animation-delay: 2.8s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(10) {
+  animation-delay: 3s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(11) {
+  animation-delay: 3.2s;
+}
+.burgerOpen .burgerMenu__list li:nth-child(12) {
+  animation-delay: 3.4s;
 }
 .burgerMenu__list a {
   color: var(--black);
@@ -620,8 +698,10 @@ img {
   position: absolute;
   bottom: 0%;
   right: -60px;
+  transform: translate3d(-100%, -100%, 0);
+  animation: topLeft 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
 }
-.burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--j svg {
+.burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--l svg {
   display: block;
   width: 170%;
   height: 420px;
@@ -629,16 +709,19 @@ img {
   position: absolute;
   bottom: 0%;
   left: -12px;
+  transform: translate3d(100%, -100%, 0);
+  animation: topRight 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--o svg {
   display: block;
-  width: 100%;
+  width: 150%;
   height: 390px;
   fill: var(--dark-purple);
   position: absolute;
   top: 0%;
   right: 0px;
-  transform: rotate(180deg);
+  transform: translate3d(-100%, 100%, 0);
+  animation: bottomLeft 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--t svg {
   display: block;
@@ -648,6 +731,8 @@ img {
   position: absolute;
   top: 0;
   left: 0;
+  transform: translate3d(100%, 100%, 0);
+  animation: bottomRight 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
 }
 
 .burgerOpen .burgerMenu__part {
@@ -701,9 +786,11 @@ img {
 @keyframes reveal {
   0% {
     opacity: 0;
+    transform: translate3d(0, 20px, 0);
   }
   100% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
 }
 .plotButton {
