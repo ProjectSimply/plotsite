@@ -1,11 +1,11 @@
 <section class="homeBanner sectionPadding">
 
     <div class="homeBanner__asset homeBanner__asset--1">
-        <?php plotGetTemplatePart('parts/svg-asset--1') ?>
+        <?php plotGetTemplatePart('parts/svg-asset--j') ?>
     </div>
 
     <div class="homeBanner__asset homeBanner__asset--2">
-        <?php plotGetTemplatePart('parts/svg-asset--2') ?>
+        <?php plotGetTemplatePart('parts/svg-asset--o') ?>
     </div>
 
     <div class="maxWidth">
