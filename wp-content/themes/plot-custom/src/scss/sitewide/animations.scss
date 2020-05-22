@@ -1,0 +1,196 @@
+.SVGelement {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+}
+
+.SVGelement__1 {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--1, loadedAnimation--1;
+        animation-duration: .2s, 10s; 
+        animation-timing-function: ease-in-out, ease-in-out;
+        animation-fill-mode: forwards, forwards;
+        animation-iteration-count: 1, infinite;
+    
+        $i: 1;
+        $speed: .3s;
+        $delay: 0s;
+        @while $i <= 12 {
+        
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}, #{$i * ($i * .2s)}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
+.SVGelement__2--top {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {        
+        animation-name: entryAnimation--1, loadedAnimation--top;
+        animation-duration: .3s, 10s; 
+        animation-timing-function: ease-in-out, ease-in-out;
+        animation-fill-mode: forwards, forwards;
+        animation-iteration-count: 1, infinite;
+        animation-delay: 0s, .5s;
+    }
+}
+
+.SVGelement__2--middle {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {        
+        animation-name: entryAnimation--1;
+        animation-duration: .2s; 
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: 1;
+        animation-delay: .2s;
+    }
+}
+
+.SVGelement__2--bottom {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {        
+        animation-name: entryAnimation--1, loadedAnimation--bottom;
+        animation-duration: .2s, 10s; 
+        animation-timing-function: ease-in-out, ease-in-out;
+        animation-fill-mode: forwards, forwards;
+        animation-iteration-count: 1, infinite;
+        animation-delay: .4s, .5s;
+    }
+}
+
+
+.SVGelement__3 {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {
+        animation-name: loadedAnimation--3;
+        animation-duration: 3s; 
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite; 
+    
+        $i: 1;
+        $speed: .3s;
+        $delay: 1s;
+        @while $i <= 12 {
+        
+            &:nth-last-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
+.SVGelement__4 {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--1;
+        animation-duration: 1s; 
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards;
+    }
+}
+
+
+@keyframes entryAnimation--1 {
+    0% { 
+        transform: scale3d(.2, .2, .2) rotate3d(0, 0, 1, 90deg);
+        opacity: 0;
+    }
+
+    100% { 
+        opacity: 1; 
+        transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 0deg);
+    }
+}
+
+@keyframes entryAnimation--2 {
+    0% { 
+        transform: scale3d(.2, .2, .2);
+        opacity: 0;
+    }
+
+
+
+    100% { 
+        opacity: 1; 
+        transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes loadedAnimation--1 {
+    0% { 
+        transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 0deg);
+    }
+
+    50% {
+        transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, 180deg);
+    }
+
+    100% { 
+        transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 360deg);
+    }
+}
+
+@keyframes loadedAnimation--top {
+    0% { 
+        transform: translate3d( 0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(-33%, 50%, 0);
+    }
+
+    100% { 
+        transform: translate3d( 0,0,0);
+    }
+}
+
+@keyframes loadedAnimation--bottom {
+    0% { 
+        transform: translate3d( 0, 0, 0);
+    }
+
+    50% {
+        transform: translate3d(33%, -50%, 0);
+    }
+
+    100% { 
+        transform: translate3d( 0,0,0);
+    }
+}
+
+@keyframes loadedAnimation--3 {
+    0% { 
+        transform: scale3d(.2, .2, .2);
+        opacity: 0;
+    }
+
+    25% {
+        opacity: 1; 
+        transform: scale3d(1, 1, 1);
+    }
+
+    75% {
+        opacity: 1; 
+        transform: scale3d(1, 1, 1);
+    }
+
+    100% { 
+        transform: scale3d(.2, .2, .2);
+        opacity: 0;
+    }
+}
