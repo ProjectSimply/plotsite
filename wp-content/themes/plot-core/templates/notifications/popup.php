@@ -19,7 +19,7 @@
 
 	<?php if(get_field('show_button')) : ?>
 
-		<a class="button plotModalNotification__button" href="<?= get_field('url') ?>"><?= get_field('button_text') ?></a>
+		<a class="plotButton plotModalNotification__button" href="<?= get_field('url') ?>"><?= get_field('button_text') ?></a>
 
 	<?php endif; ?>
 	

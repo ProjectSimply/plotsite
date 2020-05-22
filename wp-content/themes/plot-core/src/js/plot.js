@@ -7,11 +7,11 @@
 
     Plot = {
 
-
         init: () => {
 
             Plot.createListeners()
             SyncScroll.init() 
+            Plot.animateBannerNotifications() 
 
         },
 
@@ -33,13 +33,64 @@
 
         },
 
+        animateBannerNotifications : () => {
+            const banner = document.querySelector('.JS--bannerNotification')
+
+            if(banner)
+                if(banner.dataset.animationType == 'always') {
+                    Plot.buildBannerRepeatingText(banner)
+                    window.addEventListener('resize', function() {
+                        Plot.buildBannerRepeatingText(banner)
+                    })
+                } else {
+                    Plot.checkToSeeIfWeNeedToAnimationBanner(banner)
+                    window.addEventListener('resize', function() {
+                        Plot.checkToSeeIfWeNeedToAnimationBanner(banner)
+                    })
+                }
+        },
+
+        checkToSeeIfWeNeedToAnimationBanner : banner => {
+
+            banner.innerHTML = `<div>${banner.dataset.message}</div>`
+            const div1 = banner.querySelector('div:nth-of-type(1)')
+            const windowWidth = window.innerWidth
+            
+            if(div1.scrollWidth > windowWidth) {
+                banner.classList.add('withAnimation')
+                Plot.buildBannerRepeatingText(banner)
+            } else {
+                 banner.classList.remove('withAnimation')
+            }
+
+        },
+
+        buildBannerRepeatingText : banner => {
+
+            banner.innerHTML = `<div>${banner.dataset.message}</div><div>${banner.dataset.message}</div>`
+            const div1 = banner.querySelector('div:nth-of-type(1)')
+            const div2 = banner.querySelector('div:nth-of-type(2)')
+            const windowWidth = window.innerWidth
+
+            div1.style.animationDuration=(windowWidth/20)+"s"
+            div2.style.animationDuration=(windowWidth/20)+"s"
+
+            var i  = 0
+
+            while(div1.scrollWidth < windowWidth && i < 100) {
+                div1.innerHTML = div1.innerHTML + ` ${banner.dataset.message}`
+                div2.innerHTML = div2.innerHTML + ` ${banner.dataset.message}`
+                i++;
+            }
+
+        },
+
         sideSwipes : (sideSwipes) => {
 
             for(var sideSwipe of sideSwipes) {
 
                  if(parseInt(sideSwipe.getBoundingClientRect().width) + 1 < parseInt(sideSwipe.scrollWidth)) {
 
-                    console.log('wider')
 
                  }
 
@@ -194,6 +245,61 @@
 
 
 
+        },
+
+        dateFormat : (date,format) => {
+
+            if(format == 'dS M')
+                return date.getDate() + Plot.getOrdinal(date.getDate()) + ' ' + Plot.getMonth(date)
+
+            if(format == 'M dS')
+                return Plot.getMonth(date) + ' ' + date.getDate() + Plot.getOrdinal(date.getDate()) 
+
+            if(format == 'd/m/y')
+                return date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear().toString().substr(-2)
+
+            if(format == 'm/d/y')
+                return (date.getMonth() + 1) + '/' + date.getDate() + '/' + date.getFullYear().toString().substr(-2)
+
+            return Plot.getDayOfWeek(date)
+         },
+
+        getDayOfWeek : date => {
+
+            const days = [
+                'Sunday',
+                'Monday',
+                'Tuesday',
+                'Wednesday',
+                'Thursday',
+                'Friday',
+                'Saturday'
+            ]
+
+            return days[date.getDay()]
+
+        },
+
+        getOrdinal : number => {
+
+              if (number > 3 && number < 21) return 'th';
+              switch (number % 10) {
+                case 1:  return "st";
+                case 2:  return "nd";
+                case 3:  return "rd";
+                default: return "th";
+              }
+
+        },
+
+
+        getMonth : date => {
+
+            const monthNames = ["Jan", "Feb", "Mar", "Apr", "May", "Jun",
+              "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"
+            ];
+
+            return monthNames[date.getMonth()]
         },
 
         toQueryString : (obj, prefix) => {

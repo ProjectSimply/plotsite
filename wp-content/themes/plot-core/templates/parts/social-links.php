@@ -1,26 +1,40 @@
-<?php if(get_field('instagram_link','option') || get_field('twitter_link','option') || get_field('facebook_link','option')) : ?>
+<?php if(!empty($plotData['socialLinks'])) : ?>
 
 	<div class="sitewideSocialLinks">
 
-		<?php if(get_field('instagram_link','option')) : ?>
+		<?php 
 
-			<a target="_blank" href="<?= get_field('instagram_link','option') ?>">INSTAGRAM</a>
+			$socials = [
+				'twitter' 		=> 'TW',
+				'facebook' 		=> 'FB',
+				'soundcloud' 	=> 'SC',
+				'spotify' 		=> 'SF',
+				'youtube' 		=> 'YT',
+				'bandcamp' 		=> 'BC',
+				'instagram' 	=> 'IG'
 
-		<?php endif; ?>
+			];
+
+		?>
+
+		<?php foreach($plotData['socialLinks'] as $socialLink) : ?>
+
+			<?php if($socialLink['social_network']) : ?>
+
+				<div class="socialLinkWrap">
 
 
-		<?php if(get_field('twitter_link','option')) : ?>
+					<a class="socialLink" target="_blank" href="<?= $socialLink['link'] ?>"><?php plotGetTemplatePart('parts/social-media/' . $socialLink['social_network']['value']) ?>
+						<span class="socialLink__text"><?= $socials[$socialLink['social_network']['value']]; ?></span>
+					</a>
 
-			<a target="_blank" href="<?= get_field('twitter_link','option') ?>">TWITTER</a>
+					<span class="socialLink__sep">/ </span>
 
-		<?php endif; ?>
+				</div>
 
+			<?php endif; ?>
 
-		<?php if(get_field('facebook_link','option')) : ?>
-
-			<a target="_blank" href="<?= get_field('facebook_link','option') ?>">FACEBOOK</a>
-
-		<?php endif; ?>
+		<?php endforeach; ?>
 
 	</div>
 

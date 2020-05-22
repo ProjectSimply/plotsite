@@ -1,8 +1,6 @@
-<?php plotGetTemplatePart('parts/header') ?>
-
 <?php plotGetTemplatePart('parts/banner') ?>
 
-<div class="faqs">
+<div data-plot-smooth-scroll-frame class="faqs plotPage">
 
 	<div class="maxWidth">
 
@@ -66,5 +64,3 @@
 	</div>
 
 </div>
-
-<?php plotGetTemplatePart('parts/footer') ?>

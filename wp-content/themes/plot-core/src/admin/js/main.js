@@ -1,94 +1,149 @@
 (function($) {
 
-    var minuteMap = [
-        0,5,10,15,20,25,30,35,40,45,50,55
-    ]
+    $(document).ready(function(){
 
-   
+        var plotAdminMain = {
 
-  acf.add_filter('time_picker_args', function( args, field ){
-    args.showSecond = false
-    args.stepMinute = 5
+            blockLinkSliders : document.querySelectorAll('.plotBlockLinkSlider'),
+            blockLinkImagePreviews : document.querySelectorAll('.plotBlockLinkPreview'),
 
-    var startDateTextBox = $('[data-name="start_time"] input[type=hidden]')
-    var endDateTextBox = $('[data-name="end_time"] input[type=hidden]')
+            init : () => {
 
-    args.afterInject = function() {
-        if(field.context.dataset.name == 'end_time') {
+                plotAdminMain.createListeners()
 
-            var startTime = startDateTextBox.val().split(":")
-            var startHour = parseInt(startTime[0])
-            var startMin = parseInt(startTime[1])
+                plotAdminMain.equalizeLabels()
 
-            var endTime = endDateTextBox.val().split(":")
-            var endHour = parseInt(endTime[0])
-            var endMin = parseInt(endTime[1])
-            var modifiedHour = 0
-            var modifiedStartHour = 0;
+                $(".meta-box-sortables").sortable({
+                    cancel:".postbox"
+                }).sortable('refresh');
 
-            for(var i = 0; i< 24; i++) {
 
-                if(i < 6 ) {
-                    modifiedHour = i + 24
-                } else {
-                    modifiedHour = i
+            },
+
+            createListeners : () => {
+
+                for(var blockLinkSlider of plotAdminMain.blockLinkSliders) {
+
+                    blockLinkSlider.querySelector('input').addEventListener('input',function(){
+
+                        plotAdminMain.changeOpacityOfImage(this)
+                        
+                    })
+
+                    plotAdminMain.changeOpacityOfImage(blockLinkSlider.querySelector('input'))
+
                 }
 
-                if(startHour < 6) {
-                    modifiedStartHour = startHour + 24
-                } else {
-                    modifiedStartHour = startHour
+                for(var input of document.querySelectorAll('input[type=radio], input[type=checkbox]')) {
+
+                    plotAdminMain.addCheckedClassesWhenChecked()
+
                 }
 
+                $('body').on('change','input[type=radio], input[type=checkbox]',function(){
 
-                if(modifiedHour < modifiedStartHour) { 
-                    $('.acf-ui-datepicker .ui_tpicker_hour option').eq(i).attr('disabled',true)
-                } else {
-                    $('.acf-ui-datepicker .ui_tpicker_hour option').eq(i).attr('disabled',false)
+
+                    plotAdminMain.addCheckedClassesWhenChecked()
+
+                });
+
+
+            },
+
+            equalizeLabels : () => {
+
+                var maxHeight = 0
+
+                for(var blockLinkImagePreview of plotAdminMain.blockLinkImagePreviews) {
+                    const label = blockLinkImagePreview.querySelector('.acf-label')
+                    label.style.minHeight = 'none'
+
                 }
-            }
 
+                for(var blockLinkImagePreview of plotAdminMain.blockLinkImagePreviews) {
 
-            var i = 0
+                    const label = blockLinkImagePreview.querySelector('.acf-label')
 
-            for(var min of minuteMap) {
-
-                if(min < startMin && endHour == startHour) {
-                    $('.acf-ui-datepicker .ui_tpicker_minute option').eq(i).attr('disabled',true)
-                } else {
-                    $('.acf-ui-datepicker .ui_tpicker_minute option').eq(i).attr('disabled',false)
+                    if(label.clientHeight > maxHeight) {
+                        maxHeight = label.clientHeight
+                    }
                 }
 
-                i++
+                for(var blockLinkImagePreview of plotAdminMain.blockLinkImagePreviews) {
+
+                    const label = blockLinkImagePreview.querySelector('.acf-label')
+
+                    label.style.minHeight = `${maxHeight}px`
+
+                }
+
+            },
+
+            changeOpacityOfImage : elem => {
+
+                var element = elem.closest('.plotBlockLinkSlider')
+
+                if(elem.closest('.acf-repeater.-block .acf-fields')) {
+                    var parentSelector = elem.closest('.acf-repeater.-block .acf-fields')
+                } else {
+                    parentSelector = document.querySelector('#wpbody')   
+                }
+
+                for(var className of element.classList) {
+                    if(className.indexOf('plotBlockLinkSlider--') == 0) {
+                        var fadingElementId = className.replace('plotBlockLinkSlider--','')
+
+                        const fadingElements = parentSelector.querySelectorAll('.plotBlockLinkPreview--' + fadingElementId)
+
+                        for(fadingElement of fadingElements)
+                            fadingElement.style.setProperty('--plot-blocklink-opacity',elem.value / 100)
+                    }
+                }
+            },
+
+            addCheckedClassesWhenChecked : () => {
+
+                var allInputs = document.querySelectorAll('input[type=checkbox], input[type=radio]')
+
+                for(var input of allInputs) {
+
+                    if(input.clientHeight == 0)
+                        continue
+
+                    if(input.type == 'radio') {
+
+                        var parent = input.closest('fieldset')
+
+                        if(!parent)
+                            parent = input.closest('.acf-input')
+
+                        if(parent){
+                            parent.querySelectorAll('label').forEach(label => {
+                                if(label.querySelector('input')) {
+                                    if(!label.querySelector('input').checked) {
+                                        label.classList.remove('plotSelected')
+                                    }
+                                } else {
+                                    label.classList.remove('plotSelected')
+                                }
+                            })
+                        }
+
+                    }
+
+                    if(input.checked){
+                        input.parentNode.classList.add('plotSelected')
+                    }
+                    else 
+                        input.parentNode.classList.remove('plotSelected')
+
+                }
+
             }
 
         }
 
+        plotAdminMain.init()
 
-        $('.acf-ui-datepicker .ui_tpicker_hour option').each(function(i){
-
-            if(i < 6) {
-                $(this).appendTo($('.acf-ui-datepicker .ui_tpicker_hour select'));
-            }
-
-        });
-
-
-    }
-    args.onSelect = function(f) {
-        var startTime = startDateTextBox.val().split(":")
-        var startHour = startTime[0]
-        var startMin = parseInt(startTime[1])
-
-        var endTime = endDateTextBox.val().split(":")
-        var endHour = endTime[0]
-        var endMin = parseInt(endTime[1])
-
-        if((startHour == endHour && endMin < startMin) || startHour > endHour) {
-            //This is erroneous. Prevent!
-        }
-
-    }
-    return args;
-  });
+    })
 })(jQuery);

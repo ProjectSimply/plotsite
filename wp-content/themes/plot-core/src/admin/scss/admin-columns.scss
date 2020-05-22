@@ -1,0 +1,27 @@
+html {
+
+	.ac-table-actions .ac-table-button, .ac-table-actions .ac-table-button:hover, .ac-table-actions .ac-table-button:focus, .ac-table-actions .ac-table-button:active {
+		background-color: var(--plotMint);
+		color: var(--plotBlack);
+		border: none;
+		font-size: 1rem;
+		line-height: 2;
+		height: auto;
+		padding: 0 10px;
+	}
+
+	.ac-table-actions .ac-table-button .dashicons {
+		line-height: 2rem;
+	}
+
+	.ac-table-actions .ac-table-button:last-child, .ac-table-actions .ac-table-button.last {
+		border: none;
+	}
+
+	.ac-button-group {
+		display: none;
+	}
+	.acp-screen-option-prefs {
+		display: none;
+	}
+}

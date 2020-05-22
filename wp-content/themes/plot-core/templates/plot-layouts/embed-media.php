@@ -1,4 +1,4 @@
-<section class="plotLayout embedMedia">
+<section class="plotLayout plotLayout--narrow embedMedia">
 
     <div class="maxWidth">
 
@@ -10,11 +10,9 @@
 
             <?php endif ?>
 
-            <?php if(get_sub_field('introduction')) : ?>
+            <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
 
-                <div class="embedMedia__content">
-                    <?= get_sub_field('introduction') ?>
-                </div>
+                <?= get_sub_field('introduction') ?>
 
             <?php endif ?>
 

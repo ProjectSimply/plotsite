@@ -1,53 +1,71 @@
+@charset "UTF-8";
+html {
+  --plotPeach:#ebc2a6;
+  --plotOrange:#f28254;
+  --plotGreen:#21b573;
+  --plotRed:#f55252;
+  --plotYellow:#f5d93d;
+  --plotLilac:#a88fd9;
+  --plotBlue:#3aa8e4;
+  --plotPink:#eab8d1;
+  --plotMint:#7dedbb;
+  --plotPurple:#b569b8;
+  --plotSky:#7ae5e5;
+  --plotFuchsia:#d95496;
+  --plotBlack:#2e2e2b;
+  --plotGrey:#b5b5bf;
+}
+
 .plotPeach {
-  background: #ebc2a6;
+  background: var(--plotPeach);
 }
 
 .plotOrange {
-  background: #f28254;
+  background: var(--plotOrange);
 }
 
 .plotGreen {
-  background: #21b573;
+  background: var(--plotGreen);
 }
 
 .plotRed {
-  background: #f55252;
+  background: var(--plotRed);
 }
 
 .plotYellow {
-  background: #f5d93d;
+  background: var(--plotYellow);
 }
 
 .plotLilac {
-  background: #a88fd9;
+  background: var(--plotLilac);
 }
 
 .plotBlue {
-  background: #3aa8e4;
+  background: var(--plotBlue);
 }
 
 .plotPink {
-  background: #eab8d1;
+  background: var(--plotPink);
 }
 
 .plotPurple {
-  background: #b569b8;
+  background: var(--plotPurple);
 }
 
 .plotMint {
-  background: #7dedbb;
+  background: var(--plotMint);
 }
 
 .plotSky {
-  background: #7ae5e5;
+  background: var(--plotSky);
 }
 
 .plotFuchsia {
-  background: #d95496;
+  background: var(--plotFuchsia);
 }
 
 body.login {
-  background: #eab8d1;
+  background: var(--plotPink);
 }
 
 #login {
@@ -62,13 +80,12 @@ body.login {
 }
 
 .login form {
-  background: #eab8d1;
-  border: 3px solid #2e2e2b;
+  background: var(--plotPink);
+  border: 3px solid var(--plotBlack);
 }
 
 .login label {
-  text-transform: uppercase;
-  color: #2e2e2b;
+  color: var(--plotBlack);
 }
 
 .login p {
@@ -76,9 +93,9 @@ body.login {
 }
 
 .login #login_error, .login .message {
-  background: #f55252;
-  border: 4px solid #2e2e2b;
-  color: #2e2e2b;
+  background: var(--plotRed);
+  border: 4px solid var(--plotBlack);
+  color: var(--plotBlack);
   font-size: 1rem;
 }
 .login #login_error br, .login .message br {
@@ -87,25 +104,32 @@ body.login {
 }
 
 .login .message {
-  background: #f28254;
+  background: var(--plotOrange);
 }
 
-.login form .input, .login input[type=text] {
+.login form .input, .login input[type=text], .login form input:focus, .login input[type=text]:focus {
   background: transparent;
   box-shadow: none;
   font-size: 1.2rem;
   line-height: 1.8;
-  border: 3px solid #2e2e2b;
+  border: 3px solid var(--plotBlack) !important;
+  color: var(--plotBlack);
 }
 
 #login .button.button-large {
-  background: #2e2e2b;
+  background: var(--plotBlack);
   border: none;
   font-size: 1.1rem;
   padding: 5px 15px;
   border-radius: 0;
   height: auto;
   text-shadow: none;
+  color: white;
+  line-height: 1.4;
+  margin-top: 0.8rem;
+}
+#login .button.button-large:focus {
+  border: none !important;
 }
 
 .login form input[type=checkbox] {
@@ -113,27 +137,39 @@ body.login {
   height: 20px;
   width: 20px;
   box-shadow: none;
-  border: 3px solid #2e2e2b;
+  border: 3px solid var(--plotBlack);
   margin: 0;
   margin-right: 0.2rem;
+  opacity: 1;
+  visibility: visible;
+}
+.login form input[type=checkbox]:before {
+  height: 20px;
+  width: 20px;
+  margin-left: -3px;
 }
 
 .login input[type=checkbox]:checked:before {
-  color: #2e2e2b;
+  color: var(--plotBlack);
+}
+
+.forgetmenot {
+  display: flex;
+  align-items: center;
 }
 
 .login form .forgetmenot label {
-  line-height: 20px;
+  margin-left: 0.3rem;
 }
 
 .login #nav {
   text-align: center;
 }
 .login #nav a {
-  color: #2e2e2b;
+  color: var(--plotBlack);
 }
 .login #nav a:hover {
-  color: #f55252;
+  color: var(--plotRed);
 }
 
 .login #backtoblog {
@@ -141,31 +177,1082 @@ body.login {
 }
 
 #login_error a {
-  color: #2e2e2b;
+  color: var(--plotBlack);
 }
 
-.plotSegmentsWrap > .acf-label label {
-  height: 4rem;
+html {
+  font-size: 15px;
+}
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+}
+@media screen and (min-width: 1200px) {
+  html {
+    font-size: 17px;
+  }
+}
+
+body {
+  font-family: fieldwork, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  background: var(--plotLilac);
+  color: white;
+}
+body #contextual-help-link {
+  display: none;
+}
+body #wpadminbar .ab-submenu .ab-item, body #wpadminbar .quicklinks .menupop ul li a, body #wpadminbar .quicklinks .menupop.hover ul li a, body #wpadminbar.nojs .quicklinks .menupop:hover ul li a {
+  color: white;
+}
+body #wpadminbar {
+  background: var(--plotBlack);
+}
+body #wpadminbar * {
+  font-family: fieldwork, sans-serif;
+}
+body.wp-core-ui .button-link {
+  color: var(--plotMint);
+}
+body.wp-core-ui .button-link:hover {
+  color: var(--plotRed);
+}
+body a:active, body a:focus, body a:hover {
+  color: var(--plotMint);
+}
+body #wpadminbar .menupop .ab-sub-wrapper {
+  background: var(--plotBlack);
+}
+body #wpadminbar .ab-top-menu > li.menupop.hover > .ab-item, body #wpadminbar.nojq .quicklinks .ab-top-menu > li > .ab-item:focus, body #wpadminbar.nojs .ab-top-menu > li.menupop:hover > .ab-item, body #wpadminbar:not(.mobile) .ab-top-menu > li:hover > .ab-item, body #wpadminbar:not(.mobile) .ab-top-menu > li > .ab-item:focus {
+  color: var(--plotRed);
+}
+body .subtitle {
+  color: white;
+}
+body input[type=checkbox]:focus, body input[type=color]:focus, body input[type=date]:focus, body input[type=datetime-local]:focus, body input[type=datetime]:focus, body input[type=email]:focus, body input[type=month]:focus, body input[type=number]:focus, body input[type=password]:focus, body input[type=radio]:focus, body input[type=search]:focus, body input[type=tel]:focus, body input[type=text]:focus, body input[type=time]:focus, body input[type=url]:focus, body input[type=week]:focus, body select:focus, body textarea:focus {
+  border: none;
+  box-shadow: none;
+}
+body #post-body #visibility:before, body #post-body .misc-pub-post-status:before, body #post-body .misc-pub-revisions:before, body .curtime #timestamp:before, body span.wp-media-buttons-icon:before {
+  margin-top: 0.15rem;
+}
+body #wp-admin-bar-wp-logo {
+  display: none;
+}
+body #wp-admin-bar-wpforms-menu {
+  display: none;
+}
+body #wp-admin-bar-breeze-topbar > div:not(.ab-sub-wrapper) {
   text-indent: -9999px;
-  background: url("../img/plot-for-wordpress.svg") no-repeat;
-  background-size: cover;
-  max-width: 5.2rem;
-  margin-bottom: 1rem;
+}
+body #wp-admin-bar-breeze-topbar > div:not(.ab-sub-wrapper):after {
+  content: "Cache";
+  display: block;
+  text-indent: 0;
+  position: absolute;
+  top: 0;
+}
+body a {
+  color: var(--plotMint);
+}
+body a:hover {
+  color: var(--plotRed);
+}
+body .accordion-section-title:after, body .handlediv, body .item-edit, body .postbox .handlediv.button-link, body .toggle-indicator {
+  color: var(--plotYellow);
+}
+body #all-plugins-table .plugins a.delete, body #delete-link a.delete, body #media-items a.delete, body #media-items a.delete-permanently, body #nav-menu-footer .menu-delete, body #search-plugins-table .plugins a.delete, body .plugins a.delete, body .row-actions span.delete a, body .row-actions span.spam a, body .row-actions span.trash a, body .submitbox .submitdelete {
+  color: var(--plotRed);
+}
+body.wp-core-ui .button, body.wp-core-ui .button-secondary {
+  background: var(--plotMint);
+  border: none;
+  font-size: 1rem;
+  line-height: 2;
+}
+body.wp-core-ui .button.focus, body.wp-core-ui .button.hover, body.wp-core-ui .button:focus, body.wp-core-ui .button:hover {
+  background: var(--plotMint);
+  border-color: var(--plotLilac);
+  filter: brightness(0.8);
+  color: var(--plotBlack);
+  box-shadow: none;
+}
+body .acf-fc-popup a:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+body.wp-core-ui select {
+  background-color: var(--plotMint);
+  border: none;
+  font-size: 1rem;
+  line-height: 2;
+  height: auto !important;
+  padding: 0 30px 0 8px;
+}
+body.wp-core-ui select:focus {
+  color: var(--plotBlack);
+  border-color: var(--plotMint);
+}
+body.wp-core-ui .button-primary {
+  color: var(--plotBlack);
+}
+body.wp-core-ui .button-primary:hover {
+  color: var(--plotBlack);
+}
+body.wp-core-ui .button-disabled, body.wp-core-ui .button-secondary.disabled, body.wp-core-ui .button-secondary:disabled, body.wp-core-ui .button-secondary[disabled], body.wp-core-ui .button.disabled, body.wp-core-ui .button:disabled, body.wp-core-ui .button[disabled] {
+  background: rgba(255, 255, 255, 0.5) !important;
+  text-shadow: none !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+body #comment-link-box, body #edit-slug-box {
+  color: white;
+}
+body .postbox {
+  background: var(--plotBlack);
+  border: none;
+  border-radius: 1rem;
+}
+body .postbox .inside {
+  font-size: 1rem;
+}
+body .postbox .handlediv {
+  z-index: 6;
+  position: relative;
+}
+body .postbox .handlediv:focus .toggle-indicator:before {
+  box-shadow: none !important;
+}
+body .form-wrap p, body p.description, body p.help, body span.description {
+  color: white !important;
+}
+body h1, body h2, body h3, body h4, body h5, body h6 {
+  color: white;
+  font-weight: 600 !important;
+}
+body #poststuff input[type=checkbox], body #poststuff input[type=radio], body #side-sortables input[type=checkbox], body #side-sortables input[type=radio] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+body #poststuff .stuffbox > h3, body #poststuff h2, body #poststuff h3.hndle {
+  font-size: 1.4rem;
+  color: var(--plotOrange);
+  background: var(--plotBlack);
+  border-radius: 1rem 1rem 0 0;
+  z-index: 5;
+}
+body #poststuff #normal-sortables .postbox:nth-of-type(2n-1) h2 {
+  color: var(--plotMint);
+}
+body .postbox.closed .stuffbox > h3, body .postbox.closed h2, body .postbox.closed h3.hndle {
+  border-radius: 1rem !important;
+}
+body input[type=color], body input[type=date], body input[type=datetime-local], body input[type=datetime], body input[type=email], body input[type=month], body input[type=number], body input[type=password], body input[type=search], body input[type=tel], body input[type=text], body input[type=time], body input[type=url], body input[type=week], body select, body textarea {
+  background: var(--plotBlack);
+  color: white;
+  height: auto;
+  font-size: 1rem;
+}
+body .ac_match, body .subsubsub a.current {
+  color: white;
+}
+body .subsubsub {
+  color: rgba(255, 255, 255, 0.5);
+}
+body .subsubsub a .count, body .subsubsub a.current .count {
+  color: rgba(255, 255, 255, 0.5);
+}
+body .search-box input[type=search] {
+  background: rgba(0, 0, 0, 0.1);
+  color: white;
+  box-shadow: none;
+  border: none;
+}
+body #major-publishing-actions {
+  background: none;
+}
+body .timestamp-wrap {
+  display: flex;
+}
+body .timestamp-wrap label {
+  padding: 0 0.1rem;
+}
+body #aa, body #hh, body #jj, body #mn {
   display: block;
 }
-
-#wpadminbar #wp-admin-bar-wp-logo > .ab-item .ab-icon:before {
-  background-image: url("../img/custom-logo.png") !important;
-  background-position: 0 0;
-  color: rgba(0, 0, 0, 0);
+body #screen-meta-links .show-settings:active, body #screen-meta-links .show-settings:focus, body #screen-meta-links .show-settings:hover {
+  color: white;
 }
-
-#wpadminbar #wp-admin-bar-wp-logo.hover > .ab-item .ab-icon {
-  background-position: 0 0;
+body #screen-meta {
+  border: none;
+  border-radius: 0 0 0 1rem;
+  overflow: hidden;
 }
-
-#tinypng_dashboard_widget {
+body #screen-meta-links .show-settings, body #screen-options-wrap {
+  background: var(--plotBlack);
+}
+body #screen-meta-links .show-settings [type=radio], body #screen-meta-links .show-settings [type=checkbox], body #screen-options-wrap [type=radio], body #screen-options-wrap [type=checkbox] {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+}
+body #screen-meta-links .show-settings label, body #screen-options-wrap label {
+  padding-left: 2.7rem;
+}
+body #screen-meta-links .show-settings .screen-options label, body #screen-options-wrap .screen-options label {
+  padding-left: 0;
+  padding-right: 0.5rem;
+}
+body #screen-meta-links .show-settings .screen-options label:before, body #screen-meta-links .show-settings .screen-options label:after, body #screen-options-wrap .screen-options label:before, body #screen-options-wrap .screen-options label:after {
+  content: none;
+}
+body .metabox-prefs .screen-options .screen-per-page {
+  margin-bottom: 0.6rem;
+}
+body #screen-meta-links .show-settings {
+  line-height: inherit;
+  color: white;
+  border: none;
+  padding-bottom: 0.4rem;
+}
+body #screen-meta-links .show-settings:after {
+  top: 0.1rem;
+  padding: 0;
+}
+body #titlediv #title, body #titlediv #title-prompt-text {
+  background: rgba(0, 0, 0, 0.1);
+  border: none;
+  font-size: 2.4rem;
+  line-height: 1.2;
+  color: white;
+  height: auto;
+  padding: 0.4rem;
+  margin: 0;
+}
+body #titlediv #title-prompt-text {
+  color: white;
+  background: none;
+  min-height: 30px;
+  display: block;
+}
+body .wrap .add-new-h2, body .wrap .add-new-h2:active, body .wrap .page-title-action, body .wrap .page-title-action:active {
+  border: none;
+  background: var(--plotRed);
+  color: white;
+}
+body .postbox.closed .hndle, body .stuffbox .hndle {
+  border: none;
+}
+body .postbox:not(.closed) .hndle, body .stuffbox .hndle {
+  border-bottom: white solid 3px;
+}
+body .postbox .handlediv .toggle-indicator:before {
+  margin-top: 0.8rem !important;
+}
+body .form-wrap p, body p.description, body p.help, body span.description {
+  font-size: 0.9rem;
+  color: #ccc;
+}
+body .notice, body div.error, body div.updated {
+  background: rgba(255, 255, 255, 0.3);
+  border: 0 solid;
+  border-left-width: 4px;
+}
+body .notice-error, body div.error {
+  border-color: var(--plotRed);
+}
+body .comment-ays, body .feature-filter, body .imgedit-group, body .popular-tags, body .stuffbox, body .widgets-holder-wrap, body .wp-editor-container, body p.popular-tags, body table.widefat {
+  background: var(--plotBlack);
+}
+body ul.acf-radio-list li, body ul.acf-checkbox-list li, body .acf-true-false {
+  font-size: 1rem;
+  line-height: 1.4;
+  margin-bottom: 0.5rem;
+}
+body .customize-inside-control-row, body ul.acf-radio-list li label, body ul.acf-checkbox-list li label, body .acf-true-false label, body .customize-control-radio label, body .customize-control-checkbox label {
+  display: block;
+}
+body .acf-radio-list label, body .acf-checkbox-list label, body .acf-true-false label, body .columns-prefs label, body .metabox-prefs label, body .customize-control-radio label, body .customize-control-checkbox label, body .categorychecklist label {
+  position: relative;
+  padding: 0.3rem 1rem 1rem 2.5rem;
+  display: inline-block;
+}
+body .acf-radio-list label:before, body .acf-checkbox-list label:before, body .acf-true-false label:before, body .columns-prefs label:before, body .metabox-prefs label:before, body .customize-control-radio label:before, body .customize-control-checkbox label:before, body .categorychecklist label:before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2.2rem;
+  height: 2.2rem;
+  transform: scale3d(0.8, 0.8, 1);
+  border-radius: 100%;
+  border: var(--plotMint) solid 3px;
+  box-sizing: border-box;
+}
+body .acf-radio-list label:after, body .acf-checkbox-list label:after, body .acf-true-false label:after, body .columns-prefs label:after, body .metabox-prefs label:after, body .customize-control-radio label:after, body .customize-control-checkbox label:after, body .categorychecklist label:after {
+  content: "";
+  width: 2.2rem;
+  height: 2.2rem;
+  background: var(--plotOrange);
+  position: absolute;
+  transform: scale3d(0.4, 0.4, 1);
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  transition: transform 0.2s ease;
+  opacity: 0;
+}
+body .acf-radio-list li:nth-of-type(2n) label:before, body .acf-radio-list label:nth-of-type(2n):before, body .acf-checkbox-list li:nth-of-type(2n) label:before, body .acf-checkbox-list label:nth-of-type(2n):before, body .acf-true-false li:nth-of-type(2n) label:before, body .acf-true-false label:nth-of-type(2n):before, body .columns-prefs li:nth-of-type(2n) label:before, body .columns-prefs label:nth-of-type(2n):before, body .metabox-prefs li:nth-of-type(2n) label:before, body .metabox-prefs label:nth-of-type(2n):before, body .customize-control-radio li:nth-of-type(2n) label:before, body .customize-control-radio label:nth-of-type(2n):before, body .customize-control-checkbox li:nth-of-type(2n) label:before, body .customize-control-checkbox label:nth-of-type(2n):before, body .categorychecklist li:nth-of-type(2n) label:before, body .categorychecklist label:nth-of-type(2n):before {
+  border-color: var(--plotLilac);
+}
+body .acf-radio-list li:nth-of-type(2n) label:after, body .acf-radio-list label:nth-of-type(2n):after, body .acf-checkbox-list li:nth-of-type(2n) label:after, body .acf-checkbox-list label:nth-of-type(2n):after, body .acf-true-false li:nth-of-type(2n) label:after, body .acf-true-false label:nth-of-type(2n):after, body .columns-prefs li:nth-of-type(2n) label:after, body .columns-prefs label:nth-of-type(2n):after, body .metabox-prefs li:nth-of-type(2n) label:after, body .metabox-prefs label:nth-of-type(2n):after, body .customize-control-radio li:nth-of-type(2n) label:after, body .customize-control-radio label:nth-of-type(2n):after, body .customize-control-checkbox li:nth-of-type(2n) label:after, body .customize-control-checkbox label:nth-of-type(2n):after, body .categorychecklist li:nth-of-type(2n) label:after, body .categorychecklist label:nth-of-type(2n):after {
+  background-color: var(--plotYellow);
+}
+body .acf-radio-list li:nth-of-type(3n) label:before, body .acf-radio-list label:nth-of-type(3n):before, body .acf-checkbox-list li:nth-of-type(3n) label:before, body .acf-checkbox-list label:nth-of-type(3n):before, body .acf-true-false li:nth-of-type(3n) label:before, body .acf-true-false label:nth-of-type(3n):before, body .columns-prefs li:nth-of-type(3n) label:before, body .columns-prefs label:nth-of-type(3n):before, body .metabox-prefs li:nth-of-type(3n) label:before, body .metabox-prefs label:nth-of-type(3n):before, body .customize-control-radio li:nth-of-type(3n) label:before, body .customize-control-radio label:nth-of-type(3n):before, body .customize-control-checkbox li:nth-of-type(3n) label:before, body .customize-control-checkbox label:nth-of-type(3n):before, body .categorychecklist li:nth-of-type(3n) label:before, body .categorychecklist label:nth-of-type(3n):before {
+  border-color: var(--plotPeach);
+}
+body .acf-radio-list li:nth-of-type(3n) label:after, body .acf-radio-list label:nth-of-type(3n):after, body .acf-checkbox-list li:nth-of-type(3n) label:after, body .acf-checkbox-list label:nth-of-type(3n):after, body .acf-true-false li:nth-of-type(3n) label:after, body .acf-true-false label:nth-of-type(3n):after, body .columns-prefs li:nth-of-type(3n) label:after, body .columns-prefs label:nth-of-type(3n):after, body .metabox-prefs li:nth-of-type(3n) label:after, body .metabox-prefs label:nth-of-type(3n):after, body .customize-control-radio li:nth-of-type(3n) label:after, body .customize-control-radio label:nth-of-type(3n):after, body .customize-control-checkbox li:nth-of-type(3n) label:after, body .customize-control-checkbox label:nth-of-type(3n):after, body .categorychecklist li:nth-of-type(3n) label:after, body .categorychecklist label:nth-of-type(3n):after {
+  background-color: var(--plotGreen);
+}
+body .acf-radio-list li:nth-of-type(4n) label:before, body .acf-radio-list label:nth-of-type(4n):before, body .acf-checkbox-list li:nth-of-type(4n) label:before, body .acf-checkbox-list label:nth-of-type(4n):before, body .acf-true-false li:nth-of-type(4n) label:before, body .acf-true-false label:nth-of-type(4n):before, body .columns-prefs li:nth-of-type(4n) label:before, body .columns-prefs label:nth-of-type(4n):before, body .metabox-prefs li:nth-of-type(4n) label:before, body .metabox-prefs label:nth-of-type(4n):before, body .customize-control-radio li:nth-of-type(4n) label:before, body .customize-control-radio label:nth-of-type(4n):before, body .customize-control-checkbox li:nth-of-type(4n) label:before, body .customize-control-checkbox label:nth-of-type(4n):before, body .categorychecklist li:nth-of-type(4n) label:before, body .categorychecklist label:nth-of-type(4n):before {
+  border-color: var(--plotPurple);
+}
+body .acf-radio-list li:nth-of-type(4n) label:after, body .acf-radio-list label:nth-of-type(4n):after, body .acf-checkbox-list li:nth-of-type(4n) label:after, body .acf-checkbox-list label:nth-of-type(4n):after, body .acf-true-false li:nth-of-type(4n) label:after, body .acf-true-false label:nth-of-type(4n):after, body .columns-prefs li:nth-of-type(4n) label:after, body .columns-prefs label:nth-of-type(4n):after, body .metabox-prefs li:nth-of-type(4n) label:after, body .metabox-prefs label:nth-of-type(4n):after, body .customize-control-radio li:nth-of-type(4n) label:after, body .customize-control-radio label:nth-of-type(4n):after, body .customize-control-checkbox li:nth-of-type(4n) label:after, body .customize-control-checkbox label:nth-of-type(4n):after, body .categorychecklist li:nth-of-type(4n) label:after, body .categorychecklist label:nth-of-type(4n):after {
+  background-color: var(--plotOrange);
+}
+body .acf-radio-list label.selected:after, body .acf-radio-list label.plotSelected:after, body .acf-checkbox-list label.selected:after, body .acf-checkbox-list label.plotSelected:after, body .acf-true-false label.selected:after, body .acf-true-false label.plotSelected:after, body .columns-prefs label.selected:after, body .columns-prefs label.plotSelected:after, body .metabox-prefs label.selected:after, body .metabox-prefs label.plotSelected:after, body .customize-control-radio label.selected:after, body .customize-control-radio label.plotSelected:after, body .customize-control-checkbox label.selected:after, body .customize-control-checkbox label.plotSelected:after, body .categorychecklist label.selected:after, body .categorychecklist label.plotSelected:after {
+  opacity: 1;
+}
+body .customize-inside-control-row.plotSelected label:after {
+  opacity: 1;
+}
+body .acf-radio-list label:last-of-type, body .acf-checkbox-list label:last-of-type {
+  padding-bottom: 0;
+}
+body .acf-checkbox-list label:before, body .acf-checkbox-list label:after, body .acf-true-false label:before, body .acf-true-false label:after, body fieldset.metabox-prefs label:before, body fieldset.metabox-prefs label:after, body .editor-expand label:before, body .editor-expand label:after, body .customize-control-checkbox label:before, body .customize-control-checkbox label:after, body .categorychecklist label:before, body .categorychecklist label:after {
+  border-radius: 0;
+}
+body .wp-cancel-pw > .dashicons, body .wp-hide-pw > .dashicons {
+  top: 0.38rem;
+}
+body .misc-pub-visibility {
   display: none;
+}
+body #wpfooter {
+  color: white;
+}
+body .wp-person a:focus .gravatar, body a:focus, body a:focus .media-icon img {
+  outline: none;
+  box-shadow: none;
+}
+body button.wp-switch-editor {
+  margin-top: 7px;
+}
+@media screen and (min-width: 1024px) {
+  body button.wp-switch-editor {
+    margin-top: 9px;
+  }
+}
+body #wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover > a, body #wpadminbar .quicklinks .menupop ul li a:focus, body #wpadminbar .quicklinks .menupop ul li a:focus strong, body #wpadminbar .quicklinks .menupop ul li a:hover, body #wpadminbar .quicklinks .menupop ul li a:hover strong, body #wpadminbar .quicklinks .menupop.hover ul li a:focus, body #wpadminbar .quicklinks .menupop.hover ul li a:hover, body #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus, body #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover, body #wpadminbar li #adminbarsearch.adminbar-focused:before, body #wpadminbar li .ab-item:focus .ab-icon:before, body #wpadminbar li .ab-item:focus:before, body #wpadminbar li a:focus .ab-icon:before, body #wpadminbar li.hover .ab-icon:before, body #wpadminbar li.hover .ab-item:before, body #wpadminbar li:hover #adminbarsearch:before, body #wpadminbar li:hover .ab-icon:before, body #wpadminbar li:hover .ab-item:before, body #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus, body #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover {
+  color: var(--plotMint) !important;
+}
+body .notification-dialog {
+  background: var(--plotBlack);
+}
+
+body .acf-postbox h2 {
+  position: sticky;
+  top: 32px;
+}
+body .acf-label {
+  font-size: 1.2rem;
+}
+body .acf-field-object, body .acf-table tr.acf-field > td.acf-label {
+  background: var(--plotBlack);
+}
+body .acf-flexible-content .layout {
+  border: none;
+  border-radius: 10px;
+  margin-top: 2.4rem;
+  margin: 0 -12px;
+  background: var(--plotBlack);
+}
+body .acf-flexible-content .layout .acf-fc-layout-handle {
+  color: var(--plotYellow);
+  font-size: 1rem;
+  position: sticky;
+  top: calc(32px + 3rem);
+  background: var(--plotBlack);
+  border-bottom: 2px solid white;
+  z-index: 4;
+  font-weight: 600;
+}
+body .acf-flexible-content .layout .acf-fc-layout-controls {
+  z-index: 4;
+}
+body .acf-flexible-content .layout.-collapsed > .acf-fc-layout-handle {
+  border-bottom: 2px solid white;
+}
+body a.acf-icon {
+  background: var(--plotYellow);
+}
+body a.acf-icon:before {
+  margin-top: -1px;
+}
+body a.acf-icon:hover {
+  background: var(--plotMint);
+}
+body .acf-flexible-content .layout .acf-fc-layout-controls .acf-icon.-collapse:hover {
+  background: var(--plotYellow);
+}
+body .acf-url i {
+  margin-top: 0.35rem;
+}
+body .acf-repeater .acf-row-handle.order {
+  text-shadow: none;
+  color: white;
+}
+@media screen and (min-width: 640px) {
+  body .plotAcfHalf {
+    width: 50%;
+    float: left;
+    clear: none;
+  }
+}
+body .plotAcfHalf--withClear {
+  clear: both;
+}
+@media screen and (min-width: 640px) {
+  body .plotAcfHalfWithoutFloat {
+    width: 50%;
+    clear: none;
+  }
+}
+body .acf-repeater > table, body .acf-table {
+  background: var(--background);
+}
+body .acf-repeater .acf-row-handle.remove {
+  background: none;
+}
+body .acf-repeater .acf-row-handle.order {
+  background: none;
+}
+body .acf-fields.-left > .acf-field:before {
+  background: none;
+}
+body .acf-table > tbody > tr > th, body .acf-table > tbody > tr > td, body .acf-table > thead > tr > th, body .acf-table > thead > tr > td {
+  background: var(--plotBlack);
+}
+body .acf-field .acf-label label {
+  color: var(--pink);
+}
+body .acf-fields > .acf-field {
+  border: none;
+}
+body .acf-field input[type=text], body .acf-field input[type=password], body .acf-field input[type=date], body .acf-field input[type=datetime], body .acf-field input[type=datetime-local], body .acf-field input[type=email], body .acf-field input[type=month], body .acf-field input[type=number], body .acf-field input[type=search], body .acf-field input[type=tel], body .acf-field input[type=time], body .acf-field input[type=url], body .acf-field input[type=week], body .acf-field textarea, body .acf-field select {
+  font-size: 1rem;
+  max-width: 500px;
+}
+body .acf-field input[type=text], body .acf-field input[type=password], body .acf-field input[type=date], body .acf-field input[type=datetime], body .acf-field input[type=datetime-local], body .acf-field input[type=email], body .acf-field input[type=month], body .acf-field input[type=number], body .acf-field input[type=search], body .acf-field input[type=tel], body .acf-field input[type=time], body .acf-field input[type=url], body .acf-field input[type=week], body .acf-field textarea {
+  border: 2px solid white;
+}
+body .acf-image-uploader .image-wrap img {
+  max-width: 100%;
+}
+body .acf-field-image {
+  --plot-blocklink-opacity: 1;
+}
+body .acf-field-image .show-if-value.image-wrap {
+  background: black;
+}
+body .acf-field-image img {
+  opacity: var(--plot-blocklink-opacity);
+}
+body .acf-field-image.plotBlockLinkPreview--bannerImage .show-if-value.image-wrap {
+  height: 240px;
+  width: 400px;
+  max-width: 100% !important;
+}
+body .acf-field-image.plotBlockLinkPreview--bannerImage .show-if-value.image-wrap img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+body .acf-field-image.plotBlockLinkPreview--bannerImage .show-if-value.image-wrap:after {
+  content: "My Page Title";
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 1024px) {
+  body .acf-field-image.plotBlockLinkPreview--bannerImage .show-if-value.image-wrap:after {
+    font-size: 2rem;
+  }
+}
+body .acf-field-image.plotBlockLinkPreview--fullWidthImage .show-if-value.image-wrap {
+  height: 240px;
+  width: 400px;
+  max-width: 100% !important;
+}
+body .acf-field-image.plotBlockLinkPreview--fullWidthImage .show-if-value.image-wrap img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+body .acf-field-image.plotBlockLinkPreview--fullWidthImage .show-if-value.image-wrap:after {
+  content: "My Heading";
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 1024px) {
+  body .acf-field-image.plotBlockLinkPreview--fullWidthImage .show-if-value.image-wrap:after {
+    font-size: 2rem;
+  }
+}
+body .acf-field-image.plotBlockLinkPreview--carouselBlockLink .show-if-value.image-wrap {
+  height: 240px;
+  width: 400px;
+  max-width: 100% !important;
+}
+body .acf-field-image.plotBlockLinkPreview--carouselBlockLink .show-if-value.image-wrap img {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+body .acf-field-image.plotBlockLinkPreview--carouselBlockLink .show-if-value.image-wrap:after {
+  content: "My Heading";
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 1024px) {
+  body .acf-field-image.plotBlockLinkPreview--carouselBlockLink .show-if-value.image-wrap:after {
+    font-size: 2rem;
+  }
+}
+body .acf-field-image.plotBlockLinkPreview--blockLink .show-if-value.image-wrap:after {
+  content: "My Text";
+  color: white;
+  font-weight: 600;
+  text-align: center;
+  font-size: 1.4rem;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media screen and (min-width: 1024px) {
+  body .acf-field-image.plotBlockLinkPreview--blockLink .show-if-value.image-wrap:after {
+    font-size: 2rem;
+  }
+}
+body .acf-field-image.plotBlockLinkPreview--bannerImage--smallScreen .show-if-value.image-wrap, body .acf-field-image.plotBlockLinkPreview--fullWidthImage--smallScreen .show-if-value.image-wrap, body .acf-field-image .plotBlockLinkPreview--carouselBlockLink--smallScreen .show-if-value.image-wrap {
+  width: 140px;
+  font-size: 1rem;
+}
+@media screen and (min-width: 1024px) {
+  body .acf-field-image.plotBlockLinkPreview--bannerImage--smallScreen .show-if-value.image-wrap:after, body .acf-field-image.plotBlockLinkPreview--fullWidthImage--smallScreen .show-if-value.image-wrap:after, body .acf-field-image .plotBlockLinkPreview--carouselBlockLink--smallScreen .show-if-value.image-wrap:after {
+    font-size: 1.1rem;
+  }
+}
+body .acf-flexible-content .layout .acf-fc-layout-controls .acf-icon {
+  margin-top: 2px;
+}
+body .acf-flexible-content .layout .acf-fc-layout-order {
+  background: var(--plotYellow);
+  width: 1.4rem;
+  height: 1.4rem;
+  border-radius: 50%;
+  line-height: 1.4rem;
+  font-size: 14px;
+  color: var(--plotBlack);
+}
+body .acf-flexible-content .layout:nth-of-type(4n-2) .acf-fc-layout-handle {
+  color: var(--plotOrange);
+}
+body .acf-flexible-content .layout:nth-of-type(4n-2) .acf-fc-layout-order, body .acf-flexible-content .layout:nth-of-type(4n-2) a.acf-icon.-collapse, body .acf-flexible-content .layout:nth-of-type(4n-2) a.acf-icon:hover {
+  background: var(--plotOrange) !important;
+}
+body .acf-flexible-content .layout:nth-of-type(4n) .acf-fc-layout-handle {
+  color: var(--plotPeach);
+}
+body .acf-flexible-content .layout:nth-of-type(4n) .acf-fc-layout-order, body .acf-flexible-content .layout:nth-of-type(4n) a.acf-icon.-collapse, body .acf-flexible-content .layout:nth-of-type(4n) a.acf-icon:hover {
+  background: var(--plotPeach) !important;
+}
+body .acf-flexible-content .layout:nth-of-type(4n-1) .acf-fc-layout-handle {
+  color: var(--plotSky);
+}
+body .acf-flexible-content .layout:nth-of-type(4n-1) .acf-fc-layout-order, body .acf-flexible-content .layout:nth-of-type(4n-1) a.acf-icon.-collapse, body .acf-flexible-content .layout:nth-of-type(4n-1) a.acf-icon:hover {
+  background: var(--plotSky) !important;
+}
+body .acf-input select {
+  background-color: var(--plotMint);
+  color: var(--plotBlack);
+}
+body .acf-field-5bbcd4e8cefd8 > .acf-label label {
+  display: none;
+}
+body .select2-dropdown {
+  background: var(--plotBlack);
+}
+body .select2-container--default .select2-results__option--highlighted[aria-selected] {
+  background: rgba(255, 255, 255, 0.2);
+}
+body .select2-container--default .select2-results__option[aria-selected=true] {
+  background: rgba(255, 255, 255, 0.2);
+}
+body .select2-container--default .select2-results__option[aria-disabled=true] {
+  color: white;
+}
+body .select2-container--default .select2-selection--single {
+  background-color: var(--plotBlack);
+  border: 1px solid white;
+  border-radius: 4px;
+  height: auto;
+  line-height: 2;
+  font-size: 1rem;
+}
+body .select2-container--default .select2-selection--single .select2-selection__rendered {
+  line-height: 2;
+  color: white;
+}
+body .select2-container--default .select2-selection--multiple {
+  background: rgba(0, 0, 0, 0.2);
+}
+body .select2-container.-acf .select2-selection--multiple .select2-selection__choice {
+  background: var(--plotMint);
+  color: var(--plotBlack);
+  border: none;
+}
+body .select2-container.-acf .select2-selection--multiple .select2-selection__choice:nth-of-type(4n) {
+  background: var(--plotPeach);
+}
+body .select2-container.-acf .select2-selection--multiple .select2-selection__choice:nth-of-type(4n-1) {
+  background: var(--plotSky);
+}
+body .select2-container.-acf .select2-selection--multiple .select2-selection__choice:nth-of-type(4n-2) {
+  background: var(--plotYellow);
+}
+body .select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+  color: var(--plotBlack);
+}
+body .acf-flexible-content > .values {
+  margin-bottom: 2rem;
+}
+body .acf-postbox > .hndle .acf-hndle-cog {
+  font-size: 1rem;
+  line-height: 2;
+}
+body .acf-file-uploader .file-wrap {
+  background: var(--plotBlack);
+  border: 3px solid white;
+}
+body .poststuff .acf-field-true-false {
+  align-items: center;
+}
+body .poststuff .acf-field-true-false input {
+  opacity: 0;
+}
+body .poststuff .acf-field-true-false .acf-label {
+  order: 2;
+}
+body .acf-repeater .acf-row:hover > .acf-row-handle .acf-icon, body .acf-repeater .acf-row.-hover > .acf-row-handle .acf-icon {
+  background: var(--plotBlack);
+  color: white;
+}
+body .acf-repeater .acf-row:hover > .acf-row-handle .acf-icon:hover, body .acf-repeater .acf-row.-hover > .acf-row-handle .acf-icon:hover {
+  color: var(--plotBlack);
+  background: white;
+}
+body .acf-tooltip {
+  background: var(--plotBlack);
+}
+body .acf-field .acf-notice.-error {
+  background: var(--plotRed);
+  color: white;
+}
+body .acf-table {
+  background: var(--plotBlack);
+}
+body .acf-table > thead > tr > th {
+  color: white;
+}
+body .acf-oembed .title, body .acf-oembed .canvas, body .acf-loading-overlay {
+  background: var(--plotBlack) !important;
+}
+body .acf-icon.grey {
+  background: var(--plotMint);
+  color: var(--plotBlack);
+}
+body .acf-icon.grey:hover {
+  background: var(--plotMint);
+}
+body .canvas-media {
+  padding: 1rem;
+}
+body .acf-notice.-error {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+html .ac-table-actions .ac-table-button, html .ac-table-actions .ac-table-button:hover, html .ac-table-actions .ac-table-button:focus, html .ac-table-actions .ac-table-button:active {
+  background-color: var(--plotMint);
+  color: var(--plotBlack);
+  border: none;
+  font-size: 1rem;
+  line-height: 2;
+  height: auto;
+  padding: 0 10px;
+}
+html .ac-table-actions .ac-table-button .dashicons {
+  line-height: 2rem;
+}
+html .ac-table-actions .ac-table-button:last-child, html .ac-table-actions .ac-table-button.last {
+  border: none;
+}
+html .ac-button-group {
+  display: none;
+}
+html .acp-screen-option-prefs {
+  display: none;
+}
+
+body .alternate, body .striped > tbody > :nth-child(odd), body ul.striped > :nth-child(odd) {
+  background: none;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+body .widefat td, body .widefat td ol, body .widefat td p, body .widefat td ul {
+  font-size: 1rem;
+}
+body .widefat tr:nth-of-type(2n) {
+  background: rgba(255, 255, 255, 0.1);
+  border-bottom: 4px solid red;
+}
+body .widefat tfoot tr td, body .widefat tfoot tr th, body .widefat thead tr td, body .widefat thead tr th {
+  color: white;
+}
+body .widefat ol, body .widefat p, body .widefat ul {
+  color: white;
+}
+body .widefat td, body .widefat th {
+  color: white;
+}
+body td.column-title strong, body td.plugin-title strong {
+  font-size: 1rem;
+}
+body .row-title {
+  font-size: 1rem !important;
+}
+body .fixed .column-author, body .fixed .column-date, body .fixed .column-format, body .fixed .column-links, body .fixed .column-parent, body .fixed .column-posts {
+  width: 18%;
+}
+body .tablenav .actions select {
+  float: none;
+  display: inline-block;
+}
+body table.wp-list-table .acp-be-editrow, body .widefat td, body .widefat th {
+  background: var(--plotBlack);
+  color: white;
+}
+body .ac-modal__dialog, body .ac-modal.-bulkedit .ac-modal__dialog__header, body .ac-modal.-bulkedit .ac-modal__dialog__content.-editable, body .ac-modal.-bulkedit .ac-modal__dialog__content {
+  background: var(--plotBlack);
+  color: white;
+}
+body .ac-modal__dialog input[type=text], body .ac-modal.-bulkedit .ac-modal__dialog__header input[type=text], body .ac-modal.-bulkedit .ac-modal__dialog__content.-editable input[type=text], body .ac-modal.-bulkedit .ac-modal__dialog__content input[type=text] {
+  border: 1px solid white;
+}
+body .aceditable .aceditable__button.-primary, body .aceditable .aceditable__button.-primary:hover {
+  background: var(--plotMint);
+  color: var(--plotBlack);
+}
+body .ac-modal__dialog__close {
+  color: var(--plotMint);
+}
+body .ac-modal__dialog__close:hover {
+  color: var(--plotYellow);
+  background: none;
+}
+body #ui-datepicker-div {
+  background: var(--plotBlack);
+}
+body .ui-datepicker-calendar a.ui-state-default {
+  background: var(--plotBlack) !important;
+  color: white !important;
+}
+
+#addtag input[type=text], #addtag textarea {
+  background: rgba(0, 0, 0, 0.2);
+  outline: 0;
+}
+#addtag label {
+  color: white;
+}
+#addtag .term-description-wrap, #addtag .term-parent-wrap {
+  display: none;
+}
+
+.wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs {
+  background: var(--plotBlack);
+  color: white;
+  border: 2px solid white;
+  border-bottom: 0;
+}
+
+#post-body ul.add-menu-item-tabs li.tabs a, #post-body ul.category-tabs li.tabs a, #side-sortables .add-menu-item-tabs .tabs a, #side-sortables .category-tabs .tabs a, .wp-tab-bar .wp-tab-active a {
+  color: white;
+}
+
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
+  background: var(--plotBlack);
+  border: 2px solid white;
+  margin-top: 0.3rem;
+}
+
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
+  padding: 0 0.5rem;
+}
+
+ul.categorychecklist li {
+  line-height: 1.4;
+}
+
+.categorydiv {
+  margin-top: 1rem;
+}
+
+#side-sortables .category-add input[type=text], #side-sortables .category-add select {
+  border: 2px solid white;
+}
+
+#newcategory_parent, .form-field.term-parent-wrap, .form-field.term-description-wrap {
+  display: none;
+}
+
+#adminmenu {
+  margin: 0;
+}
+
+#adminmenuback {
+  background: transparent;
+}
+
+#adminmenu, #adminmenuwrap {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+.wp-has-current-submenu.opensub {
+  background: rgba(0, 0, 0, 0.3);
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu .wp-submenu, #adminmenu a.wp-has-current-submenu:focus + .wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu {
+  background: var(--plotBlack);
+}
+
+.collapse-button-label {
+  font-size: 13px;
+}
+
+.manage-menus {
+  background: var(--plotBlack);
+}
+
+.nav-menus-php .nav-tab-wrapper {
+  display: none;
+}
+
+.js .control-section.open .accordion-section-title, .js .control-section .accordion-section-title, .js .control-section .accordion-section-title:focus, .js .control-section.open .accordion-section-title .accordion-section-title {
+  background-color: var(--plotBlack);
+  color: white;
+}
+
+.js .control-section .accordion-section-title:hover {
+  background-color: #444;
+  color: var(--plotMint);
+}
+.js .control-section .accordion-section-title:hover:after {
+  color: var(--plotYellow);
+}
+
+.control-section .accordion-section-title, .customize-pane-child .accordion-section-title {
+  background: var(--plotBlack);
+  color: white;
+}
+
+#menu-management .menu-edit, #menu-settings-column .accordion-container, .comment-ays, .feature-filter, .imgedit-group, .manage-menus, .menu-item-handle, .popular-tags, .stuffbox, .widget-inside, .widget-top, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
+  background: var(--plotBlack);
+  color: white;
+}
+
+.accordion-section-content {
+  background: var(--plotBlack);
+  color: white;
+}
+
+#side-sortables .categorychecklist li {
+  line-height: 2;
+}
+
+#nav-menu-footer, #nav-menu-header {
+  background: var(--plotBlack);
+  color: white;
+}
+
+.nav-menus-php #post-body {
+  background: var(--plotBlack);
+  color: white;
+}
+
+.menu-settings {
+  display: none;
+}
+
+.accordion-section-title:hover:after, .handlediv:focus, .handlediv:hover, .item-edit:focus, .item-edit:hover, .postbox .handlediv.button-link:focus, .postbox .handlediv.button-link:hover, .sidebar-name:hover .toggle-indicator, .widget-action:focus, .widget-top:hover .widget-action {
+  color: var(--plotYellow);
+}
+
+.nav-menus-php .item-edit:focus:before {
+  box-shadow: none;
+}
+
+#menu-management input[type=checkbox]:focus, #menu-management input[type=color]:focus, #menu-management input[type=date]:focus, #menu-management input[type=datetime-local]:focus, #menu-management input[type=datetime]:focus, #menu-management input[type=email]:focus, #menu-management input[type=month]:focus, #menu-management input[type=number]:focus, #menu-management input[type=password]:focus, #menu-management input[type=radio]:focus, #menu-management input[type=search]:focus, #menu-management input[type=tel]:focus, #menu-management input[type=text]:focus, #menu-management input[type=time]:focus, #menu-management input[type=url]:focus, #menu-management input[type=week]:focus, #menu-management select:focus, #menu-management textarea:focus, #menu-settings-column input[type=checkbox]:focus, #menu-settings-column input[type=color]:focus, #menu-settings-column input[type=date]:focus, #menu-settings-column input[type=datetime-local]:focus, #menu-settings-column input[type=datetime]:focus, #menu-settings-column input[type=email]:focus, #menu-settings-column input[type=month]:focus, #menu-settings-column input[type=number]:focus, #menu-settings-column input[type=password]:focus, #menu-settings-column input[type=radio]:focus, #menu-settings-column input[type=search]:focus, #menu-settings-column input[type=tel]:focus, #menu-settings-column input[type=text]:focus, #menu-settings-column input[type=time]:focus, #menu-settings-column input[type=url]:focus, #menu-settings-column input[type=week]:focus, #menu-settings-column select:focus, #menu-settings-column textarea:focus {
+  border: 1px solid white;
+}
+
+html div.mce-toolbar-grp {
+  background-color: var(--plotBlack);
+}
+html .acf-editor-wrap .wp-switch-editor {
+  background-color: var(--plotBlack);
+  color: white;
+}
+html div.mce-toolbar-grp, html div.mce-panel {
+  background: var(--plotBlack);
+}
+html .mce-toolbar .mce-ico {
+  color: white;
+}
+html .mce-toolbar .mce-btn-group .mce-btn:focus, html .mce-toolbar .mce-btn-group .mce-btn:hover, html .qt-dfw:focus, html .qt-dfw:hover {
+  background: none;
+  color: var(--plotMint);
+  box-shadow: none;
+  border-color: var(--plotBlack);
+}
+html .html-active .switch-html, html .tmce-active .switch-tmce {
+  border-bottom-color: transparent;
+  color: var(--plotMint) !important;
+}
+html .wp-editor-container textarea.wp-editor-area {
+  border: none;
+}
+html .quicktags-toolbar {
+  background: none;
+}
+html .mce-toolbar .mce-btn-group .mce-btn.mce-active, html .mce-toolbar .mce-btn-group .mce-btn:active, html .qt-dfw.active {
+  background: var(--plotMint);
+  color: var(--plotBlack) !important;
+}
+html .mce-toolbar .mce-btn-group .mce-btn.mce-active .mce-txt, html .mce-toolbar .mce-btn-group .mce-btn:active .mce-txt, html .qt-dfw.active .mce-txt {
+  color: white;
+}
+html .mce-toolbar .mce-btn-group .mce-btn.mce-primary {
+  background: var(--plotMint);
+  border: none;
+  outline: none;
+}
+html .mce-toolbar .mce-btn-group .mce-btn.mce-primary:hover {
+  background: var(--plotMint);
+  border: none;
+  outline: none;
+}
+html .mce-toolbar .mce-btn-group .mce-btn.mce-listbox {
+  background: var(--plotBlack);
+}
+html .mce-toolbar .mce-listbox button {
+  color: white;
+}
+html .mce-panel .mce-btn i.mce-caret {
+  border-top: 6px solid white;
+}
+html .mce-panel .mce-btn:focus i.mce-caret, html .mce-panel .mce-btn:hover i.mce-caret {
+  border-top-color: white;
+}
+html #link-modal-title, html #wp-link-wrap #link-selector {
+  background: var(--plotBlack);
+}
+html #wp-link .query-notice .query-notice-default, html #wp-link .query-notice .query-notice-hint {
+  border-left-color: var(--plotMint);
+}
+html #wp-link .query-notice {
+  background: var(--plotBlack);
+  color: white;
+}
+html #wp-link .link-search-field:focus {
+  border: 1px solid white;
+}
+html #wp-link input:focus {
+  border: 1px solid #7e8993;
+}
+html #wp-link .howto {
+  color: white;
+}
+html #wp-link li, html #wp-link .submitbox, html #wp-link .query-notice, html #wp-link .query-results {
+  background: var(--plotBlack);
+  color: white;
+}
+html #wp-link li.selected {
+  background: var(--plotPeach);
+}
+html #wp-link li.selected:hover {
+  background: var(--plotPeach);
+  color: var(--plotBlack);
+}
+html #wp-link .unselectable.no-matches-found {
+  background: var(--plotBlack);
+  color: var(--plotRed);
+}
+html #wp-link li:hover {
+  background: var(--plotBlack);
+  color: var(--plotMint);
+}
+html #wp-link-close {
+  color: white;
+}
+html #wp-link-close:hover {
+  color: white;
 }
 
 .alignleft {
@@ -200,6 +1287,10 @@ div#wpforms-builder-mobile-notice {
 
 .wpforms-header {
   display: none;
+}
+
+.wpforms-admin-wrap .page-title {
+  background-color: transparent;
 }
 
 #wpforms-flyout .wpforms-flyout-head {
@@ -258,11 +1349,233 @@ div#wpforms-builder-mobile-notice {
   display: none;
 }
 
+td.column-shortcode, .manage-column.column-shortcode {
+  display: none;
+}
+
+td .preview_ {
+  display: none;
+}
+
+html #publish-settings {
+  font-size: 1rem;
+}
+html #customize-controls .button-primary {
+  height: 2rem;
+}
+html #customize-sidebar-outer-content {
+  background: var(--plotBlack);
+}
+html #customize-control-changeset_status .customize-control-title:before, html #customize-control-changeset_status .customize-control-title:after {
+  display: none;
+}
+html #customize-control-changeset_preview_link input, html #customize-control-changeset_status .customize-inside-control-row {
+  background: var(--plotBlack);
+}
+html .wp-customizer input[type=radio], html .wp-customizer input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+html #customize-save-button-wrapper {
+  margin-top: 0.3rem;
+}
+html #customize-controls .control-section .accordion-section-title:focus, html #customize-controls .control-section .accordion-section-title:hover, html #customize-controls .control-section.open .accordion-section-title, html #customize-controls .control-section:hover > .accordion-section-title, html .customize-section-back:focus, html .customize-section-back:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: var(--plotMint);
+  border-color: var(--plotMint);
+}
+html #customize-outer-theme-controls .control-section .accordion-section-title:focus:after, html #customize-outer-theme-controls .control-section .accordion-section-title:hover:after, html #customize-outer-theme-controls .control-section.open .accordion-section-title:after, html #customize-outer-theme-controls .control-section:hover > .accordion-section-title:after, html #customize-theme-controls .control-section .accordion-section-title:focus:after, html #customize-theme-controls .control-section .accordion-section-title:hover:after, html #customize-theme-controls .control-section.open .accordion-section-title:after, html #customize-theme-controls .control-section:hover > .accordion-section-title:after {
+  color: var(--plotMint);
+}
+html #customize-control-changeset_scheduled_date {
+  background: var(--plotBlack);
+}
+html #customize-control-changeset_preview_link a.disabled, html #customize-control-changeset_preview_link a.disabled:active, html #customize-control-changeset_preview_link a.disabled:focus, html #customize-control-changeset_preview_link a.disabled:visited {
+  color: white;
+}
+html .outer-section-open #customize-controls .wp-full-overlay-sidebar-content {
+  background: var(--plotBlack);
+}
+html .customize-copy-preview-link:after, html .customize-copy-preview-link:before {
+  background: var(--plotBlack);
+}
+html .customize-control-description {
+  margin-bottom: 1rem;
+}
+html #customize-controls .customize-control-notifications-container {
+  margin-bottom: 1rem;
+}
+html .wp-full-overlay-sidebar {
+  background-color: var(--plotBlack);
+}
+html #customize-footer-actions {
+  background: var(--plotBlack);
+  color: white;
+}
+html .customize-section-title {
+  background: var(--plotBlack);
+  color: white;
+}
+html .customize-controls-close {
+  background: var(--plotBlack);
+  color: white;
+  border-top: 1px solid white;
+}
+html .customize-controls-close:hover, html .customize-controls-close:focus {
+  background: var(--plotBlack);
+  color: var(--plotMint);
+  border-top: 1px solid var(--plotMint);
+}
+html .slider-custom-control .ui-state-default, html .slider-custom-control .ui-widget-content .ui-state-default, html .slider-custom-control .ui-widget-header .ui-state-default, html .slider-custom-control .ui-button, html .slider-custom-control .ui-button.ui-state-disabled:hover, html .slider-custom-control .ui-button.ui-state-disabled:active {
+  background: var(--plotMint) none repeat scroll 0 0;
+  border: 1px solid var(--plotMint);
+}
+html span.select2-selection__rendered {
+  background: var(--plotMint);
+  color: var(--plotBlack) !important;
+}
+html .select2-selection__arrow b {
+  border-color: var(--plotBlack);
+}
+html .customize-control select {
+  background-image: url("../admin/icons/dropdown.svg");
+  background-repeat: no-repeat;
+  background-position-x: 98%;
+  background-position-y: 50%;
+}
+html .wp-full-overlay-sidebar .wp-full-overlay-header {
+  background: var(--plotBlack);
+  color: white;
+}
+html #customize-controls .customize-info {
+  margin-bottom: 0;
+}
+html #customize-controls .customize-info .accordion-section-title {
+  background: var(--plotBlack);
+  color: white;
+}
+html #customize-outer-theme-controls .accordion-section-title, html #customize-theme-controls .accordion-section-title {
+  background: var(--plotBlack);
+  color: white;
+}
+html #customize-outer-theme-controls .accordion-section-content, html #customize-theme-controls .accordion-section-content, html #customize-controls .description {
+  color: white;
+}
+html #customize-controls .customize-info .panel-title, html #customize-controls .customize-pane-child .customize-section-title h3, html #customize-controls .customize-pane-child h3.customize-section-title, html #customize-outer-theme-controls .customize-pane-child .customize-section-title h3, html #customize-outer-theme-controls .customize-pane-child h3.customize-section-title {
+  color: white;
+}
+html .customize-control .customize-inside-control-row {
+  margin-left: 0;
+  padding: 0;
+}
+html .customize-control .customize-inside-control-row label {
+  padding: 0.4rem 0 0 3rem;
+  height: 2.2rem;
+}
+html .simple-notice-custom-control {
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+}
+html .plotColorPicker {
+  background-color: var(--plotBlack);
+  border: 1px solid white;
+  position: relative;
+}
+html .plotColorPicker:after {
+  content: "▼";
+  transform: scale3d(1, 0.7, 1);
+  transform-origin: 50% 55%;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+}
+html .plotColorPicker--item {
+  line-height: 2rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  display: none;
+}
+html .plotColorPicker.open .plotColorPicker--item, html .plotColorPicker--item.selected {
+  display: flex;
+}
+html [data-value=black] .plotColorPicker--swatch {
+  background-color: black;
+}
+html [data-value=darken] .plotColorPicker--swatch {
+  background: url(../admin/icons/moon.svg) no-repeat center;
+  background-size: 50%;
+}
+html [data-value=lighten] .plotColorPicker--swatch {
+  background: url(../admin/icons/sun.svg) no-repeat center;
+  background-size: 60%;
+}
+html [data-value=placeholder] .plotColorPicker--swatch {
+  display: none;
+}
+html .plotColorPicker--item:hover, html .plotColorPicker.open .plotColorPicker--item.selected {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+html .plotColorPicker--swatch {
+  border: black solid 1px;
+  margin-right: 0.5rem;
+  height: 2rem;
+  width: 2rem;
+}
+html .wp-core-ui .wp-full-overlay .collapse-sidebar {
+  color: var(--plotMint);
+}
+html .wp-core-ui .wp-full-overlay .collapse-sidebar:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--plotMint);
+}
+html .wp-full-overlay .collapse-sidebar-arrow:before {
+  background: var(--plotMint);
+  color: var(--plotBlack);
+  outline: none;
+}
+html .wp-full-overlay .collapse-sidebar-arrow:before:hover {
+  box-shadow: none;
+}
+html .wp-full-overlay .collapse-sidebar:hover .collapse-sidebar-arrow {
+  box-shadow: none;
+}
+html .wp-full-overlay-footer .devices {
+  box-shadow: none;
+}
+html .wp-full-overlay-footer .devices button {
+  background: var(--plotBlack);
+}
+html .wp-full-overlay-footer .devices button.active {
+  border-bottom-color: var(--plotMint);
+}
+html .wp-full-overlay-footer .devices button.active:hover {
+  border-bottom-color: var(--plotMint);
+}
+html .wp-full-overlay-footer .devices button.active:before {
+  color: var(--plotMint);
+}
+html .wp-full-overlay-footer .devices button:hover {
+  background-color: var(--plotBlack);
+  border-bottom-color: var(--plotMint);
+}
+html .wp-full-overlay-footer .devices button:hover:before {
+  color: white;
+}
+
 #wpbody-content #dashboard-widgets #postbox-container-1 {
   width: 100%;
 }
 
 #wpbody-content #dashboard-widgets.columns-1 #postbox-container-2, #wpbody-content #dashboard-widgets.columns-1 #postbox-container-3, #wpbody-content #dashboard-widgets.columns-1 #postbox-container-4 {
+  display: none;
+}
+
+#tinypng_dashboard_widget {
+  display: none;
+}
+
+.post-type-performance #titlewrap {
   display: none;
 }
 
@@ -305,14 +1618,17 @@ h1.plotWelcome {
 .dashboardLink {
   text-align: center;
   vertical-align: middle;
-  color: #2e2e2b;
+  color: var(--plotBlack);
   transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
   transform: scale3d(1, 1, 1);
 }
 .dashboardLink:hover {
-  color: #2e2e2b;
+  color: var(--plotBlack);
   transform: scale3d(1.01, 1.01, 1);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+.dashboardLink:focus {
+  color: var(--plotBlack);
 }
 
 .dashboardLink--home {
@@ -346,55 +1662,314 @@ h1.plotWelcome {
   margin-top: 1rem;
 }
 
+html .media-frame-tab-panel {
+  background: var(--plotBlack);
+  color: white;
+  margin-top: 1rem;
+}
+html .attachments-browser .media-toolbar, html .media-frame-toolbar .media-toolbar {
+  background: var(--plotBlack);
+}
+html .wp_attachment_image {
+  background: var(--plotBlack);
+  color: white;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+html .media-frame-content {
+  background: var(--plotBlack);
+}
+html .media-frame.mode-grid .media-toolbar {
+  background: none;
+  border: none;
+}
+html #posts-filter .wp-filter {
+  background: var(--plotBlack);
+  color: white;
+}
+html .view-switch a:before {
+  color: rgba(255, 255, 255, 0.3);
+}
+html .view-switch a.current:before {
+  color: white;
+}
+html .media-frame input[type=color], html .media-frame input[type=date], html .media-frame input[type=datetime-local], html .media-frame input[type=datetime], html .media-frame input[type=email], html .media-frame input[type=month], html .media-frame input[type=number], html .media-frame input[type=password], html .media-frame input[type=search], html .media-frame input[type=tel], html .media-frame input[type=text], html .media-frame input[type=time], html .media-frame input[type=url], html .media-frame input[type=week], html .media-frame select, html .media-frame textarea {
+  font-family: fieldwork, sans-serif;
+}
+html .media-frame, html .media-modal {
+  font-family: fieldwork, sans-serif;
+}
+html .media-toolbar-primary.search-form label {
+  color: white;
+}
+html .media-frame.mode-grid .wp-filter input[type=search] {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: none;
+  outline: none;
+}
+html .media-modal-content, html .edit-attachment-frame .attachment-info, html .edit-attachment-frame .attachment-media-view .thumbnail {
+  background: var(--plotBlack) !important;
+  color: white !important;
+}
+html .attachment-info label, html .attachment-info span, html .edit-attachment-frame .attachment-info .filename {
+  color: white !important;
+}
+html .media-modal .delete-attachment, html .media-modal .trash-attachment, html .media-modal .untrash-attachment {
+  color: var(--plotRed);
+}
+html .edit-attachment-frame .edit-media-header .left, html .edit-attachment-frame .edit-media-header .right, html .upload-php .media-modal-close {
+  color: white;
+}
+html .media-frame.mode-grid .attachment.details:focus, html .media-frame.mode-grid .attachment:focus, html .media-frame.mode-grid .selected.attachment:focus {
+  box-shadow: inset 0 0 0 8px var(--plotMint);
+}
+html .wp-core-ui .attachment.details .check, html .wp-core-ui .attachment.selected .check:focus, html .wp-core-ui .media-frame.mode-grid .attachment.selected .check {
+  background: var(--plotPurple);
+  box-shadow: none;
+  border: 2px solid white;
+}
+html .media-frame.mode-grid .selected.attachment, html .wp-core-ui .attachment.details {
+  box-shadow: none;
+  background: var(--plotMint);
+}
+html .media-frame.mode-grid .attachments-browser .no-media {
+  padding: 3rem 1rem;
+  color: white;
+}
+html .mejs-controls .mejs-time-rail .mejs-time-current {
+  background: var(--plotMint);
+}
+html .acf-media-modal.-edit .media-sidebar .attachment-details .attachment-info, html .media-sidebar {
+  background: var(--plotBlack);
+}
+html .wp-core-ui .attachment .check .media-modal-icon {
+  margin: 4px;
+}
+html .attachment-info .actions a.view-attachment {
+  display: none;
+}
+html .media-modal .imgedit-wrap .imgedit-settings {
+  background: var(--plotBlack);
+}
+html .media-modal .imgedit-group-top h2, html .media-modal .imgedit-group-top h2 .button-link {
+  color: white;
+  text-transform: none;
+}
+html .wp-core-ui.media-modal .image-editor .imgedit-help-toggle, html .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:active, html .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:hover {
+  color: var(--plotMint);
+}
+html .media-menu {
+  background: var(--plotBlack);
+  color: white;
+}
+html .media-menu .media-menu-item {
+  color: var(--plotMint);
+}
+html .media-menu .media-menu-item:hover {
+  color: white;
+}
+html .media-menu .media-menu-item:focus {
+  color: white;
+  box-shadow: none;
+}
+html .media-menu #menu-item-gallery {
+  display: none;
+}
+html .media-progress-bar div {
+  background: var(--plotMint);
+}
+html .attachments-browser .instructions {
+  color: white;
+}
+html .media-uploader-status .upload-details {
+  color: white;
+}
+html .media-router .media-menu-item, html .media-router .active, html .media-router .media-menu-item.active:last-child {
+  color: white;
+  border: 1px solid white;
+  border-bottom: none;
+  background: var(--plotBlack);
+  margin: -1px -1px 0;
+}
+html .media-router .media-menu-item:hover, html .media-router .active:hover, html .media-router .media-menu-item.active:last-child:hover {
+  color: var(--plotMint);
+}
+html .media-router .media-menu-item:focus, html .media-router .active:focus, html .media-router .media-menu-item.active:last-child:focus {
+  outline: none;
+  color: white;
+}
+html .media-router .media-menu-item:focus {
+  box-shadow: none;
+}
+html .media-router .active, html .media-router .media-menu-item.active:last-child {
+  color: var(--plotMint);
+  margin: -1px -1px 0;
+}
+html .media-router .active:hover, html .media-router .media-menu-item.active:last-child:hover {
+  color: var(--plotMint);
+}
+html .media-router .active:focus, html .media-router .media-menu-item.active:last-child:focus {
+  outline: none;
+  color: var(--plotMint);
+}
+html .media-frame a {
+  color: var(--plotMint);
+}
+html .media-frame a:hover {
+  color: white;
+}
+html .media-modal-close {
+  color: white;
+}
+html .media-modal-close:hover {
+  color: var(--plotMint);
+}
+html .media-modal .acf-expand-details {
+  color: white;
+}
+html .media-modal .acf-expand-details:hover {
+  color: var(--plotMint) !important;
+}
+html .compat-field-regenerate_thumbnails .button-large {
+  font-size: 0.7rem;
+  line-height: 3;
+}
+html .compat-field-regenerate_thumbnails .button-large:hover {
+  filter: brightness(0.8);
+  background: var(--plotMint);
+  color: var(--plotBlack);
+}
+html .media-modal .button-secondary {
+  color: var(--plotBlack);
+}
+html .wp-core-ui .attachment.details:focus, html .wp-core-ui .attachment:focus, html .wp-core-ui .selected.attachment:focus {
+  box-shadow: none;
+}
+html .media-modal-content .attachments-browser .search {
+  background: var(--plotBlack);
+  border: 1px solid white;
+  color: white;
+  outline: none;
+  box-shadow: none;
+}
+html .media-modal-content .attachments-browser .search:focus {
+  border: 1px solid white;
+}
+html .media-selection:after {
+  content: none;
+}
+html .attachment-details .setting .value, html .attachment-details .setting input[type=email], html .attachment-details .setting input[type=number], html .attachment-details .setting input[type=password], html .attachment-details .setting input[type=search], html .attachment-details .setting input[type=tel], html .attachment-details .setting input[type=text], html .attachment-details .setting input[type=url], html .attachment-details .setting textarea, html .attachment-details .setting + .description, html .media-sidebar .setting .value, html .media-sidebar .setting input[type=email], html .media-sidebar .setting input[type=number], html .media-sidebar .setting input[type=password], html .media-sidebar .setting input[type=search], html .media-sidebar .setting input[type=tel], html .media-sidebar .setting input[type=text], html .media-sidebar .setting input[type=url], html .media-sidebar .setting textarea {
+  background: var(--plotBlack);
+  border: 1px solid white;
+  color: white;
+}
+html .attachment-details .setting .value.description, html .attachment-details .setting input[type=email].description, html .attachment-details .setting input[type=number].description, html .attachment-details .setting input[type=password].description, html .attachment-details .setting input[type=search].description, html .attachment-details .setting input[type=tel].description, html .attachment-details .setting input[type=text].description, html .attachment-details .setting input[type=url].description, html .attachment-details .setting textarea.description, html .attachment-details .setting + .description.description, html .media-sidebar .setting .value.description, html .media-sidebar .setting input[type=email].description, html .media-sidebar .setting input[type=number].description, html .media-sidebar .setting input[type=password].description, html .media-sidebar .setting input[type=search].description, html .media-sidebar .setting input[type=tel].description, html .media-sidebar .setting input[type=text].description, html .media-sidebar .setting input[type=url].description, html .media-sidebar .setting textarea.description {
+  border: none;
+}
+html .attachment-details .setting .value.description a, html .attachment-details .setting input[type=email].description a, html .attachment-details .setting input[type=number].description a, html .attachment-details .setting input[type=password].description a, html .attachment-details .setting input[type=search].description a, html .attachment-details .setting input[type=tel].description a, html .attachment-details .setting input[type=text].description a, html .attachment-details .setting input[type=url].description a, html .attachment-details .setting textarea.description a, html .attachment-details .setting + .description.description a, html .media-sidebar .setting .value.description a, html .media-sidebar .setting input[type=email].description a, html .media-sidebar .setting input[type=number].description a, html .media-sidebar .setting input[type=password].description a, html .media-sidebar .setting input[type=search].description a, html .media-sidebar .setting input[type=tel].description a, html .media-sidebar .setting input[type=text].description a, html .media-sidebar .setting input[type=url].description a, html .media-sidebar .setting textarea.description a {
+  color: var(--plotMint);
+}
+html .attachment-details .setting .name, html .attachment-details .setting .value, html .attachment-details .setting span, html .compat-item label span, html .media-sidebar .checkbox-label-inline, html .media-sidebar .setting .name, html .media-sidebar .setting .value, html .media-sidebar .setting span {
+  color: white;
+}
+html .media-frame input[type=email]:focus, html .media-frame input[type=number]:focus, html .media-frame input[type=password]:focus, html .media-frame input[type=search]:focus, html .media-frame input[type=text]:focus, html .media-frame input[type=url]:focus, html .media-frame select:focus, html .media-frame textarea:focus {
+  box-shadow: none;
+}
+html .uploader-inline .has-upload-message .upload-instructions, html .image-details h2, html .media-sidebar h2 {
+  color: white;
+}
+html .details, html .attachment-info .filename {
+  color: white !important;
+}
+html #regenerate-thumbnails-app {
+  background: var(--plotBlack);
+  padding: 1rem;
+  border-radius: 1rem;
+}
+
+#your-profile {
+  margin-top: 1rem;
+  background: var(--plotBlack);
+  border: none;
+  border-radius: 1rem;
+  padding: 0.2rem 2rem 1rem;
+  max-width: 640px;
+}
+#your-profile h2:first-of-type, #your-profile table:first-of-type, #your-profile h2:nth-of-type(4), #your-profile table:nth-of-type(4) {
+  display: none;
+}
+#your-profile h2 {
+  border-bottom: 2px solid white;
+  line-height: 1.6;
+  font-size: 1.4rem;
+}
+#your-profile label {
+  color: white;
+}
+#your-profile .wp-pwd .button {
+  margin: 0.5rem 0;
+}
+#your-profile .pw-weak {
+  border: 2px solid var(--plotRed);
+}
+#your-profile .pw-weak input[type=checkbox], #your-profile .pw-weak input[type=radio] {
+  opacity: 1;
+}
+
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl {
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr;
+  display: flex;
+  box-sizing: border-box;
   max-width: 70rem;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl::before {
   display: none;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  flex: 1;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label {
   text-align: center;
-  width: 100%;
-  padding-bottom: 10px;
-  border: 3px solid #BFBFBF;
+  display: block;
+  padding: 0 0 1rem;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label.selected {
-  border: 4px solid #4EB4BB;
+  border: 4px solid var(--plotMint);
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label.selected:before {
+  background-size: 100%;
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label:after {
+  display: none;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label::before {
   content: "";
   display: block;
-  height: 15vw;
-  background-size: contain;
+  height: 30vw;
+  border-radius: 0;
+  border: none;
+  position: static;
+  width: 100%;
+  background-size: 90%;
   background-position: center;
   background-repeat: no-repeat;
-  margin: 10px auto;
 }
 @media screen and (min-width: 1024px) {
   div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl label::before {
-    height: 14rem;
+    height: 12rem;
   }
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li:first-child label::before {
   background-image: url("../img/layout-1.svg");
-  background-size: 60%;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li:nth-child(2) label::before {
   background-image: url("../img/layout-2.svg");
-  background-size: 60%;
 }
 div[data-layout=image-grid] [data-name=grid_layout] ul.acf-radio-list.acf-bl li:last-child label::before {
   background-image: url("../img/layout-3.svg");
-  background-size: 60%;
 }
 
 /*# sourceMappingURL=admin.css.map */

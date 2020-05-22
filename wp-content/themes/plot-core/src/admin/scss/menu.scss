@@ -1,0 +1,92 @@
+#adminmenu {
+	margin:0;
+}
+#adminmenuback {
+	background: transparent;
+}
+
+#adminmenu, #adminmenuwrap {
+	background: rgba(0,0,0,0.3);
+}
+
+
+.wp-has-current-submenu.opensub {
+	background: rgba(0,0,0,0.3);
+}
+
+#adminmenu .wp-has-current-submenu .wp-submenu, #adminmenu .wp-has-current-submenu.opensub .wp-submenu, #adminmenu .wp-submenu, #adminmenu a.wp-has-current-submenu:focus+.wp-submenu, .folded #adminmenu .wp-has-current-submenu .wp-submenu {
+	background: var(--plotBlack);
+}
+.collapse-button-label {
+	font-size: 13px;
+}
+
+.manage-menus {
+	background: var(--plotBlack);
+}
+
+.nav-menus-php {
+	.nav-tab-wrapper {
+		display: none;
+	}
+}
+
+.js .control-section.open .accordion-section-title, .js .control-section .accordion-section-title, .js .control-section .accordion-section-title:focus, .js .control-section.open .accordion-section-title .accordion-section-title {
+	background-color: var(--plotBlack);
+	color: white;
+}
+
+.js .control-section .accordion-section-title:hover {
+	background-color: #444;
+	color: var(--plotMint);
+	&:after {
+		color: var(--plotYellow);
+	}
+}
+.control-section .accordion-section-title, .customize-pane-child .accordion-section-title {
+	background: var(--plotBlack);
+	color: white;
+	
+}
+
+#menu-management .menu-edit, #menu-settings-column .accordion-container, .comment-ays, .feature-filter, .imgedit-group, .manage-menus, .menu-item-handle, .popular-tags, .stuffbox, .widget-inside, .widget-top, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
+	background: var(--plotBlack);
+	color: white;
+}
+
+.accordion-section-content {
+	background: var(--plotBlack);
+	color: white;
+}
+
+#side-sortables .categorychecklist li {
+	line-height: 2; 
+}
+
+#nav-menu-footer, #nav-menu-header {
+	background: var(--plotBlack);
+	color: white;
+}
+
+.nav-menus-php #post-body {
+	background: var(--plotBlack);
+	color: white;
+}
+
+.menu-settings {
+	display: none;
+}
+
+.accordion-section-title:hover:after, .handlediv:focus, .handlediv:hover, .item-edit:focus, .item-edit:hover, .postbox .handlediv.button-link:focus, .postbox .handlediv.button-link:hover, .sidebar-name:hover .toggle-indicator, .widget-action:focus, .widget-top:hover .widget-action {
+	color: var(--plotYellow);
+}
+
+.nav-menus-php .item-edit:focus:before {
+	box-shadow: none;
+}
+
+#menu-management, #menu-settings-column { 
+	input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus{
+		border: 1px solid white;
+	}
+}

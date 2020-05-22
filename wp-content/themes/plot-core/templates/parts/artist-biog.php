@@ -1,8 +1,8 @@
 <div class="artist">	
 
-	<section class="banner banner--artist sectionWithVerticalSpacing">
+	<section class="banner banner--artist withVerticalSpacing">
 
-		<div class="banner__backgroundWrap">
+		<div class="banner__mediaWrap">
 
 			<?php plotLazyload([
 				'image' 				=> get_field('banner_image',$plotData['artistId']), 
@@ -18,66 +18,50 @@
 
 	<div class="maxWidth">
 
-		<h2><?= get_the_title($plotData['artistId']) ?></h2>
+		<div class="artistBiogInner">
 
-		<div class="artist__performances">
+			<h2><?= get_the_title($plotData['artistId']) ?></h2>
 
-			<?php while(has_sub_field('performances',$plotData['artistId'])) : ?>
+			<div class="artist__performances">
 
-				<div class="artist__performance">
+				<?php if(get_field('archive'),$plotData['artistId']) : ?>
 
-					<?php $startDateTime = DateTime::createFromFormat('d/m/Y g:i a', get_sub_field('start_time')); ?>
+					<div class="artist__performance">This artist performed in <?= get_field('archive_y'),$plotData['artistId']) ?></div>
 
-					<div class="artist__performanceDate"><?= $startDateTime->format(DATE_FORMAT) ?></div>
+				<?php else : ?>
 
-					<div class="artist__performanceTime">
-						<?= $startDateTime->format('H:i') ?> - 
+					<?php while(has_sub_field('performances',$plotData['artistId'])) : ?>
 
-						<?= $startDateTime->add(new DateInterval('PT' . get_sub_field('performance_length') . 'M'))->format('H:i'); ?>
-					</div>
+						<div class="artist__performance">
 
-					<div class="artist__performanceStage"><?= get_sub_field('stage')->post_title ?></div>
+							<?php $startDateTime = DateTime::createFromFormat('d/m/Y g:i a', get_sub_field('start_time')); ?>
 
+							<div class="artist__performanceDate"><?= $startDateTime->format(DATE_FORMAT) ?></div>
 
-				</div>
+							<div class="artist__performanceTime">
+								<?= $startDateTime->format('H:i') ?> - 
 
-			<?php endwhile; ?>
+								<?= $startDateTime->add(new DateInterval('PT' . get_sub_field('performance_length') . 'M'))->format('H:i'); ?>
+							</div>
 
-		</div>
-
-		<div class="content">
-
-			<?= get_field('biog',$plotData['artistId']) ?>
-
-		</div>
-
-		<?php if(get_field('instagram') || get_field('spotify') || get_field('facebook')) : ?>
-
-			<div class="artist__socialLinks">
-
-				<?php if(get_field('instagram')) : ?>
-
-					<a target="_blank" href="<?= get_field('instagram') ?>">INSTAGRAM</a>
-
-				<?php endif; ?>
+							<div class="artist__performanceStage"><?= get_sub_field('stage')->post_title ?></div>
 
 
-				<?php if(get_field('spotify')) : ?>
+						</div>
 
-					<a target="_blank" href="<?= get_field('spotify') ?>">SPOTIFY</a>
-
-				<?php endif; ?>
-
-
-				<?php if(get_field('facebook')) : ?>
-
-					<a target="_blank" href="<?= get_field('facebook') ?>">FACEBOOK</a>
+					<?php endwhile; ?>
 
 				<?php endif; ?>
 
 			</div>
 
-		<?php endif; ?>
+			<div class="content withVerticalSpacing">
+
+				<?= get_field('biog',$plotData['artistId']) ?>
+
+			</div>
+
+		</div>
 
 	</div>
 

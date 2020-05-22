@@ -1,4 +1,4 @@
-<section class="demo sectionWithVerticalSpacing">
+<section class="demo withVerticalSpacing">
 
 	<div class="maxWidth">
 

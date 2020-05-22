@@ -1,8 +1,6 @@
-<?php plotGetTemplatePart('parts/header') ?>
-
 <?php plotGetTemplatePart('parts/banner') ?>
 
-<div class="newsMain">
+<div data-plot-smooth-scroll-frame class="newsMain plotPage">
 
 	<div class="maxWidth">
 
@@ -35,7 +33,7 @@
 
 			<?php if(get_field('featured_articles')) : ?>
 
-				<div class="news__featuredArticles news__featuredArticles--<?= sizeof(get_field('featured_articles')) ?>items">
+				<div class="news__featuredArticles blockLinksGrid blockLinksGrid--<?= sizeof(get_field('featured_articles')) ?>items">
 
 					<?php while(has_sub_field('featured_articles')) : ?>
 
@@ -47,7 +45,7 @@
 
 			<?php endif; ?>
 
-			<div class="JS--ajaxTargetArea news__grid JS--newsGrid news__grid--<?= get_field('articles_per_row',393) ?>perRow">
+			<div class="JS--ajaxTargetArea news__grid JS--newsGrid blockLinksGrid blockLinksGrid--<?= get_field('articles_per_row',393) ?>perRow">
 
 				<?= plotGetTemplatePart('parts/news-listing') ?>
 
@@ -60,5 +58,3 @@
 	</div>
 
 </div>
-
-<?php plotGetTemplatePart('parts/footer') ?>

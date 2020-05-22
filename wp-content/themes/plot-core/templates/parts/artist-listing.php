@@ -4,6 +4,13 @@ $args = [
 	'post_type' 		=> 'artist',
 	'orderby'			=> 'title',
 	'order'				=> 'asc',
+	'meta_query'		=> [
+		[
+			'key' 		=> 'archive',
+			'value' 	=> 1,
+			'compare'	=> '!='
+		]
+	]
 	'posts_per_page' 	=> ARTISTS_PER_PAGE
 ];
 
@@ -22,9 +29,9 @@ if(isset($plotData)) :
 		if($plotData['artistType'] != 0)
 			$args['tax_query'] = [
 				[ 
-		            'taxonomy' => 'artist-type', 
-		            'field' => 'id', 
-		            'terms' => [$plotData['artistType']]
+		            'taxonomy' 	=> 'artist-type', 
+		            'field' 	=> 'id', 
+		            'terms' 	=> [$plotData['artistType']]
 		        ]    
 		    ]; 
 

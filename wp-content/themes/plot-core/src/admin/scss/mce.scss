@@ -1,0 +1,125 @@
+html {
+	div.mce-toolbar-grp {
+		background-color: var(--plotBlack);
+	}
+
+	.acf-editor-wrap .wp-switch-editor {
+		background-color: var(--plotBlack);
+		color: white;
+	}
+
+	div.mce-toolbar-grp, div.mce-panel {
+		background: var(--plotBlack);
+	}
+
+	.mce-toolbar .mce-ico {
+		color: white;
+	}
+
+	.mce-toolbar .mce-btn-group .mce-btn:focus, .mce-toolbar .mce-btn-group .mce-btn:hover, .qt-dfw:focus, .qt-dfw:hover {
+		background: none;
+		color: var(--plotMint);
+		box-shadow: none;
+		border-color: var(--plotBlack)
+	}
+
+	.html-active .switch-html, .tmce-active .switch-tmce {
+		border-bottom-color: transparent;
+		color: var(--plotMint) !important;
+	}
+
+	.wp-editor-container textarea.wp-editor-area {
+		border: none;
+	}
+
+	.quicktags-toolbar {
+		background: none;
+	}
+
+	.mce-toolbar .mce-btn-group .mce-btn.mce-active, .mce-toolbar .mce-btn-group .mce-btn:active, .qt-dfw.active {
+		background: var(--plotMint);
+		color: var(--plotBlack) !important;
+		.mce-txt {
+			color: white;
+		}
+	}
+
+	.mce-toolbar .mce-btn-group .mce-btn.mce-primary {
+		background: var(--plotMint);
+		border: none;
+		outline: none;
+		&:hover {
+			background: var(--plotMint);
+			border: none;
+			outline: none;
+		}
+	}
+
+	.mce-toolbar .mce-btn-group .mce-btn.mce-listbox {
+		background: var(--plotBlack);
+	}
+
+	.mce-toolbar .mce-listbox button {
+		color: white;
+	}
+
+	.mce-panel .mce-btn i.mce-caret {
+		border-top: 6px solid white;
+	}
+	.mce-panel .mce-btn:focus i.mce-caret, .mce-panel .mce-btn:hover i.mce-caret {
+		border-top-color: white;
+	}
+
+	#link-modal-title, #wp-link-wrap #link-selector {
+		background: var(--plotBlack);
+	}
+
+	#wp-link .query-notice .query-notice-default, #wp-link .query-notice .query-notice-hint {
+		border-left-color: var(--plotMint);
+	}
+
+	#wp-link .query-notice {
+		background: var(--plotBlack);
+		color: white;
+	}
+
+	#wp-link .link-search-field:focus {
+		border: 1px solid white;
+	}
+
+	#wp-link input:focus {
+		border: 1px solid #7e8993;
+	}
+
+	#wp-link .howto {
+		color: white;
+	}
+	#wp-link li, #wp-link .submitbox, #wp-link .query-notice, #wp-link .query-results {
+		background: var(--plotBlack);
+		color: white;
+	}
+	#wp-link li.selected {
+		background: var(--plotPeach);
+		&:hover {
+			background: var(--plotPeach);
+			color: var(--plotBlack);
+		}
+	}
+	#wp-link .unselectable.no-matches-found {
+		background: var(--plotBlack);
+		color: var(--plotRed);
+	}
+
+	#wp-link li:hover {
+		background: var(--plotBlack);
+		color: var(--plotMint);
+	}
+
+	#wp-link-close {
+		color: white;
+		&:hover {
+			color: white;
+		}
+	}
+
+}

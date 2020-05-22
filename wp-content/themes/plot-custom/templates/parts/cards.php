@@ -14,7 +14,7 @@
 
             <?php while ( has_sub_field('cards')) : ?>
 
-                <div class="cards__item">
+                <div class="cards__item" data-plot-smooth-scroll-element>
 
                     <div class="cards__svgWrap">
 

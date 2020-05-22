@@ -8,6 +8,18 @@
 	}
 }
 
+
+#tinypng_dashboard_widget {
+    display: none;
+}
+
+
+.post-type-performance {
+	#titlewrap {
+		display: none;
+	}
+}  
+
 #wpforms_reports_widget_pro,
 #wpseo-dashboard-overview{
     display: none;
@@ -32,7 +44,7 @@
 
 h1.plotWelcome {
 	font-size: 1.8rem;
-	@media #{$mediumup} {
+	@include medium {
 		font-size: 2rem;
 	}
 	@media screen and (min-width: 1200px) {
@@ -44,20 +56,24 @@ h1.plotWelcome {
 .dashboardLink {
 	text-align: center;
 	vertical-align: middle;	
-	color: $plotBlack;
+	color: var(--plotBlack);
 	transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
 	transform: scale3d(1,1,1);
 	&:hover {
-		color: $plotBlack;
+		color: var(--plotBlack);
 		transform: scale3d(1.01,1.01,1);
 		box-shadow: 0 0 10px rgba(0,0,0,0.3);
+	}
+
+	&:focus {
+		color: var(--plotBlack);
 	}
 	
 }
 
 	.dashboardLink--home {
 		width: 50%;
-		@media #{$mediumup} {
+		@include medium {
 	 		width: calc(100%/ 3);
 	 	}
 	 	@media screen and (min-width: 1200px) {

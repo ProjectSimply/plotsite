@@ -1,4 +1,4 @@
-<header id="siteMainHeader">
+<header id="siteMainHeader" data-plot-smooth-scroll-frame>
 
 	<div class="maxWidth">
 

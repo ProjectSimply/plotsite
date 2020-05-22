@@ -6,6 +6,7 @@
 		LazyLoad   	 	= require('../../../plot-core/src/js/lazyload'),
 		Modals			= require('../../../plot-core/src/js/modals'),
 		Carousels		= require('./components/carousel'),
+		Smooth 			= require('../../../plot-core/src/js/plot-smooth-scroll'),
 		// CustomMouse 	= require('../../../plot-core/src/js/custom-mouse'),
 		Home			= require('./pages/home'),
 		TogglePrice     = require('./components/toggle-price'),
@@ -17,6 +18,8 @@
 	Main = {
 
 		init: () => {	
+
+			Main.initalizeSmooth()
 
 			Plot.init() 
 			LazyLoad.init()
@@ -43,6 +46,18 @@
 			News.init()
 			
 			Main.demoAjaxButton() 
+
+		},
+		
+		initalizeSmooth : () => {
+
+        	const hasSmoothScroll = document.body.dataset.plotCustomizerSmoothScroll
+
+        	const smoothSettings = {
+				standardScroll  : hasSmoothScroll != 'yes'
+			}
+
+        	Smooth.init(smoothSettings)
 
         },
 

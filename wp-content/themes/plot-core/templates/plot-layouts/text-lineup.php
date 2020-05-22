@@ -25,6 +25,8 @@
 
                 <?php while(has_sub_field('artists')) : ?>
 
+                    <?php if(empty(get_sub_field('artist'))) continue; ?>
+
                     <span class="textLineup__artist">
 
                         <span class="textLineup__artistText">

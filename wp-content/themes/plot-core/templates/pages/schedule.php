@@ -1,20 +1,16 @@
-<?php plotGetTemplatePart('parts/header') ?>
-
 <?php plotGetTemplatePart('parts/banner') ?>
 
 <?php $currentId = get_the_ID(); ?>
 
+<?php $linkType = get_field('performance_links','option'); ?>
+
 <?php $schedule = plotGenerateSchedule();  ?>
 
-<?php if(checkPostIsInMenu('Lineup Pages')) : ?>
-
-	<?php plotGetTemplatePart('parts/lineup-submenu'); ?>
-
-<?php endif; ?>
+<?php plotGetTemplatePart('parts/subnavigation'); ?>
 
 <div class="schedule">
 
-	<div class="scheduleDayPicker">
+	<div class="scheduleDayPicker" data-plot-smooth-scroll-frame>
 
 		<?php $i = 0; ?>
 
@@ -42,7 +38,7 @@
 
 		  	<div class="scheduleCalendar">
 
-		      	<div class="scheduleCalendar__gridLines">
+		      	<div class="scheduleCalendar__gridLines"  data-plot-smooth-scroll-frame>
 
 					<?php $time = 0; ?>
 
@@ -56,7 +52,7 @@
 
 				</div>
 
-			    <div class="scheduleCalendar__headers">
+			    <div class="scheduleCalendar__headers" data-plot-smooth-scroll-sticky data-plot-smooth-scroll-frame>
 
 			      	<div class="scheduleCalendar__headerButtons">
 
@@ -100,7 +96,7 @@
 
 				</div>
 
-				<div class="scheduleCalendarTracks syncscroll" name="calendarScrollers">
+				<div  data-plot-smooth-scroll-frame class="scheduleCalendarTracks syncscroll" name="calendarScrollers">
 				      	
 				    <div class="scheduleCalendar__column scheduleCalendar__column--time">
 
@@ -135,15 +131,7 @@
 
 										<div class="scheduleCalendar__performanceTime">
 
-											<?php $startDateTime = $performance['startDateTime'];  ?>
-
-											<?= $startDateTime->format('H:i') ?> - 
-
-											<?php 
-												$startDateTime->add(new DateInterval('PT' . $performance['duration'] . 'M'));
-											?>
-
-											<?= $startDateTime->format('H:i') ?>
+											<?= plotPerformanceTime($performance) ?>
 
 										</div>
 
@@ -163,7 +151,7 @@
 
 											<?php endif; ?>
 									
-											<h4><?= plotMakePerformanceTitle($performance['id']); ?></h4>
+											<h4><?= plotMakePerformanceTitle($performance['id'],$linkType); ?></h4>
 
 										</div>
 
@@ -177,6 +165,12 @@
 											<?php endif; ?>
 
 										</div>
+
+										<?php if(plotHasPerformancePages() && get_field('individual_tickets',$performance['id']) ) : ?>
+
+											<a href="<?= get_field('link_url',$performance['id']) ?>" class="performance__ticketButton plotButton"><?= get_field('button_text',$performance['id']) ?></a>
+
+										<?php endif; ?>
 
 									</div>
 
@@ -198,12 +192,4 @@
 
 	<?php endforeach; ?>
 
-	<?php if(get_field('schedule_file',$currentId)) : ?>
-
-		<a download href="<?= get_field('schedule_file') ?>" class="plotButton scheduleFileButton">Download schedule</a>
-
-	<?php endif; ?>
-
 </div>
-
-<?php plotGetTemplatePart('parts/footer') ?>

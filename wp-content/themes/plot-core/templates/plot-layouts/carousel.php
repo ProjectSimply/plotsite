@@ -10,7 +10,12 @@
 
             <?php endif ?>
 
-            <?= get_sub_field('introduction') ?>
+            <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
+
+	            <?= get_sub_field('introduction') ?>
+
+	        <?php endif; ?>
+	        
 
         </div>
 
@@ -65,7 +70,7 @@
 
 							<?php endif; ?>
 
-							<?php if(get_sub_field('content')) : ?>
+							<?php if(get_sub_field('content') && get_sub_field('add_some_content')) : ?>
 
 								<?= get_sub_field('content') ?>
 

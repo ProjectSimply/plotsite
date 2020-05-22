@@ -10,11 +10,17 @@
 
             <?php endif ?>
 
-            <?= get_sub_field('introduction') ?>
+            <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
+
+                <?= get_sub_field('introduction') ?>
+
+            <?php endif; ?>
 
         </div>
 
-        <div class="latestArticles__grid">
+        <?php $articlesCount = get_sub_field('which_articles_to_show') == 'custom' ? sizeof(get_sub_field('articles')) : get_sub_field('article_count'); ?>
+
+        <div class="latestArticles__grid blockLinksGrid blockLinksGrid--<?= $articlesCount ?>">
 
 	        <?php 
 
@@ -25,6 +31,7 @@
 	        	if(get_sub_field('which_articles_to_show') == 'custom') : 
 
 	        		$args['post__in'] = [];
+	        		$args['posts_per_page'] = -1;
 	        		$args['orderby'] = 'post__in';
 
 	        		while(has_sub_field('articles'))

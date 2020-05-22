@@ -10,7 +10,7 @@
 
             <?php endif ?>
 
-            <?php if(get_sub_field('introduction')) : ?>
+            <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
 
                 <?= get_sub_field('introduction') ?>
 
@@ -18,23 +18,21 @@
             
         </div>
 
-        <div class="blockLinks__grid blockLinks__grid--with<?= sizeof(get_sub_field('block')) ?>">
+        <div class="blockLinksGrid blockLinksGrid--<?= sizeof(get_sub_field('block')) ?>">
 
             <?php while(has_sub_field('block')) : ?>
 
-                <a class="blockLink" <?= get_sub_field('open_in_new_tab') ? 'target="_blank"' : '' ?> href="<?= get_sub_field('link_url') ?>">
+                <a class="plotHasHoverEffect blockLink plotWithImageTransition" data-plot-smooth-scroll-reveal <?= get_sub_field('open_in_new_tab') ? 'target="_blank"' : '' ?> href="<?= get_sub_field('link_url') ?>">
 
-                    <div class="blockLink__backgroundWrap">
-
-                        <div class="blockLink__backgroundWrapInner" style="opacity: <?= get_sub_field('brightness') / 100 ?>">
-
+                    <div class="blockLinkImageFrame">
+  
                             <?php plotLazyload([
                                 'image'                 => get_sub_field('image'), 
                                 'imageSize'             => 'blockLink',
-                                'class'                 => 'blockLink__image'
+                                'class'                 => 'blockLink__image',
+                                'opacity'               => get_sub_field('brightness') / 100
                             ]); ?>
 
-                        </div>
 
                     </div>
 
@@ -42,7 +40,7 @@
 
                         <?php if(get_sub_field('text')) : ?>
 
-                            <h3 class="blockLink__heading"><?= get_sub_field('text') ?></h3>
+                            <h4 class="blockLink__heading"><?= get_sub_field('text') ?></h4>
 
                         <?php endif ?>
 

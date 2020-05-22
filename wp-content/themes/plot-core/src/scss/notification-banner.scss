@@ -1,0 +1,30 @@
+.bannerNotification {
+	text-align: center;
+	white-space: nowrap;
+	display: block;
+	color: var(--bodyColor);
+	p {
+		margin: 0;
+	}
+	&[data-animation-type="always"], &.withAnimation {
+		>div {
+			white-space: nowrap;
+			display: inline-block;
+			padding-right: 1rem;
+			animation: fakeMarquee 30s linear infinite;
+		} 
+	}
+	
+}
+
+
+@keyframes fakeMarquee {
+	0% {
+		transform: translateX(0);
+	}
+
+	100% {
+		transform: translateX(-100%);
+	}
+}
+

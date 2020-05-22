@@ -1,0 +1,210 @@
+<?php 
+
+acf_add_local_field_group([
+	'key' => 'performances_info',
+	'title' => 'Performance Information',
+	'fields' => [
+		[
+			'key' 			=> 'performances_info_artists',
+			'label' 		=> 'Artists',
+			'name' 			=> 'artists',
+			'type' 			=> 'repeater',
+			'min' 			=> 1,
+			'max' 			=> 3,
+			'layout' 		=> 'table',
+			'button_label' => 'Add artist',
+			'sub_fields' => [
+				[
+					'key' 			=> 'performances_info_artist',
+					'label' 		=> 'Artist',
+					'name' 			=> 'artist',
+					'type' 			=> 'post_object',
+					'instructions' 	=> 'Select which artists are involved in this performance. Most of the time this is just one artists, but you can add up to three.',
+					'required' 		=> 1,
+					'post_type' => [
+						0 => 'artist',
+					],
+					'return_format' => 'object'
+				],
+			],
+		],
+		[
+			'key' 			=> 'performances_info_has_custom_title',
+			'label' 		=> 'Title',
+			'name' 			=> 'title',
+			'type' 			=> 'radio',
+			'instructions' 	=> 'How do you want this performance to show up on the site?',
+			'choices' => [
+				'artistList' => 'Just display the artist or artists selected',
+				'custom' => 'Add in my own bespoke title for this performance',
+			],
+			'default_value' => 'artistList'
+		],
+		[
+			'key' 			=> 'performances_info_custom_title',
+			'label' 		=> 'Custom Title',
+			'name'			=> 'custom_title',
+			'type' 			=> 'text',
+			'required' => 1,
+			'conditional_logic' => [
+				[
+					[
+						'field' 	=> 'performances_info_has_custom_title',
+						'operator' 	=> '==',
+						'value' 	=> 'custom',
+					],
+				],
+			]
+		],
+		[
+			'key' 			=> 'performances_info_day',
+			'label' 		=> 'Performance Day',
+			'name'		 	=> 'day',
+			'type' 			=> 'date_picker',
+			'display_format'=> 'd/m/Y',
+			'return_format' => 'd/m/Y',
+			'first_day'  	=> 1,
+			'default_value'	=> '31/01/2020'
+		],
+		[
+			'key' 			=> 'performances_info_start_time',
+			'label' 		=> 'Start Time',
+			'name' 			=> 'start_time',
+			'type' 			=> 'time_picker',
+			'wrapper' => [
+				'class' => 'plotAcfHalf'
+			],
+			'display_format'=> 'g:i a',
+			'return_format' => 'g:i a',
+		],
+		[
+			'key' 			=> 'performances_info_end_time',
+			'label' 		=> 'End Time',
+			'name' 			=> 'end_time',
+			'type' 			=> 'time_picker',
+			'wrapper' => [
+				'class' => 'plotAcfHalf',
+			],
+			'display_format'=> 'g:i a',
+			'return_format' => 'g:i a',
+		],
+		[
+			'key' => 'field_5e64caf67c4af',
+			'label' => 'Stage',
+			'name' => 'stage',
+			'type' => 'post_object',
+			'instructions' => 'Where is this performance taking place? You can add locations from the main menu on the left.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => [
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			],
+			'hide_admin' => 0,
+			'post_type' => [
+				0 => 'stage',
+			],
+			'taxonomy' => '',
+			'allow_null' => 0,
+			'multiple' => 0,
+			'return_format' => 'object',
+			'ui' => 1,
+		],
+		[
+			'key' => 'field_5e66234e2750f',
+			'label' => 'Description',
+			'name' => 'description',
+			'type' => 'wysiwyg',
+			'instructions' => 'An optional description that can show up on your performance listings.',
+			'toolbar' => 'basic',
+			'media_upload' => 0,
+		],
+		[
+			'key' => 'field_5e66252025191',
+			'label' => 'Listing Image',
+			'name' => 'listing_image',
+			'type' => 'radio',
+			'instructions' => 'Pick a listing image for this performance. You can turn on performance images on the schedule page.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => [
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			],
+			'choices' => [
+				'artistImage' => 'Use artist image. If you have more than one artist, we\'ll use the first one',
+				'custom' => 'I\'ll chose a specific image for this',
+			],
+			'allow_null' => 0,
+			'other_choice' => 0,
+			'default_value' => '',
+			'layout' => 'vertical',
+			'return_format' => 'value',
+			'save_other_choice' => 0,
+		],
+		[
+			'key' => 'field_5e66258e45ec8',
+			'label' => 'Image',
+			'name' => 'image',
+			'type' => 'image',
+			'instructions' => 'At least 500px wide please!',
+			'required' => 1,
+			'conditional_logic' => [
+				[
+					[
+						'field' => 'field_5e66252025191',
+						'operator' => '==',
+						'value' => 'custom',
+					],
+				],
+			],
+			'wrapper' => [
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			],
+			'return_format' => 'array',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		],
+	],
+	'location' => [
+		[
+			[
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'performance',
+			],
+		],
+	],
+	'menu_order' => 5,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => [
+		0 => 'the_content',
+		1 => 'excerpt',
+		2 => 'discussion',
+		3 => 'comments',
+		4 => 'revisions',
+		5 => 'author',
+		6 => 'format',
+		7 => 'page_attributes',
+		8 => 'featured_image',
+		9 => 'categories',
+		10 => 'tags',
+		11 => 'send-trackbacks',
+	],
+	'active' => true,
+	'description' => '',
+]);

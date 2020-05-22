@@ -1,0 +1,79 @@
+body {
+	.alternate, .striped>tbody>:nth-child(odd), ul.striped>:nth-child(odd) {
+		background: none;
+		border-bottom: 1px solid rgba(255,255,255,0.2);
+	}
+	.widefat td, .widefat td ol, .widefat td p, .widefat td ul {
+		font-size: 1rem;
+	}
+	.widefat tr {
+		&:nth-of-type(2n) {
+			background: rgba(255,255,255,0.1);
+			border-bottom: 4px solid red;
+		}
+	}
+	.widefat tfoot tr td, .widefat tfoot tr th, .widefat thead tr td, .widefat thead tr th {
+		color: white;
+	}
+	.widefat ol, .widefat p, .widefat ul {
+		color: white;
+	}
+	.widefat td, .widefat th {
+		color: white;
+	}
+	td.column-title strong, td.plugin-title strong {
+		font-size: 1rem;
+	}
+	.row-title {
+		font-size: 1rem !important;
+	}
+
+	.fixed .column-author, .fixed .column-date, .fixed .column-format, .fixed .column-links, .fixed .column-parent, .fixed .column-posts {
+		width: 18%;
+	}
+
+	.tablenav .actions select {
+		float: none;
+		display: inline-block;
+	}
+
+	#wpbody-content .inline-edit-row fieldset .inline-edit-col, tr.inline-edit-row td {
+		// div {
+		// 	display: none;
+		// }
+	}
+
+	table.wp-list-table .acp-be-editrow, .widefat td, .widefat th{
+		background: var(--plotBlack);
+		color: white;
+	}
+
+	.ac-modal__dialog, .ac-modal.-bulkedit .ac-modal__dialog__header,.ac-modal.-bulkedit .ac-modal__dialog__content.-editable,.ac-modal.-bulkedit .ac-modal__dialog__content {
+		background: var(--plotBlack);
+		color: white;
+		input[type=text] {
+			border: 1px solid white;
+		}
+	}
+
+	.aceditable .aceditable__button.-primary,.aceditable .aceditable__button.-primary:hover {
+		background: var(--plotMint);
+		color: var(--plotBlack);
+	}
+
+	.ac-modal__dialog__close {
+		color: var(--plotMint);
+		&:hover {
+			color: var(--plotYellow);
+			background: none;
+		}
+	}
+
+	#ui-datepicker-div {
+		background: var(--plotBlack);
+	}
+	.ui-datepicker-calendar a.ui-state-default {
+		background: var(--plotBlack) !important;
+		color: white !important;
+	}
+}

@@ -1,5 +1,3 @@
-<?php plotGetTemplatePart('parts/header') ?>
-
 <?php plotGetTemplatePart('parts/banner') ?>
 
 <?php plotGetTemplatePart('plot-layouts/main-loop'); ?> 
@@ -11,5 +9,3 @@
 <?php plotGetTemplatePart('demos/ajax-load-template-part') ?>
 
 <?php plotGetTemplatePart('demos/custom-mouse-cursors') ?>
-
-<?php plotGetTemplatePart('parts/footer') ?>

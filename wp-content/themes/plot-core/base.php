@@ -11,13 +11,21 @@
 
     <?php plotGetNotifications() ?>  
 
-    <div class="siteWrap">
+    <div data-plot-smooth-scroll>
 
-        <?php include plotTemplatePath(); ?>
+        <div class="siteWrap">
+
+                <?php include plotTemplatePath(); ?>
+
+        </div>
 
     </div>
 
-    <?php plotGetTemplatePart('parts/edit-me-button'); ?> 
+    <?php plotGetTemplatePart('parts/schedule-download'); ?>
+
+    <?php plotGetTemplatePart('parts/burger-menu') ?>
+
+    <div class="siteOverlay"></div>
 
     <?php plotGetTemplatePart('parts/modal') ?>
     

@@ -1,0 +1,480 @@
+html {
+	font-size: 15px;
+	@include medium {
+		font-size: 16px;
+	}
+	@include large {
+		font-size: 17px;
+	}
+	@include xlarge {
+		font-size: 17px;
+	}
+}
+
+body {
+
+
+	#contextual-help-link {
+		display: none;
+	}
+
+	#wpadminbar .ab-submenu .ab-item, #wpadminbar .quicklinks .menupop ul li a, #wpadminbar .quicklinks .menupop.hover ul li a, #wpadminbar.nojs .quicklinks .menupop:hover ul li a {
+		color: white;
+	}
+
+	#wpadminbar {
+		background: var(--plotBlack);
+		* {
+			font-family: fieldwork,sans-serif;
+		}
+	}
+
+	&.wp-core-ui .button-link {
+		color: var(--plotMint);
+		&:hover {
+			color: var(--plotRed);
+		}
+	}
+
+	a:active, a:focus, a:hover {
+		color: var(--plotMint);
+	}
+
+	#wpadminbar .menupop .ab-sub-wrapper {
+		background: var(--plotBlack);
+	}
+
+	#wpadminbar .ab-top-menu>li.menupop.hover>.ab-item, #wpadminbar.nojq .quicklinks .ab-top-menu>li>.ab-item:focus, #wpadminbar.nojs .ab-top-menu>li.menupop:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li:hover>.ab-item, #wpadminbar:not(.mobile) .ab-top-menu>li>.ab-item:focus {
+		color: var(--plotRed);
+	}
+
+	.subtitle {
+		color: white;
+	}
+
+	input[type=checkbox]:focus, input[type=color]:focus, input[type=date]:focus, input[type=datetime-local]:focus, input[type=datetime]:focus, input[type=email]:focus, input[type=month]:focus, input[type=number]:focus, input[type=password]:focus, input[type=radio]:focus, input[type=search]:focus, input[type=tel]:focus, input[type=text]:focus, input[type=time]:focus, input[type=url]:focus, input[type=week]:focus, select:focus, textarea:focus {
+		border:none;
+		box-shadow: none;
+	}
+
+	#post-body #visibility:before, #post-body .misc-pub-post-status:before, #post-body .misc-pub-revisions:before, .curtime #timestamp:before, span.wp-media-buttons-icon:before {
+		margin-top:0.15rem;
+	}
+
+	#wp-admin-bar-wp-logo {
+		display: none;
+	}
+
+	#wp-admin-bar-wpforms-menu {
+		display: none;
+	}
+
+	#wp-admin-bar-breeze-topbar>div:not(.ab-sub-wrapper){
+		text-indent: -9999px;
+		&:after {
+			content: "Cache";
+		    display: block;
+		    text-indent: 0;
+		    position: absolute;
+		    top: 0;
+		}
+	}
+	
+	font-family: fieldwork, sans-serif;
+	font-weight: 400;
+	font-style: normal;
+	background: var(--plotLilac);
+	color: white;
+
+	a {
+		color: var(--plotMint);
+		&:hover {
+			color: var(--plotRed);
+		}
+	}
+
+	.accordion-section-title:after, .handlediv, .item-edit, .postbox .handlediv.button-link, .toggle-indicator {
+		color: var(--plotYellow);
+	}
+
+	#all-plugins-table .plugins a.delete, #delete-link a.delete, #media-items a.delete, #media-items a.delete-permanently, #nav-menu-footer .menu-delete, #search-plugins-table .plugins a.delete, .plugins a.delete, .row-actions span.delete a, .row-actions span.spam a, .row-actions span.trash a, .submitbox .submitdelete {
+		color: var(--plotRed);
+	}
+
+	&.wp-core-ui .button, &.wp-core-ui .button-secondary {
+		background: var(--plotMint);
+		border: none;
+	    font-size: 1rem;
+	    line-height: 2;
+	}
+	&.wp-core-ui .button.focus, &.wp-core-ui .button.hover, &.wp-core-ui .button:focus, &.wp-core-ui .button:hover {
+		background: var(--plotMint);
+		border-color:  var(--plotLilac);
+		filter: brightness(0.8);
+		color: var(--plotBlack);
+		box-shadow: none;
+	}
+
+	.acf-fc-popup a:hover {
+		background: rgba(255,255,255,0.1);
+	}
+
+	&.wp-core-ui select {
+		background-color:var(--plotMint);
+		border:none;
+    	font-size: 1rem;
+		line-height: 2;
+		height: auto !important;
+		padding: 0 30px 0 8px;
+		&:focus {
+			color: var(--plotBlack);
+			border-color: var(--plotMint);
+		}
+	}
+
+	&.wp-core-ui .button-primary {
+		color: var(--plotBlack);
+		&:hover {
+			color: var(--plotBlack);
+		}
+	}
+
+	&.wp-core-ui .button-disabled, &.wp-core-ui .button-secondary.disabled, &.wp-core-ui .button-secondary:disabled, &.wp-core-ui .button-secondary[disabled], &.wp-core-ui .button.disabled, &.wp-core-ui .button:disabled, &.wp-core-ui .button[disabled] {
+		background: rgba(255,255,255,0.5) !important;
+		text-shadow: none !important;
+		color: rgba(255,255,255,0.5) !important;
+	}
+	
+	#comment-link-box, #edit-slug-box {
+		color: white;
+	}
+	.postbox {
+		background: var(--plotBlack);
+		border: none;
+		border-radius: 1rem;
+		.inside {
+			font-size: 1rem; 
+		}
+	}
+
+	.postbox .handlediv {
+		z-index: 6;
+		position: relative;
+	}
+
+	.postbox .handlediv:focus .toggle-indicator:before {
+		box-shadow: none !important;
+	}
+
+	.form-wrap p, p.description, p.help, span.description {
+
+		color: white !important;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		color: white;
+		font-weight: 600 !important;
+	}
+
+	#poststuff, #side-sortables {
+		input[type="checkbox"],input[type="radio"] {
+			position: absolute;
+			opacity: 0;
+			pointer-events: none;
+		}
+	}
+
+	#poststuff .stuffbox>h3, #poststuff h2, #poststuff h3.hndle {
+		font-size: 1.4rem;
+		color: var(--plotOrange);
+		background: var(--plotBlack);
+		
+		border-radius: 1rem 1rem 0 0 ;
+		
+		z-index: 5;
+	}
+
+	#poststuff #normal-sortables .postbox:nth-of-type(2n-1) h2 {
+		color: var(--plotMint);
+	}
+
+	.postbox.closed {
+		.stuffbox>h3, h2, h3.hndle {
+			border-radius: 1rem !important;
+		}
+	}
+
+	input[type=color], input[type=date], input[type=datetime-local], input[type=datetime], input[type=email], input[type=month], input[type=number], input[type=password], input[type=search], input[type=tel], input[type=text], input[type=time], input[type=url], input[type=week], select, textarea {
+		background: var(--plotBlack);
+		color: white;
+		height: auto;
+		font-size: 1rem;
+	}
+
+	.ac_match, .subsubsub a.current {
+		color: white;
+	}
+
+	.subsubsub {
+		color: rgba(255,255,255,0.5);
+	}
+	.subsubsub a .count, .subsubsub a.current .count {
+		color: rgba(255,255,255,0.5);
+	}
+
+	.search-box {
+		input[type=search] {
+			background: rgba(0,0,0,0.1);
+			color: white;
+		    box-shadow: none;
+		    border: none;
+		}
+	}
+
+	#major-publishing-actions {
+		background: none;
+	}
+
+	.timestamp-wrap {
+		display: flex;
+		label {
+			padding: 0 0.1rem;
+		}
+	}
+	#aa, #hh, #jj, #mn {
+		display: block;
+
+	}
+
+	#screen-meta-links .show-settings:active, #screen-meta-links .show-settings:focus, #screen-meta-links .show-settings:hover {
+		color: white;
+	}
+
+	#screen-meta {
+		border: none;
+		border-radius: 0 0 0 1rem;
+		overflow: hidden; 
+	}
+
+	#screen-meta-links .show-settings, #screen-options-wrap {
+		background: var(--plotBlack);
+
+		[type="radio"],[type="checkbox"] {
+		    opacity: 0;
+		    position: absolute;
+		    pointer-events: none;
+		}
+
+		label {
+			padding-left: 2.7rem;
+		}
+		.screen-options label {
+			padding-left:0;
+			padding-right: 0.5rem;
+			&:before, &:after {
+				content: none;
+			}
+		}
+	}
+
+
+
+	.metabox-prefs .screen-options .screen-per-page {
+		margin-bottom: .6rem;
+	}
+
+	#screen-meta-links .show-settings {
+		line-height: inherit;
+		color: white;
+		border: none;
+		padding-bottom: 0.4rem;
+		&:after {
+			top:0.1rem;
+			padding: 0;
+		}
+	}
+
+	#titlediv #title,#titlediv #title-prompt-text {
+		background: rgba(0,0,0,0.1);
+		border: none;
+		font-size: 2.4rem;
+		line-height: 1.2;
+		color: white;
+		height: auto;
+		padding: 0.4rem;
+		margin: 0;
+	}
+
+	#titlediv #title-prompt-text {
+		color: white;
+		background: none;
+		min-height: 30px;
+		display: block;
+	}
+
+	.wrap .add-new-h2, .wrap .add-new-h2:active, .wrap .page-title-action, .wrap .page-title-action:active {
+		border: none;
+		background: var(--plotRed);
+		color: white;
+	}
+
+	.postbox.closed .hndle, .stuffbox .hndle {
+		border: none;
+	}
+
+	.postbox:not(.closed) .hndle, .stuffbox .hndle {
+		border-bottom: white solid 3px;
+	}
+
+	.postbox .handlediv .toggle-indicator:before {
+		margin-top: 0.8rem !important;
+	}
+
+	.form-wrap p, p.description, p.help, span.description {
+		font-size: 0.9rem;
+		color: #ccc;
+	}
+
+	.notice, div.error, div.updated {
+	    background: rgba(255,255,255,0.3);
+	    border: 0 solid;
+	    border-left-width: 4px;
+	}
+
+	.notice-error, div.error {
+		border-color: var(--plotRed);
+	}
+
+	.comment-ays, .feature-filter, .imgedit-group, .popular-tags, .stuffbox, .widgets-holder-wrap, .wp-editor-container, p.popular-tags, table.widefat {
+		background: var(--plotBlack);
+	}
+
+	ul.acf-radio-list li, ul.acf-checkbox-list li, .acf-true-false {
+		font-size: 1rem;
+		line-height: 1.4;
+		margin-bottom: 0.5rem;
+	}
+
+	.customize-inside-control-row, ul.acf-radio-list li label, ul.acf-checkbox-list li label, .acf-true-false label, .customize-control-radio label, .customize-control-checkbox label {
+		display: block;
+	}
+
+	.acf-radio-list, .acf-checkbox-list, .acf-true-false, .columns-prefs, .metabox-prefs, .customize-control-radio, .customize-control-checkbox, .categorychecklist
+	{
+
+		label {
+		    position: relative; 
+		    padding: 0.3rem 1rem 1rem 2.5rem;
+
+	    	display: inline-block;
+		    &:before {
+		    	content: '';
+			    position: absolute;
+			    left: 0;
+			    top: 0;
+			    width: 2.2rem;
+			    height: 2.2rem;
+			    transform: scale3d(0.8, 0.8, 1);
+			    border-radius: 100%;
+			    border: var(--plotMint) solid 3px;
+			    box-sizing:border-box;
+		    }
+
+		    &:after {
+		    	content: '';
+			    width: 2.2rem;
+			    height: 2.2rem;
+			    background: var(--plotOrange);
+			    position: absolute;
+	    		transform: scale3d(0.4, 0.4, 1);
+			    top:0;
+			    left:0;
+			    border-radius: 50%;	    
+			    transition: transform 0.2s ease;
+			    opacity: 0;
+		    }
+
+		}
+
+	    li:nth-of-type(2n) label, label:nth-of-type(2n) {
+			&:before {
+				border-color: var(--plotLilac);
+			}
+			&:after {
+				background-color: var(--plotYellow);
+			}
+		}
+
+		li:nth-of-type(3n) label, label:nth-of-type(3n) {
+			&:before {
+				border-color: var(--plotPeach);
+			}
+			&:after {
+				background-color: var(--plotGreen); 
+			}
+		}
+
+		li:nth-of-type(4n) label, label:nth-of-type(4n) {
+			&:before {
+				border-color: var(--plotPurple);
+			}
+			&:after {
+				background-color: var(--plotOrange); 
+			}
+		}
+
+	    label.selected:after, label.plotSelected:after {
+	    	opacity: 1;
+	    }
+	}
+
+	.customize-inside-control-row.plotSelected label:after {
+		opacity: 1;
+	}
+
+	.acf-radio-list label, .acf-checkbox-list label {
+
+	    &:last-of-type {
+	    	padding-bottom: 0;
+	    }
+	}
+
+	.acf-checkbox-list label, .acf-true-false label, fieldset.metabox-prefs label, .editor-expand label, .customize-control-checkbox label, .categorychecklist label {
+		&:before,&:after { 
+			border-radius: 0;
+		}
+	}
+
+	.wp-cancel-pw>.dashicons, .wp-hide-pw>.dashicons {
+		top: .38rem;
+	}
+
+	.misc-pub-visibility {
+		display: none;
+	}
+
+	#wpfooter {
+		color: white;
+	}
+
+	.wp-person a:focus .gravatar, a:focus, a:focus .media-icon img {
+		outline: none;
+		box-shadow: none;
+	}
+
+	button.wp-switch-editor {
+		margin-top: 7px;
+		@include large {
+			margin-top: 9px;
+		}
+	}
+
+	#wpadminbar .quicklinks .ab-sub-wrapper .menupop.hover>a, #wpadminbar .quicklinks .menupop ul li a:focus, #wpadminbar .quicklinks .menupop ul li a:focus strong, #wpadminbar .quicklinks .menupop ul li a:hover, #wpadminbar .quicklinks .menupop ul li a:hover strong, #wpadminbar .quicklinks .menupop.hover ul li a:focus, #wpadminbar .quicklinks .menupop.hover ul li a:hover, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:focus, #wpadminbar .quicklinks .menupop.hover ul li div[tabindex]:hover, #wpadminbar li #adminbarsearch.adminbar-focused:before, #wpadminbar li .ab-item:focus .ab-icon:before, #wpadminbar li .ab-item:focus:before, #wpadminbar li a:focus .ab-icon:before, #wpadminbar li.hover .ab-icon:before, #wpadminbar li.hover .ab-item:before, #wpadminbar li:hover #adminbarsearch:before, #wpadminbar li:hover .ab-icon:before, #wpadminbar li:hover .ab-item:before, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:focus, #wpadminbar.nojs .quicklinks .menupop:hover ul li a:hover {
+		color: var(--plotMint) !important;
+	}
+
+	.notification-dialog {
+		background: var(--plotBlack);
+	}
+
+}

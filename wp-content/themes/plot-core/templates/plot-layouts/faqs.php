@@ -12,7 +12,7 @@
 
                 <?php endif ?>
 
-                <?php if(get_sub_field('introduction')) : ?>
+                <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
 
                     <?= get_sub_field('introduction') ?>
 

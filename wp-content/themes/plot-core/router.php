@@ -14,11 +14,22 @@
         }
         
         $slug = plotGetSlug(false); 
+
+        if($slug == 'locations' || $slug == 'stages') {
+            $slug = 'stages-or-locations';
+        }
+
+        $postType = plotPluralise(get_post_type());
+
+
+        if($postType == 'stages') {
+            $postType = 'stages-or-locations';
+        }
         
-        if(locate_template('templates/' . plotPluralise(get_post_type()) . '/' . $slug . '.php')) {
-                get_template_part('templates/' . plotPluralise(get_post_type()) . '/' . $slug);
+        if(locate_template('templates/' . $postType . '/' . $slug . '.php')) {
+                get_template_part('templates/' . $postType . '/' . $slug);
         } else {
-                echo get_template_part('templates/' . plotPluralise(get_post_type()) . '/' . 'default');
+                echo get_template_part('templates/' . $postType . '/' . 'default');
         }
       
     }

@@ -5,6 +5,10 @@ div#wpforms-builder-mobile-notice {
 	display: none; 
 }
 
+.wpforms-admin-wrap .page-title {
+	background-color: transparent;
+}
+
 #wpforms-flyout .wpforms-flyout-head {
 	display: none;
 }
@@ -57,5 +61,13 @@ div#wpforms-builder-mobile-notice {
 }
 
 .button.wpforms-insert-form-button {
+	display: none;
+}
+
+td.column-shortcode, .manage-column.column-shortcode {
+	display: none;
+}
+
+td .preview_ {
 	display: none;
 }

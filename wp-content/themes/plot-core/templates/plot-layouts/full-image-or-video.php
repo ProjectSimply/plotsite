@@ -40,8 +40,8 @@
 						<h2 class="fullImageOrVideo__title"><?= get_sub_field('title') ?></h2>
 
 					<?php endif; ?>
-
-					<?php if(get_sub_field('paragraph')) : ?>
+					
+					<?php if(get_sub_field('paragraph') && get_sub_field('include_a_paragraph')) : ?>
 
 						<?= get_sub_field('paragraph') ?>
 

@@ -2,9 +2,11 @@
 
 //Loading up our include files from includes
 $psIncludes = array(
+  'includes/cloudways.php',
   'includes/plot-site.php',
   'includes/admin.php',
-  'includes/helpers.php',
+  'includes/db-find-and-replace.php',
+  'includes/helpers.php'
 );
 
 foreach ($psIncludes as $file) {

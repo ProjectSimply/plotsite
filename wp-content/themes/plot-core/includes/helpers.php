@@ -19,6 +19,25 @@ function plotGetSlug($id=null) {
     return $slug; 
 }
 
+function plotNormalisePerformanceData($data) {
+    if(isset($data['id']))
+        return $data['id'];
+
+    if(isset($data['performance']))
+        return $data['performance']->ID;
+
+    return false;
+}
+
+function plotFlushRedirectRules() {
+
+    if((bool)get_option( 'plotFlushRedirectFlag' )){
+      flush_rewrite_rules(); 
+      update_option( 'plotFlushRedirectFlag', 'true');
+    }
+  
+}
+
 /**
  * Pluralises a word if quantity is not one.
  *
@@ -63,6 +82,7 @@ function plotLazyload($args) {
 
     //Defaults
     $defaults = [
+        'opacity'               => 1,  //Opacity of the image or video
         'image'                 => '', //The large screen image (shown for screen sizes over 640px wide)
         'imageSize'             => '', //The name of the resized image size generated in WP (from config.php)
         'smallScreenImage'      => '', //Optional small screen image
@@ -91,7 +111,6 @@ function plotLazyload($args) {
     if(!$options['image'] && !$options['video']) :
         return;
     endif;
-
   
 
     //Check if the smallscreenimagesize has been set. If not, set it to be the desktop one
@@ -99,40 +118,45 @@ function plotLazyload($args) {
         $options['smallScreenImageSize'] = $options['imageSize'];
     }
 
+    ?>
+
+    <div class="plotLazyLoadFrame"> 
+
+        <?php if($options['image']) : ?>
+
+            <img style="opacity: <?= $options['opacity']; ?>" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 <?= $options['image']['sizes'][$options['imageSize'] . '-width'] ?> <?= $options['image']['sizes'][$options['imageSize'] . '-height'] ?>'%3E%3C/svg%3E"
+                data-src="<?= $options['image']['sizes'][$options['imageSize']] ?>"
+                <?php if($options['smallScreenImage']) : ?>
+
+                    data-small-src="<?= $options['smallScreenImage']['sizes'][$options['smallScreenImageSize']] ?>"
+
+                <?php endif; ?>
+
+                class="<?= $options['forCarousel'] ? 'JS--lazyLoadForCarousel' : 'JS--lazyLoad' ?> <?= $options['class'] ?>" 
+                alt="<?= $options['alt'] ?>"
+                <?= $options['id'] ? 'id="'.$options['id'].'"' : '' ?>
+            />
+
+        <?php else :  ?>
+
+            <video style="opacity: <?= $options['opacity']; ?>" 
+                data-src="<?= $options['video'] ?>"
+
+                <?php if($options['smallScreenVideo']) : ?>
+
+                    data-small-src="<?= $options['smallScreenVideo'] ?>"
+
+                <?php endif; ?>
+
+                class="<?= $options['forCarousel'] ? 'JS--lazyLoadForCarousel' : 'JS--lazyLoad' ?> <?= $options['class'] ?>"
+                autoplay muted loop playsinline
+                >
+            </video>
+
+        <?php endif; ?>
 
 
-    if($options['image']) : ?>
-
-        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 <?= $options['image']['sizes'][$options['imageSize'] . '-width'] ?> <?= $options['image']['sizes'][$options['imageSize'] . '-height'] ?>'%3E%3C/svg%3E"
-            data-src="<?= $options['image']['sizes'][$options['imageSize']] ?>"
-            <?php if($options['smallScreenImage']) : ?>
-
-                data-small-src="<?= $options['smallScreenImage']['sizes'][$options['smallScreenImageSize']] ?>"
-
-            <?php endif; ?>
-
-            class="<?= $options['forCarousel'] ? 'JS--lazyLoadForCarousel' : 'JS--lazyLoad' ?> <?= $options['class'] ?>" 
-            alt="<?= $options['alt'] ?>"
-            <?= $options['id'] ? 'id="'.$options['id'].'"' : '' ?>
-        />
-
-    <?php else : ?>
-
-        <video 
-            data-src="<?= $options['video'] ?>"
-
-            <?php if($options['smallScreenVideo']) : ?>
-
-                data-small-src="<?= $options['smallScreenVideo'] ?>"
-
-            <?php endif; ?>
-
-            class="<?= $options['forCarousel'] ? 'JS--lazyLoadForCarousel' : 'JS--lazyLoad' ?> <?= $options['class'] ?>"
-            autoplay muted loop playsinline
-            >
-        </video>
-
-    <?php endif;
+    </div> <?php 
 
 }
 
@@ -186,6 +210,7 @@ function plotLoadTemplatePartFromAjax() {
 }
 
 function plotGetTemplatePart( $file, $plotData = array(), $cache_args = array() ) {
+    global $posts, $post, $wp_did_header, $wp_query, $wp_rewrite, $wpdb, $wp_version, $wp, $id, $comment, $user_ID;
     $plotData = wp_parse_args( $plotData );
     $cache_args = wp_parse_args( $cache_args );
     if ( $cache_args ) {
@@ -260,6 +285,56 @@ function plotIsSiteHidden() {
 
 }
 
+function plotPerformanceTime($performance) {
+
+    if(isset($performance['startDateTime']) && isset($performance['duration'])) :
+
+        $startDateTime = $performance['startDateTime'];
+
+        $return =  $startDateTime->format('H:i') . '- ';
+        $startDateTime->add(new DateInterval('PT' . $performance['duration'] . 'M'));
+        $return .= $startDateTime->format('H:i');
+
+        return $return;
+
+    endif;
+
+    if($performance) : 
+
+        $startTime  = DateTime::createFromFormat('g:i a', get_field('start_time',$performance));
+        $endTime    = DateTime::createFromFormat('g:i a', get_field('end_time',$performance));
+
+        if($startTime && $endTime)
+
+            return $startTime->format('g:i') . '- ' . $endTime->format('g:ia'); 
+
+    endif; 
+
+    return false;
+}
+
+function plotShowArticleDates() {
+
+    return get_field('show_article_dates','option');
+
+}
+
+function plotShowArticleAuthor() {
+
+    return get_field('show_article_authors','option');
+
+}
+
+function plotHasPerformancePages() {
+
+    return get_field('performance_pages','option');
+}
+
+function plotHasStagePages() {
+
+    return get_field('stage_pages','option');
+}
+
 function plotIsSplashPageOn() {
 
     return get_field('site_status','option') == 'splash' && !isset($_GET['sh']);
@@ -286,46 +361,336 @@ function plotGetPerformanceImage($performanceId) {
     return false;
 }
 
-function plotMakePerformanceTitle($performanceId) {
+function plotMakePerformanceTitle($performanceId, $linkType = 'artist') {
     if(!$performanceId)
         return false;
 
-    if(get_field('custom_title',$performanceId))
-        return get_field('custom_title',$performanceId);  
+    if($linkType != 'performance' || !plotHasPerformancePages())
+        $linkType = 'artist';
 
-    $return = ''; 
+    if($linkType == 'performance') :
+        $return = '<a target="_blank" href="' . get_permalink($performanceId) . '">'; 
+    else :
+        $return = '';
+    endif;
 
-    $i = 0;
+    if(get_field('title',$performanceId) == 'custom') :
+        $return .= get_field('custom_title',$performanceId);  
+    else :
+   
 
-    $max = sizeof(get_field('artists',$performanceId));
+        $i = 0;
 
-    while(has_sub_field('artists',$performanceId)) :
+        $max = sizeof(get_field('artists',$performanceId));
 
-        $artist = get_sub_field('artist');
+        while(has_sub_field('artists',$performanceId)) :
 
-        $return .= '<span 
-                        data-plot-modal
-                        data-plot-modal-class="plotModal--artist"
-                        data-plot-modal-template-part="parts/artist-biog"
-                        data-plot-modal-data-artist-id="' . $artist->ID . '"
-                        data-plot-modal-group="scheduleArtists"
-                        data-plot-modal-type="ajax">' . $artist->post_title . '</span>';
+            $artist = get_sub_field('artist');
 
-        if($i + 2 == $max) {
-            $return .= ' & ';
-        } elseif($i + 1 == $max) {
-            $return .= '';
-        } else {
-            $return .= ', ';
-        }
+            if($linkType == 'performance') :
 
-        $i++;
+                $return .= $artist->post_title . ' ';
 
-    endwhile;
+            else :
+
+                if(get_field('artist_links','option') == 'off') :
+
+                    $return .= '<a target="_blank" href="' . get_permalink($artist->ID) . '">' . $artist->post_title . '</a>'; 
+
+                else :
+
+                    $return .= '<span 
+                                data-plot-modal
+                                data-plot-modal-class="plotModal--artist--' . get_field('artist_links','option') . '"
+                                data-plot-modal-template-part="parts/artist-biog"
+                                data-plot-modal-data-artist-id="' . $artist->ID . '"
+                                data-plot-modal-group="scheduleArtists"
+                                data-plot-modal-type="ajax">' . $artist->post_title . '</span>';
+
+                endif;
+
+            endif;
+
+            if($i + 2 == $max) {
+                $return .= ' & ';
+            } elseif($i + 1 == $max) {
+                $return .= '';
+            } else {
+                $return .= ', ';
+            }
+
+            $i++;
+
+        endwhile;
+
+    endif;
+
+    if($linkType == 'performance') :
+
+        $return .= '</a>';
+
+    endif; 
 
     return $return;
 
     
+}
+
+function plotGetArtistsMetaFromPerformances($metaCompare = ">=") {
+
+    $now = new DateTime('NOW');
+    
+    $args = [
+        'post_type'         => 'performance',
+        'orderby'           => 'meta_value',
+        'meta_key'          => '',
+        'order'             => 'asc',
+        'posts_per_page'    => -1,
+        'meta_query'        => [
+            [
+                'key'       => 'plot_performance_datetime',
+                'value'     => $now->format('YmdHis'),
+                'compare'   => $metaCompare
+            ]
+        ]
+    ];
+
+    $performanceQuery = new WP_Query($args);
+
+    $terms = [];
+
+    while($performanceQuery->have_posts()) : $performanceQuery->the_post(); 
+
+        while(has_sub_field('artists')) :
+
+            $artistTypes = get_the_terms(get_sub_field('artist')->ID,'artist-type');
+
+            if($artistTypes)
+                foreach($artistTypes as $artistType) :
+                    if(!in_array($artistType->name, $terms))
+                        $terms[$artistType->term_id] = $artistType->name;
+
+                endforeach;
+
+        endwhile;
+
+    endwhile;
+
+    wp_reset_query();
+
+    return ['terms'=>$terms];
+
+}
+
+
+function plotGetArtistsMeta() {
+
+    $args = [
+        'post_type'         => 'artist',
+        'orderby'           => 'title',
+        'order'             => 'asc',
+        'posts_per_page'    => -1,
+        'meta_query'        => [
+            'relation' => 'OR',
+            [
+                'key'       => 'archive',
+                'compare'   => 'NOT EXISTS'
+            ],
+            [
+                'key'       => 'archive',
+                'value'     => 1,
+                'compare' => '!='
+            ]
+        ]
+    ];
+
+    $yearQuery = new WP_Query($args);
+
+    $terms = [];
+
+    while($yearQuery->have_posts()) : $yearQuery->the_post(); 
+
+        $artistTypes = get_the_terms(get_the_ID(),'artist-type');
+
+        if($artistTypes)
+            foreach($artistTypes as $artistType) :
+                if(!in_array($artistType->name, $terms))
+                    $terms[$artistType->term_id] = $artistType->name;
+
+            endforeach;
+
+    endwhile;
+
+    wp_reset_query();
+
+    return ['terms'=>$terms];
+
+}
+
+function plotGetArchiveArtistsMeta() {
+
+    $args = [
+        'post_type'         => 'artist',
+        'orderby'           => 'title',
+        'order'             => 'asc',
+        'posts_per_page'    => -1,
+        'meta_query'        => [
+            [
+                'key'       => 'archive',
+                'value'     => 1
+            ]
+        ]
+    ];
+
+    $yearQuery = new WP_Query($args);
+
+    $years = [];
+    $terms = [];
+
+    while($yearQuery->have_posts()) : $yearQuery->the_post(); 
+
+        if(!in_array(get_field('archive_year'), $years))
+            $years[] = get_field('archive_year');
+
+        $artistTypes = get_the_terms(get_the_ID(),'artist-type');
+
+        if($artistTypes)
+            foreach($artistTypes as $artistType) :
+                if(!in_array($artistType->name, $terms))
+                    $terms[$artistType->term_id] = $artistType->name;
+
+            endforeach;
+
+    endwhile;
+
+    wp_reset_query();
+
+    return ['years' => $years,'terms'=>$terms];
+
+}
+
+function plotGetPerformanceDays($options = []) {
+
+    $defaults = [
+        'futureOnly' => true
+    ];
+    $settings = [];
+
+    foreach($defaults as $key => $default) :
+
+        if(isset($options[$key])) :
+            $settings[$key] = $options[$key];
+        else :
+            $settings[$key] = $defaults[$key];
+        endif;
+
+    endforeach;
+
+    $args = [
+        'post_type'         => 'performance',
+        'posts_per_page'    => -1
+    ];
+
+    if($settings['futureOnly'] == true) :
+        
+        $now = new DateTime('NOW');
+
+        $args['meta_query'] = [
+            [
+                'key'       => 'plot_performance_datetime',
+                'value'     => $now->format('YmdHis'),
+                'compare'   => '>='
+            ]
+        ];
+
+    endif;
+
+    $performanceQuery = new WP_Query($args);
+    $displayFormat = get_field('display_performance_dates','option');
+    if(!$displayFormat) 
+        $displayFormat = 'l';
+
+    $days = [];
+
+    while($performanceQuery->have_posts()) : $performanceQuery->the_post(); 
+
+        $date       = get_field('day');
+        $dateObject = DateTime::createFromFormat('d/m/Y',$date);
+
+        $startTime  = DateTime::createFromFormat('g:i a', get_field('start_time'));
+        $endTime    = DateTime::createFromFormat('g:i a', get_field('end_time'));
+
+        $dayEnd     = get_field('day_end','option');
+        $startHour  = $startTime->format('g');
+
+        if($dayEnd > $startHour) {
+           $dateObject->modify('-1 day');
+        }
+
+        $date = $dateObject->format('Ymd');
+        if(!$date || !$startTime || !$endTime)
+            continue;
+
+        if(empty($days[$date]))
+            $days[$date] = $dateObject->format($displayFormat);
+
+
+    endwhile;
+
+    ksort($days);
+
+    wp_reset_query();
+
+    return $days;
+
+}
+
+function plotFormatDate($date) {
+   $dateObject = DateTime::createFromFormat('d/m/Y',$date);
+   $displayFormat = get_field('display_performance_dates','option');
+   if($dateObject)  
+       return $dateObject->format($displayFormat); 
+}
+
+function plotGeneratePerformancesMetaQuery($day) {
+
+    $dayEnd = get_field('day_end','option');
+    $dayEnd = DateTime::createFromFormat('H',$dayEnd);
+    $dayEnd = $dayEnd->format('H:i:s');
+
+    $dayObj = DateTime::createFromFormat('Ymd',$day);
+    if(!$dayObj)
+        return false;
+
+    $tomorrow = $dayObj->modify('1 day');
+    $tomorrow = $tomorrow->format('Ymd');
+
+    return [
+            'relation' => 'OR',
+            [
+                [
+                    'key'     => 'day',
+                    'value'   => $day
+                ],
+                [
+                    'key'     => 'start_time',
+                    'value'   => $dayEnd,
+                    'compare' => '>='
+                ]
+            ],
+            [
+                [
+                    'key'     => 'day',
+                    'value'   => $tomorrow
+                ],
+                [
+                    'key'     => 'start_time',
+                    'value'   => $dayEnd,
+                    'compare' => '<'
+                ]
+            ]
+        ];
+
 }
 
 
@@ -339,15 +704,31 @@ function plotGenerateSchedule() {
     ];
 
     $performanceQuery = new WP_Query($args);
+    $displayFormat = get_field('display_performance_dates','option');
+    if(!$displayFormat) 
+        $displayFormat = 'l';
 
     while($performanceQuery->have_posts()) : $performanceQuery->the_post(); 
 
-        $date       = get_field('performance_day')['value'];
+        $date       = get_field('day');
+        $dateObject = DateTime::createFromFormat('d/m/Y',$date);
 
-        $dateText    = get_field('performance_day')['label'];
         $startTime  = DateTime::createFromFormat('g:i a', get_field('start_time'));
         $endTime    = DateTime::createFromFormat('g:i a', get_field('end_time'));
-        $dateYmd    = DateTime::createFromFormat('d/m/Y', get_field('performance_day')['value']);
+
+        $dayEnd     = get_field('day_end','option');
+        $startHour  = $startTime->format('g');
+
+        if($dayEnd > $startHour) {
+           $dateObject->modify('-1 day');
+           $startTime->modify('+1 day');
+           $endTime->modify('+1 day');
+        }
+
+        $dateText = $dateObject->format($displayFormat);
+        $date = $dateObject->format('d/m/Y');
+
+        $dateYmd    = $dateObject->format('Ymd');
 
         if(!$date || !$startTime || !$endTime)
             continue;
@@ -372,7 +753,7 @@ function plotGenerateSchedule() {
                                     'earliestTime'  => clone $startTime, 
                                     'latestTime'    => clone $endTime,
                                     'dateText'      => $dateText,
-                                    'dateYmd'       => $dateYmd->format('Ymd')
+                                    'dateYmd'       => $dateYmd
                                 ];
 
         else :
@@ -390,6 +771,7 @@ function plotGenerateSchedule() {
         if(!isset($schedule[$date]['stages'][$stage->ID])) :
 
             $schedule[$date]['stages'][$stage->ID] = [
+                'order'        => $stage->menu_order,
                 'stageName'    => $stage->post_title,
                 'performances' => []
             ];
@@ -427,6 +809,14 @@ function plotGenerateSchedule() {
         return $a['dateYmd'] <=> $b['dateYmd'];
     });
 
+    foreach($schedule as &$day) :
+
+        uasort($day['stages'], function($a, $b) {
+            return $a['order'] <=> $b['order'];
+        });
+
+    endforeach;
+
     wp_reset_query();
 
     return $schedule;
@@ -436,9 +826,10 @@ function plotGenerateSchedule() {
 function plotGetNotifications() {
 
     $date_now = date('Y-m-d H:i:s');
+    $currentID = get_the_ID();
 
     $args = [
-        'posts_per_page' => 1,
+        'posts_per_page' => -1,
         'post_type'      => 'notification',
         'meta_query'     => [
             [  
@@ -466,54 +857,38 @@ function plotGetNotifications() {
                 'key'       => 'disabled',
                 'compare'   => '!=',
                 'value'     => 1,
-            ],
-            [
-                'relation' => 'OR',
-                [
-                    'relation' => 'AND',
-                    [
-                        'key'       => 'which_pages', 
-                        'value'     => '"' . get_the_ID() . '"', 
-                        'compare'   => 'LIKE'
-                    ],
-                    [
-                        'key'       => 'display_options', 
-                        'value'     => 'include', 
-                    ]
-                ],
-                [
-                    'relation' => 'AND',
-                    [
-                        'key'       => 'exclude_these_pages', 
-                        'value'     => '"' . get_the_ID() . '"', 
-                        'compare'   => 'NOT LIKE'
-                    ],
-                    [
-                        'key'       => 'display_options', 
-                        'value'     => 'exclude', 
-                    ]
-                ],
-
-            ],
+            ]
         ]
     ];
 
-
     $notificationQuery = new WP_Query( $args );
 
-    if ( $notificationQuery->have_posts() ) : $notificationQuery->the_post(); 
+    if ( $notificationQuery->have_posts() ) : 
 
-        if(get_field('notification_type') == 'Banner') :
+        while($notificationQuery->have_posts()) :
 
-            plotGetTemplatePart('notifications/banner');
+            $notificationQuery->the_post(); 
 
-        endif;
+            if((get_field('display_options') == 'exclude' && !in_array($currentID, get_field('exclude_these_pages'))) ||
+                (get_field('display_options') == 'include') && in_array($currentID, get_field('which_pages'))) {
 
-        if(get_field('notification_type') == 'Pop Up') :
+                if(get_field('notification_type') == 'Banner') :
 
-            plotGetTemplatePart('notifications/popup');
+                    plotGetTemplatePart('notifications/banner');
 
-        endif;
+                endif;
+
+                if(get_field('notification_type') == 'Pop Up') :
+
+                    plotGetTemplatePart('notifications/popup');
+
+                endif;
+
+                break;
+
+            }
+
+        endwhile;
 
     endif;
 
@@ -525,7 +900,7 @@ function plotShowPartners() {
 
     wp_reset_query();
 
-    $displayPartners = get_field('display_partners','option');
+    $displayPartners = get_field('display_partners_options','option');
 
     if($displayPartners) : 
 
@@ -580,7 +955,6 @@ function plotShowMainTicketsButton() {
     if(!get_field('show_main_tickets_button','option'))
         return false;
 
-    
     $pagesToHide = get_field('exclude_main_tickets_button','option');
 
     if($pagesToHide) :
@@ -624,39 +998,4 @@ function plotTimeElapsed($datetime, $full = false) {
 
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
-}
-
-// /**
-//  * Check if post is in a menu
-//  *
-//  * @param $menu menu name, id, or slug
-//  * @param $object_id int post object id of page
-//  * @return bool true if object is in menu
-//  */
-function checkPostIsInMenu( $menu = null, $object_id = null ) {
-    
-    // get menu object
-    $menu_object = wp_get_nav_menu_items( esc_attr( $menu ) );
-
-    // stop if there isn't a menu
-    if( ! $menu_object )
-        return false;
-    
-    // stop if there is less than 2 menu items
-    if(count($menu_object) < 2) {
-        return false;
-    }
-
-    // get the object_id field out of the menu object
-    $menu_items = wp_list_pluck( $menu_object, 'object_id' );
-
-    // use the current post if object_id is not specified
-    if( !$object_id ) {
-        global $post;
-        $object_id = get_queried_object_id();
-    }
-
-    // test if the specified page is in the menu or not. return true or false.
-    return in_array( (int) $object_id, $menu_items );
-
 }

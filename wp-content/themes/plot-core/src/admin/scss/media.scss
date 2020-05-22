@@ -1,0 +1,272 @@
+html {
+	.media-frame-tab-panel {
+		background: var(--plotBlack);
+		color: white;
+		margin-top: 1rem; 
+	}
+
+	.attachments-browser .media-toolbar, .media-frame-toolbar .media-toolbar {
+		background: var(--plotBlack); 
+	}
+
+	.wp_attachment_image {
+		background: var(--plotBlack);
+		color: white;
+		padding: 1rem;
+		margin-top: 1rem;
+	}
+
+	.media-frame-content {
+		background: var(--plotBlack);
+	}
+
+	.media-frame.mode-grid .media-toolbar {
+		background: none;
+		border: none;
+	}
+	#posts-filter .wp-filter {
+		background: var(--plotBlack);
+		color: white;
+	}
+
+	.view-switch a:before {
+		color: rgba(255,255,255,0.3);
+	}
+	.view-switch a.current:before {
+		color: white;
+	}
+
+	.media-frame input[type=color], .media-frame input[type=date], .media-frame input[type=datetime-local], .media-frame input[type=datetime], .media-frame input[type=email], .media-frame input[type=month], .media-frame input[type=number], .media-frame input[type=password], .media-frame input[type=search], .media-frame input[type=tel], .media-frame input[type=text], .media-frame input[type=time], .media-frame input[type=url], .media-frame input[type=week], .media-frame select, .media-frame textarea {
+		font-family: fieldwork, sans-serif;
+	}
+
+	.media-frame, .media-modal {
+		font-family: fieldwork, sans-serif;
+	}
+
+	.media-toolbar-primary.search-form label {
+		color: white;
+	}
+
+	.media-frame.mode-grid .wp-filter input[type=search] {
+		background: rgba(255,255,255,0.2);
+		color: white;
+		border: none;
+		outline: none;
+	}
+
+	.media-modal-content, .edit-attachment-frame .attachment-info, .edit-attachment-frame .attachment-media-view .thumbnail {
+		background: var(--plotBlack) !important;
+		color: white !important;
+	}
+	.attachment-info label, .attachment-info span, .edit-attachment-frame .attachment-info .filename {
+		color: white !important; 
+	}
+
+	.media-modal .delete-attachment, .media-modal .trash-attachment, .media-modal .untrash-attachment {
+		color: var(--plotRed);
+	}
+
+	.edit-attachment-frame .edit-media-header .left, .edit-attachment-frame .edit-media-header .right, .upload-php .media-modal-close {
+		color: white;
+	}
+
+	.media-frame.mode-grid .attachment.details:focus, .media-frame.mode-grid .attachment:focus, .media-frame.mode-grid .selected.attachment:focus {
+		box-shadow: inset 0 0 0 8px var(--plotMint);
+	}
+
+	.wp-core-ui .attachment.details .check, .wp-core-ui .attachment.selected .check:focus, .wp-core-ui .media-frame.mode-grid .attachment.selected .check {
+		background: var(--plotPurple);
+		box-shadow: none;
+		border: 2px solid white;
+	}
+
+	.media-frame.mode-grid .selected.attachment,.wp-core-ui .attachment.details {
+		box-shadow: none;
+		background: var(--plotMint);
+	}
+
+	.media-frame.mode-grid .attachments-browser .no-media {
+		padding: 3rem 1rem;
+		color: white;
+	}
+
+	.mejs-controls .mejs-time-rail .mejs-time-current {
+		background: var(--plotMint);
+	}
+
+	.acf-media-modal.-edit .media-sidebar .attachment-details .attachment-info, .media-sidebar {
+		background: var(--plotBlack); 
+	}
+
+	.wp-core-ui .attachment .check .media-modal-icon {
+		margin: 4px;
+	}
+
+	.attachment-info .actions a.view-attachment {
+		display: none;
+	}
+
+	.media-modal .imgedit-wrap .imgedit-settings {
+		background: var(--plotBlack);
+	}
+
+	.media-modal .imgedit-group-top h2, .media-modal .imgedit-group-top h2 .button-link {
+		color: white;
+		text-transform: none;
+	}
+
+	.wp-core-ui.media-modal .image-editor .imgedit-help-toggle, .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:active, .wp-core-ui.media-modal .image-editor .imgedit-help-toggle:hover {
+		color: var(--plotMint);
+	}
+
+	.media-menu {
+		background: var(--plotBlack);
+		color: white;
+	}
+	.media-menu .media-menu-item {
+		color: var(--plotMint);
+		&:hover {
+			color: white;
+		}
+		&:focus {
+			color: white;
+			box-shadow: none;
+		}
+	}
+
+	.media-menu #menu-item-gallery {
+		display: none;
+	}
+
+	.media-progress-bar div {
+		background: var(--plotMint);
+	}
+
+	.attachments-browser .instructions {
+		color: white;
+	}
+
+	.media-uploader-status .upload-details {
+		color: white;
+	}
+
+	.media-router .media-menu-item, .media-router .active, .media-router .media-menu-item.active:last-child {
+		color: white;
+		border: 1px solid white;
+		border-bottom: none;
+		background: var(--plotBlack);
+		margin: -1px -1px 0;
+		&:hover {
+			color: var(--plotMint);
+		}
+		&:focus {
+			outline: none;
+			color: white;
+		}
+	}
+
+	.media-router .media-menu-item:focus {
+		box-shadow: none;
+	}
+
+	.media-router .active, .media-router .media-menu-item.active:last-child {
+		color: var(--plotMint);
+		margin: -1px -1px 0;
+		&:hover {
+			color: var(--plotMint);
+		}
+
+		&:focus {
+			outline: none;
+			color: var(--plotMint);
+		}
+	}
+
+	.media-frame a {
+		color: var(--plotMint);
+		&:hover {
+			color: white;
+		}
+	}
+	.media-modal-close {
+		color: white;
+		&:hover {
+			color: var(--plotMint);
+		}
+	}
+
+	.media-modal .acf-expand-details {
+		color: white;
+		&:hover {
+			color: var(--plotMint) !important;
+		}
+	}
+	.compat-field-regenerate_thumbnails .button-large {
+		font-size: 0.7rem;
+		line-height: 3;
+		&:hover {
+			filter: brightness(0.8);
+			background: var(--plotMint);
+			color: var(--plotBlack);
+		}
+	}
+
+	.media-modal .button-secondary {
+		color: var(--plotBlack);
+	}
+	.wp-core-ui .attachment.details:focus, .wp-core-ui .attachment:focus, .wp-core-ui .selected.attachment:focus {
+		box-shadow:none;
+	}
+
+	.media-modal-content .attachments-browser .search {
+		background: var(--plotBlack);
+		border: 1px solid white;
+		color: white;
+		outline: none;
+		box-shadow: none;
+		&:focus {
+			border: 1px solid white;
+		}
+	}
+
+	.media-selection:after {
+		content: none;
+	}
+
+	.attachment-details .setting .value, .attachment-details .setting input[type=email], .attachment-details .setting input[type=number], .attachment-details .setting input[type=password], .attachment-details .setting input[type=search], .attachment-details .setting input[type=tel], .attachment-details .setting input[type=text], .attachment-details .setting input[type=url], .attachment-details .setting textarea, .attachment-details .setting+.description, .media-sidebar .setting .value, .media-sidebar .setting input[type=email], .media-sidebar .setting input[type=number], .media-sidebar .setting input[type=password], .media-sidebar .setting input[type=search], .media-sidebar .setting input[type=tel], .media-sidebar .setting input[type=text], .media-sidebar .setting input[type=url], .media-sidebar .setting textarea {
+		background: var(--plotBlack);
+		border: 1px solid white;
+		color: white;
+		&.description {
+			border: none;
+			a {
+				color: var(--plotMint);
+			}
+		}
+	}
+
+	.attachment-details .setting .name, .attachment-details .setting .value, .attachment-details .setting span, .compat-item label span, .media-sidebar .checkbox-label-inline, .media-sidebar .setting .name, .media-sidebar .setting .value, .media-sidebar .setting span {
+		color: white;
+	}
+
+	.media-frame input[type=email]:focus, .media-frame input[type=number]:focus, .media-frame input[type=password]:focus, .media-frame input[type=search]:focus, .media-frame input[type=text]:focus, .media-frame input[type=url]:focus, .media-frame select:focus, .media-frame textarea:focus {
+		box-shadow: none;
+	}
+
+	.uploader-inline .has-upload-message .upload-instructions,.image-details h2, .media-sidebar h2 {
+		color: white;
+	}
+
+	.details, .attachment-info .filename {
+		color: white !important; 
+	}
+
+
+	#regenerate-thumbnails-app {
+		background: var(--plotBlack);
+		padding: 1rem;
+		border-radius: 1rem;
+	}
+
+}

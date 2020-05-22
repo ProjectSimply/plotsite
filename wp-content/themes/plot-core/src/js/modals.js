@@ -28,7 +28,6 @@
         isLoading           : false,
         controlsTimer       : false,
         modalContent        : document.querySelector('.JS--plotModalReplaceContents'),
-        modalScrollViewport : document.querySelector('.JS--plotModalScrollViewport'),
         modalGroupControls  : document.querySelector('.JS--plotModalControls'),
         modalGroupNext      : document.querySelector('.JS--plotModalControls__next'),
         modalGroupBack      : document.querySelector('.JS--plotModalControls__back'),
@@ -46,7 +45,11 @@
             const closeButtons = document.querySelectorAll('.JS--closePlotModal')
 
             for(var closeButton of closeButtons) {
-                closeButton.addEventListener('click',Modals.closePlotModal)
+                closeButton.addEventListener('click',function(e){
+                     if (e.target !== this)
+                        return
+                     Modals.closePlotModal()
+                })
             }
 
             Modals.plotModal.addEventListener('mousemove',function(){
@@ -69,8 +72,7 @@
 
             })
                 
-            document.addEventListener('click', function(e){
-
+            document.querySelector('.siteWrap').addEventListener('click', function(e){
                 if(e.target.closest('[data-plot-modal]')) {
                     e.preventDefault()
                     Modals.openPlotModal(e.target.closest('[data-plot-modal]'))
@@ -255,7 +257,7 @@
             Modals.modalContent.style.minHeight = Modals.modalContent.clientHeight + 'px'
             Modals.modalContent.innerHTML = contents
 
-            BodyScrollLock.disableBodyScroll(Modals.modalScrollViewport)
+            BodyScrollLock.disableBodyScroll(Modals.plotModal)
 
             document.body.classList.add('plotModalInView')
 
@@ -329,7 +331,7 @@
 
             Modals.modalContent.innerHTML = ''
             
-            BodyScrollLock.enableBodyScroll(Modals.modalScrollViewport)
+            BodyScrollLock.enableBodyScroll(Modals.plotModal)
 
             Modals.isOpen = false
         }

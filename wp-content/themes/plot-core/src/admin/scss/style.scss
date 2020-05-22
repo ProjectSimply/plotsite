@@ -1,14 +1,24 @@
 //GENERAL
+@import "mixins"; 
 @import "vars";
 
 
 
 //PARTS
 @import "login"; 
-@import "main"; 
+@import "sitewide";  
+@import "acf";   
+@import "admin-columns";  
+@import "tables"; 
+@import "terms";
+@import "menu";
+@import "mce";
 @import "wysiwyg"; 
 @import "wpforms-override"; 
+@import "customizer"; 
 @import "dashboard"; 
+@import "media"; 
+@import "user-profile"; 
 
 
 @import "plot-layouts/image-grid"; 

@@ -1,6 +1,6 @@
 <?php if(get_field('banner_type') != 'text') : ?>
 
-	<section class="banner sectionWithVerticalSpacing">
+	<section data-plot-smooth-scroll-frame class="banner withVerticalSpacing">
 
 		<?php if(get_field('banner_link')) : ?>
 
@@ -45,7 +45,7 @@
 
 						<?php if(get_field('banner_title')) : ?>
 
-							<h1 class="banner__title"><?= get_field('banner_title') ?></h1>
+							<h1 class="banner__title"><?= get_field('use_custom_title',$id) ? get_field('banner_title',$id) : get_the_title(); ?></h1>
 
 						<?php endif; ?>
 
@@ -71,7 +71,7 @@
 
 <?php else : ?>
 
-	<section class="textOnlyBanner sectionWithVerticalSpacing">
+	<section class="textOnlyBanner withVerticalSpacing">
 
 		<div class="banner__contentWrap">
 
@@ -83,7 +83,7 @@
 
 				<?php else : ?>
 
-					<h1 class="textOnlyBanner__title"><?= get_field('banner_title') ?></h1>
+					<h1 class="textOnlyBanner__title"><?= get_field('use_custom_title',$id) ? get_field('banner_title',$id) : get_the_title(); ?></h1>
 
 				<?php endif; ?>
 

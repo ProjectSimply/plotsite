@@ -53,6 +53,7 @@ class PlotSite
       add_action( 'template_redirect', [$this,'plotRedirectToHomePageIfSiteHidden'] );
 
       add_action('init', [$this,'plotUnregisterTags']);
+      add_action('init', [$this,'plotChangeSiteUrlInDB']);
 
       add_filter( 'document_title_parts', [$this,'maybeChangeTitle'], 99, 2 );
       add_action( 'wp_head', [$this,'addMeta'],0,0 );
@@ -62,6 +63,47 @@ class PlotSite
 
       add_filter('gettext_with_context', [$this,'removeQuotesFromPlaylists'],10,4);
 
+      add_filter('intermediate_image_sizes',[$this,'removeImageSizes']);
+
+    }
+
+    public function plotChangeSiteUrlInDB() {
+
+      if(AUTO_DOMAINS == true) {
+
+        $allowedDomain = false;
+
+        $siteURL = $this->siteURL();
+
+        if($siteURL == get_field('domains_primary','option')) {
+          $allowedDomain = true;
+        }
+
+        if($siteURL == HOLDING_DOMAIN && !get_field('domains_primary','option')) {
+          $allowedDomain = true;
+        }
+
+        if(strpos($siteURL, '.test') !== false) {
+          $allowedDomain = true;
+        }
+        
+        if(get_bloginfo('url') != $siteURL && $allowedDomain == true) {
+          //Run find and replace
+          new PlotFindAndReplace(get_bloginfo('url'), $siteURL);
+          header('Location: '.$this->siteURL() . '/'.$_SERVER['REQUEST_URI']);
+          exit;
+
+        }
+
+      }
+
+    }
+
+    function siteURL()
+    {
+        $protocol = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off' || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+        $domainName = $_SERVER['HTTP_HOST'];
+        return $protocol.$domainName;
     }
 
 
@@ -161,7 +203,21 @@ class PlotSite
       endforeach;
     }
 
+    public function removeImageSizes($sizes) {
+
+      foreach($sizes as $i => $size) {
+
+        if($size == '1536x1536' || $size == '2048x2048' || $size == 'medium_large') {
+          unset($sizes[$i]);
+        }
+      }
+
+      return $sizes;
+
+    }
+
     public function imageSizes($sizes) {
+
 
       foreach($sizes as $size => $dimensions) :
 
@@ -200,23 +256,28 @@ class PlotSite
     //of annoying labels of the same thing, which I find REAL BORING
     //It's not perfect and makes quite a few args assumptions,
     //but you can change anything here
-    public function customPostTypesCreate($post_type_name = '',$slug= '',$overrideArgs = null) {
+    public function customPostTypesCreate($post_type_name = '',$slug= '',$overrideArgs = []) {
 
       if($post_type_name == '' || $slug == '')
         return false;
 
+      $ptn = $post_type_name;
 
-      $plural = plotPluralise($post_type_name);
+      if($ptn == 'Stage' && get_field('event_type','option') == 'location-based') {
+        $ptn = 'Location';
+        $overrideArgs['rewrite'] = ['slug' => 'location','with_front' => false];
+      }
+      $plural = plotPluralise($ptn);
 
       $labels = array(
         'name'                  => $plural,
-        'singular_name'         => $post_type_name,
+        'singular_name'         => $ptn,
         'add_new'               => 'Add New',
-        'add_new_item'          => 'Add New ' .$post_type_name,
-        'edit_item'             => 'Edit '. $post_type_name,
-        'new_item'              => 'New '. $post_type_name,
+        'add_new_item'          => 'Add New ' .$ptn,
+        'edit_item'             => 'Edit '. $ptn,
+        'new_item'              => 'New '. $ptn,
         'all_items'             => 'All '. $plural,
-        'view_item'             => 'View '. $post_type_name,
+        'view_item'             => 'View '. $ptn,
         'search_items'          => 'Search ' . $plural,
         'not_found'             =>  'No '. $plural . ' found',
         'not_found_in_trash'    => 'No '. $plural . ' found in Trash', 
@@ -250,6 +311,8 @@ class PlotSite
       endif;
 
       register_post_type( $slug, $args );
+
+      plotFlushRedirectRules();
 
     }
 

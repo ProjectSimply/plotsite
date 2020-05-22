@@ -342,6 +342,22 @@ img {
   height: auto;
 }
 
+.siteOverlay {
+  opacity: 0;
+  pointer-events: none;
+  background: black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 100;
+}
+.plotModalInView .siteOverlay {
+  pointer-events: auto;
+  opacity: 0.6;
+}
+
 .plotModalWrap {
   display: none;
   position: fixed;
@@ -353,38 +369,24 @@ img {
   justify-content: center;
   align-items: center;
   z-index: 5000;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 .plotModalInView .plotModalWrap {
-  display: flex;
+  pointer-events: auto;
+  display: block;
+}
+
+.plotModalLoadingAjax {
+  pointer-events: none;
 }
 
 .plotModal {
-  position: relative;
-  pointer-events: all;
-}
-
-.plotModalScrollViewport {
-  max-height: calc(var(--vh) * 100 - 2rem);
-  overflow: auto;
-}
-
-.plotModalControls {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.siteOverlay {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4999;
-}
-.plotModalInView .siteOverlay {
-  display: block;
+  max-width: 30rem;
+  width: calc(100% - 2rem);
+  background: white;
+  padding: 1rem;
+  margin: 2rem auto;
 }
 
 .plotModalContents {
@@ -449,6 +451,222 @@ img {
   opacity: 0.2;
 }
 
+.SVGelement {
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+.SVGelement__1 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement__1 {
+  animation-name: entryAnimation--1, loadedAnimation--1;
+  animation-duration: 0.2s, 10s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
+  animation-iteration-count: 1, infinite;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(1) {
+  animation-delay: 0.3s, 0.2s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(2) {
+  animation-delay: 0.6s, 0.8s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(3) {
+  animation-delay: 0.9s, 1.8s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(4) {
+  animation-delay: 1.2s, 3.2s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(5) {
+  animation-delay: 1.5s, 5s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(6) {
+  animation-delay: 1.8s, 7.2s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(7) {
+  animation-delay: 2.1s, 9.8s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(8) {
+  animation-delay: 2.4s, 12.8s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(9) {
+  animation-delay: 2.7s, 16.2s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(10) {
+  animation-delay: 3s, 20s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(11) {
+  animation-delay: 3.3s, 24.2s;
+}
+.plotSmoothScrollInView .SVGelement__1:nth-child(12) {
+  animation-delay: 3.6s, 28.8s;
+}
+
+.SVGelement__2--top {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement__2--top {
+  animation-name: entryAnimation--1, loadedAnimation--top;
+  animation-duration: 0.3s, 10s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 0s, 0.5s;
+}
+
+.SVGelement__2--middle {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement__2--middle {
+  animation-name: entryAnimation--1;
+  animation-duration: 0.2s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+  animation-delay: 0.2s;
+}
+
+.SVGelement__2--bottom {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement__2--bottom {
+  animation-name: entryAnimation--1, loadedAnimation--bottom;
+  animation-duration: 0.2s, 10s;
+  animation-timing-function: ease-in-out, ease-in-out;
+  animation-fill-mode: forwards, forwards;
+  animation-iteration-count: 1, infinite;
+  animation-delay: 0.4s, 0.5s;
+}
+
+.SVGelement__3 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement__3 {
+  animation-name: loadedAnimation--3;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(1) {
+  animation-delay: 1.3s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(2) {
+  animation-delay: 1.6s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(3) {
+  animation-delay: 1.9s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(4) {
+  animation-delay: 2.2s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(5) {
+  animation-delay: 2.5s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(6) {
+  animation-delay: 2.8s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(7) {
+  animation-delay: 3.1s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(8) {
+  animation-delay: 3.4s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(9) {
+  animation-delay: 3.7s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(10) {
+  animation-delay: 4s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(11) {
+  animation-delay: 4.3s;
+}
+.plotSmoothScrollInView .SVGelement__3:nth-last-child(12) {
+  animation-delay: 4.6s;
+}
+
+.SVGelement__4 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement__4 {
+  animation-name: entryAnimation--1;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+}
+
+@keyframes entryAnimation--1 {
+  0% {
+    transform: scale3d(0.2, 0.2, 0.2) rotate3d(0, 0, 1, 90deg);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes entryAnimation--2 {
+  0% {
+    transform: scale3d(0.2, 0.2, 0.2);
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes loadedAnimation--1 {
+  0% {
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 0deg);
+  }
+  50% {
+    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 180deg);
+  }
+  100% {
+    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 360deg);
+  }
+}
+@keyframes loadedAnimation--top {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-33%, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes loadedAnimation--bottom {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(33%, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes loadedAnimation--3 {
+  0% {
+    transform: scale3d(0.2, 0.2, 0.2);
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+  75% {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+  100% {
+    transform: scale3d(0.2, 0.2, 0.2);
+    opacity: 0;
+  }
+}
 .banner {
   height: 50vw;
   position: relative;
@@ -866,7 +1084,7 @@ a {
   flex-wrap: wrap;
   margin-left: calc(0 / -2);
   margin-right: calc(0 / -2);
-  justify-content: center;
+  justify-content: flex-start;
 }
 .cards__grid > * {
   width: calc(100% / 2 - 0);
@@ -880,7 +1098,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .cards__grid > * {
     width: calc(100% / 2 - var(--hs));
@@ -895,7 +1113,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .cards__grid > * {
     width: calc(100% / 3 - var(--hs));
@@ -1270,7 +1488,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .blockLinks__grid > * {
     width: calc(100% / 3 - var(--hs));
@@ -1446,7 +1664,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .featuredArtists__grid > * {
     width: calc(100% / 3 - var(--hs));
@@ -1462,7 +1680,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .featuredArtists__grid--with2 > * {
     width: calc(100% / 2 - var(--hs));
@@ -1695,7 +1913,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .latestArticles__grid > * {
     width: calc(100% / 3 - var(--hs));
@@ -1710,7 +1928,7 @@ a {
   flex-wrap: wrap;
   margin-left: calc(var(--hs) / -2);
   margin-right: calc(var(--hs) / -2);
-  justify-content: center;
+  justify-content: flex-start;
 }
 .imageTiles__layout > * {
   width: calc(100% / 2 - var(--hs));
@@ -1725,7 +1943,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .artists__grid > * {
     width: calc(100% / 3 - var(--hs));
@@ -1786,7 +2004,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .faqsMain > * {
     width: calc(100% / 2 - var(--hs));
@@ -1819,7 +2037,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .news__featuredArticles > * {
     width: calc(100% / 2 - var(--hs));
@@ -1835,7 +2053,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .news__featuredArticles--1items > * {
     width: calc(100% / 1 - var(--hs));
@@ -1851,7 +2069,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .news__featuredArticles--3items > * {
     width: calc(100% / 3 - var(--hs));
@@ -1867,7 +2085,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .news__grid > * {
     width: calc(100% / 2 - var(--hs));
@@ -1881,7 +2099,7 @@ a {
   flex-wrap: wrap;
   margin-left: calc(var(--hs) / -2);
   margin-right: calc(var(--hs) / -2);
-  justify-content: center;
+  justify-content: flex-start;
 }
 .news__grid.news__grid--3perRow > * {
   width: calc(100% / 3 - var(--hs));
@@ -1894,7 +2112,7 @@ a {
   flex-wrap: wrap;
   margin-left: calc(var(--hs) / -2);
   margin-right: calc(var(--hs) / -2);
-  justify-content: center;
+  justify-content: flex-start;
 }
 .news__grid.news__grid--4perRow > * {
   width: calc(100% / 4 - var(--hs));
@@ -2153,7 +2371,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .stages__grid > * {
     width: calc(100% / 2 - var(--hs));
@@ -2316,7 +2534,7 @@ a {
   flex-wrap: wrap;
   margin-left: calc(var(--hs) / -2);
   margin-right: calc(var(--hs) / -2);
-  justify-content: center;
+  justify-content: flex-start;
 }
 .blockSection__grid > * {
   width: calc(100% / 1 - var(--hs));
@@ -2330,7 +2548,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .blockSection__grid > * {
     width: calc(100% / 2 - var(--hs));
@@ -2345,7 +2563,7 @@ a {
     flex-wrap: wrap;
     margin-left: calc(var(--hs) / -2);
     margin-right: calc(var(--hs) / -2);
-    justify-content: center;
+    justify-content: flex-start;
   }
   .blockSection__grid > * {
     width: calc(100% / 3 - var(--hs));

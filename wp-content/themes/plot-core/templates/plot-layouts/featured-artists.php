@@ -10,11 +10,15 @@
 
             <?php endif ?>
 
-            <?= get_sub_field('introduction') ?>
+            <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
+
+                <?= get_sub_field('introduction') ?>
+
+            <?php endif; ?>
 
         </div>
 
-        <div class="featuredArtists__grid featuredArtists__grid--with<?= sizeof(get_sub_field('artists')) ?>">
+        <div class="featuredArtists__grid blockLinksGrid blockLinksGrid--<?= sizeof(get_sub_field('artists')) ?>">
 
         	<?php $args = [
         					'post__in' 		=> [],

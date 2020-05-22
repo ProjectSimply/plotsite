@@ -1,7 +1,6 @@
 (function () {
 
     var Flickity        = require('flickity'),
-    LazyLoad            = require('./lazyload'),
     Carousels
 
     Carousels = {
@@ -18,17 +17,27 @@
 
             carousels.forEach(carousel => {
 
-                var slides = carousel.querySelectorAll('.JS--carousel__slideWrap')
-
-                if(slides.length > 1) {
-
-                    var flkty = new Flickity(carousel, {
+                var settings = {
                         cellAlign   : 'center',            
                         wrapAround  : true,
                         autoPlay    : false,
                         imagesLoaded: true,
                         pageDots    : false
-                    })
+                    }
+
+                var slides = carousel.querySelectorAll('.JS--carousel__slideWrap')
+
+                if(carousel.dataset.plotCarouselType == 'image') {
+                    settings = {
+                        lazyLoad : 2,
+                        wrapAround  : true,
+                        pageDots : false
+                    }
+                }
+
+                if(slides.length > 1) {
+
+                    var flkty = new Flickity(carousel, settings)
 
                 }
 

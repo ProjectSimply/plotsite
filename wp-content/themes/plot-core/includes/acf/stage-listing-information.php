@@ -1,0 +1,71 @@
+<?php 
+
+
+acf_add_local_field_group([
+	'key' => 'group_5e95b12eea5dc',
+	'title' => 'Listings Info',
+	'fields' => [
+		[
+			'key' => 'field_5e95b13b154f5',
+			'label' => 'Description',
+			'name' => 'description',
+			'type' => 'wysiwyg',
+			'instructions' => 'A short description that can show up on your main stage page.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => [
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			],
+			'hide_admin' => 0,
+			'default_value' => '',
+			'tabs' => 'all',
+			'toolbar' => 'full',
+			'media_upload' => 0,
+			'delay' => 0,
+		],
+		[
+			'key' => 'field_5e95b15d154f6',
+			'label' => 'Listing Image',
+			'name' => 'listing_image',
+			'type' => 'image',
+			'instructions' => 'A featured image that can show on the main stage page. Please make sure it\'s at least 1000px wide.',
+			'required' => 0,
+			'conditional_logic' => 0,
+			'wrapper' => [
+				'width' => '',
+				'class' => '',
+				'id' => '',
+			],
+			'hide_admin' => 0,
+			'return_format' => 'array',
+			'preview_size' => 'thumbnail',
+			'library' => 'all',
+			'min_width' => '',
+			'min_height' => '',
+			'min_size' => '',
+			'max_width' => '',
+			'max_height' => '',
+			'max_size' => '',
+			'mime_types' => '',
+		],
+	],
+	'location' => [
+		[
+			[
+				'param' => 'post_type',
+				'operator' => '==',
+				'value' => 'stage',
+			],
+		],
+	],
+	'menu_order' => 15,
+	'position' => 'normal',
+	'style' => 'default',
+	'label_placement' => 'top',
+	'instruction_placement' => 'label',
+	'hide_on_screen' => '',
+	'active' => true,
+	'description' => '',
+]);

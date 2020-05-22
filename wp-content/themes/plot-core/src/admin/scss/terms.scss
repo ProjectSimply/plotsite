@@ -1,0 +1,51 @@
+#addtag {
+	input[type="text"],textarea {
+		background: rgba(0,0,0,0.2);
+		outline: 0;
+	}
+
+	label {
+		color: white;
+	}
+
+	.term-description-wrap, .term-parent-wrap {
+		display: none;
+	}
+}
+
+.wp-tab-active, ul.add-menu-item-tabs li.tabs, ul.category-tabs li.tabs {
+	background: var(--plotBlack);
+	color: white;
+	border: 2px solid white;
+	border-bottom: 0;
+}
+
+#post-body ul.add-menu-item-tabs li.tabs a, #post-body ul.category-tabs li.tabs a, #side-sortables .add-menu-item-tabs .tabs a, #side-sortables .category-tabs .tabs a, .wp-tab-bar .wp-tab-active a {
+	color: white;
+}
+
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
+	background: var(--plotBlack);
+	border: 2px solid white;
+	margin-top:0.3rem;
+}
+
+.categorydiv div.tabs-panel, .customlinkdiv div.tabs-panel, .posttypediv div.tabs-panel, .taxonomydiv div.tabs-panel, .wp-tab-panel {
+	padding: 0 0.5rem;
+}
+
+ul.categorychecklist li {
+	line-height: 1.4;
+}
+
+.categorydiv {
+	margin-top: 1rem;
+}
+
+#side-sortables .category-add input[type=text], #side-sortables .category-add select {
+	border: 2px solid white;
+}
+
+#newcategory_parent, .form-field.term-parent-wrap, .form-field.term-description-wrap {
+	display: none;
+}

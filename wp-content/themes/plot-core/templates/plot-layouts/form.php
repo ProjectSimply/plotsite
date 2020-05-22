@@ -10,15 +10,19 @@
 
             <?php endif ?>
 
-            <?php if(get_sub_field('introduction')) : ?>
+            <?php if(get_sub_field('introduction') && get_sub_field('include_an_introduction')) : ?>
 
-                <div class="plotLayoutForm__introduction">
-                    <?= get_sub_field('introduction') ?>
-                </div>
+                <?= get_sub_field('introduction') ?>
 
             <?php endif ?>
 
             <?= do_shortcode('[wpforms id="' . get_sub_field('form') . '"]'); ?>
+
+            <?php if(get_sub_field('add_small_print') && get_sub_field('small_print')) : ?>
+
+                <?= get_sub_field('small_print') ?>
+
+            <?php endif ?>
 
         </div>
 

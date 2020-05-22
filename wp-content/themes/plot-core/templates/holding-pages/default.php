@@ -1,4 +1,4 @@
-<div class="holdingPage">
+<div data-plot-smooth-scroll-frame class="holdingPage">
 
 	<div class="holdingPage__backgroundWrap">
 
@@ -53,7 +53,7 @@
 
 				<div class="holdingPage__socialLinks">
 
-					<?php plotGetTemplatePart('parts/social-links') ?>
+					<?php plotGetTemplatePart('parts/social-links',['socialLinks' => get_field('social_links','option')]) ?>
 
 				</div>
 

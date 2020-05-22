@@ -1,6 +1,4 @@
-<div class="JS--closePlotModal closePlotModal siteOverlay"></div>
-
-<div class="JS--plotModalWrap plotModalWrap">
+<div class="JS--plotModalWrap plotModalWrap JS--closePlotModal">
 
 	<div class="JS--plotModal plotModal">
 
@@ -8,11 +6,7 @@
             CLOSE
         </button>
 
-		<div class="JS--plotModalScrollViewport plotModalScrollViewport">
-
-			<div class="JS--plotModalReplaceContents plotModalReplaceContents"></div>
-
-		</div>
+		<div class="JS--plotModalReplaceContents plotModalReplaceContents"></div>
 
 		<div class="JS--plotModalControls plotModalControls hidden">
 

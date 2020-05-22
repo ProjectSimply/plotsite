@@ -1,14 +1,8 @@
-<?php plotGetTemplatePart('parts/header') ?>
-
 <?php plotGetTemplatePart('parts/banner') ?>
 
-<div class="artistsMain">
+<?php plotGetTemplatePart('parts/subnavigation'); ?>
 
-	<?php if(checkPostIsInMenu('Lineup Pages')) : ?>
-
-		<?php plotGetTemplatePart('parts/lineup-submenu'); ?>
-
-	<?php endif; ?>
+<div data-plot-smooth-scroll-frame class="artistsMain plotPage">
 
 	<div class="maxWidth">
 
@@ -54,5 +48,3 @@
 	</div>
 
 </div>
-
-<?php plotGetTemplatePart('parts/footer') ?>

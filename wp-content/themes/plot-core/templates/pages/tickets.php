@@ -1,12 +1,10 @@
-<?php plotGetTemplatePart('parts/header') ?>
-
 <?php plotGetTemplatePart('parts/banner') ?>
 
-<div class="tickets">
+<div data-plot-smooth-scroll-frame class="tickets plotPage">
 
 	<div class="maxWidth">
 
-		<?php if(get_field('tickets_announcement')) : ?>
+		<?php if(get_field('tickets_announcement') && get_field('add_a_tickets_announcement')) : ?>
 
 			<div class="ticketsAnnouncement">
 
@@ -34,14 +32,14 @@
 
 									<?php if(get_field('display_options') == 'grid') : ?>
 
-										<div class="ticketOption__backgroundWrap" style="opacity: <?= get_sub_field('image_brightness') / 100 ?>">
-
-					                        <?php plotLazyload([
-					                            'image'                 => get_sub_field('image'), 
-					                            'imageSize'             => 'blockLink',
-					                            'class'                 => 'blockLink--image'
-					                        ]); ?>
-
+					                    <div class="blockLinkImageFrame">
+  
+					                            <?php plotLazyload([
+					                                'image'                 => get_sub_field('image'), 
+					                                'imageSize'             => 'blockLink',
+					                                'class'                 => 'blockLink__image',
+					                                'opacity'               => get_sub_field('brightness') / 100
+					                            ]); ?>
 					                    </div>
 
 					                <?php endif; ?>
@@ -77,5 +75,3 @@
 </div>
 
 <?php plotGetTemplatePart('plot-layouts/main-loop'); ?> 
-
-<?php plotGetTemplatePart('parts/footer') ?>

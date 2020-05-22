@@ -7,7 +7,7 @@
 }
 
 //Align orphans can be center|right|left
-@mixin plotFlex($columns : 3, $horizontalSpacing : var(--hs), $verticalSpacing : var(--vs), $alignOrphans : 'center') {
+@mixin plotFlex($columns : 3, $horizontalSpacing : var(--hs), $verticalSpacing : var(--vs), $alignOrphans : 'left') {
 
 	display: flex;
 	flex-wrap: wrap;

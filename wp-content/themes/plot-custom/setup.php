@@ -4,12 +4,18 @@
 define('SITE_VERSION', 1); 
 
 define('ARTISTS_PER_PAGE', 12); 
+define('PERFORMANCES_PER_PAGE', 24); 
 
 define('NEWS_PER_PAGE', 12); 
 
 define('DATE_FORMAT','D jS M');
 
-define('SITEBUILDER',false);
+define('SITEBUILDER',true);
+
+define('AUTO_DOMAINS',true);
+
+define("CLOUDWAYS_APP_ID", '');
+define("HOLDING_DOMAIN", '');
 
 function plotInit() {
 
