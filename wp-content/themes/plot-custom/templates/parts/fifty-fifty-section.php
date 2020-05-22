@@ -4,7 +4,7 @@
     
         <?php while ( has_sub_field('fifty_fifty_section')) : ?>
 
-            <div class="fiftyFifty__row">
+            <div class="fiftyFifty__row" data-plot-smooth-scroll-element>
 
                 <div class="fiftyFifty__svgWrap">
 

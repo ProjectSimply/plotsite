@@ -104,6 +104,177 @@
     }
 }
 
+.SVGelement.SVGelement__5 {
+    transform-origin: top;
+    transform: scale3d(1, 0, 1);
+
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--3;
+        animation-duration: 1s; 
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+    
+        $i: 1;
+        $speed: .1s;
+        $delay: 0s;
+        @while $i <= 12 {
+        
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
+.SVGelement.SVGelement__6 {
+    transform-origin: top;
+    transform: scale3d(1, 0, 1);
+
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--3;
+        animation-duration: 1s; 
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+        animation-delay: .4s;
+    }
+}
+
+.SVGelement.SVGelement__7 {
+    transform-origin: top;
+    transform: scale3d(1, 0, 1);
+
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--3;
+        animation-duration: 1s; 
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+        animation-delay: .4s;
+    }
+}
+
+
+.SVGelement.SVGelement__8 {
+    opacity: 0;
+
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--4;
+        animation-duration: .3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+    
+        $i: 1;
+        $speed: .3s;
+        $delay: 1s;
+        @while $i <= 12 {
+        
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
+.SVGelement__9 {
+
+    .plotSmoothScrollInView & {
+        animation-name: loadedAnimation--4;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+        animation-iteration-count: infinite;
+    
+        $i: 1;
+        $speed: .3s;
+        $delay: 3.2s;
+        @while $i <= 12 {
+        
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
+.SVGelement__10 {
+    opacity: 0;
+    .plotSmoothScrollInView & {
+        animation-name: entryAnimation--4;
+        animation-duration: 1s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+    
+        $i: 1;
+        $speed: .3s;
+        $delay: 0s;
+        @while $i <= 12 {
+        
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
+.SVGelement__11 {
+
+    .plotSmoothScrollInView & {
+        animation-name: loadedAnimation--5;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+        animation-iteration-count: infinite;
+    }
+}
+
+
+.SVGelement__12 {
+
+    .plotSmoothScrollInView & {
+        animation-name: loadedAnimation--6;
+        animation-duration: 3s;
+        animation-timing-function: ease-in-out;
+        animation-fill-mode: forwards; 
+        animation-iteration-count: infinite;
+    }
+}
+
+
+@keyframes loadedAnimation--6 {
+    0% {
+        fill: #EAB8D1;
+    }
+
+    25% {
+        fill: #EAB8D1;
+    }
+    30% {
+        fill: #A88FD9;
+    }
+    50% {
+        fill: #A88FD9;
+    }
+
+    75% {
+        fill: #A88FD9;
+    }
+    80% {
+        fill: #EAB8D1;
+    }
+    100% {
+    }
+}
 
 @keyframes entryAnimation--1 {
     0% { 
@@ -122,12 +293,30 @@
         transform: scale3d(.2, .2, .2);
         opacity: 0;
     }
-
-
-
     100% { 
         opacity: 1; 
         transform: scale3d(1, 1, 1);
+    }
+}
+
+@keyframes entryAnimation--3 {
+    0% { 
+        transform: scale3d(1, 0, 1);
+        
+    }
+    100% { 
+        transform: scale3d(1, 1, 1);
+    }
+}
+@keyframes entryAnimation--4 {
+    0% { 
+        transform: translate3d(0, 20px, 0);
+        opacity: 0;
+    }
+
+    100% { 
+        opacity: 1; 
+        transform: translate3d(0, 0, 0);
     }
 }
 
@@ -192,5 +381,52 @@
     100% { 
         transform: scale3d(.2, .2, .2);
         opacity: 0;
+    }
+}
+
+@keyframes loadedAnimation--4 {
+    0% {
+        opacity: 1;
+    }
+
+    25% {
+        opacity: 0;
+    }
+
+    75% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes loadedAnimation--5 {
+    0% {
+        transform: translate3d(0,0,0);
+        fill: #D95496;
+    }
+
+    25% {
+        transform: translate3d(-90%,0,0);
+        fill: #D95496;
+    }
+    30% {
+        fill: #7AE5E5;
+    }
+    50% {
+        transform: translate3d(-90%,0,0);
+        fill: #7AE5E5;
+    }
+
+    75% {
+        transform: translate3d(0,0,0);
+        fill: #7AE5E5;
+    }
+    80% {
+        fill: #D95496;
+    }
+    100% {
+        transform: translate3d(0,0,0);
     }
 }
