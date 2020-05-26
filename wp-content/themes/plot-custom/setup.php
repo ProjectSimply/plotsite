@@ -12,7 +12,7 @@ define('DATE_FORMAT','D jS M');
 
 define('SITEBUILDER',true);
 
-define('AUTO_DOMAINS',true);
+define('AUTO_DOMAINS',false);
 
 define("CLOUDWAYS_APP_ID", '');
 define("HOLDING_DOMAIN", '');

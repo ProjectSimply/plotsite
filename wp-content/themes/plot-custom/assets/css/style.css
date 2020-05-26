@@ -461,7 +461,7 @@ img {
 }
 .plotSmoothScrollInView .SVGelement__1 {
   animation-name: entryAnimation--1, loadedAnimation--1;
-  animation-duration: 0.2s, 10s;
+  animation-duration: 0.2s, 5s;
   animation-timing-function: ease-in-out, ease-in-out;
   animation-fill-mode: forwards, forwards;
   animation-iteration-count: 1, infinite;
@@ -543,8 +543,8 @@ img {
   opacity: 0;
 }
 .plotSmoothScrollInView .SVGelement__3 {
-  animation-name: loadedAnimation--3;
-  animation-duration: 3s;
+  animation-name: loadedAnimation--4;
+  animation-duration: 5s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -652,7 +652,42 @@ img {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-delay: 0.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(1) {
+  animation-delay: 1.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(2) {
+  animation-delay: 1.6s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(3) {
+  animation-delay: 1.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(4) {
+  animation-delay: 2.2s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(5) {
+  animation-delay: 2.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(6) {
+  animation-delay: 2.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(7) {
+  animation-delay: 3.1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(8) {
+  animation-delay: 3.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(9) {
+  animation-delay: 3.7s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(10) {
+  animation-delay: 4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(11) {
+  animation-delay: 4.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__6:nth-child(12) {
+  animation-delay: 4.6s;
 }
 
 .SVGelement.SVGelement__7 {
@@ -819,26 +854,437 @@ img {
   animation-iteration-count: infinite;
 }
 
-@keyframes loadedAnimation--6 {
-  0% {
-    fill: #EAB8D1;
-  }
-  25% {
-    fill: #EAB8D1;
-  }
-  30% {
-    fill: #A88FD9;
-  }
-  50% {
-    fill: #A88FD9;
-  }
-  75% {
-    fill: #A88FD9;
-  }
-  80% {
-    fill: #EAB8D1;
-  }
+.SVGelement.SVGelement__13,
+.SVGelement.SVGelement__17 {
+  opacity: 0;
 }
+.plotSmoothScrollInView .SVGelement.SVGelement__13,
+.plotSmoothScrollInView .SVGelement.SVGelement__17 {
+  animation-name: entryAnimation--2, loadedAnimation--4;
+  animation-duration: 1s, 5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(1),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(1) {
+  animation-delay: 0.3s, 2.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(2),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(2) {
+  animation-delay: 0.6s, 3.1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(3),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(3) {
+  animation-delay: 0.9s, 3.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(4),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(4) {
+  animation-delay: 1.2s, 3.7s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(5),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(5) {
+  animation-delay: 1.5s, 4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(6),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(6) {
+  animation-delay: 1.8s, 4.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(7),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(7) {
+  animation-delay: 2.1s, 4.6s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(8),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(8) {
+  animation-delay: 2.4s, 4.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(9),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(9) {
+  animation-delay: 2.7s, 5.2s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(10),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(10) {
+  animation-delay: 3s, 5.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(11),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(11) {
+  animation-delay: 3.3s, 5.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__13:nth-child(12),
+.plotSmoothScrollInView .SVGelement.SVGelement__17:nth-child(12) {
+  animation-delay: 3.6s, 6.1s;
+}
+
+.SVGelement.SVGelement__14 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14 {
+  animation-name: entryAnimation--2, loadedAnimation--7;
+  animation-duration: 1s, 8s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(1) {
+  animation-delay: 0.3s, 4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(2) {
+  animation-delay: 0.6s, 8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(3) {
+  animation-delay: 0.9s, 12s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(4) {
+  animation-delay: 1.2s, 16s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(5) {
+  animation-delay: 1.5s, 20s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(6) {
+  animation-delay: 1.8s, 24s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(7) {
+  animation-delay: 2.1s, 28s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(8) {
+  animation-delay: 2.4s, 32s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(9) {
+  animation-delay: 2.7s, 36s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(10) {
+  animation-delay: 3s, 40s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(11) {
+  animation-delay: 3.3s, 44s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__14:nth-last-child(12) {
+  animation-delay: 3.6s, 48s;
+}
+
+.SVGelement.SVGelement__15 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15 {
+  animation-name: entryAnimation--2;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(1) {
+  animation-delay: 0.3s, 4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(2) {
+  animation-delay: 0.6s, 8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(3) {
+  animation-delay: 0.9s, 12s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(4) {
+  animation-delay: 1.2s, 16s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(5) {
+  animation-delay: 1.5s, 20s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(6) {
+  animation-delay: 1.8s, 24s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(7) {
+  animation-delay: 2.1s, 28s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(8) {
+  animation-delay: 2.4s, 32s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(9) {
+  animation-delay: 2.7s, 36s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(10) {
+  animation-delay: 3s, 40s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(11) {
+  animation-delay: 3.3s, 44s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__15:nth-last-child(12) {
+  animation-delay: 3.6s, 48s;
+}
+
+.SVGelement.SVGelement__16,
+.SVGelement.SVGelement__27 {
+  opacity: 1;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__16,
+.plotSmoothScrollInView .SVGelement.SVGelement__27 {
+  animation-name: loadedAnimation--8;
+  animation-duration: 7s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-delay: 2s;
+}
+
+.SVGelement.SVGelement__18,
+.SVGelement.SVGelement__20,
+.SVGelement.SVGelement__22,
+.SVGelement.SVGelement__26 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18,
+.plotSmoothScrollInView .SVGelement.SVGelement__20,
+.plotSmoothScrollInView .SVGelement.SVGelement__22,
+.plotSmoothScrollInView .SVGelement.SVGelement__26 {
+  animation-name: entryAnimation--2;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(1),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(1),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(1),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(1) {
+  animation-delay: 0.3s, 4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(2),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(2),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(2),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(2) {
+  animation-delay: 0.6s, 8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(3),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(3),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(3),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(3) {
+  animation-delay: 0.9s, 12s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(4),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(4),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(4),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(4) {
+  animation-delay: 1.2s, 16s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(5),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(5),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(5),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(5) {
+  animation-delay: 1.5s, 20s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(6),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(6),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(6),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(6) {
+  animation-delay: 1.8s, 24s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(7),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(7),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(7),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(7) {
+  animation-delay: 2.1s, 28s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(8),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(8),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(8),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(8) {
+  animation-delay: 2.4s, 32s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(9),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(9),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(9),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(9) {
+  animation-delay: 2.7s, 36s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(10),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(10),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(10),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(10) {
+  animation-delay: 3s, 40s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(11),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(11),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(11),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(11) {
+  animation-delay: 3.3s, 44s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__18:nth-last-child(12),
+.plotSmoothScrollInView .SVGelement.SVGelement__20:nth-last-child(12),
+.plotSmoothScrollInView .SVGelement.SVGelement__22:nth-last-child(12),
+.plotSmoothScrollInView .SVGelement.SVGelement__26:nth-last-child(12) {
+  animation-delay: 3.6s, 48s;
+}
+
+.plotSmoothScrollInView .SVGelement.SVGelement__19,
+.plotSmoothScrollInView .SVGelement.SVGelement__21 {
+  animation-name: loadedAnimation--2;
+  animation-duration: 20s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(1),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(1) {
+  animation-delay: 2.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(2),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(2) {
+  animation-delay: 2.6s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(3),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(3) {
+  animation-delay: 2.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(4),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(4) {
+  animation-delay: 3.2s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(5),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(5) {
+  animation-delay: 3.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(6),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(6) {
+  animation-delay: 3.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(7),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(7) {
+  animation-delay: 4.1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(8),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(8) {
+  animation-delay: 4.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(9),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(9) {
+  animation-delay: 4.7s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(10),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(10) {
+  animation-delay: 5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(11),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(11) {
+  animation-delay: 5.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__19:nth-last-child(12),
+.plotSmoothScrollInView .SVGelement.SVGelement__21:nth-last-child(12) {
+  animation-delay: 5.6s;
+}
+
+.plotSmoothScrollInView .SVGelement.SVGelement__23,
+.plotSmoothScrollInView .SVGelement.SVGelement__25 {
+  animation-name: loadedAnimation--9;
+  animation-duration: 3s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(1),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(1) {
+  animation-delay: 3.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(2),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(2) {
+  animation-delay: 3.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(3),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(3) {
+  animation-delay: 4.1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(4),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(4) {
+  animation-delay: 4.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(5),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(5) {
+  animation-delay: 4.7s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(6),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(6) {
+  animation-delay: 5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(7),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(7) {
+  animation-delay: 5.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(8),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(8) {
+  animation-delay: 5.6s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(9),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(9) {
+  animation-delay: 5.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(10),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(10) {
+  animation-delay: 6.2s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(11),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(11) {
+  animation-delay: 6.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(12),
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(12) {
+  animation-delay: 6.8s;
+}
+
+.SVGelement.SVGelement__24 {
+  transform-origin: bottom;
+  transform: scale3d(1, 0, 1);
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__24 {
+  animation-name: entryAnimation--3;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-delay: 0.2s;
+}
+
+.SVGelement.SVGelement__28 {
+  opacity: 0;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28 {
+  animation-name: entryAnimation--2, loadedAnimation--1;
+  animation-duration: 1s, 4s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(1) {
+  animation-delay: 0.3s, 2.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(2) {
+  animation-delay: 0.6s, 3.1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(3) {
+  animation-delay: 0.9s, 3.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(4) {
+  animation-delay: 1.2s, 3.7s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(5) {
+  animation-delay: 1.5s, 4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(6) {
+  animation-delay: 1.8s, 4.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(7) {
+  animation-delay: 2.1s, 4.6s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(8) {
+  animation-delay: 2.4s, 4.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(9) {
+  animation-delay: 2.7s, 5.2s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(10) {
+  animation-delay: 3s, 5.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(11) {
+  animation-delay: 3.3s, 5.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(12) {
+  animation-delay: 3.6s, 6.1s;
+}
+
 @keyframes entryAnimation--1 {
   0% {
     transform: scale3d(0.2, 0.2, 0.2) rotate3d(0, 0, 1, 90deg);
@@ -879,35 +1325,24 @@ img {
 }
 @keyframes loadedAnimation--1 {
   0% {
-    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 0deg);
-  }
-  50% {
-    transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, 180deg);
-  }
-  100% {
-    transform: scale3d(1, 1, 1) rotate3d(0, 0, 1, 360deg);
-  }
-}
-@keyframes loadedAnimation--top {
-  0% {
     transform: translate3d(0, 0, 0);
   }
   50% {
-    transform: translate3d(-33%, 50%, 0);
+    transform: translate3d(0, 2px, 0);
+  }
+  75% {
+    transform: translate3d(0, -2px, 0);
   }
   100% {
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes loadedAnimation--bottom {
+@keyframes loadedAnimation--2 {
   0% {
-    transform: translate3d(0, 0, 0);
-  }
-  50% {
-    transform: translate3d(33%, -50%, 0);
+    transform: rotate3d(0, 0, 1, 0deg);
   }
   100% {
-    transform: translate3d(0, 0, 0);
+    transform: rotate3d(0, 0, 1, 360deg);
   }
 }
 @keyframes loadedAnimation--3 {
@@ -931,15 +1366,78 @@ img {
 @keyframes loadedAnimation--4 {
   0% {
     opacity: 1;
+    transform: translate3d(0, 0, 0);
   }
   25% {
-    opacity: 0;
+    transform: translate3d(0, 5px, 0);
+  }
+  75% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes loadedAnimation--7 {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+  50% {
+    transform: scale3d(0.95, 0.95, 1);
+  }
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+@keyframes loadedAnimation--8 {
+  0% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    transform: rotate3d(0, 0, 1, 20deg);
+  }
+  75% {
+    transform: rotate3d(0, 0, 1, -20deg);
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes loadedAnimation--9 {
+  0% {
+    opacity: 1;
+  }
+  25% {
+    opacity: 0.75;
   }
   75% {
     opacity: 1;
   }
   100% {
     opacity: 1;
+  }
+}
+@keyframes loadedAnimation--top {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-33%, 50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes loadedAnimation--bottom {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(33%, -50%, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes loadedAnimation--5 {
@@ -967,6 +1465,26 @@ img {
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes loadedAnimation--6 {
+  0% {
+    fill: #EAB8D1;
+  }
+  25% {
+    fill: #EAB8D1;
+  }
+  30% {
+    fill: #A88FD9;
+  }
+  50% {
+    fill: #A88FD9;
+  }
+  75% {
+    fill: #A88FD9;
+  }
+  80% {
+    fill: #EAB8D1;
   }
 }
 .banner {
