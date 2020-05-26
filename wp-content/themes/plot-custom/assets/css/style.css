@@ -3820,6 +3820,16 @@ ul.pricingSection__fullList {
   min-height: 100vh;
   min-height: calc(var(--vh) * 100);
 }
+@media screen and (min-width: 640px) {
+  .homeBanner {
+    padding-top: 0;
+    height: 100vh;
+    height: calc(var(--vh) * 100);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
 
 @media screen and (min-width: 640px) {
   .homeBanner__grid {
