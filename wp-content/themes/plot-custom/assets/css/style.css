@@ -1585,11 +1585,33 @@ img {
   right: 0%;
   transform: translate3d(100%, 100%, 0) rotate(20deg) skew(30deg, 30deg);
 }
+.burgerMenu__part:nth-child(1) span.burgerMenu__asset svg {
+  animation-delay: 1.3s;
+}
+.burgerMenu__part:nth-child(2) span.burgerMenu__asset svg {
+  animation-delay: 1.6s;
+}
+.burgerMenu__part:nth-child(3) span.burgerMenu__asset svg {
+  animation-delay: 1.9s;
+}
+.burgerMenu__part:nth-child(4) span.burgerMenu__asset svg {
+  animation-delay: 2.2s;
+}
+.burgerMenu__part:nth-child(5) span.burgerMenu__asset svg {
+  animation-delay: 2.5s;
+}
 .burgerMenu__part span.burgerMenu__asset {
   display: block;
   height: 100%;
   width: 100%;
   position: relative;
+}
+.burgerMenu__part span.burgerMenu__asset svg {
+  animation-duration: 1.5s, 10s;
+  animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1), linear;
+  animation-delay: 0.2s, 1.7s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1, infinite;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--p svg {
   display: block;
@@ -1600,7 +1622,7 @@ img {
   bottom: 0%;
   right: -60px;
   transform: translate3d(-100%, -100%, 0);
-  animation: topLeft 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+  animation-name: topLeft, bob;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--l svg {
   display: block;
@@ -1611,7 +1633,7 @@ img {
   bottom: 0%;
   left: -12px;
   transform: translate3d(100%, -100%, 0);
-  animation: topRight 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+  animation-name: topRight, bob;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--o svg {
   display: block;
@@ -1622,7 +1644,7 @@ img {
   top: 0%;
   right: 0px;
   transform: translate3d(-100%, 100%, 0);
-  animation: bottomLeft 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+  animation-name: bottomLeft, bob;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--t svg {
   display: block;
@@ -1633,7 +1655,7 @@ img {
   top: 0;
   left: 0;
   transform: translate3d(100%, 100%, 0);
-  animation: bottomRight 1.5s cubic-bezier(0.19, 1, 0.22, 1) 0.2s forwards;
+  animation-name: bottomRight, bob;
 }
 
 .burgerOpen .burgerMenu__part {
@@ -1692,6 +1714,26 @@ img {
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bob {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(4px, 4px, 0) rotate3d(1, 1, 1, 5deg);
+  }
+  40% {
+    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 10deg);
+  }
+  60% {
+    transform: translate3d(-4px, 0, 0) rotate3d(1, 1, 1, 5deg);
+  }
+  80% {
+    transform: translate3d(0, -4px, 0) rotate3d(1, 1, 1, 0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0deg);
   }
 }
 .plotButton {
