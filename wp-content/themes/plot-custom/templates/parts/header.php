@@ -4,7 +4,7 @@
 
 		<div class="siteMainHeader__wrap">
 		
-			<a class="siteMainHeader__logo" href="/">
+			<a class="siteMainHeader__logo" href="<?= get_home_url() ?>">
 				<img src="<?= IMAGES ?>/plot-for-wordpress.svg" alt="">
 			</a>
 

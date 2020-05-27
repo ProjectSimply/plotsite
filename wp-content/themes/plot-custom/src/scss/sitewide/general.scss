@@ -10,3 +10,36 @@
 
 // Allways hide the Honey Pot field
 .wpforms-field-hp { display: none !important }
+
+.JS--lazyLoad {
+	opacity: 0;
+	transition: opacity 1s ease-in;
+
+	&.loaded {
+		opacity: 1;
+	}
+}
+
+[data-plot-smooth-scroll-element] {
+	opacity: 0;
+	transform: translate3d(0,20px,0);
+	transition: opacity .7s ease-in-out, transform .7s ease-in-out;
+
+	&.plotSmoothScrollSeenOnce {
+		opacity: 1;
+		transform: translate3d(0,0,0);
+	}
+
+	$i: 1;
+	$speed: .1s;
+	$delay: 0s;
+	@while $i <= 12 {
+	
+		&:nth-child(#{$i}) {
+			transition-delay: #{$i * $speed + $delay}; 
+		}
+
+		$i: $i + 1;
+		
+	}
+}

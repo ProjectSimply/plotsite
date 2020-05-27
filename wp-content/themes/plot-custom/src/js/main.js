@@ -7,6 +7,7 @@
 		Modals			= require('../../../plot-core/src/js/modals'),
 		Carousels		= require('./components/carousel'),
 		Smooth 			= require('../../../plot-core/src/js/plot-smooth-scroll'),
+		FAQs 			= require('../../../plot-core/src/js/faqs'),
 		// CustomMouse 	= require('../../../plot-core/src/js/custom-mouse'),
 		Home			= require('./pages/home'),
 		TogglePrice     = require('./components/toggle-price'),
@@ -25,6 +26,7 @@
 			LazyLoad.init()
 			Modals.init()  
 			Carousels.init()
+			FAQs.init()
 			// CustomMouse.init({
 			// 	'a' 				: 'anchorHover',
 			// 	'.altHoverTarget'	: 'altHover'

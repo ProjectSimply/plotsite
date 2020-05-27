@@ -27,13 +27,14 @@
         .pricingSection__toggleList {
             position: relative;
             display: inline-block;
-            padding: 1rem 40px 1rem 1rem;
+            padding: 1rem 1rem 1rem;
+            margin-bottom: 2rem;
             cursor: pointer;
 
             &:after {
                 content: "";
                 position: absolute;
-                right: 15px;
+                right: -10px;
                 top: 50%;
                 display: block;
                 height: 10px;
@@ -50,14 +51,43 @@
             display: none;
             padding-left: 0;
             text-align: left;
-            flex-wrap: wrap;
             list-style: none;
             max-width: 700px;
             margin: 0 auto 2rem;
-            
-            & li {
-                @include medium {
-                    flex: 0 0 50%;
+            justify-content: center;
+
+            @include medium {
+                grid-template-columns: auto auto;
+                justify-content: space-between;
+            }
+        }
+
+        .pricingSection__item {
+            position: relative;
+            margin-bottom: 1rem;
+
+            p {
+                font-weight: bold;
+                font-family: var(--headingFont);
+                font-size: 1.4rem;
+                padding-left: 40px;
+                margin-bottom: 0;
+            }
+
+            span {
+                position: absolute;
+                left: 10px;
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+                display: block;
+                width: 20px;
+                height: 20px;
+
+                svg {
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    object-fit: cover;
                 }
             }
         }
@@ -76,7 +106,7 @@
             }
 
             & ~ ul.pricingSection__fullList {
-                display: flex;
+                display: grid;
             }
         }
          

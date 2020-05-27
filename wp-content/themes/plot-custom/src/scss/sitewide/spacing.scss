@@ -5,6 +5,13 @@
     width: 100%;
 }
 
+.maxWidth--sml {
+	max-width: 920px;
+	margin: 0 auto;
+	padding: 0 1rem;
+    width: 100%;
+}
+
 html {
 	--vs : 2rem;
 	--hs : 1rem;

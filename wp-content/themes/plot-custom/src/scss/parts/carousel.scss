@@ -2,6 +2,7 @@
     padding-top: 4rem;
     padding-bottom: 4rem;
     text-align: center;
+    position: relative; 
 
     @include medium {
         padding-top: 6rem;
@@ -49,4 +50,46 @@
     .carouselSection__buttonWrap {
         display: block;
         margin: 0 1rem;
+    }
+
+    .carouselSection__asset {
+		position: absolute;
+		z-index: -1;
+
+		svg {
+			object-fit: contain;
+			display: block;
+			height: 100%;
+			width: 100%;
+		}
+
+		&.carouselSection__asset--1 {
+            right: 55%;
+            top: 7%;
+            width: 50vw;
+            height: 50vw;
+            max-width: 670px;
+            max-height: 670px;
+            transform: rotate(45deg);
+
+			path {
+				fill: var(--sky);
+				opacity: 1;
+			}
+		}
+
+		&.carouselSection__asset--2 {
+            left: 50%;
+            top: 55%;
+            width: 50vw;
+            height: 50vw;
+            max-width: 530px;
+            max-height: 530px;
+            
+
+			path {
+				fill: var(--orange);
+				opacity: 1;
+			}
+        }
     }

@@ -18,20 +18,16 @@
 
 			</div>
 
-			<?php if(is_front_page()) : ?>
+			<div class="footer__item footer__item--2">
 
-				<div class="footer__item footer__item--2">
-
-					<div class="projectSimplyCredits">
-					
-						<span class="projectSimplyCredits__text">Plot is made by</span>
-						<a class="projectSimplyCredits__link" href="https://projectsimply.com">Project Simply</a>
-					
-					</div>
-
+				<div class="projectSimplyCredits">
+				
+					<span class="projectSimplyCredits__text">Plot is made by</span>
+					<a class="projectSimplyCredits__link" href="https://projectsimply.com">Project Simply</a>
+				
 				</div>
 
-			<?php endif; ?>
+			</div>
 
 		</div>
 

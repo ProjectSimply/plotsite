@@ -22,7 +22,7 @@
 
 	    	<div class="carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
 
-                <div class="carousel__imageWrap">
+                <div class="carousel__imageWrap" data-plot-smooth-scroll-element>
                     
                     <?php plotLazyload([
                         'image' 				=> get_sub_field('image'), 
@@ -47,5 +47,17 @@
         </div>
 
     <?php endif; ?>
+
+    <div class="carouselSection__asset carouselSection__asset--1">
+
+        <?php plotGetTemplatePart('parts/svg-asset--p') ?>
+
+    </div>
+
+    <div class="carouselSection__asset carouselSection__asset--2">
+
+        <?php plotGetTemplatePart('parts/svg-asset--t') ?>
+
+    </div>
 
 </section>

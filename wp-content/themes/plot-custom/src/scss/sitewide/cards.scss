@@ -19,7 +19,7 @@
     }
 
     .cards__grid {
-        @include plotFlex(2, 0, 4rem);
+        
 
         @include medium { @include plotFlex(2) }
 
@@ -28,6 +28,7 @@
 
         .cards__item {
             max-width: 400px;
+            margin: 0 auto 4rem;
         }
 
             .cards__svgWrap {

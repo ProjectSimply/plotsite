@@ -1,6 +1,6 @@
 <section class="faqs plotLayout sectionPadding">
 
-    <div class="maxWidth">
+    <div class="maxWidth--sml">
 
         <div class="faqs__inner">
 
@@ -26,21 +26,12 @@
 
                 <div class="faq">
 
-                    <input class="faq__checkbox" type="checkbox" id="faqs--<?= $i ?>">
+                    <h5 class="faq__question"><?= get_the_title($faqID) ?></h5>
 
-                    <label for="faqs--<?= $i ?>">
-
-                        <h3 class="faq__question"><?= get_the_title($faqID) ?></h3>
-
-                        <div class="faq__answer">
-                            <?= get_field('answer',$faqID) ?>
-                        </div>
-                        
-                    </label>
-                    
-
-                    
-
+                    <div class="faq__answer">
+                        <?= get_field('answer',$faqID) ?>
+                    </div>
+                                                                
                 </div>
 
              <?php endwhile; ?>

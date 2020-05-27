@@ -12,14 +12,29 @@
         animation-timing-function: ease-in-out, ease-in-out;
         animation-fill-mode: forwards, forwards;
         animation-iteration-count: 1, infinite;
-    
+    }
+}
+
+.SVGelement.SVGelement__1,
+.SVGelement.SVGelement__3,
+.SVGelement.SVGelement__5,
+.SVGelement.SVGelement__8,
+.SVGelement.SVGelement__10,
+.SVGelement.SVGelement__18,
+.SVGelement.SVGelement__19,
+.SVGelement.SVGelement__20,
+.SVGelement.SVGelement__21,
+.SVGelement.SVGelement__22,
+.SVGelement.SVGelement__26 {
+
+    .plotSmoothScrollInView & {
         $i: 1;
         $speed: .3s;
         $delay: 0s;
         @while $i <= 12 {
         
             &:nth-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}, #{$i * ($i * .2s)}; 
+                animation-delay: #{$i * $speed + $delay}; 
             }
     
             $i: $i + 1;
@@ -33,7 +48,7 @@
 
     .plotSmoothScrollInView & {        
         animation-name: entryAnimation--1, loadedAnimation--top;
-        animation-duration: .3s, 10s; 
+        animation-duration: .3s, 15s; 
         animation-timing-function: ease-in-out, ease-in-out;
         animation-fill-mode: forwards, forwards;
         animation-iteration-count: 1, infinite;
@@ -59,7 +74,7 @@
 
     .plotSmoothScrollInView & {        
         animation-name: entryAnimation--1, loadedAnimation--bottom;
-        animation-duration: .2s, 10s; 
+        animation-duration: .2s, 15s; 
         animation-timing-function: ease-in-out, ease-in-out;
         animation-fill-mode: forwards, forwards;
         animation-iteration-count: 1, infinite;
@@ -73,23 +88,10 @@
 
     .plotSmoothScrollInView & {
         animation-name: loadedAnimation--4;
-        animation-duration: 5s; 
+        animation-duration: 3s; 
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards;
         animation-iteration-count: infinite; 
-    
-        $i: 1;
-        $speed: .3s;
-        $delay: 1s;
-        @while $i <= 12 {
-        
-            &:nth-last-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}; 
-            }
-    
-            $i: $i + 1;
-            
-        }
     }
 }
 
@@ -113,19 +115,6 @@
         animation-duration: 1s; 
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
-    
-        $i: 1;
-        $speed: .1s;
-        $delay: 0s;
-        @while $i <= 12 {
-        
-            &:nth-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}; 
-            }
-    
-            $i: $i + 1;
-            
-        }
     }
 }
 
@@ -176,19 +165,6 @@
         animation-duration: .3s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
-    
-        $i: 1;
-        $speed: .3s;
-        $delay: 1s;
-        @while $i <= 12 {
-        
-            &:nth-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}; 
-            }
-    
-            $i: $i + 1;
-            
-        }
     }
 }
 
@@ -223,19 +199,6 @@
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
-    
-        $i: 1;
-        $speed: .3s;
-        $delay: 0s;
-        @while $i <= 12 {
-        
-            &:nth-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}; 
-            }
-    
-            $i: $i + 1;
-            
-        }
     }
 }
 
@@ -364,19 +327,6 @@
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
         animation-iteration-count: 1;
-
-        $i: 1;
-        $speed: .3s;
-        $delay: 0s; 
-        @while $i <= 12 {
-        
-            &:nth-last-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}, #{$i * 4s}; 
-            }
-    
-            $i: $i + 1; 
-            
-        }
     }
 }
 
@@ -390,19 +340,6 @@
         animation-timing-function: linear;
         animation-fill-mode: forwards; 
         animation-iteration-count: infinite;
-
-        $i: 1;
-        $speed: .3s;
-        $delay: 2s;
-        @while $i <= 12 {
-        
-            &:nth-last-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}; 
-            }
-    
-            $i: $i + 1; 
-            
-        }
     }
 }
 
@@ -648,6 +585,10 @@
         transform: translate3d(-33%, 50%, 0);
     }
 
+    75% {
+        transform: translate3d(-33%, 50%, 0);    
+    }
+
     100% { 
         transform: translate3d( 0,0,0);
     }
@@ -659,6 +600,10 @@
     }
 
     50% {
+        transform: translate3d(33%, -50%, 0);
+    }
+
+    75% {
         transform: translate3d(33%, -50%, 0);
     }
 
