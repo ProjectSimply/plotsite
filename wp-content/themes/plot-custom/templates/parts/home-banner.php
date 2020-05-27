@@ -1,4 +1,4 @@
-<section class="homeBanner sectionPadding">
+<section class="homeBanner sectionPadding" data-plot-smooth-scroll-element>
 
     <div class="homeBanner__asset homeBanner__asset--1">
         <?php plotGetTemplatePart('parts/svg-asset--l') ?>
@@ -20,21 +20,15 @@
 
             </div>
 
-            <div class="homeBanner__item homeBanner__item--image">
+            <?php if(get_field('home_banner_link')) : ?>
 
-                <?php plotLazyload([
-                        'image' 				=> get_field('home_banner_image'), 
-                        'imageSize'				=> 'fiftyFifty', 
-                        'class'					=> 'homeBanner__image'
-                    ]); ?>
+                <div class="homeBanner__item homeBanner__item--button">
+                
+                    <a href="<?= get_field('home_banner_link') ?>" class="button homeBanner__button"><?= get_field('home_banner_button_text') ?></a>
+    
+                </div>
 
-            </div>
-
-            <div class="homeBanner__item homeBanner__item--button">
-            
-                <a href="<?= get_field('home_banner_link') ?>" class="button homeBanner__button"><?= get_field('home_banner_button_text') ?></a>
-
-            </div>
+            <?php endif; ?>
         
         </div>
     

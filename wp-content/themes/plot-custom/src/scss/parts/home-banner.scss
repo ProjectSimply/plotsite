@@ -12,13 +12,7 @@
 }
 
     .homeBanner__grid {
-        @include medium {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            grid-template-areas: 
-            "titleWrap image"
-            "button    image";
-        }
+
     }
 
         .homeBanner__item {
@@ -33,18 +27,11 @@
                     justify-content: flex-end;
                 }
             }
-
-            &.homeBanner__item--image {
-                grid-area: image;
-            }
-
-            &.homeBanner__item--button {
-                grid-area: button;
-            }
         }
 
             .homeBanner__title {
                 text-transform: uppercase; 
+                text-align: center;
             }
         
     .homeBanner__asset {
@@ -95,3 +82,59 @@
         }
 
     }
+
+// Theme Setting
+.homeBanner,
+.homeBanner__asset.homeBanner__asset--1 path,
+.homeBanner__asset.homeBanner__asset--2 path,
+.homeBanner__title {
+    transition: color .2s ease-in-out, fill .2s ease-in-out, background-color .2s ease-in-out;
+}
+
+body.homeBannerTheme--arts {
+    .homeBanner {
+        background-color: #E90030;
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path {
+        fill: #B1B1B1;
+    }
+
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: black;
+    }
+
+    .homeBanner__title {
+        color: white;
+    }
+}
+
+body.homeBannerTheme--sounds {
+    .homeBanner {
+        background: linear-gradient(0deg, rgba(132,21,89,1) 0%, rgba(50,23,53,1) 100%);
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: white;
+    }
+
+    .homeBanner__title {
+        color: #005E7C;
+    }
+}
+
+body.homeBannerTheme--urban {
+    .homeBanner {
+        background-color: #FFBD00;
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: #FDF1DF;
+    }
+
+    .homeBanner__title {
+        color: #FF5E3C;
+    }
+}

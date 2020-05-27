@@ -3401,7 +3401,7 @@ a {
 }
 
 #siteMainHeader {
-  position: sticky;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
@@ -3839,14 +3839,6 @@ ul.pricingSection__fullList {
   }
 }
 
-@media screen and (min-width: 640px) {
-  .homeBanner__grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "titleWrap image" "button    image";
-  }
-}
-
 .homeBanner__item.homeBanner__item--titleWrap {
   grid-area: titleWrap;
 }
@@ -3857,15 +3849,10 @@ ul.pricingSection__fullList {
     justify-content: flex-end;
   }
 }
-.homeBanner__item.homeBanner__item--image {
-  grid-area: image;
-}
-.homeBanner__item.homeBanner__item--button {
-  grid-area: button;
-}
 
 .homeBanner__title {
   text-transform: uppercase;
+  text-align: center;
 }
 
 .homeBanner__asset {
@@ -3910,6 +3897,48 @@ ul.pricingSection__fullList {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+.homeBanner,
+.homeBanner__asset.homeBanner__asset--1 path,
+.homeBanner__asset.homeBanner__asset--2 path,
+.homeBanner__title {
+  transition: color 0.2s ease-in-out, fill 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+body.homeBannerTheme--arts .homeBanner {
+  background-color: #E90030;
+}
+body.homeBannerTheme--arts .homeBanner__asset.homeBanner__asset--1 path {
+  fill: #B1B1B1;
+}
+body.homeBannerTheme--arts .homeBanner__asset.homeBanner__asset--2 path {
+  fill: black;
+}
+body.homeBannerTheme--arts .homeBanner__title {
+  color: white;
+}
+
+body.homeBannerTheme--sounds .homeBanner {
+  background: linear-gradient(0deg, #841559 0%, #321735 100%);
+}
+body.homeBannerTheme--sounds .homeBanner__asset.homeBanner__asset--1 path,
+body.homeBannerTheme--sounds .homeBanner__asset.homeBanner__asset--2 path {
+  fill: white;
+}
+body.homeBannerTheme--sounds .homeBanner__title {
+  color: #005E7C;
+}
+
+body.homeBannerTheme--urban .homeBanner {
+  background-color: #FFBD00;
+}
+body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--1 path,
+body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--2 path {
+  fill: #FDF1DF;
+}
+body.homeBannerTheme--urban .homeBanner__title {
+  color: #FF5E3C;
 }
 
 /*# sourceMappingURL=style.css.map */
