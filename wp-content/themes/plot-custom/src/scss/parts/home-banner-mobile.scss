@@ -1,0 +1,92 @@
+.homeBanner__mobile3D {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    perspective: 1500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    z-index: 0;
+
+    .menu {
+        margin: 100px auto;
+        position: relative;
+        background: linear-gradient(to bottom,  #62278d 0%,#2cc09b 100%);
+        width: 300px;
+        border-width: 20px 0;
+        border-style: solid;
+        border-color: #fff;
+        color: #fff;
+        height: 540px;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease-in-out;
+        box-shadow: 0 0 50px 0 #444;
+    }
+    .menu {
+        transform: translateY(-10px) rotateX(4deg) rotateY(-25deg) rotateZ(6deg)
+    }
+    .menu:before {
+        content: '';
+        position: absolute;
+        height: 30px;
+        width: 300px;
+        top: 520px;
+        left: 0px;
+        transform: rotateX(90deg) translateY(-15px) translateZ(15px);
+        background: #fff;
+        pointer-events: none;
+    }
+    .menu:after {
+        content: '';
+        position: absolute;
+        height: 540px;
+        width: 30px;
+        top: -20px;
+        right: -30px;
+        transform: rotateY(90deg) translateZ(-15px) translateX(15px);
+        border-width: 20px 0;
+        border-style: solid;
+        border-color: #fff;
+        background: linear-gradient(to bottom,  #62278d 0%,#2cc09b 100%);
+        pointer-events: none;
+    }
+    .menu .top {
+        padding: 15px 15px 15px 20px;
+        width: 100%;
+    }
+    .menu .top .search {
+        position: relative;
+        display: inline-block;
+    }
+    .menu .bottom {
+      height: 40px;
+    }
+    .menu-back {
+        position: absolute;
+        background: transparent;
+        top: -20px;
+        left: 0;
+        width: 300px;
+        height: 540px;
+        box-shadow: 100px 100px 100px -20px #444;
+        z-index: 0; 
+    }
+    .glass-reflection {
+        position: absolute;
+        transition: box-shadow 1s;
+        transform: rotateZ(-1deg) translateZ(1px) skewY(60deg);
+        box-shadow: inset 0px -40px 0px -50px rgba(255, 255, 255, 0.0);
+        border-radius: 200px 0 20px 0 ;
+        top: 85px;
+        left: 95px;
+        width: 200px;
+        height: 100px;
+        background-color: transparent;
+    }
+    .menu .glass-reflection {
+        box-shadow: inset 0px -40px 150px -50px rgba(255, 255, 255, 0.15);
+    }
+    
+}

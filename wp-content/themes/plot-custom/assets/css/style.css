@@ -3418,7 +3418,7 @@ a {
   display: block;
   z-index: 11;
 }
-.siteMainHeader__logo img {
+.siteMainHeader__logo svg {
   display: block;
   object-fit: contain;
   width: 100%;
@@ -3551,6 +3551,97 @@ a {
   font-size: 1rem;
 }
 
+.homeBanner__mobile3D {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  perspective: 1500px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+  z-index: 0;
+}
+.homeBanner__mobile3D .menu {
+  margin: 100px auto;
+  position: relative;
+  background: linear-gradient(to bottom, #62278d 0%, #2cc09b 100%);
+  width: 300px;
+  border-width: 20px 0;
+  border-style: solid;
+  border-color: #fff;
+  color: #fff;
+  height: 540px;
+  transform-style: preserve-3d;
+  transition: all 0.5s ease-in-out;
+  box-shadow: 0 0 50px 0 #444;
+}
+.homeBanner__mobile3D .menu {
+  transform: translateY(-10px) rotateX(4deg) rotateY(-25deg) rotateZ(6deg);
+}
+.homeBanner__mobile3D .menu:before {
+  content: "";
+  position: absolute;
+  height: 30px;
+  width: 300px;
+  top: 520px;
+  left: 0px;
+  transform: rotateX(90deg) translateY(-15px) translateZ(15px);
+  background: #fff;
+  pointer-events: none;
+}
+.homeBanner__mobile3D .menu:after {
+  content: "";
+  position: absolute;
+  height: 540px;
+  width: 30px;
+  top: -20px;
+  right: -30px;
+  transform: rotateY(90deg) translateZ(-15px) translateX(15px);
+  border-width: 20px 0;
+  border-style: solid;
+  border-color: #fff;
+  background: linear-gradient(to bottom, #62278d 0%, #2cc09b 100%);
+  pointer-events: none;
+}
+.homeBanner__mobile3D .menu .top {
+  padding: 15px 15px 15px 20px;
+  width: 100%;
+}
+.homeBanner__mobile3D .menu .top .search {
+  position: relative;
+  display: inline-block;
+}
+.homeBanner__mobile3D .menu .bottom {
+  height: 40px;
+}
+.homeBanner__mobile3D .menu-back {
+  position: absolute;
+  background: transparent;
+  top: -20px;
+  left: 0;
+  width: 300px;
+  height: 540px;
+  box-shadow: 100px 100px 100px -20px #444;
+  z-index: 0;
+}
+.homeBanner__mobile3D .glass-reflection {
+  position: absolute;
+  transition: box-shadow 1s;
+  transform: rotateZ(-1deg) translateZ(1px) skewY(60deg);
+  box-shadow: inset 0px -40px 0px -50px rgba(255, 255, 255, 0);
+  border-radius: 200px 0 20px 0;
+  top: 85px;
+  left: 95px;
+  width: 200px;
+  height: 100px;
+  background-color: transparent;
+}
+.homeBanner__mobile3D .menu .glass-reflection {
+  box-shadow: inset 0px -40px 150px -50px rgba(255, 255, 255, 0.15);
+}
+
 .menuToggle__container {
   margin-left: 0;
   display: block;
@@ -3586,6 +3677,60 @@ html.burgerOpen .menuToggle--burger {
 }
 html.burgerOpen .menuToggle--cross {
   display: block;
+}
+
+.homeBanner,
+.homeBanner__asset.homeBanner__asset--1 path,
+.homeBanner__asset.homeBanner__asset--2 path,
+.homeBanner__title {
+  transition: color 0.2s ease-in-out, fill 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+body.homeBannerTheme--arts .homeBanner {
+  background-color: #E90030;
+}
+body.homeBannerTheme--arts .homeBanner__asset.homeBanner__asset--1 path {
+  fill: #B1B1B1;
+}
+body.homeBannerTheme--arts .homeBanner__asset.homeBanner__asset--2 path {
+  fill: black;
+}
+body.homeBannerTheme--arts .homeBanner__title,
+body.homeBannerTheme--arts .mainMenu a {
+  color: white;
+}
+body.homeBannerTheme--arts .siteMainHeader__logo path {
+  fill: white;
+}
+
+body.homeBannerTheme--sounds .homeBanner {
+  background: linear-gradient(0deg, #841559 0%, #321735 100%);
+}
+body.homeBannerTheme--sounds .homeBanner__asset.homeBanner__asset--1 path,
+body.homeBannerTheme--sounds .homeBanner__asset.homeBanner__asset--2 path {
+  fill: #9AE4D6;
+}
+body.homeBannerTheme--sounds .homeBanner__title,
+body.homeBannerTheme--sounds .mainMenu a,
+body.homeBannerTheme--sounds .siteMainHeader__ctaLink {
+  color: white;
+}
+body.homeBannerTheme--sounds .siteMainHeader__ctaLink {
+  background-color: #841559;
+}
+body.homeBannerTheme--sounds .siteMainHeader__logo path {
+  fill: white;
+}
+
+body.homeBannerTheme--urban .homeBanner {
+  background-color: #FFBD00;
+}
+body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--1 path,
+body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--2 path {
+  fill: #FDF1DF;
+}
+body.homeBannerTheme--urban .homeBanner__title {
+  color: #FF5E3C;
 }
 
 .pricingSection__mainFeatures {
@@ -3840,6 +3985,8 @@ ul.pricingSection__fullList {
 }
 
 .homeBanner__item.homeBanner__item--titleWrap {
+  position: relative;
+  z-index: 1;
   grid-area: titleWrap;
 }
 @media screen and (min-width: 640px) {
@@ -3897,48 +4044,6 @@ ul.pricingSection__fullList {
   height: 100%;
   width: 100%;
   object-fit: contain;
-}
-
-.homeBanner,
-.homeBanner__asset.homeBanner__asset--1 path,
-.homeBanner__asset.homeBanner__asset--2 path,
-.homeBanner__title {
-  transition: color 0.2s ease-in-out, fill 0.2s ease-in-out, background-color 0.2s ease-in-out;
-}
-
-body.homeBannerTheme--arts .homeBanner {
-  background-color: #E90030;
-}
-body.homeBannerTheme--arts .homeBanner__asset.homeBanner__asset--1 path {
-  fill: #B1B1B1;
-}
-body.homeBannerTheme--arts .homeBanner__asset.homeBanner__asset--2 path {
-  fill: black;
-}
-body.homeBannerTheme--arts .homeBanner__title {
-  color: white;
-}
-
-body.homeBannerTheme--sounds .homeBanner {
-  background: linear-gradient(0deg, #841559 0%, #321735 100%);
-}
-body.homeBannerTheme--sounds .homeBanner__asset.homeBanner__asset--1 path,
-body.homeBannerTheme--sounds .homeBanner__asset.homeBanner__asset--2 path {
-  fill: white;
-}
-body.homeBannerTheme--sounds .homeBanner__title {
-  color: #005E7C;
-}
-
-body.homeBannerTheme--urban .homeBanner {
-  background-color: #FFBD00;
-}
-body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--1 path,
-body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--2 path {
-  fill: #FDF1DF;
-}
-body.homeBannerTheme--urban .homeBanner__title {
-  color: #FF5E3C;
 }
 
 /*# sourceMappingURL=style.css.map */

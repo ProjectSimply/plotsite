@@ -19,6 +19,8 @@
 
 
             &.homeBanner__item--titleWrap {
+                position: relative;
+                z-index: 1;
                 grid-area: titleWrap;
 
                 @include medium {
@@ -82,59 +84,3 @@
         }
 
     }
-
-// Theme Setting
-.homeBanner,
-.homeBanner__asset.homeBanner__asset--1 path,
-.homeBanner__asset.homeBanner__asset--2 path,
-.homeBanner__title {
-    transition: color .2s ease-in-out, fill .2s ease-in-out, background-color .2s ease-in-out;
-}
-
-body.homeBannerTheme--arts {
-    .homeBanner {
-        background-color: #E90030;
-    }
-
-    .homeBanner__asset.homeBanner__asset--1 path {
-        fill: #B1B1B1;
-    }
-
-    .homeBanner__asset.homeBanner__asset--2 path {
-        fill: black;
-    }
-
-    .homeBanner__title {
-        color: white;
-    }
-}
-
-body.homeBannerTheme--sounds {
-    .homeBanner {
-        background: linear-gradient(0deg, rgba(132,21,89,1) 0%, rgba(50,23,53,1) 100%);
-    }
-
-    .homeBanner__asset.homeBanner__asset--1 path,
-    .homeBanner__asset.homeBanner__asset--2 path {
-        fill: white;
-    }
-
-    .homeBanner__title {
-        color: #005E7C;
-    }
-}
-
-body.homeBannerTheme--urban {
-    .homeBanner {
-        background-color: #FFBD00;
-    }
-
-    .homeBanner__asset.homeBanner__asset--1 path,
-    .homeBanner__asset.homeBanner__asset--2 path {
-        fill: #FDF1DF;
-    }
-
-    .homeBanner__title {
-        color: #FF5E3C;
-    }
-}

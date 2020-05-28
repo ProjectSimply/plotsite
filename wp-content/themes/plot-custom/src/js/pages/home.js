@@ -3,7 +3,8 @@
     var Home
 
     Home = {
-        intervalLength: 3000,
+        body: document.body,
+        intervalLength: 3500,
         themes: [
             'arts',
             'sounds',
@@ -19,9 +20,10 @@
 
         createListeners: () => {
 
-            // Observe the homebanner section
+            
             const homeBanner = document.querySelector('.homeBanner')
 
+            // Observe the homebanner section for class changes
             const observer = new MutationObserver(Home.bannerInView)
             observer.observe(homeBanner, {
               attributes  : true,
@@ -35,12 +37,11 @@
             if(mutationsList[0].target.classList.contains('plotSmoothScrollInView')) {
                 Home.startThemeCounter()
             } else {
-                Home.stopThemeCounter()
-            }
-                
 
-            // If banner is out of view
-                // Cancel interval
+                Home.stopThemeCounter()
+                
+                Home.removeTheme()
+            }
         },
 
         startThemeCounter: () => {
@@ -51,7 +52,7 @@
             Home.counter = setInterval(() => {
 
                 if(Home.previousTheme)
-                    document.body.classList.remove(Home.previousTheme)
+                    Home.body.classList.remove(Home.previousTheme)
 
                 document.body.classList.add(`homeBannerTheme--${Home.themes[i]}`)
 
@@ -69,7 +70,16 @@
         stopThemeCounter: () => {
             if(Home.counter)
                 clearInterval(Home.counter)
+        },
+
+        removeTheme: () => {
+            
+            Home.body.classList.remove(Home.previousTheme)
+
+            Home.previousTheme = ''
         }
+
+
 
     }
 

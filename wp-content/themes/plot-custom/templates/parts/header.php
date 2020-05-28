@@ -5,7 +5,7 @@
 		<div class="siteMainHeader__wrap">
 		
 			<a class="siteMainHeader__logo" href="<?= get_home_url() ?>">
-				<img src="<?= IMAGES ?>/plot-for-wordpress.svg" alt="">
+				<?= plotGetTemplatePart('parts/plot-logo') ?>
 			</a>
 
 			<div class="siteMainHeader__desktop-menu">
