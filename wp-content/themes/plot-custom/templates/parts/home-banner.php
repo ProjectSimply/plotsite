@@ -21,14 +21,22 @@
             </div>
 
 
-            <div class="homeBanner__mobile3D">
-                <div class="menu">
-                    <div class="top">
+            <div class="homeBanner__mobile3D mobile3D">
+
+                <div class="mobile3D__phone">
                     
-                    </div>
-                    <div class="bottom"></div>
-                    <div class="menu-back"></div>
+                    <div class="mobile3D__screen"></div>
+
                     <div class="glass-reflection"></div>
+
+                    <span class="mobile3D__side mobile3D__side--left"></span>
+
+                    <span class="mobile3D__side mobile3D__side--right"></span>
+
+                    <span class="mobile3D__side mobile3D__side--bottom"></span>
+
+                    <span class="mobile3D__side mobile3D__side--top"></span>
+
                 </div>
             </div>
 

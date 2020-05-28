@@ -1,0 +1,138 @@
+.mobile3D {    
+    perspective: 1500px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate3d(-50%,-50%, 0);
+    z-index: 0;
+
+    @include small-only {
+        margin-top: 2rem;
+    }
+
+    .mobile3D__phone {
+        margin: 0 auto;
+        position: relative;
+        border-width: 20px 0;
+        border-style: solid;
+        border-color: #fff;
+        color: #fff;
+        transform-style: preserve-3d;
+        transition: all 0.5s ease-in-out;
+        box-shadow: 0 0 50px 0 #444;
+        transform: rotate3d(-3, 5, 0, -25deg);
+        @include vh(75, 'height');
+        width: 70vw;
+        max-height: 540px;
+        max-width: 300px;
+
+        @include medium {
+            height: 540px;
+            width: 300px;
+        }
+    }
+
+    .mobile3D__screen {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: relative;
+        overflow: hidden;
+
+        &:before,
+        &:after {
+            content: "";
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 101% 100%;
+
+            
+            .slideMobileScreen & {
+                animation: slide .3s ease-in-out;
+                animation-iteration-count: 1;
+                animation-fill-mode: forwards;  
+            }
+        }
+
+
+        &:before {
+            left: -100%;
+        }
+        &:after {
+            left: 0%;
+        }
+    }
+
+    .mobile3D__side {
+        position: absolute;
+        pointer-events: none;
+
+        &.mobile3D__side--bottom {
+            height: 30px;
+            width: 100%;
+            bottom: -50px;
+            left: 0px;
+            transform: rotateX(90deg) translateY(-15px) translateZ(15px);
+            background: #fff;
+        }
+        &.mobile3D__side--top {
+            height: 30px;
+            width: 100%;
+            top: -20px;
+            left: 0px;
+            transform: rotateX(90deg) translateY(-15px) translateZ(15px);
+            background: #fff;
+        }
+        
+        &.mobile3D__side--right {
+            height: calc(100% + 40px);
+            width: 30px;
+            top: -20px;
+            right: -30px;
+            transform: rotateY(90deg) translateZ(-15px) translateX(15px);
+            border-width: 20px 0;
+            border-style: solid;
+            border-color: #fff;
+        }
+        &.mobile3D__side--left {
+            height: calc(100% + 40px);
+            width: 30px;
+            top: -20px;
+            left: 0;
+            transform: rotateY(90deg) translateZ(-15px) translateX(15px);
+            border-width: 20px 0;
+            border-style: solid;
+            border-color: #fff;
+        }
+
+    }
+    .glass-reflection {
+        position: absolute;
+        transition: box-shadow 1s;
+        transform: rotateZ(-1deg) translateZ(1px) skewY(60deg);
+        box-shadow: inset 0px -40px 0px -50px rgba(255, 255, 255, 0.0);
+        border-radius: 200px 0 20px 0 ;
+        top: 85px;
+        left: 95px;
+        width: 200px;
+        height: 100px;
+        background-color: transparent;
+        box-shadow: inset 0px -40px 150px -50px rgba(255, 255, 255, 0.15);
+    }
+    
+}
+
+@keyframes slide {
+    0% {
+        transform: translate3d(100%,0,0);
+    }
+
+    100% {
+        transform: translate3d(0,0,0);
+    }
+}

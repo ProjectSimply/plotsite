@@ -10,7 +10,7 @@
 }
 
 
-body.homeBannerTheme--arts {
+body[data-current-theme="arts"] {
     .homeBanner {
         background-color: #E90030;
     }
@@ -33,13 +33,30 @@ body.homeBannerTheme--arts {
         fill: white;
     }
 
-    .homeBanner__mobile3D .menu {
+    .mobile3D__phone {
         transform: rotate3d(-9, 33, 0, -45deg);
+    }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--arts.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: black;
     }
 
 }
 
-body.homeBannerTheme--sounds {
+body[data-previous-theme="arts"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--arts.jpg);
+    }
+}
+
+
+
+body[data-current-theme="sounds"] {
     .homeBanner {
         background: linear-gradient(0deg, rgba(132,21,89,1) 0%, rgba(50,23,53,1) 100%);
     }
@@ -59,22 +76,33 @@ body.homeBannerTheme--sounds {
         background-color: #841559;
     }
 
-
     .siteMainHeader__logo path,
     .menuToggle--burger path {
         fill: white;
     }
 
-    .homeBanner__mobile3D .menu {
-        transform: rotate3d(1, 0, 0, 7deg);
+    .mobile3D__phone {
+        transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .homeBanner__mobile3D .menu {
-        transform: rotate3d(3, 5, 0, 25deg);
+    .mobile3D__screen:after {
+            background-image: url(../img/mobile--sounds.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: #321735;
+    }
+
+}
+
+body[data-previous-theme="sounds"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--sounds.jpg);
     }
 }
 
-body.homeBannerTheme--urban {
+body[data-current-theme="urban"] {
     .homeBanner {
         background-color: #FFBD00;
     }
@@ -85,10 +113,198 @@ body.homeBannerTheme--urban {
     }
 
     .homeBanner__title {
-        color: #FF5E3C;
+        color: white;
     }
 
-    .homeBanner__mobile3D .menu {
+    .mobile3D__phone {
         transform: rotate3d(3, 5, 0, 45deg);
     }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--urban.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: #030D0D;
+    }
+}
+
+body[data-previous-theme="sounds"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--urban.jpg);
+    }
+}
+
+
+body[data-current-theme="tagout"] {
+    .homeBanner {
+        background-color:  #FF00F9;
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: black;
+    }
+
+    .homeBanner__title {
+        color: white;
+    }
+
+    .mobile3D__phone {
+        transform: rotate3d(-2, 5, 0, -45deg);
+    }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--tagout.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: black;
+    }
+}
+
+body[data-previous-theme="tagout"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--tagout.jpg);
+    } 
+}
+
+body[data-current-theme="box"] {
+    .homeBanner {
+        background-color:  #1F0087;
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: black;
+    }
+
+    .homeBanner__title {
+        color: white;
+    }
+
+    .mobile3D__phone {
+        transform: rotate3d(3, 5, 0, 25deg);
+    }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--box.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: #3600F3;
+    }
+}
+
+body[data-previous-theme="box"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--box.jpg);
+    } 
+}
+
+body[data-current-theme="inter"] {
+    .homeBanner {
+        background-color:  #171E43;
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: #FF969B;
+    }
+
+    .homeBanner__title {
+        color: #FF969B;
+    }
+
+    .mobile3D__phone {
+        transform: rotate3d(-3, 5, 0, -25deg);
+    }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--inter.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: #171E43;
+    }
+}
+
+body[data-previous-theme="inter"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--inter.jpg);
+    } 
+}
+
+body[data-current-theme="halftone"] {
+    .homeBanner {
+        background: linear-gradient(0deg, rgba(111,89,106,1) 0%, rgba(0,120,202,1) 100%);
+
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: white;
+    }
+
+    .homeBanner__title {
+        color: white;
+    }
+
+    .mobile3D__phone {
+        transform: rotate3d(3, 5, 0, 25deg);
+    }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--halftone.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: #6F596A;
+    }
+}
+
+body[data-previous-theme="halftone"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--halftone.jpg);
+    } 
+}
+
+body[data-current-theme="deep"] {
+    .homeBanner {
+        background: #003046;
+
+    }
+
+    .homeBanner__asset.homeBanner__asset--1 path,
+    .homeBanner__asset.homeBanner__asset--2 path {
+        fill: #00AFBD;
+    }
+
+    .homeBanner__title {
+        color: white;
+    }
+
+    .mobile3D__phone {
+        transform: rotate3d(-3, 5, 0, -35deg);
+    }
+
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--deep.jpg);
+    }
+
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-color: #003046;
+    }
+}
+
+body[data-previous-theme="deep"] {
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--deep.jpg);
+    } 
 }

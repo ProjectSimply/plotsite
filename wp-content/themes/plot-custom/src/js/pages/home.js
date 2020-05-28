@@ -4,18 +4,28 @@
 
     Home = {
         body: document.body,
-        root: document.querySelector('html'),        
-        intervalLength: 3500,
+        root: document.querySelector('html'),
+        mobileScreen : document.querySelector('.mobile3D__phone'),    
+        intervalLength: 5000,
+        previousTheme: 'arts',
+        counter: null,
         themes: [
-            'arts',
             'sounds',
             'urban',
-            'purple'
+            'tagout',
+            'box',
+            'inter',
+            'halftone',
+            'deep',
+            'arts'
+            
         ],
 
         init: () => {
 
             Home.createListeners()
+
+            Home.startThemeCounter()
 
         },
 
@@ -28,7 +38,6 @@
             observer.observe(homeBanner, {
               attributes  : true,
             })
-
             
             const burgerMenuTriggers = document.querySelector('.JS--menuTrigger')
 
@@ -40,13 +49,15 @@
         bannerMutation: (mutationsList, observer) => {
             
             // If the banner element is in view
-            if(mutationsList[0].target.classList.contains('plotSmoothScrollInView')) {
+            if(mutationsList[0].target.classList.contains('plotSmoothScrollInView') && Home.bannerInView == false) {
 
                 Home.bannerInView = true
 
                 Home.startThemeCounter()
 
-            } else {
+            } 
+
+            if(!mutationsList[0].target.classList.contains('plotSmoothScrollInView') && Home.bannerInView) {
 
                 Home.bannerInView = false
 
@@ -59,22 +70,25 @@
         startThemeCounter: () => {
             
             let i = 0
-            Home.counter = setInterval(() => {
+            Home.counter = setInterval(() => {        
 
-                // Remove previous class
-                if(Home.previousTheme)
-                    Home.body.classList.remove(Home.previousTheme)
-
-                // Change the class on the body element
-                document.body.classList.add(`homeBannerTheme--${Home.themes[i]}`)
+                // Update mobile screen image
+                Home.body.dataset.currentTheme = Home.themes[i]
+                Home.body.dataset.previousTheme = Home.previousTheme
 
                 // Update state
-                Home.previousTheme = `homeBannerTheme--${Home.themes[i]}`
+                Home.previousTheme = Home.themes[i]
+
+                Home.body.classList.add('slideMobileScreen')
+
+                setTimeout(() => {
+                    Home.body.classList.remove('slideMobileScreen')    
+                }, 500)
 
                 // If we reach the end of the themes, reset to first theme
                 i >= Home.themes.length - 1 ? i = 0 : i++
 
-            }, 2000);
+            }, Home.intervalLength);
         },
 
         stopThemeCounter: () => {
