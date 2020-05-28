@@ -29,8 +29,11 @@
               attributes  : true,
             })
 
-            // Observe the root to see if burger menu is open
-            Home.watchRoot()
+            
+            const burgerMenuTriggers = document.querySelector('.JS--menuTrigger')
+
+            // Toggle banner animation when menu opened/closed
+            burgerMenuTriggers.addEventListener('click', Home.toggleThemeCounter)
             
         },
 
@@ -90,32 +93,19 @@
             
         },
 
-        watchRoot: () => {
-            // Observe the homebanner section for class changes
-            const observer = new MutationObserver(Home.rootMutation)
-            observer.observe(Home.root, {
-                attributes  : true,
-            })
-        },
+        toggleThemeCounter: () => {
+            // Cancel animation if menu is open
+            if(Home.root.classList.contains('burgerOpen')) {
 
-        rootMutation: (mutationsList, observer) => {
-            // Check if burger menu is open
-            console.log(mutationsList[0]) 
-            if(mutationsList[0].target.classList.contains('burgerOpen')) {
-            
-                Home.burgerMenuOpen = true
-                
                 Home.stopThemeCounter()
                 Home.removeTheme()
-    
-            }  else if(Home.burgerMenuOpen && Home.bannerInView) {
-                // Fire if burgerMenu is closed and banner is in view
+
+            // Start animation if menu is closed and banner is in view    
+            } else if(Home.bannerInView) {
+
                 Home.startThemeCounter()
             }
-
-
-
-        }
+        },
 
 
 
