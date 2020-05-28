@@ -28,6 +28,10 @@ body.homeBannerTheme--arts {
     .siteMainHeader__logo path {
         fill: white;
     }
+
+    .homeBanner__mobile3D .menu {
+        transform: rotate3d(-9, 33, 0, -45deg);
+    }
 }
 
 body.homeBannerTheme--sounds {
@@ -54,6 +58,14 @@ body.homeBannerTheme--sounds {
     .siteMainHeader__logo path {
         fill: white;
     }
+
+    .homeBanner__mobile3D .menu {
+        transform: rotate3d(1, 0, 0, 7deg);
+    }
+
+    .homeBanner__mobile3D .menu {
+        transform: rotate3d(3, 5, 0, 25deg);
+    }
 }
 
 body.homeBannerTheme--urban {
@@ -68,5 +80,9 @@ body.homeBannerTheme--urban {
 
     .homeBanner__title {
         color: #FF5E3C;
+    }
+
+    .homeBanner__mobile3D .menu {
+        transform: rotate3d(3, 5, 0, 45deg);
     }
 }

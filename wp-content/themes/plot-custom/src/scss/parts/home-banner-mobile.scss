@@ -25,7 +25,7 @@
         box-shadow: 0 0 50px 0 #444;
     }
     .menu {
-        transform: translateY(-10px) rotateX(4deg) rotateY(-25deg) rotateZ(6deg)
+        transform: rotate3d(-3, 5, 0, -25deg);
     }
     .menu:before {
         content: '';
@@ -41,7 +41,7 @@
     .menu:after {
         content: '';
         position: absolute;
-        height: 540px;
+        height: 100%;
         width: 30px;
         top: -20px;
         right: -30px;

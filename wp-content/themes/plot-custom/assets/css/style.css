@@ -3578,7 +3578,7 @@ a {
   box-shadow: 0 0 50px 0 #444;
 }
 .homeBanner__mobile3D .menu {
-  transform: translateY(-10px) rotateX(4deg) rotateY(-25deg) rotateZ(6deg);
+  transform: rotate3d(-3, 5, 0, -25deg);
 }
 .homeBanner__mobile3D .menu:before {
   content: "";
@@ -3594,7 +3594,7 @@ a {
 .homeBanner__mobile3D .menu:after {
   content: "";
   position: absolute;
-  height: 540px;
+  height: 100%;
   width: 30px;
   top: -20px;
   right: -30px;
@@ -3702,6 +3702,9 @@ body.homeBannerTheme--arts .mainMenu a {
 body.homeBannerTheme--arts .siteMainHeader__logo path {
   fill: white;
 }
+body.homeBannerTheme--arts .homeBanner__mobile3D .menu {
+  transform: rotate3d(-9, 33, 0, -45deg);
+}
 
 body.homeBannerTheme--sounds .homeBanner {
   background: linear-gradient(0deg, #841559 0%, #321735 100%);
@@ -3721,6 +3724,12 @@ body.homeBannerTheme--sounds .siteMainHeader__ctaLink {
 body.homeBannerTheme--sounds .siteMainHeader__logo path {
   fill: white;
 }
+body.homeBannerTheme--sounds .homeBanner__mobile3D .menu {
+  transform: rotate3d(1, 0, 0, 7deg);
+}
+body.homeBannerTheme--sounds .homeBanner__mobile3D .menu {
+  transform: rotate3d(3, 5, 0, 25deg);
+}
 
 body.homeBannerTheme--urban .homeBanner {
   background-color: #FFBD00;
@@ -3731,6 +3740,9 @@ body.homeBannerTheme--urban .homeBanner__asset.homeBanner__asset--2 path {
 }
 body.homeBannerTheme--urban .homeBanner__title {
   color: #FF5E3C;
+}
+body.homeBannerTheme--urban .homeBanner__mobile3D .menu {
+  transform: rotate3d(3, 5, 0, 45deg);
 }
 
 .pricingSection__mainFeatures {
