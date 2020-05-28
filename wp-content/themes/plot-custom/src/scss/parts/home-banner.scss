@@ -1,13 +1,12 @@
 .homeBanner {
     position: relative;
     @include vh(100, 'min-height');
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     @include medium {
-        padding-top: 0;
         @include vh(100, 'height');
-        display: flex;
-        align-items: center;
-        justify-content: center;
     }
 }
 

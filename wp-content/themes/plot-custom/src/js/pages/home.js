@@ -4,6 +4,7 @@
 
     Home = {
         body: document.body,
+        root: document.querySelector('html'),        
         intervalLength: 3500,
         themes: [
             'arts',
@@ -19,24 +20,32 @@
         },
 
         createListeners: () => {
-
             
             const homeBanner = document.querySelector('.homeBanner')
 
             // Observe the homebanner section for class changes
-            const observer = new MutationObserver(Home.bannerInView)
+            const observer = new MutationObserver(Home.bannerMutation)
             observer.observe(homeBanner, {
               attributes  : true,
             })
 
+            // Observe the root to see if burger menu is open
+            Home.watchRoot()
+            
         },
 
-        bannerInView: (mutationsList, observer) => {
+        bannerMutation: (mutationsList, observer) => {
             
             // If the banner element is in view
             if(mutationsList[0].target.classList.contains('plotSmoothScrollInView')) {
+
+                Home.bannerInView = true
+
                 Home.startThemeCounter()
+
             } else {
+
+                Home.bannerInView = false
 
                 Home.stopThemeCounter()
                 
@@ -45,38 +54,67 @@
         },
 
         startThemeCounter: () => {
-            // Change the class on the body element
-            // remove previous class
-            // If we reach the end of the theme, start at the begging again
+            
             let i = 0
             Home.counter = setInterval(() => {
 
+                // Remove previous class
                 if(Home.previousTheme)
                     Home.body.classList.remove(Home.previousTheme)
 
+                // Change the class on the body element
                 document.body.classList.add(`homeBannerTheme--${Home.themes[i]}`)
 
+                // Update state
                 Home.previousTheme = `homeBannerTheme--${Home.themes[i]}`
 
-                if(i >= Home.themes.length - 1) {
-                    i = 0
-                } else {
-                    i++
-                }
+                // If we reach the end of the themes, reset to first theme
+                i >= Home.themes.length - 1 ? i = 0 : i++
 
             }, 2000);
         },
 
         stopThemeCounter: () => {
+
             if(Home.counter)
                 clearInterval(Home.counter)
+
         },
 
         removeTheme: () => {
             
-            Home.body.classList.remove(Home.previousTheme)
+            if(Home.previousTheme)
+                Home.body.classList.remove(Home.previousTheme)
 
             Home.previousTheme = ''
+            
+        },
+
+        watchRoot: () => {
+            // Observe the homebanner section for class changes
+            const observer = new MutationObserver(Home.rootMutation)
+            observer.observe(Home.root, {
+                attributes  : true,
+            })
+        },
+
+        rootMutation: (mutationsList, observer) => {
+            // Check if burger menu is open
+            console.log(mutationsList[0]) 
+            if(mutationsList[0].target.classList.contains('burgerOpen')) {
+            
+                Home.burgerMenuOpen = true
+                
+                Home.stopThemeCounter()
+                Home.removeTheme()
+    
+            }  else if(Home.burgerMenuOpen && Home.bannerInView) {
+                // Fire if burgerMenu is closed and banner is in view
+                Home.startThemeCounter()
+            }
+
+
+
         }
 
 

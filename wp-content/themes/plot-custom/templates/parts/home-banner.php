@@ -1,4 +1,4 @@
-<section class="homeBanner sectionPadding" data-plot-smooth-scroll-element>
+<section class="homeBanner" data-plot-smooth-scroll-element>
 
     <div class="homeBanner__asset homeBanner__asset--1">
         <?php plotGetTemplatePart('parts/svg-asset--l') ?>

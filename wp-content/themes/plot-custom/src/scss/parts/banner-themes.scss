@@ -2,7 +2,10 @@
 .homeBanner,
 .homeBanner__asset.homeBanner__asset--1 path,
 .homeBanner__asset.homeBanner__asset--2 path,
-.homeBanner__title {
+.homeBanner__title,
+.mainMenu a,
+.siteMainHeader__logo path,
+.menuToggle--burger path {
     transition: color .2s ease-in-out, fill .2s ease-in-out, background-color .2s ease-in-out;
 }
 
@@ -25,13 +28,15 @@ body.homeBannerTheme--arts {
         color: white;
     }
 
-    .siteMainHeader__logo path {
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
         fill: white;
     }
 
     .homeBanner__mobile3D .menu {
         transform: rotate3d(-9, 33, 0, -45deg);
     }
+
 }
 
 body.homeBannerTheme--sounds {
@@ -55,7 +60,8 @@ body.homeBannerTheme--sounds {
     }
 
 
-    .siteMainHeader__logo path {
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
         fill: white;
     }
 
