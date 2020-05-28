@@ -1586,19 +1586,19 @@ img {
   transform: translate3d(100%, 100%, 0) rotate(20deg) skew(30deg, 30deg);
 }
 .burgerMenu__part:nth-child(1) span.burgerMenu__asset svg {
-  animation-delay: 1.3s;
+  animation-delay: 0.3s, 1.3s;
 }
 .burgerMenu__part:nth-child(2) span.burgerMenu__asset svg {
-  animation-delay: 1.6s;
+  animation-delay: 0.6s, 1.6s;
 }
 .burgerMenu__part:nth-child(3) span.burgerMenu__asset svg {
-  animation-delay: 1.9s;
+  animation-delay: 0.9s, 1.9s;
 }
 .burgerMenu__part:nth-child(4) span.burgerMenu__asset svg {
-  animation-delay: 2.2s;
+  animation-delay: 1.2s, 2.2s;
 }
 .burgerMenu__part:nth-child(5) span.burgerMenu__asset svg {
-  animation-delay: 2.5s;
+  animation-delay: 1.5s, 2.5s;
 }
 .burgerMenu__part span.burgerMenu__asset {
   display: block;
@@ -1609,7 +1609,7 @@ img {
 .burgerMenu__part span.burgerMenu__asset svg {
   animation-duration: 1.5s, 10s;
   animation-timing-function: cubic-bezier(0.19, 1, 0.22, 1), linear;
-  animation-delay: 0.2s, 1.7s;
+  animation-delay: 0.2s, 5s;
   animation-fill-mode: forwards;
   animation-iteration-count: 1, infinite;
 }
@@ -1622,7 +1622,7 @@ img {
   bottom: 0%;
   right: -60px;
   transform: translate3d(-100%, -100%, 0);
-  animation-name: topLeft, bob;
+  animation-name: topLeft, bob--p;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--l svg {
   display: block;
@@ -1633,7 +1633,7 @@ img {
   bottom: 0%;
   left: -12px;
   transform: translate3d(100%, -100%, 0);
-  animation-name: topRight, bob;
+  animation-name: topRight, bob--l;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--o svg {
   display: block;
@@ -1644,7 +1644,7 @@ img {
   top: 0%;
   right: 0px;
   transform: translate3d(-100%, 100%, 0);
-  animation-name: bottomLeft, bob;
+  animation-name: bottomLeft, bob--o;
 }
 .burgerMenu__part span.burgerMenu__asset.burgerMenu__asset--t svg {
   display: block;
@@ -1655,7 +1655,7 @@ img {
   top: 0;
   left: 0;
   transform: translate3d(100%, 100%, 0);
-  animation-name: bottomRight, bob;
+  animation-name: bottomRight, bob--t;
 }
 
 .burgerOpen .burgerMenu__part {
@@ -1716,24 +1716,84 @@ img {
     transform: translate3d(0, 0, 0);
   }
 }
-@keyframes bob {
+@keyframes bob--p {
   0% {
-    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0deg);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
   20% {
-    transform: translate3d(4px, 4px, 0) rotate3d(1, 1, 1, 5deg);
+    transform: translate3d(-30px, -30px, 0) rotate3d(0, 0, 1, 25deg);
   }
   40% {
-    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 10deg);
+    transform: translate3d(-15px, -30px, 0) rotate3d(0, 0, 1, 50deg);
   }
   60% {
-    transform: translate3d(-4px, 0, 0) rotate3d(1, 1, 1, 5deg);
+    transform: translate3d(-45px, -15px, 0) rotate3d(0, 0, 1, 25deg);
   }
   80% {
-    transform: translate3d(0, -4px, 0) rotate3d(1, 1, 1, 0deg);
+    transform: translate3d(-15, 0px, 0) rotate3d(0, 0, 1, 0deg);
   }
   100% {
-    transform: translate3d(0, 0, 0) rotate3d(1, 1, 1, 0deg);
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes bob--l {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(30px, -30px, 0) rotate3d(0, 0, 1, 25deg);
+  }
+  40% {
+    transform: translate3d(15px, -45px, 0) rotate3d(0, 0, 1, 20deg);
+  }
+  60% {
+    transform: translate3d(45px, -15px, 0) rotate3d(0, 0, 1, 95deg);
+  }
+  80% {
+    transform: translate3d(15px, 0px, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes bob--o {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(-30px, 45px, 0) rotate3d(0, 0, 1, 25deg);
+  }
+  40% {
+    transform: translate3d(-45px, 90px, 0) rotate3d(0, 0, 1, 95deg);
+  }
+  60% {
+    transform: translate3d(-15px, 45px, 0) rotate3d(0, 0, 1, 20deg);
+  }
+  80% {
+    transform: translate3d(-15px, 10px, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes bob--t {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(30px, -25px, 0) rotate3d(0, 0, 1, 25deg);
+  }
+  40% {
+    transform: translate3d(45px, -10px, 0) rotate3d(0, 0, 1, 95deg);
+  }
+  60% {
+    transform: translate3d(15px, 0px, 0) rotate3d(0, 0, 1, 20deg);
+  }
+  80% {
+    transform: translate3d(15px, 10px, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
 }
 .plotButton {
