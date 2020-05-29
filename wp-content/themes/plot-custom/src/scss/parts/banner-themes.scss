@@ -147,8 +147,15 @@ body[data-current-theme="tagout"] {
         fill: black;
     }
 
-    .homeBanner__title {
+    .homeBanner__title,
+    .mainMenu a {
         color: white;
+    }
+
+
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
+        fill: white;
     }
 
     .mobile3D__phone {
@@ -181,8 +188,15 @@ body[data-current-theme="box"] {
         fill: black;
     }
 
-    .homeBanner__title {
+    .homeBanner__title,
+    .mainMenu a {
         color: white;
+    }
+
+
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
+        fill: white;
     }
 
     .mobile3D__phone {
@@ -219,6 +233,17 @@ body[data-current-theme="inter"] {
         color: #FF969B;
     }
 
+    
+    .mainMenu a {
+        color: white;
+    }
+
+
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
+        fill: white;
+    }
+
     .mobile3D__phone {
         transform: rotate3d(-3, 5, 0, -25deg);
     }
@@ -247,11 +272,17 @@ body[data-current-theme="halftone"] {
 
     .homeBanner__asset.homeBanner__asset--1 path,
     .homeBanner__asset.homeBanner__asset--2 path {
-        fill: white;
+        fill: #FFBC00;
     }
 
-    .homeBanner__title {
+    .homeBanner__title,
+    .mainMenu a {
         color: white;
+    }
+
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
+        fill: white;
     }
 
     .mobile3D__phone {
@@ -285,8 +316,15 @@ body[data-current-theme="deep"] {
         fill: #00AFBD;
     }
 
-    .homeBanner__title {
+    .homeBanner__title,
+    .mainMenu a {
         color: white;
+    }
+
+
+    .siteMainHeader__logo path,
+    .menuToggle--burger path {
+        fill: white;
     }
 
     .mobile3D__phone {
@@ -299,7 +337,7 @@ body[data-current-theme="deep"] {
 
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-color: #003046;
+        background-color: #003046; 
     }
 }
 

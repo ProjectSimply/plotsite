@@ -3889,8 +3889,13 @@ body[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--1 path,
 body[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--2 path {
   fill: black;
 }
-body[data-current-theme=tagout] .homeBanner__title {
+body[data-current-theme=tagout] .homeBanner__title,
+body[data-current-theme=tagout] .mainMenu a {
   color: white;
+}
+body[data-current-theme=tagout] .siteMainHeader__logo path,
+body[data-current-theme=tagout] .menuToggle--burger path {
+  fill: white;
 }
 body[data-current-theme=tagout] .mobile3D__phone {
   transform: rotate3d(-2, 5, 0, -45deg);
@@ -3914,8 +3919,13 @@ body[data-current-theme=box] .homeBanner__asset.homeBanner__asset--1 path,
 body[data-current-theme=box] .homeBanner__asset.homeBanner__asset--2 path {
   fill: black;
 }
-body[data-current-theme=box] .homeBanner__title {
+body[data-current-theme=box] .homeBanner__title,
+body[data-current-theme=box] .mainMenu a {
   color: white;
+}
+body[data-current-theme=box] .siteMainHeader__logo path,
+body[data-current-theme=box] .menuToggle--burger path {
+  fill: white;
 }
 body[data-current-theme=box] .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
@@ -3942,6 +3952,13 @@ body[data-current-theme=inter] .homeBanner__asset.homeBanner__asset--2 path {
 body[data-current-theme=inter] .homeBanner__title {
   color: #FF969B;
 }
+body[data-current-theme=inter] .mainMenu a {
+  color: white;
+}
+body[data-current-theme=inter] .siteMainHeader__logo path,
+body[data-current-theme=inter] .menuToggle--burger path {
+  fill: white;
+}
 body[data-current-theme=inter] .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -25deg);
 }
@@ -3962,10 +3979,15 @@ body[data-current-theme=halftone] .homeBanner {
 }
 body[data-current-theme=halftone] .homeBanner__asset.homeBanner__asset--1 path,
 body[data-current-theme=halftone] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: white;
+  fill: #FFBC00;
 }
-body[data-current-theme=halftone] .homeBanner__title {
+body[data-current-theme=halftone] .homeBanner__title,
+body[data-current-theme=halftone] .mainMenu a {
   color: white;
+}
+body[data-current-theme=halftone] .siteMainHeader__logo path,
+body[data-current-theme=halftone] .menuToggle--burger path {
+  fill: white;
 }
 body[data-current-theme=halftone] .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
@@ -3989,8 +4011,13 @@ body[data-current-theme=deep] .homeBanner__asset.homeBanner__asset--1 path,
 body[data-current-theme=deep] .homeBanner__asset.homeBanner__asset--2 path {
   fill: #00AFBD;
 }
-body[data-current-theme=deep] .homeBanner__title {
+body[data-current-theme=deep] .homeBanner__title,
+body[data-current-theme=deep] .mainMenu a {
   color: white;
+}
+body[data-current-theme=deep] .siteMainHeader__logo path,
+body[data-current-theme=deep] .menuToggle--burger path {
+  fill: white;
 }
 body[data-current-theme=deep] .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -35deg);
@@ -4273,7 +4300,7 @@ ul.pricingSection__fullList {
 .homeBanner__title {
   text-transform: uppercase;
   text-align: center;
-  text-shadow: 2px 5px 6px #000000;
+  text-shadow: 2px 9px 8px rgba(206, 190, 190, 0), 2px 9px 8px rgba(137, 127, 127, 0.42);
 }
 
 .homeBanner__asset {
