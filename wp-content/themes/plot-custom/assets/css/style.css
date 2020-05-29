@@ -1386,7 +1386,7 @@ img {
 }
 
 .textOnlyBanner {
-  padding: 3rem 0;
+  padding: 8rem 0 4rem;
   position: relative;
 }
 
@@ -1914,12 +1914,41 @@ a {
   margin-bottom: 0.5rem;
 }
 
-.footer {
-  padding: 3rem 0;
+.page-book-a-demo .footer__cta {
+  display: none;
+}
+
+@media screen and (min-width: 640px) {
+  .footer__cta {
+    display: flex;
+  }
+}
+
+.footer__demo {
+  background-color: var(--orange);
+  padding: 3rem 1rem;
+  text-align: center;
+  flex: 0 0 50%;
+}
+
+.footer__email {
+  padding: 3rem 1rem;
+  background-color: var(--pink);
+  text-align: center;
+  flex: 0 0 50%;
+}
+
+.footer__textWrap {
+  max-width: 450px;
+  margin: 0 auto;
+}
+
+.footer__nav {
   background-color: var(--black);
+  padding: 3rem 0;
 }
 @media screen and (min-width: 640px) {
-  .footer {
+  .footer__nav {
     padding: 1rem 0;
   }
 }
