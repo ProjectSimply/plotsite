@@ -37,13 +37,10 @@ body[data-current-theme="arts"] {
         transform: rotate3d(-9, 33, 0, -45deg);
     }
 
-    .mobile3D__screen:after {
-        background-image: url(../img/mobile--arts.jpg);
-    }
-
+    .mobile3D__screen:after,
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-color: black;
+        background-image: url(../img/mobile--arts.jpg);
     }
 
 }
@@ -85,14 +82,12 @@ body[data-current-theme="sounds"] {
         transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after {
+    .mobile3D__screen:after,
+    .mobile3D__side--right,
+    .mobile3D__side--left {
             background-image: url(../img/mobile--sounds.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
-        background-color: #321735;
-    }
 
 }
 
@@ -120,14 +115,12 @@ body[data-current-theme="urban"] {
         transform: rotate3d(3, 5, 0, 45deg);
     }
 
-    .mobile3D__screen:after {
+    .mobile3D__screen:after,
+    .mobile3D__side--right,
+    .mobile3D__side--left {
         background-image: url(../img/mobile--urban.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
-        background-color: #030D0D;
-    }
 }
 
 body[data-previous-theme="sounds"] {
@@ -162,14 +155,12 @@ body[data-current-theme="tagout"] {
         transform: rotate3d(-2, 5, 0, -45deg);
     }
 
-    .mobile3D__screen:after {
+    .mobile3D__screen:after,
+    .mobile3D__side--right,
+    .mobile3D__side--left {
         background-image: url(../img/mobile--tagout.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
-        background-color: black;
-    }
 }
 
 body[data-previous-theme="tagout"] {
@@ -203,14 +194,12 @@ body[data-current-theme="box"] {
         transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after {
+    .mobile3D__screen:after,
+    .mobile3D__side--right,
+    .mobile3D__side--left {
         background-image: url(../img/mobile--box.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
-        background-color: #3600F3;
-    }
 }
 
 body[data-previous-theme="box"] {
@@ -248,14 +237,12 @@ body[data-current-theme="inter"] {
         transform: rotate3d(-3, 5, 0, -25deg);
     }
 
-    .mobile3D__screen:after {
+    .mobile3D__screen:after,
+    .mobile3D__side--right,
+    .mobile3D__side--left {
         background-image: url(../img/mobile--inter.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
-        background-color: #171E43;
-    }
 }
 
 body[data-previous-theme="inter"] {
@@ -289,13 +276,10 @@ body[data-current-theme="halftone"] {
         transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after {
-        background-image: url(../img/mobile--halftone.jpg);
-    }
-
+    .mobile3D__screen:after,
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-color: #6F596A;
+        background-image: url(../img/mobile--halftone.jpg);
     }
 }
 
@@ -331,13 +315,10 @@ body[data-current-theme="deep"] {
         transform: rotate3d(-3, 5, 0, -35deg);
     }
 
-    .mobile3D__screen:after {
-        background-image: url(../img/mobile--deep.jpg);
-    }
-
+    .mobile3D__screen:after,
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-color: #003046; 
+        background-image: url(../img/mobile--deep.jpg);
     }
 }
 

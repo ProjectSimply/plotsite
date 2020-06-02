@@ -3490,7 +3490,7 @@ a {
 }
 
 #siteMainHeader {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 100;
@@ -3734,6 +3734,9 @@ a {
   border-width: 20px 0;
   border-style: solid;
   border-color: #fff;
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: cover;
 }
 .mobile3D .mobile3D__side.mobile3D__side--left {
   height: calc(100% + 40px);
@@ -3744,6 +3747,9 @@ a {
   border-width: 20px 0;
   border-style: solid;
   border-color: #fff;
+  background-repeat: no-repeat;
+  background-position: left;
+  background-size: cover;
 }
 .mobile3D .glass-reflection {
   position: absolute;
@@ -3840,12 +3846,10 @@ body[data-current-theme=arts] .menuToggle--burger path {
 body[data-current-theme=arts] .mobile3D__phone {
   transform: rotate3d(-9, 33, 0, -45deg);
 }
-body[data-current-theme=arts] .mobile3D__screen:after {
-  background-image: url(../img/mobile--arts.jpg);
-}
+body[data-current-theme=arts] .mobile3D__screen:after,
 body[data-current-theme=arts] .mobile3D__side--right,
 body[data-current-theme=arts] .mobile3D__side--left {
-  background-color: black;
+  background-image: url(../img/mobile--arts.jpg);
 }
 
 body[data-previous-theme=arts] .mobile3D__screen:before {
@@ -3874,12 +3878,10 @@ body[data-current-theme=sounds] .menuToggle--burger path {
 body[data-current-theme=sounds] .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
 }
-body[data-current-theme=sounds] .mobile3D__screen:after {
-  background-image: url(../img/mobile--sounds.jpg);
-}
+body[data-current-theme=sounds] .mobile3D__screen:after,
 body[data-current-theme=sounds] .mobile3D__side--right,
 body[data-current-theme=sounds] .mobile3D__side--left {
-  background-color: #321735;
+  background-image: url(../img/mobile--sounds.jpg);
 }
 
 body[data-previous-theme=sounds] .mobile3D__screen:before {
@@ -3899,12 +3901,10 @@ body[data-current-theme=urban] .homeBanner__title {
 body[data-current-theme=urban] .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 45deg);
 }
-body[data-current-theme=urban] .mobile3D__screen:after {
-  background-image: url(../img/mobile--urban.jpg);
-}
+body[data-current-theme=urban] .mobile3D__screen:after,
 body[data-current-theme=urban] .mobile3D__side--right,
 body[data-current-theme=urban] .mobile3D__side--left {
-  background-color: #030D0D;
+  background-image: url(../img/mobile--urban.jpg);
 }
 
 body[data-previous-theme=sounds] .mobile3D__screen:before {
@@ -3929,12 +3929,10 @@ body[data-current-theme=tagout] .menuToggle--burger path {
 body[data-current-theme=tagout] .mobile3D__phone {
   transform: rotate3d(-2, 5, 0, -45deg);
 }
-body[data-current-theme=tagout] .mobile3D__screen:after {
-  background-image: url(../img/mobile--tagout.jpg);
-}
+body[data-current-theme=tagout] .mobile3D__screen:after,
 body[data-current-theme=tagout] .mobile3D__side--right,
 body[data-current-theme=tagout] .mobile3D__side--left {
-  background-color: black;
+  background-image: url(../img/mobile--tagout.jpg);
 }
 
 body[data-previous-theme=tagout] .mobile3D__screen:before {
@@ -3959,12 +3957,10 @@ body[data-current-theme=box] .menuToggle--burger path {
 body[data-current-theme=box] .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
 }
-body[data-current-theme=box] .mobile3D__screen:after {
-  background-image: url(../img/mobile--box.jpg);
-}
+body[data-current-theme=box] .mobile3D__screen:after,
 body[data-current-theme=box] .mobile3D__side--right,
 body[data-current-theme=box] .mobile3D__side--left {
-  background-color: #3600F3;
+  background-image: url(../img/mobile--box.jpg);
 }
 
 body[data-previous-theme=box] .mobile3D__screen:before {
@@ -3991,12 +3987,10 @@ body[data-current-theme=inter] .menuToggle--burger path {
 body[data-current-theme=inter] .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -25deg);
 }
-body[data-current-theme=inter] .mobile3D__screen:after {
-  background-image: url(../img/mobile--inter.jpg);
-}
+body[data-current-theme=inter] .mobile3D__screen:after,
 body[data-current-theme=inter] .mobile3D__side--right,
 body[data-current-theme=inter] .mobile3D__side--left {
-  background-color: #171E43;
+  background-image: url(../img/mobile--inter.jpg);
 }
 
 body[data-previous-theme=inter] .mobile3D__screen:before {
@@ -4021,12 +4015,10 @@ body[data-current-theme=halftone] .menuToggle--burger path {
 body[data-current-theme=halftone] .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
 }
-body[data-current-theme=halftone] .mobile3D__screen:after {
-  background-image: url(../img/mobile--halftone.jpg);
-}
+body[data-current-theme=halftone] .mobile3D__screen:after,
 body[data-current-theme=halftone] .mobile3D__side--right,
 body[data-current-theme=halftone] .mobile3D__side--left {
-  background-color: #6F596A;
+  background-image: url(../img/mobile--halftone.jpg);
 }
 
 body[data-previous-theme=halftone] .mobile3D__screen:before {
@@ -4051,12 +4043,10 @@ body[data-current-theme=deep] .menuToggle--burger path {
 body[data-current-theme=deep] .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -35deg);
 }
-body[data-current-theme=deep] .mobile3D__screen:after {
-  background-image: url(../img/mobile--deep.jpg);
-}
+body[data-current-theme=deep] .mobile3D__screen:after,
 body[data-current-theme=deep] .mobile3D__side--right,
 body[data-current-theme=deep] .mobile3D__side--left {
-  background-color: #003046;
+  background-image: url(../img/mobile--deep.jpg);
 }
 
 body[data-previous-theme=deep] .mobile3D__screen:before {

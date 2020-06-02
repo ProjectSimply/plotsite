@@ -98,6 +98,9 @@
             border-width: 20px 0;
             border-style: solid;
             border-color: #fff;
+            background-repeat: no-repeat;
+            background-position: right;
+            background-size: cover;
         }
         &.mobile3D__side--left {
             height: calc(100% + 40px);
@@ -108,6 +111,9 @@
             border-width: 20px 0;
             border-style: solid;
             border-color: #fff;
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size: cover;
         }
 
     }
