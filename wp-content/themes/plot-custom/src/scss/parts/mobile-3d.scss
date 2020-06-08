@@ -2,7 +2,6 @@
     perspective: 1500px;
     transform-style: preserve-3d;
     position: relative;
-    transition: transform .3s ease-in-out;
 
     @include small-only {
         margin-top: 2rem;

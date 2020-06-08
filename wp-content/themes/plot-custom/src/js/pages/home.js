@@ -3,10 +3,11 @@
     var Home
 
     Home = {
-        body                    : document.body,
-        root                    : document.querySelector('html'),
-        phone                   : document.querySelector('.mobile3D'),
-        phoneScreen             : document.querySelector('.mobile3D__phone'),    
+        dom : {
+            body                    : document.body,
+            root                    : document.querySelector('html'),
+            phone                   : document.querySelector('.mobile3D')
+        },
         intervalLength          : 5000,
         previousTheme           : 'arts',
         counter                 : null,
@@ -35,7 +36,7 @@
 
             Home.createListeners()
 
-            // Home.startThemeCounter()
+            Home.startThemeCounter()
 
             Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
 
@@ -57,7 +58,7 @@
             burgerMenuTriggers.addEventListener('click', Home.toggleThemeCounter)
 
 
-            document.body.addEventListener('mousemove', e => {
+            Home.dom.body.addEventListener('mousemove', e => {
 
                 Home.currentMousePosition = {
                     X: e.clientX,
@@ -115,16 +116,16 @@
             Home.counter = setInterval(() => {        
 
                 // Update mobile screen image
-                Home.body.dataset.currentTheme = Home.themes[i]
-                Home.body.dataset.previousTheme = Home.previousTheme
+                Home.dom.body.dataset.currentTheme = Home.themes[i]
+                Home.dom.body.dataset.previousTheme = Home.previousTheme
 
                 // Update state
                 Home.previousTheme = Home.themes[i]
 
-                Home.body.classList.add('slideMobileScreen')
+                Home.dom.body.classList.add('slideMobileScreen')
 
                 setTimeout(() => {
-                    Home.body.classList.remove('slideMobileScreen')    
+                    Home.dom.body.classList.remove('slideMobileScreen')    
                 }, 500)
 
                 // If we reach the end of the themes, reset to first theme
@@ -143,7 +144,7 @@
         removeTheme: () => {
             
             if(Home.previousTheme)
-                Home.body.classList.remove(Home.previousTheme)
+                Home.dom.body.classList.remove(Home.previousTheme)
 
             Home.previousTheme = ''
             
@@ -151,7 +152,7 @@
 
         toggleThemeCounter: () => {
             // Cancel animation if menu is open
-            if(Home.root.classList.contains('burgerOpen')) {
+            if(Home.dom.root.classList.contains('burgerOpen')) {
 
                 Home.stopThemeCounter()
                 Home.removeTheme()
@@ -177,14 +178,11 @@
             }
 
             const xShift = (Home.previousMousePosition.X - (window.innerWidth / 2)) / (window.innerWidth / 2 )
-            const yShift = (Home.previousMousePosition.Y - (window.innerHeight / 2)) / (window.innerHeight / 2 )
-
+            const yShift = ((window.innerHeight / 2) - Home.previousMousePosition.Y) / (window.innerHeight / 2 )
             
-            
-            Home.phone.style.setProperty('--xShift', xShift)
-            Home.phone.style.setProperty('--yShift', yShift)
+            Home.dom.phone.style.transform = `rotate3d(${.6*yShift +.4},${xShift},0,10deg) translate3d(${xShift*20}px,${yShift*20}px,0)`
 
-            if(differenceOfPositions.X + differenceOfPositions.Y < .1)
+            if(Math.abs(differenceOfPositions.X + differenceOfPositions.Y) < .1)
                 Home.ticker = false
 
             if(Home.ticker == true) 

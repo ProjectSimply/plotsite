@@ -2848,6 +2848,10 @@ a {
   margin: 0;
 }
 
+.homeBanner__title {
+  font-size: 6rem;
+}
+
 @media screen and (min-width: 640px) {
   .faqsMain {
     display: flex;
@@ -3644,7 +3648,6 @@ a {
   perspective: 1500px;
   transform-style: preserve-3d;
   position: relative;
-  transition: transform 0.3s ease-in-out;
 }
 @media screen and (max-width: 639px) {
   .mobile3D {
