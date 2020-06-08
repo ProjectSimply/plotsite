@@ -18,15 +18,11 @@
 
 
             &.homeBanner__item--titleWrap {
-                position: relative;
                 z-index: 1;
-                grid-area: titleWrap;
-
-                @include medium {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-end;
-                }
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate3d(-50%,-50%, 0);
             }
         }
 

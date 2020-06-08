@@ -312,7 +312,7 @@ body[data-current-theme="deep"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(-3, 5, 0, -35deg);
+        transform: rotate3d(0, calc(var(--xShift) * -1), 0, -35deg);
     }
 
     .mobile3D__screen:after,

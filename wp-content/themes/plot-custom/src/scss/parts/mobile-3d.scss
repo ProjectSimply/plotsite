@@ -1,10 +1,8 @@
 .mobile3D {    
     perspective: 1500px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate3d(-50%,-50%, 0);
-    z-index: 0;
+    transform-style: preserve-3d;
+    position: relative;
+    transition: transform .3s ease-in-out;
 
     @include small-only {
         margin-top: 2rem;

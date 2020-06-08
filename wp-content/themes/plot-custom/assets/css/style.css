@@ -3642,11 +3642,9 @@ a {
 
 .mobile3D {
   perspective: 1500px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
-  z-index: 0;
+  transform-style: preserve-3d;
+  position: relative;
+  transition: transform 0.3s ease-in-out;
 }
 @media screen and (max-width: 639px) {
   .mobile3D {
@@ -4041,7 +4039,7 @@ body[data-current-theme=deep] .menuToggle--burger path {
   fill: white;
 }
 body[data-current-theme=deep] .mobile3D__phone {
-  transform: rotate3d(-3, 5, 0, -35deg);
+  transform: rotate3d(0, calc(var(--xShift) * -1), 0, -35deg);
 }
 body[data-current-theme=deep] .mobile3D__screen:after,
 body[data-current-theme=deep] .mobile3D__side--right,
@@ -4304,16 +4302,11 @@ ul.pricingSection__fullList {
 }
 
 .homeBanner__item.homeBanner__item--titleWrap {
-  position: relative;
   z-index: 1;
-  grid-area: titleWrap;
-}
-@media screen and (min-width: 640px) {
-  .homeBanner__item.homeBanner__item--titleWrap {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
-  }
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
 }
 
 .homeBanner__title {

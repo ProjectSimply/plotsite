@@ -3,12 +3,22 @@
     var Home
 
     Home = {
-        body: document.body,
-        root: document.querySelector('html'),
-        mobileScreen : document.querySelector('.mobile3D__phone'),    
-        intervalLength: 5000,
-        previousTheme: 'arts',
-        counter: null,
+        body                    : document.body,
+        root                    : document.querySelector('html'),
+        phone                   : document.querySelector('.mobile3D'),
+        phoneScreen             : document.querySelector('.mobile3D__phone'),    
+        intervalLength          : 5000,
+        previousTheme           : 'arts',
+        counter                 : null,
+        currentMousePosition    : {
+            X: window.innerWidth / 2,
+            Y: window.innerHeight / 2
+        },
+        previousMousePosition   : {
+            X: window.innerWidth / 2,
+            Y: window.innerHeight / 2
+        },
+        mouseMoveAnimationFrame : null,
         themes: [
             'sounds',
             'urban',
@@ -25,7 +35,9 @@
 
             Home.createListeners()
 
-            Home.startThemeCounter()
+            // Home.startThemeCounter()
+
+            Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
 
         },
 
@@ -43,6 +55,36 @@
 
             // Toggle banner animation when menu opened/closed
             burgerMenuTriggers.addEventListener('click', Home.toggleThemeCounter)
+
+
+            document.body.addEventListener('mousemove', e => {
+
+                Home.currentMousePosition = {
+                    X: e.clientX,
+                    Y: e.clientY
+                }
+
+                const middlePointX = window.innerWidth / 2
+                const middlePointY = window.innerHeight / 2
+
+                if(Home.currentMousePosition.X  - 2000 > middlePointX)
+                    Home.currentMousePosition.X = middlePointX + 2000
+                
+                if(Home.currentMousePosition.X  + 2000 < middlePointX)
+                    Home.currentMousePosition.X = middlePointX - 2000
+
+                if(Home.currentMousePosition.Y  - 2000 > middlePointY)
+                    Home.currentMousePosition.Y = middlePointY + 2000
+                
+                if(Home.currentMousePosition.Y  + 2000 < middlePointY)
+                    Home.currentMousePosition.Y = middlePointY - 2000
+
+                if(Home.ticker == false) {
+                    Home.ticker = true
+                    Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
+                }
+
+            }) 
             
         },
 
@@ -121,6 +163,34 @@
             }
         },
 
+        runMouseMove : () => {
+
+
+            const differenceOfPositions = {
+                Y: Home.currentMousePosition.Y - Home.previousMousePosition.Y,
+                X: Home.currentMousePosition.X - Home.previousMousePosition.X
+            } 
+            
+            Home.previousMousePosition = {
+                X: Home.previousMousePosition.X + (differenceOfPositions.X * 0.05),
+                Y: Home.previousMousePosition.Y + (differenceOfPositions.Y * 0.05)
+            }
+
+            const xShift = (Home.previousMousePosition.X - (window.innerWidth / 2)) / (window.innerWidth / 2 )
+            const yShift = (Home.previousMousePosition.Y - (window.innerHeight / 2)) / (window.innerHeight / 2 )
+
+            
+            
+            Home.phone.style.setProperty('--xShift', xShift)
+            Home.phone.style.setProperty('--yShift', yShift)
+
+            if(differenceOfPositions.X + differenceOfPositions.Y < .1)
+                Home.ticker = false
+
+            if(Home.ticker == true) 
+                Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
+
+        },
 
 
     }
