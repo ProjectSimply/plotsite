@@ -15,7 +15,6 @@
         border-color: #fff;
         color: #fff;
         transform-style: preserve-3d;
-        transition: all 0.5s ease-in-out;
         box-shadow: 0 0 50px 0 #444;
         transform: rotate3d(-3, 5, 0, -25deg);
         @include vh(75, 'height');
@@ -28,6 +27,80 @@
             width: 300px;
         }
     }
+
+        .colourShape {
+            width: 4rem;
+            height: 4rem;
+            transform: translate3d(0,0,5rem);
+            position: absolute;
+            top: 5%;
+            left: -10%;
+        }
+            .colourShape__inner {
+                width: 100%;
+                height: 100%;
+                background: red;
+                animation: float 30s linear infinite;
+            }
+
+            .colourShape--2 {
+                left: -25%;
+                top: 20%;
+                transform: translate3d(0,0,3rem);
+                width: 5rem;
+                height: 5rem;
+                .colourShape__inner {
+                    background: blue;
+                    animation-duration: 22s;
+                }
+            }
+            .colourShape--3 {
+                left: -25%;
+                top: 45%;
+                transform: translate3d(0,0,9rem);
+                width: 4rem;
+                height: 4rem;
+                .colourShape__inner {
+                    background: orange;
+                    animation-duration: 29s;
+                }
+            }
+            .colourShape--4 {
+                left: auto;
+                right: -25%;
+                top: 50%;
+                transform: translate3d(0,0,2rem);
+                width: 5rem;
+                height: 5rem;
+                .colourShape__inner {
+                    background: white;
+                    animation-duration: 27s;
+                }
+            }
+            .colourShape--5 {
+                left: auto;
+                right: -20%;
+                top: 5%;
+                transform: translate3d(0,0,4rem);
+                width: 6rem;
+                height: 6rem;
+                .colourShape__inner {
+                    background: green;
+                    animation-duration: 34s;
+                }
+            }
+            .colourShape--6 {
+                left: auto;
+                right: -5%;
+                top: 35%;
+                transform: translate3d(0,0,7rem);
+                width: 6rem;
+                height: 6rem;
+                .colourShape__inner {
+                    background: pink;
+                    animation-duration: 24s;
+                }
+            }
 
     .mobile3D__screen {
         display: block;
@@ -137,5 +210,50 @@
 
     100% {
         transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes float {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    10% {
+        transform: translate3d(6px,1px,0);
+    }
+
+    20% {
+        transform: translate3d(-3px,2px,0);
+    }
+
+    30% {
+        transform: translate3d(0px,-6px,0);
+    }
+
+    40% {
+        transform: translate3d(-10px,4px,0);
+    }
+
+    50% {
+        transform: translate3d(-3px,8px,0);
+    }
+
+    60% {
+        transform: translate3d(-5px,4px,0);
+    }
+
+    70% {
+        transform: translate3d(3px,-1px,0);
+    }
+
+    80% {
+        transform: translate3d(-6px,5px,0);
+    }
+    90% {
+        transform: translate3d(2px,2px,0);
+    }
+
+    100% {
+        transform: translate3d(0px,0px,0);
     }
 }

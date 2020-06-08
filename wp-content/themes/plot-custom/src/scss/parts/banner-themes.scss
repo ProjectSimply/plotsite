@@ -34,7 +34,7 @@ body[data-current-theme="arts"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(-9, 33, 0, -45deg);
+        transform: rotate3d(0, 0, 0, -45deg); 
     }
 
     .mobile3D__screen:after,
@@ -79,7 +79,7 @@ body[data-current-theme="sounds"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(3, 5, 0, 25deg);
+        // transform: rotate3d(3, 5, 0, 25deg);
     }
 
     .mobile3D__screen:after,
@@ -112,7 +112,7 @@ body[data-current-theme="urban"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(3, 5, 0, 45deg);
+        // transform: rotate3d(3, 5, 0, 45deg);
     }
 
     .mobile3D__screen:after,
@@ -152,7 +152,7 @@ body[data-current-theme="tagout"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(-2, 5, 0, -45deg);
+        // transform: rotate3d(-2, 5, 0, -45deg);
     }
 
     .mobile3D__screen:after,
@@ -191,7 +191,7 @@ body[data-current-theme="box"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(3, 5, 0, 25deg);
+        // transform: rotate3d(3, 5, 0, 25deg);
     }
 
     .mobile3D__screen:after,
@@ -234,7 +234,7 @@ body[data-current-theme="inter"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(-3, 5, 0, -25deg);
+        // transform: rotate3d(-3, 5, 0, -25deg);
     }
 
     .mobile3D__screen:after,
@@ -273,7 +273,7 @@ body[data-current-theme="halftone"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(3, 5, 0, 25deg);
+        // transform: rotate3d(3, 5, 0, 25deg);
     }
 
     .mobile3D__screen:after,
@@ -312,7 +312,7 @@ body[data-current-theme="deep"] {
     }
 
     .mobile3D__phone {
-        transform: rotate3d(0, calc(var(--xShift) * -1), 0, -35deg);
+        // transform: rotate3d(0, calc(var(--xShift) * -1), 0, -35deg);
     }
 
     .mobile3D__screen:after,

@@ -6,11 +6,21 @@
         dom : {
             body                    : document.body,
             root                    : document.querySelector('html'),
-            phone                   : document.querySelector('.mobile3D')
+            phone                   : document.querySelector('.mobile3D__phone'),
+            homeBanner              : document.querySelector('.homeBanner'),
+            colourShapes        : {
+                1 : document.querySelector('.colourShape--1'),
+                2 : document.querySelector('.colourShape--2'),
+                3 : document.querySelector('.colourShape--3'),
+                4 : document.querySelector('.colourShape--4'),
+                5 : document.querySelector('.colourShape--5'),
+                6 : document.querySelector('.colourShape--6'),
+            }
         },
         intervalLength          : 5000,
         previousTheme           : 'arts',
         counter                 : null,
+        ticker                  : false,
         currentMousePosition    : {
             X: window.innerWidth / 2,
             Y: window.innerHeight / 2
@@ -58,7 +68,7 @@
             burgerMenuTriggers.addEventListener('click', Home.toggleThemeCounter)
 
 
-            Home.dom.body.addEventListener('mousemove', e => {
+            Home.dom.homeBanner.addEventListener('mousemove', e => {
 
                 Home.currentMousePosition = {
                     X: e.clientX,
@@ -173,14 +183,22 @@
             } 
             
             Home.previousMousePosition = {
-                X: Home.previousMousePosition.X + (differenceOfPositions.X * 0.05),
-                Y: Home.previousMousePosition.Y + (differenceOfPositions.Y * 0.05)
+                X: Home.previousMousePosition.X + (differenceOfPositions.X * 0.1),
+                Y: Home.previousMousePosition.Y + (differenceOfPositions.Y * 0.1)
             }
 
             const xShift = (Home.previousMousePosition.X - (window.innerWidth / 2)) / (window.innerWidth / 2 )
             const yShift = ((window.innerHeight / 2) - Home.previousMousePosition.Y) / (window.innerHeight / 2 )
             
-            Home.dom.phone.style.transform = `rotate3d(${.6*yShift +.4},${xShift},0,10deg) translate3d(${xShift*20}px,${yShift*20}px,0)`
+            Home.dom.phone.style.transform = `rotateX(${10 + yShift*10}deg) rotateY(${xShift*60}deg)`
+
+            const multiplier = 10
+            Home.dom.colourShapes[1].style.transform = `translateX(${xShift * multiplier * 5}px) translateY(${-5*yShift*multiplier}px) translateZ(5rem)` 
+            Home.dom.colourShapes[2].style.transform = `translateX(${xShift * multiplier * 3}px) translateY(${-3*yShift*multiplier}px) translateZ(5rem)` 
+            Home.dom.colourShapes[3].style.transform = `translateX(${xShift * multiplier * 9}px) translateY(${-9*yShift*multiplier}px) translateZ(5rem)` 
+            Home.dom.colourShapes[4].style.transform = `translateX(${xShift * multiplier * 2}px) translateY(${-2*yShift*multiplier}px) translateZ(5rem)` 
+            Home.dom.colourShapes[5].style.transform = `translateX(${xShift * multiplier * 4}px) translateY(${-4*yShift*multiplier}px) translateZ(5rem)` 
+            Home.dom.colourShapes[6].style.transform = `translateX(${xShift * multiplier * 7}px) translateY(${-7*yShift*multiplier}px) translateZ(5rem)` 
 
             if(Math.abs(differenceOfPositions.X + differenceOfPositions.Y) < .1)
                 Home.ticker = false

@@ -2848,10 +2848,6 @@ a {
   margin: 0;
 }
 
-.homeBanner__title {
-  font-size: 6rem;
-}
-
 @media screen and (min-width: 640px) {
   .faqsMain {
     display: flex;
@@ -3662,7 +3658,6 @@ a {
   border-color: #fff;
   color: #fff;
   transform-style: preserve-3d;
-  transition: all 0.5s ease-in-out;
   box-shadow: 0 0 50px 0 #444;
   transform: rotate3d(-3, 5, 0, -25deg);
   height: 75vh;
@@ -3676,6 +3671,78 @@ a {
     height: 540px;
     width: 300px;
   }
+}
+.mobile3D .colourShape {
+  width: 4rem;
+  height: 4rem;
+  transform: translate3d(0, 0, 5rem);
+  position: absolute;
+  top: 5%;
+  left: -10%;
+}
+.mobile3D .colourShape__inner {
+  width: 100%;
+  height: 100%;
+  background: red;
+  animation: float 30s linear infinite;
+}
+.mobile3D .colourShape--2 {
+  left: -25%;
+  top: 20%;
+  transform: translate3d(0, 0, 3rem);
+  width: 5rem;
+  height: 5rem;
+}
+.mobile3D .colourShape--2 .colourShape__inner {
+  background: blue;
+  animation-duration: 22s;
+}
+.mobile3D .colourShape--3 {
+  left: -25%;
+  top: 45%;
+  transform: translate3d(0, 0, 9rem);
+  width: 4rem;
+  height: 4rem;
+}
+.mobile3D .colourShape--3 .colourShape__inner {
+  background: orange;
+  animation-duration: 29s;
+}
+.mobile3D .colourShape--4 {
+  left: auto;
+  right: -25%;
+  top: 50%;
+  transform: translate3d(0, 0, 2rem);
+  width: 5rem;
+  height: 5rem;
+}
+.mobile3D .colourShape--4 .colourShape__inner {
+  background: white;
+  animation-duration: 27s;
+}
+.mobile3D .colourShape--5 {
+  left: auto;
+  right: -20%;
+  top: 5%;
+  transform: translate3d(0, 0, 4rem);
+  width: 6rem;
+  height: 6rem;
+}
+.mobile3D .colourShape--5 .colourShape__inner {
+  background: green;
+  animation-duration: 34s;
+}
+.mobile3D .colourShape--6 {
+  left: auto;
+  right: -5%;
+  top: 35%;
+  transform: translate3d(0, 0, 7rem);
+  width: 6rem;
+  height: 6rem;
+}
+.mobile3D .colourShape--6 .colourShape__inner {
+  background: pink;
+  animation-duration: 24s;
 }
 .mobile3D .mobile3D__screen {
   display: block;
@@ -3774,6 +3841,41 @@ a {
     transform: translate3d(0, 0, 0);
   }
 }
+@keyframes float {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  10% {
+    transform: translate3d(6px, 1px, 0);
+  }
+  20% {
+    transform: translate3d(-3px, 2px, 0);
+  }
+  30% {
+    transform: translate3d(0px, -6px, 0);
+  }
+  40% {
+    transform: translate3d(-10px, 4px, 0);
+  }
+  50% {
+    transform: translate3d(-3px, 8px, 0);
+  }
+  60% {
+    transform: translate3d(-5px, 4px, 0);
+  }
+  70% {
+    transform: translate3d(3px, -1px, 0);
+  }
+  80% {
+    transform: translate3d(-6px, 5px, 0);
+  }
+  90% {
+    transform: translate3d(2px, 2px, 0);
+  }
+  100% {
+    transform: translate3d(0px, 0px, 0);
+  }
+}
 .menuToggle__container {
   margin-left: 0;
   display: block;
@@ -3845,7 +3947,7 @@ body[data-current-theme=arts] .menuToggle--burger path {
   fill: white;
 }
 body[data-current-theme=arts] .mobile3D__phone {
-  transform: rotate3d(-9, 33, 0, -45deg);
+  transform: rotate3d(0, 0, 0, -45deg);
 }
 body[data-current-theme=arts] .mobile3D__screen:after,
 body[data-current-theme=arts] .mobile3D__side--right,
@@ -3876,9 +3978,6 @@ body[data-current-theme=sounds] .siteMainHeader__logo path,
 body[data-current-theme=sounds] .menuToggle--burger path {
   fill: white;
 }
-body[data-current-theme=sounds] .mobile3D__phone {
-  transform: rotate3d(3, 5, 0, 25deg);
-}
 body[data-current-theme=sounds] .mobile3D__screen:after,
 body[data-current-theme=sounds] .mobile3D__side--right,
 body[data-current-theme=sounds] .mobile3D__side--left {
@@ -3898,9 +3997,6 @@ body[data-current-theme=urban] .homeBanner__asset.homeBanner__asset--2 path {
 }
 body[data-current-theme=urban] .homeBanner__title {
   color: white;
-}
-body[data-current-theme=urban] .mobile3D__phone {
-  transform: rotate3d(3, 5, 0, 45deg);
 }
 body[data-current-theme=urban] .mobile3D__screen:after,
 body[data-current-theme=urban] .mobile3D__side--right,
@@ -3927,9 +4023,6 @@ body[data-current-theme=tagout] .siteMainHeader__logo path,
 body[data-current-theme=tagout] .menuToggle--burger path {
   fill: white;
 }
-body[data-current-theme=tagout] .mobile3D__phone {
-  transform: rotate3d(-2, 5, 0, -45deg);
-}
 body[data-current-theme=tagout] .mobile3D__screen:after,
 body[data-current-theme=tagout] .mobile3D__side--right,
 body[data-current-theme=tagout] .mobile3D__side--left {
@@ -3954,9 +4047,6 @@ body[data-current-theme=box] .mainMenu a {
 body[data-current-theme=box] .siteMainHeader__logo path,
 body[data-current-theme=box] .menuToggle--burger path {
   fill: white;
-}
-body[data-current-theme=box] .mobile3D__phone {
-  transform: rotate3d(3, 5, 0, 25deg);
 }
 body[data-current-theme=box] .mobile3D__screen:after,
 body[data-current-theme=box] .mobile3D__side--right,
@@ -3985,9 +4075,6 @@ body[data-current-theme=inter] .siteMainHeader__logo path,
 body[data-current-theme=inter] .menuToggle--burger path {
   fill: white;
 }
-body[data-current-theme=inter] .mobile3D__phone {
-  transform: rotate3d(-3, 5, 0, -25deg);
-}
 body[data-current-theme=inter] .mobile3D__screen:after,
 body[data-current-theme=inter] .mobile3D__side--right,
 body[data-current-theme=inter] .mobile3D__side--left {
@@ -4013,9 +4100,6 @@ body[data-current-theme=halftone] .siteMainHeader__logo path,
 body[data-current-theme=halftone] .menuToggle--burger path {
   fill: white;
 }
-body[data-current-theme=halftone] .mobile3D__phone {
-  transform: rotate3d(3, 5, 0, 25deg);
-}
 body[data-current-theme=halftone] .mobile3D__screen:after,
 body[data-current-theme=halftone] .mobile3D__side--right,
 body[data-current-theme=halftone] .mobile3D__side--left {
@@ -4040,9 +4124,6 @@ body[data-current-theme=deep] .mainMenu a {
 body[data-current-theme=deep] .siteMainHeader__logo path,
 body[data-current-theme=deep] .menuToggle--burger path {
   fill: white;
-}
-body[data-current-theme=deep] .mobile3D__phone {
-  transform: rotate3d(0, calc(var(--xShift) * -1), 0, -35deg);
 }
 body[data-current-theme=deep] .mobile3D__screen:after,
 body[data-current-theme=deep] .mobile3D__side--right,

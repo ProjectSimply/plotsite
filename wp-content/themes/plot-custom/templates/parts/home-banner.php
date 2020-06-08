@@ -12,7 +12,7 @@
 
         <div class="homeBanner__grid">
 
-            <div class="homeBanner__item homeBanner__item--titleWrap">
+            <div class="homeBanner__item homeBanner__item--titleWrap" style="display: none">
 
                 <h1 class="homeBanner__title"><?= get_field('home_title') ?></h1>
 
@@ -36,6 +36,25 @@
                     <span class="mobile3D__side mobile3D__side--bottom"></span>
 
                     <span class="mobile3D__side mobile3D__side--top"></span>
+
+                    <div class="colourShape colourShape--1">
+                        <div class="colourShape__inner"></div>
+                    </div>
+                    <div class="colourShape colourShape--2">
+                        <div class="colourShape__inner"></div>
+                    </div>
+                    <div class="colourShape colourShape--3">
+                        <div class="colourShape__inner"></div>
+                    </div>
+                    <div class="colourShape colourShape--4">
+                        <div class="colourShape__inner"></div>
+                    </div>
+                    <div class="colourShape colourShape--5">
+                        <div class="colourShape__inner"></div>
+                    </div>
+                    <div class="colourShape colourShape--6">
+                        <div class="colourShape__inner"></div>
+                    </div>
 
                 </div>
             </div>
