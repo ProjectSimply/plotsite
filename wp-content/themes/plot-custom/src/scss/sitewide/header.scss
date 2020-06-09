@@ -1,3 +1,19 @@
+#siteMainHeader.defaultHeader {
+	.siteMainHeader__logo path {
+		fill: var(--black);
+	}
+
+	.homeBanner__title,
+    .mainMenu a {
+        color: var(--black);
+	}
+	
+    .siteMainHeader__ctaLink {
+		color: white;
+        background-color: var(--black);
+    }
+}
+
 .siteMainHeader__wrap {
 	display: flex;
 	align-items: center;

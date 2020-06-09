@@ -1,4 +1,4 @@
-<header id="siteMainHeader">
+<header id="siteMainHeader" class="">
 
 	<div class="maxWidth">
 

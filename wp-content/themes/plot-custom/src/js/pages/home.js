@@ -8,6 +8,7 @@
             root                    : document.querySelector('html'),
             phone                   : document.querySelector('.mobile3D__phone'),
             homeBanner              : document.querySelector('.homeBanner'),
+            header                  : document.querySelector('#siteMainHeader'),
             colourShapes        : {
                 1 : document.querySelector('.colourShape--1'),
                 2 : document.querySelector('.colourShape--2'),
@@ -47,7 +48,7 @@
             Home.createListeners()
 
             Home.startThemeCounter()
-
+            
             Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
 
         },
@@ -100,10 +101,10 @@
         },
 
         bannerMutation: (mutationsList, observer) => {
-            
+            console.log(mutationsList[0], Home.bannerInView);
             // If the banner element is in view
-            if(mutationsList[0].target.classList.contains('plotSmoothScrollInView') && Home.bannerInView == false) {
-
+            if(mutationsList[0].target.classList.contains('plotSmoothScrollInView') && !Home.bannerInView) {
+                            
                 Home.bannerInView = true
 
                 Home.startThemeCounter()
@@ -122,9 +123,16 @@
 
         startThemeCounter: () => {
             
-            let i = 0
-            Home.counter = setInterval(() => {        
+            Home.bannerInView = true;
 
+            // Set header to default style
+            if(Home.dom.header.classList.contains('defaultHeader'))
+                Home.dom.header.classList.remove('defaultHeader') 
+        
+            
+            let i = 0
+            Home.counter = setInterval(() => {       
+                
                 // Update mobile screen image
                 Home.dom.body.dataset.currentTheme = Home.themes[i]
                 Home.dom.body.dataset.previousTheme = Home.previousTheme
@@ -157,6 +165,9 @@
                 Home.dom.body.classList.remove(Home.previousTheme)
 
             Home.previousTheme = ''
+
+            // Set header to default style
+            Home.dom.header.classList.add('defaultHeader') 
             
         },
 
