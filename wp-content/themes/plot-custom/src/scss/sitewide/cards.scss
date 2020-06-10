@@ -19,20 +19,19 @@
     }
 
     .cards__grid {
-        
+        @include plotFlex(1, 1rem, 3rem, 'center'); 
 
-        @include medium { @include plotFlex(2) }
+        @include medium { @include plotFlex(2, 2rem, 2rem, 'center') }
 
-        @include large { @include plotFlex(3) }
+        @include large { @include plotFlex(3, 2rem, 2rem, 'center') }
     }
 
         .cards__item {
             max-width: 400px;
-            margin: 0 auto 4rem;
         }
 
             .cards__svgWrap {
-                margin-bottom: .5rem; 
+                margin-bottom: calc(var(--vs) / 2);
             }
 
             .cards__textWrap {
