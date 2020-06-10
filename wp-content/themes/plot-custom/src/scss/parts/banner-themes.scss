@@ -1,6 +1,6 @@
 // Theme Setting
-.homeBanner,
-.homeBanner__asset.homeBanner__asset--1 path,
+
+.homeBanner__asset.homeBanner__asset--1 path
 .homeBanner__asset.homeBanner__asset--2 path,
 .homeBanner__title,
 .mainMenu a,
@@ -11,7 +11,7 @@
 
 
 body.home[data-current-theme="arts"] {
-    .homeBanner {
+    .homeBanner:after {
         background-color: #E90030;
     }
 
@@ -50,6 +50,10 @@ body.home[data-current-theme="arts"] {
 }
 
 body.home[data-previous-theme="arts"] {
+    .homeBanner:before {
+        background-color: #E90030;
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--arts.jpg);
     }
@@ -58,7 +62,7 @@ body.home[data-previous-theme="arts"] {
 
 
 body.home[data-current-theme="sounds"] {
-    .homeBanner {
+    .homeBanner:after {
         background: linear-gradient(0deg, rgba(132,21,89,1) 0%, rgba(50,23,53,1) 100%);
     }
 
@@ -98,13 +102,17 @@ body.home[data-current-theme="sounds"] {
 }
 
 body.home[data-previous-theme="sounds"] {
+    .homeBanner:before {
+        background: linear-gradient(0deg, rgba(132,21,89,1) 0%, rgba(50,23,53,1) 100%);
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--sounds.jpg);
     }
 }
 
 body.home[data-current-theme="urban"] {
-    .homeBanner {
+    .homeBanner:after {
         background-color: #FFBD00;
     }
 
@@ -133,7 +141,11 @@ body.home[data-current-theme="urban"] {
 
 }
 
-body.home[data-previous-theme="sounds"] {
+body.home[data-previous-theme="urban"] {
+    .homeBanner:before {
+        background-color: #FFBD00;
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--urban.jpg);
     }
@@ -141,7 +153,7 @@ body.home[data-previous-theme="sounds"] {
 
 
 body.home[data-current-theme="tagout"] {
-    .homeBanner {
+    .homeBanner:after {
         background-color:  #FF00F9;
     }
 
@@ -182,13 +194,17 @@ body.home[data-current-theme="tagout"] {
 }
 
 body.home[data-previous-theme="tagout"] {
+    .homeBanner:before {
+        background-color:  #FF00F9;
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--tagout.jpg);
     } 
 }
 
 body.home[data-current-theme="box"] {
-    .homeBanner {
+    .homeBanner:after {
         background-color:  #1F0087;
     }
 
@@ -225,13 +241,17 @@ body.home[data-current-theme="box"] {
 }
 
 body.home[data-previous-theme="box"] {
+    .homeBanner:before {
+        background-color:  #1F0087;
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--box.jpg);
     } 
 }
 
 body.home[data-current-theme="inter"] {
-    .homeBanner {
+    .homeBanner:after {
         background-color:  #171E43;
     }
 
@@ -272,13 +292,17 @@ body.home[data-current-theme="inter"] {
 }
 
 body.home[data-previous-theme="inter"] {
+    .homeBanner:before {
+        background-color:  #171E43;
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--inter.jpg);
     } 
 }
 
 body.home[data-current-theme="halftone"] {
-    .homeBanner {
+    .homeBanner:after {
         background: linear-gradient(0deg, rgba(111,89,106,1) 0%, rgba(0,120,202,1) 100%);
 
     }
@@ -318,13 +342,18 @@ body.home[data-current-theme="halftone"] {
 }
 
 body.home[data-previous-theme="halftone"] {
+    .homeBanner:before {
+        background: linear-gradient(0deg, rgba(111,89,106,1) 0%, rgba(0,120,202,1) 100%);
+
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--halftone.jpg);
     } 
 }
 
 body.home[data-current-theme="deep"] {
-    .homeBanner {
+    .homeBanner:after {
         background: #003046;
 
     }
@@ -365,6 +394,11 @@ body.home[data-current-theme="deep"] {
 }
 
 body.home[data-previous-theme="deep"] {
+    .homeBanner:before {
+        background: #003046;
+
+    }
+
     .mobile3D__screen:before {
         background-image: url(../img/mobile--deep.jpg);
     } 

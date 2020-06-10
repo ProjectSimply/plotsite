@@ -3974,9 +3974,7 @@ html.burgerOpen .menuToggle--cross {
   display: block;
 }
 
-.homeBanner,
-.homeBanner__asset.homeBanner__asset--1 path,
-.homeBanner__asset.homeBanner__asset--2 path,
+.homeBanner__asset.homeBanner__asset--1 path .homeBanner__asset.homeBanner__asset--2 path,
 .homeBanner__title,
 .mainMenu a,
 .siteMainHeader__logo path,
@@ -3984,7 +3982,7 @@ html.burgerOpen .menuToggle--cross {
   transition: color 0.2s ease-in-out, fill 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
-body.home[data-current-theme=arts] .homeBanner {
+body.home[data-current-theme=arts] .homeBanner:after {
   background-color: #E90030;
 }
 body.home[data-current-theme=arts] .homeBanner__asset.homeBanner__asset--1 path {
@@ -4013,11 +4011,14 @@ body.home[data-current-theme=arts] .mobile3D__side--left {
   background-image: url(../img/arts--side.jpg);
 }
 
+body.home[data-previous-theme=arts] .homeBanner:before {
+  background-color: #E90030;
+}
 body.home[data-previous-theme=arts] .mobile3D__screen:before {
   background-image: url(../img/mobile--arts.jpg);
 }
 
-body.home[data-current-theme=sounds] .homeBanner {
+body.home[data-current-theme=sounds] .homeBanner:after {
   background: linear-gradient(0deg, #841559 0%, #321735 100%);
 }
 body.home[data-current-theme=sounds] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4045,11 +4046,14 @@ body.home[data-current-theme=sounds] .mobile3D__side--left {
   background-image: url(../img/sounds--side.jpg);
 }
 
+body.home[data-previous-theme=sounds] .homeBanner:before {
+  background: linear-gradient(0deg, #841559 0%, #321735 100%);
+}
 body.home[data-previous-theme=sounds] .mobile3D__screen:before {
   background-image: url(../img/mobile--sounds.jpg);
 }
 
-body.home[data-current-theme=urban] .homeBanner {
+body.home[data-current-theme=urban] .homeBanner:after {
   background-color: #FFBD00;
 }
 body.home[data-current-theme=urban] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4068,11 +4072,14 @@ body.home[data-current-theme=urban] .mobile3D__side--left {
   background-image: url(../img/urban--side.jpg);
 }
 
-body.home[data-previous-theme=sounds] .mobile3D__screen:before {
+body.home[data-previous-theme=urban] .homeBanner:before {
+  background-color: #FFBD00;
+}
+body.home[data-previous-theme=urban] .mobile3D__screen:before {
   background-image: url(../img/mobile--urban.jpg);
 }
 
-body.home[data-current-theme=tagout] .homeBanner {
+body.home[data-current-theme=tagout] .homeBanner:after {
   background-color: #FF00F9;
 }
 body.home[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4099,11 +4106,14 @@ body.home[data-current-theme=tagout] .mobile3D__side--left {
   background-image: url(../img/tagout--leftSide.jpg);
 }
 
+body.home[data-previous-theme=tagout] .homeBanner:before {
+  background-color: #FF00F9;
+}
 body.home[data-previous-theme=tagout] .mobile3D__screen:before {
   background-image: url(../img/mobile--tagout.jpg);
 }
 
-body.home[data-current-theme=box] .homeBanner {
+body.home[data-current-theme=box] .homeBanner:after {
   background-color: #1F0087;
 }
 body.home[data-current-theme=box] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4127,11 +4137,14 @@ body.home[data-current-theme=box] .mobile3D__side--left {
   background-image: url(../img/box--side.jpg);
 }
 
+body.home[data-previous-theme=box] .homeBanner:before {
+  background-color: #1F0087;
+}
 body.home[data-previous-theme=box] .mobile3D__screen:before {
   background-image: url(../img/mobile--box.jpg);
 }
 
-body.home[data-current-theme=inter] .homeBanner {
+body.home[data-current-theme=inter] .homeBanner:after {
   background-color: #171E43;
 }
 body.home[data-current-theme=inter] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4157,11 +4170,14 @@ body.home[data-current-theme=inter] .mobile3D__side--left {
   background-image: url(../img/inter--side.jpg);
 }
 
+body.home[data-previous-theme=inter] .homeBanner:before {
+  background-color: #171E43;
+}
 body.home[data-previous-theme=inter] .mobile3D__screen:before {
   background-image: url(../img/mobile--inter.jpg);
 }
 
-body.home[data-current-theme=halftone] .homeBanner {
+body.home[data-current-theme=halftone] .homeBanner:after {
   background: linear-gradient(0deg, #6f596a 0%, #0078ca 100%);
 }
 body.home[data-current-theme=halftone] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4188,11 +4204,14 @@ body.home[data-current-theme=halftone] .mobile3D__side--left {
   background-image: url(../img/halftone--leftSide.jpg);
 }
 
+body.home[data-previous-theme=halftone] .homeBanner:before {
+  background: linear-gradient(0deg, #6f596a 0%, #0078ca 100%);
+}
 body.home[data-previous-theme=halftone] .mobile3D__screen:before {
   background-image: url(../img/mobile--halftone.jpg);
 }
 
-body.home[data-current-theme=deep] .homeBanner {
+body.home[data-current-theme=deep] .homeBanner:after {
   background: #003046;
 }
 body.home[data-current-theme=deep] .homeBanner__asset.homeBanner__asset--1 path,
@@ -4219,6 +4238,9 @@ body.home[data-current-theme=deep] .mobile3D__side--left {
   background-image: url(../img/deep--leftSide.jpg);
 }
 
+body.home[data-previous-theme=deep] .homeBanner:before {
+  background: #003046;
+}
 body.home[data-previous-theme=deep] .mobile3D__screen:before {
   background-image: url(../img/mobile--deep.jpg);
 }
@@ -4465,12 +4487,33 @@ ul.pricingSection__fullList {
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
 }
 @media screen and (min-width: 640px) {
   .homeBanner {
     height: 100vh;
     height: calc(var(--vh) * 100);
   }
+}
+.homeBanner:before, .homeBanner:after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  z-index: -2;
+}
+.slideMobileScreen .homeBanner:before, .slideMobileScreen .homeBanner:after {
+  animation: slide 0.3s ease-out;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.homeBanner:before {
+  left: -100%;
+}
+.homeBanner:after {
+  left: 0%;
 }
 
 .homeBanner__item.homeBanner__item--titleWrap {
@@ -4529,6 +4572,15 @@ ul.pricingSection__fullList {
   height: 100%;
   width: 100%;
   object-fit: contain;
+}
+
+@keyframes slide {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

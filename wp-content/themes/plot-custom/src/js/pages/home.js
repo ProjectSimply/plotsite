@@ -19,7 +19,7 @@
             }
         },
         intervalLength          : 5000,
-        previousTheme           : 'arts',
+        previousTheme           : 'deep',
         counter                 : null,
         ticker                  : false,
         currentMousePosition    : {
@@ -101,7 +101,7 @@
         },
 
         bannerMutation: (mutationsList, observer) => {
-            console.log(mutationsList[0], Home.bannerInView);
+            
             // If the banner element is in view
             if(mutationsList[0].target.classList.contains('plotSmoothScrollInView') && !Home.bannerInView) {
                             
