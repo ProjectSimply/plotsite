@@ -3747,25 +3747,31 @@ a {
   color: #fff;
   transform-style: preserve-3d;
   transform: rotate3d(-3, 5, 0, -25deg);
-  height: 75vh;
-  height: calc(var(--vh) * 75);
+  height: 65vh;
+  height: calc(var(--vh) * 65);
   width: 70vw;
   max-height: 540px;
   max-width: 300px;
 }
 @media screen and (min-width: 640px) {
   .mobile3D .mobile3D__phone {
-    height: 540px;
-    width: 300px;
+    height: 60vw;
+    width: 30vw;
   }
 }
 .mobile3D .colourShape {
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
   transform: translate3d(0, 0, 5rem);
   position: absolute;
   top: 5%;
   left: -10%;
+}
+@media screen and (min-width: 1024px) {
+  .mobile3D .colourShape {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 .mobile3D .colourShape__inner {
   width: 100%;
@@ -3777,8 +3783,14 @@ a {
   left: -25%;
   top: 20%;
   transform: translate3d(0, 0, 3rem);
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
+}
+@media screen and (min-width: 1024px) {
+  .mobile3D .colourShape--2 {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 .mobile3D .colourShape--2 .colourShape__inner {
   background: blue;
@@ -3788,8 +3800,14 @@ a {
   left: -25%;
   top: 45%;
   transform: translate3d(0, 0, 9rem);
-  width: 4rem;
-  height: 4rem;
+  width: 3rem;
+  height: 3rem;
+}
+@media screen and (min-width: 1024px) {
+  .mobile3D .colourShape--3 {
+    width: 4rem;
+    height: 4rem;
+  }
 }
 .mobile3D .colourShape--3 .colourShape__inner {
   background: orange;
@@ -3800,8 +3818,14 @@ a {
   right: -25%;
   top: 50%;
   transform: translate3d(0, 0, 2rem);
-  width: 5rem;
-  height: 5rem;
+  width: 4rem;
+  height: 4rem;
+}
+@media screen and (min-width: 1024px) {
+  .mobile3D .colourShape--4 {
+    width: 5rem;
+    height: 5rem;
+  }
 }
 .mobile3D .colourShape--4 .colourShape__inner {
   background: white;
@@ -3812,8 +3836,14 @@ a {
   right: -20%;
   top: 5%;
   transform: translate3d(0, 0, 4rem);
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
+}
+@media screen and (min-width: 1024px) {
+  .mobile3D .colourShape--5 {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 .mobile3D .colourShape--5 .colourShape__inner {
   background: green;
@@ -3824,8 +3854,14 @@ a {
   right: -5%;
   top: 35%;
   transform: translate3d(0, 0, 7rem);
-  width: 6rem;
-  height: 6rem;
+  width: 5rem;
+  height: 5rem;
+}
+@media screen and (min-width: 1024px) {
+  .mobile3D .colourShape--6 {
+    width: 6rem;
+    height: 6rem;
+  }
 }
 .mobile3D .colourShape--6 .colourShape__inner {
   background: pink;
@@ -4531,11 +4567,13 @@ ul.pricingSection__fullList {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  padding-top: 5rem;
 }
 @media screen and (min-width: 640px) {
   .homeBanner {
     height: 100vh;
     height: calc(var(--vh) * 100);
+    padding-top: 0;
   }
 }
 .homeBanner:before, .homeBanner:after {
@@ -4558,19 +4596,57 @@ ul.pricingSection__fullList {
 .homeBanner:after {
   left: 0%;
 }
+.homeBanner .maxWidth {
+  height: 100%;
+}
+
+@media screen and (min-width: 640px) {
+  .homeBanner__grid {
+    display: grid;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "titleWrap mobile" "button    mobile";
+  }
+}
 
 .homeBanner__item.homeBanner__item--titleWrap {
-  z-index: 1;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate3d(-50%, -50%, 0);
+  grid-area: titleWrap;
+  text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .homeBanner__item.homeBanner__item--titleWrap {
+    align-self: end;
+  }
+}
+.homeBanner__item.homeBanner__item--mobile3D {
+  grid-area: mobile;
+}
+.homeBanner__item.homeBanner__item--button {
+  grid-area: button;
+}
+@media screen and (max-width: 639px) {
+  .homeBanner__item.homeBanner__item--button {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 640px) {
+  .homeBanner__item.homeBanner__item--button {
+    align-self: start;
+  }
 }
 
 .homeBanner__title {
   text-transform: uppercase;
-  text-align: center;
   text-shadow: 2px 9px 8px rgba(206, 190, 190, 0), 2px 9px 8px rgba(137, 127, 127, 0.42);
+  text-align: center;
+}
+@media screen and (min-width: 640px) {
+  .homeBanner__title {
+    text-align: left;
+  }
 }
 
 .homeBanner__asset {
@@ -4630,46 +4706,6 @@ ul.pricingSection__fullList {
   }
   100% {
     transform: translate3d(0, 0, 0);
-  }
-}
-@keyframes bob--2 {
-  0% {
-    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
-  }
-  20% {
-    transform: translate3d(-30%, 45%, 0) rotate3d(0, 0, 1, 25deg);
-  }
-  40% {
-    transform: translate3d(-45%, 90%, 0) rotate3d(0, 0, 1, 95deg);
-  }
-  60% {
-    transform: translate3d(-15%, 45%, 0) rotate3d(0, 0, 1, 20deg);
-  }
-  80% {
-    transform: translate3d(-15%, 10%, 0) rotate3d(0, 0, 1, 0deg);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
-  }
-}
-@keyframes bob--1 {
-  0% {
-    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
-  }
-  20% {
-    transform: translate3d(-30%, -30%, 0) rotate3d(0, 0, 1, -25deg);
-  }
-  40% {
-    transform: translate3d(-25%, -25%, 0) rotate3d(0, 0, 1, -20deg);
-  }
-  60% {
-    transform: translate3d(-45%, -15%, 0) rotate3d(0, 0, 1, -95deg);
-  }
-  80% {
-    transform: translate3d(-15%, 0%, 0) rotate3d(0, 0, 1, -45deg);
-  }
-  100% {
-    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
 }
 

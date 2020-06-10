@@ -1,18 +1,10 @@
 <section class="homeBanner" data-plot-smooth-scroll-element>
 
-    <div class="homeBanner__asset homeBanner__asset--1">
-        <?php plotGetTemplatePart('parts/svg-asset--l') ?>
-    </div>
-
-    <div class="homeBanner__asset homeBanner__asset--2">
-        <?php plotGetTemplatePart('parts/svg-asset--o') ?>
-    </div>
-
     <div class="maxWidth">
 
         <div class="homeBanner__grid">
 
-            <div class="homeBanner__item homeBanner__item--titleWrap" style="display: none">
+            <div class="homeBanner__item homeBanner__item--titleWrap">
 
                 <h1 class="homeBanner__title"><?= get_field('home_title') ?></h1>
 
@@ -21,7 +13,7 @@
             </div>
 
 
-            <div class="homeBanner__mobile3D mobile3D">
+            <div class="homeBanner__mobile3D homeBanner__item homeBanner__item--mobile3D mobile3D">
 
                 <div class="mobile3D__phone">
                     
@@ -73,6 +65,14 @@
         
         </div>
     
+    </div>
+
+    <div class="homeBanner__asset homeBanner__asset--1">
+        <?php plotGetTemplatePart('parts/svg-asset--l') ?>
+    </div>
+
+    <div class="homeBanner__asset homeBanner__asset--2">
+        <?php plotGetTemplatePart('parts/svg-asset--o') ?>
     </div>
 
 </section>

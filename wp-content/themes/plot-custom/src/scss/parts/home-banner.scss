@@ -5,9 +5,11 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
+    padding-top: 5rem;
 
     @include medium {
         @include vh(100, 'height');
+        padding-top: 0;
     }
 
     &:before,
@@ -34,28 +36,66 @@
     &:after {
         left: 0%;
     }
+
+    .maxWidth {
+        height: 100%;
+    }
 }
 
     .homeBanner__grid {
-
+        @include medium {
+            display: grid;
+            height: 100%;
+            align-items: center;
+            justify-content: center;
+            grid-template-columns: 1fr 1fr;
+            grid-template-areas: 
+            "titleWrap mobile"
+            "button    mobile"; 
+        }
     }
 
         .homeBanner__item {
 
 
             &.homeBanner__item--titleWrap {
-                z-index: 1;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate3d(-50%,-50%, 0);
+                grid-area: titleWrap; 
+                text-align: center;
+
+                // Centers Title and Button
+                @include medium {
+                    align-self: end;
+                }
+                
+            }
+
+            &.homeBanner__item--mobile3D {
+                grid-area: mobile;
+            }
+
+            &.homeBanner__item--button {
+                grid-area: button;
+
+                // Use margin top because button isn't always output
+                @include small-only {
+                    margin-top: 3rem;
+                    margin-bottom: 2rem;
+                }
+
+                @include medium {
+                    align-self: start;
+                }
             }
         }
 
             .homeBanner__title {
                 text-transform: uppercase; 
-                text-align: center;
                 text-shadow: 2px 9px 8px rgba(206,190,190,0), 2px 9px 8px rgba(137,127,127,0.42);
+                text-align: center;
+
+                @include medium {
+                    text-align: left; 
+                }
             }
         
     .homeBanner__asset {
