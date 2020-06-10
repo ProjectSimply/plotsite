@@ -5,6 +5,7 @@
 .homeBanner__title,
 .mainMenu a,
 .siteMainHeader__logo path,
+.siteMainHeader__ctaLink,
 .menuToggle--burger path {
     transition: color .2s ease-in-out, fill .2s ease-in-out, background-color .2s ease-in-out;
 }
@@ -26,6 +27,17 @@ body.home[data-current-theme="arts"] {
     .homeBanner__title,
     .mainMenu a {
         color: white;
+    }
+
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: black;
+        fill: black;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #E90030;
     }
 
     .siteMainHeader__logo path,
@@ -81,6 +93,17 @@ body.home[data-current-theme="sounds"] {
         background-color: #841559;
     }
 
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: #841559;
+        fill: #841559;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #9AE4D6;
+    }
+
     .siteMainHeader__logo path,
     .menuToggle--burger path {
         fill: white;
@@ -129,6 +152,18 @@ body.home[data-current-theme="urban"] {
         // transform: rotate3d(3, 5, 0, 45deg);
     }
 
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: #f63f16;
+        fill: #f63f16;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #f63f16;
+    }
+
+
     .mobile3D__screen:after {
         background-image: url(../img/mobile--urban.jpg);
     }
@@ -165,6 +200,18 @@ body.home[data-current-theme="tagout"] {
     .homeBanner__title,
     .mainMenu a {
         color: white;
+    }
+
+
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: #61008e;
+        fill: #61008e;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #FF00F9;
     }
 
 
@@ -219,6 +266,18 @@ body.home[data-current-theme="box"] {
     }
 
 
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: #c72528;
+        fill: #c72528;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #c72528;
+    }
+
+
     .siteMainHeader__logo path,
     .menuToggle--burger path {
         fill: white;
@@ -261,12 +320,23 @@ body.home[data-current-theme="inter"] {
     }
 
     .homeBanner__title {
-        color: #FF969B;
+        color: white;
     }
 
     
     .mainMenu a {
         color: white;
+    }
+
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: #169797;
+        fill: #169797;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #169797;
     }
 
 
@@ -282,11 +352,15 @@ body.home[data-current-theme="inter"] {
     .mobile3D__screen:after {
         background-image: url(../img/mobile--inter.jpg);
     }
-    
-    .mobile3D__side--right,
+
+    .mobile3D__side--right {
+        background-size: 100% 100%;
+        background-image: url(../img/inter--rightSide.jpg);
+    }
+
     .mobile3D__side--left {
         background-size: 100% 100%;
-        background-image: url(../img/inter--side.jpg);
+        background-image: url(../img/inter--leftSide.jpg);
     }
 
 }
@@ -321,6 +395,18 @@ body.home[data-current-theme="halftone"] {
     .menuToggle--burger path {
         fill: white;
     }
+
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: rgba(111,89,106);
+        fill: rgba(111,89,106);
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #9AE4D6;
+    }
+
 
     .mobile3D__phone {
         // transform: rotate3d(3, 5, 0, 25deg);
@@ -367,6 +453,18 @@ body.home[data-current-theme="deep"] {
     .mainMenu a {
         color: white;
     }
+
+    .mainMenu a:hover,
+    .siteMainHeader__logo:hover path {
+        color: #9AE4D6;
+        fill: #9AE4D6;
+    }
+
+    .siteMainHeader__ctaLink:hover,
+    .homeBanner__button:hover {
+        color: #9AE4D6;
+    }
+
 
 
     .siteMainHeader__logo path,

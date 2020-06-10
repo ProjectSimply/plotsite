@@ -3604,7 +3604,7 @@ a {
 
 .siteMainHeader__cta {
   margin-left: auto;
-  margin-right: 1rem;
+  margin-right: 2rem;
 }
 @media screen and (min-width: 640px) {
   .siteMainHeader__cta {
@@ -4057,6 +4057,7 @@ html.burgerOpen .menuToggle--cross {
 .homeBanner__title,
 .mainMenu a,
 .siteMainHeader__logo path,
+.siteMainHeader__ctaLink,
 .menuToggle--burger path {
   transition: color 0.2s ease-in-out, fill 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
@@ -4073,6 +4074,15 @@ body.home[data-current-theme=arts] .homeBanner__asset.homeBanner__asset--2 path 
 body.home[data-current-theme=arts] .homeBanner__title,
 body.home[data-current-theme=arts] .mainMenu a {
   color: white;
+}
+body.home[data-current-theme=arts] .mainMenu a:hover,
+body.home[data-current-theme=arts] .siteMainHeader__logo:hover path {
+  color: black;
+  fill: black;
+}
+body.home[data-current-theme=arts] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=arts] .homeBanner__button:hover {
+  color: #E90030;
 }
 body.home[data-current-theme=arts] .siteMainHeader__logo path,
 body.home[data-current-theme=arts] .menuToggle--burger path {
@@ -4112,6 +4122,15 @@ body.home[data-current-theme=sounds] .siteMainHeader__ctaLink {
 body.home[data-current-theme=sounds] .siteMainHeader__ctaLink {
   background-color: #841559;
 }
+body.home[data-current-theme=sounds] .mainMenu a:hover,
+body.home[data-current-theme=sounds] .siteMainHeader__logo:hover path {
+  color: #841559;
+  fill: #841559;
+}
+body.home[data-current-theme=sounds] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=sounds] .homeBanner__button:hover {
+  color: #9AE4D6;
+}
 body.home[data-current-theme=sounds] .siteMainHeader__logo path,
 body.home[data-current-theme=sounds] .menuToggle--burger path {
   fill: white;
@@ -4142,6 +4161,15 @@ body.home[data-current-theme=urban] .homeBanner__asset.homeBanner__asset--2 path
 body.home[data-current-theme=urban] .homeBanner__title {
   color: white;
 }
+body.home[data-current-theme=urban] .mainMenu a:hover,
+body.home[data-current-theme=urban] .siteMainHeader__logo:hover path {
+  color: #f63f16;
+  fill: #f63f16;
+}
+body.home[data-current-theme=urban] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=urban] .homeBanner__button:hover {
+  color: #f63f16;
+}
 body.home[data-current-theme=urban] .mobile3D__screen:after {
   background-image: url(../img/mobile--urban.jpg);
 }
@@ -4168,6 +4196,15 @@ body.home[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--2 pat
 body.home[data-current-theme=tagout] .homeBanner__title,
 body.home[data-current-theme=tagout] .mainMenu a {
   color: white;
+}
+body.home[data-current-theme=tagout] .mainMenu a:hover,
+body.home[data-current-theme=tagout] .siteMainHeader__logo:hover path {
+  color: #61008e;
+  fill: #61008e;
+}
+body.home[data-current-theme=tagout] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=tagout] .homeBanner__button:hover {
+  color: #FF00F9;
 }
 body.home[data-current-theme=tagout] .siteMainHeader__logo path,
 body.home[data-current-theme=tagout] .menuToggle--burger path {
@@ -4203,6 +4240,15 @@ body.home[data-current-theme=box] .homeBanner__title,
 body.home[data-current-theme=box] .mainMenu a {
   color: white;
 }
+body.home[data-current-theme=box] .mainMenu a:hover,
+body.home[data-current-theme=box] .siteMainHeader__logo:hover path {
+  color: #c72528;
+  fill: #c72528;
+}
+body.home[data-current-theme=box] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=box] .homeBanner__button:hover {
+  color: #c72528;
+}
 body.home[data-current-theme=box] .siteMainHeader__logo path,
 body.home[data-current-theme=box] .menuToggle--burger path {
   fill: white;
@@ -4231,10 +4277,19 @@ body.home[data-current-theme=inter] .homeBanner__asset.homeBanner__asset--2 path
   fill: #FF969B;
 }
 body.home[data-current-theme=inter] .homeBanner__title {
-  color: #FF969B;
+  color: white;
 }
 body.home[data-current-theme=inter] .mainMenu a {
   color: white;
+}
+body.home[data-current-theme=inter] .mainMenu a:hover,
+body.home[data-current-theme=inter] .siteMainHeader__logo:hover path {
+  color: #169797;
+  fill: #169797;
+}
+body.home[data-current-theme=inter] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=inter] .homeBanner__button:hover {
+  color: #169797;
 }
 body.home[data-current-theme=inter] .siteMainHeader__logo path,
 body.home[data-current-theme=inter] .menuToggle--burger path {
@@ -4243,10 +4298,13 @@ body.home[data-current-theme=inter] .menuToggle--burger path {
 body.home[data-current-theme=inter] .mobile3D__screen:after {
   background-image: url(../img/mobile--inter.jpg);
 }
-body.home[data-current-theme=inter] .mobile3D__side--right,
+body.home[data-current-theme=inter] .mobile3D__side--right {
+  background-size: 100% 100%;
+  background-image: url(../img/inter--rightSide.jpg);
+}
 body.home[data-current-theme=inter] .mobile3D__side--left {
   background-size: 100% 100%;
-  background-image: url(../img/inter--side.jpg);
+  background-image: url(../img/inter--leftSide.jpg);
 }
 
 body.home[data-previous-theme=inter] .homeBanner:before {
@@ -4270,6 +4328,15 @@ body.home[data-current-theme=halftone] .mainMenu a {
 body.home[data-current-theme=halftone] .siteMainHeader__logo path,
 body.home[data-current-theme=halftone] .menuToggle--burger path {
   fill: white;
+}
+body.home[data-current-theme=halftone] .mainMenu a:hover,
+body.home[data-current-theme=halftone] .siteMainHeader__logo:hover path {
+  color: #6f596a;
+  fill: #6f596a;
+}
+body.home[data-current-theme=halftone] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=halftone] .homeBanner__button:hover {
+  color: #9AE4D6;
 }
 body.home[data-current-theme=halftone] .mobile3D__screen:after {
   background-image: url(../img/mobile--halftone.jpg);
@@ -4300,6 +4367,15 @@ body.home[data-current-theme=deep] .homeBanner__asset.homeBanner__asset--2 path 
 body.home[data-current-theme=deep] .homeBanner__title,
 body.home[data-current-theme=deep] .mainMenu a {
   color: white;
+}
+body.home[data-current-theme=deep] .mainMenu a:hover,
+body.home[data-current-theme=deep] .siteMainHeader__logo:hover path {
+  color: #9AE4D6;
+  fill: #9AE4D6;
+}
+body.home[data-current-theme=deep] .siteMainHeader__ctaLink:hover,
+body.home[data-current-theme=deep] .homeBanner__button:hover {
+  color: #9AE4D6;
 }
 body.home[data-current-theme=deep] .siteMainHeader__logo path,
 body.home[data-current-theme=deep] .menuToggle--burger path {
@@ -4464,7 +4540,7 @@ ul.pricingSection__fullList {
   text-transform: uppercase;
   font-family: var(--bodyFont);
   color: var(--black);
-  margin: 0 1rem 0 0;
+  margin: 0 1.5rem 0 0;
   padding: 0.25rem 0;
 }
 
