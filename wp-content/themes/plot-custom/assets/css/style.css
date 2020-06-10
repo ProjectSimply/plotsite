@@ -2764,6 +2764,39 @@ a {
   color: var(--black);
   font-family: var(--headingFont);
 }
+.plotLayoutForm .wpforms-field-radio ul {
+  display: flex;
+  list-style: none;
+  padding-left: 0;
+  margin-top: 0;
+}
+.plotLayoutForm .wpforms-field-radio ul input {
+  visibility: hidden;
+  width: 0px;
+}
+.plotLayoutForm .wpforms-field-radio ul input:checked + label:before {
+  background-image: url("../img/tick.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.plotLayoutForm .wpforms-field-radio ul label {
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 1.5rem;
+  padding: 1rem 0 1rem 40px;
+  position: relative;
+}
+.plotLayoutForm .wpforms-field-radio ul label:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  top: 50%;
+  transform: translate3d(0, -50%, 0);
+  height: 15px;
+  width: 15px;
+  border: 3px solid var(--pink);
+}
 
 .article {
   display: block;

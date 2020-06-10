@@ -97,5 +97,43 @@
             font-family: var(--headingFont);
         }
     }
+
+    .wpforms-field-radio ul {
+        display: flex;
+        list-style: none;
+        padding-left: 0;
+        margin-top: 0;
+        
+        input {
+            visibility: hidden;
+            width: 0px;
+
+            &:checked + label:before {
+                background-image: url('../img/tick.svg');
+                background-size: contain;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+        }
+
+        label {
+            display: inline-block;
+            cursor: pointer;
+            margin-right: 1.5rem;
+            padding: 1rem 0 1rem 40px;
+            position: relative;
+
+            &:before {
+                content: "";
+                position: absolute;
+                left: 5px;
+                top: 50%;
+                transform: translate3d(0, -50%, 0);
+                height: 15px;
+                width: 15px;
+                border: 3px solid var(--pink);
+            }
+        }
+    }
 }
 
