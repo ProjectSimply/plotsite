@@ -666,3 +666,32 @@
     100% {
     }
 }
+
+
+@keyframes bob--2 {
+    0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+
+    20% {transform: translate3d(-30%,45%,0)rotate3d(0,0,1,25deg) }
+
+    40% {transform: translate3d(-45%,90%,0) rotate3d(0,0,1,95deg) }
+
+    60% {transform: translate3d(-15%,45%,0) rotate3d(0,0,1,180deg) }
+
+    80% {transform: translate3d(-15%,10%,0) rotate3d(0,0,1,90deg) }
+
+    100% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+}
+
+@keyframes bob--1 {
+    0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+
+    20% {transform: translate3d(-30%, -30%,0)rotate3d(0,0,1,-25deg) }
+
+    40% {transform: translate3d(-25%, -25%,0) rotate3d(0,0,1,-20deg) }
+
+    60% {transform: translate3d(-45%, -15%,0) rotate3d(0,0,1,-95deg) }
+
+    80% {transform: translate3d(-15%, 0%,0) rotate3d(0,0,1,-45deg) }
+
+    100% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+}

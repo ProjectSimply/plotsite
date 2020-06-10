@@ -62,13 +62,18 @@
         position: absolute;
         display: block;
         z-index: -1;
+        transform: translate3d( 0%, 0%,0);
+        animation-duration: 60s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+        animation-iteration-count: infinite; 
 
         &.homeBanner__asset--1 {
             height: 100%;
             width: 100%;
             right: 24%;
             top: -12rem;
-            
+            animation-name: bob--1;
 
             @include medium {
                 left: 5%;
@@ -87,6 +92,7 @@
         &.homeBanner__asset--2 {
             right: -200px;
             top: 25%;
+            animation-name: bob--2;
 
             @include medium {
                 right: 0;

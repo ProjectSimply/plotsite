@@ -1350,6 +1350,46 @@ img {
     fill: #EAB8D1;
   }
 }
+@keyframes bob--2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(-30%, 45%, 0) rotate3d(0, 0, 1, 25deg);
+  }
+  40% {
+    transform: translate3d(-45%, 90%, 0) rotate3d(0, 0, 1, 95deg);
+  }
+  60% {
+    transform: translate3d(-15%, 45%, 0) rotate3d(0, 0, 1, 180deg);
+  }
+  80% {
+    transform: translate3d(-15%, 10%, 0) rotate3d(0, 0, 1, 90deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes bob--1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(-30%, -30%, 0) rotate3d(0, 0, 1, -25deg);
+  }
+  40% {
+    transform: translate3d(-25%, -25%, 0) rotate3d(0, 0, 1, -20deg);
+  }
+  60% {
+    transform: translate3d(-45%, -15%, 0) rotate3d(0, 0, 1, -95deg);
+  }
+  80% {
+    transform: translate3d(-15%, 0%, 0) rotate3d(0, 0, 1, -45deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
 .banner {
   height: 50vw;
   position: relative;
@@ -1399,6 +1439,11 @@ img {
 .textOnlyBanner__asset {
   position: absolute;
   z-index: -1;
+  transform: translate3d(0%, 0%, 0);
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 .textOnlyBanner__asset svg {
   object-fit: contain;
@@ -1413,6 +1458,7 @@ img {
   height: 50vw;
   max-width: 670px;
   max-height: 670px;
+  animation-name: bob--1;
 }
 .textOnlyBanner__asset.textOnlyBanner__asset--1 path {
   fill: var(--mint);
@@ -1425,6 +1471,7 @@ img {
   height: 50vw;
   max-width: 530px;
   max-height: 530px;
+  animation-name: bob--2;
 }
 .textOnlyBanner__asset.textOnlyBanner__asset--2 path {
   fill: var(--yellow);
@@ -3223,10 +3270,6 @@ a {
   z-index: 4000;
 }
 
-.page-pricing .textOnlyBanner__asset {
-  display: none;
-}
-
 .pricingSection__mainFeatures {
   position: relative;
 }
@@ -4534,12 +4577,18 @@ ul.pricingSection__fullList {
   position: absolute;
   display: block;
   z-index: -1;
+  transform: translate3d(0%, 0%, 0);
+  animation-duration: 60s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
 }
 .homeBanner__asset.homeBanner__asset--1 {
   height: 100%;
   width: 100%;
   right: 24%;
   top: -12rem;
+  animation-name: bob--1;
 }
 @media screen and (min-width: 640px) {
   .homeBanner__asset.homeBanner__asset--1 {
@@ -4557,6 +4606,7 @@ ul.pricingSection__fullList {
 .homeBanner__asset.homeBanner__asset--2 {
   right: -200px;
   top: 25%;
+  animation-name: bob--2;
 }
 @media screen and (min-width: 640px) {
   .homeBanner__asset.homeBanner__asset--2 {
@@ -4580,6 +4630,46 @@ ul.pricingSection__fullList {
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bob--2 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(-30%, 45%, 0) rotate3d(0, 0, 1, 25deg);
+  }
+  40% {
+    transform: translate3d(-45%, 90%, 0) rotate3d(0, 0, 1, 95deg);
+  }
+  60% {
+    transform: translate3d(-15%, 45%, 0) rotate3d(0, 0, 1, 20deg);
+  }
+  80% {
+    transform: translate3d(-15%, 10%, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
+@keyframes bob--1 {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(-30%, -30%, 0) rotate3d(0, 0, 1, -25deg);
+  }
+  40% {
+    transform: translate3d(-25%, -25%, 0) rotate3d(0, 0, 1, -20deg);
+  }
+  60% {
+    transform: translate3d(-45%, -15%, 0) rotate3d(0, 0, 1, -95deg);
+  }
+  80% {
+    transform: translate3d(-15%, 0%, 0) rotate3d(0, 0, 1, -45deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
 }
 

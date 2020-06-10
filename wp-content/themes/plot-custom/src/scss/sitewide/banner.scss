@@ -47,6 +47,12 @@
 	.textOnlyBanner__asset {
 		position: absolute;
 		z-index: -1;
+		transform: translate3d( 0%, 0%,0);
+        animation-duration: 60s;
+        animation-timing-function: linear;
+        animation-fill-mode: forwards;
+		animation-iteration-count: infinite; 
+		
 
 		svg {
 			object-fit: contain;
@@ -62,6 +68,7 @@
 			height: 50vw;
 			max-width: 670px;
 			max-height: 670px;
+			animation-name: bob--1;
 
 			path {
 				fill: var(--mint);
@@ -76,6 +83,7 @@
 			height: 50vw;
 			max-width: 530px;
 			max-height: 530px;
+			animation-name: bob--2;
 
 			path {
 				fill: var(--yellow);
