@@ -37,10 +37,14 @@ body.home[data-current-theme="arts"] {
         transform: rotate3d(0, 0, 0, -45deg); 
     }
 
-    .mobile3D__screen:after,
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--arts.jpg);
+    }
+
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-image: url(../img/mobile--arts.jpg);
+        background-size: 100% 100%;
+        background-image: url(../img/arts--side.jpg);
     }
 
 }
@@ -82,13 +86,15 @@ body.home[data-current-theme="sounds"] {
         // transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after,
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__screen:after {
             background-image: url(../img/mobile--sounds.jpg);
     }
 
-
+    .mobile3D__side--right,
+    .mobile3D__side--left {
+        background-size: 100% 100%;
+        background-image: url(../img/sounds--side.jpg);
+    }
 }
 
 body.home[data-previous-theme="sounds"] {
@@ -115,10 +121,14 @@ body.home[data-current-theme="urban"] {
         // transform: rotate3d(3, 5, 0, 45deg);
     }
 
-    .mobile3D__screen:after,
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--urban.jpg);
+    }
+
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-image: url(../img/mobile--urban.jpg);
+        background-size: 100% 100%;
+        background-image: url(../img/urban--side.jpg);
     }
 
 }
@@ -155,10 +165,18 @@ body.home[data-current-theme="tagout"] {
         // transform: rotate3d(-2, 5, 0, -45deg);
     }
 
-    .mobile3D__screen:after,
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__screen:after {
         background-image: url(../img/mobile--tagout.jpg);
+    }
+    
+    .mobile3D__side--right {
+        background-size: 100% 100%;
+        background-image: url(../img/tagout--rightSide.jpg);
+    }
+
+    .mobile3D__side--left {
+        background-size: 100% 100%;
+        background-image: url(../img/tagout--leftSide.jpg);
     }
 
 }
@@ -194,10 +212,14 @@ body.home[data-current-theme="box"] {
         // transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after,
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--box.jpg);
+    }
+    
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-image: url(../img/mobile--box.jpg);
+        background-size: 100% 100%;
+        background-image: url(../img/box--side.jpg);
     }
 
 }
@@ -237,10 +259,14 @@ body.home[data-current-theme="inter"] {
         // transform: rotate3d(-3, 5, 0, -25deg);
     }
 
-    .mobile3D__screen:after,
+    .mobile3D__screen:after {
+        background-image: url(../img/mobile--inter.jpg);
+    }
+    
     .mobile3D__side--right,
     .mobile3D__side--left {
-        background-image: url(../img/mobile--inter.jpg);
+        background-size: 100% 100%;
+        background-image: url(../img/inter--side.jpg);
     }
 
 }
@@ -276,10 +302,18 @@ body.home[data-current-theme="halftone"] {
         // transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after,
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__screen:after {
         background-image: url(../img/mobile--halftone.jpg);
+    }
+    
+    .mobile3D__side--right {
+        background-size: 100% 100%;
+        background-image: url(../img/halftone--rightSide.jpg);
+    }
+
+    .mobile3D__side--left {
+        background-size: 100% 100%;
+        background-image: url(../img/halftone--leftSide.jpg);
     }
 }
 
@@ -315,10 +349,18 @@ body.home[data-current-theme="deep"] {
         // transform: rotate3d(0, calc(var(--xShift) * -1), 0, -35deg);
     }
 
-    .mobile3D__screen:after,
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__screen:after {
         background-image: url(../img/mobile--deep.jpg);
+    }
+    
+    .mobile3D__side--right {
+        background-size: 100% 100%;
+        background-image: url(../img/deep--rightSide.jpg);
+    }
+
+    .mobile3D__side--left {
+        background-size: 100% 100%;
+        background-image: url(../img/deep--leftSide.jpg);
     }
 }
 

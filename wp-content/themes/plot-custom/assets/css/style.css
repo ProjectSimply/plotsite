@@ -3703,7 +3703,6 @@ a {
   border-color: #fff;
   color: #fff;
   transform-style: preserve-3d;
-  box-shadow: 0 0 50px 0 #444;
   transform: rotate3d(-3, 5, 0, -25deg);
   height: 75vh;
   height: calc(var(--vh) * 75);
@@ -3864,6 +3863,17 @@ a {
   background-position: left;
   background-size: cover;
 }
+.mobile3D .mobile3D__side.mobile3D__side--back {
+  height: calc(100% + 40px);
+  width: 100%;
+  top: -20px;
+  right: 0px;
+  transform: translateZ(-30px);
+  border-width: 20px 0;
+  border-style: solid;
+  border-color: #fff;
+  box-shadow: 0 0 50px 0 #444;
+}
 .mobile3D .glass-reflection {
   position: absolute;
   transition: box-shadow 1s;
@@ -3994,10 +4004,13 @@ body.home[data-current-theme=arts] .menuToggle--burger path {
 body.home[data-current-theme=arts] .mobile3D__phone {
   transform: rotate3d(0, 0, 0, -45deg);
 }
-body.home[data-current-theme=arts] .mobile3D__screen:after,
+body.home[data-current-theme=arts] .mobile3D__screen:after {
+  background-image: url(../img/mobile--arts.jpg);
+}
 body.home[data-current-theme=arts] .mobile3D__side--right,
 body.home[data-current-theme=arts] .mobile3D__side--left {
-  background-image: url(../img/mobile--arts.jpg);
+  background-size: 100% 100%;
+  background-image: url(../img/arts--side.jpg);
 }
 
 body.home[data-previous-theme=arts] .mobile3D__screen:before {
@@ -4023,10 +4036,13 @@ body.home[data-current-theme=sounds] .siteMainHeader__logo path,
 body.home[data-current-theme=sounds] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=sounds] .mobile3D__screen:after,
+body.home[data-current-theme=sounds] .mobile3D__screen:after {
+  background-image: url(../img/mobile--sounds.jpg);
+}
 body.home[data-current-theme=sounds] .mobile3D__side--right,
 body.home[data-current-theme=sounds] .mobile3D__side--left {
-  background-image: url(../img/mobile--sounds.jpg);
+  background-size: 100% 100%;
+  background-image: url(../img/sounds--side.jpg);
 }
 
 body.home[data-previous-theme=sounds] .mobile3D__screen:before {
@@ -4043,10 +4059,13 @@ body.home[data-current-theme=urban] .homeBanner__asset.homeBanner__asset--2 path
 body.home[data-current-theme=urban] .homeBanner__title {
   color: white;
 }
-body.home[data-current-theme=urban] .mobile3D__screen:after,
+body.home[data-current-theme=urban] .mobile3D__screen:after {
+  background-image: url(../img/mobile--urban.jpg);
+}
 body.home[data-current-theme=urban] .mobile3D__side--right,
 body.home[data-current-theme=urban] .mobile3D__side--left {
-  background-image: url(../img/mobile--urban.jpg);
+  background-size: 100% 100%;
+  background-image: url(../img/urban--side.jpg);
 }
 
 body.home[data-previous-theme=sounds] .mobile3D__screen:before {
@@ -4068,10 +4087,16 @@ body.home[data-current-theme=tagout] .siteMainHeader__logo path,
 body.home[data-current-theme=tagout] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=tagout] .mobile3D__screen:after,
-body.home[data-current-theme=tagout] .mobile3D__side--right,
-body.home[data-current-theme=tagout] .mobile3D__side--left {
+body.home[data-current-theme=tagout] .mobile3D__screen:after {
   background-image: url(../img/mobile--tagout.jpg);
+}
+body.home[data-current-theme=tagout] .mobile3D__side--right {
+  background-size: 100% 100%;
+  background-image: url(../img/tagout--rightSide.jpg);
+}
+body.home[data-current-theme=tagout] .mobile3D__side--left {
+  background-size: 100% 100%;
+  background-image: url(../img/tagout--leftSide.jpg);
 }
 
 body.home[data-previous-theme=tagout] .mobile3D__screen:before {
@@ -4093,10 +4118,13 @@ body.home[data-current-theme=box] .siteMainHeader__logo path,
 body.home[data-current-theme=box] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=box] .mobile3D__screen:after,
+body.home[data-current-theme=box] .mobile3D__screen:after {
+  background-image: url(../img/mobile--box.jpg);
+}
 body.home[data-current-theme=box] .mobile3D__side--right,
 body.home[data-current-theme=box] .mobile3D__side--left {
-  background-image: url(../img/mobile--box.jpg);
+  background-size: 100% 100%;
+  background-image: url(../img/box--side.jpg);
 }
 
 body.home[data-previous-theme=box] .mobile3D__screen:before {
@@ -4120,10 +4148,13 @@ body.home[data-current-theme=inter] .siteMainHeader__logo path,
 body.home[data-current-theme=inter] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=inter] .mobile3D__screen:after,
+body.home[data-current-theme=inter] .mobile3D__screen:after {
+  background-image: url(../img/mobile--inter.jpg);
+}
 body.home[data-current-theme=inter] .mobile3D__side--right,
 body.home[data-current-theme=inter] .mobile3D__side--left {
-  background-image: url(../img/mobile--inter.jpg);
+  background-size: 100% 100%;
+  background-image: url(../img/inter--side.jpg);
 }
 
 body.home[data-previous-theme=inter] .mobile3D__screen:before {
@@ -4145,10 +4176,16 @@ body.home[data-current-theme=halftone] .siteMainHeader__logo path,
 body.home[data-current-theme=halftone] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=halftone] .mobile3D__screen:after,
-body.home[data-current-theme=halftone] .mobile3D__side--right,
-body.home[data-current-theme=halftone] .mobile3D__side--left {
+body.home[data-current-theme=halftone] .mobile3D__screen:after {
   background-image: url(../img/mobile--halftone.jpg);
+}
+body.home[data-current-theme=halftone] .mobile3D__side--right {
+  background-size: 100% 100%;
+  background-image: url(../img/halftone--rightSide.jpg);
+}
+body.home[data-current-theme=halftone] .mobile3D__side--left {
+  background-size: 100% 100%;
+  background-image: url(../img/halftone--leftSide.jpg);
 }
 
 body.home[data-previous-theme=halftone] .mobile3D__screen:before {
@@ -4170,10 +4207,16 @@ body.home[data-current-theme=deep] .siteMainHeader__logo path,
 body.home[data-current-theme=deep] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=deep] .mobile3D__screen:after,
-body.home[data-current-theme=deep] .mobile3D__side--right,
-body.home[data-current-theme=deep] .mobile3D__side--left {
+body.home[data-current-theme=deep] .mobile3D__screen:after {
   background-image: url(../img/mobile--deep.jpg);
+}
+body.home[data-current-theme=deep] .mobile3D__side--right {
+  background-size: 100% 100%;
+  background-image: url(../img/deep--rightSide.jpg);
+}
+body.home[data-current-theme=deep] .mobile3D__side--left {
+  background-size: 100% 100%;
+  background-image: url(../img/deep--leftSide.jpg);
 }
 
 body.home[data-previous-theme=deep] .mobile3D__screen:before {

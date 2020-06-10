@@ -37,6 +37,8 @@
 
                     <span class="mobile3D__side mobile3D__side--top"></span>
 
+                    <span class="mobile3D__side mobile3D__side--back"></span>
+
                     <div class="colourShape colourShape--1">
                         <div class="colourShape__inner"></div>
                     </div>

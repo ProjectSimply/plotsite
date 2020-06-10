@@ -15,7 +15,6 @@
         border-color: #fff;
         color: #fff;
         transform-style: preserve-3d;
-        box-shadow: 0 0 50px 0 #444;
         transform: rotate3d(-3, 5, 0, -25deg);
         @include vh(75, 'height');
         width: 70vw;
@@ -184,6 +183,18 @@
             background-repeat: no-repeat;
             background-position: left;
             background-size: cover;
+        }
+
+        &.mobile3D__side--back {
+            height: calc(100% + 40px);
+            width: 100%;
+            top: -20px;
+            right: 0px;
+            transform: translateZ(-30px);
+            border-width: 20px 0;
+            border-style: solid;
+            border-color: #fff;
+            box-shadow: 0 0 50px 0 #444;
         }
 
     }
