@@ -3578,7 +3578,7 @@ a {
 }
 
 #siteMainHeader {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 100;
@@ -4542,6 +4542,32 @@ ul.pricingSection__fullList {
   color: var(--black);
   margin: 0 1.5rem 0 0;
   padding: 0.25rem 0;
+}
+.page-features .siteMainHeader__logo:hover path,
+.page-pricing .siteMainHeader__logo:hover path {
+  fill: var(--purple);
+}
+.page-features .mainMenu a:hover,
+.page-features .mainMenu a:focus,
+.page-pricing .mainMenu a:hover,
+.page-pricing .mainMenu a:focus {
+  color: var(--purple);
+}
+.page-features .button:hover,
+.page-pricing .button:hover {
+  background-color: var(--purple);
+}
+
+.page-gallery .siteMainHeader__logo:hover path {
+  fill: var(--orange);
+}
+.page-gallery .mainMenu a:hover,
+.page-gallery .mainMenu a:focus {
+  color: var(--orange);
+}
+.page-gallery .button:hover {
+  background-color: var(--orange);
+  color: var(--black);
 }
 
 .carouselSection {
