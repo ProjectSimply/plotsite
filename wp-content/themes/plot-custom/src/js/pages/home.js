@@ -18,7 +18,7 @@
                 6 : document.querySelector('.colourShape--6'),
             }
         },
-        intervalLength          : 665000,
+        intervalLength          : 5000,
         previousTheme           : 'deep',
         counter                 : null,
         ticker                  : false,
