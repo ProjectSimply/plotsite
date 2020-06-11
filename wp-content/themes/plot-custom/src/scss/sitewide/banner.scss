@@ -42,7 +42,16 @@
 		max-width: 1100px;
 		margin: 0 auto;
 		text-align: center;
+		margin-bottom: var(--vs);
 	}
+
+	.banner__subHeading {
+		max-width: 700px;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	
 
 	.textOnlyBanner__asset {
 		position: absolute;

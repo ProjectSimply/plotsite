@@ -1434,6 +1434,13 @@ img {
   max-width: 1100px;
   margin: 0 auto;
   text-align: center;
+  margin-bottom: var(--vs);
+}
+
+.banner__subHeading {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .textOnlyBanner__asset {
@@ -2861,8 +2868,13 @@ a {
   font-family: var(--bodyFont);
 }
 .plotLayoutForm label.wpforms-error {
-  color: var(--red);
+  color: var(--black);
   margin-top: 0.2rem;
+  background-color: rgba(255, 255, 255, 0.5);
+  padding: 0.5rem;
+  margin-top: 0;
+  font-size: 0.75rem;
+  border-bottom: 2px solid var(--red);
 }
 .plotLayoutForm input {
   padding: 1rem;
@@ -2893,9 +2905,21 @@ a {
   text-align: center;
   cursor: pointer;
 }
+.plotLayoutForm .wpforms-confirmation-container {
+  height: 250px;
+  padding: 2rem;
+  background-color: white;
+  transform: translateY(-4rem);
+  border-bottom: 5px solid var(--mint);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .plotLayoutForm .wpforms-confirmation-container p {
-  color: var(--white);
+  color: var(--black);
   text-align: center;
+  font-family: var(--headingFont);
+  font-size: 1.5rem;
 }
 .plotLayoutForm .plotLayoutForm__callUs {
   padding: 3rem 1rem;
@@ -4637,6 +4661,25 @@ ul.pricingSection__fullList {
 .imageGrid {
   margin-bottom: 6rem;
   position: relative;
+}
+
+.imageGrid__gridItem[data-plot-smooth-scroll-element] {
+  opacity: 0;
+  transform: translate3d(0, 20px, 0);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+.imageGrid__gridItem[data-plot-smooth-scroll-element].plotSmoothScrollSeenOnce {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.imageGrid__gridItem[data-plot-smooth-scroll-element]:nth-child(3n+1) {
+  transition-delay: 0s;
+}
+.imageGrid__gridItem[data-plot-smooth-scroll-element]:nth-child(3n+2) {
+  transition-delay: 0.3s;
+}
+.imageGrid__gridItem[data-plot-smooth-scroll-element]:nth-child(3n+3) {
+  transition-delay: 0.6s;
 }
 
 .imageGrid__innerWrap {

@@ -99,6 +99,8 @@
 
 				<?php endif; ?>
 
+				<p class="banner__subHeading"><?= get_field('plotcms_banner_subheading') ?></p>
+
 			</div>
 
 		</div>

@@ -18,7 +18,7 @@
 
                     <?php else : ?>
 
-                        <div class="imageGrid__portraitWrap ">
+                        <div class="imageGrid__portraitWrap">
 
                             <?php plotLazyload([
                                 'image' 				=> get_sub_field('portrait_image__1'), 

@@ -41,8 +41,14 @@
     }
 
     label.wpforms-error {
-        color: var(--red);
-        margin-top: .2rem;
+        color: var(--black);
+        margin-top: 0.2rem;
+        background-color: rgba(255, 255, 255, .5);
+        padding: .5rem;
+        margin-top: 0;
+        font-size: .75rem;
+        border-bottom: 2px solid var(--red);
+        
     }
 
     input {
@@ -80,9 +86,20 @@
     }
 
     .wpforms-confirmation-container {
+        height: 250px;
+        padding: 2rem;
+        background-color: white;
+        transform: translateY(-4rem);
+        border-bottom: 5px solid var(--mint);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
         p {
-            color: var(--white);
+            color: var(--black);
             text-align: center;
+            font-family: var(--headingFont);
+            font-size: 1.5rem;
         }
     }
 
