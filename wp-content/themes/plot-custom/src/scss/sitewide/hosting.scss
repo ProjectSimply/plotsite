@@ -36,21 +36,21 @@
         }
     }
 
-    .hosting__list {
+    .hosting__list .hosting__listItem {
         .hosting__icon {
             animation-name: bob;
             animation-duration: 20s; 
-            animation-timing-function: ease-in-out;
+            animation-timing-function: linear;
             animation-fill-mode: forwards;
             animation-iteration-count: infinite; 
         }
             
         $i: 1;
-        $speed: .3s;
+        $speed: 1s;
         $delay: 0s;
         @while $i <= 12 {
         
-            &:nth-last-child(#{$i}) .hosting__icon {
+            &:nth-child(#{$i}) .hosting__icon {
                 animation-delay: #{$i * $speed + $delay}; 
             }
      
@@ -68,13 +68,13 @@
     @keyframes bob {
         0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
     
-        20% {transform: translate3d(0%,25%,0)rotate3d(0,0,1,10deg) }
+        20% {transform: translate3d(0%,15%,0)rotate3d(0,0,1,5deg) }
     
-        40% {transform: translate3d(0%,0%,0) rotate3d(0,0,1,5deg) }
+        40% {transform: translate3d(0%,-5%,0) rotate3d(0,0,1,0deg) }
     
-        60% {transform: translate3d(0,25%,0) rotate3d(0,0,1,-10deg) }
+        60% {transform: translate3d(0,15%,0) rotate3d(0,0,1,-5deg) }
     
-        80% {transform: translate3d(0%,0%,0) rotate3d(0,0,1,9deg) }
+        80% {transform: translate3d(0%,0%,0) rotate3d(0,0,1,0deg) }
     
         100% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
     }

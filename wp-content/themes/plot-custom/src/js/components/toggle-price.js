@@ -3,17 +3,36 @@
     var TogglePrice
 
     TogglePrice = {
-        container: document.querySelector('.JS--TogglePrice'),
+        dom: {
+            container: document.querySelector('.JS--TogglePrice'),
+            annualButton: document.querySelector('.JS--planToggle--annual'),
+            monthlyButton: document.querySelector('.JS--planToggle--monthly'),
+        },
 
         init: () => {
 
-            TogglePrice.container.firstElementChild.addEventListener('click', TogglePrice.toggle)
-            console.log(TogglePrice.container.firstElementChild)
+            // Update data set with 
+            TogglePrice.dom.annualButton.addEventListener('click', TogglePrice.showAnnual)
+            console.log(TogglePrice.dom) 
+            TogglePrice.dom.monthlyButton.addEventListener('click', TogglePrice.showMonthly)
+            
         },
 
-        toggle: () => {
-            TogglePrice.container.classList.toggle('planToggle--showMonthlyPrice');
+        showAnnual: () => {
+            
+            if(TogglePrice.dom.container.dataset.plan = "annual") 
+                return;
+
+            TogglePrice.dom.container.dataset.plan = "annaul"
+        },
+
+        showMonthly: () => {
+            if(TogglePrice.dom.container.dataset.plan = "monthly") 
+            return;
+
+        TogglePrice.dom.container.dataset.plan = "monthly"
         }
+
 
     }
 

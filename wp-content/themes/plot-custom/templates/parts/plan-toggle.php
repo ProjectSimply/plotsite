@@ -1,8 +1,8 @@
-<div class="planToggle planToggle--showMonthlyPrice JS--TogglePrice">
+<div class="planToggle JS--TogglePrice" data-plan="monthly">
 
     <div class="planToggle__innerWrap">
 
-        <div class="planToggle__option planToggle__option--annual">
+        <div class="planToggle__option planToggle__option--annual JS--planToggle--annual">
 
             <span class="planToggle__saving"><?= get_field('annual_plan_saving') ?></span>
 
@@ -10,7 +10,7 @@
 
         </div>
 
-        <div class="planToggle__option planToggle__option--monthly">
+        <div class="planToggle__option planToggle__option--monthly JS--planToggle--monthly">
 
             <h3 class="planToggle__title"><?= get_field('monthly_plan_title'); ?></h3>
 
@@ -18,21 +18,25 @@
 
     </div>
 
-    <div class="planToggle__price planToggle__price--annual">
+    <div class="planToggle__priceWrap">
 
-        <p>From <span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('annual_plan_price'); ?></span> /yr</span></p>
+        <div class="planToggle__price planToggle__price--annual">
 
-        <span class="small">Billed annually</span>
+            <p>From <span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('annual_plan_price'); ?></span> /yr</span></p>
+
+            <span class="small">Billed annually</span>
+
+        </div>
+
+        <div class="planToggle__price planToggle__price--monthly">
+
+            <p>From <span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('monthly_plan_price'); ?></span> /mo</span></p>
+
+            <span class="small">Billed monthly</span>
+
+        </div>       
 
     </div>
-
-    <div class="planToggle__price planToggle__price--monthly">
-
-        <p>From <span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('monthly_plan_price'); ?></span> /mo</span></p>
-
-        <span class="small">Billed monthly</span>
-
-    </div>       
     
     <div class="planToggle__cross--pink">
 

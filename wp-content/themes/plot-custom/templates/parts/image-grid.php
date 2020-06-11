@@ -44,4 +44,16 @@
         
     </div>
 
+    <div class="imageGrid__asset imageGrid__asset--1">
+
+        <?php plotGetTemplatePart('parts/svg-asset--p') ?>
+
+    </div>
+
+    <div class="imageGrid__asset imageGrid__asset--2">
+
+        <?php plotGetTemplatePart('parts/svg-asset--t') ?>
+
+    </div>
+
 </section>

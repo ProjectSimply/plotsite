@@ -1,6 +1,10 @@
 .page-gallery {
     background-color: var(--purple);
 
+    .carouselSection .carouselSection__asset {
+        display: none;
+    }
+
     .textOnlyBanner__asset.textOnlyBanner__asset--1 path {
         fill: var(--peach);
     }

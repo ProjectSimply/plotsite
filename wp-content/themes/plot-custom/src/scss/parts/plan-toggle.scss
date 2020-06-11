@@ -2,7 +2,18 @@
     margin-bottom: 3rem;
     text-align: center;
 
-    &.planToggle--showMonthlyPrice {
+    .planToggle__priceWrap {
+        position: relative;
+    }
+
+    .planToggle__price--annual {
+        position: absolute;
+        transform: translate3d(-50%, -50%, 0);
+        top: 50%;
+        left: 50%;
+    }
+
+    &[data-plan="monthly"] {
 
         .planToggle__option--monthly {
             border-color: var(--strong-pink);
@@ -10,13 +21,13 @@
             h3,
             span {
                 color: var(--strong-pink);
-            }
+            } 
         }
 
         .planToggle__option--annual {
             border-color: var(--black);
-            pointer-events: none;
-
+            cursor: pointer;
+            
             h3,
             span {
                 color: var(--black);
@@ -24,13 +35,42 @@
         }
 
         .planToggle__price--monthly {
-            display: block;
+            opacity: 1;
         }
 
         .planToggle__price--annual {
             opacity: 0;
         }
 
+    }
+
+    &[data-plan="annual"] {
+        .planToggle__option--annual {
+            border-color: var(--strong-pink);
+
+            h3,
+            span {
+                color: var(--strong-pink);
+            } 
+        }
+
+        .planToggle__option--monthly {
+            border-color: var(--black);
+            cursor: pointer;
+            
+            h3,
+            span {
+                color: var(--black);
+            }
+        }
+
+        .planToggle__price--monthly {
+            opacity: 0;
+        }
+
+        .planToggle__price--annual {
+            opacity: 1;
+        }
     }
 }
 
@@ -46,14 +86,11 @@
             flex: 0 0 50%;
             text-align: center;
             border-bottom: 3px solid black;
+            transition: all .2s ease-in;
 
-            &.planToggle__option--annual {
-                border-color: var(--strong-pink);
-
-                h3,
-                span {
-                    color: var(--strong-pink);
-                }
+            h3,
+            span {
+                transition: all .2s ease-in;
             }
         }
 
@@ -63,6 +100,7 @@
             font-size: 1.8rem;
             color: var(--strong-pink);
             margin-bottom: 1rem;
+            transition: opacity .3s ease-in;
 
             p {
                 color: var(--strong-pink);
@@ -73,13 +111,7 @@
                 font-size: 2.4rem;
             }
 
-            &.planToggle__price--monthly {
-                opacity: 0;
-            }
-    
-            &.planToggle__price--annual {
-                display: block;
-            }
+ 
 
             .planToggle__num {
                 font-size: 5rem;

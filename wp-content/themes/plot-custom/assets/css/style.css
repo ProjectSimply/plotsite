@@ -2222,48 +2222,48 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
   font-weight: bold;
 }
 
-.hosting__list .hosting__icon {
+.hosting__list .hosting__listItem .hosting__icon {
   animation-name: bob;
   animation-duration: 20s;
-  animation-timing-function: ease-in-out;
+  animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
-.hosting__list:nth-last-child(1) .hosting__icon {
-  animation-delay: 0.3s;
+.hosting__list .hosting__listItem:nth-child(1) .hosting__icon {
+  animation-delay: 1s;
 }
-.hosting__list:nth-last-child(2) .hosting__icon {
-  animation-delay: 0.6s;
+.hosting__list .hosting__listItem:nth-child(2) .hosting__icon {
+  animation-delay: 2s;
 }
-.hosting__list:nth-last-child(3) .hosting__icon {
-  animation-delay: 0.9s;
-}
-.hosting__list:nth-last-child(4) .hosting__icon {
-  animation-delay: 1.2s;
-}
-.hosting__list:nth-last-child(5) .hosting__icon {
-  animation-delay: 1.5s;
-}
-.hosting__list:nth-last-child(6) .hosting__icon {
-  animation-delay: 1.8s;
-}
-.hosting__list:nth-last-child(7) .hosting__icon {
-  animation-delay: 2.1s;
-}
-.hosting__list:nth-last-child(8) .hosting__icon {
-  animation-delay: 2.4s;
-}
-.hosting__list:nth-last-child(9) .hosting__icon {
-  animation-delay: 2.7s;
-}
-.hosting__list:nth-last-child(10) .hosting__icon {
+.hosting__list .hosting__listItem:nth-child(3) .hosting__icon {
   animation-delay: 3s;
 }
-.hosting__list:nth-last-child(11) .hosting__icon {
-  animation-delay: 3.3s;
+.hosting__list .hosting__listItem:nth-child(4) .hosting__icon {
+  animation-delay: 4s;
 }
-.hosting__list:nth-last-child(12) .hosting__icon {
-  animation-delay: 3.6s;
+.hosting__list .hosting__listItem:nth-child(5) .hosting__icon {
+  animation-delay: 5s;
+}
+.hosting__list .hosting__listItem:nth-child(6) .hosting__icon {
+  animation-delay: 6s;
+}
+.hosting__list .hosting__listItem:nth-child(7) .hosting__icon {
+  animation-delay: 7s;
+}
+.hosting__list .hosting__listItem:nth-child(8) .hosting__icon {
+  animation-delay: 8s;
+}
+.hosting__list .hosting__listItem:nth-child(9) .hosting__icon {
+  animation-delay: 9s;
+}
+.hosting__list .hosting__listItem:nth-child(10) .hosting__icon {
+  animation-delay: 10s;
+}
+.hosting__list .hosting__listItem:nth-child(11) .hosting__icon {
+  animation-delay: 11s;
+}
+.hosting__list .hosting__listItem:nth-child(12) .hosting__icon {
+  animation-delay: 12s;
 }
 
 .hosting__description {
@@ -2276,16 +2276,16 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
     transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
   }
   20% {
-    transform: translate3d(0%, 25%, 0) rotate3d(0, 0, 1, 10deg);
+    transform: translate3d(0%, 15%, 0) rotate3d(0, 0, 1, 5deg);
   }
   40% {
-    transform: translate3d(0%, 0%, 0) rotate3d(0, 0, 1, 5deg);
+    transform: translate3d(0%, -5%, 0) rotate3d(0, 0, 1, 0deg);
   }
   60% {
-    transform: translate3d(0, 25%, 0) rotate3d(0, 0, 1, -10deg);
+    transform: translate3d(0, 15%, 0) rotate3d(0, 0, 1, -5deg);
   }
   80% {
-    transform: translate3d(0%, 0%, 0) rotate3d(0, 0, 1, 9deg);
+    transform: translate3d(0%, 0%, 0) rotate3d(0, 0, 1, 0deg);
   }
   100% {
     transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
@@ -3391,6 +3391,9 @@ a {
 .page-gallery {
   background-color: var(--purple);
 }
+.page-gallery .carouselSection .carouselSection__asset {
+  display: none;
+}
 .page-gallery .textOnlyBanner__asset.textOnlyBanner__asset--1 path {
   fill: var(--peach);
 }
@@ -3730,26 +3733,56 @@ a {
   margin-bottom: 3rem;
   text-align: center;
 }
-.planToggle.planToggle--showMonthlyPrice .planToggle__option--monthly {
+.planToggle .planToggle__priceWrap {
+  position: relative;
+}
+.planToggle .planToggle__price--annual {
+  position: absolute;
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  left: 50%;
+}
+.planToggle[data-plan=monthly] .planToggle__option--monthly {
   border-color: var(--strong-pink);
 }
-.planToggle.planToggle--showMonthlyPrice .planToggle__option--monthly h3,
-.planToggle.planToggle--showMonthlyPrice .planToggle__option--monthly span {
+.planToggle[data-plan=monthly] .planToggle__option--monthly h3,
+.planToggle[data-plan=monthly] .planToggle__option--monthly span {
   color: var(--strong-pink);
 }
-.planToggle.planToggle--showMonthlyPrice .planToggle__option--annual {
+.planToggle[data-plan=monthly] .planToggle__option--annual {
   border-color: var(--black);
-  pointer-events: none;
+  cursor: pointer;
 }
-.planToggle.planToggle--showMonthlyPrice .planToggle__option--annual h3,
-.planToggle.planToggle--showMonthlyPrice .planToggle__option--annual span {
+.planToggle[data-plan=monthly] .planToggle__option--annual h3,
+.planToggle[data-plan=monthly] .planToggle__option--annual span {
   color: var(--black);
 }
-.planToggle.planToggle--showMonthlyPrice .planToggle__price--monthly {
-  display: block;
+.planToggle[data-plan=monthly] .planToggle__price--monthly {
+  opacity: 1;
 }
-.planToggle.planToggle--showMonthlyPrice .planToggle__price--annual {
+.planToggle[data-plan=monthly] .planToggle__price--annual {
   opacity: 0;
+}
+.planToggle[data-plan=annual] .planToggle__option--annual {
+  border-color: var(--strong-pink);
+}
+.planToggle[data-plan=annual] .planToggle__option--annual h3,
+.planToggle[data-plan=annual] .planToggle__option--annual span {
+  color: var(--strong-pink);
+}
+.planToggle[data-plan=annual] .planToggle__option--monthly {
+  border-color: var(--black);
+  cursor: pointer;
+}
+.planToggle[data-plan=annual] .planToggle__option--monthly h3,
+.planToggle[data-plan=annual] .planToggle__option--monthly span {
+  color: var(--black);
+}
+.planToggle[data-plan=annual] .planToggle__price--monthly {
+  opacity: 0;
+}
+.planToggle[data-plan=annual] .planToggle__price--annual {
+  opacity: 1;
 }
 
 .planToggle__innerWrap {
@@ -3764,13 +3797,11 @@ a {
   flex: 0 0 50%;
   text-align: center;
   border-bottom: 3px solid black;
+  transition: all 0.2s ease-in;
 }
-.planToggle__option.planToggle__option--annual {
-  border-color: var(--strong-pink);
-}
-.planToggle__option.planToggle__option--annual h3,
-.planToggle__option.planToggle__option--annual span {
-  color: var(--strong-pink);
+.planToggle__option h3,
+.planToggle__option span {
+  transition: all 0.2s ease-in;
 }
 
 .planToggle__price {
@@ -3779,6 +3810,7 @@ a {
   font-size: 1.8rem;
   color: var(--strong-pink);
   margin-bottom: 1rem;
+  transition: opacity 0.3s ease-in;
 }
 .planToggle__price p {
   color: var(--strong-pink);
@@ -3788,12 +3820,6 @@ a {
   .planToggle__price {
     font-size: 2.4rem;
   }
-}
-.planToggle__price.planToggle__price--monthly {
-  opacity: 0;
-}
-.planToggle__price.planToggle__price--annual {
-  display: block;
 }
 .planToggle__price .planToggle__num {
   font-size: 5rem;
@@ -4610,6 +4636,7 @@ ul.pricingSection__fullList {
 
 .imageGrid {
   margin-bottom: 6rem;
+  position: relative;
 }
 
 .imageGrid__innerWrap {
@@ -4639,6 +4666,49 @@ ul.pricingSection__fullList {
   .imageGrid__portraitWrap {
     grid-column-gap: 1rem;
   }
+}
+
+.imageGrid__asset {
+  position: absolute;
+  z-index: -1;
+  transform: translate3d(0%, 0%, 0);
+  animation-duration: 120s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.imageGrid__asset svg {
+  object-fit: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.imageGrid__asset.imageGrid__asset--1 {
+  right: 55%;
+  top: 7%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 670px;
+  max-height: 670px;
+  transform: rotate(45deg);
+  animation-name: bob--1;
+}
+.imageGrid__asset.imageGrid__asset--1 path {
+  fill: var(--sky);
+  opacity: 1;
+}
+.imageGrid__asset.imageGrid__asset--2 {
+  left: 50%;
+  top: 55%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 530px;
+  max-height: 530px;
+  animation-name: bob--2;
+}
+.imageGrid__asset.imageGrid__asset--2 path {
+  fill: var(--orange);
+  opacity: 1;
 }
 
 .mainMenu li.current_page_item a {
