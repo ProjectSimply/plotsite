@@ -107,6 +107,11 @@
                         font-size: 12px;
                         display: inline-block;
                         padding: .5rem;
+                        transition: color .2s ease-in;
+                        &:hover,
+                        &:focus {
+                            color: var(--mint);
+                        }
 
                         @include medium {
                             padding: 1rem;
@@ -143,6 +148,11 @@
                     text-decoration: none;
                     color: var(--white);
                     font-size: 14px;
+                    transition: color .2s ease-in;
+                    &:hover,
+                    &:focus {
+                        color: var(--mint);
+                    }
 
                     @include medium {
                         padding-top: .25rem;

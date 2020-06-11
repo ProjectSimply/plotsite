@@ -2071,6 +2071,10 @@ ul.footer__menu a {
   font-size: 12px;
   display: inline-block;
   padding: 0.5rem;
+  transition: color 0.2s ease-in;
+}
+ul.footer__menu a:hover, ul.footer__menu a:focus {
+  color: var(--mint);
 }
 @media screen and (min-width: 640px) {
   ul.footer__menu a {
@@ -2110,6 +2114,10 @@ ul.footer__menu a {
   text-decoration: none;
   color: var(--white);
   font-size: 14px;
+  transition: color 0.2s ease-in;
+}
+.projectSimplyCredits__link:hover, .projectSimplyCredits__link:focus {
+  color: var(--mint);
 }
 @media screen and (min-width: 640px) {
   .projectSimplyCredits__link {
@@ -3538,26 +3546,21 @@ a {
 }
 
 .testimonial__title {
-  margin-bottom: 4rem;
-}
-@media screen and (min-width: 1024px) {
-  .testimonial__title {
-    margin-bottom: 6rem;
-  }
+  margin-bottom: var(--vs);
 }
 
 .testimonial__quote {
   font-family: var(--headingFont);
   font-weight: bold;
   font-size: 2.4rem;
-  margin-bottom: 2rem;
+  margin-bottom: var(--vs);
 }
 
 .testimonial__imageWrap {
   display: block;
   height: 3.1rem;
   width: 3.1rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto var(--vs);
 }
 
 .testimonial__image {
