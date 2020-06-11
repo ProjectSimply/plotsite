@@ -42,8 +42,10 @@
 
     <?php if(get_field('carousel_add_link')) : ?>
 
-        <div class="carouselSection__buttonWrap">
-            <a href="<?= get_field('carousel_link') ?>" class="button"><?=  get_field('carousel_link_text') ?></a>
+        <div class="carouselSection__buttonWrap button__wrap">
+            <a href="<?= get_field('carousel_link') ?>" class="button button--X">
+                <span><?=  get_field('carousel_link_text') ?></span>
+            </a>
         </div>
 
     <?php endif; ?>

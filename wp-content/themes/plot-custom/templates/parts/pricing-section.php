@@ -23,16 +23,10 @@
             </div>
 
             <div class="pricingSection__buttonWrap">
-                <a href="<?= get_field('pricing_button_link') ?>" class="button"><?=  get_field('pricing_button_text') ?></a>
+                <a href="<?= get_field('pricing_button_link') ?>" class="button button--X"><?=  get_field('pricing_button_text') ?></a>
             </div>
 
             <div class="textOnlyBanner__asset textOnlyBanner__asset--1">
-
-                <?php plotGetTemplatePart('parts/cross-asset') ?>
-
-            </div>
-
-            <div class="textOnlyBanner__asset textOnlyBanner__asset--2">
 
                 <?php plotGetTemplatePart('parts/cross-asset') ?>
 
@@ -49,7 +43,7 @@
 
                 <?php while ( has_sub_field('full_features_list')) : ?>
 
-                    <li class="pricingSection__item">
+                    <li class="pricingSection__item pricingSection__item--border">
 
                         <span class="pricingSection__tick">
                             <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">

@@ -14,7 +14,7 @@
 
 				<?= get_field('book_a_demo_text' ,'option') ?>
 
-				<a class="button" href="http://builtwithplot.test/book-a-demo/">Book a Demo</a>
+				<a class="button button--X" href="http://builtwithplot.test/book-a-demo/">Book a Demo</a>
 
 			</div>
 
@@ -36,7 +36,7 @@
 
 				<?= get_field('email_us' ,'option') ?>
 
-				<a class="button" target="_blank" href="mailto:enquiry@projectsimply.com">Submit Enquiry</a>
+				<a class="button button--X" target="_blank" href="mailto:enquiry@projectsimply.com">Submit Enquiry</a>
 
 			</div>
 

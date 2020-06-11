@@ -1440,7 +1440,7 @@ img {
   position: absolute;
   z-index: -1;
   transform: translate3d(0%, 0%, 0);
-  animation-duration: 60s;
+  animation-duration: 120s;
   animation-timing-function: linear;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
@@ -1861,6 +1861,15 @@ img {
   padding: 1rem 1.5rem;
   display: inline-block;
   text-transform: uppercase;
+  transition: all 0.2s ease-in;
+}
+.button.button--X {
+  border: 2px solid transparent;
+}
+.button.button--X:hover {
+  background-color: transparent;
+  color: var(--black);
+  border: 2px solid var(--black);
 }
 @media screen and (max-width: 639px) {
   .button {
@@ -1907,7 +1916,6 @@ a {
 
 .cards__sectionIntro {
   color: var(--white);
-  font-size: 0.8rem;
   max-width: 750px;
   margin: 0 auto 4rem;
 }
@@ -1974,6 +1982,10 @@ a {
 
 .page-book-a-demo .footer__cta {
   display: none;
+}
+
+.page-features .footer__demo {
+  background-color: var(--mint);
 }
 
 @media screen and (min-width: 640px) {
@@ -2210,11 +2222,75 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
   font-weight: bold;
 }
 
+.hosting__list .hosting__icon {
+  animation-name: bob;
+  animation-duration: 20s;
+  animation-timing-function: ease-in-out;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.hosting__list:nth-last-child(1) .hosting__icon {
+  animation-delay: 0.3s;
+}
+.hosting__list:nth-last-child(2) .hosting__icon {
+  animation-delay: 0.6s;
+}
+.hosting__list:nth-last-child(3) .hosting__icon {
+  animation-delay: 0.9s;
+}
+.hosting__list:nth-last-child(4) .hosting__icon {
+  animation-delay: 1.2s;
+}
+.hosting__list:nth-last-child(5) .hosting__icon {
+  animation-delay: 1.5s;
+}
+.hosting__list:nth-last-child(6) .hosting__icon {
+  animation-delay: 1.8s;
+}
+.hosting__list:nth-last-child(7) .hosting__icon {
+  animation-delay: 2.1s;
+}
+.hosting__list:nth-last-child(8) .hosting__icon {
+  animation-delay: 2.4s;
+}
+.hosting__list:nth-last-child(9) .hosting__icon {
+  animation-delay: 2.7s;
+}
+.hosting__list:nth-last-child(10) .hosting__icon {
+  animation-delay: 3s;
+}
+.hosting__list:nth-last-child(11) .hosting__icon {
+  animation-delay: 3.3s;
+}
+.hosting__list:nth-last-child(12) .hosting__icon {
+  animation-delay: 3.6s;
+}
+
 .hosting__description {
   max-width: 650px;
   margin: 1rem auto;
 }
 
+@keyframes bob {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  20% {
+    transform: translate3d(0%, 25%, 0) rotate3d(0, 0, 1, 10deg);
+  }
+  40% {
+    transform: translate3d(0%, 0%, 0) rotate3d(0, 0, 1, 5deg);
+  }
+  60% {
+    transform: translate3d(0, 25%, 0) rotate3d(0, 0, 1, -10deg);
+  }
+  80% {
+    transform: translate3d(0%, 0%, 0) rotate3d(0, 0, 1, 9deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+}
 .content iframe {
   width: 100%;
 }
@@ -2667,7 +2743,7 @@ a {
     flex-direction: row-reverse;
   }
   .fiftyFifty__row:nth-child(odd) .fiftyFifty__textWrap {
-    padding-right: 1rem;
+    padding-right: 3rem;
   }
 }
 @media screen and (min-width: 640px) {
@@ -2753,8 +2829,13 @@ a {
 .plotLayoutForm .plotLayoutForm__textWrap {
   background-color: var(--purple);
   border-radius: 0.5rem 0.5rem 0 0;
-  padding: 3rem 1rem 3rem;
+  padding: 3rem 2rem 3rem;
   color: var(--white);
+}
+@media screen and (min-width: 640px) {
+  .plotLayoutForm .plotLayoutForm__textWrap {
+    padding: 3rem;
+  }
 }
 .plotLayoutForm .plotLayoutForm__heading {
   font-size: 2rem;
@@ -2766,7 +2847,7 @@ a {
 @media screen and (min-width: 640px) {
   .plotLayoutForm .wpforms-field-container {
     grid-template-columns: 1fr 1fr;
-    grid-column-gap: 1rem;
+    grid-column-gap: 2rem;
   }
 }
 .plotLayoutForm .wpforms-field {
@@ -2786,6 +2867,9 @@ a {
 .plotLayoutForm input {
   padding: 1rem;
   border: none;
+}
+.plotLayoutForm input::placeholder {
+  color: rgba(0, 0, 0, 0.2);
 }
 .plotLayoutForm .wpforms-submit-container {
   text-align: center;
@@ -2862,6 +2946,7 @@ a {
   height: 15px;
   width: 15px;
   border: 3px solid var(--pink);
+  border-radius: 100%;
 }
 
 .article {
@@ -3654,6 +3739,7 @@ a {
 }
 .planToggle.planToggle--showMonthlyPrice .planToggle__option--annual {
   border-color: var(--black);
+  pointer-events: none;
 }
 .planToggle.planToggle--showMonthlyPrice .planToggle__option--annual h3,
 .planToggle.planToggle--showMonthlyPrice .planToggle__option--annual span {
@@ -3663,7 +3749,7 @@ a {
   display: block;
 }
 .planToggle.planToggle--showMonthlyPrice .planToggle__price--annual {
-  display: none;
+  opacity: 0;
 }
 
 .planToggle__innerWrap {
@@ -3678,7 +3764,6 @@ a {
   flex: 0 0 50%;
   text-align: center;
   border-bottom: 3px solid black;
-  cursor: pointer;
 }
 .planToggle__option.planToggle__option--annual {
   border-color: var(--strong-pink);
@@ -3705,7 +3790,7 @@ a {
   }
 }
 .planToggle__price.planToggle__price--monthly {
-  display: none;
+  opacity: 0;
 }
 .planToggle__price.planToggle__price--annual {
   display: block;
@@ -4468,13 +4553,23 @@ ul.pricingSection__fullList {
 @media screen and (min-width: 640px) {
   ul.pricingSection__fullList {
     grid-template-columns: auto auto;
-    justify-content: space-between;
   }
 }
 
 .pricingSection__item {
   position: relative;
-  margin-bottom: 1rem;
+  background-color: white;
+  padding: 1rem;
+}
+.pricingSection__item.pricingSection__item--border {
+  border: 1px solid var(--black);
+  border-top: none;
+}
+.pricingSection__item.pricingSection__item--border:nth-child(1), .pricingSection__item.pricingSection__item--border:nth-child(2) {
+  border-top: 1px solid var(--black);
+}
+.pricingSection__item.pricingSection__item--border:nth-child(even) {
+  border-left: none;
 }
 .pricingSection__item p {
   font-weight: bold;
@@ -4567,21 +4662,20 @@ ul.pricingSection__fullList {
 .page-pricing .mainMenu a:focus {
   color: var(--purple);
 }
-.page-features .button:hover,
-.page-pricing .button:hover {
+.page-features .siteMainHeader__ctaLink:hover,
+.page-pricing .siteMainHeader__ctaLink:hover {
   background-color: var(--purple);
 }
 
 .page-gallery .siteMainHeader__logo:hover path {
-  fill: var(--orange);
+  fill: white;
 }
 .page-gallery .mainMenu a:hover,
 .page-gallery .mainMenu a:focus {
-  color: var(--orange);
+  color: white;
 }
-.page-gallery .button:hover {
-  background-color: var(--orange);
-  color: var(--black);
+.page-gallery .siteMainHeader__ctaLink:hover {
+  background-color: var(--pink);
 }
 
 .carouselSection {

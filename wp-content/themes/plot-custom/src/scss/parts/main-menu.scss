@@ -36,7 +36,7 @@
         }
     }
 
-    .button:hover {
+    .siteMainHeader__ctaLink:hover {
         background-color: var(--purple);
     }
 }
@@ -44,18 +44,18 @@
 .page-gallery {
 
     .siteMainHeader__logo:hover path {
-        fill: var(--orange);
+        fill: white;
     }
 
     .mainMenu {
         a:hover,
         a:focus {
-            color: var(--orange);    
+            color: white; 
         }
     }
 
-    .button:hover {
-        background-color: var(--orange);
-        color: var(--black);
+    .siteMainHeader__ctaLink:hover {
+        background-color: var(--pink);
+        // color: var(--black);
     }
 }

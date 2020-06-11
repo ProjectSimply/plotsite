@@ -1,8 +1,6 @@
 .planToggle {
     margin-bottom: 3rem;
     text-align: center;
-    // max-width: 800px;
-    // margin: 0 auto;
 
     &.planToggle--showMonthlyPrice {
 
@@ -17,6 +15,7 @@
 
         .planToggle__option--annual {
             border-color: var(--black);
+            pointer-events: none;
 
             h3,
             span {
@@ -29,7 +28,7 @@
         }
 
         .planToggle__price--annual {
-            display: none;
+            opacity: 0;
         }
 
     }
@@ -47,7 +46,6 @@
             flex: 0 0 50%;
             text-align: center;
             border-bottom: 3px solid black;
-            cursor: pointer;
 
             &.planToggle__option--annual {
                 border-color: var(--strong-pink);
@@ -76,7 +74,7 @@
             }
 
             &.planToggle__price--monthly {
-                display: none;
+                opacity: 0;
             }
     
             &.planToggle__price--annual {

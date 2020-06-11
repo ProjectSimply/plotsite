@@ -58,13 +58,27 @@
 
             @include medium {
                 grid-template-columns: auto auto;
-                justify-content: space-between;
             }
         }
 
         .pricingSection__item {
             position: relative;
-            margin-bottom: 1rem;
+            background-color: white;
+            padding: 1rem;
+
+            &.pricingSection__item--border {
+                border: 1px solid var(--black);
+                border-top: none;
+    
+                &:nth-child(1),
+                &:nth-child(2) {
+                    border-top: 1px solid var(--black);
+                }
+    
+                &:nth-child(even) {
+                    border-left: none;
+                }
+            }
 
             p {
                 font-weight: bold;
