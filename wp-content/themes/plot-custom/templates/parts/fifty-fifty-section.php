@@ -1,4 +1,4 @@
-<section class="fiftyFifty plotLayout">
+<section class="fiftyFifty plotLayout" data-plot-smooth-scroll-element>
 
     <div class="maxWidth">
     
@@ -12,7 +12,7 @@
 
                 </div>
 
-                <div class="fiftyFifty__textWrap">
+                <div class="fiftyFifty__textWrap growIn">
 
                     <?= get_sub_field('fifty_fifty_text'); ?>
 

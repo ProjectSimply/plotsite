@@ -1870,13 +1870,8 @@ img {
   text-transform: uppercase;
   transition: all 0.2s ease-in;
 }
-.button.button--X {
-  border: 2px solid transparent;
-}
-.button.button--X:hover {
-  background-color: transparent;
-  color: var(--black);
-  border: 2px solid var(--black);
+.button:hover {
+  transform: scale(1.05);
 }
 @media screen and (max-width: 639px) {
   .button {
@@ -2362,6 +2357,53 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 }
 [data-plot-smooth-scroll-element]:nth-child(12) {
   transition-delay: 1.2s;
+}
+
+[data-plot-smooth-scroll-element] .growIn {
+  opacity: 0;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 0.7s ease-in-out, transform 0.7s ease-in-out;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(1) {
+  transition-delay: 0.3s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(2) {
+  transition-delay: 0.6s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(3) {
+  transition-delay: 0.9s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(4) {
+  transition-delay: 1.2s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(5) {
+  transition-delay: 1.5s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(6) {
+  transition-delay: 1.8s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(7) {
+  transition-delay: 2.1s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(8) {
+  transition-delay: 2.4s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(9) {
+  transition-delay: 2.7s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(10) {
+  transition-delay: 3s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(11) {
+  transition-delay: 3.3s;
+}
+[data-plot-smooth-scroll-element] .growIn:nth-child(12) {
+  transition-delay: 3.6s;
+}
+
+[data-plot-smooth-scroll-element].plotSmoothScrollSeenOnce .growIn {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 .plotModalScrollViewport {
@@ -3877,6 +3919,80 @@ a {
   font-size: 1rem;
 }
 
+.rollerText {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 -0.2rem;
+  padding-bottom: 0.2rem;
+  padding-right: 0.9rem;
+  transition: all 0.5s ease-out;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+.rollerText.turn [data-text-next] {
+  animation: turn 0.5s ease-in-out 0.2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.rollerText.turn [data-text-current] {
+  animation: previous 0.5s cubic-bezier(0.67, 0.72, 0, 1.02);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@media screen and (min-width: 640px) {
+  .rollerText__smallScreen--1 {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 400px) {
+  .rollerText__smallScreen--2 {
+    display: none;
+  }
+}
+
+[data-text-current] {
+  display: inline-block;
+  transition: transform 0.5s cubic-bezier(0.67, 0.72, 0, 1.02) 0.2s;
+  white-space: nowrap;
+}
+
+[data-text-next] {
+  left: 0;
+  top: -100%;
+  position: absolute;
+  white-space: nowrap;
+}
+
+@keyframes turn {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  30% {
+    transform: translate3d(0, 30%, 0) scaleY(1.75);
+  }
+  80% {
+    transform: translate3d(0, 80%, 0) scaleY(1.75);
+  }
+  90% {
+    transform: translate3d(0, 110%, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
+@keyframes previous {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  80% {
+    transform: translate3d(0, 80%, 0);
+  }
+  100% {
+    transform: translate3d(0, 100%, 0);
+  }
+}
 .mobile3D {
   perspective: 1500px;
   transform-style: preserve-3d;
@@ -4572,14 +4688,15 @@ body.home[data-previous-theme=deep] .mobile3D__screen:before {
 .pricingSection__toggleList {
   position: relative;
   display: inline-block;
-  padding: 1rem 1rem 1rem;
+  padding: 1rem 0 1rem 1rem;
+  margin-right: 1rem;
   margin-bottom: 2rem;
   cursor: pointer;
 }
 .pricingSection__toggleList:after {
   content: "";
   position: absolute;
-  right: -10px;
+  right: -30px;
   top: 50%;
   display: block;
   height: 10px;
@@ -4608,12 +4725,11 @@ ul.pricingSection__fullList {
 
 .pricingSection__item {
   position: relative;
-  background-color: white;
-  padding: 1rem;
 }
 .pricingSection__item.pricingSection__item--border {
   border: 1px solid var(--black);
   border-top: none;
+  padding: 1rem;
 }
 .pricingSection__item.pricingSection__item--border:nth-child(1), .pricingSection__item.pricingSection__item--border:nth-child(2) {
   border-top: 1px solid var(--black);
@@ -4630,7 +4746,7 @@ ul.pricingSection__fullList {
 }
 .pricingSection__item span {
   position: absolute;
-  left: 10px;
+  left: 18px;
   top: 50%;
   transform: translate3d(0, -50%, 0);
   display: block;
@@ -4892,7 +5008,7 @@ ul.pricingSection__fullList {
   overflow: hidden;
   padding-top: 5rem;
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
   .homeBanner {
     height: 100vh;
     height: calc(var(--vh) * 100);
@@ -4923,7 +5039,17 @@ ul.pricingSection__fullList {
   height: 100%;
 }
 
-@media screen and (min-width: 640px) {
+.homeBanner__subtitle {
+  color: var(--white);
+  text-shadow: 2px 0px 8px rgba(206, 190, 190, 0), 2px 9px 8px rgba(0, 0, 0, 0.42);
+}
+@media screen and (min-width: 1024px) {
+  .homeBanner__subtitle {
+    text-align: left;
+  }
+}
+
+@media screen and (min-width: 1024px) {
   .homeBanner__grid {
     display: grid;
     height: 100%;
@@ -4938,7 +5064,7 @@ ul.pricingSection__fullList {
   grid-area: titleWrap;
   text-align: center;
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
   .homeBanner__item.homeBanner__item--titleWrap {
     align-self: end;
   }
@@ -4948,16 +5074,21 @@ ul.pricingSection__fullList {
 }
 .homeBanner__item.homeBanner__item--button {
   grid-area: button;
-}
-@media screen and (max-width: 639px) {
-  .homeBanner__item.homeBanner__item--button {
-    margin-top: 3rem;
-    margin-bottom: 2rem;
-  }
+  margin-bottom: 2rem;
+  margin-top: 3rem;
 }
 @media screen and (min-width: 640px) {
   .homeBanner__item.homeBanner__item--button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media screen and (min-width: 1024px) {
+  .homeBanner__item.homeBanner__item--button {
+    margin-top: 0;
     align-self: start;
+    justify-content: flex-start;
   }
 }
 
@@ -4966,7 +5097,7 @@ ul.pricingSection__fullList {
   text-shadow: 2px 9px 8px rgba(206, 190, 190, 0), 2px 9px 8px rgba(137, 127, 127, 0.42);
   text-align: center;
 }
-@media screen and (min-width: 640px) {
+@media screen and (min-width: 1024px) {
   .homeBanner__title {
     text-align: left;
   }

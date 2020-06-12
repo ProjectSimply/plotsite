@@ -10,6 +10,7 @@
 		FAQs 			= require('../../../plot-core/src/js/faqs'),
 		// CustomMouse 	= require('../../../plot-core/src/js/custom-mouse'),
 		Home			= require('./pages/home'),
+		RollerText      = require('./components/roller-text'),
 		TogglePrice     = require('./components/toggle-price'),
 		Artists			= require('./pages/artists'),
 		Schedule		= require('./pages/schedule'),
@@ -27,6 +28,7 @@
 			Modals.init()  
 			Carousels.init()
 			FAQs.init()
+			RollerText.init()
 			// CustomMouse.init({
 			// 	'a' 				: 'anchorHover',
 			// 	'.altHoverTarget'	: 'altHover'

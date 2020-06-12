@@ -43,3 +43,27 @@
 		
 	}
 }
+
+[data-plot-smooth-scroll-element] .growIn {
+	opacity: 0;
+	transform: translate3d(0,30px,0);
+	transition: opacity .7s ease-in-out, transform .7s ease-in-out;
+
+	$i: 1;
+	$speed: .3s;
+	$delay: 0s;
+	@while $i <= 12 {
+	
+		&:nth-child(#{$i}) {
+			transition-delay: #{$i * $speed + $delay}; 
+		}
+
+		$i: $i + 1;
+		
+	}
+}
+
+[data-plot-smooth-scroll-element].plotSmoothScrollSeenOnce .growIn {
+	opacity: 1;
+	transform: translate3d(0,0,0);
+}

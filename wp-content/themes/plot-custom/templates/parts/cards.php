@@ -24,9 +24,9 @@
 
                     <div class="cards__textWrap">
 
-                        <h5 class="cards__title"><?= get_sub_field('card_title') ?></h5>
+                        <h5 class="cards__title growIn"><?= get_sub_field('card_title') ?></h5>
 
-                        <p><?= get_sub_field('card_text'); ?></p>
+                        <p class="growIn"><?= get_sub_field('card_text'); ?></p>
 
                     </div>
 
@@ -38,7 +38,7 @@
 
         <?php if(get_field('add_link')) : ?>
 
-            <div class="button__wrap">
+            <div class="button__wrap ">
                 <a href="<?= get_field('block_section_link') ?>" class="button button--X">
                     <span>
                         <?= get_field('block_section_button_text') ?>

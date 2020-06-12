@@ -7,11 +7,11 @@
         <p class="hosting__subText"><?= get_field('hosting_section_subtext') ?></p>
 
 
-        <div class="hosting__list">
+        <div class="hosting__list" data-plot-smooth-scroll-element>
 
             <?php while ( has_sub_field('hosting_list')) : ?>
 
-                <div class="hosting__listItem">
+                <div class="hosting__listItem growIn">
 
                     <div class="hosting__icon">
 

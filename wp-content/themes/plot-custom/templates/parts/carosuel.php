@@ -1,16 +1,16 @@
-<section class="carouselSection">
+<section class="carouselSection" data-plot-smooth-scroll-element>
 
     <div class="maxWidth">
 
         <?php if(get_field('carousel_title')) : ?>
 
-            <h2 class="carouselSection__title"><?= get_field('carousel_title') ?></h2>
+            <h2 class="carouselSection__title growIn"><?= get_field('carousel_title') ?></h2>
 
         <?php endif; ?>
 
         <?php if(get_field('carousel_subtext')) : ?>
 
-            <p class="carouselSection__text"><?= get_field('carousel_subtext') ?></p>
+            <p class="carouselSection__text growIn"><?= get_field('carousel_subtext') ?></p>
 
         <?php endif; ?>
 
@@ -42,7 +42,7 @@
 
     <?php if(get_field('carousel_add_link')) : ?>
 
-        <div class="carouselSection__buttonWrap button__wrap">
+        <div class="carouselSection__buttonWrap button__wrap growIn">
             <a href="<?= get_field('carousel_link') ?>" class="button button--X">
                 <span><?=  get_field('carousel_link_text') ?></span>
             </a>

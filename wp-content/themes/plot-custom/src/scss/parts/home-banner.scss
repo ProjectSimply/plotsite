@@ -7,7 +7,7 @@
     overflow: hidden;
     padding-top: 5rem;
 
-    @include medium {
+    @include large {
         @include vh(100, 'height');
         padding-top: 0;
     }
@@ -42,8 +42,17 @@
     }
 }
 
+    .homeBanner__subtitle {
+        color: var(--white);
+        text-shadow: 2px 0px 8px rgba(206,190,190,0), 2px 9px 8px rgba(0,0,0,0.42);
+
+        @include large {
+            text-align: left;
+        }
+    }
+
     .homeBanner__grid {
-        @include medium {
+        @include large {
             display: grid;
             height: 100%;
             align-items: center;
@@ -63,7 +72,7 @@
                 text-align: center;
 
                 // Centers Title and Button
-                @include medium {
+                @include large {
                     align-self: end;
                 }
                 
@@ -75,15 +84,20 @@
 
             &.homeBanner__item--button {
                 grid-area: button;
-
+                margin-bottom: 2rem;
                 // Use margin top because button isn't always output
-                @include small-only {
-                    margin-top: 3rem;
-                    margin-bottom: 2rem;
-                }
+                margin-top: 3rem;
 
                 @include medium {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                @include large {
+                    margin-top: 0;
                     align-self: start;
+                    justify-content: flex-start;
                 }
             }
         }
@@ -93,7 +107,7 @@
                 text-shadow: 2px 9px 8px rgba(206,190,190,0), 2px 9px 8px rgba(137,127,127,0.42);
                 text-align: center;
 
-                @include medium {
+                @include large {
                     text-align: left; 
                 }
             }

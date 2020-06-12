@@ -2,7 +2,7 @@
 
     <div class="maxWidth--sml">
 
-        <div class="faqs__inner">
+        <div class="faqs__inner" data-plot-smooth-scroll-element>
 
             <div class="faqs__intro">
 
@@ -24,7 +24,7 @@
 
                 <?php $faqID = get_sub_field('faq')->ID; ?>
 
-                <div class="faq">
+                <div class="faq growIn">
 
                     <h5 class="faq__question"><?= get_the_title($faqID) ?></h5>
 
