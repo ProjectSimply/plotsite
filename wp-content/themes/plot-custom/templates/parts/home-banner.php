@@ -17,9 +17,9 @@
 
                 <div class="mobile3D__phone">
                     
-                    <div class="mobile3D__screen"></div>
-
-                    <div class="glass-reflection"></div>
+                    <div class="mobile3D__screen">
+                        <div class="glass-reflection"></div>
+                    </div>
 
                     <span class="mobile3D__side mobile3D__side--left"></span>
 

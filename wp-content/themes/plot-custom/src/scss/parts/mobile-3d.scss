@@ -21,6 +21,10 @@
         max-height: 540px;
         max-width: 300px;
 
+        @include small-only {
+            transition: transform .4s ease-in;
+        }
+
         @include medium {
            height: 60vw;
            width: 30vw;

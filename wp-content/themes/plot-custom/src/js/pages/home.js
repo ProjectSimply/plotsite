@@ -48,8 +48,6 @@
             Home.createListeners()
 
             Home.startThemeCounter()
-            
-            Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
 
         },
 
@@ -69,34 +67,20 @@
             burgerMenuTriggers.addEventListener('click', Home.toggleThemeCounter)
 
 
-            Home.dom.homeBanner.addEventListener('mousemove', e => {
+            
 
-                Home.currentMousePosition = {
-                    X: e.clientX,
-                    Y: e.clientY
-                }
+            if(window.innerWidth < 640) {
 
-                const middlePointX = window.innerWidth / 2
-                const middlePointY = window.innerHeight / 2
-
-                if(Home.currentMousePosition.X  - 2000 > middlePointX)
-                    Home.currentMousePosition.X = middlePointX + 2000
+                Home.dom.body.classList.add('smallScreen');
                 
-                if(Home.currentMousePosition.X  + 2000 < middlePointX)
-                    Home.currentMousePosition.X = middlePointX - 2000
+            } else {
 
-                if(Home.currentMousePosition.Y  - 2000 > middlePointY)
-                    Home.currentMousePosition.Y = middlePointY + 2000
+                Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
+
+                Home.dom.homeBanner.addEventListener('mousemove', (e) => Home.trackCursorPosition(e)) 
+            }
                 
-                if(Home.currentMousePosition.Y  + 2000 < middlePointY)
-                    Home.currentMousePosition.Y = middlePointY - 2000
-
-                if(Home.ticker == false) {
-                    Home.ticker = true
-                    Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
-                }
-
-            }) 
+            
             
         },
 
@@ -119,6 +103,36 @@
                 
                 Home.removeTheme()
             }
+        },
+
+        trackCursorPosition: (e) => {
+    
+            Home.currentMousePosition = {
+                X: e.clientX,
+                Y: e.clientY
+            }
+
+            const middlePointX = window.innerWidth / 2
+            const middlePointY = window.innerHeight / 2
+
+            if(Home.currentMousePosition.X  - 2000 > middlePointX)
+                Home.currentMousePosition.X = middlePointX + 2000
+            
+            if(Home.currentMousePosition.X  + 2000 < middlePointX)
+                Home.currentMousePosition.X = middlePointX - 2000
+
+            if(Home.currentMousePosition.Y  - 2000 > middlePointY)
+                Home.currentMousePosition.Y = middlePointY + 2000
+            
+            if(Home.currentMousePosition.Y  + 2000 < middlePointY)
+                Home.currentMousePosition.Y = middlePointY - 2000
+
+            if(Home.ticker == false) {
+                Home.ticker = true
+                Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
+            }
+
+            
         },
 
         startThemeCounter: () => {
@@ -201,7 +215,7 @@
             const xShift = (Home.previousMousePosition.X - (window.innerWidth / 2)) / (window.innerWidth / 2 )
             const yShift = ((window.innerHeight / 2) - Home.previousMousePosition.Y) / (window.innerHeight / 2 )
             
-            Home.dom.phone.style.transform = `rotateX(${10 + yShift*10}deg) rotateY(${xShift*60}deg)`
+            Home.dom.phone.style.transform = `rotateX(${10 + yShift*10}deg) rotateY(${xShift*60 > 50 ? 50 : xShift*60}deg)`
 
             const multiplier = 10
             Home.dom.colourShapes[1].style.transform = `translateX(${xShift * multiplier * 5}px) translateY(${-5*yShift*multiplier}px) translateZ(5rem)` 
