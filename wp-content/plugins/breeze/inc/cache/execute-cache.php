@@ -38,7 +38,13 @@ if ( isset( $_GET['debug_config'] ) ) {
 
 $url_path    = breeze_get_url_path();
 $user_logged = false;
-$filename    = $url_path . 'guest';
+
+if ( substr_count( $url_path, '?' ) > 0 ) {
+	$filename = $url_path . '&guest';
+} else {
+	$filename = $url_path . '?guest';
+}
+
 // Don't cache
 if ( ! empty( $_COOKIE ) ) {
 	$wp_cookies = array( 'wordpressuser_', 'wordpresspass_', 'wordpress_sec_', 'wordpress_logged_in_' );
@@ -126,11 +132,12 @@ function breeze_cache( $buffer, $flags ) {
 	$detect = new \Cloudways\Breeze\Mobile_Detect\Mobile_Detect;
 	//not cache per administrator if option disable optimization for admin users clicked
 	if ( ! empty( $GLOBALS['breeze_config'] ) && (int) $GLOBALS['breeze_config']['disable_per_adminuser'] ) {
-
-        $current_user = wp_get_current_user();
-        if (in_array('administrator', $current_user->roles)) {
-            return $buffer;
-        }
+		if ( function_exists( 'is_user_logged_in' ) && is_user_logged_in() ) {
+			$current_user = wp_get_current_user();
+			if ( in_array( 'administrator', $current_user->roles ) ) {
+				return $buffer;
+			}
+		}
 	}
 
 	if ( strlen( $buffer ) < 255 ) {

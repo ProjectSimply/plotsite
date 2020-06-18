@@ -1,6 +1,6 @@
 <?php plotGetTemplatePart('parts/head'); ?>
 
-<body data-current-theme="deep" <?php plotBodyClass() ?>> 
+<body <?php plotBodyClass() ?>> 
 
     <?php if(get_field('gtm_id','option')) : ?>
 

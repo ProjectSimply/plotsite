@@ -7,7 +7,6 @@ use ACP\Column\CustomField\EditingModelFactory;
 use ACP\Column\CustomField\ExportModelFactory;
 use ACP\Column\CustomField\FilteringModelFactory;
 use ACP\Column\CustomField\SearchComparisonFactory;
-use ACP\Column\CustomField\SortingModelFactory;
 use ACP\Editing;
 use ACP\Export;
 use ACP\Filtering;
@@ -22,10 +21,10 @@ class CustomField extends AC\Column\CustomField
 	implements Sorting\Sortable, Editing\Editable, Filtering\Filterable, Export\Exportable, Search\Searchable {
 
 	/**
-	 * @return Sorting\Model
+	 * @return Sorting\AbstractModel
 	 */
 	public function sorting() {
-		return SortingModelFactory::create( $this->get_field_type(), $this );
+		return Sorting\Model\CustomFieldFactory::create( $this->get_field_type(), $this->get_meta_type(), $this->get_meta_key(), $this );
 	}
 
 	/**

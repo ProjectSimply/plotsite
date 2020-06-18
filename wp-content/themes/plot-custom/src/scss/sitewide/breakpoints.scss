@@ -19,9 +19,9 @@
 }
 
 @mixin xlarge {
-    @media screen and (min-width: 1200px) { @content; }
+    @media screen and (min-width: 1400px) { @content; }
 }
 
 @mixin xxlarge {
-    @media screen and (min-width: 1440px) { @content; }
+    @media screen and (min-width: 1800px) { @content; }
 }

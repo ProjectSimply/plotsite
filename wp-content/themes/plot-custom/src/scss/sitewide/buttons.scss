@@ -17,10 +17,9 @@
 	padding: 1rem 1.5rem;
 	display: inline-block;
 	text-transform: uppercase;
-	transition: all .2s ease-in;
 
 	&:hover {
-		transform: scale(1.05);
+		transform: scale(1.02);
 	}
 	
 	@include small-only {

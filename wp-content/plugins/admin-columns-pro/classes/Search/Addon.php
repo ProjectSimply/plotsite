@@ -80,8 +80,8 @@ final class Addon implements AC\Registrable {
 	}
 
 	public function add_hide_on_screen( HideOnScreenCollection $collection ) {
-		$collection->add( $this->hide_smart_filters, 30 )
-		           ->add( new Settings\HideOnScreen\SavedFilters(), 31 );
+		$collection->add( $this->hide_smart_filters, 40 )
+		           ->add( new Settings\HideOnScreen\SavedFilters(), 41 );
 	}
 
 	public function segment_request() {
@@ -163,7 +163,13 @@ final class Addon implements AC\Registrable {
 		foreach ( $list_screen->get_columns() as $column ) {
 			$setting = $column->get_setting( 'search' );
 
-			if ( ! $setting instanceof Settings\Column || ! $setting->is_active() ) {
+			if ( ! $setting instanceof Settings\Column ) {
+				continue;
+			}
+
+			$is_active = apply_filters_deprecated( 'acp/search/smart-filtering-active', [ $setting->is_active(), $setting ], '5.2', 'Smart filtering can be disabled using the UI.' );
+
+			if ( ! $is_active ) {
 				continue;
 			}
 
@@ -177,7 +183,7 @@ final class Addon implements AC\Registrable {
 				$this->get_filter_label( $column )
 			);
 
-			$filters[] = $filter();
+			$filters[] = apply_filters( 'acp/search/filters', $filter(), $column );
 		}
 
 		return $filters;

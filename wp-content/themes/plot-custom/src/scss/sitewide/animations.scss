@@ -671,11 +671,11 @@
 @keyframes bob--2 {
     0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
 
-    20% {transform: translate3d(-30%,45%,0)rotate3d(0,0,1,25deg) }
+    20% {transform: translate3d(-20%,5%,0)rotate3d(0,0,1,25deg) }
 
-    40% {transform: translate3d(-45%,90%,0) rotate3d(0,0,1,95deg) }
+    40% {transform: translate3d(5%,20%,0) rotate3d(0,0,1,95deg) }
 
-    60% {transform: translate3d(-15%,45%,0) rotate3d(0,0,1,180deg) }
+    60% {transform: translate3d(-15%,5%,0) rotate3d(0,0,1,180deg) }
 
     80% {transform: translate3d(-15%,10%,0) rotate3d(0,0,1,90deg) }
 

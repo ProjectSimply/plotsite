@@ -5,36 +5,38 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    padding-top: 5rem;
+    
+    @include large {
+        max-height: calc(60vw);
+    }
 
     @include large {
         @include vh(100, 'height');
-        padding-top: 0;
+        min-height: 40rem;
     }
 
     &:before,
     &:after{
         content: "";
         display: block;
-        width: 100%;
+        width: 110%;
         height: 100%;
         position: absolute;
         top: 0;
         z-index: -2;
 
-        .slideMobileScreen & {
-            animation: slide .3s ease-out;
-            animation-iteration-count: 1;
-            animation-fill-mode: forwards;  
-        }
+       
     }
 
 
     &:before {
-        left: -100%;
+        top: 0;
     }
     &:after {
-        left: 0%;
+        transform: translate3d(0, 0,0);
+         .slideMobileScreen & {
+            animation: slideScreen .8s cubic-bezier(.13,.75,.41,1.03);
+        }
     }
 
     .maxWidth {
@@ -44,7 +46,7 @@
 
     .homeBanner__subtitle {
         color: var(--white);
-        text-shadow: 2px 0px 8px rgba(206,190,190,0), 2px 9px 8px rgba(0,0,0,0.42);
+        text-shadow: 0 0 8px rgba(0,0,0,0.1);
 
         @include large {
             text-align: left;
@@ -52,16 +54,26 @@
     }
 
     .homeBanner__grid {
+        text-align: center;
+        margin: 7rem 0 2rem;
+        height: calc(100% - 10rem);
         @include large {
+            text-align: left;
+            margin: 5rem 0 5rem;
             display: grid;
-            height: 100%;
+            
+            height: calc(100% - 10rem); 
             align-items: center;
             justify-content: center;
             grid-template-columns: 1fr 1fr;
             grid-template-areas: 
             "titleWrap mobile"
-            "button    mobile"; 
+            "titleWrap mobile"; 
         }
+    }
+
+    .homeBanner__subtitle {
+        color: var(--plotBlack);
     }
 
         .homeBanner__item {
@@ -69,12 +81,10 @@
 
             &.homeBanner__item--titleWrap {
                 grid-area: titleWrap; 
-                text-align: center;
+                max-width: 42rem;
+                margin: 0 auto;
+                padding: 0 1rem;
 
-                // Centers Title and Button
-                @include large {
-                    align-self: end;
-                }
                 
             }
 
@@ -95,7 +105,17 @@
                 }
 
                 @include large {
+                    display: none;
                     margin-top: 0;
+                    
+                }
+            }
+
+            &.homeBanner__item--buttonDesktop {
+                display: none;
+                @include large {
+                    margin: 2rem 0 0 0;
+                    display: block;
                     align-self: start;
                     justify-content: flex-start;
                 }
@@ -103,11 +123,11 @@
         }
 
             .homeBanner__title {
-                text-transform: uppercase; 
-                text-shadow: 2px 9px 8px rgba(206,190,190,0), 2px 9px 8px rgba(137,127,127,0.42);
+                text-shadow: 0 0 8px rgba(0,0,0,0.1);
                 text-align: center;
 
                 @include large {
+                    margin-top: 1rem;
                     text-align: left; 
                 }
             }
@@ -147,6 +167,7 @@
             right: -200px;
             top: 25%;
             animation-name: bob--2;
+            width: 50%;
 
             @include medium {
                 right: 0;
@@ -167,11 +188,20 @@
 
     }
 
-    @keyframes slide {
+    @keyframes slideScreen {
         0% {
-            transform: translate3d(100%,0,0);
+            transform: translate3d(100%,0,0) skew(2deg,0);
         }
     
+        100% {
+            transform: translate3d(0,0,0);
+        }
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translate3d(100%,0,0) ;
+        }
         100% {
             transform: translate3d(0,0,0);
         }

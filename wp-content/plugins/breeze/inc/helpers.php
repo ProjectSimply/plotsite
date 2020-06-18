@@ -128,6 +128,10 @@ function breeze_validate_urls( $url_list = array() ) {
 			if ( false === $is_valid ) {
 				$is_valid = breeze_validate_url_via_regexp( $url );
 			}
+
+			if ( false === $is_valid ) {
+				$is_valid = breeze_string_contains_exclude_regexp( $url );
+			}
 		}
 
 		if ( false === $is_valid ) {
@@ -234,6 +238,37 @@ function breeze_is_string_in_array_values( $needle = '', $haystack = array() ) {
 }
 
 /**
+ * Used to check for regexp exclude pages
+ *
+ * @param string $needle
+ * @param array $haystack
+ *
+ * @return array
+ * @since 1.1.7
+ *
+ */
+function breeze_check_for_exclude_values( $needle = '', $haystack = array() ) {
+	if ( empty( $needle ) || empty( $haystack ) ) {
+		return array();
+	}
+	$needle             = trim( $needle );
+	$is_string_in_array = array_filter(
+		$haystack,
+		function ( $var ) use ( $needle ) {
+			#return false;
+			if ( breeze_string_contains_exclude_regexp( $var ) ) {
+				return breeze_file_match_pattern( $needle, $var );
+			} else {
+				return false;
+			}
+
+		}
+	);
+
+	return $is_string_in_array;
+}
+
+/**
  * Will return true for Google fonts and other type of CDN link
  * that are missing the Scheme from the url
  *
@@ -307,7 +342,7 @@ function breeze_string_contains_exclude_regexp( $file_url, $validate = '(.*)' ) 
 
 	$valid = false;
 
-	if ( strpos( $file_url, $validate ) !== false ) {
+	if ( substr_count( $file_url, $validate ) !== 0 ) {
 		$valid = true; // 0 or false
 	}
 

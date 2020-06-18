@@ -62,10 +62,16 @@ class TableScreen implements AC\Registrable {
 		wp_enqueue_script( 'wp-color-picker' );
 		wp_enqueue_style( 'wp-color-picker' );
 
+		// WP Content Editor
+		wp_enqueue_editor();
+
 		do_action( 'ac/table_scripts/editing', $this->list_screen );
 	}
 
 	public function edit_button() {
+		if ( ! $this->list_screen->has_id() ) {
+			return;
+		}
 		?>
 		<label class="ac-table-button -toggle -iedit">
 			<span class="ac-toggle">

@@ -1,26 +1,26 @@
 .rollerText {
     position: relative;
     display: inline-block;
-    margin: 0 0 -.2rem;
-    padding-bottom: .2rem;
     padding-right: .9rem;
     transition: all .5s ease-out;
     overflow: hidden;
     vertical-align: bottom;
+    margin-bottom: -1rem;
+    padding-bottom: 1rem;
 
     &.turn {
         
         [data-text-next] {
-            animation: turn .5s ease-in-out .2s;
+            animation: turn .5s ease-out .2s;
             animation-iteration-count: 1;
             animation-fill-mode: forwards;  
         
         }
 
         [data-text-current] {
-            animation: previous .5s cubic-bezier(.67,.72,0,1.02);
+            animation: previous .5s ease-out;
             animation-iteration-count: 1;
-            animation-fill-mode: forwards;  
+            animation-fill-mode: forwards; 
         }
     }
 }
@@ -40,6 +40,7 @@
     display: inline-block;
     transition: transform .5s cubic-bezier(.67,.72,0,1.02) .2s;
     white-space: nowrap;
+    transform: translate3d(0,0,0);
 }
 
 [data-text-next] {
@@ -47,6 +48,8 @@
     top: -100%;
     position: absolute;
     white-space: nowrap;
+    transform: translate3d(0,0,0);
+    
 }
 
 @keyframes turn {
@@ -54,20 +57,8 @@
         transform: translate3d(0,0,0);
     }
 
-    30% {
-        transform: translate3d(0,30%,0) scaleY(1.75);
-    }
-
-    80% {
-        transform: translate3d(0,80%,0) scaleY(1.75);
-    }
-
-    90% {
-        transform: translate3d(0,110%,0);
-    }
-
     100% {
-        transform: translate3d(0,100%,0);
+        transform: translate3d(0,calc(100% + 1rem),0);
     }
 }
 
@@ -76,11 +67,7 @@
         transform: translate3d(0,0,0);
     }
 
-    80% {
-        transform: translate3d(0,80%,0);
-    }
-
     100% {
-        transform: translate3d(0,100%,0);
+        transform: translate3d(0,calc(100% + 1rem),0);
     }
 }

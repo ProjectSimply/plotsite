@@ -2,13 +2,20 @@
     perspective: 1500px;
     transform-style: preserve-3d;
     position: relative;
+    height: 100%;
 
-    @include small-only {
+    @include small-only { 
         margin-top: 2rem;
     }
 
+    .mobile3D__wiggle {
+         animation: wiggle 15s linear infinite;
+         height:100%;
+         transform-style: preserve-3d;
+    }
+
     .mobile3D__phone {
-        margin: 0 auto;
+        margin:0 auto;
         position: relative;
         border-width: 20px 0;
         border-style: solid;
@@ -16,19 +23,21 @@
         color: #fff;
         transform-style: preserve-3d;
         transform: rotate3d(-3, 5, 0, -25deg);
-        @include vh(65, 'height'); 
-        width: 70vw;
-        max-height: 540px;
-        max-width: 300px;
-
+        transform-origin: 50% 100%;
+        width: 100%;
+        @include vh(60);
+        margin-top:5%;
+        @include large {
+            height: 90%;
+        }
         @include small-only {
             transition: transform .4s ease-in;
         }
-
-        @include medium {
-           height: 60vw;
-           width: 30vw;
+        @include xlarge {
+             margin: 5% 8rem 0 auto;
+            height: 95%;
         }
+
     }
 
         .colourShape {
@@ -38,6 +47,13 @@
             position: absolute;
             top: 5%;
             left: -10%;
+            display: none;
+            // animation: fade 1s ease-out 1s;
+            opacity: 0;
+            animation-fill-mode: forwards;
+            .showFloaters & {
+                display: block;
+            }
 
             @include large {
                 width: 4rem;
@@ -161,7 +177,7 @@
 
             
             .slideMobileScreen & {
-                animation: slide .3s ease-in-out;
+                animation: slide .5s cubic-bezier(.13,.75,.41,1.03);
                 animation-iteration-count: 1;
                 animation-fill-mode: forwards;  
             }
@@ -253,6 +269,16 @@
     
 }
 
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 @keyframes slide {
     0% {
         transform: translate3d(100%,0,0);
@@ -260,6 +286,26 @@
 
     100% {
         transform: translate3d(0,0,0);
+    }
+}
+
+
+@keyframes wiggle {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    20% {
+        transform: rotateY(3deg) rotateX(3deg);
+    }
+    40% {
+        transform: rotateY(0deg)  rotateX(2deg);
+    }
+    60% {
+        transform: rotateY(-7deg)  rotateX(-4deg);
+    }
+    80% {
+        transform: rotateY(-4deg)  rotateX(-6deg);
     }
 }
 

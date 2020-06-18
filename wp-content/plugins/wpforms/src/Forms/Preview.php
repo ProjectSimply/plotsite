@@ -159,7 +159,7 @@ class Preview {
 				 		admin_url( 'admin.php' )
 					)
 				),
-				'text' => esc_html__( 'Edit Form', 'wpform-lite' ),
+				'text' => esc_html__( 'Edit Form', 'wpforms-lite' ),
 			];
 		}
 
@@ -175,7 +175,7 @@ class Preview {
 						admin_url( 'admin.php' )
 					)
 				),
-				'text' => esc_html__( 'View Entries', 'wpform-lite' ),
+				'text' => esc_html__( 'View Entries', 'wpforms-lite' ),
 			];
 		}
 
@@ -203,8 +203,8 @@ class Preview {
 		$content .= '<p>';
 		$content .= sprintf(
 			wp_kses(
-				/* translators: %1$s - WPForms doc link. */
-				__( 'For form testing tips, check out our <a href="%1$s" target="_blank" rel="noopener noreferrer">complete guide!</a>', 'wpforms-lite' ),
+				/* translators: %s - WPForms doc link. */
+				__( 'For form testing tips, check out our <a href="%s" target="_blank" rel="noopener noreferrer">complete guide!</a>', 'wpforms-lite' ),
 				[
 					'a' => [
 						'href'   => [],

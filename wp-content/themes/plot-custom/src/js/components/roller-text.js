@@ -50,7 +50,7 @@
                     RollerText.dom.current.textContent = currentPhrase
                     RollerText.dom.next.textContent = nextPhrase
 
-                }, 700)
+                }, 1000)
 
 
                 // If we reach the end of the themes, reset to first theme

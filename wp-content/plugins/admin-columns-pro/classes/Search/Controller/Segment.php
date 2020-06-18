@@ -62,7 +62,7 @@ class Segment extends Controller {
 		$errors = [
 			Segments::ERROR_DUPLICATE_NAME => __( 'A segment with this name already exists.', 'codepress-admin-columns' ),
 			Segments::ERROR_NAME_NOT_FOUND => __( 'Could not find current segment.', 'codepress-admin-columns' ),
-			Segments::ERROR_SAVING         => __( 'Could save the segment.', 'codepress-admin-columns' ),
+			Segments::ERROR_SAVING         => __( 'Could not save the segment.', 'codepress-admin-columns' ),
 		];
 
 		if ( $this->segments->has_errors() ) {

@@ -267,11 +267,10 @@ function wpforms_sanitize_amount( $amount, $currency = '' ) {
  * Return a nicely formatted amount.
  *
  * @since 1.2.6
- * @link https://github.com/easydigitaldownloads/easy-digital-downloads/blob/master/includes/formatting.php#L83
  *
- * @param string  $amount
- * @param boolean $symbol
- * @param string  $currency
+ * @param string $amount
+ * @param bool   $symbol
+ * @param string $currency
  *
  * @return string $amount Newly formatted amount or Price Not Available
  */
@@ -445,6 +444,7 @@ function wpforms_get_payment_items( $fields = array() ) {
 
 	foreach ( $fields as $id => $field ) {
 		if (
+			empty( $field['type'] ) ||
 			! in_array( $field['type'], $payment_fields, true ) ||
 			empty( $field['amount'] ) ||
 			$field['amount'] == wpforms_sanitize_amount( '0' )

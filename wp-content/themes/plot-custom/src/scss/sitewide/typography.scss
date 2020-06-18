@@ -16,7 +16,15 @@ html {
 		text-align: left;
 	}
 	@include large {
-		font-size: 18px;
+		font-size: 17px;
+	}
+
+	@include xlarge {
+		font-size: 20px;
+	}
+
+	@include xxlarge {
+		font-size: 22px;
 	}
 }
 
@@ -25,13 +33,16 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: var(--headingFont);
 	font-weight: bold;
 	color: var(--black);
+	line-height: 1;
 }
 
 h1 {
-	font-size: 2.5rem;
+	font-size: 3rem;
+	margin-bottom: 2rem;
+	line-height: 0.9;
 
 	@include medium {
-		font-size: 3.5rem;
+		font-size: 4rem;
 	}
 
 	@include large {

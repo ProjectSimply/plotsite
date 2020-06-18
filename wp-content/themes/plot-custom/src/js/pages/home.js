@@ -19,7 +19,7 @@
             }
         },
         intervalLength          : 5000,
-        previousTheme           : 'deep',
+        previousTheme           : 'none',
         counter                 : null,
         ticker                  : false,
         currentMousePosition    : {
@@ -49,6 +49,8 @@
 
             Home.startThemeCounter()
 
+            Home.setWidthOfPhone()
+
         },
 
         createListeners: () => {
@@ -66,7 +68,7 @@
             // Toggle banner animation when menu opened/closed
             burgerMenuTriggers.addEventListener('click', Home.toggleThemeCounter)
 
-
+            window.addEventListener('resize',Home.setWidthOfPhone)
             
 
             if(window.innerWidth < 640) {
@@ -80,14 +82,18 @@
                 Home.dom.homeBanner.addEventListener('mousemove', (e) => Home.trackCursorPosition(e)) 
             }
                 
-            
-            
+        },
+
+        setWidthOfPhone : () => {
+
+            Home.dom.phone.style.width = Home.dom.phone.getBoundingClientRect().height * .55 + 'px'
+
         },
 
         bannerMutation: (mutationsList, observer) => {
             
             // If the banner element is in view
-            if(mutationsList[0].target.classList.contains('plotSmoothScrollInView') && !Home.bannerInView) {
+            if(mutationsList[0].target.classList.contains('plotSmoothScrollFrameInView') && !Home.bannerInView) {
                             
                 Home.bannerInView = true
 
@@ -95,7 +101,7 @@
 
             } 
 
-            if(!mutationsList[0].target.classList.contains('plotSmoothScrollInView') && Home.bannerInView) {
+            if(!mutationsList[0].target.classList.contains('plotSmoothScrollFrameInView') && Home.bannerInView) {
 
                 Home.bannerInView = false
 
@@ -145,7 +151,13 @@
         
             
             let i = 0
-            Home.counter = setInterval(() => {       
+            Home.counter = setInterval(() => {     
+
+                Home.dom.body.classList.remove('showFloaters')
+
+                setTimeout(() => {
+                    Home.dom.body.classList.add('showFloaters')
+                },100)  
                 
                 // Update mobile screen image
                 Home.dom.body.dataset.currentTheme = Home.themes[i]
@@ -158,12 +170,13 @@
 
                 setTimeout(() => {
                     Home.dom.body.classList.remove('slideMobileScreen')    
-                }, 500)
+                }, 2000)
 
                 // If we reach the end of the themes, reset to first theme
                 i >= Home.themes.length - 1 ? i = 0 : i++
 
-            }, Home.intervalLength);
+            }, 7000)
+
         },
 
         stopThemeCounter: () => {
@@ -215,7 +228,7 @@
             const xShift = (Home.previousMousePosition.X - (window.innerWidth / 2)) / (window.innerWidth / 2 )
             const yShift = ((window.innerHeight / 2) - Home.previousMousePosition.Y) / (window.innerHeight / 2 )
             
-            Home.dom.phone.style.transform = `rotateX(${10 + yShift*10}deg) rotateY(${xShift*60 > 50 ? 50 : xShift*60}deg)`
+            Home.dom.phone.style.transform = `rotateX(${15 + yShift*7}deg) rotateY(${xShift*60 > 50 ? 50 : xShift*60}deg)`
 
             const multiplier = 10
             Home.dom.colourShapes[1].style.transform = `translateX(${xShift * multiplier * 5}px) translateY(${-5*yShift*multiplier}px) translateZ(5rem)` 

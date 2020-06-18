@@ -85,10 +85,10 @@ class WPForms_Field_HTML extends WPForms_Field {
 	 *
 	 * @since 1.5.7
 	 *
-	 * @param string  $option Field option to render.
-	 * @param array   $field  Field data and settings.
-	 * @param array   $args   Field preview arguments.
-	 * @param boolean $echo   Print or return the value. Print by default.
+	 * @param string $option Field option to render.
+	 * @param array  $field  Field data and settings.
+	 * @param array  $args   Field preview arguments.
+	 * @param bool   $echo   Print or return the value. Print by default.
 	 *
 	 * @return mixed echo or return string
 	 */
@@ -103,8 +103,8 @@ class WPForms_Field_HTML extends WPForms_Field {
 			$field,
 			array(
 				'slug'    => 'name',
-				'value'   => esc_html__( 'Label', 'wpforms-lite' ),
-				'tooltip' => esc_html__( 'Enter text for the form field label. It will help identify your HTML blocks inside the form builder, but will not be displayed in the form.', 'wpforms-lite' ),
+				'value'   => esc_html__( 'Label', 'wpforms' ),
+				'tooltip' => esc_html__( 'Enter text for the form field label. It will help identify your HTML blocks inside the form builder, but will not be displayed in the form.', 'wpforms' ),
 			),
 			false
 		);

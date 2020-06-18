@@ -14,7 +14,7 @@ class Name extends AC\Column\User\Name
 	implements Sorting\Sortable, Export\Exportable, Search\Searchable {
 
 	public function sorting() {
-		return new Sorting\Model\User\Name( $this );
+		return new Sorting\Model\User\FullName();
 	}
 
 	public function export() {

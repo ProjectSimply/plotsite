@@ -256,13 +256,13 @@ class Education {
 			return $atts;
 		}
 
-		/* translators: %s - field name*/
+		/* translators: %s - field name. */
 		$atts['data']['field-name'] = sprintf( \esc_html__( '%s field', 'wpforms' ), $field['name'] );
 		$atts['data']['action']     = $field['action'];
 		$atts['data']['nonce']      = \wp_create_nonce( 'wpforms-admin' );
 
 		if ( ! empty( $field['plugin_name'] ) ) {
-			/* translators: %s - addon name*/
+			/* translators: %s - addon name. */
 			$atts['data']['name'] = sprintf( \esc_html__( '%s addon', 'wpforms' ), $field['plugin_name'] );
 		}
 
@@ -344,7 +344,7 @@ class Education {
 
 		foreach ( $settings as $setting ) {
 
-			/* translators: %s - addon name*/
+			/* translators: %s - addon name. */
 			$modal_name = sprintf( \esc_html__( '%s addon', 'wpforms' ), $setting['name'] );
 			printf(
 				'<a href="#" class="wpforms-panel-sidebar-section wpforms-panel-sidebar-section-%s education-modal" data-name="%s" data-action="%s" data-path="%s" data-url="%s" data-nonce="%s" data-license="%s">',
@@ -436,7 +436,7 @@ class Education {
 
 		foreach ( $providers as $provider ) {
 
-			/* translators: %s - addon name*/
+			/* translators: %s - addon name. */
 			$modal_name = sprintf( \esc_html__( '%s addon', 'wpforms' ), $provider['name'] );
 			printf(
 				'<a href="#" class="wpforms-panel-sidebar-section icon wpforms-panel-sidebar-section-%s education-modal" data-name="%s" data-action="%s" data-path="%s" data-url="%s" data-nonce="%s" data-license="%s">',
@@ -489,7 +489,7 @@ class Education {
 
 		foreach ( $payments as $payment ) {
 
-			/* translators: %s - addon name*/
+			/* translators: %s - addon name. */
 			$modal_name = sprintf( \esc_html__( '%s addon', 'wpforms' ), $payment['name'] );
 			printf(
 				'<a href="#" class="wpforms-panel-sidebar-section icon wpforms-panel-sidebar-section-%s education-modal" data-name="%s" data-action="%s" data-path="%s" data-url="%s" data-nonce="%s" data-license="%s">',
