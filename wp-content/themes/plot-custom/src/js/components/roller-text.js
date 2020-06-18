@@ -6,7 +6,17 @@
         phrases: [
             'multi-day',
             'rock',
-            'summer',
+            'weekend',
+            'boutique',
+            'country',
+            'holiday',
+            'city',
+            'dance',
+            'family',
+            'metal',
+            'jazz',
+            'weird',
+            'special',
             'classical',
             'winter'
         ],

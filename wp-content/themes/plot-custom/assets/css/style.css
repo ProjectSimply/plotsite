@@ -4931,7 +4931,7 @@ ul.pricingSection__fullList {
   padding-bottom: 4rem;
   text-align: center;
   position: relative;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 @media screen and (min-width: 640px) {
   .carouselSection {
