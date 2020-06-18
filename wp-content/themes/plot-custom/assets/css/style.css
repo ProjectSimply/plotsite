@@ -5055,7 +5055,7 @@ ul.pricingSection__fullList {
   transform: translate3d(0, 0, 0);
 }
 .slideMobileScreen .homeBanner:after {
-  animation: slideScreen 0.8s cubic-bezier(0.13, 0.75, 0.41, 1.03);
+  animation: slideScreen 1.4s cubic-bezier(0.13, 0.75, 0.41, 1.03);
 }
 .homeBanner .maxWidth {
   height: 100%;
@@ -5073,7 +5073,7 @@ ul.pricingSection__fullList {
 
 .homeBanner__grid {
   text-align: center;
-  margin: 7rem 0 2rem;
+  margin: 8rem 0 3rem;
   height: calc(100% - 10rem);
 }
 @media screen and (min-width: 1024px) {

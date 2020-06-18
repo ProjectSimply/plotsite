@@ -35,7 +35,7 @@
     &:after {
         transform: translate3d(0, 0,0);
          .slideMobileScreen & {
-            animation: slideScreen .8s cubic-bezier(.13,.75,.41,1.03);
+            animation: slideScreen 1.4s cubic-bezier(.13,.75,.41,1.03);
         }
     }
 
@@ -55,7 +55,7 @@
 
     .homeBanner__grid {
         text-align: center;
-        margin: 7rem 0 2rem;
+        margin: 8rem 0 3rem;
         height: calc(100% - 10rem);
         @include large {
             text-align: left;
