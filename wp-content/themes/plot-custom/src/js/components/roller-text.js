@@ -5,13 +5,14 @@
     RollerText = {
         phrases: [
             'multi-day',
-            'rock',
             'weekend',
             'boutique',
             'country',
             'holiday',
+            'rock',
             'city',
             'dance',
+            'post-punk',
             'family',
             'metal',
             'jazz',
