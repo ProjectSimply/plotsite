@@ -33,12 +33,12 @@
         mouseMoveAnimationFrame : null,
         themes: [
             'sounds',
-            'urban',
             'tagout',
             'box',
             'inter',
             'halftone',
             'deep',
+            'africaoye',
             'arts'
             
         ],

@@ -167,13 +167,13 @@
         &:after {
             content: "";
             display: block;
-            width: 100%;
+            width: 102%;
             height: 100%;
             position: absolute;
             top: 0;
             background-repeat: no-repeat;
             background-position: center;
-            background-size: 101% 100%;
+            background-size: 100% 100%;
 
             
             .slideMobileScreen & {
@@ -188,7 +188,7 @@
             left: -100%;
         }
         &:after {
-            left: 0%;
+            left: -1%;
         }
     }
 
@@ -224,7 +224,7 @@
             border-color: #fff;
             background-repeat: no-repeat;
             background-position: right;
-            background-size: cover;
+            background-size: 100% 100%;
         }
         &.mobile3D__side--left {
             height: calc(100% + 40px);
@@ -237,7 +237,7 @@
             border-color: #fff;
             background-repeat: no-repeat;
             background-position: left;
-            background-size: cover;
+            background-size: 100% 100%;
         }
 
         &.mobile3D__side--back {

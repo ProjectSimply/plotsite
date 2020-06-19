@@ -4168,13 +4168,13 @@ a {
 .mobile3D .mobile3D__screen:before, .mobile3D .mobile3D__screen:after {
   content: "";
   display: block;
-  width: 100%;
+  width: 102%;
   height: 100%;
   position: absolute;
   top: 0;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 101% 100%;
+  background-size: 100% 100%;
 }
 .slideMobileScreen .mobile3D .mobile3D__screen:before, .slideMobileScreen .mobile3D .mobile3D__screen:after {
   animation: slide 0.5s cubic-bezier(0.13, 0.75, 0.41, 1.03);
@@ -4185,7 +4185,7 @@ a {
   left: -100%;
 }
 .mobile3D .mobile3D__screen:after {
-  left: 0%;
+  left: -1%;
 }
 .mobile3D .mobile3D__side {
   position: absolute;
@@ -4218,7 +4218,7 @@ a {
   border-color: #fff;
   background-repeat: no-repeat;
   background-position: right;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--left {
   height: calc(100% + 40px);
@@ -4231,7 +4231,7 @@ a {
   border-color: #fff;
   background-repeat: no-repeat;
   background-position: left;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--back {
   height: calc(100% + 40px);
@@ -4387,12 +4387,12 @@ body.home .homeBanner__asset.homeBanner__asset--2 path {
   transition: fill 1s ease-out;
 }
 body.home .mobile3D__screen:after {
-  background-image: url(../img/mobile--arts.jpg);
+  background-image: url(../img/mobile--africaoye.jpg);
 }
 body.home .mobile3D__side--right,
 body.home .mobile3D__side--left {
   background-size: 100% 100%;
-  background-image: url(../img/arts--side.jpg);
+  background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
 body.home[data-current-theme=arts] .homeBanner:after {
@@ -4412,7 +4412,7 @@ body.home[data-current-theme=arts] .menuToggle--burger path {
   fill: white;
 }
 body.home[data-current-theme=arts] .mobile3D__screen:after {
-  background-image: url(../img/mobile--arts.jpg);
+  background-image: url(../img/mobile--africaoye.jpg);
 }
 body.home[data-current-theme=arts] .mobile3D__side--right,
 body.home[data-current-theme=arts] .mobile3D__side--left {
@@ -4466,34 +4466,34 @@ body.home[data-previous-theme=sounds] .mobile3D__screen:before {
   background-image: url(../img/mobile--sounds.jpg);
 }
 
-body.home[data-current-theme=urban] .homeBanner:after {
+body.home[data-current-theme=africaoye] .homeBanner:after {
   background-color: #FFBD00;
 }
-body.home[data-current-theme=urban].smallScreen .mobile3D__phone {
+body.home[data-current-theme=africaoye].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 45deg);
 }
-body.home[data-current-theme=urban] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=urban] .homeBanner__asset.homeBanner__asset--2 path {
+body.home[data-current-theme=africaoye] .homeBanner__asset.homeBanner__asset--1 path,
+body.home[data-current-theme=africaoye] .homeBanner__asset.homeBanner__asset--2 path {
   fill: rgba(255, 255, 255, 0.2);
 }
-body.home[data-current-theme=urban] .mobile3D__screen:after {
-  background-image: url(../img/mobile--urban.jpg);
+body.home[data-current-theme=africaoye] .mobile3D__screen:after {
+  background-image: url(../img/mobile--africaoye.jpg);
 }
-body.home[data-current-theme=urban] .mobile3D__side--right,
-body.home[data-current-theme=urban] .mobile3D__side--left {
+body.home[data-current-theme=africaoye] .mobile3D__side--right,
+body.home[data-current-theme=africaoye] .mobile3D__side--left {
   background-size: 100% 100%;
-  background-image: url(../img/urban--side.jpg);
+  background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
 body.home[data-previous-theme=urban] .homeBanner:before {
   background-color: #FFBD00;
 }
 body.home[data-previous-theme=urban] .mobile3D__screen:before {
-  background-image: url(../img/mobile--urban.jpg);
+  background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
 body.home[data-current-theme=tagout] .homeBanner:after {
-  background-color: #FF00F9;
+  background-color: #d96cd6;
 }
 body.home[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--1 path,
 body.home[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--2 path {
