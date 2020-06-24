@@ -4219,6 +4219,29 @@ a {
   background-repeat: no-repeat;
   background-position: right;
   background-size: 100% 100%;
+  overflow: hidden;
+}
+.mobile3D .mobile3D__side.mobile3D__side--right:before, .mobile3D .mobile3D__side.mobile3D__side--right:after {
+  content: "";
+  display: block;
+  width: 102%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--right:before, .slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--right:after {
+  animation: slide 0.5s cubic-bezier(0.13, 0.75, 0.41, 1.03);
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.mobile3D .mobile3D__side.mobile3D__side--right:before {
+  left: -100%;
+}
+.mobile3D .mobile3D__side.mobile3D__side--right:after {
+  left: -1%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--left {
   height: calc(100% + 40px);
@@ -4232,6 +4255,29 @@ a {
   background-repeat: no-repeat;
   background-position: left;
   background-size: 100% 100%;
+  overflow: hidden;
+}
+.mobile3D .mobile3D__side.mobile3D__side--left:before, .mobile3D .mobile3D__side.mobile3D__side--left:after {
+  content: "";
+  display: block;
+  width: 102%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+}
+.slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:before, .slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:after {
+  animation: slide-left 0.5s linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+.mobile3D .mobile3D__side.mobile3D__side--left:before {
+  left: -100%;
+}
+.mobile3D .mobile3D__side.mobile3D__side--left:after {
+  left: 0%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--back {
   height: calc(100% + 40px);
@@ -4272,6 +4318,14 @@ a {
   }
   100% {
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slide-left {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  100% {
+    transform: translate3d(100%, 0, 0);
   }
 }
 @keyframes wiggle {
@@ -4414,8 +4468,8 @@ body.home[data-current-theme=arts] .menuToggle--burger path {
 body.home[data-current-theme=arts] .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
-body.home[data-current-theme=arts] .mobile3D__side--right,
-body.home[data-current-theme=arts] .mobile3D__side--left {
+body.home[data-current-theme=arts] .mobile3D__side--right:after,
+body.home[data-current-theme=arts] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/arts--side.jpg);
 }
@@ -4425,6 +4479,11 @@ body.home[data-previous-theme=arts] .homeBanner:before {
 }
 body.home[data-previous-theme=arts] .mobile3D__screen:before {
   background-image: url(../img/mobile--arts.jpg);
+}
+body.home[data-previous-theme=arts] .mobile3D__side--right:before,
+body.home[data-previous-theme=arts] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/arts--side.jpg);
 }
 
 body.home[data-current-theme=sounds] .homeBanner:after {
@@ -4453,8 +4512,8 @@ body.home[data-current-theme=sounds].smallScreen .mobile3D__phone {
 body.home[data-current-theme=sounds] .mobile3D__screen:after {
   background-image: url(../img/mobile--sounds.jpg);
 }
-body.home[data-current-theme=sounds] .mobile3D__side--right,
-body.home[data-current-theme=sounds] .mobile3D__side--left {
+body.home[data-current-theme=sounds] .mobile3D__side--right:after,
+body.home[data-current-theme=sounds] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/sounds--side.jpg);
 }
@@ -4464,6 +4523,11 @@ body.home[data-previous-theme=sounds] .homeBanner:before {
 }
 body.home[data-previous-theme=sounds] .mobile3D__screen:before {
   background-image: url(../img/mobile--sounds.jpg);
+}
+body.home[data-previous-theme=sounds] .mobile3D__side--right:before,
+body.home[data-previous-theme=sounds] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/sounds--side.jpg);
 }
 
 body.home[data-current-theme=africaoye] .homeBanner:after {
@@ -4479,8 +4543,8 @@ body.home[data-current-theme=africaoye] .homeBanner__asset.homeBanner__asset--2 
 body.home[data-current-theme=africaoye] .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
-body.home[data-current-theme=africaoye] .mobile3D__side--right,
-body.home[data-current-theme=africaoye] .mobile3D__side--left {
+body.home[data-current-theme=africaoye] .mobile3D__side--right:after,
+body.home[data-current-theme=africaoye] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
@@ -4489,6 +4553,11 @@ body.home[data-previous-theme=urban] .homeBanner:before {
   background-color: #FFBD00;
 }
 body.home[data-previous-theme=urban] .mobile3D__screen:before {
+  background-image: url(../img/mobile--africaoye--side.jpg);
+}
+body.home[data-previous-theme=urban] .mobile3D__side--right:before,
+body.home[data-previous-theme=urban] .mobile3D__side--left:after {
+  background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
@@ -4514,11 +4583,11 @@ body.home[data-current-theme=tagout].smallScreen .mobile3D__phone {
 body.home[data-current-theme=tagout] .mobile3D__screen:after {
   background-image: url(../img/mobile--tagout.jpg);
 }
-body.home[data-current-theme=tagout] .mobile3D__side--right {
+body.home[data-current-theme=tagout] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/tagout--rightSide.jpg);
 }
-body.home[data-current-theme=tagout] .mobile3D__side--left {
+body.home[data-current-theme=tagout] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/tagout--leftSide.jpg);
 }
@@ -4528,6 +4597,14 @@ body.home[data-previous-theme=tagout] .homeBanner:before {
 }
 body.home[data-previous-theme=tagout] .mobile3D__screen:before {
   background-image: url(../img/mobile--tagout.jpg);
+}
+body.home[data-previous-theme=tagout] .mobile3D__side--right:before {
+  background-size: 100% 100%;
+  background-image: url(../img/tagout--rightSide.jpg);
+}
+body.home[data-previous-theme=tagout] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/tagout--leftSide.jpg);
 }
 
 body.home[data-current-theme=box] .homeBanner:after {
@@ -4552,8 +4629,8 @@ body.home[data-current-theme=box].smallScreen .mobile3D__phone {
 body.home[data-current-theme=box] .mobile3D__screen:after {
   background-image: url(../img/mobile--box.jpg);
 }
-body.home[data-current-theme=box] .mobile3D__side--right,
-body.home[data-current-theme=box] .mobile3D__side--left {
+body.home[data-current-theme=box] .mobile3D__side--right:after,
+body.home[data-current-theme=box] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/box--side.jpg);
 }
@@ -4563,6 +4640,11 @@ body.home[data-previous-theme=box] .homeBanner:before {
 }
 body.home[data-previous-theme=box] .mobile3D__screen:before {
   background-image: url(../img/mobile--box.jpg);
+}
+body.home[data-previous-theme=box] .mobile3D__side--right:before,
+body.home[data-previous-theme=box] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/box--side.jpg);
 }
 
 body.home[data-current-theme=inter] .homeBanner:after {
@@ -4588,11 +4670,11 @@ body.home[data-current-theme=inter].smallScreen .mobile3D__phone {
 body.home[data-current-theme=inter] .mobile3D__screen:after {
   background-image: url(../img/mobile--inter.jpg);
 }
-body.home[data-current-theme=inter] .mobile3D__side--right {
+body.home[data-current-theme=inter] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/inter--rightSide.jpg);
 }
-body.home[data-current-theme=inter] .mobile3D__side--left {
+body.home[data-current-theme=inter] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/inter--leftSide.jpg);
 }
@@ -4602,6 +4684,14 @@ body.home[data-previous-theme=inter] .homeBanner:before {
 }
 body.home[data-previous-theme=inter] .mobile3D__screen:before {
   background-image: url(../img/mobile--inter.jpg);
+}
+body.home[data-previous-theme=inter] .mobile3D__side--right:before {
+  background-size: 100% 100%;
+  background-image: url(../img/inter--rightSide.jpg);
+}
+body.home[data-previous-theme=inter] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/inter--leftSide.jpg);
 }
 
 body.home[data-current-theme=halftone] .homeBanner:after {
@@ -4626,11 +4716,11 @@ body.home[data-current-theme=halftone].smallScreen .mobile3D__phone {
 body.home[data-current-theme=halftone] .mobile3D__screen:after {
   background-image: url(../img/mobile--halftone.jpg);
 }
-body.home[data-current-theme=halftone] .mobile3D__side--right {
+body.home[data-current-theme=halftone] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/halftone--rightSide.jpg);
 }
-body.home[data-current-theme=halftone] .mobile3D__side--left {
+body.home[data-current-theme=halftone] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/halftone--leftSide.jpg);
 }
@@ -4644,6 +4734,14 @@ body.home[data-previous-theme=halftone] .homeBanner__asset.homeBanner__asset--2 
 }
 body.home[data-previous-theme=halftone] .mobile3D__screen:before {
   background-image: url(../img/mobile--halftone.jpg);
+}
+body.home[data-previous-theme=halftone] .mobile3D__side--right:before {
+  background-size: 100% 100%;
+  background-image: url(../img/halftone--rightSide.jpg);
+}
+body.home[data-previous-theme=halftone] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/halftone--leftSide.jpg);
 }
 
 body.home[data-current-theme=deep] .homeBanner:after {
@@ -4668,11 +4766,11 @@ body.home[data-current-theme=deep].smallScreen .mobile3D__phone {
 body.home[data-current-theme=deep] .mobile3D__screen:after {
   background-image: url(../img/mobile--deep.jpg);
 }
-body.home[data-current-theme=deep] .mobile3D__side--right {
+body.home[data-current-theme=deep] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/deep--rightSide.jpg);
 }
-body.home[data-current-theme=deep] .mobile3D__side--left {
+body.home[data-current-theme=deep] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/deep--leftSide.jpg);
 }
@@ -4682,6 +4780,14 @@ body.home[data-previous-theme=deep] .homeBanner:before {
 }
 body.home[data-previous-theme=deep] .mobile3D__screen:before {
   background-image: url(../img/mobile--deep.jpg);
+}
+body.home[data-previous-theme=deep] .mobile3D__side--right:before {
+  background-size: 100% 100%;
+  background-image: url(../img/deep--rightSide.jpg);
+}
+body.home[data-previous-theme=deep] .mobile3D__side--left:after {
+  background-size: 100% 100%;
+  background-image: url(../img/deep--leftSide.jpg);
 }
 
 .pricingSection__mainFeatures {

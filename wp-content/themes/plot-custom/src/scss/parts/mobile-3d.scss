@@ -225,6 +225,31 @@
             background-repeat: no-repeat;
             background-position: right;
             background-size: 100% 100%;
+            overflow: hidden;
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 102%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+    
+                
+                .slideMobileScreen & {
+                    animation: slide .5s cubic-bezier(.13,.75,.41,1.03);
+                    animation-iteration-count: 1;
+                    animation-fill-mode: forwards;  
+                }
+            }
+
+
+            &:before { left: -100% }
+            &:after { left: -1% }
         }
         &.mobile3D__side--left {
             height: calc(100% + 40px);
@@ -238,6 +263,32 @@
             background-repeat: no-repeat;
             background-position: left;
             background-size: 100% 100%;
+            overflow: hidden;
+
+            &:before,
+            &:after {
+                content: "";
+                display: block;
+                width: 102%;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-size: 100% 100%;
+                
+    
+                
+                .slideMobileScreen & {
+                    animation: slide-left .5s linear; 
+                    animation-iteration-count: 1;
+                    animation-fill-mode: forwards;  
+                }
+            }
+
+
+            &:before { left: -100% }
+            &:after { left: 0% }
         }
 
         &.mobile3D__side--back {
@@ -286,6 +337,16 @@
 
     100% {
         transform: translate3d(0,0,0);
+    }
+}
+
+@keyframes slide-left {
+    0% {
+        transform: translate3d(0,0,0);
+    }
+
+    100% {
+        transform: translate3d(100%,0,0);
     }
 }
 

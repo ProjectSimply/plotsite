@@ -61,8 +61,8 @@ body.home[data-current-theme="arts"] {
         background-image: url(../img/mobile--africaoye.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__side--right:after,
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/arts--side.jpg);
     }
@@ -76,6 +76,12 @@ body.home[data-previous-theme="arts"] {
 
     .mobile3D__screen:before {
         background-image: url(../img/mobile--arts.jpg);
+    }
+
+    .mobile3D__side--right:before,
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/arts--side.jpg);
     }
 }
 
@@ -116,8 +122,8 @@ body.home[data-current-theme="sounds"] {
             background-image: url(../img/mobile--sounds.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__side--right:after,
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/sounds--side.jpg);
     }
@@ -130,6 +136,12 @@ body.home[data-previous-theme="sounds"] {
 
     .mobile3D__screen:before {
         background-image: url(../img/mobile--sounds.jpg);
+    }
+
+    .mobile3D__side--right:before,
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/sounds--side.jpg);
     }
 }
 
@@ -151,8 +163,8 @@ body.home[data-current-theme="africaoye"] {
         background-image: url(../img/mobile--africaoye.jpg);
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__side--right:after,
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
     }
@@ -165,6 +177,12 @@ body.home[data-previous-theme="urban"] {
     }
 
     .mobile3D__screen:before {
+        background-image: url(../img/mobile--africaoye--side.jpg);
+    }
+
+    .mobile3D__side--right:before,
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
     }
 }
@@ -200,12 +218,12 @@ body.home[data-current-theme="tagout"] {
         background-image: url(../img/mobile--tagout.jpg);
     }
     
-    .mobile3D__side--right {
+    .mobile3D__side--right:after {
         background-size: 100% 100%;
         background-image: url(../img/tagout--rightSide.jpg);
     }
 
-    .mobile3D__side--left {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/tagout--leftSide.jpg);
     }
@@ -220,6 +238,15 @@ body.home[data-previous-theme="tagout"] {
     .mobile3D__screen:before {
         background-image: url(../img/mobile--tagout.jpg);
     } 
+
+    .mobile3D__side--right:before {
+        background-size: 100% 100%;
+        background-image: url(../img/tagout--rightSide.jpg);
+    }
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/tagout--leftSide.jpg);
+    }
 }
 
 body.home[data-current-theme="box"] {
@@ -252,8 +279,8 @@ body.home[data-current-theme="box"] {
         background-image: url(../img/mobile--box.jpg);
     }
     
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__side--right:after,
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/box--side.jpg);
     }
@@ -268,6 +295,12 @@ body.home[data-previous-theme="box"] {
     .mobile3D__screen:before {
         background-image: url(../img/mobile--box.jpg);
     } 
+
+    .mobile3D__side--right:before,
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/box--side.jpg);
+    }
 }
 
 body.home[data-current-theme="inter"] {
@@ -304,12 +337,12 @@ body.home[data-current-theme="inter"] {
         background-image: url(../img/mobile--inter.jpg);
     }
 
-    .mobile3D__side--right {
+    .mobile3D__side--right:after {
         background-size: 100% 100%;
         background-image: url(../img/inter--rightSide.jpg);
     }
 
-    .mobile3D__side--left {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/inter--leftSide.jpg);
     }
@@ -324,6 +357,15 @@ body.home[data-previous-theme="inter"] {
     .mobile3D__screen:before {
         background-image: url(../img/mobile--inter.jpg);
     } 
+
+    .mobile3D__side--right:before {
+        background-size: 100% 100%;
+        background-image: url(../img/inter--rightSide.jpg);
+    }
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/inter--leftSide.jpg);
+    }
 }
 
 body.home[data-current-theme="halftone"] {
@@ -358,12 +400,12 @@ body.home[data-current-theme="halftone"] {
         background-image: url(../img/mobile--halftone.jpg);
     }
     
-    .mobile3D__side--right {
+    .mobile3D__side--right:after {
         background-size: 100% 100%;
         background-image: url(../img/halftone--rightSide.jpg);
     }
 
-    .mobile3D__side--left {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/halftone--leftSide.jpg);
     }
@@ -383,6 +425,15 @@ body.home[data-previous-theme="halftone"] {
     .mobile3D__screen:before {
         background-image: url(../img/mobile--halftone.jpg);
     } 
+
+    .mobile3D__side--right:before {
+        background-size: 100% 100%;
+        background-image: url(../img/halftone--rightSide.jpg);
+    }
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/halftone--leftSide.jpg);
+    }
 }
 
 body.home[data-current-theme="deep"] {
@@ -417,12 +468,12 @@ body.home[data-current-theme="deep"] {
         background-image: url(../img/mobile--deep.jpg);
     }
     
-    .mobile3D__side--right {
+    .mobile3D__side--right:after {
         background-size: 100% 100%;
         background-image: url(../img/deep--rightSide.jpg);
     }
 
-    .mobile3D__side--left {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/deep--leftSide.jpg);
     }
@@ -437,4 +488,13 @@ body.home[data-previous-theme="deep"] {
     .mobile3D__screen:before {
         background-image: url(../img/mobile--deep.jpg);
     } 
+
+    .mobile3D__side--right:before {
+        background-size: 100% 100%;
+        background-image: url(../img/deep--rightSide.jpg);
+    }
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/deep--leftSide.jpg);
+    }
 }
