@@ -19,7 +19,7 @@
             }
         },
         intervalLength          : 5000,
-        previousTheme           : 'none',
+        previousTheme           : 'arts',
         counter                 : null,
         ticker                  : false,
         currentMousePosition    : {
@@ -87,6 +87,8 @@
         setWidthOfPhone : () => {
 
             Home.dom.phone.style.width = Home.dom.phone.getBoundingClientRect().height * .55 + 'px'
+
+            Home.dom.phone.style.opacity = 1
 
         },
 

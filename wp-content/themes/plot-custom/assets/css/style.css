@@ -4014,6 +4014,7 @@ a {
   transform-style: preserve-3d;
 }
 .mobile3D .mobile3D__phone {
+  opacity: 0;
   margin: 0 auto;
   position: relative;
   border-width: 20px 0;
@@ -4027,6 +4028,7 @@ a {
   height: 60vh;
   height: calc(var(--vh) * 60);
   margin-top: 5%;
+  transition: opacity 0.2s ease-in 0.2s;
 }
 @media screen and (min-width: 1024px) {
   .mobile3D .mobile3D__phone {
@@ -4035,7 +4037,7 @@ a {
 }
 @media screen and (max-width: 639px) {
   .mobile3D .mobile3D__phone {
-    transition: transform 0.4s ease-in;
+    transition: transform 0.4s ease-in, opacity 0.2s ease-in;
   }
 }
 @media screen and (min-width: 1400px) {
@@ -4466,7 +4468,7 @@ body.home[data-current-theme=arts] .menuToggle--burger path {
   fill: white;
 }
 body.home[data-current-theme=arts] .mobile3D__screen:after {
-  background-image: url(../img/mobile--africaoye.jpg);
+  background-image: url(../img/mobile--arts.jpg);
 }
 body.home[data-current-theme=arts] .mobile3D__side--right:after,
 body.home[data-current-theme=arts] .mobile3D__side--left:before {
