@@ -1,4 +1,4 @@
-<section class="carouselSection" data-plot-smooth-scroll-element>
+<section class="carouselSection">
 
     <div class="maxWidth">
 
@@ -22,7 +22,7 @@
 
 	    	<div class="carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
 
-                <div class="carousel__imageWrap" data-plot-smooth-scroll-element>
+                <div class="carousel__imageWrap">
                     
                     <?php plotLazyload([
                         'image' 				=> get_sub_field('image'), 
