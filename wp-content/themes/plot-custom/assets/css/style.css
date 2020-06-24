@@ -5197,6 +5197,7 @@ ul.pricingSection__fullList {
 
 .homeBanner__subtitle {
   color: var(--plotBlack);
+  transition: color 0.4s ease-in;
 }
 
 .homeBanner__item.homeBanner__item--titleWrap {
@@ -5241,6 +5242,7 @@ ul.pricingSection__fullList {
 .homeBanner__title {
   text-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
   text-align: center;
+  transition: color 0.4s ease-in;
 }
 @media screen and (min-width: 1024px) {
   .homeBanner__title {
