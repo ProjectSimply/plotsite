@@ -26,8 +26,8 @@ body.home {
         background-image: url(../img/mobile--africaoye.jpg); 
     }
 
-    .mobile3D__side--right,
-    .mobile3D__side--left {
+    .mobile3D__side--right:after,
+    .mobile3D__side--left:before {
 
         background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
@@ -170,6 +170,23 @@ body.home[data-current-theme="africaoye"] {
     }
 
 }
+
+body.home[data-previous-theme="africaoye"] {
+    .homeBanner:before {
+        background-color: #FFBD00;
+    }
+
+    .mobile3D__screen:before {
+        background-image: url(../img/mobile--africaoye.jpg);
+    }
+
+    .mobile3D__side--right:before,
+    .mobile3D__side--left:after {
+        background-size: 100% 100%;
+        background-image: url(../img/mobile--africaoye--side.jpg);
+    }
+}
+
 
 body.home[data-previous-theme="urban"] {
     .homeBanner:before {

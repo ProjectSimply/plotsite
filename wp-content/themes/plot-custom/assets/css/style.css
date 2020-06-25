@@ -4249,7 +4249,7 @@ a {
   height: calc(100% + 40px);
   width: 30px;
   top: -20px;
-  left: 0;
+  left: 0px;
   transform: rotateY(90deg) translateZ(-15px) translateX(15px);
   border-width: 20px 0;
   border-style: solid;
@@ -4270,16 +4270,16 @@ a {
   background-position: center;
   background-size: 100% 100%;
 }
-.slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:before, .slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:after {
-  animation: slide-left 0.5s linear;
+.mobile3D .mobile3D__side.mobile3D__side--left:before {
+  left: -1%;
+}
+.slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:before {
+  animation: slide-left 0.1s linear 0.4s;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
-.mobile3D .mobile3D__side.mobile3D__side--left:before {
-  left: -100%;
-}
 .mobile3D .mobile3D__side.mobile3D__side--left:after {
-  left: 0%;
+  left: -101%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--back {
   height: calc(100% + 40px);
@@ -4324,10 +4324,10 @@ a {
 }
 @keyframes slide-left {
   0% {
-    transform: translate3d(0, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
   100% {
-    transform: translate3d(100%, 0, 0);
+    transform: translate3d(0%, 0, 0);
   }
 }
 @keyframes wiggle {
@@ -4445,8 +4445,8 @@ body.home .homeBanner__asset.homeBanner__asset--2 path {
 body.home .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
-body.home .mobile3D__side--right,
-body.home .mobile3D__side--left {
+body.home .mobile3D__side--right:after,
+body.home .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
@@ -4547,6 +4547,18 @@ body.home[data-current-theme=africaoye] .mobile3D__screen:after {
 }
 body.home[data-current-theme=africaoye] .mobile3D__side--right:after,
 body.home[data-current-theme=africaoye] .mobile3D__side--left:before {
+  background-size: 100% 100%;
+  background-image: url(../img/mobile--africaoye--side.jpg);
+}
+
+body.home[data-previous-theme=africaoye] .homeBanner:before {
+  background-color: #FFBD00;
+}
+body.home[data-previous-theme=africaoye] .mobile3D__screen:before {
+  background-image: url(../img/mobile--africaoye.jpg);
+}
+body.home[data-previous-theme=africaoye] .mobile3D__side--right:before,
+body.home[data-previous-theme=africaoye] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
