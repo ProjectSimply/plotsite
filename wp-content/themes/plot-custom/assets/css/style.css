@@ -1899,7 +1899,8 @@ body {
 }
 
 a {
-  color: var(--primaryColor);
+  color: var(--black);
+  text-decoration: underline !important;
 }
 
 .cards {
@@ -3244,6 +3245,69 @@ a {
   margin-left: calc(var(--hs) / 2);
   margin-right: calc(var(--hs) / 2);
   margin-bottom: var(--vs);
+}
+
+.fourOhFourPage {
+  min-height: 75vh;
+  min-height: calc(var(--vh) * 75);
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  position: relative;
+}
+
+@media screen and (min-width: 1024px) {
+  .fourOhFourPage__contentWrap {
+    max-width: 90%;
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+.fourOhFourPage__contentWrap a {
+  color: var(--black);
+}
+
+.fourOhFourPage__asset {
+  position: absolute;
+  z-index: -1;
+  transform: translate3d(0%, 0%, 0);
+  animation-duration: 120s;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+}
+.fourOhFourPage__asset svg {
+  object-fit: contain;
+  display: block;
+  height: 100%;
+  width: 100%;
+}
+.fourOhFourPage__asset.fourOhFourPage__asset--1 {
+  right: -15%;
+  top: -50%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 670px;
+  max-height: 670px;
+  animation-name: bob--1;
+}
+.fourOhFourPage__asset.fourOhFourPage__asset--1 path {
+  fill: var(--mint);
+  opacity: 1;
+}
+.fourOhFourPage__asset.fourOhFourPage__asset--2 {
+  left: -20%;
+  top: 0%;
+  width: 50vw;
+  height: 50vw;
+  max-width: 530px;
+  max-height: 530px;
+  animation-name: bob--2;
+}
+.fourOhFourPage__asset.fourOhFourPage__asset--2 path {
+  fill: var(--yellow);
+  opacity: 1;
 }
 
 .schedule {

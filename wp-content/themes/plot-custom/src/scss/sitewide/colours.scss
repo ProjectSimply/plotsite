@@ -20,5 +20,6 @@ body {
 }
 
 a {
-	color: var(--primaryColor);
+	color: var(--black);
+	text-decoration: underline !important;
 }
