@@ -22,7 +22,7 @@
 
 	    	<div class="carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
 
-                <div class="carousel__imageWrap">
+                <a href="<?= get_sub_field('site_link') ?>" target="_blank" class="carousel__imageWrap">
                     
                     <?php plotLazyload([
                         'image' 				=> get_sub_field('image'), 
@@ -32,7 +32,7 @@
                         'forCarousel'			=> true
                     ]); ?>
 
-                </div>
+                </a>
 
 			</div>
 
