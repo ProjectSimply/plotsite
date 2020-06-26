@@ -16,13 +16,13 @@
 
     </div>
 
-    <div class="JS--carousel JS--carousel--hidden carouselSection__slider">
+    <div class="JS--carousel JS--carousel--hidden carouselSection__slider" data-plot-smooth-scroll-element>
 
 	    <?php $i = 0; while(has_sub_field('carousel_slider')) : ?>
 
 	    	<div class="carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
 
-                <a href="<?= get_sub_field('site_link') ?>" target="_blank" class="carousel__imageWrap">
+                <a href="<?= get_sub_field('site_link') ?>" target="_blank" class="carousel__imageWrap growIn">
                     
                     <?php plotLazyload([
                         'image' 				=> get_sub_field('image'), 

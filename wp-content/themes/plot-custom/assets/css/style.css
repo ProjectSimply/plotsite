@@ -2309,10 +2309,12 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 
 .JS--lazyLoad {
   opacity: 0;
-  transition: opacity 1s ease-in;
+  transform: translate3d(0, 30px, 0);
+  transition: opacity 2s ease-in;
 }
 .JS--lazyLoad.loaded {
   opacity: 1;
+  transform: translate3d(0, 0, 0);
 }
 
 [data-plot-smooth-scroll-element] {
