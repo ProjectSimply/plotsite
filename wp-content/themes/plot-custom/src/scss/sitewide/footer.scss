@@ -136,7 +136,7 @@
                 flex-direction: column;
 
                 @include medium {
-                    text-align: right;
+                    text-align: left;
                 }
             }
 
@@ -151,6 +151,7 @@
 
                 .projectSimplyCredits__link {
                     padding: .5rem;
+                    padding-left: 0;
                     text-decoration: none;
                     color: var(--white);
                     font-size: 14px;

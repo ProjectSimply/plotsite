@@ -15,7 +15,8 @@
         }
         
         a {
-            color: var(--black);
+			color: var(--black);
+			text-decoration: underline !important;
         }
     }
 

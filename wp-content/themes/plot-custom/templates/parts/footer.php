@@ -58,8 +58,11 @@
 
 				<div class="footer__item footer__item--1">
 
-					<div class="footer__x">
-						<?php plotGetTemplatePart('parts/cross-asset') ?>
+					<div class="projectSimplyCredits">
+						
+						<span class="projectSimplyCredits__text">Plot is made by</span>
+						<a class="projectSimplyCredits__link" href="https://projectsimply.com">Project Simply</a>
+					
 					</div>
 
 				</div>
@@ -72,12 +75,6 @@
 
 				<div class="footer__item footer__item--2">
 
-					<div class="projectSimplyCredits">
-					
-						<span class="projectSimplyCredits__text">Plot is made by</span>
-						<a class="projectSimplyCredits__link" href="https://projectsimply.com">Project Simply</a>
-					
-					</div>
 
 				</div>
 

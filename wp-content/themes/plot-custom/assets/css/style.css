@@ -1900,7 +1900,7 @@ body {
 
 a {
   color: var(--black);
-  text-decoration: underline !important;
+  text-decoration: none;
 }
 
 .cards {
@@ -2114,7 +2114,7 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 }
 @media screen and (min-width: 640px) {
   .projectSimplyCredits {
-    text-align: right;
+    text-align: left;
   }
 }
 
@@ -2130,6 +2130,7 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 
 .projectSimplyCredits__link {
   padding: 0.5rem;
+  padding-left: 0;
   text-decoration: none;
   color: var(--white);
   font-size: 14px;
@@ -3266,6 +3267,7 @@ a {
 }
 .fourOhFourPage__contentWrap a {
   color: var(--black);
+  text-decoration: underline !important;
 }
 
 .fourOhFourPage__asset {
