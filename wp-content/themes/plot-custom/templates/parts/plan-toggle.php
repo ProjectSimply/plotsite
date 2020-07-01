@@ -1,4 +1,4 @@
-<div class="planToggle JS--TogglePrice" data-plan="monthly">
+<div class="planToggle JS--TogglePrice" data-plan="annual">
 
     <div class="planToggle__innerWrap">
 

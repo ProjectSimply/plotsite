@@ -1,4 +1,4 @@
-<section class="cards sectionPadding">
+<section class="cards">
 
     <div class="maxWidth">
 
@@ -38,7 +38,7 @@
 
         <?php if(get_field('add_link')) : ?>
 
-            <div class="button__wrap ">
+            <div class="button__wrap cards_button">
                 <a href="<?= get_field('block_section_link') ?>" class="button button--X">
                     <span>
                         <?= get_field('block_section_button_text') ?>

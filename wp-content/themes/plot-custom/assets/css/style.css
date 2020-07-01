@@ -1896,6 +1896,7 @@ a {
   background-color: var(--purple);
   text-align: center;
   color: var(--white);
+  padding-top: 4rem;
 }
 
 .cards__intro {
@@ -1976,7 +1977,7 @@ a {
   color: var(--white);
 }
 
-.page-book-a-demo .footer__cta {
+.page-enquire .footer__cta {
   display: none;
 }
 
@@ -2183,7 +2184,7 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 
 .hosting {
   background-color: var(--orange);
-  padding: 6rem 0;
+  padding: 4rem 0;
   text-align: center;
 }
 
@@ -2299,11 +2300,15 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 .JS--lazyLoad {
   opacity: 0;
   transform: translate3d(0, 30px, 0);
-  transition: opacity 2s ease-in;
+  transition: all 2s ease-in;
+  box-shadow: 18px 18px 23px -15px rgba(0, 0, 0, 0);
 }
 .JS--lazyLoad.loaded {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+.JS--lazyLoad.loaded.imageGrid__image {
+  box-shadow: 18px 18px 23px -15px rgba(0, 0, 0, 0.75);
 }
 
 [data-plot-smooth-scroll-element] {
@@ -2397,6 +2402,14 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 [data-plot-smooth-scroll-element].plotSmoothScrollSeenOnce .growIn {
   opacity: 1;
   transform: translate3d(0, 0, 0);
+}
+
+.emoji {
+  font-size: 3rem;
+}
+
+.cards_button {
+  padding-bottom: 4rem;
 }
 
 .plotModalScrollViewport {
@@ -2665,6 +2678,7 @@ a {
 
 .faqs {
   text-align: center;
+  margin-bottom: 0;
 }
 
 .faqs__intro {
@@ -4887,7 +4901,6 @@ body.home[data-previous-theme=deep] .mobile3D__side--left:after {
   display: inline-block;
   padding: 1rem 0 1rem 1rem;
   margin-right: 1rem;
-  margin-bottom: 2rem;
   cursor: pointer;
 }
 .pricingSection__toggleList:after {
@@ -4911,7 +4924,7 @@ ul.pricingSection__fullList {
   text-align: left;
   list-style: none;
   max-width: 800px;
-  margin: 0 auto 2rem;
+  margin: 2rem auto;
   justify-content: center;
 }
 @media screen and (min-width: 640px) {
@@ -4972,7 +4985,7 @@ ul.pricingSection__fullList {
 }
 
 .imageGrid {
-  margin-bottom: 6rem;
+  margin-bottom: 4rem;
   position: relative;
 }
 
@@ -5008,7 +5021,7 @@ ul.pricingSection__fullList {
   }
 }
 .imageGrid__innerWrap img {
-  box-shadow: 18px 18px 23px -15px rgba(0, 0, 0, 0.75);
+  border-radius: 8px;
 }
 
 .imageGrid__portraitWrap {

@@ -1,5 +1,5 @@
 .imageGrid {
-    margin-bottom: 6rem;   
+    margin-bottom: 4rem;   
     position: relative;
 }
 
@@ -31,8 +31,7 @@
     }
 
     img {
-        box-shadow: 18px 18px 23px -15px rgba(0,0,0,0.75);
-
+        border-radius: 8px;
     }
 }
 
