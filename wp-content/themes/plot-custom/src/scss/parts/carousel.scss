@@ -4,11 +4,6 @@
     text-align: center;
     position: relative; 
     overflow: hidden;
-    
-    @include medium {
-        padding-top: 6rem;
-        padding-bottom: 6rem;
-    }
 }
 
     .carouselSection__title {
@@ -23,7 +18,6 @@
     }
 
     .carouselSection__slider {
-        height: 60vw;
         max-height: 700px;
         cursor: pointer;
     }
@@ -50,7 +44,7 @@
     
     .carouselSection__buttonWrap {
         display: block;
-        margin: 0 1rem;
+        margin: 2rem 1rem 0;
     }
 
     .carouselSection__asset {

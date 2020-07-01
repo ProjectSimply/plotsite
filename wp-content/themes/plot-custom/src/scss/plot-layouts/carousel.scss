@@ -52,8 +52,9 @@
 		height: 2.2rem;
 		position: absolute;
 		left:1rem;
-		background: var(--primaryColor);
+		background: var(--purple);
 		border-radius: 50%;
+		cursor: pointer;
 
 		top: calc(50% - 1.1rem);
 		svg {

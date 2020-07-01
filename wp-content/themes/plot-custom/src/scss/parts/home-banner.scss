@@ -74,7 +74,7 @@
 
     .homeBanner__subtitle {
         color: var(--plotBlack);
-        transition: color .4s ease-in;
+        transition: color .7s ease-in;
     }
 
         .homeBanner__item {
@@ -126,7 +126,7 @@
             .homeBanner__title {
                 text-shadow: 0 0 8px rgba(0,0,0,0.1);
                 text-align: center;
-                transition: color .4s ease-in;
+                transition: color .7s ease-in;
 
                 @include large {
                     margin-top: 1rem;

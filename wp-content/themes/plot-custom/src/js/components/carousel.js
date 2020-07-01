@@ -30,7 +30,7 @@
                         autoPlay    : false,
                         imagesLoaded: true,
                         pageDots    : false,
-                        prevNextButtons: false,
+                        prevNextButtons: true,
                         lazyLoad: 2
                     })
                 }

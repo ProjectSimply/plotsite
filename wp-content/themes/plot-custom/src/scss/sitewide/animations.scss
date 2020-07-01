@@ -17,7 +17,6 @@
 
 .SVGelement.SVGelement__1,
 .SVGelement.SVGelement__3,
-.SVGelement.SVGelement__5,
 .SVGelement.SVGelement__8,
 .SVGelement.SVGelement__10,
 .SVGelement.SVGelement__18,
@@ -115,7 +114,10 @@
         animation-duration: 1s; 
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
+ 
+        animation-delay: calc(var(--i) * .5s); 
     }
+
 }
 
 .SVGelement.SVGelement__6 {

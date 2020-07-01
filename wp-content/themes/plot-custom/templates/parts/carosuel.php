@@ -20,9 +20,9 @@
 
 	    <?php $i = 0; while(has_sub_field('carousel_slider')) : ?>
 
-	    	<div class="carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
+	    	<div class="carousel__slide growIn JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
 
-                <a href="<?= get_sub_field('site_link') ?>" target="_blank" class="carousel__imageWrap growIn">
+                <a href="<?= get_sub_field('site_link') ?>" target="_blank" class="carousel__imageWrap">
                     
                     <?php plotLazyload([
                         'image' 				=> get_sub_field('image'), 

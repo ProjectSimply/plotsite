@@ -5,7 +5,6 @@
 .homeBanner__title,
 .mainMenu a,
 .siteMainHeader__logo path,
-.siteMainHeader__ctaLink,
 .menuToggle--burger path {
     transition: color .2s ease-in-out, fill .2s ease-in-out, background-color .2s ease-in-out;
 }
@@ -99,13 +98,8 @@ body.home[data-current-theme="sounds"] {
 
     .homeBanner__title,
     .mainMenu a,
-    .homeBanner__subtitle,
-    .siteMainHeader__ctaLink {
+    .homeBanner__subtitle {
         color: white;
-    }
-
-    .siteMainHeader__ctaLink {
-        background-color: #841559;
     }
 
 
