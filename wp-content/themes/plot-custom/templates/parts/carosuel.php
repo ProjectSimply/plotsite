@@ -16,25 +16,21 @@
 
     </div>
 
-    <div class="JS--carousel JS--carousel--hidden carouselSection__slider" data-plot-smooth-scroll-element>
+    <div class="JS--carousel carouselSection__slider" data-plot-carousel-type="image">
 
 	    <?php $i = 0; while(has_sub_field('carousel_slider')) : ?>
 
-	    	<div class="carousel__slide growIn JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
+	    	
 
-                <a href="<?= get_sub_field('site_link') ?>" target="_blank" class="carousel__imageWrap">
+                <div 
+                    target="_blank" 
+                    class="carousel__imageWrap carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
                     
-                    <?php plotLazyload([
-                        'image' 				=> get_sub_field('image'), 
-                        'imageSize'				=> 'carouselImage', 
-                        'smallScreenImageSize'	=> 'carouselImage--smallScreen',
-                        'class'					=> 'JS--lazyLoad carousel__image',
-                        'forCarousel'			=> true
-                    ]); ?>
+                    <img class="imageCarousel__image" data-flickity-lazyload="<?= get_sub_field('image')['sizes']['carouselImage'] ?>" />
 
-                </a>
+        </div>
 
-			</div>
+			
 
 		<?php $i++; endwhile; ?>
 

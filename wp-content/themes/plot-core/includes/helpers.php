@@ -155,8 +155,9 @@ function plotLazyload($args) {
 
         <?php endif; ?>
 
+    </div> 
 
-    </div> <?php 
+    <?php 
 
 }
 

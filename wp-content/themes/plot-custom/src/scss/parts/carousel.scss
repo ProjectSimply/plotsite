@@ -18,28 +18,23 @@
     }
 
     .carouselSection__slider {
-        max-height: 700px;
         cursor: pointer;
     }
 
         .carousel__slide {
-            width: 80%; 
+            display: block;
+            width: 90%; 
             max-width: 900px;
             background-color: transparent;
-            display: flex;
-            align-items: center;
-            justify-content: center;
         }
-
-            .carousel__imageWrap {
+            
+            .imageCarousel__image {
                 display: block;
                 height: 100%;
-                z-index: 1;
-                width: 94%;
-            }
-            
-            .carousel__image {
+                width: calc(100% - 2rem);
+                margin: 0 auto;
                 object-fit: contain;
+                max-width: none;
             }
     
     .carouselSection__buttonWrap {

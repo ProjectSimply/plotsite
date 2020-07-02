@@ -29,6 +29,7 @@
 
                 if(carousel.dataset.plotCarouselType == 'image') {
                     settings = {
+                        cellAlign   : 'center',  
                         lazyLoad : 2,
                         wrapAround  : true,
                         pageDots : false

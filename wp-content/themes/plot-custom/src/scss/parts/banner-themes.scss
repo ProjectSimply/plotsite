@@ -26,7 +26,7 @@ body.home {
     }
 
     .mobile3D__side--right:after,
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
 
         background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
@@ -61,7 +61,7 @@ body.home[data-current-theme="arts"] {
     }
 
     .mobile3D__side--right:after,
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/arts--side.jpg);
     }
@@ -78,7 +78,7 @@ body.home[data-previous-theme="arts"] {
     }
 
     .mobile3D__side--right:before,
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/arts--side.jpg);
     }
@@ -117,7 +117,7 @@ body.home[data-current-theme="sounds"] {
     }
 
     .mobile3D__side--right:after,
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/sounds--side.jpg);
     }
@@ -133,7 +133,7 @@ body.home[data-previous-theme="sounds"] {
     }
 
     .mobile3D__side--right:before,
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/sounds--side.jpg);
     }
@@ -158,7 +158,7 @@ body.home[data-current-theme="africaoye"] {
     }
 
     .mobile3D__side--right:after,
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
     }
@@ -175,7 +175,7 @@ body.home[data-previous-theme="africaoye"] {
     }
 
     .mobile3D__side--right:before,
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
     }
@@ -192,7 +192,7 @@ body.home[data-previous-theme="urban"] {
     }
 
     .mobile3D__side--right:before,
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/mobile--africaoye--side.jpg);
     }
@@ -234,7 +234,7 @@ body.home[data-current-theme="tagout"] {
         background-image: url(../img/tagout--rightSide.jpg);
     }
 
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/tagout--leftSide.jpg);
     }
@@ -254,7 +254,7 @@ body.home[data-previous-theme="tagout"] {
         background-size: 100% 100%;
         background-image: url(../img/tagout--rightSide.jpg);
     }
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/tagout--leftSide.jpg);
     }
@@ -291,7 +291,7 @@ body.home[data-current-theme="box"] {
     }
     
     .mobile3D__side--right:after,
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/box--side.jpg);
     }
@@ -308,7 +308,7 @@ body.home[data-previous-theme="box"] {
     } 
 
     .mobile3D__side--right:before,
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/box--side.jpg);
     }
@@ -353,7 +353,7 @@ body.home[data-current-theme="inter"] {
         background-image: url(../img/inter--rightSide.jpg);
     }
 
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/inter--leftSide.jpg);
     }
@@ -373,7 +373,7 @@ body.home[data-previous-theme="inter"] {
         background-size: 100% 100%;
         background-image: url(../img/inter--rightSide.jpg);
     }
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/inter--leftSide.jpg);
     }
@@ -416,7 +416,7 @@ body.home[data-current-theme="halftone"] {
         background-image: url(../img/halftone--rightSide.jpg);
     }
 
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/halftone--leftSide.jpg);
     }
@@ -441,7 +441,7 @@ body.home[data-previous-theme="halftone"] {
         background-size: 100% 100%;
         background-image: url(../img/halftone--rightSide.jpg);
     }
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/halftone--leftSide.jpg);
     }
@@ -484,7 +484,7 @@ body.home[data-current-theme="deep"] {
         background-image: url(../img/deep--rightSide.jpg);
     }
 
-    .mobile3D__side--left:before {
+    .mobile3D__side--left:after {
         background-size: 100% 100%;
         background-image: url(../img/deep--leftSide.jpg);
     }
@@ -504,7 +504,7 @@ body.home[data-previous-theme="deep"] {
         background-size: 100% 100%;
         background-image: url(../img/deep--rightSide.jpg);
     }
-    .mobile3D__side--left:after {
+    .mobile3D__side--left:before {
         background-size: 100% 100%;
         background-image: url(../img/deep--leftSide.jpg);
     }

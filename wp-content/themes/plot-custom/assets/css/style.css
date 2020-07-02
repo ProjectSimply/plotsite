@@ -4256,7 +4256,7 @@ a {
   background-size: 100% 100%;
 }
 .slideMobileScreen .mobile3D .mobile3D__screen:before, .slideMobileScreen .mobile3D .mobile3D__screen:after {
-  animation: slide 0.5s cubic-bezier(0.13, 0.75, 0.41, 1.03);
+  animation: slide 0.5s ease-in;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -4312,7 +4312,7 @@ a {
   background-size: 100% 100%;
 }
 .slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--right:before, .slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--right:after {
-  animation: slide 0.5s cubic-bezier(0.13, 0.75, 0.41, 1.03);
+  animation: slide--right 0.2s linear;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
@@ -4346,17 +4346,20 @@ a {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  animation-fill-mode: forwards;
 }
-.mobile3D .mobile3D__side.mobile3D__side--left:before {
-  left: -1%;
-}
-.slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:before {
-  animation: slide-left 0.1s linear 0.4s;
+.slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:before, .slideMobileScreen .mobile3D .mobile3D__side.mobile3D__side--left:after {
+  animation-name: slide-left;
+  animation-duration: 0.75s;
+  animation-timing-function: ease-out;
   animation-iteration-count: 1;
   animation-fill-mode: forwards;
 }
+.mobile3D .mobile3D__side.mobile3D__side--left:before {
+  left: 100%;
+}
 .mobile3D .mobile3D__side.mobile3D__side--left:after {
-  left: -101%;
+  left: -1%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--back {
   height: calc(100% + 40px);
@@ -4391,6 +4394,14 @@ a {
     opacity: 1;
   }
 }
+@keyframes slide--right {
+  0% {
+    transform: translate3d(100%, 0, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
 @keyframes slide {
   0% {
     transform: translate3d(100%, 0, 0);
@@ -4403,8 +4414,11 @@ a {
   0% {
     transform: translate3d(-100%, 0, 0);
   }
-  100% {
-    transform: translate3d(0%, 0, 0);
+  75% {
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes wiggle {
@@ -4522,7 +4536,7 @@ body.home .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
 body.home .mobile3D__side--right:after,
-body.home .mobile3D__side--left:before {
+body.home .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
@@ -4547,7 +4561,7 @@ body.home[data-current-theme=arts] .mobile3D__screen:after {
   background-image: url(../img/mobile--arts.jpg);
 }
 body.home[data-current-theme=arts] .mobile3D__side--right:after,
-body.home[data-current-theme=arts] .mobile3D__side--left:before {
+body.home[data-current-theme=arts] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/arts--side.jpg);
 }
@@ -4559,7 +4573,7 @@ body.home[data-previous-theme=arts] .mobile3D__screen:before {
   background-image: url(../img/mobile--arts.jpg);
 }
 body.home[data-previous-theme=arts] .mobile3D__side--right:before,
-body.home[data-previous-theme=arts] .mobile3D__side--left:after {
+body.home[data-previous-theme=arts] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/arts--side.jpg);
 }
@@ -4587,7 +4601,7 @@ body.home[data-current-theme=sounds] .mobile3D__screen:after {
   background-image: url(../img/mobile--sounds.jpg);
 }
 body.home[data-current-theme=sounds] .mobile3D__side--right:after,
-body.home[data-current-theme=sounds] .mobile3D__side--left:before {
+body.home[data-current-theme=sounds] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/sounds--side.jpg);
 }
@@ -4599,7 +4613,7 @@ body.home[data-previous-theme=sounds] .mobile3D__screen:before {
   background-image: url(../img/mobile--sounds.jpg);
 }
 body.home[data-previous-theme=sounds] .mobile3D__side--right:before,
-body.home[data-previous-theme=sounds] .mobile3D__side--left:after {
+body.home[data-previous-theme=sounds] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/sounds--side.jpg);
 }
@@ -4618,7 +4632,7 @@ body.home[data-current-theme=africaoye] .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
 body.home[data-current-theme=africaoye] .mobile3D__side--right:after,
-body.home[data-current-theme=africaoye] .mobile3D__side--left:before {
+body.home[data-current-theme=africaoye] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
@@ -4630,7 +4644,7 @@ body.home[data-previous-theme=africaoye] .mobile3D__screen:before {
   background-image: url(../img/mobile--africaoye.jpg);
 }
 body.home[data-previous-theme=africaoye] .mobile3D__side--right:before,
-body.home[data-previous-theme=africaoye] .mobile3D__side--left:after {
+body.home[data-previous-theme=africaoye] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
@@ -4642,7 +4656,7 @@ body.home[data-previous-theme=urban] .mobile3D__screen:before {
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
 body.home[data-previous-theme=urban] .mobile3D__side--right:before,
-body.home[data-previous-theme=urban] .mobile3D__side--left:after {
+body.home[data-previous-theme=urban] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
@@ -4673,7 +4687,7 @@ body.home[data-current-theme=tagout] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/tagout--rightSide.jpg);
 }
-body.home[data-current-theme=tagout] .mobile3D__side--left:before {
+body.home[data-current-theme=tagout] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/tagout--leftSide.jpg);
 }
@@ -4688,7 +4702,7 @@ body.home[data-previous-theme=tagout] .mobile3D__side--right:before {
   background-size: 100% 100%;
   background-image: url(../img/tagout--rightSide.jpg);
 }
-body.home[data-previous-theme=tagout] .mobile3D__side--left:after {
+body.home[data-previous-theme=tagout] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/tagout--leftSide.jpg);
 }
@@ -4716,7 +4730,7 @@ body.home[data-current-theme=box] .mobile3D__screen:after {
   background-image: url(../img/mobile--box.jpg);
 }
 body.home[data-current-theme=box] .mobile3D__side--right:after,
-body.home[data-current-theme=box] .mobile3D__side--left:before {
+body.home[data-current-theme=box] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/box--side.jpg);
 }
@@ -4728,7 +4742,7 @@ body.home[data-previous-theme=box] .mobile3D__screen:before {
   background-image: url(../img/mobile--box.jpg);
 }
 body.home[data-previous-theme=box] .mobile3D__side--right:before,
-body.home[data-previous-theme=box] .mobile3D__side--left:after {
+body.home[data-previous-theme=box] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/box--side.jpg);
 }
@@ -4760,7 +4774,7 @@ body.home[data-current-theme=inter] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/inter--rightSide.jpg);
 }
-body.home[data-current-theme=inter] .mobile3D__side--left:before {
+body.home[data-current-theme=inter] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/inter--leftSide.jpg);
 }
@@ -4775,7 +4789,7 @@ body.home[data-previous-theme=inter] .mobile3D__side--right:before {
   background-size: 100% 100%;
   background-image: url(../img/inter--rightSide.jpg);
 }
-body.home[data-previous-theme=inter] .mobile3D__side--left:after {
+body.home[data-previous-theme=inter] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/inter--leftSide.jpg);
 }
@@ -4806,7 +4820,7 @@ body.home[data-current-theme=halftone] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/halftone--rightSide.jpg);
 }
-body.home[data-current-theme=halftone] .mobile3D__side--left:before {
+body.home[data-current-theme=halftone] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/halftone--leftSide.jpg);
 }
@@ -4825,7 +4839,7 @@ body.home[data-previous-theme=halftone] .mobile3D__side--right:before {
   background-size: 100% 100%;
   background-image: url(../img/halftone--rightSide.jpg);
 }
-body.home[data-previous-theme=halftone] .mobile3D__side--left:after {
+body.home[data-previous-theme=halftone] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/halftone--leftSide.jpg);
 }
@@ -4856,7 +4870,7 @@ body.home[data-current-theme=deep] .mobile3D__side--right:after {
   background-size: 100% 100%;
   background-image: url(../img/deep--rightSide.jpg);
 }
-body.home[data-current-theme=deep] .mobile3D__side--left:before {
+body.home[data-current-theme=deep] .mobile3D__side--left:after {
   background-size: 100% 100%;
   background-image: url(../img/deep--leftSide.jpg);
 }
@@ -4871,7 +4885,7 @@ body.home[data-previous-theme=deep] .mobile3D__side--right:before {
   background-size: 100% 100%;
   background-image: url(../img/deep--rightSide.jpg);
 }
-body.home[data-previous-theme=deep] .mobile3D__side--left:after {
+body.home[data-previous-theme=deep] .mobile3D__side--left:before {
   background-size: 100% 100%;
   background-image: url(../img/deep--leftSide.jpg);
 }
@@ -5142,28 +5156,23 @@ ul.pricingSection__fullList {
 }
 
 .carouselSection__slider {
-  max-height: 700px;
   cursor: pointer;
 }
 
 .carousel__slide {
-  width: 80%;
+  display: block;
+  width: 90%;
   max-width: 900px;
   background-color: transparent;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
-.carousel__imageWrap {
+.imageCarousel__image {
   display: block;
   height: 100%;
-  z-index: 1;
-  width: 94%;
-}
-
-.carousel__image {
+  width: calc(100% - 2rem);
+  margin: 0 auto;
   object-fit: contain;
+  max-width: none;
 }
 
 .carouselSection__buttonWrap {
