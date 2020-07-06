@@ -32,7 +32,7 @@
 
 				<div class="growIn">
 				
-					<a class="button button--X" href="/enquire">Submit Enquiry</a>
+					<a class="button button--X" href="/enquire">Talk with us</a>
 
 				</div>
 
