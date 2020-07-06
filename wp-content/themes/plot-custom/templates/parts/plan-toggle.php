@@ -22,7 +22,7 @@
 
         <div class="planToggle__price planToggle__price--annual">
 
-            <p><span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('annual_plan_price'); ?></span> /yr</span></p>
+            <p><span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('annual_plan_price'); ?></span> p/m</span></p>
 
             <span class="small">Billed annually</span>
 
@@ -30,7 +30,7 @@
 
         <div class="planToggle__price planToggle__price--monthly">
 
-            <p><span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('monthly_plan_price'); ?></span> /mo</span></p>
+            <p><span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('monthly_plan_price'); ?></span> p/m</span></p>
 
             <span class="small">Billed monthly</span>
 
