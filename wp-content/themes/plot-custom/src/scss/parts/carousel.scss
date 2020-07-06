@@ -19,6 +19,13 @@
 
     .carouselSection__slider {
         cursor: pointer;
+        position: relative;
+        height: 61vw;
+        max-height: 620px;
+
+        &[data-plot-smooth-scroll-element] {
+            opacity: 1;
+        }
     }
 
         .carousel__slide {
@@ -35,6 +42,12 @@
                 margin: 0 auto;
                 object-fit: contain;
                 max-width: none;
+                opacity: 0;
+                transition: opacity .3s ease-in;
+
+                &.flickity-lazyloaded {
+                    opacity: 1;
+                }
             }
     
     .carouselSection__buttonWrap {

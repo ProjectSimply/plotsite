@@ -16,7 +16,7 @@
 
     </div>
 
-    <div class="JS--carousel carouselSection__slider" data-plot-carousel-type="image">
+    <div class="JS--carousel carouselSection__slider" data-plot-carousel-type="image" data-plot-smooth-scroll-element>
 
 	    <?php $i = 0; while(has_sub_field('carousel_slider')) : ?>
 

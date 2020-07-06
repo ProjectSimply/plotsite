@@ -2660,10 +2660,13 @@ a {
   height: 2.2rem;
   position: absolute;
   left: 1rem;
-  background: var(--purple);
+  background: var(--sky);
   border-radius: 50%;
   cursor: pointer;
-  top: calc(50% - 1.1rem);
+  transform: translate3d(0, -50%, 0);
+  top: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease-in 0.2s;
 }
 .flickity-button svg {
   width: 100%;
@@ -2674,6 +2677,9 @@ a {
 .flickity-button.next {
   right: 1rem;
   left: auto;
+}
+.plotSmoothScrollSeenOnce .flickity-button {
+  opacity: 1;
 }
 
 .faqs {
@@ -5157,6 +5163,12 @@ ul.pricingSection__fullList {
 
 .carouselSection__slider {
   cursor: pointer;
+  position: relative;
+  height: 61vw;
+  max-height: 620px;
+}
+.carouselSection__slider[data-plot-smooth-scroll-element] {
+  opacity: 1;
 }
 
 .carousel__slide {
@@ -5173,6 +5185,11 @@ ul.pricingSection__fullList {
   margin: 0 auto;
   object-fit: contain;
   max-width: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in;
+}
+.imageCarousel__image.flickity-lazyloaded {
+  opacity: 1;
 }
 
 .carouselSection__buttonWrap {
