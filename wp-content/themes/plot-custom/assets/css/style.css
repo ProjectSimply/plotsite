@@ -2412,6 +2412,10 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
   padding-bottom: 4rem;
 }
 
+[data-plot-smooth-scroll] {
+  overflow: hidden;
+}
+
 .plotModalScrollViewport {
   background: white;
   padding: 1rem;
@@ -2666,7 +2670,8 @@ a {
   transform: translate3d(0, -50%, 0);
   top: 50%;
   opacity: 0;
-  transition: opacity 0.3s ease-in 0.2s;
+  transition: opacity 0.3s ease-in;
+  transition-delay: 1s;
 }
 .flickity-button svg {
   width: 100%;
