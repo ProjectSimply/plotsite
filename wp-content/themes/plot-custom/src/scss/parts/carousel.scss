@@ -42,12 +42,6 @@
                 margin: 0 auto;
                 object-fit: contain;
                 max-width: none;
-                opacity: 0;
-                transition: opacity .3s ease-in;
-
-                &.flickity-lazyloaded {
-                    opacity: 1;
-                }
             }
     
     .carouselSection__buttonWrap {

@@ -7,6 +7,26 @@
 	.carousel__slide {
 		width: 100%;
 		background: black;
+
+		&:first-child,
+		&:nth-child(2),
+		&:last-child {
+			img {
+				transform: translate3d(0, 30px, 0);
+				opacity: 0;
+				transition: all .4s ease-out;
+
+				&.flickity-lazyloaded {
+					opacity: 1;
+					transform: translate3d(0, 0, 0);
+				}
+			}
+		}
+
+		
+		&:nth-child(2) img { transition-delay: .4s }
+		&:last-child img { transition-delay: .2s}
+
 	}
 
 	.carousel__backgroundWrap {

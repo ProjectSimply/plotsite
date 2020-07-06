@@ -2625,6 +2625,21 @@ a {
   width: 100%;
   background: black;
 }
+.carousel__slide:first-child img, .carousel__slide:nth-child(2) img, .carousel__slide:last-child img {
+  transform: translate3d(0, 30px, 0);
+  opacity: 0;
+  transition: all 0.4s ease-out;
+}
+.carousel__slide:first-child img.flickity-lazyloaded, .carousel__slide:nth-child(2) img.flickity-lazyloaded, .carousel__slide:last-child img.flickity-lazyloaded {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+}
+.carousel__slide:nth-child(2) img {
+  transition-delay: 0.4s;
+}
+.carousel__slide:last-child img {
+  transition-delay: 0.2s;
+}
 
 .carousel__backgroundWrap {
   height: 60vw;
@@ -5197,11 +5212,6 @@ ul.pricingSection__fullList {
   margin: 0 auto;
   object-fit: contain;
   max-width: none;
-  opacity: 0;
-  transition: opacity 0.3s ease-in;
-}
-.imageCarousel__image.flickity-lazyloaded {
-  opacity: 1;
 }
 
 .carouselSection__buttonWrap {
