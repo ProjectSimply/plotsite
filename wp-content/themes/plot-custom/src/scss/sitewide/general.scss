@@ -11,7 +11,7 @@
 .JS--lazyLoad {
 	opacity: 0;
 	transform: translate3d(0,30px,0);
-	transition: all .2s ease-in; 
+	transition: opacity .3s ease-out, transform .3s ease-out, box-shadow .5s ease-in-out 1s; 
 	box-shadow: 18px 18px 23px -15px rgba(0,0,0,0);
 
 	&.loaded {
@@ -19,7 +19,7 @@
 		transform: translate3d(0,0,0);
 
 		&.imageGrid__image {
-			box-shadow: 18px 18px 23px -15px rgba(0,0,0,0.75);
+			box-shadow: 18px 18px 23px -15px rgba(0,0,0,0.5);
 		}
 	}
 }
