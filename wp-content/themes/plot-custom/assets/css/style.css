@@ -4191,27 +4191,27 @@ a {
   pointer-events: none;
 }
 .mobile3D .mobile3D__side.mobile3D__side--bottom {
-  height: var(--borderWidth);
+  height: 30px;
   width: 100%;
   bottom: -20px;
   left: 0px;
-  transform: rotateX(90deg) translateY(-5px) translateZ(5px);
+  transform: rotateX(90deg) translateY(-15px) translateZ(-5px);
   background: #B8B8B8;
 }
 .mobile3D .mobile3D__side.mobile3D__side--top {
-  height: var(--borderWidth);
+  height: 30px;
   width: 100%;
   top: 0px;
   left: 0px;
-  transform: rotateX(90deg) translateY(-5px) translateZ(15px);
+  transform: rotateX(90deg) translateY(-15px) translateZ(25px);
   background: #B8B8B8;
 }
 .mobile3D .mobile3D__side.mobile3D__side--right {
   height: calc(100% + (var(--borderWidth) * 2 ));
-  width: var(--borderWidth);
+  width: 30px;
   top: -10px;
   right: 0px;
-  transform: rotateY(90deg) translateZ(5px) translateX(5px);
+  transform: rotateY(90deg) translateZ(15px) translateX(15px);
   border-width: var(--borderWidth) 0;
   border-style: solid;
   border-color: #B8B8B8;
@@ -4244,10 +4244,10 @@ a {
 }
 .mobile3D .mobile3D__side.mobile3D__side--left {
   height: calc(100% + (var(--borderWidth) * 2 ));
-  width: var(--borderWidth);
+  width: 30px;
   top: -10px;
   left: 0px;
-  transform: rotateY(90deg) translateZ(-5px) translateX(5px);
+  transform: rotateY(90deg) translateZ(-15px) translateX(15px);
   border-width: var(--borderWidth) 0;
   border-style: solid;
   border-color: #B8B8B8;
@@ -4286,11 +4286,11 @@ a {
   width: 100%;
   top: -10px;
   right: 0px;
-  transform: translateZ(-10px);
+  transform: translateZ(-30px);
   border-width: var(--borderWidth) 0;
   border-style: solid;
   border-color: #B8B8B8;
-  box-shadow: 0 0 250px -20px #000;
+  box-shadow: 0 0 150px -20px #000;
 }
 .mobile3D .glass-reflection {
   position: absolute;
@@ -4602,10 +4602,10 @@ body.home[data-previous-theme=casa] .mobile3D__screen:before {
   background-image: url(../img/mobile--casa.jpg);
 }
 body.home[data-previous-theme=casa] .mobile3D__side--right::before {
-  background-image: url(../img/deep--rightSide.jpg);
+  background-image: url(../img/casa--rightSide.jpg);
 }
 body.home[data-previous-theme=casa] .mobile3D__side--left:before {
-  background-image: url(../img/deep--leftSide.jpg);
+  background-image: url(../img/casa--leftSide.jpg);
 }
 
 body.home[data-current-theme=future] .homeBanner:after {
