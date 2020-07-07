@@ -9,17 +9,9 @@
             phone                   : document.querySelector('.mobile3D__phone'),
             homeBanner              : document.querySelector('.homeBanner'),
             header                  : document.querySelector('#siteMainHeader'),
-            colourShapes        : {
-                1 : document.querySelector('.colourShape--1'),
-                2 : document.querySelector('.colourShape--2'),
-                3 : document.querySelector('.colourShape--3'),
-                4 : document.querySelector('.colourShape--4'),
-                5 : document.querySelector('.colourShape--5'),
-                6 : document.querySelector('.colourShape--6'),
-            }
         },
         intervalLength          : 5000,
-        previousTheme           : 'arts',
+        previousTheme           : 'home',
         counter                 : null,
         ticker                  : false,
         currentMousePosition    : {
@@ -32,14 +24,17 @@
         },
         mouseMoveAnimationFrame : null,
         themes: [
+            'casa',
+            'future',
+            'highest',
+            'rhythm',
             'sounds',
-            'tagout',
             'box',
             'inter',
             'halftone',
             'deep',
-            'africaoye',
-            'arts'
+            'arts',
+            'africaoye'
             
         ],
 
@@ -233,12 +228,6 @@
             Home.dom.phone.style.transform = `rotateX(${15 + yShift*7}deg) rotateY(${xShift*60 > 50 ? 50 : xShift*60}deg)`
 
             const multiplier = 10
-            Home.dom.colourShapes[1].style.transform = `translateX(${xShift * multiplier * 5}px) translateY(${-5*yShift*multiplier}px) translateZ(5rem)` 
-            Home.dom.colourShapes[2].style.transform = `translateX(${xShift * multiplier * 3}px) translateY(${-3*yShift*multiplier}px) translateZ(5rem)` 
-            Home.dom.colourShapes[3].style.transform = `translateX(${xShift * multiplier * 9}px) translateY(${-9*yShift*multiplier}px) translateZ(5rem)` 
-            Home.dom.colourShapes[4].style.transform = `translateX(${xShift * multiplier * 2}px) translateY(${-2*yShift*multiplier}px) translateZ(5rem)` 
-            Home.dom.colourShapes[5].style.transform = `translateX(${xShift * multiplier * 4}px) translateY(${-4*yShift*multiplier}px) translateZ(5rem)` 
-            Home.dom.colourShapes[6].style.transform = `translateX(${xShift * multiplier * 7}px) translateY(${-7*yShift*multiplier}px) translateZ(5rem)` 
 
             if(Math.abs(differenceOfPositions.X + differenceOfPositions.Y) < .1)
                 Home.ticker = false

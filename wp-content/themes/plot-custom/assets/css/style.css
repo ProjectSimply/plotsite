@@ -4112,6 +4112,7 @@ a {
   transform-style: preserve-3d;
   position: relative;
   height: 100%;
+  --borderWidth: 10px;
 }
 @media screen and (max-width: 639px) {
   .mobile3D {
@@ -4127,9 +4128,9 @@ a {
   opacity: 0;
   margin: 0 auto;
   position: relative;
-  border-width: 20px 0;
+  border-width: var(--borderWidth) 0;
   border-style: solid;
-  border-color: #fff;
+  border-color: #C7C7C7;
   color: #fff;
   transform-style: preserve-3d;
   transform: rotate3d(-3, 5, 0, -25deg);
@@ -4155,120 +4156,6 @@ a {
     margin: 5% 8rem 0 auto;
     height: 95%;
   }
-}
-.mobile3D .colourShape {
-  width: 3rem;
-  height: 3rem;
-  transform: translate3d(0, 0, 5rem);
-  position: absolute;
-  top: 5%;
-  left: -10%;
-  display: none;
-  opacity: 0;
-  animation-fill-mode: forwards;
-}
-.showFloaters .mobile3D .colourShape {
-  display: block;
-}
-@media screen and (min-width: 1024px) {
-  .mobile3D .colourShape {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-.mobile3D .colourShape__inner {
-  width: 100%;
-  height: 100%;
-  background: red;
-  animation: float 30s linear infinite;
-}
-.mobile3D .colourShape--2 {
-  left: -25%;
-  top: 20%;
-  transform: translate3d(0, 0, 3rem);
-  width: 4rem;
-  height: 4rem;
-}
-@media screen and (min-width: 1024px) {
-  .mobile3D .colourShape--2 {
-    width: 5rem;
-    height: 5rem;
-  }
-}
-.mobile3D .colourShape--2 .colourShape__inner {
-  background: blue;
-  animation-duration: 22s;
-}
-.mobile3D .colourShape--3 {
-  left: -25%;
-  top: 45%;
-  transform: translate3d(0, 0, 9rem);
-  width: 3rem;
-  height: 3rem;
-}
-@media screen and (min-width: 1024px) {
-  .mobile3D .colourShape--3 {
-    width: 4rem;
-    height: 4rem;
-  }
-}
-.mobile3D .colourShape--3 .colourShape__inner {
-  background: orange;
-  animation-duration: 29s;
-}
-.mobile3D .colourShape--4 {
-  left: auto;
-  right: -25%;
-  top: 50%;
-  transform: translate3d(0, 0, 2rem);
-  width: 4rem;
-  height: 4rem;
-}
-@media screen and (min-width: 1024px) {
-  .mobile3D .colourShape--4 {
-    width: 5rem;
-    height: 5rem;
-  }
-}
-.mobile3D .colourShape--4 .colourShape__inner {
-  background: white;
-  animation-duration: 27s;
-}
-.mobile3D .colourShape--5 {
-  left: auto;
-  right: -20%;
-  top: 5%;
-  transform: translate3d(0, 0, 4rem);
-  width: 5rem;
-  height: 5rem;
-}
-@media screen and (min-width: 1024px) {
-  .mobile3D .colourShape--5 {
-    width: 6rem;
-    height: 6rem;
-  }
-}
-.mobile3D .colourShape--5 .colourShape__inner {
-  background: green;
-  animation-duration: 34s;
-}
-.mobile3D .colourShape--6 {
-  left: auto;
-  right: -5%;
-  top: 35%;
-  transform: translate3d(0, 0, 7rem);
-  width: 5rem;
-  height: 5rem;
-}
-@media screen and (min-width: 1024px) {
-  .mobile3D .colourShape--6 {
-    width: 6rem;
-    height: 6rem;
-  }
-}
-.mobile3D .colourShape--6 .colourShape__inner {
-  background: pink;
-  animation-duration: 24s;
 }
 .mobile3D .mobile3D__screen {
   display: block;
@@ -4304,30 +4191,30 @@ a {
   pointer-events: none;
 }
 .mobile3D .mobile3D__side.mobile3D__side--bottom {
-  height: 30px;
+  height: var(--borderWidth);
   width: 100%;
-  bottom: -50px;
+  bottom: -20px;
   left: 0px;
-  transform: rotateX(90deg) translateY(-15px) translateZ(15px);
-  background: #fff;
+  transform: rotateX(90deg) translateY(-5px) translateZ(5px);
+  background: #B8B8B8;
 }
 .mobile3D .mobile3D__side.mobile3D__side--top {
-  height: 30px;
+  height: var(--borderWidth);
   width: 100%;
-  top: -20px;
+  top: 0px;
   left: 0px;
-  transform: rotateX(90deg) translateY(-15px) translateZ(15px);
-  background: #fff;
+  transform: rotateX(90deg) translateY(-5px) translateZ(15px);
+  background: #B8B8B8;
 }
 .mobile3D .mobile3D__side.mobile3D__side--right {
-  height: calc(100% + 40px);
-  width: 30px;
-  top: -20px;
-  right: -30px;
-  transform: rotateY(90deg) translateZ(-15px) translateX(15px);
-  border-width: 20px 0;
+  height: calc(100% + (var(--borderWidth) * 2 ));
+  width: var(--borderWidth);
+  top: -10px;
+  right: 0px;
+  transform: rotateY(90deg) translateZ(5px) translateX(5px);
+  border-width: var(--borderWidth) 0;
   border-style: solid;
-  border-color: #fff;
+  border-color: #B8B8B8;
   background-repeat: no-repeat;
   background-position: right;
   background-size: 100% 100%;
@@ -4356,14 +4243,14 @@ a {
   left: -1%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--left {
-  height: calc(100% + 40px);
-  width: 30px;
-  top: -20px;
+  height: calc(100% + (var(--borderWidth) * 2 ));
+  width: var(--borderWidth);
+  top: -10px;
   left: 0px;
-  transform: rotateY(90deg) translateZ(-15px) translateX(15px);
-  border-width: 20px 0;
+  transform: rotateY(90deg) translateZ(-5px) translateX(5px);
+  border-width: var(--borderWidth) 0;
   border-style: solid;
-  border-color: #fff;
+  border-color: #B8B8B8;
   background-repeat: no-repeat;
   background-position: left;
   background-size: 100% 100%;
@@ -4395,15 +4282,15 @@ a {
   left: -1%;
 }
 .mobile3D .mobile3D__side.mobile3D__side--back {
-  height: calc(100% + 40px);
+  height: calc(100% + (var(--borderWidth) * 2 ));
   width: 100%;
-  top: -20px;
+  top: -10px;
   right: 0px;
-  transform: translateZ(-30px);
-  border-width: 20px 0;
+  transform: translateZ(-10px);
+  border-width: var(--borderWidth) 0;
   border-style: solid;
-  border-color: #fff;
-  box-shadow: 0 0 50px 0 #444;
+  border-color: #B8B8B8;
+  box-shadow: 0 0 250px -20px #000;
 }
 .mobile3D .glass-reflection {
   position: absolute;
@@ -4568,18 +4455,33 @@ body.home .homeBanner__asset.homeBanner__asset--2 path {
 body.home .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
+body.home[data-current-theme] .homeBanner__asset.homeBanner__asset--1 path, body.home[data-current-theme] .homeBanner__asset.homeBanner__asset--2 path {
+  fill: rgba(255, 255, 255, 0.1);
+}
+body.home .mobile3D__side--right:after,
+body.home .mobile3D__side--left:after,
+body.home .mobile3D__side--right:before,
+body.home .mobile3D__side--right:before {
+  background-size: 100% 100%;
+}
 body.home .mobile3D__side--right:after,
 body.home .mobile3D__side--left:after {
-  background-size: 100% 100%;
+  background-image: url(../img/mobile--africaoye--side.jpg);
+}
+
+body.home[data-previous-theme=home] .homeBanner:before {
+  background-color: white;
+}
+body.home[data-previous-theme=home] .mobile3D__screen:before {
+  background-image: url(../img/mobile--africaoye.jpg);
+}
+body.home[data-previous-theme=home] .mobile3D__side--right:before,
+body.home[data-previous-theme=home] .mobile3D__side--left:before {
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
 body.home[data-current-theme=arts] .homeBanner:after {
   background-color: #E90030;
-}
-body.home[data-current-theme=arts] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=arts] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
 }
 body.home[data-current-theme=arts] .homeBanner__title,
 body.home[data-current-theme=arts] .homeBanner__subtitle,
@@ -4595,7 +4497,6 @@ body.home[data-current-theme=arts] .mobile3D__screen:after {
 }
 body.home[data-current-theme=arts] .mobile3D__side--right:after,
 body.home[data-current-theme=arts] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/arts--side.jpg);
 }
 
@@ -4607,16 +4508,11 @@ body.home[data-previous-theme=arts] .mobile3D__screen:before {
 }
 body.home[data-previous-theme=arts] .mobile3D__side--right:before,
 body.home[data-previous-theme=arts] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/arts--side.jpg);
 }
 
 body.home[data-current-theme=sounds] .homeBanner:after {
   background: linear-gradient(0deg, #841559 0%, #321735 100%);
-}
-body.home[data-current-theme=sounds] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=sounds] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
 }
 body.home[data-current-theme=sounds] .homeBanner__title,
 body.home[data-current-theme=sounds] .mainMenu a,
@@ -4628,14 +4524,13 @@ body.home[data-current-theme=sounds] .menuToggle--burger path {
   fill: white;
 }
 body.home[data-current-theme=sounds].smallScreen .mobile3D__phone {
-  transform: rotate3d(3, 5, 0, 25deg);
+  transform: rotate3d(-3, 5, 0, -25deg);
 }
 body.home[data-current-theme=sounds] .mobile3D__screen:after {
   background-image: url(../img/mobile--sounds.jpg);
 }
 body.home[data-current-theme=sounds] .mobile3D__side--right:after,
 body.home[data-current-theme=sounds] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/sounds--side.jpg);
 }
 
@@ -4647,7 +4542,6 @@ body.home[data-previous-theme=sounds] .mobile3D__screen:before {
 }
 body.home[data-previous-theme=sounds] .mobile3D__side--right:before,
 body.home[data-previous-theme=sounds] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/sounds--side.jpg);
 }
 
@@ -4657,16 +4551,11 @@ body.home[data-current-theme=africaoye] .homeBanner:after {
 body.home[data-current-theme=africaoye].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 45deg);
 }
-body.home[data-current-theme=africaoye] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=africaoye] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
-}
 body.home[data-current-theme=africaoye] .mobile3D__screen:after {
   background-image: url(../img/mobile--africaoye.jpg);
 }
 body.home[data-current-theme=africaoye] .mobile3D__side--right:after,
 body.home[data-current-theme=africaoye] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
@@ -4678,74 +4567,146 @@ body.home[data-previous-theme=africaoye] .mobile3D__screen:before {
 }
 body.home[data-previous-theme=africaoye] .mobile3D__side--right:before,
 body.home[data-previous-theme=africaoye] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
-body.home[data-previous-theme=urban] .homeBanner:before {
-  background-color: #FFBD00;
+body.home[data-current-theme=casa] .homeBanner:after {
+  background-color: #F3A238;
 }
-body.home[data-previous-theme=urban] .mobile3D__screen:before {
-  background-image: url(../img/mobile--africaoye--side.jpg);
-}
-body.home[data-previous-theme=urban] .mobile3D__side--right:before,
-body.home[data-previous-theme=urban] .mobile3D__side--left:before {
-  background-size: 100% 100%;
-  background-image: url(../img/mobile--africaoye--side.jpg);
-}
-
-body.home[data-current-theme=tagout] .homeBanner:after {
-  background-color: #d96cd6;
-}
-body.home[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=tagout] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
-}
-body.home[data-current-theme=tagout] .homeBanner__title,
-body.home[data-current-theme=tagout] .homeBanner__subtitle,
-body.home[data-current-theme=tagout] .mainMenu a {
+body.home[data-current-theme=casa] .homeBanner__title,
+body.home[data-current-theme=casa] .homeBanner__subtitle,
+body.home[data-current-theme=casa] .mainMenu a {
   color: white;
 }
-body.home[data-current-theme=tagout] .siteMainHeader__logo path,
-body.home[data-current-theme=tagout] .menuToggle--burger path {
+body.home[data-current-theme=casa] .siteMainHeader__logo path,
+body.home[data-current-theme=casa] .menuToggle--burger path {
   fill: white;
 }
-body.home[data-current-theme=tagout].smallScreen .mobile3D__phone {
-  transform: rotate3d(-2, 5, 0, -45deg);
+body.home[data-current-theme=casa].smallScreen .mobile3D__phone {
+  transform: rotate3d(3, 5, 0, 25deg);
 }
-body.home[data-current-theme=tagout] .mobile3D__screen:after {
-  background-image: url(../img/mobile--tagout.jpg);
+body.home[data-current-theme=casa] .mobile3D__screen:after {
+  background-image: url(../img/mobile--casa.jpg);
 }
-body.home[data-current-theme=tagout] .mobile3D__side--right:after {
-  background-size: 100% 100%;
-  background-image: url(../img/tagout--rightSide.jpg);
+body.home[data-current-theme=casa] .mobile3D__side--right:after {
+  background-image: url(../img/casa--rightSide.jpg);
 }
-body.home[data-current-theme=tagout] .mobile3D__side--left:after {
-  background-size: 100% 100%;
-  background-image: url(../img/tagout--leftSide.jpg);
+body.home[data-current-theme=casa] .mobile3D__side--left:after {
+  background-image: url(../img/casa--leftSide.jpg);
 }
 
-body.home[data-previous-theme=tagout] .homeBanner:before {
-  background-color: #FF00F9;
+body.home[data-previous-theme=casa] .homeBanner:before {
+  background-color: #F3A238;
 }
-body.home[data-previous-theme=tagout] .mobile3D__screen:before {
-  background-image: url(../img/mobile--tagout.jpg);
+body.home[data-previous-theme=casa] .mobile3D__screen:before {
+  background-image: url(../img/mobile--casa.jpg);
 }
-body.home[data-previous-theme=tagout] .mobile3D__side--right:before {
-  background-size: 100% 100%;
-  background-image: url(../img/tagout--rightSide.jpg);
+body.home[data-previous-theme=casa] .mobile3D__side--right::before {
+  background-image: url(../img/deep--rightSide.jpg);
 }
-body.home[data-previous-theme=tagout] .mobile3D__side--left:before {
-  background-size: 100% 100%;
-  background-image: url(../img/tagout--leftSide.jpg);
+body.home[data-previous-theme=casa] .mobile3D__side--left:before {
+  background-image: url(../img/deep--leftSide.jpg);
+}
+
+body.home[data-current-theme=future] .homeBanner:after {
+  background-color: #FC7F3A;
+}
+body.home[data-current-theme=future] .homeBanner__title,
+body.home[data-current-theme=future] .homeBanner__subtitle,
+body.home[data-current-theme=future] .mainMenu a {
+  color: white;
+}
+body.home[data-current-theme=future] .siteMainHeader__logo path,
+body.home[data-current-theme=future] .menuToggle--burger path {
+  fill: white;
+}
+body.home[data-current-theme=future].smallScreen .mobile3D__phone {
+  transform: rotate3d(-3, 5, 0, -25deg);
+}
+body.home[data-current-theme=future] .mobile3D__screen:after {
+  background-image: url(../img/mobile--future.jpg);
+}
+body.home[data-current-theme=future] .mobile3D__side--right:after,
+body.home[data-current-theme=future] .mobile3D__side--left:after {
+  background-image: url(../img/future--side.jpg);
+}
+
+body.home[data-previous-theme=future] .homeBanner:before {
+  background-color: #FC7F3A;
+}
+body.home[data-previous-theme=future] .mobile3D__screen:before {
+  background-image: url(../img/mobile--future.jpg);
+}
+body.home[data-previous-theme=future] .mobile3D__side--right:before,
+body.home[data-previous-theme=future] .mobile3D__side--left:before {
+  background-image: url(../img/future--side.jpg);
+}
+
+body.home[data-current-theme=rhythm] .homeBanner:after {
+  background-color: #FFF035;
+}
+body.home[data-current-theme=rhythm].smallScreen .mobile3D__phone {
+  transform: rotate3d(3, 5, 0, 25deg);
+}
+body.home[data-current-theme=rhythm] .mobile3D__screen:after {
+  background-image: url(../img/mobile--rhythm.jpg);
+}
+body.home[data-current-theme=rhythm] .mobile3D__side--right::after {
+  background-image: url(../img/rhythm--rightSide.jpg);
+}
+body.home[data-current-theme=rhythm] .mobile3D__side--left:after {
+  background-image: url(../img/rhythm--leftSide.jpg);
+}
+
+body.home[data-previous-theme=rhythm] .homeBanner:before {
+  background-color: #FFF035;
+}
+body.home[data-previous-theme=rhythm] .mobile3D__screen:before {
+  background-image: url(../img/mobile--rhythm.jpg);
+}
+body.home[data-previous-theme=rhythm] .mobile3D__side--right::before {
+  background-image: url(../img/rhythm--rightSide.jpg);
+}
+body.home[data-previous-theme=rhythm] .mobile3D__side--left:before {
+  background-image: url(../img/rhythm--leftSide.jpg);
+}
+
+body.home[data-current-theme=highest] .homeBanner:after {
+  background-color: #FD9898;
+}
+body.home[data-current-theme=highest] .homeBanner__title,
+body.home[data-current-theme=highest] .homeBanner__subtitle,
+body.home[data-current-theme=highest] .mainMenu a {
+  color: white;
+}
+body.home[data-current-theme=highest] .siteMainHeader__logo path,
+body.home[data-current-theme=highest] .menuToggle--burger path {
+  fill: white;
+}
+body.home[data-current-theme=highest].smallScreen .mobile3D__phone {
+  transform: rotate3d(3, 5, 0, 45deg);
+}
+body.home[data-current-theme=highest] .mobile3D__screen:after {
+  background-image: url(../img/mobile--highest.jpg);
+}
+body.home[data-current-theme=highest] .mobile3D__side--right:after,
+body.home[data-current-theme=highest] .mobile3D__side--left:after {
+  background-image: url(../img/highest--side.jpg);
+}
+
+body.home[data-previous-theme=highest] .homeBanner:before {
+  background-color: #FD9898;
+}
+body.home[data-previous-theme=highest] .mobile3D__screen:before {
+  background-image: url(../img/mobile--highest.jpg);
+}
+body.home[data-previous-theme=highest] .mobile3D__side--right:before,
+body.home[data-previous-theme=highest] .mobile3D__side--left:before {
+  background-image: url(../img/highest--side.jpg);
 }
 
 body.home[data-current-theme=box] .homeBanner:after {
   background-color: #1F0087;
-}
-body.home[data-current-theme=box] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=box] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
 }
 body.home[data-current-theme=box] .homeBanner__title,
 body.home[data-current-theme=box] .homeBanner__subtitle,
@@ -4764,7 +4725,6 @@ body.home[data-current-theme=box] .mobile3D__screen:after {
 }
 body.home[data-current-theme=box] .mobile3D__side--right:after,
 body.home[data-current-theme=box] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/box--side.jpg);
 }
 
@@ -4776,16 +4736,11 @@ body.home[data-previous-theme=box] .mobile3D__screen:before {
 }
 body.home[data-previous-theme=box] .mobile3D__side--right:before,
 body.home[data-previous-theme=box] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/box--side.jpg);
 }
 
 body.home[data-current-theme=inter] .homeBanner:after {
   background-color: #171E43;
-}
-body.home[data-current-theme=inter] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=inter] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
 }
 body.home[data-current-theme=inter] .homeBanner__title, body.home[data-current-theme=inter] .homeBanner__subtitle {
   color: white;
@@ -4804,11 +4759,9 @@ body.home[data-current-theme=inter] .mobile3D__screen:after {
   background-image: url(../img/mobile--inter.jpg);
 }
 body.home[data-current-theme=inter] .mobile3D__side--right:after {
-  background-size: 100% 100%;
   background-image: url(../img/inter--rightSide.jpg);
 }
 body.home[data-current-theme=inter] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/inter--leftSide.jpg);
 }
 
@@ -4819,20 +4772,14 @@ body.home[data-previous-theme=inter] .mobile3D__screen:before {
   background-image: url(../img/mobile--inter.jpg);
 }
 body.home[data-previous-theme=inter] .mobile3D__side--right:before {
-  background-size: 100% 100%;
   background-image: url(../img/inter--rightSide.jpg);
 }
 body.home[data-previous-theme=inter] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/inter--leftSide.jpg);
 }
 
 body.home[data-current-theme=halftone] .homeBanner:after {
   background: linear-gradient(0deg, #6f596a 0%, #0078ca 100%);
-}
-body.home[data-current-theme=halftone] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=halftone] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
 }
 body.home[data-current-theme=halftone] .homeBanner__title,
 body.home[data-current-theme=halftone] .homeBanner__subtitle,
@@ -4850,30 +4797,22 @@ body.home[data-current-theme=halftone] .mobile3D__screen:after {
   background-image: url(../img/mobile--halftone.jpg);
 }
 body.home[data-current-theme=halftone] .mobile3D__side--right:after {
-  background-size: 100% 100%;
   background-image: url(../img/halftone--rightSide.jpg);
 }
 body.home[data-current-theme=halftone] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/halftone--leftSide.jpg);
 }
 
 body.home[data-previous-theme=halftone] .homeBanner:before {
   background: linear-gradient(0deg, #6f596a 0%, #0078ca 100%);
 }
-body.home[data-previous-theme=halftone] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-previous-theme=halftone] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
-}
 body.home[data-previous-theme=halftone] .mobile3D__screen:before {
   background-image: url(../img/mobile--halftone.jpg);
 }
 body.home[data-previous-theme=halftone] .mobile3D__side--right:before {
-  background-size: 100% 100%;
   background-image: url(../img/halftone--rightSide.jpg);
 }
 body.home[data-previous-theme=halftone] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/halftone--leftSide.jpg);
 }
 
@@ -4884,10 +4823,6 @@ body.home[data-current-theme=deep] .homeBanner__title,
 body.home[data-current-theme=deep] .homeBanner__subtitle,
 body.home[data-current-theme=deep] .mainMenu a {
   color: white;
-}
-body.home[data-current-theme=deep] .homeBanner__asset.homeBanner__asset--1 path,
-body.home[data-current-theme=deep] .homeBanner__asset.homeBanner__asset--2 path {
-  fill: rgba(255, 255, 255, 0.2);
 }
 body.home[data-current-theme=deep] .siteMainHeader__logo path,
 body.home[data-current-theme=deep] .menuToggle--burger path {
@@ -4900,11 +4835,9 @@ body.home[data-current-theme=deep] .mobile3D__screen:after {
   background-image: url(../img/mobile--deep.jpg);
 }
 body.home[data-current-theme=deep] .mobile3D__side--right:after {
-  background-size: 100% 100%;
   background-image: url(../img/deep--rightSide.jpg);
 }
 body.home[data-current-theme=deep] .mobile3D__side--left:after {
-  background-size: 100% 100%;
   background-image: url(../img/deep--leftSide.jpg);
 }
 
@@ -4915,11 +4848,9 @@ body.home[data-previous-theme=deep] .mobile3D__screen:before {
   background-image: url(../img/mobile--deep.jpg);
 }
 body.home[data-previous-theme=deep] .mobile3D__side--right:before {
-  background-size: 100% 100%;
   background-image: url(../img/deep--rightSide.jpg);
 }
 body.home[data-previous-theme=deep] .mobile3D__side--left:before {
-  background-size: 100% 100%;
   background-image: url(../img/deep--leftSide.jpg);
 }
 

@@ -43,25 +43,6 @@
 
                         <span class="mobile3D__side mobile3D__side--back"></span>
 
-                        <div class="colourShape colourShape--1">
-                            <div class="colourShape__inner"></div>
-                        </div>
-                        <div class="colourShape colourShape--2">
-                            <div class="colourShape__inner"></div>
-                        </div>
-                        <div class="colourShape colourShape--3">
-                            <div class="colourShape__inner"></div>
-                        </div>
-                        <div class="colourShape colourShape--4">
-                            <div class="colourShape__inner"></div>
-                        </div>
-                        <div class="colourShape colourShape--5">
-                            <div class="colourShape__inner"></div>
-                        </div>
-                        <div class="colourShape colourShape--6">
-                            <div class="colourShape__inner"></div>
-                        </div>
-
                     </div>
 
                 </div>

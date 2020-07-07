@@ -4,6 +4,8 @@
     position: relative;
     height: 100%;
 
+    --borderWidth: 10px;
+
     @include small-only { 
         margin-top: 2rem;
     }
@@ -18,9 +20,9 @@
         opacity: 0;
         margin:0 auto;
         position: relative;
-        border-width: 20px 0;
+        border-width: var(--borderWidth) 0;
         border-style: solid;
-        border-color: #fff;
+        border-color: #C7C7C7;
         color: #fff;
         transform-style: preserve-3d;
         transform: rotate3d(-3, 5, 0, -25deg);
@@ -40,123 +42,8 @@
             height: 95%;
         }
 
+        
     }
-
-        .colourShape {
-            width: 3rem;
-            height: 3rem;
-            transform: translate3d(0,0,5rem);
-            position: absolute;
-            top: 5%;
-            left: -10%;
-            display: none;
-            // animation: fade 1s ease-out 1s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-            .showFloaters & {
-                display: block;
-            }
-
-            @include large {
-                width: 4rem;
-                height: 4rem;
-            }
-        }
-            .colourShape__inner {
-                width: 100%;
-                height: 100%;
-                background: red;
-                animation: float 30s linear infinite;
-            }
-
-            .colourShape--2 {
-                left: -25%;
-                top: 20%;
-                transform: translate3d(0,0,3rem);
-                width: 4rem;
-                height: 4rem;
-
-                @include large {
-                    width: 5rem;
-                    height: 5rem;
-                }
-
-                .colourShape__inner {
-                    background: blue;
-                    animation-duration: 22s;
-                }
-            }
-            .colourShape--3 {
-                left: -25%;
-                top: 45%;
-                transform: translate3d(0,0,9rem);
-                width: 3rem;
-                height: 3rem;
-
-                @include large {
-                    width: 4rem;
-                    height: 4rem;
-                }
-
-                .colourShape__inner {
-                    background: orange;
-                    animation-duration: 29s;
-                }
-            }
-            .colourShape--4 {
-                left: auto;
-                right: -25%;
-                top: 50%;
-                transform: translate3d(0,0,2rem);
-                width: 4rem;
-                height: 4rem;
-
-                @include large {
-                    width: 5rem;
-                    height: 5rem;
-                }
-
-                .colourShape__inner {
-                    background: white;
-                    animation-duration: 27s;
-                }
-            }
-            .colourShape--5 {
-                left: auto;
-                right: -20%;
-                top: 5%;
-                transform: translate3d(0,0,4rem);
-                width: 5rem;
-                height: 5rem;
-
-                @include large {
-                    width: 6rem;
-                    height: 6rem;
-                }
-
-                .colourShape__inner {
-                    background: green;
-                    animation-duration: 34s;
-                }
-            }
-            .colourShape--6 {
-                left: auto;
-                right: -5%;
-                top: 35%;
-                transform: translate3d(0,0,7rem);
-                width: 5rem;
-                height: 5rem;
-
-                @include large {
-                    width: 6rem;
-                    height: 6rem;
-                }
-                
-                .colourShape__inner {
-                    background: pink;
-                    animation-duration: 24s;
-                }
-            }
 
     .mobile3D__screen {
         display: block;
@@ -198,31 +85,31 @@
         pointer-events: none;
 
         &.mobile3D__side--bottom {
-            height: 30px;
+            height: var(--borderWidth);
             width: 100%;
-            bottom: -50px;
+            bottom: -20px;
             left: 0px;
-            transform: rotateX(90deg) translateY(-15px) translateZ(15px);
-            background: #fff;
+            transform: rotateX(90deg) translateY(-5px) translateZ(5px);
+            background: #B8B8B8;
         }
         &.mobile3D__side--top {
-            height: 30px;
+            height: var(--borderWidth);
             width: 100%;
-            top: -20px;
+            top: 0px;
             left: 0px;
-            transform: rotateX(90deg) translateY(-15px) translateZ(15px);
-            background: #fff;
+            transform: rotateX(90deg) translateY(-5px) translateZ(15px);
+            background: #B8B8B8;
         }
         
         &.mobile3D__side--right {
-            height: calc(100% + 40px);
-            width: 30px;
-            top: -20px;
-            right: -30px;
-            transform: rotateY(90deg) translateZ(-15px) translateX(15px);
-            border-width: 20px 0;
+            height: calc(100% + (var(--borderWidth) * 2 ));
+            width: var(--borderWidth);
+            top: -10px;
+            right: 0px;
+            transform: rotateY(90deg) translateZ(5px) translateX(5px);
+            border-width: var(--borderWidth) 0;
             border-style: solid;
-            border-color: #fff;
+            border-color: #B8B8B8;
             background-repeat: no-repeat;
             background-position: right;
             background-size: 100% 100%;
@@ -253,14 +140,14 @@
             &:after { left: -1% }
         }
         &.mobile3D__side--left {
-            height: calc(100% + 40px);
-            width: 30px;
-            top: -20px;
+            height: calc(100% + (var(--borderWidth) * 2 ));
+            width: var(--borderWidth);
+            top: -10px;
             left: 0px;
-            transform: rotateY(90deg) translateZ(-15px) translateX(15px);
-            border-width: 20px 0;
+            transform: rotateY(90deg) translateZ(-5px) translateX(5px);
+            border-width: var(--borderWidth) 0;
             border-style: solid;
-            border-color: #fff;
+            border-color: #B8B8B8;
             background-repeat: no-repeat;
             background-position: left;
             background-size: 100% 100%;
@@ -293,15 +180,15 @@
         }
 
         &.mobile3D__side--back {
-            height: calc(100% + 40px);
+            height: calc(100% + (var(--borderWidth) * 2 ));
             width: 100%;
-            top: -20px;
+            top: -10px;
             right: 0px;
-            transform: translateZ(-30px);
-            border-width: 20px 0;
+            transform: translateZ(-10px);
+            border-width: var(--borderWidth) 0;
             border-style: solid;
-            border-color: #fff;
-            box-shadow: 0 0 50px 0 #444;
+            border-color: #B8B8B8;
+            box-shadow: 0 0 250px -20px #000;
         }
 
     }
