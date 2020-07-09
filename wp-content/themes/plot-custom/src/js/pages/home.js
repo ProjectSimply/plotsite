@@ -10,7 +10,6 @@
             homeBanner              : document.querySelector('.homeBanner'),
             header                  : document.querySelector('#siteMainHeader'),
         },
-        intervalLength          : 5000,
         previousTheme           : 'home',
         counter                 : null,
         ticker                  : false,
@@ -51,7 +50,7 @@
         createListeners: () => {
             
             const homeBanner = document.querySelector('.homeBanner')
-
+            
             // Observe the homebanner section for class changes
             const observer = new MutationObserver(Home.bannerMutation)
             observer.observe(homeBanner, {
@@ -141,6 +140,8 @@
         startThemeCounter: () => {
             
             Home.bannerInView = true;
+            // First interval is 5 seconds, then increases to 7 seconds
+            let intervalLength = 3000;
 
             // Set header to default style
             if(Home.dom.header.classList.contains('defaultHeader'))
@@ -149,12 +150,6 @@
             
             let i = 0
             Home.counter = setInterval(() => {     
-
-                Home.dom.body.classList.remove('showFloaters')
-
-                setTimeout(() => {
-                    Home.dom.body.classList.add('showFloaters')
-                },100)  
                 
                 // Update mobile screen image
                 Home.dom.body.dataset.currentTheme = Home.themes[i]
@@ -172,7 +167,11 @@
                 // If we reach the end of the themes, reset to first theme
                 i >= Home.themes.length - 1 ? i = 0 : i++
 
-            }, 7000)
+                // Increase interval Length after 1 loop
+                if(i == 1) 
+                    intervalLength = 7000;
+
+            }, intervalLength)
 
         },
 
@@ -187,8 +186,6 @@
             
             if(Home.previousTheme)
                 Home.dom.body.classList.remove(Home.previousTheme)
-
-            Home.previousTheme = ''
 
             // Set header to default style
             Home.dom.header.classList.add('defaultHeader') 
