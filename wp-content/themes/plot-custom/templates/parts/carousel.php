@@ -20,17 +20,11 @@
 
 	    <?php $i = 0; while(has_sub_field('carousel_slider')) : ?>
 
-	    	
-
-                <div 
-                    target="_blank" 
-                    class="carousel__imageWrap carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
+            <a target="_blank" href="<?= get_sub_field('site_link') ?>" class="carousel__imageWrap carousel__slide JS--carousel__slideWrap <?= $i == 1 ? "is-initial-select" : "" ; ?>">
                     
-                    <img class="imageCarousel__image" data-flickity-lazyload="<?= get_sub_field('image')['sizes']['carouselImage'] ?>" />
+                <img class="imageCarousel__image" data-flickity-lazyload="<?= get_sub_field('image')['sizes']['carouselImage'] ?>" />
 
-        </div>
-
-			
+            </a>
 
 		<?php $i++; endwhile; ?>
 

@@ -2,7 +2,7 @@
 
 <?php plotGetTemplatePart('parts/banner') ?>
 
-<?php plotGetTemplatePart('parts/carosuel') ?>
+<?php plotGetTemplatePart('parts/carousel') ?>
 
 <?php plotGetTemplatePart('parts/image-grid') ?>
 

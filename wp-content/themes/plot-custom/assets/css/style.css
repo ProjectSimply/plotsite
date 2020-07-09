@@ -2649,11 +2649,17 @@ a {
   transition-delay: 0.2s;
 }
 
-.carousel__backgroundWrap {
+.carousel__imageWrap {
+  display: block;
   height: 60vw;
   position: absolute;
   z-index: 1;
   width: 100%;
+  transform: scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+.carousel__imageWrap:hover {
+  transform: scale(1.025);
 }
 
 .carousel__video, .carousel__image {
