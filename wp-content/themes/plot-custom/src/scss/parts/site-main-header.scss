@@ -36,12 +36,9 @@
         }
 
             .siteMainHeader__ctaLink {
-                font-size: 10px;
+                font-size: 1rem;
                 min-width: 0;
                 
-                @include medium {
-                    font-size: 14px;
-                }
             }
 
         .siteMainHeader__desktop-menu {
