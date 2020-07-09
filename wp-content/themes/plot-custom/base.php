@@ -2,12 +2,14 @@
 
 <body <?php plotBodyClass() ?>> 
 
-    <?php if(get_field('gtm_id','option')) : ?>
-
-        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=<?= get_field('gtm_id', 'option') ?>"
-        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-    
-    <?php endif; ?>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171294626-1"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-171294626-1');
+    </script>>
 
     <?php plotGetNotifications() ?>  
 
