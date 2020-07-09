@@ -5,14 +5,11 @@
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    
-    @include large {
-        max-height: calc(60vw);
-    }
 
     @include large {
-        @include vh(100, 'height');
-        min-height: 40rem;
+        min-height: 0;
+        height: 100vh;
+        max-height: 920px;
     }
 
     &:before,
