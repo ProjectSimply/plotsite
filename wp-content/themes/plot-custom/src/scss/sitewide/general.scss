@@ -77,8 +77,18 @@ body {
 }
 
 .emoji {
-	font-size: 3rem;
+	height: 3rem;
+	width: 3rem;
+	margin-left: auto;
+	margin-right: auto;
 	margin-bottom: 1rem;
+
+	svg {
+		display: block;
+		object-fit: contain;
+		height: 100%;
+		width: 100%;
+	}
 }
 
 .cards_button {
