@@ -32,6 +32,12 @@
 
         .cards__item {
             max-width: 400px;
+            
+
+            svg {
+                border-radius: 8px;
+                box-shadow: var(--box-shadow);
+            }
         }
 
             .cards__svgWrap {
