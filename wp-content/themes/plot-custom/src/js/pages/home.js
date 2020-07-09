@@ -149,7 +149,7 @@
         
             
             let i = 0
-            Home.counter = setInterval(() => {     
+            Home.counter = setInterval(() => {
                 
                 // Update mobile screen image
                 Home.dom.body.dataset.currentTheme = Home.themes[i]

@@ -2938,6 +2938,9 @@ a {
   margin: 0;
 }
 
+.plotLayoutForm .maxWidth {
+  max-width: 55rem;
+}
 .plotLayoutForm .plotLayoutForm__textWrap {
   background-color: var(--purple);
   border-radius: 0.5rem 0.5rem 0 0;
