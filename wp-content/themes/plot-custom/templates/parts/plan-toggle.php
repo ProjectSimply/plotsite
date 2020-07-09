@@ -24,7 +24,7 @@
 
             <p><span class="planToggle__noWrap">£<span class="planToggle__num"><?= get_field('annual_plan_price'); ?></span> p/m</span></p>
 
-            <span class="small">Billed annually</span>
+            <span class="small">Billed annually at £3000</span>
 
         </div>
 
