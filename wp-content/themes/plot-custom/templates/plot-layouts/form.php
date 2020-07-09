@@ -23,7 +23,7 @@
         </div>
 
         <div class="plotLayoutForm__callUs">
-            <p>Or just give us a call on <a href="tel:+01614249000">0161 424 9000</a></p>
+            <p>Look forward to speaking with you</p>
         </div>
 
     </div>
