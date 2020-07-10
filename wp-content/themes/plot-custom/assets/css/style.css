@@ -2668,7 +2668,7 @@ a {
   transition: transform 0.3s ease-in-out;
 }
 .carousel__imageWrap:hover {
-  transform: scale(1.025);
+  transform: scale(1.005);
 }
 
 .carousel__video, .carousel__image {
