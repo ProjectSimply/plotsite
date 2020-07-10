@@ -39,9 +39,9 @@
         <?php if(get_field('add_link')) : ?>
 
             <div class="button__wrap cards_button">
-                <a href="<?= get_field('block_section_link') ?>" class="button button--X">
+                <a href="<?= get_field('link_url') ?>" class="button button--X">
                     <span>
-                        <?= get_field('block_section_button_text') ?>
+                        <?= get_field('link_text') ?>
                     </span>
                 </a>
             </div>
