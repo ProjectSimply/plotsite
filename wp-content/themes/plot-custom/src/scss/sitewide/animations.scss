@@ -1,6 +1,83 @@
 .SVGelement {
     transform-origin: 50% 50%;
     transform-box: fill-box;
+    .plotSmoothScrollInView & {
+        animation-duration: .2s, 5s; 
+        animation-timing-function: ease-in-out, ease-in-out;
+        animation-fill-mode: forwards, forwards;
+        animation-iteration-count: 1, infinite;
+    }
+}
+
+
+.SVGelement--delay1 {
+    animation-delay: .4s;
+}
+.SVGelement--delay2 {
+    animation-delay: .8s;
+}
+
+.SVGelement--spin {
+    transform-origin: 50% 50%;
+    transform-box: fill-box;
+    animation: spin 8s linear infinite;
+}
+
+.SVGelement--growIn,.SVGelement--eyeShift {
+    animation-name: growIn, eyeShift;
+}
+
+.SVGelement--growIn.SVGelement--bob {
+    animation-name: growIn, upAndDown;
+}
+
+.SVGelement--popupNotification {
+    animation-name: popupNotification;
+    .plotSmoothScrollInView & {
+        animation-iteration-count: infinite;
+        animation-duration: 5s
+    }
+}
+
+.SVGelement--partners {
+    
+    .plotSmoothScrollInView & {
+        animation-name: growIn, partners;
+        animation-duration: 3s,10s;
+        animation-timing-function: ease-in-out,ease-in-out;
+    }
+}
+
+.SVGelement--hueSpin {
+    animation-name: hueSpin;
+
+    .plotSmoothScrollInView & {
+        animation-iteration-count: infinite;
+        animation-duration: 10s;
+        animation-timing-function: linear;
+    }
+}
+
+
+body .plotSmoothScrollInView {
+    .SVGelement--speed2 {
+        animation-duration: 7s;
+    }
+    .SVGelement--speed3 {
+        animation-delay: 10s;
+    }
+    .SVGelement--speed4 {
+        animation-duration: 13s;
+    }
+    .SVGelement--speed5 {
+        animation-delay: 16s;
+    }
+    .SVGelement--speed6 {
+        animation-duration: 20s;
+    }
+    .SVGelement--speed7 {
+        animation-delay: 23s;
+    }
 }
 
 .SVGelement__1 {
@@ -409,6 +486,75 @@
 }
 
 
+@keyframes hueSpin {
+    0% { 
+        fill: #7DEDBB;
+    }
+
+    20% {
+       fill: #F55252;
+    }
+
+    40% { 
+        fill: #F5D93D;
+    }
+    60% { 
+        fill: #F28254;
+    }
+    80% { 
+        fill: #3AA8E4;
+    }
+    100% { 
+        fill: #7DEDBB;
+    }
+}
+
+
+
+@keyframes popupNotification {
+    0% { 
+        transform: scale3d(0, 0, 1);
+        opacity: 0;
+    }
+
+    8% {
+        transform: scale3d(1.1, 1.1, 1);
+        opacity: 1;
+    }
+
+    11% {
+         transform: scale3d(1, 1, 1);
+    }
+
+    70% {
+         transform: scale3d(1, 1, 1);
+    }
+
+    100% { 
+        transform: translate3d(0,400px,0);
+    }
+}
+
+@keyframes partners {
+    0% { 
+        transform: translate3d(0,0,0);
+    }
+
+    25% { 
+        transform: translate3d(-147px,0,0);
+    }
+    50% {
+        transform: translate3d(0px,0,0);
+    } 
+    75% {
+        transform: translate3d(147px,0,0);
+    }
+
+    100% {
+        transform: translate3d(0,0,0);
+    }
+    
+}
 
 @keyframes entryAnimation--1 {
     0% { 
@@ -457,6 +603,16 @@
 // 
 // Custom Loaded
 // 
+
+@keyframes growIn {
+    0% { 
+        transform: scale3d(0,0,1);
+    }
+
+    100% { 
+        transform: scale3d(1,1,1);
+    }
+}
 
 @keyframes loadedAnimation--1 {
     0% { 
@@ -666,6 +822,40 @@
         fill: #EAB8D1;
     }
     100% {
+    }
+}
+
+@keyframes upAndDown {
+    0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+
+    33% {
+        transform: translate3d(0,4px,0);
+    }
+
+    66% {
+        transform: translate3d(0,-6px,0);
+    }
+}
+
+@keyframes eyeShift {
+    0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+
+    50% {
+        transform: rotate3d(0,0,1,60deg);
+    }
+
+    100% {
+        transform: rotate3d(0,0,0,60deg);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate3d(0,0,0,0deg);
+    }
+
+    100% {
+        transform: rotate3d(0,0,1,360deg);
     }
 }
 

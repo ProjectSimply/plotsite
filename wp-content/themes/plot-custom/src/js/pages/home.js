@@ -22,16 +22,17 @@
             Y: window.innerHeight / 2
         },
         mouseMoveAnimationFrame : null,
+        currentSlide : 0,
         themes: [
             'casa',
-            'future',
+            'deep',
             'highest',
             'rhythm',
+            'inter',
             'sounds',
             'box',
-            'inter',
             'halftone',
-            'deep',
+            'future',
             'arts',
             'africaoye'
             
@@ -102,8 +103,6 @@
                 Home.bannerInView = false
 
                 Home.stopThemeCounter()
-                
-                Home.removeTheme()
             }
         },
 
@@ -134,29 +133,30 @@
                 Home.mouseMoveAnimationFrame = requestAnimationFrame(Home.runMouseMove)
             }
 
-            
         },
 
         startThemeCounter: () => {
             
             Home.bannerInView = true;
-            // First interval is 5 seconds, then increases to 7 seconds
-            let intervalLength = 3000;
 
             // Set header to default style
             if(Home.dom.header.classList.contains('defaultHeader'))
                 Home.dom.header.classList.remove('defaultHeader') 
-        
-            
-            let i = 0
-            Home.counter = setInterval(() => {
+
+            Home.timer(3000)
+
+        },
+
+        timer : time => {
+
+            Home.counter = setTimeout(() => {
                 
                 // Update mobile screen image
-                Home.dom.body.dataset.currentTheme = Home.themes[i]
+                Home.dom.body.dataset.currentTheme = Home.themes[Home.currentSlide]
                 Home.dom.body.dataset.previousTheme = Home.previousTheme
 
                 // Update state
-                Home.previousTheme = Home.themes[i]
+                Home.previousTheme = Home.themes[Home.currentSlide]
 
                 Home.dom.body.classList.add('slideMobileScreen')
 
@@ -165,13 +165,11 @@
                 }, 2000)
 
                 // If we reach the end of the themes, reset to first theme
-                i >= Home.themes.length - 1 ? i = 0 : i++
+                Home.currentSlide >= Home.themes.length - 1 ? Home.currentSlide = 0 : Home.currentSlide++
 
-                // Increase interval Length after 1 loop
-                if(i == 1) 
-                    intervalLength = 7000;
+                Home.timer(7000)
 
-            }, intervalLength)
+            }, time)
 
         },
 
@@ -207,7 +205,6 @@
         },
 
         runMouseMove : () => {
-
 
             const differenceOfPositions = {
                 Y: Home.currentMousePosition.Y - Home.previousMousePosition.Y,
