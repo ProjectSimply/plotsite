@@ -7,8 +7,8 @@
     overflow: hidden;
 
     @include large {
-        min-height: 0;
-        height: 100vh;
+        min-height: 700px;
+        height: calc(100 * var(--vh));
         max-height: 920px;
     }
 

@@ -22,7 +22,7 @@ body.home {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--africaoye.jpg); 
+        background-image: url(../img/heros/africa-oye/Screen.jpg); 
     }
 
     &[data-current-theme] .homeBanner__asset.homeBanner__asset--1 path,
@@ -40,22 +40,25 @@ body.home {
     .mobile3D__side--right:after,
     .mobile3D__side--left:after {
 
-        background-image: url(../img/mobile--africaoye--side.jpg);
+        background-image: url(../img/heros/africa-oye/Right.jpg);
     }
 }
 
-body.home[data-previous-theme="home"] {
+body.home[data-previous-theme="home"],body.home[data-previous-theme="africaoye"]  {
     .homeBanner:before {
         background-color: white;
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--africaoye.jpg);
+        background-image: url(../img/heros/africa-oye/Screen.jpg);
     }
 
-    .mobile3D__side--right:before,
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/africa-oye/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/mobile--africaoye--side.jpg);
+        background-image: url(../img/heros/africa-oye/Left.jpg);
     }
 }
 
@@ -79,12 +82,15 @@ body.home[data-current-theme="arts"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--arts.jpg);
+        background-image: url(../img/heros/arts-and-kraft/Screen.jpg);
     }
 
-    .mobile3D__side--right:after,
+    .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/arts-and-kraft/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/arts--side.jpg);
+        background-image: url(../img/heros/arts-and-kraft/Left.jpg);
     }
 
 }
@@ -95,12 +101,15 @@ body.home[data-previous-theme="arts"] {
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--arts.jpg);
+        background-image: url(../img/heros/arts-and-kraft/Screen.jpg);
     }
 
-    .mobile3D__side--right:before,
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/arts-and-kraft/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/arts--side.jpg);
+        background-image: url(../img/heros/arts-and-kraft/Left.jpg);
     }
 }
 
@@ -129,12 +138,15 @@ body.home[data-current-theme="sounds"] {
     }
 
     .mobile3D__screen:after {
-            background-image: url(../img/mobile--sounds.jpg);
+        background-image: url(../img/heros/sound-ways/Screen.jpg);
     }
 
-    .mobile3D__side--right:after,
+     .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/sound-ways/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/sounds--side.jpg);
+        background-image: url(../img/heros/sound-ways/Left.jpg);
     }
 }
 
@@ -144,12 +156,15 @@ body.home[data-previous-theme="sounds"] {
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--sounds.jpg);
+        background-image: url(../img/heros/sound-ways/Screen.jpg);
     }
 
-    .mobile3D__side--right:before,
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/sound-ways/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/sounds--side.jpg);
+        background-image: url(../img/heros/sound-ways/Left.jpg);
     }
 }
 
@@ -163,15 +178,6 @@ body.home[data-current-theme="africaoye"] {
     }
 
 
-    .mobile3D__screen:after {
-        background-image: url(../img/mobile--africaoye.jpg);
-    }
-
-    .mobile3D__side--right:after,
-    .mobile3D__side--left:after {
-        background-image: url(../img/mobile--africaoye--side.jpg);
-    }
-
 }
 
 body.home[data-previous-theme="africaoye"] {
@@ -179,14 +185,6 @@ body.home[data-previous-theme="africaoye"] {
         background-color: #FFBD00;
     }
 
-    .mobile3D__screen:before {
-        background-image: url(../img/mobile--africaoye.jpg);
-    }
-
-    .mobile3D__side--right:before,
-    .mobile3D__side--left:before {
-        background-image: url(../img/mobile--africaoye--side.jpg);
-    }
 }
 
 
@@ -212,15 +210,15 @@ body.home[data-current-theme="casa"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--casa.jpg);
-    }
-    
-    .mobile3D__side--right:after {
-        background-image: url(../img/casa--rightSide.jpg);
+        background-image: url(../img/heros/mi-casa/Screen.jpg);
     }
 
+     .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/mi-casa/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/casa--leftSide.jpg);
+        background-image: url(../img/heros/mi-casa/Left.jpg);
     }
 
 }
@@ -231,15 +229,15 @@ body.home[data-previous-theme="casa"] {
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--casa.jpg);
-    } 
-
-    .mobile3D__side--right::before {
-        background-image: url(../img/casa--rightSide.jpg); 
+        background-image: url(../img/heros/mi-casa/Screen.jpg);
     }
 
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/mi-casa/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/casa--leftSide.jpg);
+        background-image: url(../img/heros/mi-casa/Left.jpg);
     }
 }
 
@@ -265,12 +263,15 @@ body.home[data-current-theme="future"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--future.jpg);
+        background-image: url(../img/heros/back-in-the-future/Screen.jpg);
     }
-    
-    .mobile3D__side--right:after,
+
+    .mobile3D__side--right:after {
+        background-image: url(../img/heros/back-in-the-future/Right.jpg);
+    }
+
     .mobile3D__side--left:after {
-        background-image: url(../img/future--side.jpg);
+        background-image: url(../img/heros/back-in-the-future/Right.jpg);
     }
 
 }
@@ -281,12 +282,15 @@ body.home[data-previous-theme="future"] {
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--future.jpg);
-    } 
+        background-image: url(../img/heros/back-in-the-future/Screen.jpg);
+    }
 
-    .mobile3D__side--right:before,
+    .mobile3D__side--right:before {
+        background-image: url(../img/heros/back-in-the-future/Right.jpg);
+    }
+
     .mobile3D__side--left:before {
-        background-image: url(../img/future--side.jpg);
+        background-image: url(../img/heros/back-in-the-future/Right.jpg);
     }
 }
 
@@ -300,15 +304,15 @@ body.home[data-current-theme="rhythm"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--rhythm.jpg);
-    }
-    
-    .mobile3D__side--right::after {
-        background-image: url(../img/rhythm--rightSide.jpg);
+        background-image: url(../img/heros/rhythm-and-waves/Screen.jpg);
     }
 
+     .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/rhythm-and-waves/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/rhythm--leftSide.jpg);
+        background-image: url(../img/heros/rhythm-and-waves/Left.jpg);
     }
 
 }
@@ -318,16 +322,16 @@ body.home[data-previous-theme="rhythm"] {
         background-color:  #FFF035;
     }
 
-    .mobile3D__screen:before {
-        background-image: url(../img/mobile--rhythm.jpg);
-    } 
-
-    .mobile3D__side--right::before {
-        background-image: url(../img/rhythm--rightSide.jpg);
+     .mobile3D__screen:before {
+        background-image: url(../img/heros/rhythm-and-waves/Screen.jpg);
     }
 
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/rhythm-and-waves/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/rhythm--leftSide.jpg);
+        background-image: url(../img/heros/rhythm-and-waves/Left.jpg);
     }
 }
 
@@ -353,13 +357,16 @@ body.home[data-current-theme="highest"] {
         transform: rotate3d(3, 5, 0, 45deg);
     }
 
-    .mobile3D__screen:after {
-        background-image: url(../img/mobile--highest.jpg);
+     .mobile3D__screen:after {
+        background-image: url(../img/heros/highest-point/Screen.jpg);
     }
 
-    .mobile3D__side--right:after,
+     .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/highest-point/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/highest--side.jpg);
+        background-image: url(../img/heros/highest-point/Left.jpg);
     }
 
 }
@@ -369,13 +376,16 @@ body.home[data-previous-theme="highest"] {
         background-color:  #FD9898;
     }
 
-    .mobile3D__screen:before {
-        background-image: url(../img/mobile--highest.jpg);
+      .mobile3D__screen:before {
+        background-image: url(../img/heros/highest-point/Screen.jpg);
     }
 
-    .mobile3D__side--right:before,
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/highest-point/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/highest--side.jpg);
+        background-image: url(../img/heros/highest-point/Left.jpg);
     }
 }
 
@@ -401,13 +411,16 @@ body.home[data-current-theme="box"] {
         transform: rotate3d(3, 5, 0, 25deg);
     }
 
-    .mobile3D__screen:after {
-        background-image: url(../img/mobile--box.jpg);
+       .mobile3D__screen:after {
+        background-image: url(../img/heros/the-box/Screen.jpg);
     }
-    
-    .mobile3D__side--right:after,
+
+     .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/the-box/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/box--side.jpg);
+        background-image: url(../img/heros/the-box/Left.jpg);
     }
 
 }
@@ -417,13 +430,16 @@ body.home[data-previous-theme="box"] {
         background-color:  #1F0087;
     }
 
-    .mobile3D__screen:before {
-        background-image: url(../img/mobile--box.jpg);
-    } 
+      .mobile3D__screen:before {
+        background-image: url(../img/heros/the-box/Screen.jpg);
+    }
 
-    .mobile3D__side--right:before,
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/the-box/Right.jpg);
+    }
     .mobile3D__side--left:before {
-        background-image: url(../img/box--side.jpg);
+        background-image: url(../img/heros/the-box/Left.jpg);
     }
 }
 
@@ -454,15 +470,15 @@ body.home[data-current-theme="inter"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--inter.jpg);
+        background-image: url(../img/heros/gas-giant/Screen.jpg);
     }
 
     .mobile3D__side--right:after {
-        background-image: url(../img/inter--rightSide.jpg);
+        background-image: url(../img/heros/gas-giant/Right.jpg);
     }
 
     .mobile3D__side--left:after {
-        background-image: url(../img/inter--leftSide.jpg);
+        background-image: url(../img/heros/gas-giant/Right.jpg);
     }
 
 }
@@ -473,14 +489,15 @@ body.home[data-previous-theme="inter"] {
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--inter.jpg);
-    } 
+        background-image: url(../img/heros/gas-giant/Screen.jpg);
+    }
 
     .mobile3D__side--right:before {
-        background-image: url(../img/inter--rightSide.jpg);
+        background-image: url(../img/heros/gas-giant/Right.jpg);
     }
+
     .mobile3D__side--left:before {
-        background-image: url(../img/inter--leftSide.jpg);
+        background-image: url(../img/heros/gas-giant/Right.jpg);
     }
 }
 
@@ -509,15 +526,15 @@ body.home[data-current-theme="halftone"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--halftone.jpg);
+        background-image: url(../img/heros/halftone-point/Screen.jpg);
     }
-    
+
     .mobile3D__side--right:after {
-        background-image: url(../img/halftone--rightSide.jpg);
+        background-image: url(../img/heros/halftone-point/Right.jpg);
     }
 
     .mobile3D__side--left:after {
-        background-image: url(../img/halftone--leftSide.jpg);
+        background-image: url(../img/heros/halftone-point/Right.jpg);
     }
 }
 
@@ -527,17 +544,16 @@ body.home[data-previous-theme="halftone"] {
 
     }
 
-
-
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--halftone.jpg);
-    } 
+        background-image: url(../img/heros/halftone-point/Screen.jpg);
+    }
 
     .mobile3D__side--right:before {
-        background-image: url(../img/halftone--rightSide.jpg);
+        background-image: url(../img/heros/halftone-point/Right.jpg);
     }
+
     .mobile3D__side--left:before {
-        background-image: url(../img/halftone--leftSide.jpg);
+        background-image: url(../img/heros/halftone-point/Right.jpg);
     }
 }
 
@@ -566,15 +582,15 @@ body.home[data-current-theme="deep"] {
     }
 
     .mobile3D__screen:after {
-        background-image: url(../img/mobile--deep.jpg);
-    }
-    
-    .mobile3D__side--right:after {
-        background-image: url(../img/deep--rightSide.jpg);
+        background-image: url(../img/heros/deep-state/Screen.jpg);
     }
 
+     .mobile3D__side--right:after
+    {
+        background-image: url(../img/heros/deep-state/Right.jpg);
+    }
     .mobile3D__side--left:after {
-        background-image: url(../img/deep--leftSide.jpg);
+        background-image: url(../img/heros/deep-state/Left.jpg);
     }
 }
 
@@ -585,13 +601,14 @@ body.home[data-previous-theme="deep"] {
     }
 
     .mobile3D__screen:before {
-        background-image: url(../img/mobile--deep.jpg);
-    } 
+        background-image: url(../img/heros/deep-state/Screen.jpg);
+    }
 
-    .mobile3D__side--right:before {
-        background-image: url(../img/deep--rightSide.jpg);
+     .mobile3D__side--right:before
+    {
+        background-image: url(../img/heros/deep-state/Right.jpg);
     }
     .mobile3D__side--left:before {
-        background-image: url(../img/deep--leftSide.jpg);
+        background-image: url(../img/heros/deep-state/Left.jpg);
     }
 }

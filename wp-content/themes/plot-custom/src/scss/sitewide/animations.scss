@@ -454,8 +454,7 @@ body .plotSmoothScrollInView {
     }
 }
 
-.SVGelement.SVGelement__23,
-.SVGelement.SVGelement__25 {
+.SVGelement.SVGelement__23{
 
     .plotSmoothScrollInView & {
         animation-name: loadedAnimation--9;
@@ -479,13 +478,35 @@ body .plotSmoothScrollInView {
     }
 }
 
+.SVGelement.SVGelement__25 {
+
+    .plotSmoothScrollInView & {
+        transform: scale3d(0,0,1);
+        animation: growIn 0.2s ease-out 1s;
+        animation-fill-mode: forwards; 
+    
+        $i: 1;
+        $speed: .1s;
+        $delay: 0.8s;
+        @while $i <= 12 {
+        
+            &:nth-child(#{$i}) {
+                animation-delay: #{$i * $speed + $delay}; 
+            }
+    
+            $i: $i + 1;
+            
+        }
+    }
+}
+
 .SVGelement.SVGelement__24 {
     transform-origin: bottom;
     transform: scale3d(1, 0, 1);
 
     .plotSmoothScrollInView & {
         animation-name: entryAnimation--3;
-        animation-duration: 1.5s; 
+        animation-duration: 1s; 
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
         animation-delay: .2s;

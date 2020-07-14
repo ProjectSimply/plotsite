@@ -68,23 +68,28 @@
             &.pricingSection__item--border {
                 border: 1px solid var(--black);
                 border-top: none;
-                padding: 1rem;
+                padding: 1.2rem;
     
+    
+                &:nth-child(even) {
+                    @include medium {
+                        border: 1px solid var(--black);
+                        border-left: none;
+                        border-top: none;
+                    }
+                }
+                
                 &:nth-child(1),
                 &:nth-child(2) {
                     border-top: 1px solid var(--black);
-                }
-    
-                &:nth-child(even) {
-                    border-left: none;
                 }
             }
 
             p {
                 
                 
-                font-size: 1.4rem;
-                padding-left: 40px;
+                font-size: 1rem;
+                padding-left: 2.2rem;
                 margin-bottom: 0;
             }
 

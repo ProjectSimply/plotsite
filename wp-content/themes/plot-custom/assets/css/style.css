@@ -1193,61 +1193,90 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-iteration-count: infinite;
 }
 
-.plotSmoothScrollInView .SVGelement.SVGelement__23,
-.plotSmoothScrollInView .SVGelement.SVGelement__25 {
+.plotSmoothScrollInView .SVGelement.SVGelement__23 {
   animation-name: loadedAnimation--9;
   animation-duration: 3s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-iteration-count: infinite;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(1),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(1) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(1) {
   animation-delay: 3.5s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(2),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(2) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(2) {
   animation-delay: 3.8s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(3),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(3) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(3) {
   animation-delay: 4.1s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(4),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(4) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(4) {
   animation-delay: 4.4s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(5),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(5) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(5) {
   animation-delay: 4.7s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(6),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(6) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(6) {
   animation-delay: 5s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(7),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(7) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(7) {
   animation-delay: 5.3s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(8),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(8) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(8) {
   animation-delay: 5.6s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(9),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(9) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(9) {
   animation-delay: 5.9s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(10),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(10) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(10) {
   animation-delay: 6.2s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(11),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(11) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(11) {
   animation-delay: 6.5s;
 }
-.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(12),
-.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(12) {
+.plotSmoothScrollInView .SVGelement.SVGelement__23:nth-child(12) {
   animation-delay: 6.8s;
+}
+
+.plotSmoothScrollInView .SVGelement.SVGelement__25 {
+  transform: scale3d(0, 0, 1);
+  animation: growIn 0.2s ease-out 1s;
+  animation-fill-mode: forwards;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(1) {
+  animation-delay: 0.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(2) {
+  animation-delay: 1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(3) {
+  animation-delay: 1.1s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(4) {
+  animation-delay: 1.2s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(5) {
+  animation-delay: 1.3s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(6) {
+  animation-delay: 1.4s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(7) {
+  animation-delay: 1.5s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(8) {
+  animation-delay: 1.6s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(9) {
+  animation-delay: 1.7s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(10) {
+  animation-delay: 1.8s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(11) {
+  animation-delay: 1.9s;
+}
+.plotSmoothScrollInView .SVGelement.SVGelement__25:nth-child(12) {
+  animation-delay: 2s;
 }
 
 .SVGelement.SVGelement__24 {
@@ -1256,7 +1285,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
 }
 .plotSmoothScrollInView .SVGelement.SVGelement__24 {
   animation-name: entryAnimation--3;
-  animation-duration: 1.5s;
+  animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 0.2s;
@@ -4713,7 +4742,7 @@ a {
   border-width: var(--borderWidth) 0;
   border-style: solid;
   border-color: #B8B8B8;
-  box-shadow: 0 0 150px -20px #000;
+  box-shadow: 0 0 150px -20px rgba(0, 0, 0, 0.65);
 }
 .mobile3D .glass-reflection {
   position: absolute;
@@ -4876,7 +4905,7 @@ body.home .homeBanner__asset.homeBanner__asset--2 path {
   transition: fill 1s ease-out;
 }
 body.home .mobile3D__screen:after {
-  background-image: url(../img/mobile--africaoye.jpg);
+  background-image: url(../img/heros/africa-oye/Screen.jpg);
 }
 body.home[data-current-theme] .homeBanner__asset.homeBanner__asset--1 path, body.home[data-current-theme] .homeBanner__asset.homeBanner__asset--2 path {
   fill: rgba(255, 255, 255, 0.1);
@@ -4889,18 +4918,20 @@ body.home .mobile3D__side--right:before {
 }
 body.home .mobile3D__side--right:after,
 body.home .mobile3D__side--left:after {
-  background-image: url(../img/mobile--africaoye--side.jpg);
+  background-image: url(../img/heros/africa-oye/Right.jpg);
 }
 
-body.home[data-previous-theme=home] .homeBanner:before {
+body.home[data-previous-theme=home] .homeBanner:before, body.home[data-previous-theme=africaoye] .homeBanner:before {
   background-color: white;
 }
-body.home[data-previous-theme=home] .mobile3D__screen:before {
-  background-image: url(../img/mobile--africaoye.jpg);
+body.home[data-previous-theme=home] .mobile3D__screen:before, body.home[data-previous-theme=africaoye] .mobile3D__screen:before {
+  background-image: url(../img/heros/africa-oye/Screen.jpg);
 }
-body.home[data-previous-theme=home] .mobile3D__side--right:before,
-body.home[data-previous-theme=home] .mobile3D__side--left:before {
-  background-image: url(../img/mobile--africaoye--side.jpg);
+body.home[data-previous-theme=home] .mobile3D__side--right:before, body.home[data-previous-theme=africaoye] .mobile3D__side--right:before {
+  background-image: url(../img/heros/africa-oye/Right.jpg);
+}
+body.home[data-previous-theme=home] .mobile3D__side--left:before, body.home[data-previous-theme=africaoye] .mobile3D__side--left:before {
+  background-image: url(../img/heros/africa-oye/Left.jpg);
 }
 
 body.home[data-current-theme=arts] .homeBanner:after {
@@ -4916,22 +4947,26 @@ body.home[data-current-theme=arts] .menuToggle--burger path {
   fill: white;
 }
 body.home[data-current-theme=arts] .mobile3D__screen:after {
-  background-image: url(../img/mobile--arts.jpg);
+  background-image: url(../img/heros/arts-and-kraft/Screen.jpg);
 }
-body.home[data-current-theme=arts] .mobile3D__side--right:after,
+body.home[data-current-theme=arts] .mobile3D__side--right:after {
+  background-image: url(../img/heros/arts-and-kraft/Right.jpg);
+}
 body.home[data-current-theme=arts] .mobile3D__side--left:after {
-  background-image: url(../img/arts--side.jpg);
+  background-image: url(../img/heros/arts-and-kraft/Left.jpg);
 }
 
 body.home[data-previous-theme=arts] .homeBanner:before {
   background-color: #E90030;
 }
 body.home[data-previous-theme=arts] .mobile3D__screen:before {
-  background-image: url(../img/mobile--arts.jpg);
+  background-image: url(../img/heros/arts-and-kraft/Screen.jpg);
 }
-body.home[data-previous-theme=arts] .mobile3D__side--right:before,
+body.home[data-previous-theme=arts] .mobile3D__side--right:before {
+  background-image: url(../img/heros/arts-and-kraft/Right.jpg);
+}
 body.home[data-previous-theme=arts] .mobile3D__side--left:before {
-  background-image: url(../img/arts--side.jpg);
+  background-image: url(../img/heros/arts-and-kraft/Left.jpg);
 }
 
 body.home[data-current-theme=sounds] .homeBanner:after {
@@ -4950,22 +4985,26 @@ body.home[data-current-theme=sounds].smallScreen .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -25deg);
 }
 body.home[data-current-theme=sounds] .mobile3D__screen:after {
-  background-image: url(../img/mobile--sounds.jpg);
+  background-image: url(../img/heros/sound-ways/Screen.jpg);
 }
-body.home[data-current-theme=sounds] .mobile3D__side--right:after,
+body.home[data-current-theme=sounds] .mobile3D__side--right:after {
+  background-image: url(../img/heros/sound-ways/Right.jpg);
+}
 body.home[data-current-theme=sounds] .mobile3D__side--left:after {
-  background-image: url(../img/sounds--side.jpg);
+  background-image: url(../img/heros/sound-ways/Left.jpg);
 }
 
 body.home[data-previous-theme=sounds] .homeBanner:before {
   background: linear-gradient(0deg, #841559 0%, #321735 100%);
 }
 body.home[data-previous-theme=sounds] .mobile3D__screen:before {
-  background-image: url(../img/mobile--sounds.jpg);
+  background-image: url(../img/heros/sound-ways/Screen.jpg);
 }
-body.home[data-previous-theme=sounds] .mobile3D__side--right:before,
+body.home[data-previous-theme=sounds] .mobile3D__side--right:before {
+  background-image: url(../img/heros/sound-ways/Right.jpg);
+}
 body.home[data-previous-theme=sounds] .mobile3D__side--left:before {
-  background-image: url(../img/sounds--side.jpg);
+  background-image: url(../img/heros/sound-ways/Left.jpg);
 }
 
 body.home[data-current-theme=africaoye] .homeBanner:after {
@@ -4974,23 +5013,9 @@ body.home[data-current-theme=africaoye] .homeBanner:after {
 body.home[data-current-theme=africaoye].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 45deg);
 }
-body.home[data-current-theme=africaoye] .mobile3D__screen:after {
-  background-image: url(../img/mobile--africaoye.jpg);
-}
-body.home[data-current-theme=africaoye] .mobile3D__side--right:after,
-body.home[data-current-theme=africaoye] .mobile3D__side--left:after {
-  background-image: url(../img/mobile--africaoye--side.jpg);
-}
 
 body.home[data-previous-theme=africaoye] .homeBanner:before {
   background-color: #FFBD00;
-}
-body.home[data-previous-theme=africaoye] .mobile3D__screen:before {
-  background-image: url(../img/mobile--africaoye.jpg);
-}
-body.home[data-previous-theme=africaoye] .mobile3D__side--right:before,
-body.home[data-previous-theme=africaoye] .mobile3D__side--left:before {
-  background-image: url(../img/mobile--africaoye--side.jpg);
 }
 
 body.home[data-current-theme=casa] .homeBanner:after {
@@ -5009,26 +5034,26 @@ body.home[data-current-theme=casa].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
 }
 body.home[data-current-theme=casa] .mobile3D__screen:after {
-  background-image: url(../img/mobile--casa.jpg);
+  background-image: url(../img/heros/mi-casa/Screen.jpg);
 }
 body.home[data-current-theme=casa] .mobile3D__side--right:after {
-  background-image: url(../img/casa--rightSide.jpg);
+  background-image: url(../img/heros/mi-casa/Right.jpg);
 }
 body.home[data-current-theme=casa] .mobile3D__side--left:after {
-  background-image: url(../img/casa--leftSide.jpg);
+  background-image: url(../img/heros/mi-casa/Left.jpg);
 }
 
 body.home[data-previous-theme=casa] .homeBanner:before {
   background-color: #F3A238;
 }
 body.home[data-previous-theme=casa] .mobile3D__screen:before {
-  background-image: url(../img/mobile--casa.jpg);
+  background-image: url(../img/heros/mi-casa/Screen.jpg);
 }
-body.home[data-previous-theme=casa] .mobile3D__side--right::before {
-  background-image: url(../img/casa--rightSide.jpg);
+body.home[data-previous-theme=casa] .mobile3D__side--right:before {
+  background-image: url(../img/heros/mi-casa/Right.jpg);
 }
 body.home[data-previous-theme=casa] .mobile3D__side--left:before {
-  background-image: url(../img/casa--leftSide.jpg);
+  background-image: url(../img/heros/mi-casa/Left.jpg);
 }
 
 body.home[data-current-theme=future] .homeBanner:after {
@@ -5047,22 +5072,26 @@ body.home[data-current-theme=future].smallScreen .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -25deg);
 }
 body.home[data-current-theme=future] .mobile3D__screen:after {
-  background-image: url(../img/mobile--future.jpg);
+  background-image: url(../img/heros/back-in-the-future/Screen.jpg);
 }
-body.home[data-current-theme=future] .mobile3D__side--right:after,
+body.home[data-current-theme=future] .mobile3D__side--right:after {
+  background-image: url(../img/heros/back-in-the-future/Right.jpg);
+}
 body.home[data-current-theme=future] .mobile3D__side--left:after {
-  background-image: url(../img/future--side.jpg);
+  background-image: url(../img/heros/back-in-the-future/Right.jpg);
 }
 
 body.home[data-previous-theme=future] .homeBanner:before {
   background-color: #FC7F3A;
 }
 body.home[data-previous-theme=future] .mobile3D__screen:before {
-  background-image: url(../img/mobile--future.jpg);
+  background-image: url(../img/heros/back-in-the-future/Screen.jpg);
 }
-body.home[data-previous-theme=future] .mobile3D__side--right:before,
+body.home[data-previous-theme=future] .mobile3D__side--right:before {
+  background-image: url(../img/heros/back-in-the-future/Right.jpg);
+}
 body.home[data-previous-theme=future] .mobile3D__side--left:before {
-  background-image: url(../img/future--side.jpg);
+  background-image: url(../img/heros/back-in-the-future/Right.jpg);
 }
 
 body.home[data-current-theme=rhythm] .homeBanner:after {
@@ -5072,26 +5101,26 @@ body.home[data-current-theme=rhythm].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
 }
 body.home[data-current-theme=rhythm] .mobile3D__screen:after {
-  background-image: url(../img/mobile--rhythm.jpg);
+  background-image: url(../img/heros/rhythm-and-waves/Screen.jpg);
 }
-body.home[data-current-theme=rhythm] .mobile3D__side--right::after {
-  background-image: url(../img/rhythm--rightSide.jpg);
+body.home[data-current-theme=rhythm] .mobile3D__side--right:after {
+  background-image: url(../img/heros/rhythm-and-waves/Right.jpg);
 }
 body.home[data-current-theme=rhythm] .mobile3D__side--left:after {
-  background-image: url(../img/rhythm--leftSide.jpg);
+  background-image: url(../img/heros/rhythm-and-waves/Left.jpg);
 }
 
 body.home[data-previous-theme=rhythm] .homeBanner:before {
   background-color: #FFF035;
 }
 body.home[data-previous-theme=rhythm] .mobile3D__screen:before {
-  background-image: url(../img/mobile--rhythm.jpg);
+  background-image: url(../img/heros/rhythm-and-waves/Screen.jpg);
 }
-body.home[data-previous-theme=rhythm] .mobile3D__side--right::before {
-  background-image: url(../img/rhythm--rightSide.jpg);
+body.home[data-previous-theme=rhythm] .mobile3D__side--right:before {
+  background-image: url(../img/heros/rhythm-and-waves/Right.jpg);
 }
 body.home[data-previous-theme=rhythm] .mobile3D__side--left:before {
-  background-image: url(../img/rhythm--leftSide.jpg);
+  background-image: url(../img/heros/rhythm-and-waves/Left.jpg);
 }
 
 body.home[data-current-theme=highest] .homeBanner:after {
@@ -5110,22 +5139,26 @@ body.home[data-current-theme=highest].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 45deg);
 }
 body.home[data-current-theme=highest] .mobile3D__screen:after {
-  background-image: url(../img/mobile--highest.jpg);
+  background-image: url(../img/heros/highest-point/Screen.jpg);
 }
-body.home[data-current-theme=highest] .mobile3D__side--right:after,
+body.home[data-current-theme=highest] .mobile3D__side--right:after {
+  background-image: url(../img/heros/highest-point/Right.jpg);
+}
 body.home[data-current-theme=highest] .mobile3D__side--left:after {
-  background-image: url(../img/highest--side.jpg);
+  background-image: url(../img/heros/highest-point/Left.jpg);
 }
 
 body.home[data-previous-theme=highest] .homeBanner:before {
   background-color: #FD9898;
 }
 body.home[data-previous-theme=highest] .mobile3D__screen:before {
-  background-image: url(../img/mobile--highest.jpg);
+  background-image: url(../img/heros/highest-point/Screen.jpg);
 }
-body.home[data-previous-theme=highest] .mobile3D__side--right:before,
+body.home[data-previous-theme=highest] .mobile3D__side--right:before {
+  background-image: url(../img/heros/highest-point/Right.jpg);
+}
 body.home[data-previous-theme=highest] .mobile3D__side--left:before {
-  background-image: url(../img/highest--side.jpg);
+  background-image: url(../img/heros/highest-point/Left.jpg);
 }
 
 body.home[data-current-theme=box] .homeBanner:after {
@@ -5144,22 +5177,26 @@ body.home[data-current-theme=box].smallScreen .mobile3D__phone {
   transform: rotate3d(3, 5, 0, 25deg);
 }
 body.home[data-current-theme=box] .mobile3D__screen:after {
-  background-image: url(../img/mobile--box.jpg);
+  background-image: url(../img/heros/the-box/Screen.jpg);
 }
-body.home[data-current-theme=box] .mobile3D__side--right:after,
+body.home[data-current-theme=box] .mobile3D__side--right:after {
+  background-image: url(../img/heros/the-box/Right.jpg);
+}
 body.home[data-current-theme=box] .mobile3D__side--left:after {
-  background-image: url(../img/box--side.jpg);
+  background-image: url(../img/heros/the-box/Left.jpg);
 }
 
 body.home[data-previous-theme=box] .homeBanner:before {
   background-color: #1F0087;
 }
 body.home[data-previous-theme=box] .mobile3D__screen:before {
-  background-image: url(../img/mobile--box.jpg);
+  background-image: url(../img/heros/the-box/Screen.jpg);
 }
-body.home[data-previous-theme=box] .mobile3D__side--right:before,
+body.home[data-previous-theme=box] .mobile3D__side--right:before {
+  background-image: url(../img/heros/the-box/Right.jpg);
+}
 body.home[data-previous-theme=box] .mobile3D__side--left:before {
-  background-image: url(../img/box--side.jpg);
+  background-image: url(../img/heros/the-box/Left.jpg);
 }
 
 body.home[data-current-theme=inter] .homeBanner:after {
@@ -5179,26 +5216,26 @@ body.home[data-current-theme=inter].smallScreen .mobile3D__phone {
   transform: rotate3d(-3, 5, 0, -25deg);
 }
 body.home[data-current-theme=inter] .mobile3D__screen:after {
-  background-image: url(../img/mobile--inter.jpg);
+  background-image: url(../img/heros/gas-giant/Screen.jpg);
 }
 body.home[data-current-theme=inter] .mobile3D__side--right:after {
-  background-image: url(../img/inter--rightSide.jpg);
+  background-image: url(../img/heros/gas-giant/Right.jpg);
 }
 body.home[data-current-theme=inter] .mobile3D__side--left:after {
-  background-image: url(../img/inter--leftSide.jpg);
+  background-image: url(../img/heros/gas-giant/Right.jpg);
 }
 
 body.home[data-previous-theme=inter] .homeBanner:before {
   background-color: #171E43;
 }
 body.home[data-previous-theme=inter] .mobile3D__screen:before {
-  background-image: url(../img/mobile--inter.jpg);
+  background-image: url(../img/heros/gas-giant/Screen.jpg);
 }
 body.home[data-previous-theme=inter] .mobile3D__side--right:before {
-  background-image: url(../img/inter--rightSide.jpg);
+  background-image: url(../img/heros/gas-giant/Right.jpg);
 }
 body.home[data-previous-theme=inter] .mobile3D__side--left:before {
-  background-image: url(../img/inter--leftSide.jpg);
+  background-image: url(../img/heros/gas-giant/Right.jpg);
 }
 
 body.home[data-current-theme=halftone] .homeBanner:after {
@@ -5217,26 +5254,26 @@ body.home[data-current-theme=halftone].smallScreen .mobile3D__phone {
   transform: rotate3d(1, 5, 0, 25deg);
 }
 body.home[data-current-theme=halftone] .mobile3D__screen:after {
-  background-image: url(../img/mobile--halftone.jpg);
+  background-image: url(../img/heros/halftone-point/Screen.jpg);
 }
 body.home[data-current-theme=halftone] .mobile3D__side--right:after {
-  background-image: url(../img/halftone--rightSide.jpg);
+  background-image: url(../img/heros/halftone-point/Right.jpg);
 }
 body.home[data-current-theme=halftone] .mobile3D__side--left:after {
-  background-image: url(../img/halftone--leftSide.jpg);
+  background-image: url(../img/heros/halftone-point/Right.jpg);
 }
 
 body.home[data-previous-theme=halftone] .homeBanner:before {
   background: linear-gradient(0deg, #6f596a 0%, #0078ca 100%);
 }
 body.home[data-previous-theme=halftone] .mobile3D__screen:before {
-  background-image: url(../img/mobile--halftone.jpg);
+  background-image: url(../img/heros/halftone-point/Screen.jpg);
 }
 body.home[data-previous-theme=halftone] .mobile3D__side--right:before {
-  background-image: url(../img/halftone--rightSide.jpg);
+  background-image: url(../img/heros/halftone-point/Right.jpg);
 }
 body.home[data-previous-theme=halftone] .mobile3D__side--left:before {
-  background-image: url(../img/halftone--leftSide.jpg);
+  background-image: url(../img/heros/halftone-point/Right.jpg);
 }
 
 body.home[data-current-theme=deep] .homeBanner:after {
@@ -5255,26 +5292,26 @@ body.home[data-current-theme=deep].smallScreen .mobile3D__phone {
   transform: rotate3d(-1, 3, 0, -35deg);
 }
 body.home[data-current-theme=deep] .mobile3D__screen:after {
-  background-image: url(../img/mobile--deep.jpg);
+  background-image: url(../img/heros/deep-state/Screen.jpg);
 }
 body.home[data-current-theme=deep] .mobile3D__side--right:after {
-  background-image: url(../img/deep--rightSide.jpg);
+  background-image: url(../img/heros/deep-state/Right.jpg);
 }
 body.home[data-current-theme=deep] .mobile3D__side--left:after {
-  background-image: url(../img/deep--leftSide.jpg);
+  background-image: url(../img/heros/deep-state/Left.jpg);
 }
 
 body.home[data-previous-theme=deep] .homeBanner:before {
   background: #003046;
 }
 body.home[data-previous-theme=deep] .mobile3D__screen:before {
-  background-image: url(../img/mobile--deep.jpg);
+  background-image: url(../img/heros/deep-state/Screen.jpg);
 }
 body.home[data-previous-theme=deep] .mobile3D__side--right:before {
-  background-image: url(../img/deep--rightSide.jpg);
+  background-image: url(../img/heros/deep-state/Right.jpg);
 }
 body.home[data-previous-theme=deep] .mobile3D__side--left:before {
-  background-image: url(../img/deep--leftSide.jpg);
+  background-image: url(../img/heros/deep-state/Left.jpg);
 }
 
 .pricingSection__mainFeatures {
@@ -5340,17 +5377,21 @@ ul.pricingSection__fullList {
 .pricingSection__item.pricingSection__item--border {
   border: 1px solid var(--black);
   border-top: none;
-  padding: 1rem;
+  padding: 1.2rem;
+}
+@media screen and (min-width: 640px) {
+  .pricingSection__item.pricingSection__item--border:nth-child(even) {
+    border: 1px solid var(--black);
+    border-left: none;
+    border-top: none;
+  }
 }
 .pricingSection__item.pricingSection__item--border:nth-child(1), .pricingSection__item.pricingSection__item--border:nth-child(2) {
   border-top: 1px solid var(--black);
 }
-.pricingSection__item.pricingSection__item--border:nth-child(even) {
-  border-left: none;
-}
 .pricingSection__item p {
-  font-size: 1.4rem;
-  padding-left: 40px;
+  font-size: 1rem;
+  padding-left: 2.2rem;
   margin-bottom: 0;
 }
 .pricingSection__item span {
@@ -5491,21 +5532,6 @@ ul.pricingSection__fullList {
   padding: 0.25rem 0;
   transition: color 0.7s ease-in;
 }
-.page-features .siteMainHeader__logo:hover path,
-.page-pricing .siteMainHeader__logo:hover path {
-  fill: var(--purple);
-}
-.page-features .mainMenu a:hover,
-.page-features .mainMenu a:focus,
-.page-pricing .mainMenu a:hover,
-.page-pricing .mainMenu a:focus {
-  color: var(--purple);
-}
-.page-features .siteMainHeader__ctaLink:hover,
-.page-pricing .siteMainHeader__ctaLink:hover {
-  background-color: var(--purple);
-}
-
 .page-gallery .siteMainHeader__logo:hover path {
   fill: white;
 }
@@ -5620,8 +5646,8 @@ ul.pricingSection__fullList {
 }
 @media screen and (min-width: 1024px) {
   .homeBanner {
-    min-height: 0;
-    height: 100vh;
+    min-height: 700px;
+    height: calc(100 * var(--vh));
     max-height: 920px;
   }
 }
