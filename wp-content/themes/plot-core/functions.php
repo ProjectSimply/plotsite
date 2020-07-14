@@ -6,6 +6,7 @@ $psIncludes = array(
   'includes/plot-site.php',
   'includes/admin.php',
   'includes/db-find-and-replace.php',
+  'includes/acf/main.php',
   'includes/helpers.php'
 );
 
