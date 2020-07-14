@@ -507,6 +507,114 @@ img {
   animation-timing-function: linear;
 }
 
+.SVGelement--imageIcon {
+  display: none;
+}
+
+body .plotSmoothScrollInView .SVGelement--bob {
+  animation: bobby 3s ease-out infinite;
+}
+body .plotSmoothScrollInView .SVGelement--video {
+  transform: translateX(300%);
+  animation: video 12s ease-out infinite;
+}
+body .plotSmoothScrollInView .SVGelement--fullImage {
+  animation: bigImage 12s ease-out infinite;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block {
+  animation: blockLinksDrop 12s ease-out infinite;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(1) {
+  animation-delay: 0.15s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(2) {
+  animation-delay: 0.12s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(3) {
+  animation-delay: 0.09s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(4) {
+  animation-delay: 0.06s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(5) {
+  animation-delay: 0.03s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(6) {
+  animation-delay: 0s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(7) {
+  animation-delay: -0.03s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(8) {
+  animation-delay: -0.06s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(9) {
+  animation-delay: -0.09s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(10) {
+  animation-delay: -0.12s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(11) {
+  animation-delay: -0.15s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(12) {
+  animation-delay: -0.18s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(13) {
+  animation-delay: -0.21s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(14) {
+  animation-delay: -0.24s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(15) {
+  animation-delay: -0.27s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(16) {
+  animation-delay: -0.3s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(17) {
+  animation-delay: -0.33s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(18) {
+  animation-delay: -0.36s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(19) {
+  animation-delay: -0.39s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(20) {
+  animation-delay: -0.42s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(21) {
+  animation-delay: -0.45s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(22) {
+  animation-delay: -0.48s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(23) {
+  animation-delay: -0.51s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(24) {
+  animation-delay: -0.54s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(25) {
+  animation-delay: -0.57s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(26) {
+  animation-delay: -0.6s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(27) {
+  animation-delay: -0.63s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(28) {
+  animation-delay: -0.66s;
+}
+body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(29) {
+  animation-delay: -0.69s;
+}
+body .plotSmoothScrollInView .SVGelement--text {
+  animation: textReveal 12s ease-out infinite;
+}
+
 body .plotSmoothScrollInView .SVGelement--speed2 {
   animation-duration: 7s;
 }
@@ -1201,6 +1309,119 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-delay: 3.6s, 6.1s;
 }
 
+@keyframes video {
+  0% {
+    transform: translateX(300%);
+  }
+  42% {
+    transform: translateX(300%);
+  }
+  50% {
+    transform: translateX(0);
+  }
+  58% {
+    transform: translateX(0);
+  }
+  67% {
+    transform: translateX(300%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+@keyframes textReveal {
+  0% {
+    transform: scale3d(0, 0, 1);
+  }
+  30% {
+    transform: scale3d(0, 0, 1);
+  }
+  33% {
+    transform: scale3d(1, 1, 1);
+  }
+  42% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-300%);
+  }
+  58% {
+    transform: translateX(-300%);
+  }
+  67% {
+    transform: translateX(0);
+  }
+  72% {
+    transform: scale3d(1, 1, 1);
+  }
+  77% {
+    transform: scale3d(0, 0, 1);
+  }
+  100% {
+    transform: scale3d(0, 0, 1);
+  }
+}
+@keyframes blockLinksDrop {
+  0% {
+    transform: translateY(0);
+  }
+  8% {
+    transform: translateY(0);
+  }
+  17% {
+    transform: translateY(41%);
+  }
+  92% {
+    transform: translateY(41%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+@keyframes bigImage {
+  0% {
+    transform: scale3d(0, 0, 1);
+  }
+  11% {
+    transform: scale3d(0, 0, 1);
+  }
+  17% {
+    transform: scale3d(1, 1, 1);
+  }
+  25% {
+    transform: scale3d(1, 1, 1);
+  }
+  33% {
+    transform: scale3d(0.5, 1, 1) translateX(-50%);
+  }
+  42% {
+    transform: scale3d(0.5, 1, 1) translateX(-50%);
+  }
+  50% {
+    transform: scale3d(0.5, 1, 1) translateX(-350%);
+  }
+  58% {
+    transform: scale3d(0.5, 1, 1) translateX(-350%);
+  }
+  67% {
+    transform: scale3d(0.5, 1, 1) translateX(-50%);
+  }
+  75% {
+    transform: scale3d(0.5, 1, 1) translateX(-50%);
+  }
+  83% {
+    transform: scale3d(1, 1, 1);
+  }
+  91% {
+    transform: scale3d(1, 1, 1);
+  }
+  93% {
+    transform: scale3d(0, 0, 1);
+  }
+  100% {
+    transform: scale3d(0, 0, 1);
+  }
+}
 @keyframes hueSpin {
   0% {
     fill: #7DEDBB;
@@ -1471,6 +1692,23 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   }
   80% {
     fill: #EAB8D1;
+  }
+}
+@keyframes bobby {
+  0% {
+    transform: translate3d(0, 0, 0) rotate3d(0, 0, 1, 0deg);
+  }
+  25% {
+    transform: translate3d(0, 2px, 0);
+  }
+  50% {
+    transform: translate3d(0, 0, 0);
+  }
+  75% {
+    transform: translate3d(0, -2px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
   }
 }
 @keyframes upAndDown {

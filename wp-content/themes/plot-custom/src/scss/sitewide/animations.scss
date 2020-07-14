@@ -59,6 +59,38 @@
 }
 
 
+.SVGelement--imageIcon {
+    display: none;
+}
+
+body .plotSmoothScrollInView {
+
+    .SVGelement--bob {
+        animation: bobby 3s ease-out infinite;
+    }
+
+    .SVGelement--video {
+        transform: translateX(300%);
+        animation: video 12s ease-out infinite;
+    }
+    .SVGelement--fullImage {
+        animation: bigImage 12s ease-out infinite;
+    }
+    .SVGelement--blockLinks .block {
+        animation: blockLinksDrop 12s ease-out infinite;
+        $b: 1;
+        @while $b < 30 {
+            &:nth-of-type(#{$b}) {
+                animation-delay: #{.18 - $b * .03s};
+            }
+            $b : $b + 1;
+        }
+    }
+    .SVGelement--text {
+        animation: textReveal 12s ease-out infinite; 
+    }
+}
+
 body .plotSmoothScrollInView {
     .SVGelement--speed2 {
         animation-duration: 7s;
@@ -485,6 +517,147 @@ body .plotSmoothScrollInView {
     }
 }
 
+@keyframes video {
+    0% {
+        transform: translateX(300%);
+    }
+
+    42% {
+        transform: translateX(300%);
+    }
+
+    50% {
+        transform: translateX(0);
+    }
+
+    58% {
+        transform: translateX(0);
+    }
+
+    67% {
+        transform: translateX(300%);
+    }
+
+    100% {
+        transform: translateX(300%);
+    }
+
+}
+
+@keyframes textReveal {
+    0% {
+        transform: scale3d(0,0,1); 
+    }
+    30% {
+         transform: scale3d(0,0,1);
+    }
+    33% {
+         transform: scale3d(1,1,1);
+    }
+
+    42% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(-300%);
+    }
+
+    58% {
+        transform: translateX(-300%);
+    }
+
+    67% {
+        transform: translateX(0);
+    }
+
+    72% {
+        transform: scale3d(1,1,1);
+    }
+
+    77% {
+        transform: scale3d(0,0,1);
+    }
+
+    100% {
+        transform: scale3d(0,0,1);
+    }
+}
+
+@keyframes blockLinksDrop {
+    0% {
+        transform: translateY(0);
+    }
+    8% {
+        transform: translateY(0);
+    }
+    17% {
+        transform: translateY(41%);
+    }
+    92% {
+        transform: translateY(41%);
+    }
+
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bigImage {
+
+    0% {
+        transform: scale3d(0,0,1);
+    }
+    11% {
+        transform: scale3d(0,0,1);
+    }
+    17% {
+        transform: scale3d(1,1,1);
+    }
+    25% {
+        transform: scale3d(1,1,1);
+    }
+    33% {
+        transform: scale3d(0.5,1,1) translateX(-50%);
+    }
+    42% {
+        transform: scale3d(0.5,1,1) translateX(-50%);
+    }
+
+    50% {
+        transform: scale3d(0.5,1,1) translateX(-350%);
+    }
+
+    58% {
+        transform: scale3d(0.5,1,1) translateX(-350%);
+    }
+
+    67% {
+        transform: scale3d(0.5,1,1) translateX(-50%);
+    }
+
+    75% {
+        transform: scale3d(0.5,1,1) translateX(-50%);
+    }
+
+    83% {
+        transform: scale3d(1,1,1);
+    }
+
+    91% {
+        transform: scale3d(1,1,1);
+    }
+
+    93% {
+        transform: scale3d(0,0,1);
+    }
+
+    100% {
+        transform: scale3d(0,0,1);
+    }
+
+}
+
 
 @keyframes hueSpin {
     0% { 
@@ -824,6 +997,27 @@ body .plotSmoothScrollInView {
     100% {
     }
 }
+
+@keyframes bobby {
+    0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
+
+    25% {
+        transform: translate3d(0,2px,0);
+    }
+
+    50% {
+        transform: translate3d(0,0,0);
+    }
+
+    75% {
+        transform: translate3d(0,-2px,0);
+    }
+
+    100% {
+        transform: translate3d(0,-0,0);
+    }
+}
+
 
 @keyframes upAndDown {
     0% { transform: translate3d(0,0,0) rotate3d(0,0,1,0deg) }
