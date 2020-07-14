@@ -521,7 +521,7 @@ body .plotSmoothScrollInView {
         animation-duration: 1s, 4s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
-        animation-iteration-count: 1, infinite;
+        animation-iteration-count: 1;
 
         $i: 1;
         $speed: .3s;

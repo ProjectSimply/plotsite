@@ -1299,7 +1299,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-duration: 1s, 4s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-iteration-count: 1, infinite;
+  animation-iteration-count: 1;
 }
 .plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(1) {
   animation-delay: 0.3s, 2.8s;
