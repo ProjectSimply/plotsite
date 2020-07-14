@@ -2824,7 +2824,6 @@ a {
 
 .carousel__imageWrap {
   display: block;
-  height: 60vw;
   position: absolute;
   z-index: 1;
   width: 100%;
@@ -5306,8 +5305,6 @@ ul.pricingSection__fullList {
 .carouselSection__slider {
   cursor: pointer;
   position: relative;
-  height: 61vw;
-  max-height: 620px;
 }
 .carouselSection__slider[data-plot-smooth-scroll-element] {
   opacity: 1;
@@ -5315,17 +5312,21 @@ ul.pricingSection__fullList {
 
 .carousel__slide {
   display: block;
-  width: 90%;
+  width: 60%;
   max-width: 900px;
   background-color: transparent;
+}
+@media screen and (min-width: 640px) {
+  .carousel__slide {
+    width: 90%;
+  }
 }
 
 .imageCarousel__image {
   display: block;
-  height: 100%;
-  width: calc(100% - 2rem);
+  height: auto;
+  width: 100%;
   margin: 0 auto;
-  object-fit: contain;
   max-width: none;
 }
 
