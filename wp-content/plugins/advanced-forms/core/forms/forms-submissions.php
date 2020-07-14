@@ -9,7 +9,7 @@
  *
  */
 class AF_Core_Forms_Submissions {
-  const COOKIE_NAME = 'af_submission';
+  const DEFAULT_COOKIE_NAME = 'af_submission';
 
   const OPTION_EXPIRY_MINUTES = 5;
   const OPTION_DATA_PREFIX = 'af_submission_data_';
@@ -18,6 +18,7 @@ class AF_Core_Forms_Submissions {
   function __construct() {
     add_action( 'init', array( $this, 'pre_form' ), 10, 0 );
     add_action( 'acf/validate_save_post', array( $this, 'validate' ), 10, 0 );
+    add_filter( 'acf/upload_prefilter', array( $this, 'intercept_upload_errors' ), 1000, 3 );
   }
   
   
@@ -136,7 +137,9 @@ class AF_Core_Forms_Submissions {
      *
      */
     if ( isset( $_FILES['acf'] ) ) {
+      $this->clear_upload_errors();
       acf_upload_files();
+      $this->handle_upload_errors();
     }
 
     // Generate submission from data
@@ -170,7 +173,17 @@ class AF_Core_Forms_Submissions {
     }
 
     // Retrieve the args used to display the form
-    $args = json_decode( base64_decode( $_POST['af_form_args'] ), true );
+    $encoded_args = $_POST['af_form_args'];
+    $args = json_decode( base64_decode( $encoded_args ), true );
+
+    // Verify nonce
+    $nonce = $_POST['af_form_nonce'];
+    $hashed_args = hash( 'sha256', $encoded_args );
+    $nonce_value = sprintf( 'af_submission_%s_%s', $form['key'], $hashed_args );
+    if ( ! wp_verify_nonce( $nonce, $nonce_value ) ) {
+      wp_die( 'Invalid form nonce' );
+      exit;
+    }
 
     // Retrieve all form fields and their values
     $fields = array();
@@ -202,15 +215,15 @@ class AF_Core_Forms_Submissions {
    *
    */
   private function get_submission() {
-    if ( ! isset( $_COOKIE[ self::COOKIE_NAME ] ) ) {
+    if ( ! isset( $_COOKIE[ $this->get_cookie_name() ] ) ) {
       return false;
     }
 
-    $key = $_COOKIE[ self::COOKIE_NAME ];
+    $key = $_COOKIE[ $this->get_cookie_name() ];
     $submission = get_option( self::OPTION_DATA_PREFIX . $key, false );
 
     $this->delete_submission( $key );
-    setcookie( self::COOKIE_NAME, '', time() - HOUR_IN_SECONDS );
+    setcookie( $this->get_cookie_name(), '', time() - HOUR_IN_SECONDS, '/' );
 
     return $submission;
   }
@@ -230,7 +243,7 @@ class AF_Core_Forms_Submissions {
     add_option( self::OPTION_DATA_PREFIX . $key, $submission );
     add_option( self::OPTION_EXPIRY_PREFIX . $key, $expiration_time );
 
-    setcookie( self::COOKIE_NAME, $key, $expiration_time );
+    setcookie( $this->get_cookie_name(), $key, $expiration_time, '/' );
   }
 
   /**
@@ -242,6 +255,10 @@ class AF_Core_Forms_Submissions {
   private function delete_submission( $key ) {
     delete_option( self::OPTION_DATA_PREFIX . $key );
     delete_option( self::OPTION_EXPIRY_PREFIX . $key );
+  }
+
+  private function get_cookie_name() {
+    return apply_filters( 'af/settings/cookie_name', self::DEFAULT_COOKIE_NAME );
   }
 
   /**
@@ -272,6 +289,63 @@ class AF_Core_Forms_Submissions {
       $submission_key = substr( $option_name, strlen( self::OPTION_EXPIRY_PREFIX ) );
       $this->delete_submission( $submission_key );
     }
+  }
+
+  /**
+   * ACF doesn't provide a simple way of catching upload errors when using the basic uploader.
+   * This function is hooked into the "acf/upload_prefilter" with a high priority.
+   * It will intercept all upload errors and save them together with field data.
+   *
+   * @since 1.7.0
+   *
+   */
+  function intercept_upload_errors( $errors, $file, $field ) {
+    if ( ! empty( $errors ) ) {
+      $this->upload_errors[ $field['key'] ] = array(
+        'field' => $field,
+        'messages' => $errors,
+      );
+    }
+
+    return $errors;
+  }
+
+  /**
+   * Removes all intercepted upload errors.
+   * Should be run before handling uploads using "acf_upload_files()".
+   *
+   * @since 1.7.0
+   *
+   */
+  private function clear_upload_errors() {
+    $this->upload_errors = array();
+  }
+
+  /**
+   * Checks if any upload errors have been caught and stops the submission.
+   * This is a very rudimentary way of handling upload errors but it's necessary as ACF can't handle errors when using the basic uploader.
+   * The errors checks should in the future be implemented client-side for a good user experience and this is mostly meant to be a fallback.
+   * 
+   *
+   * @since 1.7.0
+   *
+   */
+  private function handle_upload_errors() {
+    if ( empty( $this->upload_errors ) ) {
+      return;
+    }
+
+    $message = sprintf( '<h2>%s</h2>', __('Validation failed', 'acf') );
+    $message .= '<ul>';
+    foreach( $this->upload_errors as $error ) {
+      $field = $error['field'];
+      foreach ( $error['messages'] as $error_message ) {
+        $message .= '<li>' . sprintf( '%s: %s', $field['label'], $error_message ) . '</li>';
+      }
+    }
+    $message .= '</ul>';
+
+    wp_die( $message, __('Validation failed', 'acf') );
   }
 }
 
