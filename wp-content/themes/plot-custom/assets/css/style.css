@@ -519,6 +519,7 @@ body .plotSmoothScrollInView .SVGelement--video {
   animation: video 12s ease-out infinite;
 }
 body .plotSmoothScrollInView .SVGelement--fullImage {
+  transform: scale3d(0, 0, 1) translateX(0);
   animation: bigImage 12s ease-out infinite;
 }
 body .plotSmoothScrollInView .SVGelement--blockLinks .block {
@@ -612,6 +613,7 @@ body .plotSmoothScrollInView .SVGelement--blockLinks .block:nth-of-type(29) {
   animation-delay: -0.69s;
 }
 body .plotSmoothScrollInView .SVGelement--text {
+  transform: scale3d(0, 0, 1) translateX(0);
   animation: textReveal 12s ease-out infinite;
 }
 
@@ -857,6 +859,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .SVGelement.SVGelement__5 {
@@ -1343,34 +1346,34 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
 }
 @keyframes textReveal {
   0% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0);
   }
   30% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0);
   }
   33% {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   42% {
-    transform: translateX(0);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   50% {
-    transform: translateX(-300%);
+    transform: scale3d(1, 1, 1) translateX(-300%);
   }
   58% {
-    transform: translateX(-300%);
+    transform: scale3d(1, 1, 1) translateX(-300%);
   }
   67% {
-    transform: translateX(0);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   72% {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   77% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0);
   }
   100% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0);
   }
 }
 @keyframes blockLinksDrop {
@@ -1392,16 +1395,16 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
 }
 @keyframes bigImage {
   0% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0);
   }
   11% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0);
   }
   17% {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   25% {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(0.5, 1, 1) translateX(-50%);
   }
   33% {
     transform: scale3d(0.5, 1, 1) translateX(-50%);
@@ -1422,16 +1425,16 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
     transform: scale3d(0.5, 1, 1) translateX(-50%);
   }
   83% {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   91% {
-    transform: scale3d(1, 1, 1);
+    transform: scale3d(1, 1, 1) translateX(0);
   }
   93% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0%);
   }
   100% {
-    transform: scale3d(0, 0, 1);
+    transform: scale3d(0, 0, 1) translateX(0%);
   }
 }
 @keyframes hueSpin {
