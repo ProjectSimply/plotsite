@@ -20,6 +20,11 @@
     .carouselSection__slider {
         cursor: pointer;
         position: relative;
+        outline: none;
+
+        &:focus {
+            outline: none;
+        }
 
         &[data-plot-smooth-scroll-element] {
             opacity: 1;
@@ -28,7 +33,7 @@
 
         .carousel__slide {
             display: block;
-            width: 60%;  
+            width: 62%;  
             @include medium {
                 width: 90%;
             }

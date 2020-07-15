@@ -3125,6 +3125,10 @@ a {
   opacity: 0;
   transition: opacity 0.3s ease-in;
   transition-delay: 1s;
+  padding: 0.3rem;
+}
+.flickity-button:focus {
+  outline: none;
 }
 .flickity-button svg {
   width: 100%;
@@ -5556,6 +5560,10 @@ ul.pricingSection__fullList {
 .carouselSection__slider {
   cursor: pointer;
   position: relative;
+  outline: none;
+}
+.carouselSection__slider:focus {
+  outline: none;
 }
 .carouselSection__slider[data-plot-smooth-scroll-element] {
   opacity: 1;
@@ -5563,7 +5571,7 @@ ul.pricingSection__fullList {
 
 .carousel__slide {
   display: block;
-  width: 60%;
+  width: 62%;
   max-width: 900px;
   background-color: transparent;
 }
