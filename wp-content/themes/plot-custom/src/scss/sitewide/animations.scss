@@ -223,7 +223,7 @@ body .plotSmoothScrollInView {
         animation-duration: 1s; 
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
- 
+        animation-iteration-count: 1;
         animation-delay: calc(var(--i) * .5s); 
     }
 
@@ -236,6 +236,7 @@ body .plotSmoothScrollInView {
     .plotSmoothScrollInView & {
         animation-name: entryAnimation--3;
         animation-duration: 1s; 
+        animation-iteration-count: 1;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
             
@@ -264,6 +265,7 @@ body .plotSmoothScrollInView {
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
         animation-delay: .4s;
+        animation-iteration-count: 1;
     }
 }
 
@@ -276,6 +278,7 @@ body .plotSmoothScrollInView {
         animation-duration: .3s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
+        animation-iteration-count: 1;
     }
 }
 
@@ -310,6 +313,7 @@ body .plotSmoothScrollInView {
         animation-duration: 1s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
+        animation-iteration-count: 1;
     }
 }
 
@@ -510,6 +514,7 @@ body .plotSmoothScrollInView {
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
         animation-delay: .2s;
+        animation-iteration-count: 1;
     }
 }
 
@@ -521,7 +526,7 @@ body .plotSmoothScrollInView {
         animation-duration: 1s, 4s;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
-        animation-iteration-count: 1;
+        animation-iteration-count: 1, infinite;
 
         $i: 1;
         $speed: .3s;

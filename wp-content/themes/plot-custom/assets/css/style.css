@@ -856,6 +856,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
   animation-delay: calc(var(--i) * .5s);
 }
 
@@ -866,6 +867,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
 .plotSmoothScrollInView .SVGelement.SVGelement__6 {
   animation-name: entryAnimation--3;
   animation-duration: 1s;
+  animation-iteration-count: 1;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
 }
@@ -916,6 +918,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 0.4s;
+  animation-iteration-count: 1;
 }
 
 .SVGelement.SVGelement__8 {
@@ -926,6 +929,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-duration: 0.3s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .plotSmoothScrollInView .SVGelement__9 {
@@ -980,6 +984,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-duration: 1s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
+  animation-iteration-count: 1;
 }
 
 .plotSmoothScrollInView .SVGelement__11 {
@@ -1289,6 +1294,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
   animation-delay: 0.2s;
+  animation-iteration-count: 1;
 }
 
 .SVGelement.SVGelement__28 {
@@ -1299,7 +1305,7 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   animation-duration: 1s, 4s;
   animation-timing-function: ease-in-out;
   animation-fill-mode: forwards;
-  animation-iteration-count: 1;
+  animation-iteration-count: 1, infinite;
 }
 .plotSmoothScrollInView .SVGelement.SVGelement__28:nth-child(1) {
   animation-delay: 0.3s, 2.8s;
