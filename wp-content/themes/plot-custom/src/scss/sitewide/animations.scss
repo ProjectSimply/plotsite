@@ -127,6 +127,7 @@ body .plotSmoothScrollInView {
 .SVGelement.SVGelement__1,
 .SVGelement.SVGelement__3,
 .SVGelement.SVGelement__8,
+.SVGelement.SVGelement__6,
 .SVGelement.SVGelement__10,
 .SVGelement.SVGelement__18,
 .SVGelement.SVGelement__19,
@@ -239,19 +240,7 @@ body .plotSmoothScrollInView {
         animation-iteration-count: 1;
         animation-timing-function: ease-in-out;
         animation-fill-mode: forwards; 
-            
-        $i: 1;
-        $speed: .3s;
-        $delay: 1s;
-        @while $i <= 12 {
-        
-            &:nth-child(#{$i}) {
-                animation-delay: #{$i * $speed + $delay}; 
-            }
-    
-            $i: $i + 1;
-            
-        }
+        animation-delay: 1s;
     }
 }
 
