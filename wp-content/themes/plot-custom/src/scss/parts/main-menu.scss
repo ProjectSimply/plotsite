@@ -23,29 +23,7 @@
     }
 }
 
-.page-features,
-.page-pricing {
 
-}
-
-.page-gallery {
-
-    .siteMainHeader__logo:hover path {
-        fill: white;
-    }
-
-    .mainMenu {
-        a:hover,
-        a:focus {
-            color: white; 
-        }
-    }
-
-    .siteMainHeader__ctaLink:hover {
-        background-color: var(--pink);
-        // color: var(--black);
-    }
-}
 
 .menuToggle--burger path {
     transition: fill .7s ease-in;
