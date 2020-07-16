@@ -865,15 +865,16 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
 
 .SVGelement.SVGelement__5 {
   transform-origin: top;
-  transform: scale3d(1, 0, 1);
+  transform: scaleY(0);
+  opacity: 0;
 }
 .plotSmoothScrollInView .SVGelement.SVGelement__5 {
-  animation-name: entryAnimation--3;
-  animation-duration: 1s;
-  animation-timing-function: ease-in-out;
+  animation-name: entryAnimation--5;
+  animation-duration: 1.5s;
+  animation-timing-function: cubic-bezier(0.97, 0.35, 0.87, 0.67);
   animation-fill-mode: forwards;
   animation-iteration-count: 1;
-  animation-delay: calc(var(--i) * .5s);
+  animation-delay: calc((var(--i) * .5s) + .4s);
 }
 
 .SVGelement.SVGelement__6 {
@@ -1531,6 +1532,20 @@ body .plotSmoothScrollInView .SVGelement--speed7 {
   100% {
     opacity: 1;
     transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes entryAnimation--5 {
+  0% {
+    transform: scaleY(0);
+    opacity: 0;
+  }
+  1% {
+    transform: scaleY(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scaleY(1);
+    opacity: 1;
   }
 }
 @keyframes growIn {
@@ -5530,17 +5545,6 @@ ul.pricingSection__fullList {
   padding: 0.25rem 0;
   transition: color 0.7s ease-in;
 }
-.page-gallery .siteMainHeader__logo:hover path {
-  fill: white;
-}
-.page-gallery .mainMenu a:hover,
-.page-gallery .mainMenu a:focus {
-  color: white;
-}
-.page-gallery .siteMainHeader__ctaLink:hover {
-  background-color: var(--pink);
-}
-
 .menuToggle--burger path {
   transition: fill 0.7s ease-in;
 }

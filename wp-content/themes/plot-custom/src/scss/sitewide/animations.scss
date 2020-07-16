@@ -221,15 +221,16 @@ body .plotSmoothScrollInView {
 
 .SVGelement.SVGelement__5 {
     transform-origin: top;
-    transform: scale3d(1, 0, 1);
+    transform: scaleY(0);
+    opacity: 0;
 
     .plotSmoothScrollInView & {
-        animation-name: entryAnimation--3;
-        animation-duration: 1s; 
-        animation-timing-function: ease-in-out;
+        animation-name: entryAnimation--5;
+        animation-duration: 1.5s; 
+        animation-timing-function: cubic-bezier(.97, .35, .87, .67);
         animation-fill-mode: forwards; 
         animation-iteration-count: 1;
-        animation-delay: calc(var(--i) * .5s); 
+        animation-delay: calc((var(--i) * .5s) + .4s); 
     }
 
 }
@@ -782,6 +783,7 @@ body .plotSmoothScrollInView {
         transform: scale3d(1, 1, 1);
     }
 }
+
 @keyframes entryAnimation--4 {
     0% { 
         transform: translate3d(0, 20px, 0);
@@ -791,6 +793,23 @@ body .plotSmoothScrollInView {
     100% { 
         opacity: 1; 
         transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes entryAnimation--5 {
+    0% { 
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    1% {
+        transform: scaleY(0);
+        opacity: 1;
+    }
+
+    100% { 
+        transform: scaleY(1);
+        opacity: 1;
     }
 }
 
