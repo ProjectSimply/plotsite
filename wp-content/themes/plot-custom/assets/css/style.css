@@ -5352,6 +5352,7 @@ body.home[data-previous-theme=deep] .mobile3D__side--left:before {
   display: inline-block;
   padding: 1rem 0 1rem 1rem;
   margin-right: 1rem;
+  margin-left: -1rem;
   cursor: pointer;
 }
 .pricingSection__toggleList:after {
