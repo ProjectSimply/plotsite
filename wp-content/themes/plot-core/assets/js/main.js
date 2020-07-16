@@ -1,1 +1,1 @@
-console.error("Error: Cannot find module '/Users/michael/Documents/websites/plot/wp-content/themes/plot-core/src/js/main.js' from '/Users/michael/Documents/websites/plot/wp-content/themes/plot-core'");
+console.error("Error: Cannot find module '/Users/work/repo/plotsite/wp-content/themes/plot-core/src/js/main.js' from '/Users/work/repo/plotsite/wp-content/themes/plot-core'");

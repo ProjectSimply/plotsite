@@ -90,7 +90,7 @@
         //      currentPosition : 0                 (how far up the viewport this element currently is (between -1 and 1))
         //      callback        : 'function.name'   (the name of a function you can call when this moves within view)
         // }
-        Smooth.trackedElementsObserver = new IntersectionObserver(Smooth.trackVisibleElements, {rootMargin: '0px',threshold: 0.01})
+        Smooth.trackedElementsObserver = new IntersectionObserver(Smooth.trackVisibleElements, {rootMargin: '200px',threshold: 0.01})
         Smooth.setScrollElementData()
       }
 
