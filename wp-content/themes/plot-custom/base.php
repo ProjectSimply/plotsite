@@ -9,6 +9,8 @@
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
       gtag('config', 'UA-171294626-1');
+
+      gtag('config', 'AW-619032347');
     </script>
 
     <?php plotGetNotifications() ?>  
