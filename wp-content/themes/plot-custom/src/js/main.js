@@ -29,10 +29,12 @@
 			Carousels.init()
 			FAQs.init()
 			RollerText.init()
+			Main.fireConversionSnippetsIfOnThankYouPage()
 			// CustomMouse.init({
 			// 	'a' 				: 'anchorHover',
 			// 	'.altHoverTarget'	: 'altHover'
 			// })
+
 
 			//Pages
         	if(Plot.isPage('home'))
@@ -51,6 +53,12 @@
 			
 			Main.demoAjaxButton() 
 
+		    if (typeof(window.HubSpotConversations) != 'undefined') {
+			    Main.hubspot();
+		  	} else {
+		    	window.hsConversationsOnReady = [Main.hubspot];
+		  	}
+
 		},
 		
 		initalizeSmooth : () => {
@@ -62,6 +70,32 @@
 			}
 
         	Smooth.init(smoothSettings)
+
+        },
+
+        fireConversionSnippetsIfOnThankYouPage : () => {
+
+        	const urlParams = new URLSearchParams(window.location.search);
+			const trackingCode = urlParams.get('code');
+
+
+        	if(gtag && trackingCode) {
+        		console.log('ping',trackingCode)
+    		 	gtag('event', 'conversion', {'send_to': 'AW-619032347/' + trackingCode});
+    		 }
+
+        },
+
+        hubspot : () => {
+
+    		window.HubSpotConversations.on('conversationStarted', payload => {
+
+    		 if(gtag) {
+    		 	gtag('event', 'conversion', {'send_to': 'AW-619032347/LJToCJKfiNgBEJvelqcC'});
+    		 }
+			 
+
+			})
 
         },
 
