@@ -33,12 +33,12 @@
                         <p>A copy of the Festival Insights is on its way to your email. We've also set up a Facebook group exclusively for festival teams to discuss marketing and the digital festival experience</p>
                     <?php endif; ?>
 
-                    <?php if($trackingCode == 'y') : ?>
+                    <?php if($trackingCode == 'vN6DCP6bytkBEJvelqcC') : ?>
                         <p>Thanks so much for booking a demo with us! We're sure you'll love what you see. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
                     <?php endif; ?>
 
                     <?php if($trackingCode == 'NtglCPiD2NkBEJvelqcC') : ?>
-                        <p>Thanks so much for getting in touch. One of our festival experts will be in touch as soon as possible. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
+                        <p>Thanks so much for getting in touch. One of our festival experts will be in contact as soon as possible. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
                     <?php endif; ?>
 
                     <p><a class="button" href="https://www.facebook.com/groups/2085964488369733?__hstc=19795239.92265a0403bbdb087fe8b7d26217eaa7.1596204547466.1596204547466.1596204547466.1&__hssc=19795239.1.1596204547466&__hsfp=4224063544">Join Festival Insights Facebook Group</a></p>
