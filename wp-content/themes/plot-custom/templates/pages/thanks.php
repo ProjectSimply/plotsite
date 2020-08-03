@@ -35,10 +35,12 @@
 
                     <?php if($trackingCode == 'vN6DCP6bytkBEJvelqcC') : ?>
                         <p>Thanks so much for booking a demo with us! We're sure you'll love what you see. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
+                        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2354756&conversionId=2722708&fmt=gif" />
                     <?php endif; ?>
 
                     <?php if($trackingCode == 'NtglCPiD2NkBEJvelqcC') : ?>
                         <p>Thanks so much for getting in touch. One of our festival experts will be in contact as soon as possible. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
+                        <img height="1" width="1" style="display:none;" alt="" src="https://px.ads.linkedin.com/collect/?pid=2354756&conversionId=2722724&fmt=gif" />
                     <?php endif; ?>
 
                     <p><a class="button" href="https://www.facebook.com/groups/2085964488369733?__hstc=19795239.92265a0403bbdb087fe8b7d26217eaa7.1596204547466.1596204547466.1596204547466.1&__hssc=19795239.1.1596204547466&__hsfp=4224063544">Join Festival Insights Facebook Group</a></p>
