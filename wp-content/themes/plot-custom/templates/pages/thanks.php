@@ -37,7 +37,7 @@
                         <p>Thanks so much for booking a demo with us! We're sure you'll love what you see. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
                     <?php endif; ?>
 
-                    <?php if($trackingCode == 'b') : ?>
+                    <?php if($trackingCode == 'NtglCPiD2NkBEJvelqcC') : ?>
                         <p>Thanks so much for getting in touch. One of our festival experts will be in touch as soon as possible. In the meantime, why not join our Facebook group exclusively for festival teams to discuss marketing and the digital festival experience.</p>
                     <?php endif; ?>
 
