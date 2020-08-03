@@ -81,12 +81,44 @@
 
         	if(gtag && trackingCode) {
         		console.log('ping',trackingCode)
-    		 	gtag('event', 'conversion', {'send_to': 'AW-619032347/' + trackingCode});
+    		 	gtag('event', 'conversion', {'send_to': 'AW-619032347/' + trackingCode})
     		 }
 
         },
 
+        formIsSubmitted : () => {
+
+        	var errVal = document.querySelectorAll('.input-error').length
+		    if (errVal === 0) { 
+		      	gtag('event', 'conversion', {'send_to': 'AW-619032347/y-G1CMOputkBEJvelqcC'});
+		    }  else {
+		    }
+
+        },
+
+        checkPopUpFormExists : () => {
+
+        	const form = document.querySelector('#hsPopUpForm-73ee3ecf-7f8a-42c6-9dcc-725c7c8661a2')
+
+        	if(!form) {
+        		setTimeout(function(){
+        			Main.checkPopUpFormExists()
+
+        		},500)
+        	} else {
+	          form.onsubmit = function () {
+
+	          	console.log('converted')
+	          	Main.formIsSubmitted()
+
+	          }
+        	}
+
+        },
+
         hubspot : () => {
+
+        	Main.checkPopUpFormExists()
 
     		window.HubSpotConversations.on('conversationStarted', payload => {
 
