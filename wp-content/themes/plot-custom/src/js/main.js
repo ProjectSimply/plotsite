@@ -110,7 +110,10 @@
 
 	          	console.log('converted')
 	          	Main.formIsSubmitted()
-
+	          	var img = document.createElement("img")
+				img.src = "https://px.ads.linkedin.com/collect/?pid=2354756&conversionId=2706796&fmt=gif";
+				
+				document.body.appendChild(img)
 	          }
         	}
 
@@ -127,6 +130,11 @@
 				      'send_to': 'AW-619032347/Y9ujCPyD1dkBEJvelqcC'
 				  })
     		 }
+
+          	var img = document.createElement("img")
+			img.src = "https://px.ads.linkedin.com/collect/?pid=2354756&conversionId=2722716&fmt=gif";
+			
+			document.body.appendChild(img)
 			 
 
 			})
