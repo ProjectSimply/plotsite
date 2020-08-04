@@ -2430,6 +2430,22 @@ a {
   background-color: var(--mint);
 }
 
+.beta {
+  background-color: var(--red);
+  font-size: 0.9rem;
+  color: white;
+  position: fixed;
+  width: 6rem;
+  height: 4rem;
+  padding-top: 0.3rem;
+  text-align: center;
+  text-indent: -0.2rem;
+  left: 0;
+  transform: rotate3d(0, 0, 1, 45deg);
+  transform-origin: 0 0;
+  bottom: 0;
+}
+
 @media screen and (min-width: 640px) {
   .footer__cta {
     display: flex;
@@ -2550,6 +2566,7 @@ ul.footer__menu a:hover, ul.footer__menu a:focus {
 @media screen and (min-width: 640px) {
   .projectSimplyCredits {
     text-align: left;
+    padding-left: 2rem;
   }
 }
 
@@ -3110,10 +3127,14 @@ a {
   position: absolute;
   z-index: 1;
   width: 100%;
+}
+
+a.carousel__imageWrap {
+  cursor: pointer;
   transform: scale(1);
   transition: transform 0.3s ease-in-out;
 }
-.carousel__imageWrap:hover {
+a.carousel__imageWrap:hover {
   transform: scale(1.005);
 }
 
@@ -5581,7 +5602,6 @@ ul.pricingSection__fullList {
 }
 
 .carouselSection__slider {
-  cursor: pointer;
   position: relative;
   outline: none;
 }
