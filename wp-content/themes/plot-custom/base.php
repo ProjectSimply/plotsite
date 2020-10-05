@@ -1,6 +1,10 @@
 <?php plotGetTemplatePart('parts/head'); ?>
 
 <body <?php plotBodyClass() ?>> 
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKZHF74"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-171294626-1"></script>
@@ -54,6 +58,7 @@
       LeadDyno.recordVisit();
       LeadDyno.autoWatch();
     </script>
+
     
 </body>
 
